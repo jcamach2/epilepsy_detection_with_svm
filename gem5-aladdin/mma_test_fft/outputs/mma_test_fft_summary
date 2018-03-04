@@ -4,22 +4,23 @@
 Running : ./outputs/mma_test_fft
 Top level function: store_kernel
 Cycle : 250 cycles
-Avg Power: 13.7399 mW
-Idle FU Cycles: 212 cycles
-Avg FU Power: 9.50101 mW
-Avg FU Dynamic Power: 5.112 mW
-Avg FU leakage Power: 4.38901 mW
+Avg Power: 14.5444 mW
+Idle FU Cycles: 206 cycles
+Avg FU Power: 10.3056 mW
+Avg FU Dynamic Power: 6.27106 mW
+Avg FU leakage Power: 4.03454 mW
 Avg MEM Power: 4.23884 mW
 Avg MEM Dynamic Power: 0.324231 mW
 Avg MEM Leakage Power: 3.91461 mW
-Total Area: 1.25287e+06 uM^2
-FU Area: 449895 uM^2
+Total Area: 1.20973e+06 uM^2
+FU Area: 406749 uM^2
 MEM Area: 802977 uM^2
-Num of Single Precision FP Multipliers: 36
+Num of Single Precision FP Multipliers: 28
 Num of Single Precision FP Adders: 29
 Num of Multipliers (32-bit): 5
+Num of Adders (32-bit): 5
 Num of Shifters (32-bit): 15
-Num of Registers (32-bit): 235
+Num of Registers (32-bit): 237
 ===============================
         Aladdin Results        
 ===============================

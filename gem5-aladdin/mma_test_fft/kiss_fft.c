@@ -242,18 +242,19 @@ static void kf_bfly_generic(
 
 static
 void kf_work(
-        kiss_fft_cpx * Fout,
-        const kiss_fft_cpx * f,
+        kiss_fft_cpx ** Fout,
+        const kiss_fft_cpx ** f,
         const size_t fstride,
         int in_stride,
         int * factors,
         const kiss_fft_cfg st
         )
 {
-    kiss_fft_cpx * Fout_beg=Fout;
+    kiss_fft_cpx * Fout_beg=*Fout;
+    kiss_fft_cpx * f_beg = *f;
     const int p=*factors++; // the radix  
     const int m=*factors++; // stage's fft length/p 
-    const kiss_fft_cpx * Fout_end = Fout + p*m;
+    const kiss_fft_cpx * Fout_end = *Fout + p*m;
 
 /*#ifdef _OPENMP
     // use openmp extensions at the 
@@ -281,9 +282,9 @@ void kf_work(
 
     if (m==1) {
         do{
-            *Fout = *f; // TODO this causes problems
-            f += fstride*in_stride;
-        }while(++Fout != Fout_end );
+            **Fout = **f; // TODO this causes problems
+            *f += fstride*in_stride;
+        }while(++*Fout != Fout_end );
     }else{
         do{
             // recursive call:
@@ -291,19 +292,20 @@ void kf_work(
             // p instances of smaller DFTs of size m, 
             // each one takes a decimated version of the input
             kf_work( Fout , f, fstride*p, in_stride, factors,st);
-            f += fstride*in_stride;
-        }while( (Fout += m) != Fout_end );
+            *f += fstride*in_stride;
+        }while( (*Fout += m) != Fout_end );
     }
 
-    Fout=Fout_beg;
+    *Fout=Fout_beg;
+    *f = f_beg;
 
     // recombine the p smaller DFTs 
     switch (p) {
-        case 2: kf_bfly2(Fout,fstride,st,m); break;
-        case 3: kf_bfly3(Fout,fstride,st,m); break; 
-        case 4: kf_bfly4(Fout,fstride,st,m); break;
-        case 5: kf_bfly5(Fout,fstride,st,m); break; 
-        default: kf_bfly_generic(Fout,fstride,st,m,p); break;
+        case 2: kf_bfly2(*Fout,fstride,st,m); break;
+        case 3: kf_bfly3(*Fout,fstride,st,m); break; 
+        case 4: kf_bfly4(*Fout,fstride,st,m); break;
+        case 5: kf_bfly5(*Fout,fstride,st,m); break; 
+        default: kf_bfly_generic(*Fout,fstride,st,m,p); break;
     }
 }
 
@@ -386,7 +388,7 @@ void kiss_fft_stride(kiss_fft_cfg st,const kiss_fft_cpx *fin,kiss_fft_cpx *fout,
     }else{
         kf_work( fout, fin, 1,in_stride, st->factors,st );
     }*/
-    kf_work( fout, fin, 1,in_stride, st->factors,st );
+    kf_work( &fout, &fin, 1,in_stride, st->factors,st );
 }
 
 void kiss_fft(kiss_fft_cfg cfg,const kiss_fft_cpx *fin,kiss_fft_cpx *fout)
