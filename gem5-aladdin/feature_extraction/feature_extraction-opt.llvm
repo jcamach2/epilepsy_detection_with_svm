@@ -1,0 +1,800 @@
+; ModuleID = 'feature_extraction.llvm'
+target datalayout = "e-p:64:64:64-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-v64:64:64-v128:128:128-a0:0:64-s0:64:64-f80:128:128-n8:16:32:64-S128"
+target triple = "x86_64-unknown-linux-gnu"
+
+%struct._IO_FILE = type { i32, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, %struct._IO_marker*, %struct._IO_FILE*, i32, i32, i64, i16, i8, [1 x i8], i8*, i64, i8*, i8*, i8*, i8*, i64, i32, [20 x i8] }
+%struct._IO_marker = type { %struct._IO_marker*, %struct._IO_FILE*, i32 }
+%struct.kiss_fft_state = type { i32, i32, [64 x i32], [1 x %struct.kiss_fft_cpx] }
+%struct.kiss_fft_cpx = type { float, float }
+
+@stdout = external global %struct._IO_FILE*
+@.str = private unnamed_addr constant [21 x i8] c"\0Astore_loc[%d] = %d\0A\00", align 1
+@.str1 = private unnamed_addr constant [21 x i8] c"store_vals[%d] = %d\0A\00", align 1
+@.str2 = private unnamed_addr constant [42 x i8] c"FAILED: store_loc[%d] = %d, should be %d\0A\00", align 1
+@.str3 = private unnamed_addr constant [28 x i8] c"Test failed with %d errors.\00", align 1
+@.str4 = private unnamed_addr constant [14 x i8] c"Test passed!\0A\00", align 1
+@.str5 = private constant [12 x i8] c"test_stores\00"
+@.str6 = private constant [4 x i8] c"0:0\00"
+@.str7 = private constant [2 x i8] c"1\00"
+@.str8 = private constant [1 x i8] zeroinitializer
+@.str9 = private constant [4 x i8] c"phi\00"
+@.str10 = private constant [9 x i8] c"num_vals\00"
+@.str11 = private constant [6 x i8] c"0:0-5\00"
+@.str12 = private constant [9 x i8] c".lr.ph:1\00"
+@.str13 = private constant [14 x i8] c"._crit_edge:0\00"
+@.str14 = private constant [11 x i8] c"indvars.iv\00"
+@.str15 = private constant [16 x i8] c"indvars.iv.next\00"
+@.str16 = private constant [5 x i8] c"19:1\00"
+@.str17 = private constant [2 x i8] c"2\00"
+@.str18 = private constant [7 x i8] c"stdout\00"
+@.str19 = private constant [2 x i8] c"3\00"
+@.str20 = private constant [10 x i8] c"store_loc\00"
+@.str21 = private constant [2 x i8] c"4\00"
+@.str22 = private constant [2 x i8] c"5\00"
+@.str23 = private constant [2 x i8] c"6\00"
+@.str24 = private constant [8 x i8] c"fprintf\00"
+@.str25 = private constant [2 x i8] c"7\00"
+@.str26 = private constant [2 x i8] c"8\00"
+@.str27 = private constant [11 x i8] c"store_vals\00"
+@.str28 = private constant [2 x i8] c"9\00"
+@.str29 = private constant [3 x i8] c"10\00"
+@.str30 = private constant [3 x i8] c"11\00"
+@.str31 = private constant [3 x i8] c"12\00"
+@.str32 = private constant [3 x i8] c"13\00"
+@.str33 = private constant [3 x i8] c"14\00"
+@.str34 = private constant [11 x i8] c".lr.ph:1-0\00"
+@.str35 = private constant [5 x i8] c"15:1\00"
+@.str36 = private constant [3 x i8] c"16\00"
+@.str37 = private constant [3 x i8] c"17\00"
+@.str38 = private constant [3 x i8] c"18\00"
+@.str39 = private constant [7 x i8] c"15:1-0\00"
+@.str40 = private constant [12 x i8] c"lftr.wideiv\00"
+@.str41 = private constant [9 x i8] c"exitcond\00"
+@.str42 = private constant [7 x i8] c"19:1-0\00"
+@.str43 = private constant [16 x i8] c"._crit_edge:0-0\00"
+@.str44 = private constant [13 x i8] c"process_data\00"
+@.str45 = private constant [6 x i8] c"0:0-7\00"
+@.str46 = private constant [10 x i8] c".lr.ph5:1\00"
+@.str47 = private constant [22 x i8] c"._crit_edge6.thread:0\00"
+@.str48 = private constant [24 x i8] c"._crit_edge6.thread:0-0\00"
+@.str49 = private constant [9 x i8] c"kiss_fft\00"
+@.str50 = private constant [4 x i8] c"cfg\00"
+@.str51 = private constant [3 x i8] c"in\00"
+@.str52 = private constant [4 x i8] c"out\00"
+@.str53 = private constant [24 x i8] c"._crit_edge6.thread:0-2\00"
+@.str54 = private constant [12 x i8] c"indvars.iv7\00"
+@.str55 = private constant [17 x i8] c"indvars.iv.next8\00"
+@.str56 = private constant [12 x i8] c".lr.ph5:1-0\00"
+@.str57 = private constant [12 x i8] c".lr.ph5:1-1\00"
+@.str58 = private constant [13 x i8] c"lftr.wideiv9\00"
+@.str59 = private constant [11 x i8] c"exitcond10\00"
+@.str60 = private constant [12 x i8] c".lr.ph5:1-2\00"
+@.str61 = private constant [15 x i8] c"._crit_edge6:0\00"
+@.str62 = private constant [17 x i8] c"._crit_edge6:0-0\00"
+@.str63 = private constant [17 x i8] c"._crit_edge6:0-2\00"
+@.str64 = private constant [11 x i8] c".lr.ph:1-1\00"
+@.str65 = private constant [5 x i8] c"main\00"
+@.str66 = private constant [7 x i8] c"malloc\00"
+@.str67 = private constant [6 x i8] c"0:0-4\00"
+@.str68 = private constant [4 x i8] c"5:1\00"
+@.str69 = private constant [6 x i8] c"5:1-0\00"
+@.str70 = private constant [6 x i8] c"5:1-1\00"
+@.str71 = private constant [6 x i8] c"5:1-2\00"
+@.str72 = private constant [4 x i8] c"9:0\00"
+@.str73 = private constant [15 x i8] c"kiss_fft_alloc\00"
+@.str74 = private constant [6 x i8] c"9:0-1\00"
+@.str75 = private constant [6 x i8] c"9:0-3\00"
+@.str76 = private constant [384 x i8] c"process_data/loop 37\0Aprocess_data/loop2 45\0Akf_bfly2/kf_bfly2_loop 32\0Akf_bfly3/kf_bfly3_loop 108\0Akf_bfly4/kf_bfly4_loop 60\0Akf_bfly5/kf_bfly5_loop 161\0Akf_bfly_generic/kf_bfly_loop 219\0Akf_bfly_generic/kf_bfly_loop_1 221\0Akf_bfly_generic/kf_bfly_loop_2 228\0Akf_bfly_generic/kf_bfly_loop_3 231\0Akf_factor/kf_factor_1 324\0Akf_factor/kf_factor_2 325\0Akf_work/kf_work_1 284\0Akf_work/kf_work_2 289\0A\00"
+
+; Function Attrs: nounwind uwtable
+define i32 @test_stores(i32* nocapture readonly %store_vals, i32* nocapture readonly %store_loc, i32 %num_vals) #0 {
+  %1 = ptrtoint i32* %store_vals to i64, !dbg !73
+  call void @trace_logger_log_ptr(i64 24601, i64 64, i64 %1, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str27, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !73
+  %2 = ptrtoint i32* %store_loc to i64, !dbg !73
+  call void @trace_logger_log_ptr(i64 24601, i64 64, i64 %2, i64 1, i8* getelementptr inbounds ([10 x i8]* @.str20, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !73
+  %3 = zext i32 %num_vals to i64, !dbg !73
+  call void @trace_logger_log_int(i64 24601, i64 32, i64 %3, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str10, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !73
+  tail call void @llvm.dbg.value(metadata !{i32* %store_vals}, i64 0, metadata !11), !dbg !73
+  tail call void @llvm.dbg.value(metadata !{i32* %store_loc}, i64 0, metadata !12), !dbg !73
+  tail call void @llvm.dbg.value(metadata !{i32 %num_vals}, i64 0, metadata !13), !dbg !73
+  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !14), !dbg !74
+  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !15), !dbg !75
+  call void @trace_logger_log0(i64 19, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str7, i32 0, i32 0), i64 46, i1 false, i1 true), !dbg !75
+  call void @trace_logger_log_int(i64 2, i64 32, i64 0, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  %4 = zext i32 %num_vals to i64, !dbg !75
+  call void @trace_logger_log_int(i64 1, i64 32, i64 %4, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str10, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  %5 = icmp sgt i32 %num_vals, 0, !dbg !75
+  %6 = zext i1 %5 to i64, !dbg !75
+  call void @trace_logger_log_int(i64 19134, i64 1, i64 %6, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str7, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  call void @trace_logger_log0(i64 19, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0), i8* getelementptr inbounds ([6 x i8]* @.str11, i32 0, i32 0), i64 2, i1 false, i1 true), !dbg !75
+  call void @trace_logger_log_int(i64 3, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  call void @trace_logger_log_int(i64 2, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([14 x i8]* @.str13, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  %7 = zext i1 %5 to i64, !dbg !75
+  call void @trace_logger_log_int(i64 1, i64 1, i64 %7, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str7, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  br i1 %5, label %.lr.ph, label %._crit_edge, !dbg !75
+
+.lr.ph:                                           ; preds = %53, %0
+  %indvars.iv = phi i64 [ %indvars.iv.next, %53 ], [ 0, %0 ]
+  call void @trace_logger_log0(i64 -1, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 48, i1 false, i1 true), !dbg !76
+  call void @trace_logger_log_int(i64 2, i64 64, i64 0, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 1, i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0)), !dbg !76
+  call void @trace_logger_log_int(i64 1, i64 64, i64 0, i64 1, i8* getelementptr inbounds ([16 x i8]* @.str15, i32 0, i32 0), i64 1, i8* getelementptr inbounds ([5 x i8]* @.str16, i32 0, i32 0)), !dbg !76
+  call void @trace_logger_log_int(i64 19134, i64 64, i64 %indvars.iv, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([5 x i8]* @.str16, i32 0, i32 0)), !dbg !76
+  call void @trace_logger_log0(i64 20, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str17, i32 0, i32 0), i64 27, i1 false, i1 true), !dbg !76
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 ptrtoint (%struct._IO_FILE** @stdout to i64), i64 1, i8* getelementptr inbounds ([7 x i8]* @.str18, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !76
+  %8 = load %struct._IO_FILE** @stdout, align 8, !dbg !76, !tbaa !78
+  %9 = ptrtoint %struct._IO_FILE* %8 to i64, !dbg !76
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %9, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str17, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !76
+  call void @trace_logger_log0(i64 20, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str19, i32 0, i32 0), i64 29, i1 false, i1 true), !dbg !76
+  call void @trace_logger_log_int(i64 2, i64 64, i64 %indvars.iv, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !76
+  %10 = ptrtoint i32* %store_loc to i64, !dbg !76
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %10, i64 1, i8* getelementptr inbounds ([10 x i8]* @.str20, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !76
+  %11 = getelementptr inbounds i32* %store_loc, i64 %indvars.iv, !dbg !76
+  %12 = ptrtoint i32* %11 to i64, !dbg !76
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %12, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str19, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !76
+  call void @trace_logger_log0(i64 20, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str21, i32 0, i32 0), i64 27, i1 false, i1 true), !dbg !76
+  %13 = ptrtoint i32* %11 to i64, !dbg !76
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %13, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str19, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !76
+  %14 = load i32* %11, align 4, !dbg !76, !tbaa !82
+  %15 = zext i32 %14 to i64, !dbg !76
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %15, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str21, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !76
+  call void @trace_logger_log0(i64 20, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str22, i32 0, i32 0), i64 33, i1 false, i1 true), !dbg !76
+  call void @trace_logger_log_int(i64 1, i64 64, i64 %indvars.iv, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !76
+  %16 = trunc i64 %indvars.iv to i32, !dbg !76
+  %17 = zext i32 %16 to i64, !dbg !76
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %17, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str22, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !76
+  call void @trace_logger_log0(i64 20, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str23, i32 0, i32 0), i64 49, i1 false, i1 true), !dbg !76
+  call void @trace_logger_log_ptr(i64 5, i64 64, i64 ptrtoint (i32 (%struct._IO_FILE*, i8*, ...)* @fprintf to i64), i64 1, i8* getelementptr inbounds ([8 x i8]* @.str24, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !76
+  %18 = ptrtoint %struct._IO_FILE* %8 to i64, !dbg !76
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %18, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str17, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !76
+  call void @trace_logger_log_ptr(i64 2, i64 64, i64 ptrtoint ([21 x i8]* @.str to i64), i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !76
+  %19 = tail call i32 (%struct._IO_FILE*, i8*, ...)* @fprintf(%struct._IO_FILE* %8, i8* getelementptr inbounds ([21 x i8]* @.str, i64 0, i64 0), i32 %16, i32 %14) #4, !dbg !76
+  %20 = zext i32 %19 to i64, !dbg !84
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %20, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str23, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !84
+  call void @trace_logger_log0(i64 21, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str25, i32 0, i32 0), i64 27, i1 false, i1 true), !dbg !84
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 ptrtoint (%struct._IO_FILE** @stdout to i64), i64 1, i8* getelementptr inbounds ([7 x i8]* @.str18, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !84
+  %21 = load %struct._IO_FILE** @stdout, align 8, !dbg !84, !tbaa !78
+  %22 = ptrtoint %struct._IO_FILE* %21 to i64, !dbg !84
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %22, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str25, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !84
+  call void @trace_logger_log0(i64 21, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str26, i32 0, i32 0), i64 29, i1 false, i1 true), !dbg !84
+  call void @trace_logger_log_int(i64 2, i64 64, i64 %indvars.iv, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !84
+  %23 = ptrtoint i32* %store_vals to i64, !dbg !84
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %23, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str27, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !84
+  %24 = getelementptr inbounds i32* %store_vals, i64 %indvars.iv, !dbg !84
+  %25 = ptrtoint i32* %24 to i64, !dbg !84
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %25, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str26, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !84
+  call void @trace_logger_log0(i64 21, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str28, i32 0, i32 0), i64 27, i1 false, i1 true), !dbg !84
+  %26 = ptrtoint i32* %24 to i64, !dbg !84
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %26, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str26, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !84
+  %27 = load i32* %24, align 4, !dbg !84, !tbaa !82
+  %28 = zext i32 %27 to i64, !dbg !84
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %28, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str28, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !84
+  call void @trace_logger_log0(i64 21, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str29, i32 0, i32 0), i64 33, i1 false, i1 true), !dbg !84
+  call void @trace_logger_log_int(i64 1, i64 64, i64 %indvars.iv, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !84
+  %29 = trunc i64 %indvars.iv to i32, !dbg !84
+  %30 = zext i32 %29 to i64, !dbg !84
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %30, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str29, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !84
+  call void @trace_logger_log0(i64 21, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str30, i32 0, i32 0), i64 49, i1 false, i1 true), !dbg !84
+  call void @trace_logger_log_ptr(i64 5, i64 64, i64 ptrtoint (i32 (%struct._IO_FILE*, i8*, ...)* @fprintf to i64), i64 1, i8* getelementptr inbounds ([8 x i8]* @.str24, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !84
+  %31 = ptrtoint %struct._IO_FILE* %21 to i64, !dbg !84
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %31, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str25, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !84
+  call void @trace_logger_log_ptr(i64 2, i64 64, i64 ptrtoint ([21 x i8]* @.str1 to i64), i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !84
+  %32 = tail call i32 (%struct._IO_FILE*, i8*, ...)* @fprintf(%struct._IO_FILE* %21, i8* getelementptr inbounds ([21 x i8]* @.str1, i64 0, i64 0), i32 %29, i32 %27) #4, !dbg !84
+  %33 = zext i32 %32 to i64, !dbg !85
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %33, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str30, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !85
+  call void @trace_logger_log0(i64 22, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str31, i32 0, i32 0), i64 27, i1 false, i1 true), !dbg !85
+  %34 = ptrtoint i32* %11 to i64, !dbg !85
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %34, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str19, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !85
+  %35 = load i32* %11, align 4, !dbg !85, !tbaa !82
+  %36 = zext i32 %35 to i64, !dbg !85
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %36, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str31, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !85
+  call void @trace_logger_log0(i64 22, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str32, i32 0, i32 0), i64 27, i1 false, i1 true), !dbg !85
+  %37 = ptrtoint i32* %24 to i64, !dbg !85
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %37, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str26, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !85
+  %38 = load i32* %24, align 4, !dbg !85, !tbaa !82
+  %39 = zext i32 %38 to i64, !dbg !85
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %39, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str32, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !85
+  call void @trace_logger_log0(i64 22, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str33, i32 0, i32 0), i64 46, i1 false, i1 true), !dbg !85
+  %40 = zext i32 %38 to i64, !dbg !85
+  call void @trace_logger_log_int(i64 2, i64 32, i64 %40, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str32, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !85
+  %41 = zext i32 %35 to i64, !dbg !85
+  call void @trace_logger_log_int(i64 1, i64 32, i64 %41, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str31, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !85
+  %42 = icmp eq i32 %35, %38, !dbg !85
+  %43 = zext i1 %42 to i64, !dbg !85
+  call void @trace_logger_log_int(i64 19134, i64 1, i64 %43, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str33, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !85
+  call void @trace_logger_log0(i64 22, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([11 x i8]* @.str34, i32 0, i32 0), i64 2, i1 false, i1 true), !dbg !85
+  call void @trace_logger_log_int(i64 3, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([5 x i8]* @.str16, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !85
+  call void @trace_logger_log_int(i64 2, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([5 x i8]* @.str35, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !85
+  %44 = zext i1 %42 to i64, !dbg !85
+  call void @trace_logger_log_int(i64 1, i64 1, i64 %44, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str33, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !85
+  br i1 %42, label %53, label %45, !dbg !85
+
+; <label>:45                                      ; preds = %.lr.ph
+  call void @trace_logger_log0(i64 23, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([5 x i8]* @.str35, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str36, i32 0, i32 0), i64 27, i1 false, i1 true), !dbg !87
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 ptrtoint (%struct._IO_FILE** @stdout to i64), i64 1, i8* getelementptr inbounds ([7 x i8]* @.str18, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !87
+  %46 = load %struct._IO_FILE** @stdout, align 8, !dbg !87, !tbaa !78
+  %47 = ptrtoint %struct._IO_FILE* %46 to i64, !dbg !87
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %47, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str36, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !87
+  call void @trace_logger_log0(i64 23, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([5 x i8]* @.str35, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str37, i32 0, i32 0), i64 33, i1 false, i1 true), !dbg !87
+  call void @trace_logger_log_int(i64 1, i64 64, i64 %indvars.iv, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !87
+  %48 = trunc i64 %indvars.iv to i32, !dbg !87
+  %49 = zext i32 %48 to i64, !dbg !87
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %49, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str37, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !87
+  call void @trace_logger_log0(i64 23, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([5 x i8]* @.str35, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str38, i32 0, i32 0), i64 49, i1 false, i1 true), !dbg !87
+  call void @trace_logger_log_ptr(i64 6, i64 64, i64 ptrtoint (i32 (%struct._IO_FILE*, i8*, ...)* @fprintf to i64), i64 1, i8* getelementptr inbounds ([8 x i8]* @.str24, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !87
+  %50 = ptrtoint %struct._IO_FILE* %46 to i64, !dbg !87
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %50, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str36, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !87
+  call void @trace_logger_log_ptr(i64 2, i64 64, i64 ptrtoint ([42 x i8]* @.str2 to i64), i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !87
+  %51 = tail call i32 (%struct._IO_FILE*, i8*, ...)* @fprintf(%struct._IO_FILE* %46, i8* getelementptr inbounds ([42 x i8]* @.str2, i64 0, i64 0), i32 %48, i32 %35, i32 %38) #4, !dbg !87
+  %52 = zext i32 %51 to i64, !dbg !89
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %52, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str38, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !89
+  call void @trace_logger_log0(i64 26, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([5 x i8]* @.str35, i32 0, i32 0), i8* getelementptr inbounds ([7 x i8]* @.str39, i32 0, i32 0), i64 2, i1 false, i1 true), !dbg !89
+  call void @trace_logger_log_int(i64 1, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([5 x i8]* @.str16, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !89
+  br label %53, !dbg !89
+
+; <label>:53                                      ; preds = %45, %.lr.ph
+  call void @trace_logger_log0(i64 19, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([5 x i8]* @.str16, i32 0, i32 0), i8* getelementptr inbounds ([16 x i8]* @.str15, i32 0, i32 0), i64 8, i1 false, i1 true), !dbg !75
+  call void @trace_logger_log_int(i64 2, i64 64, i64 1, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  call void @trace_logger_log_int(i64 1, i64 64, i64 %indvars.iv, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  %indvars.iv.next = add nuw nsw i64 %indvars.iv, 1, !dbg !75
+  call void @trace_logger_log_int(i64 19134, i64 64, i64 %indvars.iv.next, i64 1, i8* getelementptr inbounds ([16 x i8]* @.str15, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  call void @trace_logger_log0(i64 19, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([5 x i8]* @.str16, i32 0, i32 0), i8* getelementptr inbounds ([12 x i8]* @.str40, i32 0, i32 0), i64 33, i1 false, i1 true), !dbg !75
+  call void @trace_logger_log_int(i64 1, i64 64, i64 %indvars.iv.next, i64 1, i8* getelementptr inbounds ([16 x i8]* @.str15, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  %lftr.wideiv = trunc i64 %indvars.iv.next to i32, !dbg !75
+  %54 = zext i32 %lftr.wideiv to i64, !dbg !75
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %54, i64 1, i8* getelementptr inbounds ([12 x i8]* @.str40, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  call void @trace_logger_log0(i64 19, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([5 x i8]* @.str16, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str41, i32 0, i32 0), i64 46, i1 false, i1 true), !dbg !75
+  %55 = zext i32 %num_vals to i64, !dbg !75
+  call void @trace_logger_log_int(i64 2, i64 32, i64 %55, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str10, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  %56 = zext i32 %lftr.wideiv to i64, !dbg !75
+  call void @trace_logger_log_int(i64 1, i64 32, i64 %56, i64 1, i8* getelementptr inbounds ([12 x i8]* @.str40, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  %exitcond = icmp eq i32 %lftr.wideiv, %num_vals, !dbg !75
+  %57 = zext i1 %exitcond to i64, !dbg !75
+  call void @trace_logger_log_int(i64 19134, i64 1, i64 %57, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str41, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  call void @trace_logger_log0(i64 19, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([5 x i8]* @.str16, i32 0, i32 0), i8* getelementptr inbounds ([7 x i8]* @.str42, i32 0, i32 0), i64 2, i1 false, i1 true), !dbg !75
+  call void @trace_logger_log_int(i64 3, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([14 x i8]* @.str13, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  call void @trace_logger_log_int(i64 2, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  %58 = zext i1 %exitcond to i64, !dbg !75
+  call void @trace_logger_log_int(i64 1, i64 1, i64 %58, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str41, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !75
+  br i1 %exitcond, label %._crit_edge, label %.lr.ph, !dbg !75
+
+._crit_edge:                                      ; preds = %53, %0
+  call void @trace_logger_log0(i64 29, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i8* getelementptr inbounds ([14 x i8]* @.str13, i32 0, i32 0), i8* getelementptr inbounds ([16 x i8]* @.str43, i32 0, i32 0), i64 1, i1 false, i1 true), !dbg !90
+  call void @trace_logger_log_int(i64 1, i64 32, i64 0, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !90
+  ret i32 0, !dbg !90
+}
+
+; Function Attrs: nounwind readnone
+declare void @llvm.dbg.declare(metadata, metadata) #1
+
+declare i32 @fprintf(%struct._IO_FILE*, i8*, ...) #2
+
+; Function Attrs: nounwind uwtable
+define void @process_data(i32* nocapture readonly %store_vals, i32* nocapture %store_loc, i32 %num_vals, %struct.kiss_fft_state* %cfg) #0 {
+  call void @trace_logger_log_entry(i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i64 4), !dbg !91
+  %1 = ptrtoint i32* %store_vals to i64, !dbg !91
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %1, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str27, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !91
+  %2 = ptrtoint i32* %store_loc to i64, !dbg !91
+  call void @trace_logger_log_ptr(i64 2, i64 64, i64 %2, i64 1, i8* getelementptr inbounds ([10 x i8]* @.str20, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !91
+  %3 = zext i32 %num_vals to i64, !dbg !91
+  call void @trace_logger_log_int(i64 3, i64 32, i64 %3, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str10, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !91
+  %4 = ptrtoint %struct.kiss_fft_state* %cfg to i64, !dbg !91
+  call void @trace_logger_log_ptr(i64 4, i64 64, i64 %4, i64 1, i8* getelementptr inbounds ([4 x i8]* @.str50, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !91
+  call void @llvm.dbg.value(metadata !{i32* %store_vals}, i64 0, metadata !43), !dbg !91
+  call void @llvm.dbg.value(metadata !{i32* %store_loc}, i64 0, metadata !44), !dbg !91
+  call void @llvm.dbg.value(metadata !{i32 %num_vals}, i64 0, metadata !45), !dbg !91
+  call void @llvm.dbg.value(metadata !{%struct.kiss_fft_state* %cfg}, i64 0, metadata !46), !dbg !91
+  call void @trace_logger_log0(i64 35, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str7, i32 0, i32 0), i64 34, i1 true, i1 true), !dbg !92
+  %5 = zext i32 %num_vals to i64, !dbg !92
+  call void @trace_logger_log_int(i64 1, i64 32, i64 %5, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str10, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !92
+  %6 = zext i32 %num_vals to i64, !dbg !92
+  call void @trace_logger_log_int(i64 19134, i64 64, i64 %6, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str7, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !92
+  call void @trace_logger_log0(i64 35, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str17, i32 0, i32 0), i64 26, i1 true, i1 true), !dbg !92
+  call void @trace_logger_log_int(i64 1, i64 64, i64 %6, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str7, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !92
+  %7 = alloca %struct.kiss_fft_cpx, i64 %6, align 16, !dbg !92
+  %8 = ptrtoint %struct.kiss_fft_cpx* %7 to i64, !dbg !92
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %8, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str17, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !92
+  call void @llvm.dbg.declare(metadata !{%struct.kiss_fft_cpx* %7}, metadata !47), !dbg !92
+  call void @trace_logger_log0(i64 36, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str19, i32 0, i32 0), i64 26, i1 true, i1 true), !dbg !93
+  call void @trace_logger_log_int(i64 1, i64 64, i64 %6, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str7, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !93
+  %9 = alloca %struct.kiss_fft_cpx, i64 %6, align 16, !dbg !93
+  %10 = ptrtoint %struct.kiss_fft_cpx* %9 to i64, !dbg !93
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %10, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str19, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !93
+  call void @llvm.dbg.declare(metadata !{%struct.kiss_fft_cpx* %9}, metadata !51), !dbg !93
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !52), !dbg !94
+  call void @trace_logger_log0(i64 37, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str21, i32 0, i32 0), i64 46, i1 true, i1 true), !dbg !94
+  call void @trace_logger_log_int(i64 2, i64 32, i64 0, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  %11 = zext i32 %num_vals to i64, !dbg !94
+  call void @trace_logger_log_int(i64 1, i64 32, i64 %11, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str10, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  %12 = icmp sgt i32 %num_vals, 0, !dbg !94
+  %13 = zext i1 %12 to i64, !dbg !94
+  call void @trace_logger_log_int(i64 19134, i64 1, i64 %13, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str21, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  call void @trace_logger_log0(i64 37, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0), i8* getelementptr inbounds ([6 x i8]* @.str45, i32 0, i32 0), i64 2, i1 true, i1 true), !dbg !94
+  call void @trace_logger_log_int(i64 3, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([10 x i8]* @.str46, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  call void @trace_logger_log_int(i64 2, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([22 x i8]* @.str47, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  %14 = zext i1 %12 to i64, !dbg !94
+  call void @trace_logger_log_int(i64 1, i64 1, i64 %14, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str21, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  br i1 %12, label %.lr.ph5, label %._crit_edge6.thread, !dbg !94
+
+._crit_edge6.thread:                              ; preds = %0
+  call void @trace_logger_log0(i64 44, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([22 x i8]* @.str47, i32 0, i32 0), i8* getelementptr inbounds ([24 x i8]* @.str48, i32 0, i32 0), i64 49, i1 true, i1 true), !dbg !95
+  call void @trace_logger_log_ptr(i64 4, i64 64, i64 ptrtoint (void (%struct.kiss_fft_state*, %struct.kiss_fft_cpx*, %struct.kiss_fft_cpx*)* @kiss_fft to i64), i64 1, i8* getelementptr inbounds ([9 x i8]* @.str49, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !95
+  %15 = ptrtoint %struct.kiss_fft_state* %cfg to i64, !dbg !95
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %15, i64 1, i8* getelementptr inbounds ([4 x i8]* @.str50, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !95
+  %16 = ptrtoint %struct.kiss_fft_cpx* %7 to i64, !dbg !95
+  call void @trace_logger_log_ptr(i64 2, i64 64, i64 %16, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str51, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !95
+  %17 = ptrtoint %struct.kiss_fft_cpx* %9 to i64, !dbg !95
+  call void @trace_logger_log_ptr(i64 3, i64 64, i64 %17, i64 1, i8* getelementptr inbounds ([4 x i8]* @.str52, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !95
+  call void @kiss_fft(%struct.kiss_fft_state* %cfg, %struct.kiss_fft_cpx* %7, %struct.kiss_fft_cpx* %9) #4, !dbg !95
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !54), !dbg !96
+  call void @trace_logger_log0(i64 45, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([22 x i8]* @.str47, i32 0, i32 0), i8* getelementptr inbounds ([24 x i8]* @.str53, i32 0, i32 0), i64 2, i1 true, i1 true), !dbg !96
+  call void @trace_logger_log_int(i64 1, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([14 x i8]* @.str13, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  br label %._crit_edge, !dbg !96
+
+.lr.ph5:                                          ; preds = %.lr.ph5, %0
+  %indvars.iv7 = phi i64 [ %indvars.iv.next8, %.lr.ph5 ], [ 0, %0 ]
+  call void @trace_logger_log0(i64 -1, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([10 x i8]* @.str46, i32 0, i32 0), i8* getelementptr inbounds ([12 x i8]* @.str54, i32 0, i32 0), i64 48, i1 true, i1 true), !dbg !97
+  call void @trace_logger_log_int(i64 2, i64 64, i64 0, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 1, i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0)), !dbg !97
+  call void @trace_logger_log_int(i64 1, i64 64, i64 0, i64 1, i8* getelementptr inbounds ([17 x i8]* @.str55, i32 0, i32 0), i64 1, i8* getelementptr inbounds ([10 x i8]* @.str46, i32 0, i32 0)), !dbg !97
+  call void @trace_logger_log_int(i64 19134, i64 64, i64 %indvars.iv7, i64 1, i8* getelementptr inbounds ([12 x i8]* @.str54, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([10 x i8]* @.str46, i32 0, i32 0)), !dbg !97
+  call void @trace_logger_log0(i64 41, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([10 x i8]* @.str46, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str22, i32 0, i32 0), i64 29, i1 true, i1 true), !dbg !97
+  call void @trace_logger_log_int(i64 2, i64 64, i64 %indvars.iv7, i64 1, i8* getelementptr inbounds ([12 x i8]* @.str54, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !97
+  %18 = ptrtoint i32* %store_vals to i64, !dbg !97
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %18, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str27, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !97
+  %19 = getelementptr inbounds i32* %store_vals, i64 %indvars.iv7, !dbg !97
+  %20 = ptrtoint i32* %19 to i64, !dbg !97
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %20, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str22, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !97
+  call void @trace_logger_log0(i64 41, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([10 x i8]* @.str46, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str23, i32 0, i32 0), i64 27, i1 true, i1 true), !dbg !97
+  %21 = ptrtoint i32* %19 to i64, !dbg !97
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %21, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str22, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !97
+  %22 = load i32* %19, align 4, !dbg !97, !tbaa !82
+  %23 = zext i32 %22 to i64, !dbg !97
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %23, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str23, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !97
+  call void @trace_logger_log0(i64 41, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([10 x i8]* @.str46, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str25, i32 0, i32 0), i64 39, i1 true, i1 true), !dbg !97
+  %24 = zext i32 %22 to i64, !dbg !97
+  call void @trace_logger_log_int(i64 1, i64 32, i64 %24, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str23, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !97
+  %25 = sitofp i32 %22 to float, !dbg !97
+  %26 = fpext float %25 to double, !dbg !97
+  call void @trace_logger_log_double(i64 19134, i64 32, double %26, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str25, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !97
+  call void @trace_logger_log0(i64 41, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([10 x i8]* @.str46, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str26, i32 0, i32 0), i64 29, i1 true, i1 true), !dbg !97
+  call void @trace_logger_log_int(i64 3, i64 32, i64 0, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !97
+  call void @trace_logger_log_int(i64 2, i64 64, i64 %indvars.iv7, i64 1, i8* getelementptr inbounds ([12 x i8]* @.str54, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !97
+  %27 = ptrtoint %struct.kiss_fft_cpx* %7 to i64, !dbg !97
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %27, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str51, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !97
+  %28 = getelementptr inbounds %struct.kiss_fft_cpx* %7, i64 %indvars.iv7, i32 0, !dbg !97
+  %29 = ptrtoint float* %28 to i64, !dbg !97
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %29, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str26, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !97
+  call void @trace_logger_log0(i64 41, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([10 x i8]* @.str46, i32 0, i32 0), i8* getelementptr inbounds ([12 x i8]* @.str56, i32 0, i32 0), i64 28, i1 true, i1 true), !dbg !97
+  %30 = ptrtoint float* %28 to i64, !dbg !97
+  call void @trace_logger_log_ptr(i64 2, i64 64, i64 %30, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str26, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !97
+  %31 = fpext float %25 to double, !dbg !97
+  call void @trace_logger_log_double(i64 1, i64 32, double %31, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str25, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !97
+  store float %25, float* %28, align 8, !dbg !97, !tbaa !99
+  call void @trace_logger_log0(i64 42, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([10 x i8]* @.str46, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str28, i32 0, i32 0), i64 29, i1 true, i1 true), !dbg !102
+  call void @trace_logger_log_int(i64 3, i64 32, i64 1, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !102
+  call void @trace_logger_log_int(i64 2, i64 64, i64 %indvars.iv7, i64 1, i8* getelementptr inbounds ([12 x i8]* @.str54, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !102
+  %32 = ptrtoint %struct.kiss_fft_cpx* %7 to i64, !dbg !102
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %32, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str51, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !102
+  %33 = getelementptr inbounds %struct.kiss_fft_cpx* %7, i64 %indvars.iv7, i32 1, !dbg !102
+  %34 = ptrtoint float* %33 to i64, !dbg !102
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %34, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str28, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !102
+  call void @trace_logger_log0(i64 42, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([10 x i8]* @.str46, i32 0, i32 0), i8* getelementptr inbounds ([12 x i8]* @.str57, i32 0, i32 0), i64 28, i1 true, i1 true), !dbg !102
+  %35 = ptrtoint float* %33 to i64, !dbg !102
+  call void @trace_logger_log_ptr(i64 2, i64 64, i64 %35, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str28, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !102
+  call void @trace_logger_log_double(i64 1, i64 32, double 0.000000e+00, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !102
+  store float 0.000000e+00, float* %33, align 4, !dbg !102, !tbaa !103
+  call void @trace_logger_log0(i64 37, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([10 x i8]* @.str46, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8]* @.str55, i32 0, i32 0), i64 8, i1 true, i1 true), !dbg !94
+  call void @trace_logger_log_int(i64 2, i64 64, i64 1, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  call void @trace_logger_log_int(i64 1, i64 64, i64 %indvars.iv7, i64 1, i8* getelementptr inbounds ([12 x i8]* @.str54, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  %indvars.iv.next8 = add nuw nsw i64 %indvars.iv7, 1, !dbg !94
+  call void @trace_logger_log_int(i64 19134, i64 64, i64 %indvars.iv.next8, i64 1, i8* getelementptr inbounds ([17 x i8]* @.str55, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  call void @trace_logger_log0(i64 37, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([10 x i8]* @.str46, i32 0, i32 0), i8* getelementptr inbounds ([13 x i8]* @.str58, i32 0, i32 0), i64 33, i1 true, i1 true), !dbg !94
+  call void @trace_logger_log_int(i64 1, i64 64, i64 %indvars.iv.next8, i64 1, i8* getelementptr inbounds ([17 x i8]* @.str55, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  %lftr.wideiv9 = trunc i64 %indvars.iv.next8 to i32, !dbg !94
+  %36 = zext i32 %lftr.wideiv9 to i64, !dbg !94
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %36, i64 1, i8* getelementptr inbounds ([13 x i8]* @.str58, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  call void @trace_logger_log0(i64 37, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([10 x i8]* @.str46, i32 0, i32 0), i8* getelementptr inbounds ([11 x i8]* @.str59, i32 0, i32 0), i64 46, i1 true, i1 true), !dbg !94
+  %37 = zext i32 %num_vals to i64, !dbg !94
+  call void @trace_logger_log_int(i64 2, i64 32, i64 %37, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str10, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  %38 = zext i32 %lftr.wideiv9 to i64, !dbg !94
+  call void @trace_logger_log_int(i64 1, i64 32, i64 %38, i64 1, i8* getelementptr inbounds ([13 x i8]* @.str58, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  %exitcond10 = icmp eq i32 %lftr.wideiv9, %num_vals, !dbg !94
+  %39 = zext i1 %exitcond10 to i64, !dbg !94
+  call void @trace_logger_log_int(i64 19134, i64 1, i64 %39, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str59, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  call void @trace_logger_log0(i64 37, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([10 x i8]* @.str46, i32 0, i32 0), i8* getelementptr inbounds ([12 x i8]* @.str60, i32 0, i32 0), i64 2, i1 true, i1 true), !dbg !94
+  call void @trace_logger_log_int(i64 3, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([15 x i8]* @.str61, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  call void @trace_logger_log_int(i64 2, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([10 x i8]* @.str46, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  %40 = zext i1 %exitcond10 to i64, !dbg !94
+  call void @trace_logger_log_int(i64 1, i64 1, i64 %40, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str59, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !94
+  br i1 %exitcond10, label %._crit_edge6, label %.lr.ph5, !dbg !94
+
+._crit_edge6:                                     ; preds = %.lr.ph5
+  call void @trace_logger_log0(i64 44, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([15 x i8]* @.str61, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8]* @.str62, i32 0, i32 0), i64 49, i1 true, i1 true), !dbg !95
+  call void @trace_logger_log_ptr(i64 4, i64 64, i64 ptrtoint (void (%struct.kiss_fft_state*, %struct.kiss_fft_cpx*, %struct.kiss_fft_cpx*)* @kiss_fft to i64), i64 1, i8* getelementptr inbounds ([9 x i8]* @.str49, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !95
+  %41 = ptrtoint %struct.kiss_fft_state* %cfg to i64, !dbg !95
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %41, i64 1, i8* getelementptr inbounds ([4 x i8]* @.str50, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !95
+  %42 = ptrtoint %struct.kiss_fft_cpx* %7 to i64, !dbg !95
+  call void @trace_logger_log_ptr(i64 2, i64 64, i64 %42, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str51, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !95
+  %43 = ptrtoint %struct.kiss_fft_cpx* %9 to i64, !dbg !95
+  call void @trace_logger_log_ptr(i64 3, i64 64, i64 %43, i64 1, i8* getelementptr inbounds ([4 x i8]* @.str52, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !95
+  call void @kiss_fft(%struct.kiss_fft_state* %cfg, %struct.kiss_fft_cpx* %7, %struct.kiss_fft_cpx* %9) #4, !dbg !95
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !54), !dbg !96
+  call void @trace_logger_log0(i64 45, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([15 x i8]* @.str61, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str29, i32 0, i32 0), i64 46, i1 true, i1 true), !dbg !96
+  call void @trace_logger_log_int(i64 2, i64 32, i64 0, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  %44 = zext i32 %num_vals to i64, !dbg !96
+  call void @trace_logger_log_int(i64 1, i64 32, i64 %44, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str10, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  %45 = icmp sgt i32 %num_vals, 0, !dbg !96
+  %46 = zext i1 %45 to i64, !dbg !96
+  call void @trace_logger_log_int(i64 19134, i64 1, i64 %46, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str29, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  call void @trace_logger_log0(i64 45, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([15 x i8]* @.str61, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8]* @.str63, i32 0, i32 0), i64 2, i1 true, i1 true), !dbg !96
+  call void @trace_logger_log_int(i64 3, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  call void @trace_logger_log_int(i64 2, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([14 x i8]* @.str13, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  %47 = zext i1 %45 to i64, !dbg !96
+  call void @trace_logger_log_int(i64 1, i64 1, i64 %47, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str29, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  br i1 %45, label %.lr.ph, label %._crit_edge, !dbg !96
+
+.lr.ph:                                           ; preds = %.lr.ph, %._crit_edge6
+  %indvars.iv = phi i64 [ %indvars.iv.next, %.lr.ph ], [ 0, %._crit_edge6 ]
+  call void @trace_logger_log0(i64 -1, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 48, i1 true, i1 true), !dbg !104
+  call void @trace_logger_log_int(i64 2, i64 64, i64 0, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 1, i8* getelementptr inbounds ([15 x i8]* @.str61, i32 0, i32 0)), !dbg !104
+  call void @trace_logger_log_int(i64 1, i64 64, i64 0, i64 1, i8* getelementptr inbounds ([16 x i8]* @.str15, i32 0, i32 0), i64 1, i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0)), !dbg !104
+  call void @trace_logger_log_int(i64 19134, i64 64, i64 %indvars.iv, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0)), !dbg !104
+  call void @trace_logger_log0(i64 47, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str30, i32 0, i32 0), i64 29, i1 true, i1 true), !dbg !104
+  call void @trace_logger_log_int(i64 3, i64 32, i64 0, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !104
+  call void @trace_logger_log_int(i64 2, i64 64, i64 %indvars.iv, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !104
+  %48 = ptrtoint %struct.kiss_fft_cpx* %9 to i64, !dbg !104
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %48, i64 1, i8* getelementptr inbounds ([4 x i8]* @.str52, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !104
+  %49 = getelementptr inbounds %struct.kiss_fft_cpx* %9, i64 %indvars.iv, i32 0, !dbg !104
+  %50 = ptrtoint float* %49 to i64, !dbg !104
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %50, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str30, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !104
+  call void @trace_logger_log0(i64 47, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str31, i32 0, i32 0), i64 27, i1 true, i1 true), !dbg !104
+  %51 = ptrtoint float* %49 to i64, !dbg !104
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %51, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str30, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !104
+  %52 = load float* %49, align 8, !dbg !104, !tbaa !99
+  %53 = fpext float %52 to double, !dbg !104
+  call void @trace_logger_log_double(i64 19134, i64 32, double %53, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str31, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !104
+  call void @trace_logger_log0(i64 47, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str32, i32 0, i32 0), i64 37, i1 true, i1 true), !dbg !104
+  %54 = fpext float %52 to double, !dbg !104
+  call void @trace_logger_log_double(i64 1, i64 32, double %54, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str31, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !104
+  %55 = fptosi float %52 to i32, !dbg !104
+  %56 = zext i32 %55 to i64, !dbg !104
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %56, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str32, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !104
+  call void @trace_logger_log0(i64 47, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str33, i32 0, i32 0), i64 29, i1 true, i1 true), !dbg !104
+  call void @trace_logger_log_int(i64 2, i64 64, i64 %indvars.iv, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !104
+  %57 = ptrtoint i32* %store_loc to i64, !dbg !104
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %57, i64 1, i8* getelementptr inbounds ([10 x i8]* @.str20, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !104
+  %58 = getelementptr inbounds i32* %store_loc, i64 %indvars.iv, !dbg !104
+  %59 = ptrtoint i32* %58 to i64, !dbg !104
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %59, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str33, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !104
+  call void @trace_logger_log0(i64 47, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([11 x i8]* @.str34, i32 0, i32 0), i64 28, i1 true, i1 true), !dbg !104
+  %60 = ptrtoint i32* %58 to i64, !dbg !104
+  call void @trace_logger_log_ptr(i64 2, i64 64, i64 %60, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str33, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !104
+  %61 = zext i32 %55 to i64, !dbg !104
+  call void @trace_logger_log_int(i64 1, i64 32, i64 %61, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str32, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !104
+  store i32 %55, i32* %58, align 4, !dbg !104, !tbaa !82
+  call void @trace_logger_log0(i64 45, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([16 x i8]* @.str15, i32 0, i32 0), i64 8, i1 true, i1 true), !dbg !96
+  call void @trace_logger_log_int(i64 2, i64 64, i64 1, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  call void @trace_logger_log_int(i64 1, i64 64, i64 %indvars.iv, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  %indvars.iv.next = add nuw nsw i64 %indvars.iv, 1, !dbg !96
+  call void @trace_logger_log_int(i64 19134, i64 64, i64 %indvars.iv.next, i64 1, i8* getelementptr inbounds ([16 x i8]* @.str15, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  call void @trace_logger_log0(i64 45, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([12 x i8]* @.str40, i32 0, i32 0), i64 33, i1 true, i1 true), !dbg !96
+  call void @trace_logger_log_int(i64 1, i64 64, i64 %indvars.iv.next, i64 1, i8* getelementptr inbounds ([16 x i8]* @.str15, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  %lftr.wideiv = trunc i64 %indvars.iv.next to i32, !dbg !96
+  %62 = zext i32 %lftr.wideiv to i64, !dbg !96
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %62, i64 1, i8* getelementptr inbounds ([12 x i8]* @.str40, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  call void @trace_logger_log0(i64 45, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str41, i32 0, i32 0), i64 46, i1 true, i1 true), !dbg !96
+  %63 = zext i32 %num_vals to i64, !dbg !96
+  call void @trace_logger_log_int(i64 2, i64 32, i64 %63, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str10, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  %64 = zext i32 %lftr.wideiv to i64, !dbg !96
+  call void @trace_logger_log_int(i64 1, i64 32, i64 %64, i64 1, i8* getelementptr inbounds ([12 x i8]* @.str40, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  %exitcond = icmp eq i32 %lftr.wideiv, %num_vals, !dbg !96
+  %65 = zext i1 %exitcond to i64, !dbg !96
+  call void @trace_logger_log_int(i64 19134, i64 1, i64 %65, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str41, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  call void @trace_logger_log0(i64 45, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i8* getelementptr inbounds ([11 x i8]* @.str64, i32 0, i32 0), i64 2, i1 true, i1 true), !dbg !96
+  call void @trace_logger_log_int(i64 3, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([14 x i8]* @.str13, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  call void @trace_logger_log_int(i64 2, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str12, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  %66 = zext i1 %exitcond to i64, !dbg !96
+  call void @trace_logger_log_int(i64 1, i64 1, i64 %66, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str41, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !96
+  br i1 %exitcond, label %._crit_edge, label %.lr.ph, !dbg !96
+
+._crit_edge:                                      ; preds = %.lr.ph, %._crit_edge6, %._crit_edge6.thread
+  call void @trace_logger_log0(i64 49, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i8* getelementptr inbounds ([14 x i8]* @.str13, i32 0, i32 0), i8* getelementptr inbounds ([16 x i8]* @.str43, i32 0, i32 0), i64 1, i1 true, i1 true), !dbg !106
+  ret void, !dbg !106
+}
+
+declare void @kiss_fft(%struct.kiss_fft_state*, %struct.kiss_fft_cpx*, %struct.kiss_fft_cpx*) #2
+
+; Function Attrs: nounwind uwtable
+define i32 @main() #0 {
+  call void @trace_logger_write_labelmap(i8* getelementptr inbounds ([384 x i8]* @.str76, i32 0, i32 0), i64 383), !dbg !107
+  tail call void @llvm.dbg.value(metadata !108, i64 0, metadata !60), !dbg !107
+  call void @trace_logger_log0(i64 54, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str7, i32 0, i32 0), i64 49, i1 false, i1 true), !dbg !109
+  call void @trace_logger_log_ptr(i64 2, i64 64, i64 ptrtoint (i8* (i64)* @malloc to i64), i64 1, i8* getelementptr inbounds ([7 x i8]* @.str66, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !109
+  call void @trace_logger_log_int(i64 1, i64 64, i64 40, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !109
+  %1 = tail call noalias i8* @malloc(i64 40) #4, !dbg !109
+  %2 = ptrtoint i8* %1 to i64, !dbg !109
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %2, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str7, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !109
+  call void @trace_logger_log0(i64 54, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str17, i32 0, i32 0), i64 44, i1 false, i1 true), !dbg !109
+  %3 = ptrtoint i8* %1 to i64, !dbg !109
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %3, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str7, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !109
+  %4 = bitcast i8* %1 to i32*, !dbg !109
+  %5 = ptrtoint i32* %4 to i64, !dbg !109
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %5, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str17, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !109
+  tail call void @llvm.dbg.value(metadata !{i32* %4}, i64 0, metadata !62), !dbg !109
+  call void @trace_logger_log0(i64 55, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str19, i32 0, i32 0), i64 49, i1 false, i1 true), !dbg !110
+  call void @trace_logger_log_ptr(i64 2, i64 64, i64 ptrtoint (i8* (i64)* @malloc to i64), i64 1, i8* getelementptr inbounds ([7 x i8]* @.str66, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !110
+  call void @trace_logger_log_int(i64 1, i64 64, i64 40, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !110
+  %6 = tail call noalias i8* @malloc(i64 40) #4, !dbg !110
+  %7 = ptrtoint i8* %6 to i64, !dbg !110
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %7, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str19, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !110
+  call void @trace_logger_log0(i64 55, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str21, i32 0, i32 0), i64 44, i1 false, i1 true), !dbg !110
+  %8 = ptrtoint i8* %6 to i64, !dbg !110
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %8, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str19, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !110
+  %9 = bitcast i8* %6 to i32*, !dbg !110
+  %10 = ptrtoint i32* %9 to i64, !dbg !110
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %10, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str21, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !110
+  tail call void @llvm.dbg.value(metadata !{i32* %9}, i64 0, metadata !63), !dbg !110
+  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !64), !dbg !111
+  call void @trace_logger_log0(i64 56, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0), i8* getelementptr inbounds ([6 x i8]* @.str67, i32 0, i32 0), i64 2, i1 false, i1 true), !dbg !111
+  call void @trace_logger_log_int(i64 1, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([4 x i8]* @.str68, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !111
+  br label %11, !dbg !111
+
+; <label>:11                                      ; preds = %11, %0
+  %indvars.iv = phi i64 [ 0, %0 ], [ %indvars.iv.next, %11 ]
+  call void @trace_logger_log0(i64 -1, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str68, i32 0, i32 0), i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 48, i1 false, i1 true), !dbg !112
+  call void @trace_logger_log_int(i64 2, i64 64, i64 0, i64 1, i8* getelementptr inbounds ([16 x i8]* @.str15, i32 0, i32 0), i64 1, i8* getelementptr inbounds ([4 x i8]* @.str68, i32 0, i32 0)), !dbg !112
+  call void @trace_logger_log_int(i64 1, i64 64, i64 0, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 1, i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0)), !dbg !112
+  call void @trace_logger_log_int(i64 19134, i64 64, i64 %indvars.iv, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0)), !dbg !112
+  call void @trace_logger_log0(i64 57, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str68, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str23, i32 0, i32 0), i64 29, i1 false, i1 true), !dbg !112
+  call void @trace_logger_log_int(i64 2, i64 64, i64 %indvars.iv, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !112
+  %12 = ptrtoint i32* %4 to i64, !dbg !112
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %12, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str17, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !112
+  %13 = getelementptr inbounds i32* %4, i64 %indvars.iv, !dbg !112
+  %14 = ptrtoint i32* %13 to i64, !dbg !112
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %14, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str23, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !112
+  call void @trace_logger_log0(i64 57, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str68, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str25, i32 0, i32 0), i64 33, i1 false, i1 true), !dbg !112
+  call void @trace_logger_log_int(i64 1, i64 64, i64 %indvars.iv, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !112
+  %15 = trunc i64 %indvars.iv to i32, !dbg !112
+  %16 = zext i32 %15 to i64, !dbg !112
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %16, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str25, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !112
+  call void @trace_logger_log0(i64 57, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str68, i32 0, i32 0), i8* getelementptr inbounds ([6 x i8]* @.str69, i32 0, i32 0), i64 28, i1 false, i1 true), !dbg !112
+  %17 = ptrtoint i32* %13 to i64, !dbg !112
+  call void @trace_logger_log_ptr(i64 2, i64 64, i64 %17, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str23, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !112
+  %18 = zext i32 %15 to i64, !dbg !112
+  call void @trace_logger_log_int(i64 1, i64 32, i64 %18, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str25, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !112
+  store i32 %15, i32* %13, align 4, !dbg !112, !tbaa !82
+  call void @trace_logger_log0(i64 58, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str68, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str26, i32 0, i32 0), i64 29, i1 false, i1 true), !dbg !114
+  call void @trace_logger_log_int(i64 2, i64 64, i64 %indvars.iv, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !114
+  %19 = ptrtoint i32* %9 to i64, !dbg !114
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %19, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str21, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !114
+  %20 = getelementptr inbounds i32* %9, i64 %indvars.iv, !dbg !114
+  %21 = ptrtoint i32* %20 to i64, !dbg !114
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %21, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str26, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !114
+  call void @trace_logger_log0(i64 58, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str68, i32 0, i32 0), i8* getelementptr inbounds ([6 x i8]* @.str70, i32 0, i32 0), i64 28, i1 false, i1 true), !dbg !114
+  %22 = ptrtoint i32* %20 to i64, !dbg !114
+  call void @trace_logger_log_ptr(i64 2, i64 64, i64 %22, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str26, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !114
+  call void @trace_logger_log_int(i64 1, i64 32, i64 4294967295, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !114
+  store i32 -1, i32* %20, align 4, !dbg !114, !tbaa !82
+  call void @trace_logger_log0(i64 56, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str68, i32 0, i32 0), i8* getelementptr inbounds ([16 x i8]* @.str15, i32 0, i32 0), i64 8, i1 false, i1 true), !dbg !111
+  call void @trace_logger_log_int(i64 2, i64 64, i64 1, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !111
+  call void @trace_logger_log_int(i64 1, i64 64, i64 %indvars.iv, i64 1, i8* getelementptr inbounds ([11 x i8]* @.str14, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !111
+  %indvars.iv.next = add nuw nsw i64 %indvars.iv, 1, !dbg !111
+  call void @trace_logger_log_int(i64 19134, i64 64, i64 %indvars.iv.next, i64 1, i8* getelementptr inbounds ([16 x i8]* @.str15, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !111
+  call void @trace_logger_log0(i64 56, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str68, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8]* @.str41, i32 0, i32 0), i64 46, i1 false, i1 true), !dbg !111
+  call void @trace_logger_log_int(i64 2, i64 64, i64 10, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !111
+  call void @trace_logger_log_int(i64 1, i64 64, i64 %indvars.iv.next, i64 1, i8* getelementptr inbounds ([16 x i8]* @.str15, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !111
+  %exitcond = icmp eq i64 %indvars.iv.next, 10, !dbg !111
+  %23 = zext i1 %exitcond to i64, !dbg !111
+  call void @trace_logger_log_int(i64 19134, i64 1, i64 %23, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str41, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !111
+  call void @trace_logger_log0(i64 56, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str68, i32 0, i32 0), i8* getelementptr inbounds ([6 x i8]* @.str71, i32 0, i32 0), i64 2, i1 false, i1 true), !dbg !111
+  call void @trace_logger_log_int(i64 3, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([4 x i8]* @.str72, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !111
+  call void @trace_logger_log_int(i64 2, i64 0, i64 0, i64 1, i8* getelementptr inbounds ([4 x i8]* @.str68, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !111
+  %24 = zext i1 %exitcond to i64, !dbg !111
+  call void @trace_logger_log_int(i64 1, i64 1, i64 %24, i64 1, i8* getelementptr inbounds ([9 x i8]* @.str41, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !111
+  br i1 %exitcond, label %25, label %11, !dbg !111
+
+; <label>:25                                      ; preds = %11
+  call void @trace_logger_log0(i64 61, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str72, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str29, i32 0, i32 0), i64 49, i1 false, i1 true), !dbg !115
+  call void @trace_logger_log_ptr(i64 5, i64 64, i64 ptrtoint (%struct.kiss_fft_state* (i32, i32, i8*, i64*)* @kiss_fft_alloc to i64), i64 1, i8* getelementptr inbounds ([15 x i8]* @.str73, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !115
+  call void @trace_logger_log_int(i64 1, i64 32, i64 10, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !115
+  call void @trace_logger_log_int(i64 2, i64 32, i64 0, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !115
+  call void @trace_logger_log_ptr(i64 3, i64 64, i64 0, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !115
+  call void @trace_logger_log_ptr(i64 4, i64 64, i64 0, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !115
+  %26 = tail call %struct.kiss_fft_state* @kiss_fft_alloc(i32 10, i32 0, i8* null, i64* null) #4, !dbg !115
+  %27 = ptrtoint %struct.kiss_fft_state* %26 to i64, !dbg !115
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %27, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str29, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !115
+  tail call void @llvm.dbg.value(metadata !{%struct.kiss_fft_state* %26}, i64 0, metadata !66), !dbg !115
+  call void @trace_logger_log0(i64 63, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str72, i32 0, i32 0), i8* getelementptr inbounds ([6 x i8]* @.str74, i32 0, i32 0), i64 49, i1 false, i1 true), !dbg !116
+  call void @trace_logger_log_ptr(i64 5, i64 64, i64 ptrtoint (void (i32*, i32*, i32, %struct.kiss_fft_state*)* @process_data to i64), i64 1, i8* getelementptr inbounds ([13 x i8]* @.str44, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !116
+  %28 = ptrtoint i32* %4 to i64, !dbg !116
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %28, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str17, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !116
+  %29 = ptrtoint i32* %9 to i64, !dbg !116
+  call void @trace_logger_log_ptr(i64 2, i64 64, i64 %29, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str21, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !116
+  call void @trace_logger_log_int(i64 3, i64 32, i64 10, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !116
+  %30 = ptrtoint %struct.kiss_fft_state* %26 to i64, !dbg !116
+  call void @trace_logger_log_ptr(i64 4, i64 64, i64 %30, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str29, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !116
+  tail call void @process_data(i32* %4, i32* %9, i32 10, %struct.kiss_fft_state* %26) #5, !dbg !116
+  call void @trace_logger_log0(i64 77, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str72, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str30, i32 0, i32 0), i64 49, i1 false, i1 true), !dbg !117
+  call void @trace_logger_log_ptr(i64 4, i64 64, i64 ptrtoint (i32 (i32*, i32*, i32)* @test_stores to i64), i64 1, i8* getelementptr inbounds ([12 x i8]* @.str5, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !117
+  %31 = ptrtoint i32* %4 to i64, !dbg !117
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %31, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str17, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !117
+  %32 = ptrtoint i32* %9 to i64, !dbg !117
+  call void @trace_logger_log_ptr(i64 2, i64 64, i64 %32, i64 1, i8* getelementptr inbounds ([2 x i8]* @.str21, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !117
+  call void @trace_logger_log_int(i64 3, i64 32, i64 10, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !117
+  %33 = tail call i32 @test_stores(i32* %4, i32* %9, i32 10) #5, !dbg !117
+  %34 = zext i32 %33 to i64, !dbg !117
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %34, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str30, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !117
+  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !67), !dbg !117
+  call void @trace_logger_log0(i64 79, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str72, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str31, i32 0, i32 0), i64 27, i1 false, i1 true), !dbg !118
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 ptrtoint (%struct._IO_FILE** @stdout to i64), i64 1, i8* getelementptr inbounds ([7 x i8]* @.str18, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !118
+  %35 = load %struct._IO_FILE** @stdout, align 8, !dbg !118, !tbaa !78
+  %36 = ptrtoint %struct._IO_FILE* %35 to i64, !dbg !121
+  call void @trace_logger_log_ptr(i64 19134, i64 64, i64 %36, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str31, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !121
+  call void @trace_logger_log0(i64 82, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str72, i32 0, i32 0), i8* getelementptr inbounds ([3 x i8]* @.str32, i32 0, i32 0), i64 49, i1 false, i1 true), !dbg !121
+  call void @trace_logger_log_ptr(i64 3, i64 64, i64 ptrtoint (i32 (%struct._IO_FILE*, i8*, ...)* @fprintf to i64), i64 1, i8* getelementptr inbounds ([8 x i8]* @.str24, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !121
+  %37 = ptrtoint %struct._IO_FILE* %35 to i64, !dbg !121
+  call void @trace_logger_log_ptr(i64 1, i64 64, i64 %37, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str31, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !121
+  call void @trace_logger_log_ptr(i64 2, i64 64, i64 ptrtoint ([14 x i8]* @.str4 to i64), i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !121
+  %38 = tail call i32 (%struct._IO_FILE*, i8*, ...)* @fprintf(%struct._IO_FILE* %35, i8* getelementptr inbounds ([14 x i8]* @.str4, i64 0, i64 0)) #4, !dbg !121
+  %39 = zext i32 %38 to i64, !dbg !122
+  call void @trace_logger_log_int(i64 19134, i64 32, i64 %39, i64 1, i8* getelementptr inbounds ([3 x i8]* @.str32, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !122
+  call void @trace_logger_log0(i64 84, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str72, i32 0, i32 0), i8* getelementptr inbounds ([6 x i8]* @.str75, i32 0, i32 0), i64 1, i1 false, i1 true), !dbg !122
+  call void @trace_logger_log_int(i64 1, i64 32, i64 0, i64 0, i8* getelementptr inbounds ([1 x i8]* @.str8, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !122
+  ret i32 0, !dbg !122
+}
+
+; Function Attrs: nounwind
+declare noalias i8* @malloc(i64) #3
+
+declare %struct.kiss_fft_state* @kiss_fft_alloc(i32, i32, i8*, i64*) #2
+
+; Function Attrs: nounwind readnone
+declare void @llvm.dbg.value(metadata, i64, metadata) #1
+
+declare void @trace_logger_log_entry(i8*, i64)
+
+declare void @trace_logger_log0(i64, i8*, i8*, i8*, i64, i1, i1)
+
+declare void @trace_logger_log_int(i64, i64, i64, i64, i8*, i64, i8*)
+
+declare void @trace_logger_log_ptr(i64, i64, i64, i64, i8*, i64, i8*)
+
+declare void @trace_logger_log_double(i64, i64, double, i64, i8*, i64, i8*)
+
+declare void @trace_logger_log_vector(i64, i64, i8*, i64, i8*, i64, i8*)
+
+declare void @trace_logger_write_labelmap(i8*, i64)
+
+attributes #0 = { nounwind uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="false" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { nounwind readnone }
+attributes #2 = { "less-precise-fpmad"="false" "no-frame-pointer-elim"="false" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #3 = { nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="false" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #4 = { nobuiltin nounwind }
+attributes #5 = { nobuiltin }
+
+!llvm.dbg.cu = !{!0}
+!llvm.module.flags = !{!70, !71}
+!llvm.ident = !{!72}
+
+!0 = metadata !{i32 786449, metadata !1, i32 12, metadata !"clang version 3.4.2 (tags/RELEASE_34/dot2-final)", i1 true, metadata !"", i32 0, metadata !2, metadata !2, metadata !3, metadata !68, metadata !2, metadata !""} ; [ DW_TAG_compile_unit ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c] [DW_LANG_C99]
+!1 = metadata !{metadata !"feature_extraction.c", metadata !"/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction"}
+!2 = metadata !{i32 0}
+!3 = metadata !{metadata !4, metadata !17, metadata !56}
+!4 = metadata !{i32 786478, metadata !1, metadata !5, metadata !"test_stores", metadata !"test_stores", metadata !"", i32 17, metadata !6, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 true, i32 (i32*, i32*, i32)* @test_stores, null, null, metadata !10, i32 17} ; [ DW_TAG_subprogram ] [line 17] [def] [test_stores]
+!5 = metadata !{i32 786473, metadata !1}          ; [ DW_TAG_file_type ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!6 = metadata !{i32 786453, i32 0, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !7, i32 0, null, null, null} ; [ DW_TAG_subroutine_type ] [line 0, size 0, align 0, offset 0] [from ]
+!7 = metadata !{metadata !8, metadata !9, metadata !9, metadata !8}
+!8 = metadata !{i32 786468, null, null, metadata !"int", i32 0, i64 32, i64 32, i64 0, i32 0, i32 5} ; [ DW_TAG_base_type ] [int] [line 0, size 32, align 32, offset 0, enc DW_ATE_signed]
+!9 = metadata !{i32 786447, null, null, metadata !"", i32 0, i64 64, i64 64, i64 0, i32 0, metadata !8} ; [ DW_TAG_pointer_type ] [line 0, size 64, align 64, offset 0] [from int]
+!10 = metadata !{metadata !11, metadata !12, metadata !13, metadata !14, metadata !15}
+!11 = metadata !{i32 786689, metadata !4, metadata !"store_vals", metadata !5, i32 16777233, metadata !9, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [store_vals] [line 17]
+!12 = metadata !{i32 786689, metadata !4, metadata !"store_loc", metadata !5, i32 33554449, metadata !9, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [store_loc] [line 17]
+!13 = metadata !{i32 786689, metadata !4, metadata !"num_vals", metadata !5, i32 50331665, metadata !8, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [num_vals] [line 17]
+!14 = metadata !{i32 786688, metadata !4, metadata !"num_failures", metadata !5, i32 18, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [num_failures] [line 18]
+!15 = metadata !{i32 786688, metadata !16, metadata !"i", metadata !5, i32 19, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 19]
+!16 = metadata !{i32 786443, metadata !1, metadata !4, i32 19, i32 0, i32 0} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!17 = metadata !{i32 786478, metadata !1, metadata !5, metadata !"process_data", metadata !"process_data", metadata !"", i32 34, metadata !18, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 true, void (i32*, i32*, i32, %struct.kiss_fft_state*)* @process_data, null, null, metadata !42, i32 34} ; [ DW_TAG_subprogram ] [line 34] [def] [process_data]
+!18 = metadata !{i32 786453, i32 0, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !19, i32 0, null, null, null} ; [ DW_TAG_subroutine_type ] [line 0, size 0, align 0, offset 0] [from ]
+!19 = metadata !{null, metadata !9, metadata !9, metadata !8, metadata !20}
+!20 = metadata !{i32 786454, metadata !1, null, metadata !"kiss_fft_cfg", i32 56, i64 0, i64 0, i64 0, i32 0, metadata !21} ; [ DW_TAG_typedef ] [kiss_fft_cfg] [line 56, size 0, align 0, offset 0] [from ]
+!21 = metadata !{i32 786447, null, null, metadata !"", i32 0, i64 64, i64 64, i64 0, i32 0, metadata !22} ; [ DW_TAG_pointer_type ] [line 0, size 64, align 64, offset 0] [from kiss_fft_state]
+!22 = metadata !{i32 786451, metadata !23, null, metadata !"kiss_fft_state", i32 28, i64 2176, i64 32, i32 0, i32 0, null, metadata !24, i32 0, null, null, null} ; [ DW_TAG_structure_type ] [kiss_fft_state] [line 28, size 2176, align 32, offset 0] [def] [from ]
+!23 = metadata !{metadata !"./_kiss_fft_guts.h", metadata !"/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction"}
+!24 = metadata !{metadata !25, metadata !26, metadata !27, metadata !31}
+!25 = metadata !{i32 786445, metadata !23, metadata !22, metadata !"nfft", i32 29, i64 32, i64 32, i64 0, i32 0, metadata !8} ; [ DW_TAG_member ] [nfft] [line 29, size 32, align 32, offset 0] [from int]
+!26 = metadata !{i32 786445, metadata !23, metadata !22, metadata !"inverse", i32 30, i64 32, i64 32, i64 32, i32 0, metadata !8} ; [ DW_TAG_member ] [inverse] [line 30, size 32, align 32, offset 32] [from int]
+!27 = metadata !{i32 786445, metadata !23, metadata !22, metadata !"factors", i32 31, i64 2048, i64 32, i64 64, i32 0, metadata !28} ; [ DW_TAG_member ] [factors] [line 31, size 2048, align 32, offset 64] [from ]
+!28 = metadata !{i32 786433, null, null, metadata !"", i32 0, i64 2048, i64 32, i32 0, i32 0, metadata !8, metadata !29, i32 0, null, null, null} ; [ DW_TAG_array_type ] [line 0, size 2048, align 32, offset 0] [from int]
+!29 = metadata !{metadata !30}
+!30 = metadata !{i32 786465, i64 0, i64 64}       ; [ DW_TAG_subrange_type ] [0, 63]
+!31 = metadata !{i32 786445, metadata !23, metadata !22, metadata !"twiddles", i32 32, i64 64, i64 32, i64 2112, i32 0, metadata !32} ; [ DW_TAG_member ] [twiddles] [line 32, size 64, align 32, offset 2112] [from ]
+!32 = metadata !{i32 786433, null, null, metadata !"", i32 0, i64 64, i64 32, i32 0, i32 0, metadata !33, metadata !40, i32 0, null, null, null} ; [ DW_TAG_array_type ] [line 0, size 64, align 32, offset 0] [from kiss_fft_cpx]
+!33 = metadata !{i32 786454, metadata !23, null, metadata !"kiss_fft_cpx", i32 54, i64 0, i64 0, i64 0, i32 0, metadata !34} ; [ DW_TAG_typedef ] [kiss_fft_cpx] [line 54, size 0, align 0, offset 0] [from ]
+!34 = metadata !{i32 786451, metadata !35, null, metadata !"", i32 51, i64 64, i64 32, i32 0, i32 0, null, metadata !36, i32 0, null, null, null} ; [ DW_TAG_structure_type ] [line 51, size 64, align 32, offset 0] [def] [from ]
+!35 = metadata !{metadata !"./kiss_fft.h", metadata !"/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction"}
+!36 = metadata !{metadata !37, metadata !39}
+!37 = metadata !{i32 786445, metadata !35, metadata !34, metadata !"r", i32 52, i64 32, i64 32, i64 0, i32 0, metadata !38} ; [ DW_TAG_member ] [r] [line 52, size 32, align 32, offset 0] [from float]
+!38 = metadata !{i32 786468, null, null, metadata !"float", i32 0, i64 32, i64 32, i64 0, i32 0, i32 4} ; [ DW_TAG_base_type ] [float] [line 0, size 32, align 32, offset 0, enc DW_ATE_float]
+!39 = metadata !{i32 786445, metadata !35, metadata !34, metadata !"i", i32 53, i64 32, i64 32, i64 32, i32 0, metadata !38} ; [ DW_TAG_member ] [i] [line 53, size 32, align 32, offset 32] [from float]
+!40 = metadata !{metadata !41}
+!41 = metadata !{i32 786465, i64 0, i64 1}        ; [ DW_TAG_subrange_type ] [0, 0]
+!42 = metadata !{metadata !43, metadata !44, metadata !45, metadata !46, metadata !47, metadata !51, metadata !52, metadata !54}
+!43 = metadata !{i32 786689, metadata !17, metadata !"store_vals", metadata !5, i32 16777250, metadata !9, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [store_vals] [line 34]
+!44 = metadata !{i32 786689, metadata !17, metadata !"store_loc", metadata !5, i32 33554466, metadata !9, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [store_loc] [line 34]
+!45 = metadata !{i32 786689, metadata !17, metadata !"num_vals", metadata !5, i32 50331682, metadata !8, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [num_vals] [line 34]
+!46 = metadata !{i32 786689, metadata !17, metadata !"cfg", metadata !5, i32 67108898, metadata !20, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [cfg] [line 34]
+!47 = metadata !{i32 786688, metadata !17, metadata !"in", metadata !5, i32 35, metadata !48, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [in] [line 35]
+!48 = metadata !{i32 786433, null, null, metadata !"", i32 0, i64 0, i64 32, i32 0, i32 0, metadata !33, metadata !49, i32 0, null, null, null} ; [ DW_TAG_array_type ] [line 0, size 0, align 32, offset 0] [from kiss_fft_cpx]
+!49 = metadata !{metadata !50}
+!50 = metadata !{i32 786465, i64 0, i64 -1}       ; [ DW_TAG_subrange_type ] [unbounded]
+!51 = metadata !{i32 786688, metadata !17, metadata !"out", metadata !5, i32 36, metadata !48, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [out] [line 36]
+!52 = metadata !{i32 786688, metadata !53, metadata !"i", metadata !5, i32 37, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 37]
+!53 = metadata !{i32 786443, metadata !1, metadata !17, i32 37, i32 0, i32 4} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!54 = metadata !{i32 786688, metadata !55, metadata !"i", metadata !5, i32 45, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 45]
+!55 = metadata !{i32 786443, metadata !1, metadata !17, i32 45, i32 0, i32 6} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!56 = metadata !{i32 786478, metadata !1, metadata !5, metadata !"main", metadata !"main", metadata !"", i32 51, metadata !57, i1 false, i1 true, i32 0, i32 0, null, i32 0, i1 true, i32 ()* @main, null, null, metadata !59, i32 51} ; [ DW_TAG_subprogram ] [line 51] [def] [main]
+!57 = metadata !{i32 786453, i32 0, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !58, i32 0, null, null, null} ; [ DW_TAG_subroutine_type ] [line 0, size 0, align 0, offset 0] [from ]
+!58 = metadata !{metadata !8}
+!59 = metadata !{metadata !60, metadata !62, metadata !63, metadata !64, metadata !66, metadata !67}
+!60 = metadata !{i32 786688, metadata !56, metadata !"num_vals", metadata !5, i32 53, metadata !61, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [num_vals] [line 53]
+!61 = metadata !{i32 786470, null, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, metadata !8} ; [ DW_TAG_const_type ] [line 0, size 0, align 0, offset 0] [from int]
+!62 = metadata !{i32 786688, metadata !56, metadata !"store_vals", metadata !5, i32 54, metadata !9, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [store_vals] [line 54]
+!63 = metadata !{i32 786688, metadata !56, metadata !"store_loc", metadata !5, i32 55, metadata !9, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [store_loc] [line 55]
+!64 = metadata !{i32 786688, metadata !65, metadata !"i", metadata !5, i32 56, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 56]
+!65 = metadata !{i32 786443, metadata !1, metadata !56, i32 56, i32 0, i32 8} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!66 = metadata !{i32 786688, metadata !56, metadata !"cfg", metadata !5, i32 60, metadata !20, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [cfg] [line 60]
+!67 = metadata !{i32 786688, metadata !56, metadata !"num_failures", metadata !5, i32 77, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [num_failures] [line 77]
+!68 = metadata !{metadata !69, metadata !69, metadata !69, metadata !69, metadata !69, metadata !69}
+!69 = metadata !{i32 786484, i32 0, metadata !5, metadata !"num_vals", metadata !"num_vals", metadata !"num_vals", metadata !5, i32 53, metadata !61, i32 1, i32 1, i32 10, null} ; [ DW_TAG_variable ] [num_vals] [line 53] [local] [def]
+!70 = metadata !{i32 2, metadata !"Dwarf Version", i32 4}
+!71 = metadata !{i32 1, metadata !"Debug Info Version", i32 1}
+!72 = metadata !{metadata !"clang version 3.4.2 (tags/RELEASE_34/dot2-final)"}
+!73 = metadata !{i32 17, i32 0, metadata !4, null}
+!74 = metadata !{i32 18, i32 0, metadata !4, null}
+!75 = metadata !{i32 19, i32 0, metadata !16, null}
+!76 = metadata !{i32 20, i32 0, metadata !77, null}
+!77 = metadata !{i32 786443, metadata !1, metadata !16, i32 19, i32 0, i32 1} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!78 = metadata !{metadata !79, metadata !79, i64 0}
+!79 = metadata !{metadata !"any pointer", metadata !80, i64 0}
+!80 = metadata !{metadata !"omnipotent char", metadata !81, i64 0}
+!81 = metadata !{metadata !"Simple C/C++ TBAA"}
+!82 = metadata !{metadata !83, metadata !83, i64 0}
+!83 = metadata !{metadata !"int", metadata !80, i64 0}
+!84 = metadata !{i32 21, i32 0, metadata !77, null}
+!85 = metadata !{i32 22, i32 0, metadata !86, null}
+!86 = metadata !{i32 786443, metadata !1, metadata !77, i32 22, i32 0, i32 2} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!87 = metadata !{i32 23, i32 0, metadata !88, null}
+!88 = metadata !{i32 786443, metadata !1, metadata !86, i32 22, i32 0, i32 3} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!89 = metadata !{i32 26, i32 0, metadata !88, null}
+!90 = metadata !{i32 29, i32 0, metadata !4, null}
+!91 = metadata !{i32 34, i32 0, metadata !17, null}
+!92 = metadata !{i32 35, i32 0, metadata !17, null}
+!93 = metadata !{i32 36, i32 0, metadata !17, null}
+!94 = metadata !{i32 37, i32 0, metadata !53, null}
+!95 = metadata !{i32 44, i32 0, metadata !17, null}
+!96 = metadata !{i32 45, i32 0, metadata !55, null}
+!97 = metadata !{i32 41, i32 0, metadata !98, null}
+!98 = metadata !{i32 786443, metadata !1, metadata !53, i32 38, i32 0, i32 5} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!99 = metadata !{metadata !100, metadata !101, i64 0}
+!100 = metadata !{metadata !"", metadata !101, i64 0, metadata !101, i64 4}
+!101 = metadata !{metadata !"float", metadata !80, i64 0}
+!102 = metadata !{i32 42, i32 0, metadata !98, null}
+!103 = metadata !{metadata !100, metadata !101, i64 4}
+!104 = metadata !{i32 47, i32 0, metadata !105, null}
+!105 = metadata !{i32 786443, metadata !1, metadata !55, i32 46, i32 0, i32 7} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!106 = metadata !{i32 49, i32 0, metadata !17, null}
+!107 = metadata !{i32 53, i32 0, metadata !56, null}
+!108 = metadata !{i32 10}
+!109 = metadata !{i32 54, i32 0, metadata !56, null}
+!110 = metadata !{i32 55, i32 0, metadata !56, null}
+!111 = metadata !{i32 56, i32 0, metadata !65, null}
+!112 = metadata !{i32 57, i32 0, metadata !113, null}
+!113 = metadata !{i32 786443, metadata !1, metadata !65, i32 56, i32 0, i32 9} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!114 = metadata !{i32 58, i32 0, metadata !113, null} ; [ DW_TAG_imported_module ]
+!115 = metadata !{i32 61, i32 0, metadata !56, null}
+!116 = metadata !{i32 63, i32 0, metadata !56, null}
+!117 = metadata !{i32 77, i32 0, metadata !56, null}
+!118 = metadata !{i32 79, i32 0, metadata !119, null}
+!119 = metadata !{i32 786443, metadata !1, metadata !120, i32 78, i32 0, i32 11} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!120 = metadata !{i32 786443, metadata !1, metadata !56, i32 78, i32 0, i32 10} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!121 = metadata !{i32 82, i32 0, metadata !56, null}
+!122 = metadata !{i32 84, i32 0, metadata !56, null}
