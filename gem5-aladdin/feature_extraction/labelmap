@@ -1,6 +1,6 @@
-process_data/fft_loop 39
-process_data/loop 41
-process_data/loop2 49
+process_data/fft_loop 49
+process_data/fft_loop_1 51
+process_data/fft_loop_2 59
 kf_bfly2/kf_bfly2_loop 32
 kf_bfly3/kf_bfly3_loop 108
 kf_bfly4/kf_bfly4_loop 60
