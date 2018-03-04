@@ -143,11 +143,13 @@ static void kf_bfly5(
     kiss_fft_cpx *Fout0,*Fout1,*Fout2,*Fout3,*Fout4;
     int u;
     kiss_fft_cpx scratch[13];
-    kiss_fft_cpx * twiddles = st->twiddles;
-    kiss_fft_cpx *tw;
+    //kiss_fft_cpx * twiddles = st->twiddles;
+    //kiss_fft_cpx *tw;
     kiss_fft_cpx ya,yb;
-    ya = twiddles[fstride*m];
-    yb = twiddles[fstride*2*m];
+    //ya = twiddles[fstride*m];
+    ya = st->twiddles[fstride*m];
+    //yb = twiddles[fstride*2*m];
+    yb = st->twiddles[fstride*2*m];
 
     Fout0=Fout;
     Fout1=Fout0+m;
@@ -155,23 +157,27 @@ static void kf_bfly5(
     Fout3=Fout0+3*m;
     Fout4=Fout0+4*m;
 
-    tw=st->twiddles;
+    //tw=st->twiddles;
     for ( u=0; u<m; ++u ) {
-        C_FIXDIV( *Fout0,5); C_FIXDIV( *Fout1,5); C_FIXDIV( *Fout2,5); C_FIXDIV( *Fout3,5); C_FIXDIV( *Fout4,5);
-        scratch[0] = *Fout0;
+        C_FIXDIV( *(Fout + (Fout0 - Fout)),5); 
+        C_FIXDIV( *(Fout + (Fout1 - Fout)),5); 
+        C_FIXDIV( *(Fout + (Fout2 - Fout)),5); 
+        C_FIXDIV( *(Fout + (Fout3 - Fout)),5); 
+        C_FIXDIV( *(Fout + (Fout4 - Fout)),5);
+        scratch[0] = *(Fout + (Fout0 - Fout));
 
-        C_MUL(scratch[1] ,*Fout1, tw[u*fstride]);
-        C_MUL(scratch[2] ,*Fout2, tw[2*u*fstride]);
-        C_MUL(scratch[3] ,*Fout3, tw[3*u*fstride]);
-        C_MUL(scratch[4] ,*Fout4, tw[4*u*fstride]);
+        C_MUL(scratch[1] ,*(Fout + (Fout1 - Fout)), st->twiddles[u*fstride]);
+        C_MUL(scratch[2] ,*(Fout + (Fout2 - Fout)), st->twiddles[2*u*fstride]);
+        C_MUL(scratch[3] ,*(Fout + (Fout3 - Fout)), st->twiddles[3*u*fstride]);
+        C_MUL(scratch[4] ,*(Fout + (Fout4 - Fout)), st->twiddles[4*u*fstride]);
 
         C_ADD( scratch[7],scratch[1],scratch[4]);
         C_SUB( scratch[10],scratch[1],scratch[4]);
         C_ADD( scratch[8],scratch[2],scratch[3]);
         C_SUB( scratch[9],scratch[2],scratch[3]);
 
-        Fout0->r += scratch[7].r + scratch[8].r;
-        Fout0->i += scratch[7].i + scratch[8].i;
+        (Fout + (Fout0 - Fout))->r += scratch[7].r + scratch[8].r;
+        (Fout + (Fout0 - Fout))->i += scratch[7].i + scratch[8].i;
 
         scratch[5].r = scratch[0].r + S_MUL(scratch[7].r,ya.r) + S_MUL(scratch[8].r,yb.r);
         scratch[5].i = scratch[0].i + S_MUL(scratch[7].i,ya.r) + S_MUL(scratch[8].i,yb.r);
@@ -179,16 +185,16 @@ static void kf_bfly5(
         scratch[6].r =  S_MUL(scratch[10].i,ya.i) + S_MUL(scratch[9].i,yb.i);
         scratch[6].i = -S_MUL(scratch[10].r,ya.i) - S_MUL(scratch[9].r,yb.i);
 
-        C_SUB(*Fout1,scratch[5],scratch[6]);
-        C_ADD(*Fout4,scratch[5],scratch[6]);
+        C_SUB(*(Fout + (Fout1 - Fout)),scratch[5],scratch[6]);
+        C_ADD(*(Fout + (Fout4 - Fout)),scratch[5],scratch[6]);
 
         scratch[11].r = scratch[0].r + S_MUL(scratch[7].r,yb.r) + S_MUL(scratch[8].r,ya.r);
         scratch[11].i = scratch[0].i + S_MUL(scratch[7].i,yb.r) + S_MUL(scratch[8].i,ya.r);
         scratch[12].r = - S_MUL(scratch[10].i,yb.i) + S_MUL(scratch[9].i,ya.i);
         scratch[12].i = S_MUL(scratch[10].r,yb.i) - S_MUL(scratch[9].r,ya.i);
 
-        C_ADD(*Fout2,scratch[11],scratch[12]);
-        C_SUB(*Fout3,scratch[11],scratch[12]);
+        C_ADD(*(Fout + (Fout2 - Fout)),scratch[11],scratch[12]);
+        C_SUB(*(Fout + (Fout3 - Fout)),scratch[11],scratch[12]);
 
         ++Fout0;++Fout1;++Fout2;++Fout3;++Fout4;
     }
@@ -245,11 +251,11 @@ void kf_work(
         )
 {
     kiss_fft_cpx * Fout_beg=Fout;
-    const int p=*factors++; /* the radix  */
-    const int m=*factors++; /* stage's fft length/p */
+    const int p=*factors++; // the radix  
+    const int m=*factors++; // stage's fft length/p 
     const kiss_fft_cpx * Fout_end = Fout + p*m;
 
-#ifdef _OPENMP
+/*#ifdef _OPENMP
     // use openmp extensions at the 
     // top-level (not recursive)
     if (fstride==1 && p<=5)
@@ -271,11 +277,11 @@ void kf_work(
         }
         return;
     }
-#endif
+#endif*/
 
     if (m==1) {
         do{
-            *Fout = *f;
+            *Fout = *f; // TODO this causes problems
             f += fstride*in_stride;
         }while(++Fout != Fout_end );
     }else{
@@ -370,7 +376,7 @@ kiss_fft_cfg kiss_fft_alloc(int nfft,int inverse_fft,void * mem,size_t * lenmem 
 
 void kiss_fft_stride(kiss_fft_cfg st,const kiss_fft_cpx *fin,kiss_fft_cpx *fout,int in_stride)
 {
-    if (fin == fout) {
+    /*if (fin == fout) {
         //NOTE: this is not really an in-place FFT algorithm.
         //It just performs an out-of-place FFT into a temp buffer
         kiss_fft_cpx * tmpbuf = (kiss_fft_cpx*)KISS_FFT_TMP_ALLOC( sizeof(kiss_fft_cpx)*st->nfft);
@@ -379,7 +385,8 @@ void kiss_fft_stride(kiss_fft_cfg st,const kiss_fft_cpx *fin,kiss_fft_cpx *fout,
         KISS_FFT_TMP_FREE(tmpbuf);
     }else{
         kf_work( fout, fin, 1,in_stride, st->factors,st );
-    }
+    }*/
+    kf_work( fout, fin, 1,in_stride, st->factors,st );
 }
 
 void kiss_fft(kiss_fft_cfg cfg,const kiss_fft_cpx *fin,kiss_fft_cpx *fout)

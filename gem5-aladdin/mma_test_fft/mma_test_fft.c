@@ -10,7 +10,8 @@
 #include <stdio.h>
 #include "../../gem5/aladdin_sys_connection.h"
 #include "../../gem5/aladdin_sys_constants.h"
-#include "../../common/kiss_fft.h"
+#include "kiss_fft.h"
+#include "_kiss_fft_guts.h"
 #define TYPE int
 
 int test_stores(TYPE* store_vals, TYPE* store_loc, int num_vals) {
@@ -30,10 +31,7 @@ int test_stores(TYPE* store_vals, TYPE* store_loc, int num_vals) {
 
 
 // Read values from store_vals and copy them into store_loc.
-void store_kernel(TYPE* store_vals, TYPE* store_loc, int num_vals){//, kiss_fft_cfg cfg) {
-  kiss_fft_cfg cfg;
-  if((cfg = kiss_fft_alloc(num_vals, 0, NULL, NULL)) != NULL)
-  {
+void store_kernel(TYPE* store_vals, TYPE* store_loc, int num_vals, kiss_fft_cfg cfg) {
     kiss_fft_cpx in[num_vals];
     kiss_fft_cpx out[num_vals];
     loop: for (int i = 0; i < num_vals; i++)
@@ -44,12 +42,10 @@ void store_kernel(TYPE* store_vals, TYPE* store_loc, int num_vals){//, kiss_fft_
       in[i].i = 0;
     }
     kiss_fft(cfg, in, out);
-    free(cfg);
     for (int i = 0; i < num_vals; i++)
     {
       store_loc[i] = out[i].r;
     }
-  }  
 }
 
 int main() {
@@ -61,13 +57,13 @@ int main() {
     store_vals[i] = i;
     store_loc[i] = -1;
   }
-  //kiss_fft_cfg cfg;
-  //cfg = kiss_fft_alloc(num_vals, 0, NULL, NULL);
+  kiss_fft_cfg cfg;
+  cfg = kiss_fft_alloc(num_vals, 0, NULL, NULL);
 #ifdef LLVM_TRACE
-  store_kernel(store_vals, store_loc, num_vals);//, cfg);
+  store_kernel(store_vals, store_loc, num_vals, cfg);
 #else
-  //mapArrayToAccelerator(
-  //    INTEGRATION_TEST, "cfg", &cfg, sizeof(kiss_fft_cfg));
+  mapArrayToAccelerator(
+      INTEGRATION_TEST, "cfg", &(*cfg), sizeof(struct kiss_fft_state));
   mapArrayToAccelerator(
       INTEGRATION_TEST, "store_vals", &(store_vals[0]), num_vals * sizeof(int));
   mapArrayToAccelerator(
