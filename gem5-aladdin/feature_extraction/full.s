@@ -1789,7 +1789,7 @@ process_data:                           # @process_data
 	leaq	.L.str52, %r14
 	movabsq	$3, %r15
 	leaq	.L.str11, %r12
-	movabsq	$49, %r13
+	movabsq	$53, %r13
 	movq	%rax, -48(%rbp)         # 8-byte Spill
 	leaq	.L.str50, %rax
 	movq	%rax, -56(%rbp)         # 8-byte Spill
@@ -1938,7 +1938,7 @@ process_data:                           # @process_data
 	movq	-256(%rbp), %r9         # 8-byte Reload
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
-	.loc	1 47 0                  # feature_extraction.c:47:0
+	.loc	1 51 0                  # feature_extraction.c:51:0
 	subq	$16, %rsp
 	movq	%rsp, %rax
 	movl	$1, (%rax)
@@ -1946,7 +1946,7 @@ process_data:                           # @process_data
 	movl	%esi, %eax
 	movl	$.L.str6, %esi
 	movl	%esi, %ecx
-	movl	$47, %esi
+	movl	$51, %esi
 	movl	%esi, %edx
 	movl	$12, %esi
 	movl	%esi, %r8d
@@ -2088,13 +2088,13 @@ process_data:                           # @process_data
 	movq	-256(%rbp), %r9         # 8-byte Reload
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
-	.loc	1 48 0                  # feature_extraction.c:48:0
+	.loc	1 52 0                  # feature_extraction.c:52:0
 	subq	$16, %rsp
 	movq	%rsp, %rax
 	movl	$1, (%rax)
 	movl	$.L.str24, %esi
 	movl	%esi, %ecx
-	movl	$48, %esi
+	movl	$52, %esi
 	movl	%esi, %edi
 	movq	-168(%rbp), %rsi        # 8-byte Reload
 	movq	-352(%rbp), %rdx        # 8-byte Reload
@@ -2132,7 +2132,7 @@ process_data:                           # @process_data
 .Ltmp55:
 	#DEBUG_VALUE: process_data:out <- [RBP+-416]
 	#DEBUG_VALUE: channel <- 0
-	.loc	1 49 0                  # feature_extraction.c:49:0
+	.loc	1 53 0                  # feature_extraction.c:53:0
 	subq	$16, %rsp
 	movq	-160(%rbp), %rdi        # 8-byte Reload
 	movq	-56(%rbp), %rsi         # 8-byte Reload
@@ -2241,7 +2241,7 @@ process_data:                           # @process_data
 	movabsq	$1, %rcx
 	leaq	.L.str16, %r8
 	leaq	.L.str8, %rdx
-	movabsq	$49, %rdi
+	movabsq	$53, %rdi
 	leaq	.L.str50, %rsi
 	leaq	.L.str11, %r9
 	leaq	.L.str15, %r10
@@ -2254,14 +2254,14 @@ process_data:                           # @process_data
 	movq	%rax, -432(%rbp)        # 8-byte Spill
 	leaq	.L.str7, %rax
 	movq	%rax, -440(%rbp)        # 8-byte Spill
-	movabsq	$59, %rax
+	movabsq	$63, %rax
 	movq	%rax, -448(%rbp)        # 8-byte Spill
 	movabsq	$46, %rax
 	movq	%rax, -456(%rbp)        # 8-byte Spill
 	leaq	.L.str26, %rax
 	movq	%rax, -464(%rbp)        # 8-byte Spill
-	movabsq	$51, %rax
-	.loc	1 51 0                  # feature_extraction.c:51:0
+	movabsq	$55, %rax
+	.loc	1 55 0                  # feature_extraction.c:55:0
 .Ltmp57:
 	subq	$16, %rsp
 	movq	%rdi, -472(%rbp)        # 8-byte Spill
@@ -2315,7 +2315,7 @@ process_data:                           # @process_data
 	cmpl	$0, %ebx
 	setg	%al
 .Ltmp58:
-	.loc	1 59 0                  # feature_extraction.c:59:0
+	.loc	1 63 0                  # feature_extraction.c:63:0
 	movb	%al, %cl
 	andb	$1, %cl
 	movzbl	%cl, %ecx
@@ -2369,7 +2369,7 @@ process_data:                           # @process_data
 	cmpl	$0, %eax
 	setg	%al
 .Ltmp59:
-	.loc	1 49 0                  # feature_extraction.c:49:0
+	.loc	1 53 0                  # feature_extraction.c:53:0
 	movb	%al, %cl
 	andb	$1, %cl
 	movzbl	%cl, %ebx
@@ -2421,7 +2421,7 @@ process_data:                           # @process_data
 	leaq	.L.str19, %r9
 	movabsq	$3, %r10
 	leaq	.L.str23, %r11
-	movabsq	$51, %rbx
+	movabsq	$55, %rbx
 	leaq	.L.str50, %r14
 	leaq	.L.str16, %r15
 	leaq	.L.str22, %r12
@@ -2437,7 +2437,7 @@ process_data:                           # @process_data
 	movq	%rax, -624(%rbp)        # 8-byte Spill
 	leaq	.L.str14, %rax
 	movq	%rax, -632(%rbp)        # 8-byte Spill
-	movabsq	$53, %rax
+	movabsq	$57, %rax
 	movq	%rax, -640(%rbp)        # 8-byte Spill
 	movabsq	$12, %rax
 	movq	%rax, -648(%rbp)        # 8-byte Spill
@@ -2458,7 +2458,7 @@ process_data:                           # @process_data
 	movabsq	$-1, %rax
 	movq	%rax, -712(%rbp)        # 8-byte Spill
 	movabsq	$48, %rax
-	.loc	1 53 0                  # feature_extraction.c:53:0
+	.loc	1 57 0                  # feature_extraction.c:57:0
 .Ltmp60:
 	subq	$16, %rsp
 	movq	%rax, -720(%rbp)        # 8-byte Spill
@@ -2596,7 +2596,7 @@ process_data:                           # @process_data
 	movl	-136(%rbp), %esi        # 4-byte Reload
 	imull	%esi, %r13d
 .Ltmp61:
-	.loc	1 51 0                  # feature_extraction.c:51:0
+	.loc	1 55 0                  # feature_extraction.c:55:0
 	movl	%r13d, %esi
 	movl	%esi, %edx
 	subq	$16, %rsp
@@ -2666,7 +2666,7 @@ process_data:                           # @process_data
 	movabsq	$1, %rcx
 	leaq	.L.str57, %r8
 	leaq	.L.str8, %rdx
-	movabsq	$51, %rsi
+	movabsq	$55, %rsi
 	leaq	.L.str50, %rdi
 	leaq	.L.str23, %r9
 	leaq	.L.str27, %r10
@@ -2767,7 +2767,7 @@ process_data:                           # @process_data
 	leaq	.L.str57, %r9
 	movabsq	$3, %r10
 	leaq	.L.str19, %r11
-	movabsq	$51, %rbx
+	movabsq	$55, %rbx
 	leaq	.L.str50, %r14
 	leaq	.L.str68, %r15
 	movl	$1, %r12d
@@ -2797,7 +2797,7 @@ process_data:                           # @process_data
 	movq	%rax, -1064(%rbp)       # 8-byte Spill
 	leaq	.L.str66, %rax
 	movq	%rax, -1072(%rbp)       # 8-byte Spill
-	movabsq	$56, %rax
+	movabsq	$60, %rax
 	movq	%rax, -1080(%rbp)       # 8-byte Spill
 	leaq	.L.str67, %rax
 	movq	%rax, -1088(%rbp)       # 8-byte Spill
@@ -2811,13 +2811,13 @@ process_data:                           # @process_data
 	movq	%rax, -1120(%rbp)       # 8-byte Spill
 	leaq	.L.str63, %rax
 	movq	%rax, -1128(%rbp)       # 8-byte Spill
-	movabsq	$55, %rax
+	movabsq	$59, %rax
 	movq	%rax, -1136(%rbp)       # 8-byte Spill
 	leaq	.L.str65, %rax
 	movq	%rax, -1144(%rbp)       # 8-byte Spill
 	leaq	.L.str61, %rax
 	movq	%rax, -1152(%rbp)       # 8-byte Spill
-	movabsq	$54, %rax
+	movabsq	$58, %rax
 	movq	%rax, -1160(%rbp)       # 8-byte Spill
 	leaq	.L.str62, %rax
 	movq	%rax, -1168(%rbp)       # 8-byte Spill
@@ -2827,10 +2827,10 @@ process_data:                           # @process_data
 	movq	%rax, -1184(%rbp)       # 8-byte Spill
 	leaq	.L.str58, %rax
 	movq	%rax, -1192(%rbp)       # 8-byte Spill
-	movabsq	$53, %rax
+	movabsq	$57, %rax
 	movq	%rax, -1200(%rbp)       # 8-byte Spill
 	leaq	.L.str60, %rax
-	.loc	1 53 0                  # feature_extraction.c:53:0
+	.loc	1 57 0                  # feature_extraction.c:57:0
 .Ltmp62:
 	subq	$16, %rsp
 	movq	%rax, -1208(%rbp)       # 8-byte Spill
@@ -2937,7 +2937,7 @@ process_data:                           # @process_data
 	movl	$1, (%rcx)
 	movl	$.L.str37, %eax
 	movl	%eax, %ecx
-	movl	$53, %eax
+	movl	$57, %eax
 	movl	%eax, %edx
 	movl	$8, %eax
 	movl	%eax, %r8d
@@ -3218,7 +3218,7 @@ process_data:                           # @process_data
 	movq	-1432(%rbp), %rdx       # 8-byte Reload
 	vmovss	-1480(%rbp), %xmm0      # 4-byte Reload
 	vmovss	%xmm0, (%rcx,%rdx,8)
-	.loc	1 54 0                  # feature_extraction.c:54:0
+	.loc	1 58 0                  # feature_extraction.c:58:0
 	subq	$16, %rsp
 	movq	-1160(%rbp), %rdi       # 8-byte Reload
 	movq	-1344(%rbp), %rsi       # 8-byte Reload
@@ -3311,7 +3311,7 @@ process_data:                           # @process_data
 	movq	-1432(%rbp), %rdx       # 8-byte Reload
 	vmovss	-1324(%rbp), %xmm0      # 4-byte Reload
 	vmovss	%xmm0, 4(%rcx,%rdx,8)
-	.loc	1 55 0                  # feature_extraction.c:55:0
+	.loc	1 59 0                  # feature_extraction.c:59:0
 	subq	$16, %rsp
 	movq	-1136(%rbp), %rdi       # 8-byte Reload
 	movq	-1344(%rbp), %rsi       # 8-byte Reload
@@ -3403,7 +3403,7 @@ process_data:                           # @process_data
 	movq	-1432(%rbp), %rdx       # 8-byte Reload
 	vmovss	-1324(%rbp), %xmm0      # 4-byte Reload
 	vmovss	%xmm0, (%rcx,%rdx,8)
-	.loc	1 56 0                  # feature_extraction.c:56:0
+	.loc	1 60 0                  # feature_extraction.c:60:0
 	subq	$16, %rsp
 	movq	-1080(%rbp), %rdi       # 8-byte Reload
 	movq	-1344(%rbp), %rsi       # 8-byte Reload
@@ -3497,7 +3497,7 @@ process_data:                           # @process_data
 	vmovss	-1324(%rbp), %xmm0      # 4-byte Reload
 	vmovss	%xmm0, 4(%rcx,%rdx,8)
 .Ltmp63:
-	.loc	1 51 0                  # feature_extraction.c:51:0
+	.loc	1 55 0                  # feature_extraction.c:55:0
 	subq	$16, %rsp
 	movq	-1368(%rbp), %rdi       # 8-byte Reload
 	movq	-1344(%rbp), %rsi       # 8-byte Reload
@@ -3703,7 +3703,7 @@ process_data:                           # @process_data
 	movabsq	$4, %rbx
 	leaq	kiss_fft, %r14
 	leaq	.L.str72, %r15
-	movabsq	$58, %r12
+	movabsq	$62, %r12
 	leaq	.L.str50, %r13
 	movq	%rax, -1536(%rbp)       # 8-byte Spill
 	leaq	.L.str19, %rax
@@ -3729,7 +3729,7 @@ process_data:                           # @process_data
 	leaq	.L.str33, %rax
 	movq	%rax, -1624(%rbp)       # 8-byte Spill
 	movabsq	$35, %rax
-	.loc	1 58 0                  # feature_extraction.c:58:0
+	.loc	1 62 0                  # feature_extraction.c:62:0
 	subq	$16, %rsp
 	movq	%rdi, -1632(%rbp)       # 8-byte Spill
 	movq	%r12, %rdi
@@ -3946,14 +3946,14 @@ process_data:                           # @process_data
 	leaq	.L.str56, %r9
 	movabsq	$3, %r10
 	leaq	.L.str75, %r11
-	movabsq	$59, %rbx
+	movabsq	$63, %rbx
 	leaq	.L.str50, %r14
 	leaq	.L.str19, %r15
 	leaq	.L.str74, %r12
 	movl	$1, %eax
 .Ltmp65:
 	#DEBUG_VALUE: i <- 0
-	.loc	1 59 0                  # feature_extraction.c:59:0
+	.loc	1 63 0                  # feature_extraction.c:63:0
 	subq	$16, %rsp
 	movq	%rdi, -1768(%rbp)       # 8-byte Spill
 	movq	%rbx, %rdi
@@ -4019,7 +4019,7 @@ process_data:                           # @process_data
 	movabsq	$1, %rcx
 	leaq	.L.str78, %r8
 	leaq	.L.str8, %rdx
-	movabsq	$59, %rsi
+	movabsq	$63, %rsi
 	leaq	.L.str50, %rdi
 	leaq	.L.str75, %r9
 	leaq	.L.str77, %r10
@@ -4120,7 +4120,7 @@ process_data:                           # @process_data
 	leaq	.L.str78, %r9
 	movabsq	$3, %r10
 	leaq	.L.str56, %r11
-	movabsq	$59, %rbx
+	movabsq	$63, %rbx
 	leaq	.L.str50, %r14
 	leaq	.L.str89, %r15
 	movl	$1, %r12d
@@ -4150,7 +4150,7 @@ process_data:                           # @process_data
 	movq	%rax, -2064(%rbp)       # 8-byte Spill
 	leaq	.L.str85, %rax
 	movq	%rax, -2072(%rbp)       # 8-byte Spill
-	movabsq	$61, %rax
+	movabsq	$65, %rax
 	movq	%rax, -2080(%rbp)       # 8-byte Spill
 	leaq	.L.str86, %rax
 	movq	%rax, -2088(%rbp)       # 8-byte Spill
@@ -4179,7 +4179,7 @@ process_data:                           # @process_data
 	movabsq	$-1, %rax
 	movq	%rax, -2184(%rbp)       # 8-byte Spill
 	movabsq	$48, %rax
-	.loc	1 61 0                  # feature_extraction.c:61:0
+	.loc	1 65 0                  # feature_extraction.c:65:0
 .Ltmp66:
 	subq	$16, %rsp
 	movq	%rax, -2192(%rbp)       # 8-byte Spill
@@ -4504,7 +4504,7 @@ process_data:                           # @process_data
 	movl	-2320(%rbp), %r12d      # 4-byte Reload
 	movl	%r12d, (%rax,%rcx,4)
 .Ltmp67:
-	.loc	1 59 0                  # feature_extraction.c:59:0
+	.loc	1 63 0                  # feature_extraction.c:63:0
 	subq	$16, %rsp
 	movq	-2280(%rbp), %rdi       # 8-byte Reload
 	movq	-2248(%rbp), %rsi       # 8-byte Reload
@@ -4705,7 +4705,7 @@ process_data:                           # @process_data
 	leaq	.L.str16, %r8
 	movabsq	$3, %r9
 	leaq	.L.str52, %r10
-	movabsq	$49, %r11
+	movabsq	$53, %r11
 	leaq	.L.str50, %rbx
 	leaq	.L.str56, %r14
 	leaq	.L.str92, %r15
@@ -4731,7 +4731,7 @@ process_data:                           # @process_data
 	leaq	.L.str7, %rax
 	movq	%rax, -2424(%rbp)       # 8-byte Spill
 	movabsq	$8, %rax
-	.loc	1 49 0                  # feature_extraction.c:49:0
+	.loc	1 53 0                  # feature_extraction.c:53:0
 	subq	$16, %rsp
 	movq	%rdi, -2432(%rbp)       # 8-byte Spill
 	movq	%r11, %rdi
@@ -4939,13 +4939,13 @@ process_data:                           # @process_data
 	jmp	.LBB1_2
 .Ltmp69:
 .LBB1_9:                                # %._crit_edge8
-	movabsq	$67, %rdi
+	movabsq	$80, %rdi
 	leaq	.L.str50, %rsi
 	leaq	.L.str52, %rdx
 	leaq	.L.str93, %rcx
 	movabsq	$1, %r8
 	movl	$1, %r9d
-	.loc	1 67 0                  # feature_extraction.c:67:0
+	.loc	1 80 0                  # feature_extraction.c:80:0
 	subq	$16, %rsp
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
@@ -4969,7 +4969,7 @@ process_data:                           # @process_data
 main:                                   # @main
 	.cfi_startproc
 .Lfunc_begin2:
-	.loc	1 69 0                  # feature_extraction.c:69:0
+	.loc	1 82 0                  # feature_extraction.c:82:0
 # BB#0:
 	pushq	%rbp
 .Ltmp79:
@@ -5006,7 +5006,7 @@ main:                                   # @main
 	.cfi_offset %rbp, -16
 	leaq	.L.str110, %rdi
 	movabsq	$419, %rsi              # imm = 0x1A3
-	.loc	1 71 0 prologue_end     # feature_extraction.c:71:0
+	.loc	1 84 0 prologue_end     # feature_extraction.c:84:0
 .Ltmp92:
 	callq	trace_logger_write_labelmap
 	movabsq	$1, %rsi
@@ -5018,7 +5018,7 @@ main:                                   # @main
 	movabsq	$2, %r9
 	leaq	malloc, %r10
 	leaq	.L.str95, %r11
-	movabsq	$71, %rbx
+	movabsq	$84, %rbx
 	leaq	.L.str94, %r14
 	leaq	.L.str5, %r15
 	leaq	.L.str6, %r12
@@ -5073,7 +5073,7 @@ main:                                   # @main
 	movabsq	$2, %r10
 	leaq	malloc, %r11
 	leaq	.L.str95, %rbx
-	movabsq	$72, %r14
+	movabsq	$85, %r14
 	leaq	.L.str94, %r15
 	leaq	.L.str5, %r12
 	leaq	.L.str20, %r13
@@ -5089,7 +5089,7 @@ main:                                   # @main
 	movq	%rax, 1920(%rsp)        # 8-byte Spill
 	leaq	.L.str6, %rax
 	movq	%rax, 1912(%rsp)        # 8-byte Spill
-	movabsq	$71, %rax
+	movabsq	$84, %rax
 	movq	%rax, 1904(%rsp)        # 8-byte Spill
 	movabsq	$44, %rax
 	movq	%rax, 1896(%rsp)        # 8-byte Spill
@@ -5149,7 +5149,7 @@ main:                                   # @main
 	callq	trace_logger_log_ptr
 .Ltmp93:
 	#DEBUG_VALUE: main:time_data <- [RSP+1776]
-	.loc	1 72 0                  # feature_extraction.c:72:0
+	.loc	1 85 0                  # feature_extraction.c:85:0
 	movq	1808(%rsp), %rdi        # 8-byte Reload
 	movq	1840(%rsp), %rsi        # 8-byte Reload
 	movq	1832(%rsp), %rdx        # 8-byte Reload
@@ -5184,7 +5184,7 @@ main:                                   # @main
 	movabsq	$1, %rdx
 	leaq	.L.str16, %r8
 	leaq	.L.str8, %rdi
-	movabsq	$75, %r9
+	movabsq	$88, %r9
 	leaq	.L.str94, %r10
 	leaq	.L.str5, %r11
 	leaq	.L.str96, %rbx
@@ -5197,7 +5197,7 @@ main:                                   # @main
 	movq	%rax, 1768(%rsp)        # 8-byte Spill
 	leaq	.L.str20, %rax
 	movq	%rax, 1760(%rsp)        # 8-byte Spill
-	movabsq	$72, %rax
+	movabsq	$85, %rax
 	movq	%rax, 1752(%rsp)        # 8-byte Spill
 	movabsq	$44, %rax
 	movq	%rdi, 1744(%rsp)        # 8-byte Spill
@@ -5259,7 +5259,7 @@ main:                                   # @main
 .Ltmp95:
 	#DEBUG_VALUE: main:freq_data <- [RSP+1624]
 	#DEBUG_VALUE: j <- 0
-	.loc	1 75 0                  # feature_extraction.c:75:0
+	.loc	1 88 0                  # feature_extraction.c:88:0
 	movq	1696(%rsp), %rdi        # 8-byte Reload
 	movq	1648(%rsp), %rsi        # 8-byte Reload
 	movq	1640(%rsp), %rdx        # 8-byte Reload
@@ -5288,7 +5288,7 @@ main:                                   # @main
 	movabsq	$1, %rdx
 	leaq	.L.str100, %r8
 	leaq	.L.str8, %rsi
-	movabsq	$77, %rdi
+	movabsq	$90, %rdi
 	leaq	.L.str94, %r9
 	leaq	.L.str16, %r10
 	leaq	.L.str22, %r11
@@ -5305,7 +5305,7 @@ main:                                   # @main
 	movq	%rax, 1592(%rsp)        # 8-byte Spill
 	leaq	.L.str7, %rax
 	movq	%rax, 1584(%rsp)        # 8-byte Spill
-	movabsq	$79, %rax
+	movabsq	$92, %rax
 	movq	%rax, 1576(%rsp)        # 8-byte Spill
 	movabsq	$12, %rax
 	movq	%rax, 1568(%rsp)        # 8-byte Spill
@@ -5318,7 +5318,7 @@ main:                                   # @main
 	movabsq	$-1, %rax
 	movq	%rax, 1536(%rsp)        # 8-byte Spill
 	movabsq	$48, %rax
-	.loc	1 79 0                  # feature_extraction.c:79:0
+	.loc	1 92 0                  # feature_extraction.c:92:0
 .Ltmp97:
 	movq	%rax, 1528(%rsp)        # 8-byte Spill
 	movq	1536(%rsp), %rax        # 8-byte Reload
@@ -5402,7 +5402,7 @@ main:                                   # @main
 	movq	1608(%rsp), %rax        # 8-byte Reload
 	imulq	$10, %rax, %rcx
 .Ltmp98:
-	.loc	1 77 0                  # feature_extraction.c:77:0
+	.loc	1 90 0                  # feature_extraction.c:90:0
 	movq	1464(%rsp), %rdi        # 8-byte Reload
 	movq	1448(%rsp), %rsi        # 8-byte Reload
 	movq	%rcx, %rdx
@@ -5444,7 +5444,7 @@ main:                                   # @main
 	leaq	.L.str100, %r9
 	movabsq	$3, %r10
 	leaq	.L.str99, %r11
-	movabsq	$77, %rbx
+	movabsq	$90, %rbx
 	leaq	.L.str94, %r14
 	leaq	.L.str103, %r15
 	movl	$0, %ebp
@@ -5471,7 +5471,7 @@ main:                                   # @main
 	movq	%rax, 1320(%rsp)        # 8-byte Spill
 	leaq	.L.str34, %rax
 	movq	%rax, 1312(%rsp)        # 8-byte Spill
-	movabsq	$80, %rax
+	movabsq	$93, %rax
 	movq	%rax, 1304(%rsp)        # 8-byte Spill
 	leaq	.L.str102, %rax
 	movq	%rax, 1296(%rsp)        # 8-byte Spill
@@ -5487,7 +5487,7 @@ main:                                   # @main
 	movq	%rax, 1256(%rsp)        # 8-byte Spill
 	leaq	.L.str31, %rax
 	movq	%rax, 1248(%rsp)        # 8-byte Spill
-	movabsq	$79, %rax
+	movabsq	$92, %rax
 	movq	%rax, 1240(%rsp)        # 8-byte Spill
 	leaq	.L.str101, %rax
 	movq	%rax, 1232(%rsp)        # 8-byte Spill
@@ -5502,7 +5502,7 @@ main:                                   # @main
 	movabsq	$-1, %rax
 	movq	%rax, 1192(%rsp)        # 8-byte Spill
 	movabsq	$48, %rax
-	.loc	1 79 0                  # feature_extraction.c:79:0
+	.loc	1 92 0                  # feature_extraction.c:92:0
 .Ltmp99:
 	movq	%rax, 1184(%rsp)        # 8-byte Spill
 	movq	1192(%rsp), %rax        # 8-byte Reload
@@ -5699,7 +5699,7 @@ main:                                   # @main
 	movq	1072(%rsp), %rcx        # 8-byte Reload
 	movl	1060(%rsp), %ebp        # 4-byte Reload
 	movl	%ebp, (%rax,%rcx,4)
-	.loc	1 80 0                  # feature_extraction.c:80:0
+	.loc	1 93 0                  # feature_extraction.c:93:0
 	movq	1304(%rsp), %rdi        # 8-byte Reload
 	movq	1104(%rsp), %rsi        # 8-byte Reload
 	movq	1136(%rsp), %rdx        # 8-byte Reload
@@ -5771,7 +5771,7 @@ main:                                   # @main
 	movq	1072(%rsp), %rcx        # 8-byte Reload
 	movl	$-1, (%rax,%rcx,4)
 .Ltmp100:
-	.loc	1 77 0                  # feature_extraction.c:77:0
+	.loc	1 90 0                  # feature_extraction.c:90:0
 	movq	1096(%rsp), %rdi        # 8-byte Reload
 	movq	1104(%rsp), %rsi        # 8-byte Reload
 	movq	1136(%rsp), %rdx        # 8-byte Reload
@@ -5906,7 +5906,7 @@ main:                                   # @main
 	leaq	.L.str16, %r8
 	movabsq	$3, %r9
 	leaq	.L.str106, %r10
-	movabsq	$75, %r11
+	movabsq	$88, %r11
 	leaq	.L.str94, %rbx
 	leaq	.L.str99, %r14
 	leaq	.L.str105, %r15
@@ -5927,7 +5927,7 @@ main:                                   # @main
 	leaq	.L.str97, %rax
 	movq	%rax, 976(%rsp)         # 8-byte Spill
 	movabsq	$8, %rax
-	.loc	1 75 0                  # feature_extraction.c:75:0
+	.loc	1 88 0                  # feature_extraction.c:88:0
 	movq	%rdi, 968(%rsp)         # 8-byte Spill
 	movq	%r11, %rdi
 	movq	%rsi, 960(%rsp)         # 8-byte Spill
@@ -6084,7 +6084,7 @@ main:                                   # @main
 	movabsq	$5, %r14
 	leaq	kiss_fft_alloc, %r15
 	leaq	.L.str107, %r12
-	movabsq	$92, %r13
+	movabsq	$100, %r13
 	leaq	.L.str94, %rbp
 	movq	%rax, 840(%rsp)         # 8-byte Spill
 	leaq	.L.str106, %rax
@@ -6096,7 +6096,7 @@ main:                                   # @main
 	movl	$0, %esi
 	movl	%esi, 812(%rsp)         # 4-byte Spill
 	movl	$1, %esi
-	.loc	1 92 0                  # feature_extraction.c:92:0
+	.loc	1 100 0                 # feature_extraction.c:100:0
 	movq	%rdi, 800(%rsp)         # 8-byte Spill
 	movq	%r13, %rdi
 	movl	%esi, 796(%rsp)         # 4-byte Spill
@@ -6195,7 +6195,7 @@ main:                                   # @main
 	movq	%rax, 680(%rsp)         # 8-byte Spill
 	leaq	.L.str50, %rax
 	movq	%rax, 672(%rsp)         # 8-byte Spill
-	movabsq	$94, %rax
+	movabsq	$103, %rax
 	movq	%rax, 664(%rsp)         # 8-byte Spill
 	leaq	.L.str94, %rax
 	movq	%rax, 656(%rsp)         # 8-byte Spill
@@ -6234,7 +6234,7 @@ main:                                   # @main
 	callq	trace_logger_log_ptr
 .Ltmp103:
 	#DEBUG_VALUE: main:cfg <- [RSP+704]
-	.loc	1 94 0                  # feature_extraction.c:94:0
+	.loc	1 103 0                 # feature_extraction.c:103:0
 	movq	664(%rsp), %rdi         # 8-byte Reload
 	movq	656(%rsp), %rsi         # 8-byte Reload
 	movq	648(%rsp), %rdx         # 8-byte Reload
@@ -6322,7 +6322,7 @@ main:                                   # @main
 	movq	%rax, 496(%rsp)         # 8-byte Spill
 	leaq	.L.str4, %rax
 	movq	%rax, 488(%rsp)         # 8-byte Spill
-	movabsq	$110, %rax
+	movabsq	$117, %rax
 	movq	%rax, 480(%rsp)         # 8-byte Spill
 	leaq	.L.str94, %rax
 	movq	%rax, 472(%rsp)         # 8-byte Spill
@@ -6335,7 +6335,7 @@ main:                                   # @main
 	movl	$0, %esi
 	movl	%esi, 444(%rsp)         # 4-byte Spill
 	movl	$1, %esi
-	.loc	1 110 0                 # feature_extraction.c:110:0
+	.loc	1 117 0                 # feature_extraction.c:117:0
 	movq	%rax, 432(%rsp)         # 8-byte Spill
 	movq	480(%rsp), %rax         # 8-byte Reload
 	movq	%rdi, 424(%rsp)         # 8-byte Spill
@@ -6426,7 +6426,7 @@ main:                                   # @main
 	movabsq	$3, %r14
 	leaq	fprintf, %r15
 	leaq	.L.str39, %r12
-	movabsq	$115, %r13
+	movabsq	$122, %r13
 	leaq	.L.str94, %rbp
 	leaq	.L.str106, %rcx
 	movq	%rcx, 312(%rsp)         # 8-byte Spill
@@ -6444,7 +6444,7 @@ main:                                   # @main
 	movq	%rcx, 272(%rsp)         # 8-byte Spill
 	leaq	.L.str21, %rcx
 	movq	%rcx, 264(%rsp)         # 8-byte Spill
-	movabsq	$112, %rcx
+	movabsq	$119, %rcx
 	movq	%rcx, 256(%rsp)         # 8-byte Spill
 	movabsq	$27, %rcx
 	movq	%rcx, 248(%rsp)         # 8-byte Spill
@@ -6485,7 +6485,7 @@ main:                                   # @main
 	callq	trace_logger_log_int
 .Ltmp105:
 	#DEBUG_VALUE: main:num_failures <- 0
-	.loc	1 112 0                 # feature_extraction.c:112:0
+	.loc	1 119 0                 # feature_extraction.c:119:0
 	movq	256(%rsp), %rdi         # 8-byte Reload
 	movq	160(%rsp), %rsi         # 8-byte Reload
 	movq	312(%rsp), %rdx         # 8-byte Reload
@@ -6505,7 +6505,7 @@ main:                                   # @main
 	callq	trace_logger_log_ptr
 	movq	stdout, %rax
 .Ltmp106:
-	.loc	1 115 0                 # feature_extraction.c:115:0
+	.loc	1 122 0                 # feature_extraction.c:122:0
 	movq	280(%rsp), %rdi         # 8-byte Reload
 	movq	208(%rsp), %rsi         # 8-byte Reload
 	movq	%rax, %rdx
@@ -6563,14 +6563,14 @@ main:                                   # @main
 	movabsq	$0, %rdi
 	leaq	.L.str7, %r8
 	leaq	.L.str8, %r9
-	movabsq	$117, %r10
+	movabsq	$124, %r10
 	leaq	.L.str94, %r11
 	leaq	.L.str106, %rbx
 	leaq	.L.str109, %r14
 	movl	$1, %ebp
 	movabsq	$19134, %r15            # imm = 0x4ABE
 	leaq	.L.str58, %r12
-	.loc	1 117 0                 # feature_extraction.c:117:0
+	.loc	1 124 0                 # feature_extraction.c:124:0
 	movl	%eax, %eax
 	movl	%eax, %r13d
 	movq	%rdi, 96(%rsp)          # 8-byte Spill
@@ -41568,7 +41568,7 @@ trace_logger_log_vector:                # @trace_logger_log_vector
 	.type	.L.str110,@object       # @.str110
 	.align	16
 .L.str110:
-	.asciz	"process_data/fft_loop 49\nprocess_data/fft_loop_1 51\nprocess_data/fft_loop_2 59\nkf_bfly2/kf_bfly2_loop 32\nkf_bfly3/kf_bfly3_loop 108\nkf_bfly4/kf_bfly4_loop 60\nkf_bfly5/kf_bfly5_loop 161\nkf_bfly_generic/kf_bfly_loop 219\nkf_bfly_generic/kf_bfly_loop_1 221\nkf_bfly_generic/kf_bfly_loop_2 228\nkf_bfly_generic/kf_bfly_loop_3 231\nkf_factor/kf_factor_1 324\nkf_factor/kf_factor_2 325\nkf_work/kf_work_1 284\nkf_work/kf_work_2 289\n"
+	.asciz	"process_data/fft_loop 53\nprocess_data/fft_loop_1 55\nprocess_data/fft_loop_2 63\nkf_bfly2/kf_bfly2_loop 32\nkf_bfly3/kf_bfly3_loop 108\nkf_bfly4/kf_bfly4_loop 60\nkf_bfly5/kf_bfly5_loop 161\nkf_bfly_generic/kf_bfly_loop 219\nkf_bfly_generic/kf_bfly_loop_1 221\nkf_bfly_generic/kf_bfly_loop_2 228\nkf_bfly_generic/kf_bfly_loop_3 231\nkf_factor/kf_factor_1 324\nkf_factor/kf_factor_2 325\nkf_work/kf_work_1 284\nkf_work/kf_work_2 289\n"
 	.size	.L.str110, 420
 
 	.type	.L.str111,@object       # @.str111
@@ -44272,13 +44272,13 @@ inst_count:
 	.byte	10                      # Abbrev [10] 0x120:0xf DW_TAG_variable
 	.long	.Linfo_string38         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	48                      # DW_AT_decl_line
+	.byte	52                      # DW_AT_decl_line
 	.long	695                     # DW_AT_type
 	.long	.Ldebug_loc23           # DW_AT_location
 	.byte	7                       # Abbrev [7] 0x12f:0xb DW_TAG_variable
 	.long	.Linfo_string39         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	47                      # DW_AT_decl_line
+	.byte	51                      # DW_AT_decl_line
 	.long	695                     # DW_AT_type
 	.byte	4                       # Abbrev [4] 0x13a:0x47 DW_TAG_lexical_block
 	.quad	.Ltmp55                 # DW_AT_low_pc
@@ -44286,7 +44286,7 @@ inst_count:
 	.byte	5                       # Abbrev [5] 0x14b:0xc DW_TAG_variable
 	.long	.Linfo_string40         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	49                      # DW_AT_decl_line
+	.byte	53                      # DW_AT_decl_line
 	.long	181                     # DW_AT_type
 	.byte	0                       # DW_AT_const_value
 	.byte	6                       # Abbrev [6] 0x157:0x29 DW_TAG_lexical_block
@@ -44296,7 +44296,7 @@ inst_count:
 	.byte	7                       # Abbrev [7] 0x161:0xb DW_TAG_variable
 	.long	.Linfo_string17         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	51                      # DW_AT_decl_line
+	.byte	55                      # DW_AT_decl_line
 	.long	181                     # DW_AT_type
 	.byte	0                       # End Of Children Mark
 	.byte	6                       # Abbrev [6] 0x16d:0x12 DW_TAG_lexical_block
@@ -44304,7 +44304,7 @@ inst_count:
 	.byte	5                       # Abbrev [5] 0x172:0xc DW_TAG_variable
 	.long	.Linfo_string17         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	59                      # DW_AT_decl_line
+	.byte	63                      # DW_AT_decl_line
 	.long	181                     # DW_AT_type
 	.byte	0                       # DW_AT_const_value
 	.byte	0                       # End Of Children Mark
@@ -44314,7 +44314,7 @@ inst_count:
 	.byte	11                      # Abbrev [11] 0x182:0xa4 DW_TAG_subprogram
 	.long	.Linfo_string6          # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	69                      # DW_AT_decl_line
+	.byte	82                      # DW_AT_decl_line
 	.long	181                     # DW_AT_type
                                         # DW_AT_external
 	.quad	.Lfunc_begin2           # DW_AT_low_pc
@@ -44325,25 +44325,25 @@ inst_count:
 	.byte	10                      # Abbrev [10] 0x19f:0xf DW_TAG_variable
 	.long	.Linfo_string32         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	71                      # DW_AT_decl_line
+	.byte	84                      # DW_AT_decl_line
 	.long	550                     # DW_AT_type
 	.long	.Ldebug_loc25           # DW_AT_location
 	.byte	10                      # Abbrev [10] 0x1ae:0xf DW_TAG_variable
 	.long	.Linfo_string33         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	72                      # DW_AT_decl_line
+	.byte	85                      # DW_AT_decl_line
 	.long	550                     # DW_AT_type
 	.long	.Ldebug_loc27           # DW_AT_location
 	.byte	10                      # Abbrev [10] 0x1bd:0xf DW_TAG_variable
 	.long	.Linfo_string37         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	91                      # DW_AT_decl_line
+	.byte	99                      # DW_AT_decl_line
 	.long	555                     # DW_AT_type
 	.long	.Ldebug_loc29           # DW_AT_location
 	.byte	5                       # Abbrev [5] 0x1cc:0xc DW_TAG_variable
 	.long	.Linfo_string41         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	110                     # DW_AT_decl_line
+	.byte	117                     # DW_AT_decl_line
 	.long	181                     # DW_AT_type
 	.byte	0                       # DW_AT_const_value
 	.byte	4                       # Abbrev [4] 0x1d8:0x4d DW_TAG_lexical_block
@@ -44352,7 +44352,7 @@ inst_count:
 	.byte	5                       # Abbrev [5] 0x1e9:0xc DW_TAG_variable
 	.long	.Linfo_string36         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	75                      # DW_AT_decl_line
+	.byte	88                      # DW_AT_decl_line
 	.long	181                     # DW_AT_type
 	.byte	0                       # DW_AT_const_value
 	.byte	4                       # Abbrev [4] 0x1f5:0x2f DW_TAG_lexical_block
@@ -44364,7 +44364,7 @@ inst_count:
 	.byte	7                       # Abbrev [7] 0x217:0xb DW_TAG_variable
 	.long	.Linfo_string17         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	77                      # DW_AT_decl_line
+	.byte	90                      # DW_AT_decl_line
 	.long	181                     # DW_AT_type
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
@@ -47264,28 +47264,13 @@ inst_count:
 	.quad	0
 	.section	.debug_macinfo,"",@progbits
 	.section	.debug_pubnames,"",@progbits
-.Lset122 = .Lpubnames_end0-.Lpubnames_begin0 # Length of Public Names Info
+.Lset122 = .Lpubnames_end1-.Lpubnames_begin1 # Length of Public Names Info
 	.long	.Lset122
-.Lpubnames_begin0:
-	.short	2                       # DWARF Version
-	.long	.L.debug_info_begin0    # Offset of Compilation Unit Info
-.Lset123 = .L.debug_info_end0-.L.debug_info_begin0 # Compilation Unit Length
-	.long	.Lset123
-	.long	386                     # DIE offset
-	.asciz	"main"                  # External Name
-	.long	188                     # DIE offset
-	.asciz	"process_data"          # External Name
-	.long	38                      # DIE offset
-	.asciz	"test_stores"           # External Name
-	.long	0                       # End Mark
-.Lpubnames_end0:
-.Lset124 = .Lpubnames_end1-.Lpubnames_begin1 # Length of Public Names Info
-	.long	.Lset124
 .Lpubnames_begin1:
 	.short	2                       # DWARF Version
 	.long	.L.debug_info_begin1    # Offset of Compilation Unit Info
-.Lset125 = .L.debug_info_end1-.L.debug_info_begin1 # Compilation Unit Length
-	.long	.Lset125
+.Lset123 = .L.debug_info_end1-.L.debug_info_begin1 # Compilation Unit Length
+	.long	.Lset123
 	.long	624                     # DIE offset
 	.asciz	"kiss_fft_cleanup"      # External Name
 	.long	1384                    # DIE offset
@@ -47312,33 +47297,29 @@ inst_count:
 	.asciz	"kf_bfly3"              # External Name
 	.long	0                       # End Mark
 .Lpubnames_end1:
-	.section	.debug_pubtypes,"",@progbits
-.Lset126 = .Lpubtypes_end0-.Lpubtypes_begin0 # Length of Public Types Info
-	.long	.Lset126
-.Lpubtypes_begin0:
+.Lset124 = .Lpubnames_end0-.Lpubnames_begin0 # Length of Public Names Info
+	.long	.Lset124
+.Lpubnames_begin0:
 	.short	2                       # DWARF Version
 	.long	.L.debug_info_begin0    # Offset of Compilation Unit Info
-.Lset127 = .L.debug_info_end0-.L.debug_info_begin0 # Compilation Unit Length
-	.long	.Lset127
-	.long	646                     # DIE offset
-	.asciz	"kiss_fft_cpx"          # External Name
-	.long	451                     # DIE offset
-	.asciz	"float"                 # External Name
-	.long	555                     # DIE offset
-	.asciz	"kiss_fft_cfg"          # External Name
-	.long	571                     # DIE offset
-	.asciz	"kiss_fft_state"        # External Name
-	.long	181                     # DIE offset
-	.asciz	"int"                   # External Name
+.Lset125 = .L.debug_info_end0-.L.debug_info_begin0 # Compilation Unit Length
+	.long	.Lset125
+	.long	386                     # DIE offset
+	.asciz	"main"                  # External Name
+	.long	188                     # DIE offset
+	.asciz	"process_data"          # External Name
+	.long	38                      # DIE offset
+	.asciz	"test_stores"           # External Name
 	.long	0                       # End Mark
-.Lpubtypes_end0:
-.Lset128 = .Lpubtypes_end1-.Lpubtypes_begin1 # Length of Public Types Info
-	.long	.Lset128
+.Lpubnames_end0:
+	.section	.debug_pubtypes,"",@progbits
+.Lset126 = .Lpubtypes_end1-.Lpubtypes_begin1 # Length of Public Types Info
+	.long	.Lset126
 .Lpubtypes_begin1:
 	.short	2                       # DWARF Version
 	.long	.L.debug_info_begin1    # Offset of Compilation Unit Info
-.Lset129 = .L.debug_info_end1-.L.debug_info_begin1 # Compilation Unit Length
-	.long	.Lset129
+.Lset127 = .L.debug_info_end1-.L.debug_info_begin1 # Compilation Unit Length
+	.long	.Lset127
 	.long	409                     # DIE offset
 	.asciz	"kiss_fft_cpx"          # External Name
 	.long	451                     # DIE offset
@@ -47357,6 +47338,25 @@ inst_count:
 	.asciz	"size_t"                # External Name
 	.long	0                       # End Mark
 .Lpubtypes_end1:
+.Lset128 = .Lpubtypes_end0-.Lpubtypes_begin0 # Length of Public Types Info
+	.long	.Lset128
+.Lpubtypes_begin0:
+	.short	2                       # DWARF Version
+	.long	.L.debug_info_begin0    # Offset of Compilation Unit Info
+.Lset129 = .L.debug_info_end0-.L.debug_info_begin0 # Compilation Unit Length
+	.long	.Lset129
+	.long	646                     # DIE offset
+	.asciz	"kiss_fft_cpx"          # External Name
+	.long	451                     # DIE offset
+	.asciz	"float"                 # External Name
+	.long	555                     # DIE offset
+	.asciz	"kiss_fft_cfg"          # External Name
+	.long	571                     # DIE offset
+	.asciz	"kiss_fft_state"        # External Name
+	.long	181                     # DIE offset
+	.asciz	"int"                   # External Name
+	.long	0                       # End Mark
+.Lpubtypes_end0:
 
 	.ident	"clang version 3.4.2 (tags/RELEASE_34/dot2-final)"
 	.ident	"clang version 3.4.2 (tags/RELEASE_34/dot2-final)"

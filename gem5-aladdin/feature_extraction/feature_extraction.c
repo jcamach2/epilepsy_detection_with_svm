@@ -33,10 +33,13 @@ int test_stores(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channels)
 
 
 void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channels, kiss_fft_cfg cfg) {
-//void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channels, kiss_fft_cfg* cfg) {
 /*******************************************************************************/
 /* begin time domain feature extraction*/
 /*******************************************************************************/
+// center to zero mean and scale each item to unit variance
+// find cross correlation matrix
+// find x-corr matrix upper-right triangle
+// find x-corr matrix eigenvalues
 /*******************************************************************************/
 /* end time domain feature extraction*/
 /*******************************************************************************/
@@ -44,6 +47,7 @@ void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channel
 /*******************************************************************************/
 /* begin frequency domain feature extraction */
 /*******************************************************************************/
+// find fft of time data
     kiss_fft_cpx in[n_samples * n_channels];
     kiss_fft_cpx out[n_samples * n_channels];
     fft_loop: for (int channel = 0; channel < n_channels; channel++)
@@ -61,9 +65,18 @@ void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channel
             freq_data[channel*n_samples + i] = out[channel*n_samples + i].r;
         }
     }
+// slice fft data
+// fft magnitude and log
+// center to mean and scale each item to unit variance
+// find sliced, magnitude, & log fft data cross correlation matrix
+// find cross correlation matrix upper-right triangle
+// find cross correlation matrix eigenvalues
+// find sliced, magnitude, & log fft data "ravel" (matrix flattening)
 /*******************************************************************************/
 /* end frequency domain feature extraction*/
 /*******************************************************************************/
+
+// concatenate all necessary feature extraction data
 }
 
 int main() {
@@ -83,20 +96,14 @@ int main() {
 
   // initialize KISS fft data
   // done here because it uses malloc
-  /*kiss_fft_cfg cfg[N_CHANNELS];
-  for (int i = 0; i < N_CHANNELS; i++)
-  {
-    cfg[i] = kiss_fft_alloc(N_SAMPLES, 0, NULL, NULL);
-  }*/
   kiss_fft_cfg cfg;
   cfg = kiss_fft_alloc(N_SAMPLES, 0, NULL, NULL);
+
 #ifdef LLVM_TRACE
   process_data(time_data, freq_data, N_SAMPLES, N_CHANNELS, cfg);
 #else
   mapArrayToAccelerator(
       INTEGRATION_TEST, "cfg", &(*cfg), sizeof(struct kiss_fft_state));
-      //INTEGRATION_TEST, "cfg", &(cfg[0]), N_CHANNELS * sizeof(struct kiss_fft_state));
-      //INTEGRATION_TEST, "cfg", &(cfg[0]), N_CHANNELS * sizeof(kiss_fft_cfg));
   mapArrayToAccelerator(
       INTEGRATION_TEST, "time_data", &(time_data[0]), N_SAMPLES * N_CHANNELS * sizeof(TYPE));
   mapArrayToAccelerator(

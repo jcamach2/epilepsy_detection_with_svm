@@ -3,14 +3,14 @@
 ===============================
 Running : ./outputs/feature_extraction
 Top level function: process_data
-Cycle : 2712 cycles
-Avg Power: 18.5931 mW
-Idle FU Cycles: 2007 cycles
-Avg FU Power: 14.2387 mW
-Avg FU Dynamic Power: 10.2421 mW
+Cycle : 4342 cycles
+Avg Power: 14.6795 mW
+Idle FU Cycles: 3637 cycles
+Avg FU Power: 10.3931 mW
+Avg FU Dynamic Power: 6.39651 mW
 Avg FU leakage Power: 3.99658 mW
-Avg MEM Power: 4.35437 mW
-Avg MEM Dynamic Power: 0.439761 mW
+Avg MEM Power: 4.28638 mW
+Avg MEM Dynamic Power: 0.371762 mW
 Avg MEM Leakage Power: 3.91461 mW
 Total Area: 1.20578e+06 uM^2
 FU Area: 402801 uM^2
