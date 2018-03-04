@@ -29,7 +29,7 @@ static void kf_bfly2(
     kiss_fft_cpx * tw1 = st->twiddles;
     kiss_fft_cpx t;
     Fout2 = Fout + m;
-    do{
+    kf_bfly2_loop:do{
         C_FIXDIV(*Fout,2); C_FIXDIV(*Fout2,2);
 
         C_MUL (t,  *Fout2 , *tw1);
@@ -57,7 +57,7 @@ static void kf_bfly4(
 
     tw3 = tw2 = tw1 = st->twiddles;
 
-    do {
+    kf_bfly4_loop:do {
         C_FIXDIV(*Fout,4); C_FIXDIV(Fout[m],4); C_FIXDIV(Fout[m2],4); C_FIXDIV(Fout[m3],4);
 
         C_MUL(scratch[0],Fout[m] , *tw1 );
@@ -105,7 +105,7 @@ static void kf_bfly3(
 
      tw1=tw2=st->twiddles;
 
-     do{
+    kf_bfly3_loop:do{
          C_FIXDIV(*Fout,3); C_FIXDIV(Fout[m],3); C_FIXDIV(Fout[m2],3);
 
          C_MUL(scratch[1],Fout[m] , *tw1);
@@ -158,7 +158,7 @@ static void kf_bfly5(
     Fout4=Fout0+4*m;
 
     //tw=st->twiddles;
-    for ( u=0; u<m; ++u ) {
+    kf_bfly5_loop:for ( u=0; u<m; ++u ) {
         C_FIXDIV( *(Fout + (Fout0 - Fout)),5); 
         C_FIXDIV( *(Fout + (Fout1 - Fout)),5); 
         C_FIXDIV( *(Fout + (Fout2 - Fout)),5); 
@@ -216,19 +216,19 @@ static void kf_bfly_generic(
 
     kiss_fft_cpx * scratch = (kiss_fft_cpx*)KISS_FFT_TMP_ALLOC(sizeof(kiss_fft_cpx)*p);
 
-    for ( u=0; u<m; ++u ) {
+    kf_bfly_loop:for ( u=0; u<m; ++u ) {
         k=u;
-        for ( q1=0 ; q1<p ; ++q1 ) {
+        kf_bfly_loop_1:for ( q1=0 ; q1<p ; ++q1 ) {
             scratch[q1] = Fout[ k  ];
             C_FIXDIV(scratch[q1],p);
             k += m;
         }
 
         k=u;
-        for ( q1=0 ; q1<p ; ++q1 ) {
+    kf_bfly_loop_2:for ( q1=0 ; q1<p ; ++q1 ) {
             int twidx=0;
             Fout[ k ] = scratch[0];
-            for (q=1;q<p;++q ) {
+            kf_bfly_loop_3:for (q=1;q<p;++q ) {
                 twidx += fstride * k;
                 if (twidx>=Norig) twidx-=Norig;
                 C_MUL(t,scratch[q] , twiddles[twidx] );
@@ -281,12 +281,12 @@ void kf_work(
 #endif*/
 
     if (m==1) {
-        do{
+        kf_work_1:do{
             **Fout = **f; // TODO this causes problems
             *f += fstride*in_stride;
         }while(++*Fout != Fout_end );
     }else{
-        do{
+        kf_work_2:do{
             // recursive call:
             // DFT of size m*p performed by doing
             // p instances of smaller DFTs of size m, 
@@ -321,8 +321,8 @@ void kf_factor(int n,int * facbuf)
     floor_sqrt = floor( sqrt((double)n) );
 
     /*factor out powers of 4, powers of 2, then any remaining primes */
-    do {
-        while (n % p) {
+    kf_factor_1:do {
+        kf_factor_2:while (n % p) {
             switch (p) {
                 case 4: p = 2; break;
                 case 2: p = 3; break;

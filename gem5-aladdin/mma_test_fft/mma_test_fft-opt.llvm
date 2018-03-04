@@ -84,7 +84,7 @@ target triple = "x86_64-unknown-linux-gnu"
 @.str73 = private constant [15 x i8] c"kiss_fft_alloc\00"
 @.str74 = private constant [6 x i8] c"9:0-1\00"
 @.str75 = private constant [6 x i8] c"9:0-3\00"
-@.str76 = private constant [22 x i8] c"store_kernel/loop 37\0A\00"
+@.str76 = private constant [384 x i8] c"store_kernel/loop 37\0Astore_kernel/loop2 45\0Akf_bfly2/kf_bfly2_loop 32\0Akf_bfly3/kf_bfly3_loop 108\0Akf_bfly4/kf_bfly4_loop 60\0Akf_bfly5/kf_bfly5_loop 161\0Akf_bfly_generic/kf_bfly_loop 219\0Akf_bfly_generic/kf_bfly_loop_1 221\0Akf_bfly_generic/kf_bfly_loop_2 228\0Akf_bfly_generic/kf_bfly_loop_3 231\0Akf_factor/kf_factor_1 324\0Akf_factor/kf_factor_2 325\0Akf_work/kf_work_1 284\0Akf_work/kf_work_2 289\0A\00"
 
 ; Function Attrs: nounwind uwtable
 define i32 @test_stores(i32* nocapture readonly %store_vals, i32* nocapture readonly %store_loc, i32 %num_vals) #0 {
@@ -505,7 +505,7 @@ declare void @kiss_fft(%struct.kiss_fft_state*, %struct.kiss_fft_cpx*, %struct.k
 
 ; Function Attrs: nounwind uwtable
 define i32 @main() #0 {
-  call void @trace_logger_write_labelmap(i8* getelementptr inbounds ([22 x i8]* @.str76, i32 0, i32 0), i64 21), !dbg !107
+  call void @trace_logger_write_labelmap(i8* getelementptr inbounds ([384 x i8]* @.str76, i32 0, i32 0), i64 383), !dbg !107
   tail call void @llvm.dbg.value(metadata !108, i64 0, metadata !60), !dbg !107
   call void @trace_logger_log0(i64 54, i8* getelementptr inbounds ([5 x i8]* @.str65, i32 0, i32 0), i8* getelementptr inbounds ([4 x i8]* @.str6, i32 0, i32 0), i8* getelementptr inbounds ([2 x i8]* @.str7, i32 0, i32 0), i64 49, i1 false, i1 true), !dbg !109
   call void @trace_logger_log_ptr(i64 2, i64 64, i64 ptrtoint (i8* (i64)* @malloc to i64), i64 1, i8* getelementptr inbounds ([7 x i8]* @.str66, i32 0, i32 0), i64 0, i8* getelementptr inbounds ([4 x i8]* @.str9, i32 0, i32 0)), !dbg !109

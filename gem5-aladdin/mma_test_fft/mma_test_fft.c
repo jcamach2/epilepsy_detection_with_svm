@@ -42,7 +42,7 @@ void store_kernel(TYPE* store_vals, TYPE* store_loc, int num_vals, kiss_fft_cfg 
       in[i].i = 0;
     }
     kiss_fft(cfg, in, out);
-    for (int i = 0; i < num_vals; i++)
+    loop2: for (int i = 0; i < num_vals; i++)
     {
       store_loc[i] = out[i].r;
     }

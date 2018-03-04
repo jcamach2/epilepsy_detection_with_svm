@@ -3555,7 +3555,7 @@ main:                                   # @main
 .Ltmp78:
 	.cfi_offset %rbp, -16
 	leaq	.L.str76, %rdi
-	movabsq	$21, %rsi
+	movabsq	$383, %rsi              # imm = 0x17F
 	.loc	1 53 0 prologue_end     # mma_test_fft.c:53:0
 .Ltmp79:
 	callq	trace_logger_write_labelmap
@@ -39547,8 +39547,8 @@ trace_logger_log_vector:                # @trace_logger_log_vector
 	.type	.L.str76,@object        # @.str76
 	.align	16
 .L.str76:
-	.asciz	"store_kernel/loop 37\n"
-	.size	.L.str76, 22
+	.asciz	"store_kernel/loop 37\nstore_kernel/loop2 45\nkf_bfly2/kf_bfly2_loop 32\nkf_bfly3/kf_bfly3_loop 108\nkf_bfly4/kf_bfly4_loop 60\nkf_bfly5/kf_bfly5_loop 161\nkf_bfly_generic/kf_bfly_loop 219\nkf_bfly_generic/kf_bfly_loop_1 221\nkf_bfly_generic/kf_bfly_loop_2 228\nkf_bfly_generic/kf_bfly_loop_3 231\nkf_factor/kf_factor_1 324\nkf_factor/kf_factor_2 325\nkf_work/kf_work_1 284\nkf_work/kf_work_2 289\n"
+	.size	.L.str76, 384
 
 	.type	.L.str77,@object        # @.str77
 .L.str77:
