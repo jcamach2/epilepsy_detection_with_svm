@@ -30,7 +30,7 @@
 test_stores:                            # @test_stores
 	.cfi_startproc
 .Lfunc_begin0:
-	.loc	1 17 0                  # feature_extraction.c:17:0
+	.loc	1 22 0                  # feature_extraction.c:22:0
 # BB#0:
 	pushq	%rbp
 .Ltmp7:
@@ -50,9 +50,9 @@ test_stores:                            # @test_stores
 	pushq	%rbx
 .Ltmp12:
 	.cfi_def_cfa_offset 56
-	subq	$1592, %rsp             # imm = 0x638
+	subq	$1912, %rsp             # imm = 0x778
 .Ltmp13:
-	.cfi_def_cfa_offset 1648
+	.cfi_def_cfa_offset 1968
 .Ltmp14:
 	.cfi_offset %rbx, -56
 .Ltmp15:
@@ -65,1389 +65,1645 @@ test_stores:                            # @test_stores
 	.cfi_offset %r15, -24
 .Ltmp19:
 	.cfi_offset %rbp, -16
-	movabsq	$0, %rax
-	movabsq	$1, %rcx
-	leaq	.L.str7, %r8
-	leaq	.L.str9, %r9
-	movabsq	$2, %r10
-	leaq	.L.str13, %r11
-	movabsq	$3, %rbx
-	leaq	.L.str12, %r14
-	movabsq	$19, %r15
-	leaq	.L.str5, %r12
-	leaq	.L.str6, %r13
-	leaq	.L.str11, %rbp
-	movl	%edx, 1588(%rsp)        # 4-byte Spill
-	movl	$0, %edx
-	movl	%edx, 1584(%rsp)        # 4-byte Spill
-	movl	$1, %edx
-	movq	%rax, 1576(%rsp)        # 8-byte Spill
-	movabsq	$19134, %rax            # imm = 0x4ABE
-	movq	%rax, 1568(%rsp)        # 8-byte Spill
-	movabsq	$32, %rax
-	movq	%rax, 1560(%rsp)        # 8-byte Spill
+	movabsq	$1, %rax
+	leaq	.L.str6, %r8
+	movabsq	$0, %r9
+	leaq	.L.str8, %r10
+	movabsq	$2, %r11
+	leaq	.L.str12, %rbx
+	movabsq	$3, %r14
+	leaq	.L.str11, %r15
+	movabsq	$23, %r12
+	leaq	.L.str4, %r13
+	leaq	.L.str5, %rbp
+	movq	%rax, 1904(%rsp)        # 8-byte Spill
 	leaq	.L.str10, %rax
-	movq	%rax, 1552(%rsp)        # 8-byte Spill
-	leaq	.L.str8, %rax
-	movq	%rax, 1544(%rsp)        # 8-byte Spill
+	movl	%ecx, 1900(%rsp)        # 4-byte Spill
+	movl	$0, %ecx
+	movl	%ecx, 1896(%rsp)        # 4-byte Spill
+	movl	$1, %ecx
+	movq	%rax, 1888(%rsp)        # 8-byte Spill
+	movabsq	$19134, %rax            # imm = 0x4ABE
+	movq	%rax, 1880(%rsp)        # 8-byte Spill
+	movabsq	$32, %rax
+	movq	%rax, 1872(%rsp)        # 8-byte Spill
+	leaq	.L.str9, %rax
+	movq	%rax, 1864(%rsp)        # 8-byte Spill
+	leaq	.L.str7, %rax
+	movq	%rax, 1856(%rsp)        # 8-byte Spill
 	movabsq	$46, %rax
-	movq	%rax, 1536(%rsp)        # 8-byte Spill
+	movq	%rax, 1848(%rsp)        # 8-byte Spill
 	movabsq	$24601, %rax            # imm = 0x6019
-	movq	%rax, 1528(%rsp)        # 8-byte Spill
+	movq	%rax, 1840(%rsp)        # 8-byte Spill
+	leaq	.L.str14, %rax
+	movq	%rax, 1832(%rsp)        # 8-byte Spill
 	movabsq	$64, %rax
-	movq	%rax, 1520(%rsp)        # 8-byte Spill
-	leaq	.L.str20, %rax
-	movq	%rax, 1512(%rsp)        # 8-byte Spill
-	leaq	.L.str27, %rax
-	.loc	1 17 0 prologue_end     # feature_extraction.c:17:0
+	movq	%rax, 1824(%rsp)        # 8-byte Spill
+	leaq	.L.str35, %rax
+	movq	%rax, 1816(%rsp)        # 8-byte Spill
+	leaq	.L.str49, %rax
+	.loc	1 22 0 prologue_end     # feature_extraction.c:22:0
 .Ltmp20:
-	movq	%rax, 1504(%rsp)        # 8-byte Spill
-	movq	1528(%rsp), %rax        # 8-byte Reload
-	movq	%rdi, 1496(%rsp)        # 8-byte Spill
+	movq	%rax, 1808(%rsp)        # 8-byte Spill
+	movq	1840(%rsp), %rax        # 8-byte Reload
+	movq	%rdi, 1800(%rsp)        # 8-byte Spill
 	movq	%rax, %rdi
-	movq	1520(%rsp), %rax        # 8-byte Reload
-	movq	%rsi, 1488(%rsp)        # 8-byte Spill
+	movq	1824(%rsp), %rax        # 8-byte Reload
+	movq	%rsi, 1792(%rsp)        # 8-byte Spill
 	movq	%rax, %rsi
-	movq	1496(%rsp), %rax        # 8-byte Reload
-	movl	%edx, 1484(%rsp)        # 4-byte Spill
+	movq	1800(%rsp), %rax        # 8-byte Reload
+	movl	%edx, 1788(%rsp)        # 4-byte Spill
 	movq	%rax, %rdx
-	movq	%rcx, 1472(%rsp)        # 8-byte Spill
-	movq	1504(%rsp), %rax        # 8-byte Reload
-	movq	%r8, 1464(%rsp)         # 8-byte Spill
+	movq	1904(%rsp), %rax        # 8-byte Reload
+	movl	%ecx, 1784(%rsp)        # 4-byte Spill
+	movq	%rax, %rcx
+	movq	1808(%rsp), %rax        # 8-byte Reload
+	movq	%r8, 1776(%rsp)         # 8-byte Spill
 	movq	%rax, %r8
-	movq	1576(%rsp), %rax        # 8-byte Reload
-	movq	%r9, 1456(%rsp)         # 8-byte Spill
-	movq	%rax, %r9
-	movq	1456(%rsp), %rax        # 8-byte Reload
-	movq	%rax, (%rsp)
-	movq	%r13, 1448(%rsp)        # 8-byte Spill
-	movq	%rbp, 1440(%rsp)        # 8-byte Spill
-	movq	%r12, 1432(%rsp)        # 8-byte Spill
-	movq	%r15, 1424(%rsp)        # 8-byte Spill
-	movq	%r14, 1416(%rsp)        # 8-byte Spill
-	movq	%rbx, 1408(%rsp)        # 8-byte Spill
-	movq	%r10, 1400(%rsp)        # 8-byte Spill
-	movq	%r11, 1392(%rsp)        # 8-byte Spill
+	movq	%r9, 1768(%rsp)         # 8-byte Spill
+	movq	%r10, (%rsp)
+	movq	%r12, 1760(%rsp)        # 8-byte Spill
+	movq	%r13, 1752(%rsp)        # 8-byte Spill
+	movq	%rbp, 1744(%rsp)        # 8-byte Spill
+	movq	%r15, 1736(%rsp)        # 8-byte Spill
+	movq	%r14, 1728(%rsp)        # 8-byte Spill
+	movq	%rbx, 1720(%rsp)        # 8-byte Spill
+	movq	%r10, 1712(%rsp)        # 8-byte Spill
+	movq	%r11, 1704(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_ptr
-	movq	1528(%rsp), %rdi        # 8-byte Reload
-	movq	1520(%rsp), %rsi        # 8-byte Reload
-	movq	1488(%rsp), %rdx        # 8-byte Reload
-	movq	1472(%rsp), %rcx        # 8-byte Reload
-	movq	1512(%rsp), %r8         # 8-byte Reload
-	movq	1576(%rsp), %r9         # 8-byte Reload
-	movq	1456(%rsp), %rax        # 8-byte Reload
+	movq	1840(%rsp), %rdi        # 8-byte Reload
+	movq	1824(%rsp), %rsi        # 8-byte Reload
+	movq	1792(%rsp), %rdx        # 8-byte Reload
+	movq	1904(%rsp), %rcx        # 8-byte Reload
+	movq	1816(%rsp), %r8         # 8-byte Reload
+	movq	1768(%rsp), %r9         # 8-byte Reload
+	movq	1712(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
-	movl	1588(%rsp), %esi        # 4-byte Reload
+	movl	1788(%rsp), %esi        # 4-byte Reload
 	movl	%esi, %esi
 	movl	%esi, %edx
-	movq	1528(%rsp), %rdi        # 8-byte Reload
-	movq	1560(%rsp), %rsi        # 8-byte Reload
-	movq	1472(%rsp), %rcx        # 8-byte Reload
-	movq	1552(%rsp), %r8         # 8-byte Reload
-	movq	1576(%rsp), %r9         # 8-byte Reload
-	movq	1456(%rsp), %rax        # 8-byte Reload
+	movq	1840(%rsp), %rdi        # 8-byte Reload
+	movq	1872(%rsp), %rsi        # 8-byte Reload
+	movq	1904(%rsp), %rcx        # 8-byte Reload
+	movq	1832(%rsp), %r8         # 8-byte Reload
+	movq	1768(%rsp), %r9         # 8-byte Reload
+	movq	1712(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	#DEBUG_VALUE: test_stores:store_vals <- [RSP+1496]
-	#DEBUG_VALUE: test_stores:store_loc <- [RSP+1488]
-	#DEBUG_VALUE: test_stores:num_vals <- [RSP+1588]
+	movl	1900(%rsp), %esi        # 4-byte Reload
+	movl	%esi, %esi
+	movl	%esi, %edx
+	movq	1840(%rsp), %rdi        # 8-byte Reload
+	movq	1872(%rsp), %rsi        # 8-byte Reload
+	movq	1904(%rsp), %rcx        # 8-byte Reload
+	movq	1864(%rsp), %r8         # 8-byte Reload
+	movq	1768(%rsp), %r9         # 8-byte Reload
+	movq	1712(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	#DEBUG_VALUE: test_stores:store_vals <- [RSP+1800]
+	#DEBUG_VALUE: test_stores:store_loc <- [RSP+1792]
+	#DEBUG_VALUE: test_stores:n_samples <- [RSP+1788]
+	#DEBUG_VALUE: test_stores:n_channels <- [RSP+1900]
 .Ltmp21:
-	#DEBUG_VALUE: test_stores:num_failures <- 0
-	#DEBUG_VALUE: i <- 0
-	.loc	1 19 0                  # feature_extraction.c:19:0
-	movq	1424(%rsp), %rdi        # 8-byte Reload
-	movq	1432(%rsp), %rsi        # 8-byte Reload
-	movq	1448(%rsp), %rdx        # 8-byte Reload
-	movq	1464(%rsp), %rcx        # 8-byte Reload
-	movq	1536(%rsp), %r8         # 8-byte Reload
-	movl	1584(%rsp), %r9d        # 4-byte Reload
+	#DEBUG_VALUE: j <- 0
+	.loc	1 23 0                  # feature_extraction.c:23:0
+	movq	1760(%rsp), %rdi        # 8-byte Reload
+	movq	1752(%rsp), %rsi        # 8-byte Reload
+	movq	1744(%rsp), %rdx        # 8-byte Reload
+	movq	1776(%rsp), %rcx        # 8-byte Reload
+	movq	1848(%rsp), %r8         # 8-byte Reload
+	movl	1896(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	1400(%rsp), %rdi        # 8-byte Reload
-	movq	1560(%rsp), %rsi        # 8-byte Reload
-	movq	1576(%rsp), %rdx        # 8-byte Reload
-	movq	1576(%rsp), %rcx        # 8-byte Reload
-	movq	1544(%rsp), %r8         # 8-byte Reload
-	movq	1576(%rsp), %r9         # 8-byte Reload
-	movq	1456(%rsp), %rax        # 8-byte Reload
+	movq	1704(%rsp), %rdi        # 8-byte Reload
+	movq	1872(%rsp), %rsi        # 8-byte Reload
+	movq	1768(%rsp), %rdx        # 8-byte Reload
+	movq	1768(%rsp), %rcx        # 8-byte Reload
+	movq	1856(%rsp), %r8         # 8-byte Reload
+	movq	1768(%rsp), %r9         # 8-byte Reload
+	movq	1712(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movl	1588(%rsp), %esi        # 4-byte Reload
+	movl	1900(%rsp), %esi        # 4-byte Reload
 	movl	%esi, %esi
 	movl	%esi, %edx
-	movq	1472(%rsp), %rdi        # 8-byte Reload
-	movq	1560(%rsp), %rsi        # 8-byte Reload
-	movq	1472(%rsp), %rcx        # 8-byte Reload
-	movq	1552(%rsp), %r8         # 8-byte Reload
-	movq	1576(%rsp), %r9         # 8-byte Reload
-	movq	1456(%rsp), %rax        # 8-byte Reload
+	movq	1904(%rsp), %rdi        # 8-byte Reload
+	movq	1872(%rsp), %rsi        # 8-byte Reload
+	movq	1904(%rsp), %rcx        # 8-byte Reload
+	movq	1864(%rsp), %r8         # 8-byte Reload
+	movq	1768(%rsp), %r9         # 8-byte Reload
+	movq	1712(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movl	1588(%rsp), %esi        # 4-byte Reload
+	movl	1900(%rsp), %esi        # 4-byte Reload
 	cmpl	$0, %esi
 	setg	%al
 	movb	%al, %cl
 	andb	$1, %cl
 	movzbl	%cl, %ecx
 	movl	%ecx, %edx
-	movq	1568(%rsp), %rdi        # 8-byte Reload
-	movq	1472(%rsp), %rsi        # 8-byte Reload
-	movq	1472(%rsp), %rcx        # 8-byte Reload
-	movq	1464(%rsp), %r8         # 8-byte Reload
-	movq	1576(%rsp), %r9         # 8-byte Reload
-	movq	1456(%rsp), %r10        # 8-byte Reload
+	movq	1880(%rsp), %rdi        # 8-byte Reload
+	movq	1904(%rsp), %rsi        # 8-byte Reload
+	movq	1904(%rsp), %rcx        # 8-byte Reload
+	movq	1776(%rsp), %r8         # 8-byte Reload
+	movq	1768(%rsp), %r9         # 8-byte Reload
+	movq	1712(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
-	movb	%al, 1391(%rsp)         # 1-byte Spill
+	movb	%al, 1703(%rsp)         # 1-byte Spill
 	callq	trace_logger_log_int
-	movq	1424(%rsp), %rdi        # 8-byte Reload
-	movq	1432(%rsp), %rsi        # 8-byte Reload
-	movq	1448(%rsp), %rdx        # 8-byte Reload
-	movq	1440(%rsp), %rcx        # 8-byte Reload
-	movq	1400(%rsp), %r8         # 8-byte Reload
-	movl	1584(%rsp), %r9d        # 4-byte Reload
+	movq	1760(%rsp), %rdi        # 8-byte Reload
+	movq	1752(%rsp), %rsi        # 8-byte Reload
+	movq	1744(%rsp), %rdx        # 8-byte Reload
+	movq	1888(%rsp), %rcx        # 8-byte Reload
+	movq	1704(%rsp), %r8         # 8-byte Reload
+	movl	1896(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	1408(%rsp), %rdi        # 8-byte Reload
-	movq	1576(%rsp), %rsi        # 8-byte Reload
-	movq	1576(%rsp), %rdx        # 8-byte Reload
-	movq	1472(%rsp), %rcx        # 8-byte Reload
-	movq	1416(%rsp), %r8         # 8-byte Reload
-	movq	1576(%rsp), %r9         # 8-byte Reload
-	movq	1456(%rsp), %r10        # 8-byte Reload
+	movq	1728(%rsp), %rdi        # 8-byte Reload
+	movq	1768(%rsp), %rsi        # 8-byte Reload
+	movq	1768(%rsp), %rdx        # 8-byte Reload
+	movq	1904(%rsp), %rcx        # 8-byte Reload
+	movq	1736(%rsp), %r8         # 8-byte Reload
+	movq	1768(%rsp), %r9         # 8-byte Reload
+	movq	1712(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-	movq	1400(%rsp), %rdi        # 8-byte Reload
-	movq	1576(%rsp), %rsi        # 8-byte Reload
-	movq	1576(%rsp), %rdx        # 8-byte Reload
-	movq	1472(%rsp), %rcx        # 8-byte Reload
-	movq	1392(%rsp), %r8         # 8-byte Reload
-	movq	1576(%rsp), %r9         # 8-byte Reload
-	movq	1456(%rsp), %r10        # 8-byte Reload
+	movq	1704(%rsp), %rdi        # 8-byte Reload
+	movq	1768(%rsp), %rsi        # 8-byte Reload
+	movq	1768(%rsp), %rdx        # 8-byte Reload
+	movq	1904(%rsp), %rcx        # 8-byte Reload
+	movq	1720(%rsp), %r8         # 8-byte Reload
+	movq	1768(%rsp), %r9         # 8-byte Reload
+	movq	1712(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-	movb	1391(%rsp), %al         # 1-byte Reload
+	movb	1703(%rsp), %al         # 1-byte Reload
 	andb	$1, %al
 	movzbl	%al, %eax
 	movl	%eax, %edx
-	movq	1472(%rsp), %rdi        # 8-byte Reload
-	movq	1472(%rsp), %rsi        # 8-byte Reload
-	movq	1472(%rsp), %rcx        # 8-byte Reload
-	movq	1464(%rsp), %r8         # 8-byte Reload
-	movq	1576(%rsp), %r9         # 8-byte Reload
-	movq	1456(%rsp), %r10        # 8-byte Reload
+	movq	1904(%rsp), %rdi        # 8-byte Reload
+	movq	1904(%rsp), %rsi        # 8-byte Reload
+	movq	1904(%rsp), %rcx        # 8-byte Reload
+	movq	1776(%rsp), %r8         # 8-byte Reload
+	movq	1768(%rsp), %r9         # 8-byte Reload
+	movq	1712(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-	movb	1391(%rsp), %al         # 1-byte Reload
+	movb	1703(%rsp), %al         # 1-byte Reload
 	testb	$1, %al
-	movq	1576(%rsp), %rcx        # 8-byte Reload
-	movq	%rcx, 1376(%rsp)        # 8-byte Spill
 	jne	.LBB0_1
-	jmp	.LBB0_4
+	jmp	.LBB0_6
 .Ltmp22:
-.LBB0_1:                                # %.lr.ph
-                                        # =>This Inner Loop Header: Depth=1
-	movq	1376(%rsp), %rax        # 8-byte Reload
-	movabsq	$2, %rcx
-	movabsq	$64, %rdx
-	leaq	.L.str, %rsi
-	movabsq	$0, %rdi
-	leaq	.L.str8, %r8
-	leaq	.L.str9, %r9
-	movabsq	$1, %r10
-	leaq	.L.str17, %r11
-	movabsq	$5, %rbx
-	leaq	fprintf, %r14
-	leaq	.L.str24, %r15
-	movabsq	$20, %r12
-	leaq	.L.str5, %r13
-	leaq	.L.str12, %rbp
-	movq	%rax, 1368(%rsp)        # 8-byte Spill
-	leaq	.L.str23, %rax
-	movq	%rax, 1360(%rsp)        # 8-byte Spill
-	movabsq	$49, %rax
-	movq	%rsi, 1352(%rsp)        # 8-byte Spill
-	movl	$0, %esi
-	movl	%esi, 1348(%rsp)        # 4-byte Spill
-	movl	$1, %esi
-	movq	%rax, 1336(%rsp)        # 8-byte Spill
-	movabsq	$19134, %rax            # imm = 0x4ABE
-	movq	%rax, 1328(%rsp)        # 8-byte Spill
-	movabsq	$32, %rax
-	movq	%rax, 1320(%rsp)        # 8-byte Spill
-	leaq	.L.str22, %rax
-	movq	%rax, 1312(%rsp)        # 8-byte Spill
-	leaq	.L.str14, %rax
-	movq	%rax, 1304(%rsp)        # 8-byte Spill
-	movabsq	$33, %rax
-	movq	%rax, 1296(%rsp)        # 8-byte Spill
-	leaq	.L.str21, %rax
-	movq	%rax, 1288(%rsp)        # 8-byte Spill
-	leaq	.L.str19, %rax
-	movq	%rax, 1280(%rsp)        # 8-byte Spill
-	movabsq	$27, %rax
-	movq	%rax, 1272(%rsp)        # 8-byte Spill
-	leaq	.L.str20, %rax
-	movq	%rax, 1264(%rsp)        # 8-byte Spill
-	movabsq	$29, %rax
-	movq	%rax, 1256(%rsp)        # 8-byte Spill
-	leaq	stdout, %rax
-	movq	%rax, 1248(%rsp)        # 8-byte Spill
-	leaq	.L.str18, %rax
-	movq	%rax, 1240(%rsp)        # 8-byte Spill
-	leaq	.L.str16, %rax
-	movq	%rax, 1232(%rsp)        # 8-byte Spill
-	leaq	.L.str15, %rax
-	movq	%rax, 1224(%rsp)        # 8-byte Spill
-	leaq	.L.str6, %rax
-	movq	%rax, 1216(%rsp)        # 8-byte Spill
-	movabsq	$-1, %rax
-	movq	%rax, 1208(%rsp)        # 8-byte Spill
-	movabsq	$48, %rax
-	.loc	1 20 0                  # feature_extraction.c:20:0
+.LBB0_1:                                # %.preheader.lr.ph
+	movabsq	$0, %rax
+	movabsq	$1, %rcx
+	leaq	.L.str16, %r8
+	leaq	.L.str8, %rdx
+	movabsq	$23, %rdi
+	leaq	.L.str4, %rsi
+	leaq	.L.str11, %r9
+	leaq	.L.str15, %r10
+	movabsq	$2, %r11
+	movl	$0, %ebx
+	movl	$1, %ebp
+	movabsq	$19134, %r14            # imm = 0x4ABE
+	leaq	.L.str13, %r15
+	movabsq	$32, %r12
+	leaq	.L.str14, %r13
+	movq	%rax, 1688(%rsp)        # 8-byte Spill
+	leaq	.L.str7, %rax
+	movq	%rax, 1680(%rsp)        # 8-byte Spill
+	movabsq	$25, %rax
+	movq	%rax, 1672(%rsp)        # 8-byte Spill
+	movabsq	$46, %rax
+	.loc	1 25 0                  # feature_extraction.c:25:0
 .Ltmp23:
-	movq	%rax, 1200(%rsp)        # 8-byte Spill
-	movq	1208(%rsp), %rax        # 8-byte Reload
-	movq	%rdi, 1192(%rsp)        # 8-byte Spill
+	movq	%rax, 1664(%rsp)        # 8-byte Spill
+	movq	1672(%rsp), %rax        # 8-byte Reload
+	movq	%rdi, 1656(%rsp)        # 8-byte Spill
 	movq	%rax, %rdi
-	movl	%esi, 1188(%rsp)        # 4-byte Spill
-	movq	%r13, %rsi
-	movq	%rdx, 1176(%rsp)        # 8-byte Spill
-	movq	%rbp, %rdx
-	movq	1304(%rsp), %rax        # 8-byte Reload
-	movq	%rcx, 1168(%rsp)        # 8-byte Spill
-	movq	%rax, %rcx
-	movq	1200(%rsp), %rax        # 8-byte Reload
-	movq	%r8, 1160(%rsp)         # 8-byte Spill
+	movq	%rsi, 1648(%rsp)        # 8-byte Spill
+	movq	%rdx, 1640(%rsp)        # 8-byte Spill
+	movq	%r9, %rdx
+	movq	%rcx, 1632(%rsp)        # 8-byte Spill
+	movq	%r15, %rcx
+	movq	1664(%rsp), %rax        # 8-byte Reload
+	movq	%r8, 1624(%rsp)         # 8-byte Spill
 	movq	%rax, %r8
-	movl	1348(%rsp), %eax        # 4-byte Reload
-	movq	%r9, 1152(%rsp)         # 8-byte Spill
-	movl	%eax, %r9d
+	movq	%r9, 1616(%rsp)         # 8-byte Spill
+	movl	%ebx, %r9d
 	movl	$1, (%rsp)
-	movq	%r15, 1144(%rsp)        # 8-byte Spill
-	movq	%r12, 1136(%rsp)        # 8-byte Spill
-	movq	%r13, 1128(%rsp)        # 8-byte Spill
-	movq	%rbp, 1120(%rsp)        # 8-byte Spill
-	movq	%r14, 1112(%rsp)        # 8-byte Spill
-	movq	%rbx, 1104(%rsp)        # 8-byte Spill
-	movq	%r10, 1096(%rsp)        # 8-byte Spill
-	movq	%r11, 1088(%rsp)        # 8-byte Spill
+	movq	%r14, 1608(%rsp)        # 8-byte Spill
+	movl	%ebp, 1604(%rsp)        # 4-byte Spill
+	movq	%r15, 1592(%rsp)        # 8-byte Spill
+	movq	%r13, 1584(%rsp)        # 8-byte Spill
+	movq	%r12, 1576(%rsp)        # 8-byte Spill
+	movl	%ebx, 1572(%rsp)        # 4-byte Spill
+	movq	%r10, 1560(%rsp)        # 8-byte Spill
+	movq	%r11, 1552(%rsp)        # 8-byte Spill
 	callq	trace_logger_log0
-	movq	1168(%rsp), %rdi        # 8-byte Reload
-	movq	1176(%rsp), %rsi        # 8-byte Reload
-	movq	1192(%rsp), %rdx        # 8-byte Reload
-	movq	1192(%rsp), %rcx        # 8-byte Reload
-	movq	1160(%rsp), %r8         # 8-byte Reload
-	movq	1096(%rsp), %r9         # 8-byte Reload
+	movq	1552(%rsp), %rdi        # 8-byte Reload
+	movq	1576(%rsp), %rsi        # 8-byte Reload
+	movq	1688(%rsp), %rdx        # 8-byte Reload
+	movq	1688(%rsp), %rcx        # 8-byte Reload
+	movq	1680(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1640(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movl	1788(%rsp), %ebx        # 4-byte Reload
+	movl	%ebx, %ebp
+	movl	%ebp, %edx
+	movq	1632(%rsp), %rdi        # 8-byte Reload
+	movq	1576(%rsp), %rsi        # 8-byte Reload
+	movq	1632(%rsp), %rcx        # 8-byte Reload
+	movq	1584(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1640(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movl	1788(%rsp), %ebx        # 4-byte Reload
+	cmpl	$0, %ebx
+	setg	%al
+.Ltmp24:
+	.loc	1 23 0                  # feature_extraction.c:23:0
+	movb	%al, %cl
+	andb	$1, %cl
+	movzbl	%cl, %ebp
+	movl	%ebp, %edx
+	movq	1608(%rsp), %rdi        # 8-byte Reload
+	movq	1632(%rsp), %rsi        # 8-byte Reload
+	movq	1632(%rsp), %rcx        # 8-byte Reload
+	movq	1592(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1640(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	movb	%al, 1551(%rsp)         # 1-byte Spill
+	callq	trace_logger_log_int
+	movq	1656(%rsp), %rdi        # 8-byte Reload
+	movq	1648(%rsp), %rsi        # 8-byte Reload
+	movq	1616(%rsp), %rdx        # 8-byte Reload
+	movq	1560(%rsp), %rcx        # 8-byte Reload
+	movq	1552(%rsp), %r8         # 8-byte Reload
+	movl	1572(%rsp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	1632(%rsp), %rdi        # 8-byte Reload
+	movq	1688(%rsp), %rsi        # 8-byte Reload
+	movq	1688(%rsp), %rdx        # 8-byte Reload
+	movq	1632(%rsp), %rcx        # 8-byte Reload
+	movq	1624(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1640(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	1688(%rsp), %rcx        # 8-byte Reload
+	movq	%rcx, 1536(%rsp)        # 8-byte Spill
+.LBB0_2:                                # %.preheader
+                                        # =>This Loop Header: Depth=1
+                                        #     Child Loop BB0_4 Depth 2
+	movq	1536(%rsp), %rax        # 8-byte Reload
+	movabsq	$1, %rcx
+	leaq	.L.str13, %r8
+	movabsq	$0, %rdx
+	leaq	.L.str8, %rsi
+	movabsq	$2, %rdi
+	leaq	.L.str19, %r9
+	movabsq	$3, %r10
+	leaq	.L.str23, %r11
+	movabsq	$25, %rbx
+	leaq	.L.str4, %r14
+	leaq	.L.str16, %r15
+	leaq	.L.str22, %r12
+	movl	$0, %ebp
+	movl	$1, %r13d
+	movq	%rax, 1528(%rsp)        # 8-byte Spill
+	movabsq	$19134, %rax            # imm = 0x4ABE
+	movq	%rax, 1520(%rsp)        # 8-byte Spill
+	movabsq	$64, %rax
+	movq	%rax, 1512(%rsp)        # 8-byte Spill
+	leaq	.L.str20, %rax
+	movq	%rax, 1504(%rsp)        # 8-byte Spill
+	leaq	stdout, %rax
+	movq	%rax, 1496(%rsp)        # 8-byte Spill
+	leaq	.L.str21, %rax
+	movq	%rax, 1488(%rsp)        # 8-byte Spill
+	movabsq	$27, %rax
+	movq	%rax, 1480(%rsp)        # 8-byte Spill
+	leaq	.L.str17, %rax
+	movq	%rax, 1472(%rsp)        # 8-byte Spill
+	leaq	.L.str11, %rax
+	movq	%rax, 1464(%rsp)        # 8-byte Spill
+	leaq	.L.str7, %rax
+	movq	%rax, 1456(%rsp)        # 8-byte Spill
+	leaq	.L.str18, %rax
+	movq	%rax, 1448(%rsp)        # 8-byte Spill
+	movabsq	$-1, %rax
+	movq	%rax, 1440(%rsp)        # 8-byte Spill
+	movabsq	$48, %rax
+	.loc	1 27 0                  # feature_extraction.c:27:0
+.Ltmp25:
+	movq	%rax, 1432(%rsp)        # 8-byte Spill
+	movq	1440(%rsp), %rax        # 8-byte Reload
+	movq	%rdi, 1424(%rsp)        # 8-byte Spill
+	movq	%rax, %rdi
+	movq	%rsi, 1416(%rsp)        # 8-byte Spill
+	movq	%r14, %rsi
+	movq	%rdx, 1408(%rsp)        # 8-byte Spill
+	movq	%r15, %rdx
+	movq	1472(%rsp), %rax        # 8-byte Reload
+	movq	%rcx, 1400(%rsp)        # 8-byte Spill
+	movq	%rax, %rcx
+	movq	1432(%rsp), %rax        # 8-byte Reload
+	movq	%r8, 1392(%rsp)         # 8-byte Spill
+	movq	%rax, %r8
+	movq	%r9, 1384(%rsp)         # 8-byte Spill
+	movl	%ebp, %r9d
+	movl	$1, (%rsp)
+	movq	%r15, 1376(%rsp)        # 8-byte Spill
+	movq	%r14, 1368(%rsp)        # 8-byte Spill
+	movq	%r12, 1360(%rsp)        # 8-byte Spill
+	movl	%ebp, 1356(%rsp)        # 4-byte Spill
+	movl	%r13d, 1352(%rsp)       # 4-byte Spill
+	movq	%rbx, 1344(%rsp)        # 8-byte Spill
+	movq	%r10, 1336(%rsp)        # 8-byte Spill
+	movq	%r11, 1328(%rsp)        # 8-byte Spill
+	callq	trace_logger_log0
+	movq	1424(%rsp), %rdi        # 8-byte Reload
+	movq	1512(%rsp), %rsi        # 8-byte Reload
+	movq	1408(%rsp), %rdx        # 8-byte Reload
+	movq	1400(%rsp), %rcx        # 8-byte Reload
+	movq	1448(%rsp), %r8         # 8-byte Reload
+	movq	1400(%rsp), %r9         # 8-byte Reload
+	movq	1384(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	1400(%rsp), %rdi        # 8-byte Reload
+	movq	1512(%rsp), %rsi        # 8-byte Reload
+	movq	1408(%rsp), %rdx        # 8-byte Reload
+	movq	1408(%rsp), %rcx        # 8-byte Reload
+	movq	1456(%rsp), %r8         # 8-byte Reload
+	movq	1400(%rsp), %r9         # 8-byte Reload
+	movq	1464(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	1520(%rsp), %rdi        # 8-byte Reload
+	movq	1512(%rsp), %rsi        # 8-byte Reload
+	movq	1528(%rsp), %rdx        # 8-byte Reload
+	movq	1400(%rsp), %rcx        # 8-byte Reload
+	movq	1472(%rsp), %r8         # 8-byte Reload
+	movq	1408(%rsp), %r9         # 8-byte Reload
+	movq	1464(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	1480(%rsp), %rdi        # 8-byte Reload
+	movq	1368(%rsp), %rsi        # 8-byte Reload
+	movq	1376(%rsp), %rdx        # 8-byte Reload
+	movq	1504(%rsp), %rcx        # 8-byte Reload
+	movq	1480(%rsp), %r8         # 8-byte Reload
+	movl	1356(%rsp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	1400(%rsp), %rdi        # 8-byte Reload
+	movq	1512(%rsp), %rsi        # 8-byte Reload
+	movq	1496(%rsp), %rdx        # 8-byte Reload
+	movq	1400(%rsp), %rcx        # 8-byte Reload
+	movq	1488(%rsp), %r8         # 8-byte Reload
+	movq	1408(%rsp), %r9         # 8-byte Reload
+	movq	1416(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	stdout, %rax
+.Ltmp26:
+	.loc	1 25 0                  # feature_extraction.c:25:0
+	movq	1520(%rsp), %rdi        # 8-byte Reload
+	movq	1512(%rsp), %rsi        # 8-byte Reload
+	movq	%rax, %rdx
+	movq	1400(%rsp), %rcx        # 8-byte Reload
+	movq	1504(%rsp), %r8         # 8-byte Reload
+	movq	1408(%rsp), %r9         # 8-byte Reload
+	movq	1416(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	movq	%rax, 1320(%rsp)        # 8-byte Spill
+	callq	trace_logger_log_ptr
+	movq	1344(%rsp), %rdi        # 8-byte Reload
+	movq	1368(%rsp), %rsi        # 8-byte Reload
+	movq	1376(%rsp), %rdx        # 8-byte Reload
+	movq	1360(%rsp), %rcx        # 8-byte Reload
+	movq	1424(%rsp), %r8         # 8-byte Reload
+	movl	1356(%rsp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	1336(%rsp), %rdi        # 8-byte Reload
+	movq	1408(%rsp), %rsi        # 8-byte Reload
+	movq	1408(%rsp), %rdx        # 8-byte Reload
+	movq	1400(%rsp), %rcx        # 8-byte Reload
+	movq	1328(%rsp), %r8         # 8-byte Reload
+	movq	1408(%rsp), %r9         # 8-byte Reload
+	movq	1416(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	1424(%rsp), %rdi        # 8-byte Reload
+	movq	1408(%rsp), %rsi        # 8-byte Reload
+	movq	1408(%rsp), %rdx        # 8-byte Reload
+	movq	1400(%rsp), %rcx        # 8-byte Reload
+	movq	1384(%rsp), %r8         # 8-byte Reload
+	movq	1408(%rsp), %r9         # 8-byte Reload
+	movq	1416(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movb	1551(%rsp), %al         # 1-byte Reload
+	andb	$1, %al
+	movzbl	%al, %ebp
+	movl	%ebp, %edx
+	movq	1400(%rsp), %rdi        # 8-byte Reload
+	movq	1400(%rsp), %rsi        # 8-byte Reload
+	movq	1400(%rsp), %rcx        # 8-byte Reload
+	movq	1392(%rsp), %r8         # 8-byte Reload
+	movq	1408(%rsp), %r9         # 8-byte Reload
+	movq	1416(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movb	1551(%rsp), %al         # 1-byte Reload
+	testb	$1, %al
+	movq	1320(%rsp), %rcx        # 8-byte Reload
+	movq	%rcx, 1312(%rsp)        # 8-byte Spill
+	jne	.LBB0_3
+	jmp	.LBB0_5
+.LBB0_3:                                # %.lr.ph
+                                        #   in Loop: Header=BB0_2 Depth=1
+	movabsq	$0, %rax
+	movabsq	$1, %rcx
+	leaq	.L.str28, %r8
+	leaq	.L.str8, %rdx
+	movabsq	$25, %rsi
+	leaq	.L.str4, %rdi
+	leaq	.L.str23, %r9
+	leaq	.L.str27, %r10
+	movabsq	$2, %r11
+	movl	$0, %ebx
+	movl	$1, %ebp
+	movabsq	$19134, %r14            # imm = 0x4ABE
+	movabsq	$64, %r15
+	leaq	.L.str26, %r12
+	movabsq	$32, %r13
+	movq	%rax, 1304(%rsp)        # 8-byte Spill
+	leaq	.L.str25, %rax
+	movq	%rax, 1296(%rsp)        # 8-byte Spill
+	movabsq	$35, %rax
+	movq	%rax, 1288(%rsp)        # 8-byte Spill
+	leaq	.L.str24, %rax
+	movq	%rax, 1280(%rsp)        # 8-byte Spill
+	leaq	.L.str14, %rax
+	movq	%rax, 1272(%rsp)        # 8-byte Spill
+	movabsq	$27, %rax
+	movq	%rax, 1264(%rsp)        # 8-byte Spill
+	movabsq	$12, %rax
+	movq	%rax, 1256(%rsp)        # 8-byte Spill
+	leaq	.L.str17, %rax
+	movq	%rax, 1248(%rsp)        # 8-byte Spill
+	movabsq	$33, %rax
+	.loc	1 27 0                  # feature_extraction.c:27:0
+.Ltmp27:
+	movq	%rax, 1240(%rsp)        # 8-byte Spill
+	movq	1264(%rsp), %rax        # 8-byte Reload
+	movq	%rdi, 1232(%rsp)        # 8-byte Spill
+	movq	%rax, %rdi
+	movq	1232(%rsp), %rax        # 8-byte Reload
+	movq	%rsi, 1224(%rsp)        # 8-byte Spill
+	movq	%rax, %rsi
+	movq	%rdx, 1216(%rsp)        # 8-byte Spill
+	movq	%r9, %rdx
+	movq	1280(%rsp), %rax        # 8-byte Reload
+	movq	%rcx, 1208(%rsp)        # 8-byte Spill
+	movq	%rax, %rcx
+	movq	1240(%rsp), %rax        # 8-byte Reload
+	movq	%r8, 1200(%rsp)         # 8-byte Spill
+	movq	%rax, %r8
+	movq	%r9, 1192(%rsp)         # 8-byte Spill
+	movl	%ebx, %r9d
+	movl	$1, (%rsp)
+	movq	%r14, 1184(%rsp)        # 8-byte Spill
+	movl	%ebp, 1180(%rsp)        # 4-byte Spill
+	movq	%r15, 1168(%rsp)        # 8-byte Spill
+	movq	%r12, 1160(%rsp)        # 8-byte Spill
+	movq	%r13, 1152(%rsp)        # 8-byte Spill
+	movl	%ebx, 1148(%rsp)        # 4-byte Spill
+	movq	%r10, 1136(%rsp)        # 8-byte Spill
+	movq	%r11, 1128(%rsp)        # 8-byte Spill
+	callq	trace_logger_log0
+	movq	1208(%rsp), %rdi        # 8-byte Reload
+	movq	1168(%rsp), %rsi        # 8-byte Reload
+	movq	1528(%rsp), %rdx        # 8-byte Reload
+	movq	1208(%rsp), %rcx        # 8-byte Reload
+	movq	1248(%rsp), %r8         # 8-byte Reload
+	movq	1304(%rsp), %r9         # 8-byte Reload
+	movq	1216(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	1528(%rsp), %rax        # 8-byte Reload
+	movl	%eax, %ebx
+	movl	%ebx, %ebp
+	movl	%ebp, %edx
+	movq	1184(%rsp), %rdi        # 8-byte Reload
+	movq	1152(%rsp), %rsi        # 8-byte Reload
+	movq	1208(%rsp), %rcx        # 8-byte Reload
+	movq	1280(%rsp), %r8         # 8-byte Reload
+	movq	1304(%rsp), %r9         # 8-byte Reload
 	movq	1216(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
+	movl	%ebx, 1124(%rsp)        # 4-byte Spill
 	callq	trace_logger_log_int
-	movq	1096(%rsp), %rdi        # 8-byte Reload
-	movq	1176(%rsp), %rsi        # 8-byte Reload
+	movq	1264(%rsp), %rdi        # 8-byte Reload
+	movq	1232(%rsp), %rsi        # 8-byte Reload
 	movq	1192(%rsp), %rdx        # 8-byte Reload
-	movq	1096(%rsp), %rcx        # 8-byte Reload
-	movq	1224(%rsp), %r8         # 8-byte Reload
-	movq	1096(%rsp), %r9         # 8-byte Reload
-	movq	1232(%rsp), %r10        # 8-byte Reload
-	movq	%r10, (%rsp)
-	callq	trace_logger_log_int
-	movq	1328(%rsp), %rdi        # 8-byte Reload
-	movq	1176(%rsp), %rsi        # 8-byte Reload
-	movq	1368(%rsp), %rdx        # 8-byte Reload
-	movq	1096(%rsp), %rcx        # 8-byte Reload
-	movq	1304(%rsp), %r8         # 8-byte Reload
-	movq	1192(%rsp), %r9         # 8-byte Reload
-	movq	1232(%rsp), %r10        # 8-byte Reload
-	movq	%r10, (%rsp)
-	callq	trace_logger_log_int
-	movq	1136(%rsp), %rdi        # 8-byte Reload
-	movq	1128(%rsp), %rsi        # 8-byte Reload
-	movq	1120(%rsp), %rdx        # 8-byte Reload
-	movq	1088(%rsp), %rcx        # 8-byte Reload
-	movq	1272(%rsp), %r8         # 8-byte Reload
-	movl	1348(%rsp), %r9d        # 4-byte Reload
-	movl	$1, (%rsp)
-	callq	trace_logger_log0
-	movq	1096(%rsp), %rdi        # 8-byte Reload
-	movq	1176(%rsp), %rsi        # 8-byte Reload
-	movq	1248(%rsp), %rdx        # 8-byte Reload
-	movq	1096(%rsp), %rcx        # 8-byte Reload
-	movq	1240(%rsp), %r8         # 8-byte Reload
-	movq	1192(%rsp), %r9         # 8-byte Reload
-	movq	1152(%rsp), %r10        # 8-byte Reload
-	movq	%r10, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	stdout, %rcx
-	movq	1328(%rsp), %rdi        # 8-byte Reload
-	movq	1176(%rsp), %rsi        # 8-byte Reload
-	movq	%rcx, %rdx
-	movq	1096(%rsp), %r8         # 8-byte Reload
-	movq	%rcx, 1080(%rsp)        # 8-byte Spill
-	movq	%r8, %rcx
-	movq	1088(%rsp), %r8         # 8-byte Reload
-	movq	1192(%rsp), %r9         # 8-byte Reload
-	movq	1152(%rsp), %r10        # 8-byte Reload
-	movq	%r10, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	1136(%rsp), %rdi        # 8-byte Reload
-	movq	1128(%rsp), %rsi        # 8-byte Reload
-	movq	1120(%rsp), %rdx        # 8-byte Reload
-	movq	1280(%rsp), %rcx        # 8-byte Reload
+	movq	1296(%rsp), %rcx        # 8-byte Reload
 	movq	1256(%rsp), %r8         # 8-byte Reload
-	movl	1348(%rsp), %r9d        # 4-byte Reload
+	movl	1148(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	1168(%rsp), %rdi        # 8-byte Reload
-	movq	1176(%rsp), %rsi        # 8-byte Reload
-	movq	1368(%rsp), %rdx        # 8-byte Reload
-	movq	1096(%rsp), %rcx        # 8-byte Reload
-	movq	1304(%rsp), %r8         # 8-byte Reload
-	movq	1192(%rsp), %r9         # 8-byte Reload
-	movq	1152(%rsp), %r10        # 8-byte Reload
+	movl	1788(%rsp), %r9d        # 4-byte Reload
+	movl	%r9d, %ebx
+	movl	%ebx, %edx
+	movq	1128(%rsp), %rdi        # 8-byte Reload
+	movq	1152(%rsp), %rsi        # 8-byte Reload
+	movq	1208(%rsp), %rcx        # 8-byte Reload
+	movq	1272(%rsp), %r8         # 8-byte Reload
+	movq	1304(%rsp), %r9         # 8-byte Reload
+	movq	1216(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movl	1124(%rsp), %ebx        # 4-byte Reload
+	movl	%ebx, %ebp
+	movl	%ebp, %edx
+	movq	1208(%rsp), %rdi        # 8-byte Reload
+	movq	1152(%rsp), %rsi        # 8-byte Reload
+	movq	1208(%rsp), %rcx        # 8-byte Reload
+	movq	1280(%rsp), %r8         # 8-byte Reload
+	movq	1304(%rsp), %r9         # 8-byte Reload
+	movq	1216(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movl	1124(%rsp), %ebx        # 4-byte Reload
+	movl	1788(%rsp), %ebp        # 4-byte Reload
+	imull	%ebp, %ebx
+.Ltmp28:
+	.loc	1 25 0                  # feature_extraction.c:25:0
+	movl	%ebx, %esi
+	movl	%esi, %edx
+	movq	1184(%rsp), %rdi        # 8-byte Reload
+	movq	1152(%rsp), %rsi        # 8-byte Reload
+	movq	1208(%rsp), %rcx        # 8-byte Reload
+	movq	1296(%rsp), %r8         # 8-byte Reload
+	movq	1304(%rsp), %r9         # 8-byte Reload
+	movq	1216(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	movl	%ebx, 1120(%rsp)        # 4-byte Spill
+	callq	trace_logger_log_int
+	movq	1224(%rsp), %rdi        # 8-byte Reload
+	movq	1232(%rsp), %rsi        # 8-byte Reload
+	movq	1192(%rsp), %rdx        # 8-byte Reload
+	movq	1160(%rsp), %rcx        # 8-byte Reload
+	movq	1288(%rsp), %r8         # 8-byte Reload
+	movl	1148(%rsp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movl	1120(%rsp), %r9d        # 4-byte Reload
+	movl	%r9d, %ebx
+	movl	%ebx, %edx
+	movq	1208(%rsp), %rdi        # 8-byte Reload
+	movq	1152(%rsp), %rsi        # 8-byte Reload
+	movq	1208(%rsp), %rcx        # 8-byte Reload
+	movq	1296(%rsp), %r8         # 8-byte Reload
+	movq	1304(%rsp), %r9         # 8-byte Reload
+	movq	1216(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movl	1120(%rsp), %ebx        # 4-byte Reload
+	movslq	%ebx, %rax
+	movq	1184(%rsp), %rdi        # 8-byte Reload
+	movq	1168(%rsp), %rsi        # 8-byte Reload
+	movq	%rax, %rdx
+	movq	1208(%rsp), %rcx        # 8-byte Reload
+	movq	1160(%rsp), %r8         # 8-byte Reload
+	movq	1304(%rsp), %r9         # 8-byte Reload
+	movq	1216(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	movq	%rax, 1112(%rsp)        # 8-byte Spill
+	callq	trace_logger_log_int
+	movq	1224(%rsp), %rdi        # 8-byte Reload
+	movq	1232(%rsp), %rsi        # 8-byte Reload
+	movq	1192(%rsp), %rdx        # 8-byte Reload
+	movq	1136(%rsp), %rcx        # 8-byte Reload
+	movq	1128(%rsp), %r8         # 8-byte Reload
+	movl	1148(%rsp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	1208(%rsp), %rdi        # 8-byte Reload
+	movq	1304(%rsp), %rsi        # 8-byte Reload
+	movq	1304(%rsp), %rdx        # 8-byte Reload
+	movq	1208(%rsp), %rcx        # 8-byte Reload
+	movq	1200(%rsp), %r8         # 8-byte Reload
+	movq	1304(%rsp), %r9         # 8-byte Reload
+	movq	1216(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	1304(%rsp), %rax        # 8-byte Reload
+	movq	1320(%rsp), %rcx        # 8-byte Reload
+	movq	%rax, 1104(%rsp)        # 8-byte Spill
+	movq	%rcx, 1096(%rsp)        # 8-byte Spill
+.LBB0_4:                                #   Parent Loop BB0_2 Depth=1
+                                        # =>  This Inner Loop Header: Depth=2
+	movq	1096(%rsp), %rax        # 8-byte Reload
+	movq	1104(%rsp), %rcx        # 8-byte Reload
+	movabsq	$2, %rdx
+	movabsq	$64, %rsi
+	leaq	.L.str, %rdi
+	movabsq	$0, %r8
+	leaq	.L.str7, %r9
+	leaq	.L.str8, %r10
+	movabsq	$1, %r11
+	leaq	.L.str31, %rbx
+	movabsq	$5, %r14
+	leaq	fprintf, %r15
+	leaq	.L.str39, %r12
+	movabsq	$27, %r13
+	leaq	.L.str4, %rbp
+	movq	%rax, 1088(%rsp)        # 8-byte Spill
+	leaq	.L.str28, %rax
+	movq	%rax, 1080(%rsp)        # 8-byte Spill
+	leaq	.L.str38, %rax
+	movq	%rax, 1072(%rsp)        # 8-byte Spill
+	movabsq	$49, %rax
+	movq	%rsi, 1064(%rsp)        # 8-byte Spill
+	movl	$0, %esi
+	movl	%esi, 1060(%rsp)        # 4-byte Spill
+	movl	$1, %esi
+	movq	%rax, 1048(%rsp)        # 8-byte Spill
+	movabsq	$19134, %rax            # imm = 0x4ABE
+	movq	%rax, 1040(%rsp)        # 8-byte Spill
+	movabsq	$32, %rax
+	movq	%rax, 1032(%rsp)        # 8-byte Spill
+	leaq	.L.str37, %rax
+	movq	%rax, 1024(%rsp)        # 8-byte Spill
+	leaq	.L.str33, %rax
+	movq	%rax, 1016(%rsp)        # 8-byte Spill
+	movabsq	$33, %rax
+	movq	%rax, 1008(%rsp)        # 8-byte Spill
+	leaq	.L.str36, %rax
+	movq	%rax, 1000(%rsp)        # 8-byte Spill
+	leaq	.L.str34, %rax
+	movq	%rax, 992(%rsp)         # 8-byte Spill
+	leaq	.L.str35, %rax
+	movq	%rax, 984(%rsp)         # 8-byte Spill
+	movabsq	$29, %rax
+	movq	%rax, 976(%rsp)         # 8-byte Spill
+	leaq	.L.str29, %rax
+	movq	%rax, 968(%rsp)         # 8-byte Spill
+	leaq	.L.str26, %rax
+	movq	%rax, 960(%rsp)         # 8-byte Spill
+	movabsq	$8, %rax
+	movq	%rax, 952(%rsp)         # 8-byte Spill
+	leaq	.L.str23, %rax
+	movq	%rax, 944(%rsp)         # 8-byte Spill
+	leaq	.L.str20, %rax
+	movq	%rax, 936(%rsp)         # 8-byte Spill
+	leaq	.L.str32, %rax
+	movq	%rax, 928(%rsp)         # 8-byte Spill
+	movabsq	$-1, %rax
+	movq	%rax, 920(%rsp)         # 8-byte Spill
+	movabsq	$48, %rax
+	movq	%rax, 912(%rsp)         # 8-byte Spill
+	leaq	.L.str30, %rax
+	.loc	1 27 0                  # feature_extraction.c:27:0
+.Ltmp29:
+	movq	%rax, 904(%rsp)         # 8-byte Spill
+	movq	920(%rsp), %rax         # 8-byte Reload
+	movq	%rdi, 896(%rsp)         # 8-byte Spill
+	movq	%rax, %rdi
+	movl	%esi, 892(%rsp)         # 4-byte Spill
+	movq	%rbp, %rsi
+	movq	1080(%rsp), %rax        # 8-byte Reload
+	movq	%rdx, 880(%rsp)         # 8-byte Spill
+	movq	%rax, %rdx
+	movq	968(%rsp), %rax         # 8-byte Reload
+	movq	%rcx, 872(%rsp)         # 8-byte Spill
+	movq	%rax, %rcx
+	movq	912(%rsp), %rax         # 8-byte Reload
+	movq	%r8, 864(%rsp)          # 8-byte Spill
+	movq	%rax, %r8
+	movl	1060(%rsp), %eax        # 4-byte Reload
+	movq	%r9, 856(%rsp)          # 8-byte Spill
+	movl	%eax, %r9d
+	movl	$1, (%rsp)
+	movq	%r15, 848(%rsp)         # 8-byte Spill
+	movq	%r12, 840(%rsp)         # 8-byte Spill
+	movq	%r13, 832(%rsp)         # 8-byte Spill
+	movq	%rbp, 824(%rsp)         # 8-byte Spill
+	movq	%r14, 816(%rsp)         # 8-byte Spill
+	movq	%rbx, 808(%rsp)         # 8-byte Spill
+	movq	%r10, 800(%rsp)         # 8-byte Spill
+	movq	%r11, 792(%rsp)         # 8-byte Spill
+	callq	trace_logger_log0
+	movq	880(%rsp), %rdi         # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	864(%rsp), %rdx         # 8-byte Reload
+	movq	792(%rsp), %rcx         # 8-byte Reload
+	movq	904(%rsp), %r8          # 8-byte Reload
+	movq	792(%rsp), %r9          # 8-byte Reload
+	movq	1080(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-	movq	1096(%rsp), %rdi        # 8-byte Reload
-	movq	1176(%rsp), %rsi        # 8-byte Reload
-	movq	1488(%rsp), %rdx        # 8-byte Reload
-	movq	1096(%rsp), %rcx        # 8-byte Reload
-	movq	1264(%rsp), %r8         # 8-byte Reload
-	movq	1192(%rsp), %r9         # 8-byte Reload
-	movq	1152(%rsp), %r10        # 8-byte Reload
+	movq	792(%rsp), %rdi         # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	864(%rsp), %rdx         # 8-byte Reload
+	movq	864(%rsp), %rcx         # 8-byte Reload
+	movq	856(%rsp), %r8          # 8-byte Reload
+	movq	792(%rsp), %r9          # 8-byte Reload
+	movq	944(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	1368(%rsp), %rcx        # 8-byte Reload
-	shlq	$2, %rcx
-	movq	1488(%rsp), %rdx        # 8-byte Reload
-	addq	%rcx, %rdx
-	movq	1328(%rsp), %rdi        # 8-byte Reload
-	movq	1176(%rsp), %rsi        # 8-byte Reload
-	movq	%rdx, 1072(%rsp)        # 8-byte Spill
-	movq	1096(%rsp), %rcx        # 8-byte Reload
-	movq	1280(%rsp), %r8         # 8-byte Reload
-	movq	1192(%rsp), %r9         # 8-byte Reload
-	movq	1152(%rsp), %r10        # 8-byte Reload
+	callq	trace_logger_log_int
+	movq	1040(%rsp), %rdi        # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	872(%rsp), %rdx         # 8-byte Reload
+	movq	792(%rsp), %rcx         # 8-byte Reload
+	movq	968(%rsp), %r8          # 8-byte Reload
+	movq	864(%rsp), %r9          # 8-byte Reload
+	movq	944(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	1136(%rsp), %rdi        # 8-byte Reload
-	movq	1128(%rsp), %rsi        # 8-byte Reload
-	movq	1120(%rsp), %rdx        # 8-byte Reload
-	movq	1288(%rsp), %rcx        # 8-byte Reload
-	movq	1272(%rsp), %r8         # 8-byte Reload
-	movl	1348(%rsp), %r9d        # 4-byte Reload
+	callq	trace_logger_log_int
+	movq	920(%rsp), %rdi         # 8-byte Reload
+	movq	824(%rsp), %rsi         # 8-byte Reload
+	movq	1080(%rsp), %rdx        # 8-byte Reload
+	movq	808(%rsp), %rcx         # 8-byte Reload
+	movq	912(%rsp), %r8          # 8-byte Reload
+	movl	1060(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	1096(%rsp), %rdi        # 8-byte Reload
-	movq	1176(%rsp), %rsi        # 8-byte Reload
-	movq	1072(%rsp), %rdx        # 8-byte Reload
-	movq	1096(%rsp), %rcx        # 8-byte Reload
-	movq	1280(%rsp), %r8         # 8-byte Reload
-	movq	1192(%rsp), %r9         # 8-byte Reload
-	movq	1152(%rsp), %r10        # 8-byte Reload
+	movq	880(%rsp), %rdi         # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	864(%rsp), %rdx         # 8-byte Reload
+	movq	792(%rsp), %rcx         # 8-byte Reload
+	movq	928(%rsp), %r8          # 8-byte Reload
+	movq	792(%rsp), %r9          # 8-byte Reload
+	movq	1080(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	792(%rsp), %rdi         # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	864(%rsp), %rdx         # 8-byte Reload
+	movq	792(%rsp), %rcx         # 8-byte Reload
+	movq	936(%rsp), %r8          # 8-byte Reload
+	movq	792(%rsp), %r9          # 8-byte Reload
+	movq	944(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	1040(%rsp), %rdi        # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	1088(%rsp), %rdx        # 8-byte Reload
+	movq	792(%rsp), %rcx         # 8-byte Reload
+	movq	808(%rsp), %r8          # 8-byte Reload
+	movq	864(%rsp), %r9          # 8-byte Reload
+	movq	944(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-	movq	1488(%rsp), %rcx        # 8-byte Reload
-	movq	1368(%rsp), %rdx        # 8-byte Reload
+	movq	832(%rsp), %rdi         # 8-byte Reload
+	movq	824(%rsp), %rsi         # 8-byte Reload
+	movq	1080(%rsp), %rdx        # 8-byte Reload
+	movq	1016(%rsp), %rcx        # 8-byte Reload
+	movq	952(%rsp), %r8          # 8-byte Reload
+	movl	1060(%rsp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	880(%rsp), %rdi         # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	1112(%rsp), %rdx        # 8-byte Reload
+	movq	792(%rsp), %rcx         # 8-byte Reload
+	movq	960(%rsp), %r8          # 8-byte Reload
+	movq	864(%rsp), %r9          # 8-byte Reload
+	movq	800(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	792(%rsp), %rdi         # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	872(%rsp), %rdx         # 8-byte Reload
+	movq	792(%rsp), %rcx         # 8-byte Reload
+	movq	968(%rsp), %r8          # 8-byte Reload
+	movq	864(%rsp), %r9          # 8-byte Reload
+	movq	800(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	872(%rsp), %rcx         # 8-byte Reload
+	movq	1112(%rsp), %rdx        # 8-byte Reload
+	addq	%rdx, %rcx
+	movq	1040(%rsp), %rdi        # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	%rcx, %rdx
+	movq	792(%rsp), %r8          # 8-byte Reload
+	movq	%rcx, 784(%rsp)         # 8-byte Spill
+	movq	%r8, %rcx
+	movq	1016(%rsp), %r8         # 8-byte Reload
+	movq	864(%rsp), %r9          # 8-byte Reload
+	movq	800(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	832(%rsp), %rdi         # 8-byte Reload
+	movq	824(%rsp), %rsi         # 8-byte Reload
+	movq	1080(%rsp), %rdx        # 8-byte Reload
+	movq	992(%rsp), %rcx         # 8-byte Reload
+	movq	976(%rsp), %r8          # 8-byte Reload
+	movl	1060(%rsp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	880(%rsp), %rdi         # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	784(%rsp), %rdx         # 8-byte Reload
+	movq	792(%rsp), %rcx         # 8-byte Reload
+	movq	1016(%rsp), %r8         # 8-byte Reload
+	movq	864(%rsp), %r9          # 8-byte Reload
+	movq	800(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	792(%rsp), %rdi         # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	1792(%rsp), %rdx        # 8-byte Reload
+	movq	792(%rsp), %rcx         # 8-byte Reload
+	movq	984(%rsp), %r8          # 8-byte Reload
+	movq	864(%rsp), %r9          # 8-byte Reload
+	movq	800(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	784(%rsp), %rcx         # 8-byte Reload
+	shlq	$2, %rcx
+	movq	1792(%rsp), %rdx        # 8-byte Reload
+	addq	%rcx, %rdx
+	movq	1040(%rsp), %rdi        # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	%rdx, 776(%rsp)         # 8-byte Spill
+	movq	792(%rsp), %rcx         # 8-byte Reload
+	movq	992(%rsp), %r8          # 8-byte Reload
+	movq	864(%rsp), %r9          # 8-byte Reload
+	movq	800(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	832(%rsp), %rdi         # 8-byte Reload
+	movq	824(%rsp), %rsi         # 8-byte Reload
+	movq	1080(%rsp), %rdx        # 8-byte Reload
+	movq	1000(%rsp), %rcx        # 8-byte Reload
+	movq	832(%rsp), %r8          # 8-byte Reload
+	movl	1060(%rsp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	792(%rsp), %rdi         # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	776(%rsp), %rdx         # 8-byte Reload
+	movq	792(%rsp), %rcx         # 8-byte Reload
+	movq	992(%rsp), %r8          # 8-byte Reload
+	movq	864(%rsp), %r9          # 8-byte Reload
+	movq	800(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	1792(%rsp), %rcx        # 8-byte Reload
+	movq	784(%rsp), %rdx         # 8-byte Reload
 	movl	(%rcx,%rdx,4), %eax
 	movl	%eax, %esi
 	movl	%esi, %edx
-	movq	1328(%rsp), %rdi        # 8-byte Reload
-	movq	1320(%rsp), %rsi        # 8-byte Reload
-	movq	1096(%rsp), %rcx        # 8-byte Reload
-	movq	1288(%rsp), %r8         # 8-byte Reload
-	movq	1192(%rsp), %r9         # 8-byte Reload
-	movq	1152(%rsp), %r10        # 8-byte Reload
+	movq	1040(%rsp), %rdi        # 8-byte Reload
+	movq	1032(%rsp), %rsi        # 8-byte Reload
+	movq	792(%rsp), %rcx         # 8-byte Reload
+	movq	1000(%rsp), %r8         # 8-byte Reload
+	movq	864(%rsp), %r9          # 8-byte Reload
+	movq	800(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
-	movl	%eax, 1068(%rsp)        # 4-byte Spill
+	movl	%eax, 772(%rsp)         # 4-byte Spill
 	callq	trace_logger_log_int
-	movq	1136(%rsp), %rdi        # 8-byte Reload
-	movq	1128(%rsp), %rsi        # 8-byte Reload
-	movq	1120(%rsp), %rdx        # 8-byte Reload
-	movq	1312(%rsp), %rcx        # 8-byte Reload
-	movq	1296(%rsp), %r8         # 8-byte Reload
-	movl	1348(%rsp), %r9d        # 4-byte Reload
+	movq	832(%rsp), %rdi         # 8-byte Reload
+	movq	824(%rsp), %rsi         # 8-byte Reload
+	movq	1080(%rsp), %rdx        # 8-byte Reload
+	movq	1024(%rsp), %rcx        # 8-byte Reload
+	movq	1008(%rsp), %r8         # 8-byte Reload
+	movl	1060(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	1096(%rsp), %rdi        # 8-byte Reload
-	movq	1176(%rsp), %rsi        # 8-byte Reload
-	movq	1368(%rsp), %rdx        # 8-byte Reload
-	movq	1096(%rsp), %rcx        # 8-byte Reload
-	movq	1304(%rsp), %r8         # 8-byte Reload
-	movq	1192(%rsp), %r9         # 8-byte Reload
-	movq	1152(%rsp), %r10        # 8-byte Reload
+	movq	792(%rsp), %rdi         # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	784(%rsp), %rdx         # 8-byte Reload
+	movq	792(%rsp), %rcx         # 8-byte Reload
+	movq	1016(%rsp), %r8         # 8-byte Reload
+	movq	864(%rsp), %r9          # 8-byte Reload
+	movq	800(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-	movq	1368(%rsp), %rcx        # 8-byte Reload
+	movq	784(%rsp), %rcx         # 8-byte Reload
 	movl	%ecx, %eax
 	movl	%eax, %esi
 	movl	%esi, %edx
-	movq	1328(%rsp), %rdi        # 8-byte Reload
-	movq	1320(%rsp), %rsi        # 8-byte Reload
-	movq	1096(%rsp), %rcx        # 8-byte Reload
-	movq	1312(%rsp), %r8         # 8-byte Reload
-	movq	1192(%rsp), %r9         # 8-byte Reload
-	movq	1152(%rsp), %r10        # 8-byte Reload
+	movq	1040(%rsp), %rdi        # 8-byte Reload
+	movq	1032(%rsp), %rsi        # 8-byte Reload
+	movq	792(%rsp), %rcx         # 8-byte Reload
+	movq	1024(%rsp), %r8         # 8-byte Reload
+	movq	864(%rsp), %r9          # 8-byte Reload
+	movq	800(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
-	movl	%eax, 1064(%rsp)        # 4-byte Spill
+	movl	%eax, 768(%rsp)         # 4-byte Spill
 	callq	trace_logger_log_int
-	movq	1136(%rsp), %rdi        # 8-byte Reload
-	movq	1128(%rsp), %rsi        # 8-byte Reload
-	movq	1120(%rsp), %rdx        # 8-byte Reload
-	movq	1360(%rsp), %rcx        # 8-byte Reload
-	movq	1336(%rsp), %r8         # 8-byte Reload
-	movl	1348(%rsp), %r9d        # 4-byte Reload
+	movq	832(%rsp), %rdi         # 8-byte Reload
+	movq	824(%rsp), %rsi         # 8-byte Reload
+	movq	1080(%rsp), %rdx        # 8-byte Reload
+	movq	1072(%rsp), %rcx        # 8-byte Reload
+	movq	1048(%rsp), %r8         # 8-byte Reload
+	movl	1060(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	1104(%rsp), %rdi        # 8-byte Reload
-	movq	1176(%rsp), %rsi        # 8-byte Reload
-	movq	1112(%rsp), %rdx        # 8-byte Reload
-	movq	1096(%rsp), %rcx        # 8-byte Reload
-	movq	1144(%rsp), %r8         # 8-byte Reload
-	movq	1192(%rsp), %r9         # 8-byte Reload
-	movq	1152(%rsp), %r10        # 8-byte Reload
+	movq	816(%rsp), %rdi         # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	848(%rsp), %rdx         # 8-byte Reload
+	movq	792(%rsp), %rcx         # 8-byte Reload
+	movq	840(%rsp), %r8          # 8-byte Reload
+	movq	864(%rsp), %r9          # 8-byte Reload
+	movq	800(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-	movq	1096(%rsp), %rdi        # 8-byte Reload
-	movq	1176(%rsp), %rsi        # 8-byte Reload
-	movq	1080(%rsp), %rdx        # 8-byte Reload
-	movq	1096(%rsp), %rcx        # 8-byte Reload
-	movq	1088(%rsp), %r8         # 8-byte Reload
-	movq	1192(%rsp), %r9         # 8-byte Reload
-	movq	1152(%rsp), %r10        # 8-byte Reload
+	movq	792(%rsp), %rdi         # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	1088(%rsp), %rdx        # 8-byte Reload
+	movq	792(%rsp), %rcx         # 8-byte Reload
+	movq	808(%rsp), %r8          # 8-byte Reload
+	movq	864(%rsp), %r9          # 8-byte Reload
+	movq	800(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-	movq	1168(%rsp), %rdi        # 8-byte Reload
-	movq	1176(%rsp), %rsi        # 8-byte Reload
-	movq	1352(%rsp), %rdx        # 8-byte Reload
-	movq	1192(%rsp), %rcx        # 8-byte Reload
-	movq	1160(%rsp), %r8         # 8-byte Reload
-	movq	1192(%rsp), %r9         # 8-byte Reload
-	movq	1152(%rsp), %r10        # 8-byte Reload
+	movq	880(%rsp), %rdi         # 8-byte Reload
+	movq	1064(%rsp), %rsi        # 8-byte Reload
+	movq	896(%rsp), %rdx         # 8-byte Reload
+	movq	864(%rsp), %rcx         # 8-byte Reload
+	movq	856(%rsp), %r8          # 8-byte Reload
+	movq	864(%rsp), %r9          # 8-byte Reload
+	movq	800(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
 	movl	$.L.str, %eax
 	movl	%eax, %esi
 	xorl	%eax, %eax
                                         # kill: AL<def> AL<kill> EAX<kill>
-	movq	1080(%rsp), %rdi        # 8-byte Reload
-	movl	1064(%rsp), %edx        # 4-byte Reload
-	movl	1068(%rsp), %ecx        # 4-byte Reload
+	movq	1088(%rsp), %rdi        # 8-byte Reload
+	movl	768(%rsp), %edx         # 4-byte Reload
+	movl	772(%rsp), %ecx         # 4-byte Reload
 	callq	fprintf
-	movabsq	$2, %rsi
-	movabsq	$64, %rdi
-	leaq	.L.str1, %rdx
+	movabsq	$1, %rsi
+	leaq	.L.str41, %rdi
 	movabsq	$0, %r8
 	leaq	.L.str8, %r9
-	leaq	.L.str9, %r10
-	movabsq	$1, %r11
-	leaq	.L.str25, %rbx
-	movabsq	$5, %r14
-	leaq	fprintf, %r15
-	leaq	.L.str24, %r12
-	movabsq	$21, %r13
-	leaq	.L.str5, %rbp
-	leaq	.L.str12, %rcx
-	movq	%rcx, 1056(%rsp)        # 8-byte Spill
-	leaq	.L.str30, %rcx
-	movq	%rcx, 1048(%rsp)        # 8-byte Spill
-	movabsq	$49, %rcx
-	movl	%eax, 1044(%rsp)        # 4-byte Spill
-	movl	$0, %eax
-	movl	%eax, 1040(%rsp)        # 4-byte Spill
-	movl	$1, %eax
-	movq	%rcx, 1032(%rsp)        # 8-byte Spill
-	movabsq	$19134, %rcx            # imm = 0x4ABE
-	movq	%rcx, 1024(%rsp)        # 8-byte Spill
+	movabsq	$2, %r10
+	leaq	.L.str28, %r11
+	movabsq	$3, %rbx
+	leaq	.L.str19, %r14
+	movabsq	$25, %r15
+	leaq	.L.str4, %r12
+	leaq	.L.str42, %rcx
+	movl	$0, %edx
+	movl	$1, %ebp
+	movabsq	$19134, %r13            # imm = 0x4ABE
+	movq	%rcx, 760(%rsp)         # 8-byte Spill
 	movabsq	$32, %rcx
-	movq	%rcx, 1016(%rsp)        # 8-byte Spill
-	leaq	.L.str29, %rcx
-	movq	%rcx, 1008(%rsp)        # 8-byte Spill
+	movq	%rcx, 752(%rsp)         # 8-byte Spill
+	leaq	.L.str40, %rcx
+	movq	%rcx, 744(%rsp)         # 8-byte Spill
 	leaq	.L.str14, %rcx
-	movq	%rcx, 1000(%rsp)        # 8-byte Spill
+	movq	%rcx, 736(%rsp)         # 8-byte Spill
+	movabsq	$46, %rcx
+	movq	%rcx, 728(%rsp)         # 8-byte Spill
+	movabsq	$64, %rcx
+	movq	%rcx, 720(%rsp)         # 8-byte Spill
+	leaq	.L.str30, %rcx
+	movq	%rcx, 712(%rsp)         # 8-byte Spill
 	movabsq	$33, %rcx
-	movq	%rcx, 992(%rsp)         # 8-byte Spill
-	leaq	.L.str28, %rcx
-	movq	%rcx, 984(%rsp)         # 8-byte Spill
-	leaq	.L.str26, %rcx
-	movq	%rcx, 976(%rsp)         # 8-byte Spill
-	movabsq	$27, %rcx
-	movq	%rcx, 968(%rsp)         # 8-byte Spill
-	leaq	.L.str27, %rcx
-	movq	%rcx, 960(%rsp)         # 8-byte Spill
-	movabsq	$29, %rcx
-	movq	%rcx, 952(%rsp)         # 8-byte Spill
+	movq	%rcx, 704(%rsp)         # 8-byte Spill
+	leaq	.L.str32, %rcx
+	movq	%rcx, 696(%rsp)         # 8-byte Spill
 	leaq	stdout, %rcx
-	movq	%rcx, 944(%rsp)         # 8-byte Spill
-	leaq	.L.str18, %rcx
-	movq	%rcx, 936(%rsp)         # 8-byte Spill
-	leaq	.L.str23, %rcx
-	.loc	1 21 0                  # feature_extraction.c:21:0
-	movl	%eax, 932(%rsp)         # 4-byte Spill
-	movl	1044(%rsp), %eax        # 4-byte Reload
+	movq	%rcx, 688(%rsp)         # 8-byte Spill
+	leaq	.L.str21, %rcx
+	movq	%rcx, 680(%rsp)         # 8-byte Spill
+	movabsq	$27, %rcx
+	movq	%rcx, 672(%rsp)         # 8-byte Spill
+	leaq	.L.str29, %rcx
+	movq	%rcx, 664(%rsp)         # 8-byte Spill
+	leaq	.L.str7, %rcx
+	movq	%rcx, 656(%rsp)         # 8-byte Spill
+	movabsq	$8, %rcx
+	movq	%rcx, 648(%rsp)         # 8-byte Spill
+	leaq	.L.str38, %rcx
+.Ltmp30:
+	.loc	1 25 0                  # feature_extraction.c:25:0
 	movl	%eax, %eax
                                         # kill: RAX<def> EAX<kill>
-	movq	%rax, 920(%rsp)         # 8-byte Spill
-	movq	1024(%rsp), %rax        # 8-byte Reload
-	movq	%rdi, 912(%rsp)         # 8-byte Spill
-	movq	%rax, %rdi
-	movq	1016(%rsp), %rax        # 8-byte Reload
-	movq	%rsi, 904(%rsp)         # 8-byte Spill
+	movq	%rdi, 640(%rsp)         # 8-byte Spill
+	movq	%r13, %rdi
+	movq	%rax, 632(%rsp)         # 8-byte Spill
+	movq	752(%rsp), %rax         # 8-byte Reload
+	movq	%rsi, 624(%rsp)         # 8-byte Spill
 	movq	%rax, %rsi
-	movq	920(%rsp), %rax         # 8-byte Reload
-	movq	%rdx, 896(%rsp)         # 8-byte Spill
+	movq	632(%rsp), %rax         # 8-byte Reload
+	movl	%edx, 620(%rsp)         # 4-byte Spill
 	movq	%rax, %rdx
-	movq	%rcx, 888(%rsp)         # 8-byte Spill
-	movq	%r11, %rcx
-	movq	888(%rsp), %rax         # 8-byte Reload
-	movq	%r8, 880(%rsp)          # 8-byte Spill
+	movq	624(%rsp), %rax         # 8-byte Reload
+	movq	%rcx, 608(%rsp)         # 8-byte Spill
+	movq	%rax, %rcx
+	movq	608(%rsp), %rax         # 8-byte Reload
+	movq	%r8, 600(%rsp)          # 8-byte Spill
 	movq	%rax, %r8
-	movq	880(%rsp), %rax         # 8-byte Reload
-	movq	%r9, 872(%rsp)          # 8-byte Spill
+	movq	600(%rsp), %rax         # 8-byte Reload
+	movq	%r9, 592(%rsp)          # 8-byte Spill
 	movq	%rax, %r9
-	movq	%r10, (%rsp)
-	movq	%r12, 864(%rsp)         # 8-byte Spill
-	movq	%rbp, 856(%rsp)         # 8-byte Spill
-	movq	%r13, 848(%rsp)         # 8-byte Spill
-	movq	%r15, 840(%rsp)         # 8-byte Spill
-	movq	%r14, 832(%rsp)         # 8-byte Spill
-	movq	%r10, 824(%rsp)         # 8-byte Spill
-	movq	%r11, 816(%rsp)         # 8-byte Spill
-	movq	%rbx, 808(%rsp)         # 8-byte Spill
+	movq	592(%rsp), %rax         # 8-byte Reload
+	movq	%rax, (%rsp)
+	movq	%r13, 584(%rsp)         # 8-byte Spill
+	movl	%ebp, 580(%rsp)         # 4-byte Spill
+	movq	%r12, 568(%rsp)         # 8-byte Spill
+	movq	%r15, 560(%rsp)         # 8-byte Spill
+	movq	%r10, 552(%rsp)         # 8-byte Spill
+	movq	%r11, 544(%rsp)         # 8-byte Spill
+	movq	%rbx, 536(%rsp)         # 8-byte Spill
+	movq	%r14, 528(%rsp)         # 8-byte Spill
 	callq	trace_logger_log_int
-	movq	848(%rsp), %rdi         # 8-byte Reload
-	movq	856(%rsp), %rsi         # 8-byte Reload
-	movq	1056(%rsp), %rdx        # 8-byte Reload
-	movq	808(%rsp), %rcx         # 8-byte Reload
-	movq	968(%rsp), %r8          # 8-byte Reload
-	movl	1040(%rsp), %r9d        # 4-byte Reload
+	movq	560(%rsp), %rdi         # 8-byte Reload
+	movq	568(%rsp), %rsi         # 8-byte Reload
+	movq	544(%rsp), %rdx         # 8-byte Reload
+	movq	712(%rsp), %rcx         # 8-byte Reload
+	movq	648(%rsp), %r8          # 8-byte Reload
+	movl	620(%rsp), %r9d         # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	816(%rsp), %rdi         # 8-byte Reload
-	movq	912(%rsp), %rsi         # 8-byte Reload
-	movq	944(%rsp), %rdx         # 8-byte Reload
-	movq	816(%rsp), %rcx         # 8-byte Reload
-	movq	936(%rsp), %r8          # 8-byte Reload
-	movq	880(%rsp), %r9          # 8-byte Reload
-	movq	824(%rsp), %rax         # 8-byte Reload
+	movq	552(%rsp), %rdi         # 8-byte Reload
+	movq	720(%rsp), %rsi         # 8-byte Reload
+	movq	624(%rsp), %rdx         # 8-byte Reload
+	movq	600(%rsp), %rcx         # 8-byte Reload
+	movq	656(%rsp), %r8          # 8-byte Reload
+	movq	600(%rsp), %r9          # 8-byte Reload
+	movq	592(%rsp), %rax         # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	624(%rsp), %rdi         # 8-byte Reload
+	movq	720(%rsp), %rsi         # 8-byte Reload
+	movq	872(%rsp), %rdx         # 8-byte Reload
+	movq	624(%rsp), %rcx         # 8-byte Reload
+	movq	664(%rsp), %r8          # 8-byte Reload
+	movq	600(%rsp), %r9          # 8-byte Reload
+	movq	592(%rsp), %rax         # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	872(%rsp), %rax         # 8-byte Reload
+	addq	$1, %rax
+	.loc	1 27 0                  # feature_extraction.c:27:0
+.Ltmp31:
+	movq	584(%rsp), %rdi         # 8-byte Reload
+	movq	720(%rsp), %rsi         # 8-byte Reload
+	movq	%rax, %rdx
+	movq	624(%rsp), %rcx         # 8-byte Reload
+	movq	712(%rsp), %r8          # 8-byte Reload
+	movq	600(%rsp), %r9          # 8-byte Reload
+	movq	592(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	movq	%rax, 520(%rsp)         # 8-byte Spill
+	callq	trace_logger_log_int
+	movq	672(%rsp), %rdi         # 8-byte Reload
+	movq	568(%rsp), %rsi         # 8-byte Reload
+	movq	544(%rsp), %rdx         # 8-byte Reload
+	movq	696(%rsp), %rcx         # 8-byte Reload
+	movq	672(%rsp), %r8          # 8-byte Reload
+	movl	620(%rsp), %r9d         # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	624(%rsp), %rdi         # 8-byte Reload
+	movq	720(%rsp), %rsi         # 8-byte Reload
+	movq	688(%rsp), %rdx         # 8-byte Reload
+	movq	624(%rsp), %rcx         # 8-byte Reload
+	movq	680(%rsp), %r8          # 8-byte Reload
+	movq	600(%rsp), %r9          # 8-byte Reload
+	movq	592(%rsp), %rax         # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
 	movq	stdout, %rax
-	movq	1024(%rsp), %rdi        # 8-byte Reload
-	movq	912(%rsp), %rsi         # 8-byte Reload
+.Ltmp32:
+	.loc	1 25 0                  # feature_extraction.c:25:0
+	movq	584(%rsp), %rdi         # 8-byte Reload
+	movq	720(%rsp), %rsi         # 8-byte Reload
 	movq	%rax, %rdx
-	movq	816(%rsp), %rcx         # 8-byte Reload
-	movq	808(%rsp), %r8          # 8-byte Reload
-	movq	880(%rsp), %r9          # 8-byte Reload
-	movq	824(%rsp), %r10         # 8-byte Reload
+	movq	624(%rsp), %rcx         # 8-byte Reload
+	movq	696(%rsp), %r8          # 8-byte Reload
+	movq	600(%rsp), %r9          # 8-byte Reload
+	movq	592(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
-	movq	%rax, 800(%rsp)         # 8-byte Spill
+	movq	%rax, 512(%rsp)         # 8-byte Spill
 	callq	trace_logger_log_ptr
-	movq	848(%rsp), %rdi         # 8-byte Reload
-	movq	856(%rsp), %rsi         # 8-byte Reload
-	movq	1056(%rsp), %rdx        # 8-byte Reload
-	movq	976(%rsp), %rcx         # 8-byte Reload
-	movq	952(%rsp), %r8          # 8-byte Reload
-	movl	1040(%rsp), %r9d        # 4-byte Reload
-	movl	$1, (%rsp)
-	callq	trace_logger_log0
-	movq	904(%rsp), %rdi         # 8-byte Reload
-	movq	912(%rsp), %rsi         # 8-byte Reload
-	movq	1368(%rsp), %rdx        # 8-byte Reload
-	movq	816(%rsp), %rcx         # 8-byte Reload
-	movq	1000(%rsp), %r8         # 8-byte Reload
-	movq	880(%rsp), %r9          # 8-byte Reload
-	movq	824(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_int
-	movq	816(%rsp), %rdi         # 8-byte Reload
-	movq	912(%rsp), %rsi         # 8-byte Reload
-	movq	1496(%rsp), %rdx        # 8-byte Reload
-	movq	816(%rsp), %rcx         # 8-byte Reload
-	movq	960(%rsp), %r8          # 8-byte Reload
-	movq	880(%rsp), %r9          # 8-byte Reload
-	movq	824(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	1368(%rsp), %rax        # 8-byte Reload
-	shlq	$2, %rax
-	movq	1496(%rsp), %rcx        # 8-byte Reload
-	addq	%rax, %rcx
-	movq	1024(%rsp), %rdi        # 8-byte Reload
-	movq	912(%rsp), %rsi         # 8-byte Reload
-	movq	%rcx, %rdx
-	movq	816(%rsp), %rax         # 8-byte Reload
-	movq	%rcx, 792(%rsp)         # 8-byte Spill
-	movq	%rax, %rcx
-	movq	976(%rsp), %r8          # 8-byte Reload
-	movq	880(%rsp), %r9          # 8-byte Reload
-	movq	824(%rsp), %r10         # 8-byte Reload
-	movq	%r10, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	848(%rsp), %rdi         # 8-byte Reload
-	movq	856(%rsp), %rsi         # 8-byte Reload
-	movq	1056(%rsp), %rdx        # 8-byte Reload
-	movq	984(%rsp), %rcx         # 8-byte Reload
-	movq	968(%rsp), %r8          # 8-byte Reload
-	movl	1040(%rsp), %r9d        # 4-byte Reload
-	movl	$1, (%rsp)
-	callq	trace_logger_log0
-	movq	816(%rsp), %rdi         # 8-byte Reload
-	movq	912(%rsp), %rsi         # 8-byte Reload
-	movq	792(%rsp), %rdx         # 8-byte Reload
-	movq	816(%rsp), %rcx         # 8-byte Reload
-	movq	976(%rsp), %r8          # 8-byte Reload
-	movq	880(%rsp), %r9          # 8-byte Reload
-	movq	824(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	1496(%rsp), %rax        # 8-byte Reload
-	movq	1368(%rsp), %rcx        # 8-byte Reload
-	movl	(%rax,%rcx,4), %esi
-	movl	%esi, %edi
-	movl	%edi, %edx
-	movq	1024(%rsp), %rdi        # 8-byte Reload
-	movq	1016(%rsp), %r8         # 8-byte Reload
-	movl	%esi, 788(%rsp)         # 4-byte Spill
-	movq	%r8, %rsi
-	movq	816(%rsp), %rcx         # 8-byte Reload
-	movq	984(%rsp), %r8          # 8-byte Reload
-	movq	880(%rsp), %r9          # 8-byte Reload
-	movq	824(%rsp), %r10         # 8-byte Reload
-	movq	%r10, (%rsp)
-	callq	trace_logger_log_int
-	movq	848(%rsp), %rdi         # 8-byte Reload
-	movq	856(%rsp), %rsi         # 8-byte Reload
-	movq	1056(%rsp), %rdx        # 8-byte Reload
-	movq	1008(%rsp), %rcx        # 8-byte Reload
-	movq	992(%rsp), %r8          # 8-byte Reload
-	movl	1040(%rsp), %r9d        # 4-byte Reload
-	movl	$1, (%rsp)
-	callq	trace_logger_log0
-	movq	816(%rsp), %rdi         # 8-byte Reload
-	movq	912(%rsp), %rsi         # 8-byte Reload
-	movq	1368(%rsp), %rdx        # 8-byte Reload
-	movq	816(%rsp), %rcx         # 8-byte Reload
-	movq	1000(%rsp), %r8         # 8-byte Reload
-	movq	880(%rsp), %r9          # 8-byte Reload
-	movq	824(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_int
-	movq	1368(%rsp), %rax        # 8-byte Reload
-	movl	%eax, %esi
-	movl	%esi, %edi
-	movl	%edi, %edx
-	movq	1024(%rsp), %rdi        # 8-byte Reload
-	movq	1016(%rsp), %rcx        # 8-byte Reload
-	movl	%esi, 784(%rsp)         # 4-byte Spill
-	movq	%rcx, %rsi
-	movq	816(%rsp), %rcx         # 8-byte Reload
-	movq	1008(%rsp), %r8         # 8-byte Reload
-	movq	880(%rsp), %r9          # 8-byte Reload
-	movq	824(%rsp), %r10         # 8-byte Reload
-	movq	%r10, (%rsp)
-	callq	trace_logger_log_int
-	movq	848(%rsp), %rdi         # 8-byte Reload
-	movq	856(%rsp), %rsi         # 8-byte Reload
-	movq	1056(%rsp), %rdx        # 8-byte Reload
-	movq	1048(%rsp), %rcx        # 8-byte Reload
-	movq	1032(%rsp), %r8         # 8-byte Reload
-	movl	1040(%rsp), %r9d        # 4-byte Reload
-	movl	$1, (%rsp)
-	callq	trace_logger_log0
-	movq	832(%rsp), %rdi         # 8-byte Reload
-	movq	912(%rsp), %rsi         # 8-byte Reload
-	movq	840(%rsp), %rdx         # 8-byte Reload
-	movq	816(%rsp), %rcx         # 8-byte Reload
-	movq	864(%rsp), %r8          # 8-byte Reload
-	movq	880(%rsp), %r9          # 8-byte Reload
-	movq	824(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	816(%rsp), %rdi         # 8-byte Reload
-	movq	912(%rsp), %rsi         # 8-byte Reload
-	movq	800(%rsp), %rdx         # 8-byte Reload
-	movq	816(%rsp), %rcx         # 8-byte Reload
-	movq	808(%rsp), %r8          # 8-byte Reload
-	movq	880(%rsp), %r9          # 8-byte Reload
-	movq	824(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	904(%rsp), %rdi         # 8-byte Reload
-	movq	912(%rsp), %rsi         # 8-byte Reload
-	movq	896(%rsp), %rdx         # 8-byte Reload
-	movq	880(%rsp), %rcx         # 8-byte Reload
-	movq	872(%rsp), %r8          # 8-byte Reload
-	movq	880(%rsp), %r9          # 8-byte Reload
-	movq	824(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	movl	$.L.str1, %esi
-                                        # kill: RSI<def> ESI<kill>
-	xorl	%edi, %edi
-	movb	%dil, %al
-	movq	800(%rsp), %rdi         # 8-byte Reload
-	movl	784(%rsp), %edx         # 4-byte Reload
-	movl	788(%rsp), %ecx         # 4-byte Reload
-	callq	fprintf
-	movabsq	$1, %rsi
-	leaq	.L.str33, %rdi
-	movabsq	$0, %r8
-	leaq	.L.str9, %r9
-	movabsq	$2, %r10
-	leaq	.L.str35, %r11
-	movabsq	$3, %rbx
-	leaq	.L.str16, %r14
-	movabsq	$22, %r15
-	leaq	.L.str5, %r12
-	leaq	.L.str12, %r13
-	leaq	.L.str34, %rcx
-	movl	$0, %edx
-	movl	$1, %ebp
-	movq	%rcx, 776(%rsp)         # 8-byte Spill
-	movabsq	$19134, %rcx            # imm = 0x4ABE
-	movq	%rcx, 768(%rsp)         # 8-byte Spill
-	movabsq	$32, %rcx
-	movq	%rcx, 760(%rsp)         # 8-byte Spill
-	leaq	.L.str31, %rcx
-	movq	%rcx, 752(%rsp)         # 8-byte Spill
-	leaq	.L.str32, %rcx
-	movq	%rcx, 744(%rsp)         # 8-byte Spill
-	movabsq	$46, %rcx
-	movq	%rcx, 736(%rsp)         # 8-byte Spill
-	movabsq	$64, %rcx
-	movq	%rcx, 728(%rsp)         # 8-byte Spill
-	leaq	.L.str26, %rcx
-	movq	%rcx, 720(%rsp)         # 8-byte Spill
-	movabsq	$27, %rcx
-	movq	%rcx, 712(%rsp)         # 8-byte Spill
-	leaq	.L.str19, %rcx
-	movq	%rcx, 704(%rsp)         # 8-byte Spill
-	leaq	.L.str30, %rcx
-	.loc	1 22 0                  # feature_extraction.c:22:0
-.Ltmp24:
-	movl	%eax, %eax
-                                        # kill: RAX<def> EAX<kill>
-	movq	%rax, 696(%rsp)         # 8-byte Spill
-	movq	768(%rsp), %rax         # 8-byte Reload
-	movq	%rdi, 688(%rsp)         # 8-byte Spill
-	movq	%rax, %rdi
-	movq	760(%rsp), %rax         # 8-byte Reload
-	movq	%rsi, 680(%rsp)         # 8-byte Spill
-	movq	%rax, %rsi
-	movq	696(%rsp), %rax         # 8-byte Reload
-	movl	%edx, 676(%rsp)         # 4-byte Spill
-	movq	%rax, %rdx
-	movq	680(%rsp), %rax         # 8-byte Reload
-	movq	%rcx, 664(%rsp)         # 8-byte Spill
-	movq	%rax, %rcx
-	movq	664(%rsp), %rax         # 8-byte Reload
-	movq	%r8, 656(%rsp)          # 8-byte Spill
-	movq	%rax, %r8
-	movq	656(%rsp), %rax         # 8-byte Reload
-	movq	%r9, 648(%rsp)          # 8-byte Spill
-	movq	%rax, %r9
-	movq	648(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	movl	%ebp, 644(%rsp)         # 4-byte Spill
-	movq	%r13, 632(%rsp)         # 8-byte Spill
-	movq	%r12, 624(%rsp)         # 8-byte Spill
-	movq	%r15, 616(%rsp)         # 8-byte Spill
-	movq	%r10, 608(%rsp)         # 8-byte Spill
-	movq	%r11, 600(%rsp)         # 8-byte Spill
-	movq	%rbx, 592(%rsp)         # 8-byte Spill
-	movq	%r14, 584(%rsp)         # 8-byte Spill
-	callq	trace_logger_log_int
-	movq	616(%rsp), %rdi         # 8-byte Reload
-	movq	624(%rsp), %rsi         # 8-byte Reload
-	movq	632(%rsp), %rdx         # 8-byte Reload
-	movq	752(%rsp), %rcx         # 8-byte Reload
-	movq	712(%rsp), %r8          # 8-byte Reload
-	movl	676(%rsp), %r9d         # 4-byte Reload
-	movl	$1, (%rsp)
-	callq	trace_logger_log0
-	movq	680(%rsp), %rdi         # 8-byte Reload
-	movq	728(%rsp), %rsi         # 8-byte Reload
-	movq	1072(%rsp), %rdx        # 8-byte Reload
-	movq	680(%rsp), %rcx         # 8-byte Reload
-	movq	704(%rsp), %r8          # 8-byte Reload
-	movq	656(%rsp), %r9          # 8-byte Reload
-	movq	648(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	1488(%rsp), %rax        # 8-byte Reload
-	movq	1368(%rsp), %rcx        # 8-byte Reload
-	movl	(%rax,%rcx,4), %ebp
-	movl	%ebp, %esi
-	movl	%esi, %edx
-	movq	768(%rsp), %rdi         # 8-byte Reload
-	movq	760(%rsp), %rsi         # 8-byte Reload
-	movq	680(%rsp), %rcx         # 8-byte Reload
-	movq	752(%rsp), %r8          # 8-byte Reload
-	movq	656(%rsp), %r9          # 8-byte Reload
-	movq	648(%rsp), %r10         # 8-byte Reload
-	movq	%r10, (%rsp)
-	movl	%ebp, 580(%rsp)         # 4-byte Spill
-	callq	trace_logger_log_int
-	movq	616(%rsp), %rdi         # 8-byte Reload
-	movq	624(%rsp), %rsi         # 8-byte Reload
-	movq	632(%rsp), %rdx         # 8-byte Reload
+	movq	560(%rsp), %rdi         # 8-byte Reload
+	movq	568(%rsp), %rsi         # 8-byte Reload
+	movq	544(%rsp), %rdx         # 8-byte Reload
 	movq	744(%rsp), %rcx         # 8-byte Reload
-	movq	712(%rsp), %r8          # 8-byte Reload
-	movl	676(%rsp), %r9d         # 4-byte Reload
+	movq	704(%rsp), %r8          # 8-byte Reload
+	movl	620(%rsp), %r9d         # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	680(%rsp), %rdi         # 8-byte Reload
-	movq	728(%rsp), %rsi         # 8-byte Reload
-	movq	792(%rsp), %rdx         # 8-byte Reload
-	movq	680(%rsp), %rcx         # 8-byte Reload
-	movq	720(%rsp), %r8          # 8-byte Reload
-	movq	656(%rsp), %r9          # 8-byte Reload
-	movq	648(%rsp), %rax         # 8-byte Reload
+	movq	624(%rsp), %rdi         # 8-byte Reload
+	movq	720(%rsp), %rsi         # 8-byte Reload
+	movq	520(%rsp), %rdx         # 8-byte Reload
+	movq	624(%rsp), %rcx         # 8-byte Reload
+	movq	712(%rsp), %r8          # 8-byte Reload
+	movq	600(%rsp), %r9          # 8-byte Reload
+	movq	592(%rsp), %rax         # 8-byte Reload
 	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	1496(%rsp), %rax        # 8-byte Reload
-	movq	1368(%rsp), %rcx        # 8-byte Reload
-	movl	(%rax,%rcx,4), %ebp
+	callq	trace_logger_log_int
+	movq	520(%rsp), %rax         # 8-byte Reload
+	movl	%eax, %ebp
 	movl	%ebp, %esi
 	movl	%esi, %edx
-	movq	768(%rsp), %rdi         # 8-byte Reload
-	movq	760(%rsp), %rsi         # 8-byte Reload
-	movq	680(%rsp), %rcx         # 8-byte Reload
+	movq	584(%rsp), %rdi         # 8-byte Reload
+	movq	752(%rsp), %rsi         # 8-byte Reload
+	movq	624(%rsp), %rcx         # 8-byte Reload
 	movq	744(%rsp), %r8          # 8-byte Reload
-	movq	656(%rsp), %r9          # 8-byte Reload
-	movq	648(%rsp), %r10         # 8-byte Reload
+	movq	600(%rsp), %r9          # 8-byte Reload
+	movq	592(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
-	movl	%ebp, 576(%rsp)         # 4-byte Spill
+	movl	%ebp, 508(%rsp)         # 4-byte Spill
 	callq	trace_logger_log_int
-	movq	616(%rsp), %rdi         # 8-byte Reload
-	movq	624(%rsp), %rsi         # 8-byte Reload
-	movq	632(%rsp), %rdx         # 8-byte Reload
-	movq	688(%rsp), %rcx         # 8-byte Reload
-	movq	736(%rsp), %r8          # 8-byte Reload
-	movl	676(%rsp), %r9d         # 4-byte Reload
+	movq	560(%rsp), %rdi         # 8-byte Reload
+	movq	568(%rsp), %rsi         # 8-byte Reload
+	movq	544(%rsp), %rdx         # 8-byte Reload
+	movq	640(%rsp), %rcx         # 8-byte Reload
+	movq	728(%rsp), %r8          # 8-byte Reload
+	movl	620(%rsp), %r9d         # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movl	576(%rsp), %r9d         # 4-byte Reload
+	movl	1788(%rsp), %r9d        # 4-byte Reload
 	movl	%r9d, %ebp
 	movl	%ebp, %edx
-	movq	608(%rsp), %rdi         # 8-byte Reload
-	movq	760(%rsp), %rsi         # 8-byte Reload
-	movq	680(%rsp), %rcx         # 8-byte Reload
-	movq	744(%rsp), %r8          # 8-byte Reload
-	movq	656(%rsp), %r9          # 8-byte Reload
-	movq	648(%rsp), %rax         # 8-byte Reload
+	movq	552(%rsp), %rdi         # 8-byte Reload
+	movq	752(%rsp), %rsi         # 8-byte Reload
+	movq	624(%rsp), %rcx         # 8-byte Reload
+	movq	736(%rsp), %r8          # 8-byte Reload
+	movq	600(%rsp), %r9          # 8-byte Reload
+	movq	592(%rsp), %rax         # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movl	580(%rsp), %ebp         # 4-byte Reload
+	movl	508(%rsp), %ebp         # 4-byte Reload
 	movl	%ebp, %esi
 	movl	%esi, %edx
-	movq	680(%rsp), %rdi         # 8-byte Reload
-	movq	760(%rsp), %rsi         # 8-byte Reload
-	movq	680(%rsp), %rcx         # 8-byte Reload
-	movq	752(%rsp), %r8          # 8-byte Reload
-	movq	656(%rsp), %r9          # 8-byte Reload
-	movq	648(%rsp), %rax         # 8-byte Reload
+	movq	624(%rsp), %rdi         # 8-byte Reload
+	movq	752(%rsp), %rsi         # 8-byte Reload
+	movq	624(%rsp), %rcx         # 8-byte Reload
+	movq	744(%rsp), %r8          # 8-byte Reload
+	movq	600(%rsp), %r9          # 8-byte Reload
+	movq	592(%rsp), %rax         # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movl	580(%rsp), %ebp         # 4-byte Reload
-	movl	576(%rsp), %esi         # 4-byte Reload
+	movl	508(%rsp), %ebp         # 4-byte Reload
+	movl	1788(%rsp), %esi        # 4-byte Reload
 	cmpl	%esi, %ebp
 	sete	%al
 	movb	%al, %cl
 	andb	$1, %cl
 	movzbl	%cl, %ecx
 	movl	%ecx, %edx
-	movq	768(%rsp), %rdi         # 8-byte Reload
-	movq	680(%rsp), %rsi         # 8-byte Reload
-	movq	680(%rsp), %rcx         # 8-byte Reload
-	movq	688(%rsp), %r8          # 8-byte Reload
-	movq	656(%rsp), %r9          # 8-byte Reload
-	movq	648(%rsp), %r10         # 8-byte Reload
-	movq	%r10, (%rsp)
-	movb	%al, 575(%rsp)          # 1-byte Spill
-	callq	trace_logger_log_int
-	movq	616(%rsp), %rdi         # 8-byte Reload
+	movq	584(%rsp), %rdi         # 8-byte Reload
 	movq	624(%rsp), %rsi         # 8-byte Reload
-	movq	632(%rsp), %rdx         # 8-byte Reload
-	movq	776(%rsp), %rcx         # 8-byte Reload
-	movq	608(%rsp), %r8          # 8-byte Reload
-	movl	676(%rsp), %r9d         # 4-byte Reload
+	movq	624(%rsp), %rcx         # 8-byte Reload
+	movq	640(%rsp), %r8          # 8-byte Reload
+	movq	600(%rsp), %r9          # 8-byte Reload
+	movq	592(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	movb	%al, 507(%rsp)          # 1-byte Spill
+	callq	trace_logger_log_int
+	movq	560(%rsp), %rdi         # 8-byte Reload
+	movq	568(%rsp), %rsi         # 8-byte Reload
+	movq	544(%rsp), %rdx         # 8-byte Reload
+	movq	760(%rsp), %rcx         # 8-byte Reload
+	movq	552(%rsp), %r8          # 8-byte Reload
+	movl	620(%rsp), %r9d         # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	592(%rsp), %rdi         # 8-byte Reload
-	movq	656(%rsp), %rsi         # 8-byte Reload
-	movq	656(%rsp), %rdx         # 8-byte Reload
-	movq	680(%rsp), %rcx         # 8-byte Reload
-	movq	584(%rsp), %r8          # 8-byte Reload
-	movq	656(%rsp), %r9          # 8-byte Reload
-	movq	648(%rsp), %r10         # 8-byte Reload
+	movq	536(%rsp), %rdi         # 8-byte Reload
+	movq	600(%rsp), %rsi         # 8-byte Reload
+	movq	600(%rsp), %rdx         # 8-byte Reload
+	movq	624(%rsp), %rcx         # 8-byte Reload
+	movq	528(%rsp), %r8          # 8-byte Reload
+	movq	600(%rsp), %r9          # 8-byte Reload
+	movq	592(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-	movq	608(%rsp), %rdi         # 8-byte Reload
-	movq	656(%rsp), %rsi         # 8-byte Reload
-	movq	656(%rsp), %rdx         # 8-byte Reload
-	movq	680(%rsp), %rcx         # 8-byte Reload
-	movq	600(%rsp), %r8          # 8-byte Reload
-	movq	656(%rsp), %r9          # 8-byte Reload
-	movq	648(%rsp), %r10         # 8-byte Reload
+	movq	552(%rsp), %rdi         # 8-byte Reload
+	movq	600(%rsp), %rsi         # 8-byte Reload
+	movq	600(%rsp), %rdx         # 8-byte Reload
+	movq	624(%rsp), %rcx         # 8-byte Reload
+	movq	544(%rsp), %r8          # 8-byte Reload
+	movq	600(%rsp), %r9          # 8-byte Reload
+	movq	592(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-	movb	575(%rsp), %al          # 1-byte Reload
+	movb	507(%rsp), %al          # 1-byte Reload
 	andb	$1, %al
 	movzbl	%al, %ebp
 	movl	%ebp, %edx
-	movq	680(%rsp), %rdi         # 8-byte Reload
-	movq	680(%rsp), %rsi         # 8-byte Reload
-	movq	680(%rsp), %rcx         # 8-byte Reload
-	movq	688(%rsp), %r8          # 8-byte Reload
-	movq	656(%rsp), %r9          # 8-byte Reload
-	movq	648(%rsp), %r10         # 8-byte Reload
+	movq	624(%rsp), %rdi         # 8-byte Reload
+	movq	624(%rsp), %rsi         # 8-byte Reload
+	movq	624(%rsp), %rcx         # 8-byte Reload
+	movq	640(%rsp), %r8          # 8-byte Reload
+	movq	600(%rsp), %r9          # 8-byte Reload
+	movq	592(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-	movb	575(%rsp), %al          # 1-byte Reload
+	movb	507(%rsp), %al          # 1-byte Reload
 	testb	$1, %al
-	jne	.LBB0_3
-# BB#2:                                 #   in Loop: Header=BB0_1 Depth=1
-	movabsq	$2, %rdi
-	movabsq	$64, %rax
-	leaq	.L.str2, %rdx
-	movabsq	$0, %rcx
-	leaq	.L.str8, %r8
-	leaq	.L.str9, %rsi
-	movabsq	$1, %r9
-	leaq	.L.str36, %r10
-	movabsq	$6, %r11
-	leaq	fprintf, %rbx
-	leaq	.L.str24, %r14
-	movabsq	$23, %r15
-	leaq	.L.str5, %r12
-	leaq	.L.str35, %r13
-	leaq	.L.str38, %rbp
-	movq	%rax, 560(%rsp)         # 8-byte Spill
-	movabsq	$49, %rax
-	movq	%rsi, 552(%rsp)         # 8-byte Spill
-	movl	$0, %esi
-	movl	%esi, 548(%rsp)         # 4-byte Spill
-	movl	$1, %esi
-	movq	%rax, 536(%rsp)         # 8-byte Spill
-	movabsq	$19134, %rax            # imm = 0x4ABE
-	movq	%rax, 528(%rsp)         # 8-byte Spill
-	movabsq	$32, %rax
-	movq	%rax, 520(%rsp)         # 8-byte Spill
-	leaq	.L.str37, %rax
-	movq	%rax, 512(%rsp)         # 8-byte Spill
-	leaq	.L.str14, %rax
-	movq	%rax, 504(%rsp)         # 8-byte Spill
-	movabsq	$33, %rax
+	movq	520(%rsp), %rcx         # 8-byte Reload
+	movq	512(%rsp), %rdx         # 8-byte Reload
+	movq	512(%rsp), %rsi         # 8-byte Reload
+	movq	%rcx, 1104(%rsp)        # 8-byte Spill
+	movq	%rdx, 1096(%rsp)        # 8-byte Spill
+	movq	%rsi, 1312(%rsp)        # 8-byte Spill
+	jne	.LBB0_5
+	jmp	.LBB0_4
+.Ltmp33:
+.LBB0_5:                                # %._crit_edge
+                                        #   in Loop: Header=BB0_2 Depth=1
+	movq	1312(%rsp), %rax        # 8-byte Reload
+	movabsq	$2, %rcx
+	movabsq	$64, %rdx
+	leaq	.L.str1, %rsi
+	movabsq	$0, %rdi
+	leaq	.L.str7, %r8
+	leaq	.L.str8, %r9
+	movabsq	$1, %r10
+	leaq	.L.str43, %r11
+	movabsq	$3, %rbx
+	leaq	fprintf, %r14
+	leaq	.L.str39, %r15
+	movabsq	$29, %r12
+	leaq	.L.str4, %r13
+	leaq	.L.str19, %rbp
 	movq	%rax, 496(%rsp)         # 8-byte Spill
-	leaq	stdout, %rax
+	leaq	.L.str44, %rax
 	movq	%rax, 488(%rsp)         # 8-byte Spill
-	leaq	.L.str18, %rax
-	movq	%rax, 480(%rsp)         # 8-byte Spill
-	movabsq	$27, %rax
-	.loc	1 23 0                  # feature_extraction.c:23:0
-.Ltmp25:
-	movq	%rdi, 472(%rsp)         # 8-byte Spill
-	movq	%r15, %rdi
-	movl	%esi, 468(%rsp)         # 4-byte Spill
-	movq	%r12, %rsi
-	movq	%rdx, 456(%rsp)         # 8-byte Spill
-	movq	%r13, %rdx
-	movq	%rcx, 448(%rsp)         # 8-byte Spill
-	movq	%r10, %rcx
-	movq	%r8, 440(%rsp)          # 8-byte Spill
+	movabsq	$49, %rax
+	movq	%rsi, 480(%rsp)         # 8-byte Spill
+	movl	$0, %esi
+	movl	%esi, 476(%rsp)         # 4-byte Spill
+	movl	$1, %esi
+	movq	%rax, 464(%rsp)         # 8-byte Spill
+	movabsq	$19134, %rax            # imm = 0x4ABE
+	movq	%rax, 456(%rsp)         # 8-byte Spill
+	leaq	.L.str16, %rax
+	movq	%rax, 448(%rsp)         # 8-byte Spill
+	leaq	.L.str20, %rax
+	movq	%rax, 440(%rsp)         # 8-byte Spill
+	leaq	.L.str32, %rax
+	movq	%rax, 432(%rsp)         # 8-byte Spill
+	leaq	.L.str28, %rax
+	movq	%rax, 424(%rsp)         # 8-byte Spill
+	movabsq	$-1, %rax
+	movq	%rax, 416(%rsp)         # 8-byte Spill
+	movabsq	$48, %rax
+	.loc	1 29 0                  # feature_extraction.c:29:0
+	movq	%rax, 408(%rsp)         # 8-byte Spill
+	movq	416(%rsp), %rax         # 8-byte Reload
+	movq	%rdi, 400(%rsp)         # 8-byte Spill
+	movq	%rax, %rdi
+	movl	%esi, 396(%rsp)         # 4-byte Spill
+	movq	%r13, %rsi
+	movq	%rdx, 384(%rsp)         # 8-byte Spill
+	movq	%rbp, %rdx
+	movq	%rcx, 376(%rsp)         # 8-byte Spill
+	movq	%r11, %rcx
+	movq	408(%rsp), %rax         # 8-byte Reload
+	movq	%r8, 368(%rsp)          # 8-byte Spill
 	movq	%rax, %r8
-	movl	548(%rsp), %eax         # 4-byte Reload
-	movq	%r9, 432(%rsp)          # 8-byte Spill
+	movl	476(%rsp), %eax         # 4-byte Reload
+	movq	%r9, 360(%rsp)          # 8-byte Spill
 	movl	%eax, %r9d
 	movl	$1, (%rsp)
-	movq	%rbp, 424(%rsp)         # 8-byte Spill
-	movq	%r14, 416(%rsp)         # 8-byte Spill
-	movq	%r12, 408(%rsp)         # 8-byte Spill
-	movq	%r15, 400(%rsp)         # 8-byte Spill
-	movq	%rbx, 392(%rsp)         # 8-byte Spill
-	movq	%r13, 384(%rsp)         # 8-byte Spill
-	movq	%r10, 376(%rsp)         # 8-byte Spill
-	movq	%r11, 368(%rsp)         # 8-byte Spill
+	movq	%r15, 352(%rsp)         # 8-byte Spill
+	movq	%r12, 344(%rsp)         # 8-byte Spill
+	movq	%r13, 336(%rsp)         # 8-byte Spill
+	movq	%rbp, 328(%rsp)         # 8-byte Spill
+	movq	%r14, 320(%rsp)         # 8-byte Spill
+	movq	%rbx, 312(%rsp)         # 8-byte Spill
+	movq	%r10, 304(%rsp)         # 8-byte Spill
+	movq	%r11, 296(%rsp)         # 8-byte Spill
 	callq	trace_logger_log0
-	movq	432(%rsp), %rdi         # 8-byte Reload
-	movq	560(%rsp), %rsi         # 8-byte Reload
-	movq	488(%rsp), %rdx         # 8-byte Reload
-	movq	432(%rsp), %rcx         # 8-byte Reload
-	movq	480(%rsp), %r8          # 8-byte Reload
-	movq	448(%rsp), %r9          # 8-byte Reload
-	movq	552(%rsp), %r10         # 8-byte Reload
-	movq	%r10, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	stdout, %rcx
-	movq	528(%rsp), %rdi         # 8-byte Reload
-	movq	560(%rsp), %rsi         # 8-byte Reload
-	movq	%rcx, %rdx
+	movq	376(%rsp), %rdi         # 8-byte Reload
+	movq	384(%rsp), %rsi         # 8-byte Reload
+	movq	400(%rsp), %rdx         # 8-byte Reload
+	movq	304(%rsp), %rcx         # 8-byte Reload
 	movq	432(%rsp), %r8          # 8-byte Reload
-	movq	%rcx, 360(%rsp)         # 8-byte Spill
-	movq	%r8, %rcx
-	movq	376(%rsp), %r8          # 8-byte Reload
-	movq	448(%rsp), %r9          # 8-byte Reload
-	movq	552(%rsp), %r10         # 8-byte Reload
-	movq	%r10, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	400(%rsp), %rdi         # 8-byte Reload
-	movq	408(%rsp), %rsi         # 8-byte Reload
-	movq	384(%rsp), %rdx         # 8-byte Reload
-	movq	512(%rsp), %rcx         # 8-byte Reload
-	movq	496(%rsp), %r8          # 8-byte Reload
-	movl	548(%rsp), %r9d         # 4-byte Reload
-	movl	$1, (%rsp)
-	callq	trace_logger_log0
-	movq	432(%rsp), %rdi         # 8-byte Reload
-	movq	560(%rsp), %rsi         # 8-byte Reload
-	movq	1368(%rsp), %rdx        # 8-byte Reload
-	movq	432(%rsp), %rcx         # 8-byte Reload
-	movq	504(%rsp), %r8          # 8-byte Reload
-	movq	448(%rsp), %r9          # 8-byte Reload
-	movq	552(%rsp), %r10         # 8-byte Reload
+	movq	304(%rsp), %r9          # 8-byte Reload
+	movq	424(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-	movq	1368(%rsp), %rcx        # 8-byte Reload
-	movl	%ecx, %eax
-	movl	%eax, %esi
-	movl	%esi, %edx
-	movq	528(%rsp), %rdi         # 8-byte Reload
-	movq	520(%rsp), %rsi         # 8-byte Reload
-	movq	432(%rsp), %rcx         # 8-byte Reload
-	movq	512(%rsp), %r8          # 8-byte Reload
-	movq	448(%rsp), %r9          # 8-byte Reload
-	movq	552(%rsp), %r10         # 8-byte Reload
-	movq	%r10, (%rsp)
-	movl	%eax, 356(%rsp)         # 4-byte Spill
-	callq	trace_logger_log_int
-	movq	400(%rsp), %rdi         # 8-byte Reload
-	movq	408(%rsp), %rsi         # 8-byte Reload
-	movq	384(%rsp), %rdx         # 8-byte Reload
-	movq	424(%rsp), %rcx         # 8-byte Reload
-	movq	536(%rsp), %r8          # 8-byte Reload
-	movl	548(%rsp), %r9d         # 4-byte Reload
-	movl	$1, (%rsp)
-	callq	trace_logger_log0
-	movq	368(%rsp), %rdi         # 8-byte Reload
-	movq	560(%rsp), %rsi         # 8-byte Reload
-	movq	392(%rsp), %rdx         # 8-byte Reload
-	movq	432(%rsp), %rcx         # 8-byte Reload
-	movq	416(%rsp), %r8          # 8-byte Reload
-	movq	448(%rsp), %r9          # 8-byte Reload
-	movq	552(%rsp), %r10         # 8-byte Reload
-	movq	%r10, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	432(%rsp), %rdi         # 8-byte Reload
-	movq	560(%rsp), %rsi         # 8-byte Reload
-	movq	360(%rsp), %rdx         # 8-byte Reload
-	movq	432(%rsp), %rcx         # 8-byte Reload
-	movq	376(%rsp), %r8          # 8-byte Reload
-	movq	448(%rsp), %r9          # 8-byte Reload
-	movq	552(%rsp), %r10         # 8-byte Reload
-	movq	%r10, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	472(%rsp), %rdi         # 8-byte Reload
-	movq	560(%rsp), %rsi         # 8-byte Reload
-	movq	456(%rsp), %rdx         # 8-byte Reload
-	movq	448(%rsp), %rcx         # 8-byte Reload
+	movq	304(%rsp), %rdi         # 8-byte Reload
+	movq	384(%rsp), %rsi         # 8-byte Reload
+	movq	400(%rsp), %rdx         # 8-byte Reload
+	movq	304(%rsp), %rcx         # 8-byte Reload
 	movq	440(%rsp), %r8          # 8-byte Reload
-	movq	448(%rsp), %r9          # 8-byte Reload
-	movq	552(%rsp), %r10         # 8-byte Reload
+	movq	304(%rsp), %r9          # 8-byte Reload
+	movq	448(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	456(%rsp), %rdi         # 8-byte Reload
+	movq	384(%rsp), %rsi         # 8-byte Reload
+	movq	496(%rsp), %rdx         # 8-byte Reload
+	movq	304(%rsp), %rcx         # 8-byte Reload
+	movq	296(%rsp), %r8          # 8-byte Reload
+	movq	400(%rsp), %r9          # 8-byte Reload
+	movq	448(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-	movl	$.L.str2, %eax
+	movq	344(%rsp), %rdi         # 8-byte Reload
+	movq	336(%rsp), %rsi         # 8-byte Reload
+	movq	328(%rsp), %rdx         # 8-byte Reload
+	movq	488(%rsp), %rcx         # 8-byte Reload
+	movq	464(%rsp), %r8          # 8-byte Reload
+	movl	476(%rsp), %r9d         # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	312(%rsp), %rdi         # 8-byte Reload
+	movq	384(%rsp), %rsi         # 8-byte Reload
+	movq	320(%rsp), %rdx         # 8-byte Reload
+	movq	304(%rsp), %rcx         # 8-byte Reload
+	movq	352(%rsp), %r8          # 8-byte Reload
+	movq	400(%rsp), %r9          # 8-byte Reload
+	movq	360(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	304(%rsp), %rdi         # 8-byte Reload
+	movq	384(%rsp), %rsi         # 8-byte Reload
+	movq	496(%rsp), %rdx         # 8-byte Reload
+	movq	304(%rsp), %rcx         # 8-byte Reload
+	movq	296(%rsp), %r8          # 8-byte Reload
+	movq	400(%rsp), %r9          # 8-byte Reload
+	movq	360(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	376(%rsp), %rdi         # 8-byte Reload
+	movq	384(%rsp), %rsi         # 8-byte Reload
+	movq	480(%rsp), %rdx         # 8-byte Reload
+	movq	400(%rsp), %rcx         # 8-byte Reload
+	movq	368(%rsp), %r8          # 8-byte Reload
+	movq	400(%rsp), %r9          # 8-byte Reload
+	movq	360(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	movl	$.L.str1, %eax
 	movl	%eax, %esi
 	xorl	%eax, %eax
                                         # kill: AL<def> AL<kill> EAX<kill>
-	movq	360(%rsp), %rdi         # 8-byte Reload
-	movl	356(%rsp), %edx         # 4-byte Reload
-	movl	580(%rsp), %ecx         # 4-byte Reload
-	movl	576(%rsp), %r8d         # 4-byte Reload
+	movq	496(%rsp), %rdi         # 8-byte Reload
 	callq	fprintf
-	movabsq	$1, %rsi
-	movabsq	$0, %rdi
-	leaq	.L.str16, %r8
-	leaq	.L.str9, %r9
-	movabsq	$26, %r10
-	leaq	.L.str5, %r11
-	leaq	.L.str35, %rdx
-	leaq	.L.str39, %rcx
-	movabsq	$2, %rbx
+	movabsq	$1, %rcx
+	leaq	.L.str46, %rdx
+	movabsq	$0, %rsi
+	leaq	.L.str8, %rdi
+	movabsq	$2, %r8
+	leaq	.L.str16, %r9
+	movabsq	$3, %r10
+	leaq	.L.str12, %r11
+	movabsq	$23, %rbx
+	leaq	.L.str4, %r14
+	leaq	.L.str19, %r15
+	leaq	.L.str47, %r12
 	movl	$0, %ebp
-	movl	$1, %r14d
-	movabsq	$19134, %r15            # imm = 0x4ABE
-	movabsq	$32, %r12
-	leaq	.L.str38, %r13
-	.loc	1 26 0                  # feature_extraction.c:26:0
+	movl	$1, %r13d
+	movq	%rcx, 288(%rsp)         # 8-byte Spill
+	movabsq	$19134, %rcx            # imm = 0x4ABE
+	movq	%rcx, 280(%rsp)         # 8-byte Spill
+	movabsq	$32, %rcx
+	movq	%rcx, 272(%rsp)         # 8-byte Spill
+	leaq	.L.str45, %rcx
+	movq	%rcx, 264(%rsp)         # 8-byte Spill
+	leaq	.L.str9, %rcx
+	movq	%rcx, 256(%rsp)         # 8-byte Spill
+	movabsq	$46, %rcx
+	movq	%rcx, 248(%rsp)         # 8-byte Spill
+	movabsq	$64, %rcx
+	movq	%rcx, 240(%rsp)         # 8-byte Spill
+	leaq	.L.str18, %rcx
+	movq	%rcx, 232(%rsp)         # 8-byte Spill
+	movabsq	$33, %rcx
+	movq	%rcx, 224(%rsp)         # 8-byte Spill
+	leaq	.L.str17, %rcx
+	movq	%rcx, 216(%rsp)         # 8-byte Spill
+	leaq	.L.str7, %rcx
+	movq	%rcx, 208(%rsp)         # 8-byte Spill
+	movabsq	$8, %rcx
+	movq	%rcx, 200(%rsp)         # 8-byte Spill
+	leaq	.L.str44, %rcx
+.Ltmp34:
+	.loc	1 23 0                  # feature_extraction.c:23:0
 	movl	%eax, %eax
                                         # kill: RAX<def> EAX<kill>
-	movq	%rdi, 344(%rsp)         # 8-byte Spill
-	movq	%r15, %rdi
-	movq	%rsi, 336(%rsp)         # 8-byte Spill
-	movq	%r12, %rsi
-	movq	%rdx, 328(%rsp)         # 8-byte Spill
-	movq	%rax, %rdx
-	movq	336(%rsp), %rax         # 8-byte Reload
-	movq	%rcx, 320(%rsp)         # 8-byte Spill
-	movq	%rax, %rcx
-	movq	%r8, 312(%rsp)          # 8-byte Spill
-	movq	%r13, %r8
-	movq	344(%rsp), %r15         # 8-byte Reload
-	movq	%r9, 304(%rsp)          # 8-byte Spill
-	movq	%r15, %r9
-	movq	304(%rsp), %r12         # 8-byte Reload
-	movq	%r12, (%rsp)
-	movl	%r14d, 300(%rsp)        # 4-byte Spill
-	movl	%ebp, 296(%rsp)         # 4-byte Spill
-	movq	%rbx, 288(%rsp)         # 8-byte Spill
-	movq	%r10, 280(%rsp)         # 8-byte Spill
-	movq	%r11, 272(%rsp)         # 8-byte Spill
-	callq	trace_logger_log_int
-	movq	280(%rsp), %rdi         # 8-byte Reload
-	movq	272(%rsp), %rsi         # 8-byte Reload
-	movq	328(%rsp), %rdx         # 8-byte Reload
-	movq	320(%rsp), %rcx         # 8-byte Reload
-	movq	288(%rsp), %r8          # 8-byte Reload
-	movl	296(%rsp), %r9d         # 4-byte Reload
-	movl	$1, (%rsp)
-	callq	trace_logger_log0
-	movq	336(%rsp), %rdi         # 8-byte Reload
-	movq	344(%rsp), %rsi         # 8-byte Reload
-	movq	344(%rsp), %rdx         # 8-byte Reload
-	movq	336(%rsp), %rcx         # 8-byte Reload
-	movq	312(%rsp), %r8          # 8-byte Reload
-	movq	344(%rsp), %r9          # 8-byte Reload
-	movq	304(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_int
-.Ltmp26:
-.LBB0_3:                                #   in Loop: Header=BB0_1 Depth=1
-	movabsq	$1, %rax
-	leaq	.L.str41, %rcx
-	movabsq	$0, %rdx
-	leaq	.L.str9, %rsi
-	movabsq	$2, %rdi
-	leaq	.L.str12, %r8
-	movabsq	$3, %r9
-	leaq	.L.str13, %r10
-	movabsq	$19, %r11
-	leaq	.L.str5, %rbx
-	leaq	.L.str16, %r14
-	leaq	.L.str42, %r15
-	movl	$0, %ebp
-	movl	$1, %r12d
-	movabsq	$19134, %r13            # imm = 0x4ABE
-	movq	%rax, 264(%rsp)         # 8-byte Spill
-	movabsq	$32, %rax
-	movq	%rax, 256(%rsp)         # 8-byte Spill
-	leaq	.L.str40, %rax
-	movq	%rax, 248(%rsp)         # 8-byte Spill
-	leaq	.L.str10, %rax
-	movq	%rax, 240(%rsp)         # 8-byte Spill
-	movabsq	$46, %rax
-	movq	%rax, 232(%rsp)         # 8-byte Spill
-	movabsq	$64, %rax
-	movq	%rax, 224(%rsp)         # 8-byte Spill
-	leaq	.L.str15, %rax
-	movq	%rax, 216(%rsp)         # 8-byte Spill
-	movabsq	$33, %rax
-	movq	%rax, 208(%rsp)         # 8-byte Spill
-	leaq	.L.str14, %rax
-	movq	%rax, 200(%rsp)         # 8-byte Spill
-	leaq	.L.str8, %rax
 	movq	%rax, 192(%rsp)         # 8-byte Spill
-	movabsq	$8, %rax
-	.loc	1 19 0                  # feature_extraction.c:19:0
+	movq	280(%rsp), %rax         # 8-byte Reload
 	movq	%rdi, 184(%rsp)         # 8-byte Spill
-	movq	%r11, %rdi
+	movq	%rax, %rdi
+	movq	272(%rsp), %rax         # 8-byte Reload
 	movq	%rsi, 176(%rsp)         # 8-byte Spill
-	movq	%rbx, %rsi
+	movq	%rax, %rsi
+	movq	192(%rsp), %rax         # 8-byte Reload
 	movq	%rdx, 168(%rsp)         # 8-byte Spill
-	movq	%r14, %rdx
-	movq	%rax, 160(%rsp)         # 8-byte Spill
-	movq	216(%rsp), %rax         # 8-byte Reload
-	movq	%rcx, 152(%rsp)         # 8-byte Spill
+	movq	%rax, %rdx
+	movq	288(%rsp), %rax         # 8-byte Reload
+	movq	%rcx, 160(%rsp)         # 8-byte Spill
 	movq	%rax, %rcx
 	movq	160(%rsp), %rax         # 8-byte Reload
-	movq	%r8, 144(%rsp)          # 8-byte Spill
+	movq	%r8, 152(%rsp)          # 8-byte Spill
 	movq	%rax, %r8
-	movq	%r9, 136(%rsp)          # 8-byte Spill
-	movl	%ebp, %r9d
-	movl	$1, (%rsp)
+	movq	176(%rsp), %rax         # 8-byte Reload
+	movq	%r9, 144(%rsp)          # 8-byte Spill
+	movq	%rax, %r9
+	movq	184(%rsp), %rax         # 8-byte Reload
+	movq	%rax, (%rsp)
+	movl	%r13d, 140(%rsp)        # 4-byte Spill
 	movq	%r15, 128(%rsp)         # 8-byte Spill
-	movl	%ebp, 124(%rsp)         # 4-byte Spill
-	movl	%r12d, 120(%rsp)        # 4-byte Spill
-	movq	%r13, 112(%rsp)         # 8-byte Spill
+	movq	%r12, 120(%rsp)         # 8-byte Spill
+	movl	%ebp, 116(%rsp)         # 4-byte Spill
 	movq	%r14, 104(%rsp)         # 8-byte Spill
 	movq	%rbx, 96(%rsp)          # 8-byte Spill
 	movq	%r10, 88(%rsp)          # 8-byte Spill
 	movq	%r11, 80(%rsp)          # 8-byte Spill
-	callq	trace_logger_log0
-	movq	184(%rsp), %rdi         # 8-byte Reload
-	movq	224(%rsp), %rsi         # 8-byte Reload
-	movq	264(%rsp), %rdx         # 8-byte Reload
-	movq	168(%rsp), %rcx         # 8-byte Reload
-	movq	192(%rsp), %r8          # 8-byte Reload
-	movq	168(%rsp), %r9          # 8-byte Reload
-	movq	176(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	264(%rsp), %rdi         # 8-byte Reload
-	movq	224(%rsp), %rsi         # 8-byte Reload
-	movq	1368(%rsp), %rdx        # 8-byte Reload
-	movq	264(%rsp), %rcx         # 8-byte Reload
+	movq	96(%rsp), %rdi          # 8-byte Reload
+	movq	104(%rsp), %rsi         # 8-byte Reload
+	movq	128(%rsp), %rdx         # 8-byte Reload
+	movq	232(%rsp), %rcx         # 8-byte Reload
 	movq	200(%rsp), %r8          # 8-byte Reload
-	movq	168(%rsp), %r9          # 8-byte Reload
-	movq	176(%rsp), %rax         # 8-byte Reload
+	movl	116(%rsp), %r9d         # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	152(%rsp), %rdi         # 8-byte Reload
+	movq	240(%rsp), %rsi         # 8-byte Reload
+	movq	288(%rsp), %rdx         # 8-byte Reload
+	movq	176(%rsp), %rcx         # 8-byte Reload
+	movq	208(%rsp), %r8          # 8-byte Reload
+	movq	176(%rsp), %r9          # 8-byte Reload
+	movq	184(%rsp), %rax         # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	1368(%rsp), %rax        # 8-byte Reload
-	addq	$1, %rax
-	movq	112(%rsp), %rdi         # 8-byte Reload
-	movq	224(%rsp), %rsi         # 8-byte Reload
-	movq	%rax, %rdx
-	movq	264(%rsp), %rcx         # 8-byte Reload
+	movq	288(%rsp), %rdi         # 8-byte Reload
+	movq	240(%rsp), %rsi         # 8-byte Reload
+	movq	1528(%rsp), %rdx        # 8-byte Reload
+	movq	288(%rsp), %rcx         # 8-byte Reload
 	movq	216(%rsp), %r8          # 8-byte Reload
-	movq	168(%rsp), %r9          # 8-byte Reload
-	movq	176(%rsp), %r10         # 8-byte Reload
+	movq	176(%rsp), %r9          # 8-byte Reload
+	movq	184(%rsp), %rax         # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	1528(%rsp), %rax        # 8-byte Reload
+	addq	$1, %rax
+	movq	280(%rsp), %rdi         # 8-byte Reload
+	movq	240(%rsp), %rsi         # 8-byte Reload
+	movq	%rax, %rdx
+	movq	288(%rsp), %rcx         # 8-byte Reload
+	movq	232(%rsp), %r8          # 8-byte Reload
+	movq	176(%rsp), %r9          # 8-byte Reload
+	movq	184(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	movq	%rax, 72(%rsp)          # 8-byte Spill
 	callq	trace_logger_log_int
-	movq	80(%rsp), %rdi          # 8-byte Reload
-	movq	96(%rsp), %rsi          # 8-byte Reload
-	movq	104(%rsp), %rdx         # 8-byte Reload
-	movq	248(%rsp), %rcx         # 8-byte Reload
-	movq	208(%rsp), %r8          # 8-byte Reload
-	movl	124(%rsp), %r9d         # 4-byte Reload
+	movq	96(%rsp), %rdi          # 8-byte Reload
+	movq	104(%rsp), %rsi         # 8-byte Reload
+	movq	128(%rsp), %rdx         # 8-byte Reload
+	movq	264(%rsp), %rcx         # 8-byte Reload
+	movq	224(%rsp), %r8          # 8-byte Reload
+	movl	116(%rsp), %r9d         # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	264(%rsp), %rdi         # 8-byte Reload
-	movq	224(%rsp), %rsi         # 8-byte Reload
+	movq	288(%rsp), %rdi         # 8-byte Reload
+	movq	240(%rsp), %rsi         # 8-byte Reload
 	movq	72(%rsp), %rdx          # 8-byte Reload
-	movq	264(%rsp), %rcx         # 8-byte Reload
-	movq	216(%rsp), %r8          # 8-byte Reload
-	movq	168(%rsp), %r9          # 8-byte Reload
-	movq	176(%rsp), %rax         # 8-byte Reload
+	movq	288(%rsp), %rcx         # 8-byte Reload
+	movq	232(%rsp), %r8          # 8-byte Reload
+	movq	176(%rsp), %r9          # 8-byte Reload
+	movq	184(%rsp), %rax         # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
 	movq	72(%rsp), %rax          # 8-byte Reload
 	movl	%eax, %ebp
-	movl	%ebp, %r12d
-	movl	%r12d, %edx
-	movq	112(%rsp), %rdi         # 8-byte Reload
-	movq	256(%rsp), %rsi         # 8-byte Reload
-	movq	264(%rsp), %rcx         # 8-byte Reload
-	movq	248(%rsp), %r8          # 8-byte Reload
-	movq	168(%rsp), %r9          # 8-byte Reload
-	movq	176(%rsp), %r10         # 8-byte Reload
+	movl	%ebp, %r13d
+	movl	%r13d, %edx
+	movq	280(%rsp), %rdi         # 8-byte Reload
+	movq	272(%rsp), %rsi         # 8-byte Reload
+	movq	288(%rsp), %rcx         # 8-byte Reload
+	movq	264(%rsp), %r8          # 8-byte Reload
+	movq	176(%rsp), %r9          # 8-byte Reload
+	movq	184(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	movl	%ebp, 68(%rsp)          # 4-byte Spill
 	callq	trace_logger_log_int
-	movq	80(%rsp), %rdi          # 8-byte Reload
-	movq	96(%rsp), %rsi          # 8-byte Reload
-	movq	104(%rsp), %rdx         # 8-byte Reload
-	movq	152(%rsp), %rcx         # 8-byte Reload
-	movq	232(%rsp), %r8          # 8-byte Reload
-	movl	124(%rsp), %r9d         # 4-byte Reload
+	movq	96(%rsp), %rdi          # 8-byte Reload
+	movq	104(%rsp), %rsi         # 8-byte Reload
+	movq	128(%rsp), %rdx         # 8-byte Reload
+	movq	168(%rsp), %rcx         # 8-byte Reload
+	movq	248(%rsp), %r8          # 8-byte Reload
+	movl	116(%rsp), %r9d         # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movl	1588(%rsp), %r9d        # 4-byte Reload
+	movl	1900(%rsp), %r9d        # 4-byte Reload
 	movl	%r9d, %ebp
 	movl	%ebp, %edx
-	movq	184(%rsp), %rdi         # 8-byte Reload
-	movq	256(%rsp), %rsi         # 8-byte Reload
-	movq	264(%rsp), %rcx         # 8-byte Reload
-	movq	240(%rsp), %r8          # 8-byte Reload
-	movq	168(%rsp), %r9          # 8-byte Reload
-	movq	176(%rsp), %rax         # 8-byte Reload
+	movq	152(%rsp), %rdi         # 8-byte Reload
+	movq	272(%rsp), %rsi         # 8-byte Reload
+	movq	288(%rsp), %rcx         # 8-byte Reload
+	movq	256(%rsp), %r8          # 8-byte Reload
+	movq	176(%rsp), %r9          # 8-byte Reload
+	movq	184(%rsp), %rax         # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
 	movl	68(%rsp), %ebp          # 4-byte Reload
-	movl	%ebp, %r12d
-	movl	%r12d, %edx
-	movq	264(%rsp), %rdi         # 8-byte Reload
-	movq	256(%rsp), %rsi         # 8-byte Reload
-	movq	264(%rsp), %rcx         # 8-byte Reload
-	movq	248(%rsp), %r8          # 8-byte Reload
-	movq	168(%rsp), %r9          # 8-byte Reload
-	movq	176(%rsp), %rax         # 8-byte Reload
+	movl	%ebp, %r13d
+	movl	%r13d, %edx
+	movq	288(%rsp), %rdi         # 8-byte Reload
+	movq	272(%rsp), %rsi         # 8-byte Reload
+	movq	288(%rsp), %rcx         # 8-byte Reload
+	movq	264(%rsp), %r8          # 8-byte Reload
+	movq	176(%rsp), %r9          # 8-byte Reload
+	movq	184(%rsp), %rax         # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
 	movl	68(%rsp), %ebp          # 4-byte Reload
-	movl	1588(%rsp), %r12d       # 4-byte Reload
-	cmpl	%r12d, %ebp
+	movl	1900(%rsp), %r13d       # 4-byte Reload
+	cmpl	%r13d, %ebp
 	sete	%al
 	movb	%al, %cl
 	andb	$1, %cl
 	movzbl	%cl, %ecx
 	movl	%ecx, %edx
-	movq	112(%rsp), %rdi         # 8-byte Reload
-	movq	264(%rsp), %rsi         # 8-byte Reload
-	movq	264(%rsp), %rcx         # 8-byte Reload
-	movq	152(%rsp), %r8          # 8-byte Reload
-	movq	168(%rsp), %r9          # 8-byte Reload
-	movq	176(%rsp), %r10         # 8-byte Reload
+	movq	280(%rsp), %rdi         # 8-byte Reload
+	movq	288(%rsp), %rsi         # 8-byte Reload
+	movq	288(%rsp), %rcx         # 8-byte Reload
+	movq	168(%rsp), %r8          # 8-byte Reload
+	movq	176(%rsp), %r9          # 8-byte Reload
+	movq	184(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	movb	%al, 67(%rsp)           # 1-byte Spill
 	callq	trace_logger_log_int
-	movq	80(%rsp), %rdi          # 8-byte Reload
-	movq	96(%rsp), %rsi          # 8-byte Reload
-	movq	104(%rsp), %rdx         # 8-byte Reload
-	movq	128(%rsp), %rcx         # 8-byte Reload
-	movq	184(%rsp), %r8          # 8-byte Reload
-	movl	124(%rsp), %r9d         # 4-byte Reload
+	movq	96(%rsp), %rdi          # 8-byte Reload
+	movq	104(%rsp), %rsi         # 8-byte Reload
+	movq	128(%rsp), %rdx         # 8-byte Reload
+	movq	120(%rsp), %rcx         # 8-byte Reload
+	movq	152(%rsp), %r8          # 8-byte Reload
+	movl	116(%rsp), %r9d         # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	136(%rsp), %rdi         # 8-byte Reload
-	movq	168(%rsp), %rsi         # 8-byte Reload
-	movq	168(%rsp), %rdx         # 8-byte Reload
-	movq	264(%rsp), %rcx         # 8-byte Reload
-	movq	88(%rsp), %r8           # 8-byte Reload
-	movq	168(%rsp), %r9          # 8-byte Reload
-	movq	176(%rsp), %r10         # 8-byte Reload
+	movq	88(%rsp), %rdi          # 8-byte Reload
+	movq	176(%rsp), %rsi         # 8-byte Reload
+	movq	176(%rsp), %rdx         # 8-byte Reload
+	movq	288(%rsp), %rcx         # 8-byte Reload
+	movq	80(%rsp), %r8           # 8-byte Reload
+	movq	176(%rsp), %r9          # 8-byte Reload
+	movq	184(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-	movq	184(%rsp), %rdi         # 8-byte Reload
-	movq	168(%rsp), %rsi         # 8-byte Reload
-	movq	168(%rsp), %rdx         # 8-byte Reload
-	movq	264(%rsp), %rcx         # 8-byte Reload
+	movq	152(%rsp), %rdi         # 8-byte Reload
+	movq	176(%rsp), %rsi         # 8-byte Reload
+	movq	176(%rsp), %rdx         # 8-byte Reload
+	movq	288(%rsp), %rcx         # 8-byte Reload
 	movq	144(%rsp), %r8          # 8-byte Reload
-	movq	168(%rsp), %r9          # 8-byte Reload
-	movq	176(%rsp), %r10         # 8-byte Reload
+	movq	176(%rsp), %r9          # 8-byte Reload
+	movq	184(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	movb	67(%rsp), %al           # 1-byte Reload
 	andb	$1, %al
 	movzbl	%al, %ebp
 	movl	%ebp, %edx
-	movq	264(%rsp), %rdi         # 8-byte Reload
-	movq	264(%rsp), %rsi         # 8-byte Reload
-	movq	264(%rsp), %rcx         # 8-byte Reload
-	movq	152(%rsp), %r8          # 8-byte Reload
-	movq	168(%rsp), %r9          # 8-byte Reload
-	movq	176(%rsp), %r10         # 8-byte Reload
+	movq	288(%rsp), %rdi         # 8-byte Reload
+	movq	288(%rsp), %rsi         # 8-byte Reload
+	movq	288(%rsp), %rcx         # 8-byte Reload
+	movq	168(%rsp), %r8          # 8-byte Reload
+	movq	176(%rsp), %r9          # 8-byte Reload
+	movq	184(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	movb	67(%rsp), %al           # 1-byte Reload
 	testb	$1, %al
 	movq	72(%rsp), %rcx          # 8-byte Reload
-	movq	%rcx, 1376(%rsp)        # 8-byte Spill
-	jne	.LBB0_4
-	jmp	.LBB0_1
-.Ltmp27:
-.LBB0_4:                                # %._crit_edge
+	movq	%rcx, 1536(%rsp)        # 8-byte Spill
+	jne	.LBB0_6
+	jmp	.LBB0_2
+.Ltmp35:
+.LBB0_6:                                # %._crit_edge3
 	movl	$0, %eax
 	movabsq	$1, %rcx
 	movabsq	$32, %rsi
 	movabsq	$0, %rdx
-	leaq	.L.str8, %r8
-	leaq	.L.str9, %rdi
-	movabsq	$29, %r9
-	leaq	.L.str5, %r10
-	leaq	.L.str13, %r11
-	leaq	.L.str43, %rbx
+	leaq	.L.str7, %r8
+	leaq	.L.str8, %rdi
+	movabsq	$31, %r9
+	leaq	.L.str4, %r10
+	leaq	.L.str12, %r11
+	leaq	.L.str48, %rbx
 	movl	$1, %ebp
-	.loc	1 29 0                  # feature_extraction.c:29:0
+	.loc	1 31 0                  # feature_extraction.c:31:0
 	movq	%rdi, 56(%rsp)          # 8-byte Spill
 	movq	%r9, %rdi
 	movq	%rsi, 48(%rsp)          # 8-byte Spill
@@ -1474,7 +1730,7 @@ test_stores:                            # @test_stores
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	movl	20(%rsp), %eax          # 4-byte Reload
-	addq	$1592, %rsp             # imm = 0x638
+	addq	$1912, %rsp             # imm = 0x778
 	popq	%rbx
 	popq	%r12
 	popq	%r13
@@ -1482,9 +1738,9 @@ test_stores:                            # @test_stores
 	popq	%r15
 	popq	%rbp
 	ret
-.Ltmp28:
-.Ltmp29:
-	.size	test_stores, .Ltmp29-test_stores
+.Ltmp36:
+.Ltmp37:
+	.size	test_stores, .Ltmp37-test_stores
 .Lfunc_end0:
 	.cfi_endproc
 
@@ -1494,91 +1750,96 @@ test_stores:                            # @test_stores
 process_data:                           # @process_data
 	.cfi_startproc
 .Lfunc_begin1:
-	.loc	1 34 0                  # feature_extraction.c:34:0
+	.loc	1 36 0                  # feature_extraction.c:36:0
 # BB#0:
 	pushq	%rbp
-.Ltmp33:
+.Ltmp41:
 	.cfi_def_cfa_offset 16
-.Ltmp34:
+.Ltmp42:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-.Ltmp35:
+.Ltmp43:
 	.cfi_def_cfa_register %rbp
 	pushq	%r15
 	pushq	%r14
 	pushq	%r13
 	pushq	%r12
 	pushq	%rbx
-	subq	$1592, %rsp             # imm = 0x638
-.Ltmp36:
+	subq	$2488, %rsp             # imm = 0x9B8
+.Ltmp44:
 	.cfi_offset %rbx, -56
-.Ltmp37:
+.Ltmp45:
 	.cfi_offset %r12, -48
-.Ltmp38:
+.Ltmp46:
 	.cfi_offset %r13, -40
-.Ltmp39:
+.Ltmp47:
 	.cfi_offset %r14, -32
-.Ltmp40:
+.Ltmp48:
 	.cfi_offset %r15, -24
 	#DEBUG_VALUE: process_data:store_vals <- RDI
 	#DEBUG_VALUE: process_data:store_loc <- RSI
-	#DEBUG_VALUE: process_data:num_vals <- EDX
-	#DEBUG_VALUE: process_data:cfg <- RCX
-	movabsq	$0, %rax
-	movabsq	$1, %r8
-	leaq	.L.str21, %r9
-	leaq	.L.str9, %r10
-	movabsq	$2, %r11
-	leaq	.L.str47, %rbx
-	movabsq	$3, %r14
-	leaq	.L.str46, %r15
-	movabsq	$37, %r12
-	leaq	.L.str44, %r13
+	#DEBUG_VALUE: process_data:n_samples <- EDX
+	#DEBUG_VALUE: process_data:n_channels <- ECX
+	#DEBUG_VALUE: process_data:cfg <- R8
+	movabsq	$1, %rax
+	leaq	.L.str24, %r9
+	movabsq	$0, %r10
+	leaq	.L.str8, %r11
+	movabsq	$2, %rbx
+	leaq	.L.str52, %r14
+	movabsq	$3, %r15
+	leaq	.L.str11, %r12
+	movabsq	$39, %r13
 	movq	%rax, -48(%rbp)         # 8-byte Spill
-	leaq	.L.str6, %rax
+	leaq	.L.str50, %rax
 	movq	%rax, -56(%rbp)         # 8-byte Spill
-	leaq	.L.str45, %rax
-	movl	%edx, -60(%rbp)         # 4-byte Spill
-.Ltmp41:
-	#DEBUG_VALUE: process_data:num_vals <- [RBP+-60]
-	movl	$1, %edx
-	movq	%rax, -72(%rbp)         # 8-byte Spill
-	movabsq	$19134, %rax            # imm = 0x4ABE
+	leaq	.L.str5, %rax
+	movq	%rax, -64(%rbp)         # 8-byte Spill
+	leaq	.L.str51, %rax
+	movl	%ecx, -68(%rbp)         # 4-byte Spill
+.Ltmp49:
+	#DEBUG_VALUE: process_data:n_channels <- [RBP+-68]
+	movl	$1, %ecx
 	movq	%rax, -80(%rbp)         # 8-byte Spill
-	movabsq	$32, %rax
+	movabsq	$19134, %rax            # imm = 0x4ABE
 	movq	%rax, -88(%rbp)         # 8-byte Spill
-	leaq	.L.str10, %rax
+	movabsq	$32, %rax
 	movq	%rax, -96(%rbp)         # 8-byte Spill
-	leaq	.L.str8, %rax
+	leaq	.L.str9, %rax
 	movq	%rax, -104(%rbp)        # 8-byte Spill
-	movabsq	$46, %rax
+	leaq	.L.str7, %rax
 	movq	%rax, -112(%rbp)        # 8-byte Spill
-	movabsq	$64, %rax
+	movabsq	$46, %rax
 	movq	%rax, -120(%rbp)        # 8-byte Spill
-	leaq	.L.str19, %rax
-	.loc	1 34 0 prologue_end     # feature_extraction.c:34:0
-.Ltmp42:
-	movl	%edx, -124(%rbp)        # 4-byte Spill
-	movl	$.L.str44, %edx
+	movabsq	$64, %rax
+	movq	%rax, -128(%rbp)        # 8-byte Spill
+	leaq	.L.str20, %rax
+	.loc	1 36 0 prologue_end     # feature_extraction.c:36:0
+.Ltmp50:
+	movl	%ecx, -132(%rbp)        # 4-byte Spill
+	movl	$.L.str50, %ecx
+                                        # kill: RCX<def> ECX<kill>
+	movl	%edx, -136(%rbp)        # 4-byte Spill
+.Ltmp51:
+	#DEBUG_VALUE: process_data:n_samples <- [RBP+-136]
+	movl	$5, %edx
                                         # kill: RDX<def> EDX<kill>
-	movq	%rsi, -136(%rbp)        # 8-byte Spill
-.Ltmp43:
-	#DEBUG_VALUE: process_data:store_loc <- [RBP+-136]
-	movl	$4, %esi
-                                        # kill: RSI<def> ESI<kill>
 	movq	%rdi, -144(%rbp)        # 8-byte Spill
-.Ltmp44:
+.Ltmp52:
 	#DEBUG_VALUE: process_data:store_vals <- [RBP+-144]
-	movq	%rdx, %rdi
+	movq	%rcx, %rdi
 	movq	%rsi, -152(%rbp)        # 8-byte Spill
+.Ltmp53:
+	#DEBUG_VALUE: process_data:store_loc <- [RBP+-152]
+	movq	%rdx, %rsi
 	movq	%r13, -160(%rbp)        # 8-byte Spill
-	movq	%rdx, -168(%rbp)        # 8-byte Spill
+	movq	%rcx, -168(%rbp)        # 8-byte Spill
 	movq	%r12, -176(%rbp)        # 8-byte Spill
-	movq	%rcx, -184(%rbp)        # 8-byte Spill
-.Ltmp45:
-	#DEBUG_VALUE: process_data:cfg <- [RBP+-184]
-	movq	%rax, -192(%rbp)        # 8-byte Spill
-	movq	%r8, -200(%rbp)         # 8-byte Spill
+	movq	%rdx, -184(%rbp)        # 8-byte Spill
+	movq	%r8, -192(%rbp)         # 8-byte Spill
+.Ltmp54:
+	#DEBUG_VALUE: process_data:cfg <- [RBP+-192]
+	movq	%rax, -200(%rbp)        # 8-byte Spill
 	movq	%r9, -208(%rbp)         # 8-byte Spill
 	movq	%r10, -216(%rbp)        # 8-byte Spill
 	movq	%r11, -224(%rbp)        # 8-byte Spill
@@ -1588,8 +1849,8 @@ process_data:                           # @process_data
 	callq	trace_logger_log_entry
 	subq	$16, %rsp
 	movq	%rsp, %rax
-	movq	$.L.str9, (%rax)
-	movl	$.L.str27, %esi
+	movq	$.L.str8, (%rax)
+	movl	$.L.str49, %esi
 	movl	%esi, %r8d
 	movl	$64, %esi
 	movl	%esi, %eax
@@ -1609,24 +1870,24 @@ process_data:                           # @process_data
 	addq	$16, %rsp
 	subq	$16, %rsp
 	movq	%rsp, %rax
-	movq	$.L.str9, (%rax)
-	movl	$.L.str20, %esi
+	movq	$.L.str8, (%rax)
+	movl	$.L.str35, %esi
 	movl	%esi, %r8d
 	movl	$2, %esi
 	movl	%esi, %edi
 	movq	-272(%rbp), %rsi        # 8-byte Reload
-	movq	-136(%rbp), %rdx        # 8-byte Reload
+	movq	-152(%rbp), %rdx        # 8-byte Reload
 	movq	-264(%rbp), %rcx        # 8-byte Reload
 	movq	-256(%rbp), %r9         # 8-byte Reload
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
-	movl	-60(%rbp), %esi         # 4-byte Reload
+	movl	-136(%rbp), %esi        # 4-byte Reload
 	movl	%esi, %esi
 	movl	%esi, %eax
 	subq	$16, %rsp
 	movq	%rsp, %rcx
-	movq	$.L.str9, (%rcx)
-	movl	$.L.str10, %esi
+	movq	$.L.str8, (%rcx)
+	movl	$.L.str14, %esi
 	movl	%esi, %ecx
 	movl	$3, %esi
 	movl	%esi, %edi
@@ -1643,27 +1904,42 @@ process_data:                           # @process_data
 	movq	%rax, -296(%rbp)        # 8-byte Spill
 	callq	trace_logger_log_int
 	addq	$16, %rsp
+	movl	-68(%rbp), %esi         # 4-byte Reload
+	movl	%esi, %esi
+	movl	%esi, %edx
 	subq	$16, %rsp
 	movq	%rsp, %rax
-	movq	$.L.str9, (%rax)
-	movl	$.L.str50, %esi
+	movq	$.L.str8, (%rax)
+	movl	$.L.str9, %esi
 	movl	%esi, %r8d
-	movq	-152(%rbp), %rdi        # 8-byte Reload
+	movl	$4, %esi
+	movl	%esi, %edi
+	movq	-280(%rbp), %rsi        # 8-byte Reload
+	movq	-264(%rbp), %rcx        # 8-byte Reload
+	movq	-256(%rbp), %r9         # 8-byte Reload
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	%rsp, %rax
+	movq	$.L.str8, (%rax)
+	movl	$.L.str69, %esi
+	movl	%esi, %r8d
+	movq	-184(%rbp), %rdi        # 8-byte Reload
 	movq	-272(%rbp), %rsi        # 8-byte Reload
-	movq	-184(%rbp), %rdx        # 8-byte Reload
+	movq	-192(%rbp), %rdx        # 8-byte Reload
 	movq	-264(%rbp), %rcx        # 8-byte Reload
 	movq	-256(%rbp), %r9         # 8-byte Reload
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
-	.loc	1 35 0                  # feature_extraction.c:35:0
+	.loc	1 37 0                  # feature_extraction.c:37:0
 	subq	$16, %rsp
 	movq	%rsp, %rax
 	movl	$1, (%rax)
-	movl	$.L.str6, %esi
+	movl	$.L.str5, %esi
 	movl	%esi, %eax
-	movl	$.L.str7, %esi
+	movl	$.L.str6, %esi
 	movl	%esi, %ecx
-	movl	$35, %esi
+	movl	$37, %esi
 	movl	%esi, %edx
 	movl	$34, %esi
 	movl	%esi, %r8d
@@ -1681,7 +1957,7 @@ process_data:                           # @process_data
 	addq	$16, %rsp
 	subq	$16, %rsp
 	movq	%rsp, %rax
-	movq	$.L.str9, (%rax)
+	movq	$.L.str8, (%rax)
 	movq	-264(%rbp), %rdi        # 8-byte Reload
 	movq	-280(%rbp), %rsi        # 8-byte Reload
 	movq	-296(%rbp), %rdx        # 8-byte Reload
@@ -1692,7 +1968,7 @@ process_data:                           # @process_data
 	addq	$16, %rsp
 	subq	$16, %rsp
 	movq	%rsp, %rax
-	movq	$.L.str9, (%rax)
+	movq	$.L.str8, (%rax)
 	movl	$19134, %esi            # imm = 0x4ABE
 	movl	%esi, %eax
 	movq	%rax, %rdi
@@ -1707,7 +1983,7 @@ process_data:                           # @process_data
 	subq	$16, %rsp
 	movq	%rsp, %rax
 	movl	$1, (%rax)
-	movl	$.L.str17, %esi
+	movl	$.L.str13, %esi
 	movl	%esi, %eax
 	movl	$26, %esi
 	movl	%esi, %ecx
@@ -1723,7 +1999,7 @@ process_data:                           # @process_data
 	addq	$16, %rsp
 	subq	$16, %rsp
 	movq	%rsp, %rax
-	movq	$.L.str9, (%rax)
+	movq	$.L.str8, (%rax)
 	movq	-264(%rbp), %rdi        # 8-byte Reload
 	movq	-272(%rbp), %rsi        # 8-byte Reload
 	movq	-296(%rbp), %rdx        # 8-byte Reload
@@ -1740,7 +2016,7 @@ process_data:                           # @process_data
 	movq	%rdx, %rsp
 	subq	$16, %rsp
 	movq	%rsp, %rsi
-	movq	$.L.str9, (%rsi)
+	movq	$.L.str8, (%rsi)
 	movq	-336(%rbp), %rdi        # 8-byte Reload
 	movq	-272(%rbp), %rsi        # 8-byte Reload
 	movq	%rdx, -360(%rbp)        # 8-byte Spill
@@ -1751,13 +2027,13 @@ process_data:                           # @process_data
 	movq	-256(%rbp), %r9         # 8-byte Reload
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
-	.loc	1 36 0                  # feature_extraction.c:36:0
+	.loc	1 38 0                  # feature_extraction.c:38:0
 	subq	$16, %rsp
 	movq	%rsp, %rax
 	movl	$1, (%rax)
-	movl	$.L.str19, %esi
+	movl	$.L.str20, %esi
 	movl	%esi, %ecx
-	movl	$36, %esi
+	movl	$38, %esi
 	movl	%esi, %edi
 	movq	-168(%rbp), %rsi        # 8-byte Reload
 	movq	-328(%rbp), %rdx        # 8-byte Reload
@@ -1767,7 +2043,7 @@ process_data:                           # @process_data
 	addq	$16, %rsp
 	subq	$16, %rsp
 	movq	%rsp, %rax
-	movq	$.L.str9, (%rax)
+	movq	$.L.str8, (%rax)
 	movq	-264(%rbp), %rdi        # 8-byte Reload
 	movq	-272(%rbp), %rsi        # 8-byte Reload
 	movq	-296(%rbp), %rdx        # 8-byte Reload
@@ -1781,56 +2057,56 @@ process_data:                           # @process_data
 	subq	%rcx, %rax
 	movq	%rax, %rsp
 	subq	$16, %rsp
-	movq	-80(%rbp), %rdi         # 8-byte Reload
-	movq	-120(%rbp), %rsi        # 8-byte Reload
+	movq	-88(%rbp), %rdi         # 8-byte Reload
+	movq	-128(%rbp), %rsi        # 8-byte Reload
 	movq	%rax, %rdx
-	movq	-200(%rbp), %rcx        # 8-byte Reload
-	movq	-192(%rbp), %r8         # 8-byte Reload
-	movq	-48(%rbp), %r9          # 8-byte Reload
-	movq	-216(%rbp), %r10        # 8-byte Reload
+	movq	-48(%rbp), %rcx         # 8-byte Reload
+	movq	-200(%rbp), %r8         # 8-byte Reload
+	movq	-216(%rbp), %r9         # 8-byte Reload
+	movq	-224(%rbp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	movq	%rax, -376(%rbp)        # 8-byte Spill
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
-.Ltmp46:
+.Ltmp55:
 	#DEBUG_VALUE: process_data:out <- [RBP+-376]
-	#DEBUG_VALUE: i <- 0
-	.loc	1 37 0                  # feature_extraction.c:37:0
+	#DEBUG_VALUE: channel <- 0
+	.loc	1 39 0                  # feature_extraction.c:39:0
 	subq	$16, %rsp
-	movq	-176(%rbp), %rdi        # 8-byte Reload
-	movq	-160(%rbp), %rsi        # 8-byte Reload
-	movq	-56(%rbp), %rdx         # 8-byte Reload
+	movq	-160(%rbp), %rdi        # 8-byte Reload
+	movq	-56(%rbp), %rsi         # 8-byte Reload
+	movq	-64(%rbp), %rdx         # 8-byte Reload
 	movq	-208(%rbp), %rcx        # 8-byte Reload
-	movq	-112(%rbp), %r8         # 8-byte Reload
-	movl	-124(%rbp), %r9d        # 4-byte Reload
+	movq	-120(%rbp), %r8         # 8-byte Reload
+	movl	-132(%rbp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-224(%rbp), %rdi        # 8-byte Reload
-	movq	-88(%rbp), %rsi         # 8-byte Reload
-	movq	-48(%rbp), %rdx         # 8-byte Reload
-	movq	-48(%rbp), %rcx         # 8-byte Reload
-	movq	-104(%rbp), %r8         # 8-byte Reload
-	movq	-48(%rbp), %r9          # 8-byte Reload
-	movq	-216(%rbp), %rax        # 8-byte Reload
+	movq	-232(%rbp), %rdi        # 8-byte Reload
+	movq	-96(%rbp), %rsi         # 8-byte Reload
+	movq	-216(%rbp), %rdx        # 8-byte Reload
+	movq	-216(%rbp), %rcx        # 8-byte Reload
+	movq	-112(%rbp), %r8         # 8-byte Reload
+	movq	-216(%rbp), %r9         # 8-byte Reload
+	movq	-224(%rbp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
-	movl	-60(%rbp), %esi         # 4-byte Reload
+	movl	-68(%rbp), %esi         # 4-byte Reload
 	movl	%esi, %esi
 	movl	%esi, %edx
 	subq	$16, %rsp
-	movq	-200(%rbp), %rdi        # 8-byte Reload
-	movq	-88(%rbp), %rsi         # 8-byte Reload
-	movq	-200(%rbp), %rcx        # 8-byte Reload
-	movq	-96(%rbp), %r8          # 8-byte Reload
-	movq	-48(%rbp), %r9          # 8-byte Reload
-	movq	-216(%rbp), %rax        # 8-byte Reload
+	movq	-48(%rbp), %rdi         # 8-byte Reload
+	movq	-96(%rbp), %rsi         # 8-byte Reload
+	movq	-48(%rbp), %rcx         # 8-byte Reload
+	movq	-104(%rbp), %r8         # 8-byte Reload
+	movq	-216(%rbp), %r9         # 8-byte Reload
+	movq	-224(%rbp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
-	movl	-60(%rbp), %esi         # 4-byte Reload
+	movl	-68(%rbp), %esi         # 4-byte Reload
 	cmpl	$0, %esi
 	setg	%al
 	movb	%al, %cl
@@ -1838,45 +2114,45 @@ process_data:                           # @process_data
 	movzbl	%cl, %ecx
 	movl	%ecx, %edx
 	subq	$16, %rsp
-	movq	-80(%rbp), %rdi         # 8-byte Reload
-	movq	-200(%rbp), %rsi        # 8-byte Reload
-	movq	-200(%rbp), %rcx        # 8-byte Reload
+	movq	-88(%rbp), %rdi         # 8-byte Reload
+	movq	-48(%rbp), %rsi         # 8-byte Reload
+	movq	-48(%rbp), %rcx         # 8-byte Reload
 	movq	-208(%rbp), %r8         # 8-byte Reload
-	movq	-48(%rbp), %r9          # 8-byte Reload
-	movq	-216(%rbp), %r10        # 8-byte Reload
+	movq	-216(%rbp), %r9         # 8-byte Reload
+	movq	-224(%rbp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	movb	%al, -377(%rbp)         # 1-byte Spill
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-176(%rbp), %rdi        # 8-byte Reload
-	movq	-160(%rbp), %rsi        # 8-byte Reload
-	movq	-56(%rbp), %rdx         # 8-byte Reload
-	movq	-72(%rbp), %rcx         # 8-byte Reload
-	movq	-224(%rbp), %r8         # 8-byte Reload
-	movl	-124(%rbp), %r9d        # 4-byte Reload
+	movq	-160(%rbp), %rdi        # 8-byte Reload
+	movq	-56(%rbp), %rsi         # 8-byte Reload
+	movq	-64(%rbp), %rdx         # 8-byte Reload
+	movq	-80(%rbp), %rcx         # 8-byte Reload
+	movq	-232(%rbp), %r8         # 8-byte Reload
+	movl	-132(%rbp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-240(%rbp), %rdi        # 8-byte Reload
-	movq	-48(%rbp), %rsi         # 8-byte Reload
-	movq	-48(%rbp), %rdx         # 8-byte Reload
-	movq	-200(%rbp), %rcx        # 8-byte Reload
-	movq	-248(%rbp), %r8         # 8-byte Reload
-	movq	-48(%rbp), %r9          # 8-byte Reload
-	movq	-216(%rbp), %r10        # 8-byte Reload
+	movq	-248(%rbp), %rdi        # 8-byte Reload
+	movq	-216(%rbp), %rsi        # 8-byte Reload
+	movq	-216(%rbp), %rdx        # 8-byte Reload
+	movq	-48(%rbp), %rcx         # 8-byte Reload
+	movq	-176(%rbp), %r8         # 8-byte Reload
+	movq	-216(%rbp), %r9         # 8-byte Reload
+	movq	-224(%rbp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-224(%rbp), %rdi        # 8-byte Reload
-	movq	-48(%rbp), %rsi         # 8-byte Reload
-	movq	-48(%rbp), %rdx         # 8-byte Reload
-	movq	-200(%rbp), %rcx        # 8-byte Reload
-	movq	-232(%rbp), %r8         # 8-byte Reload
-	movq	-48(%rbp), %r9          # 8-byte Reload
-	movq	-216(%rbp), %r10        # 8-byte Reload
+	movq	-232(%rbp), %rdi        # 8-byte Reload
+	movq	-216(%rbp), %rsi        # 8-byte Reload
+	movq	-216(%rbp), %rdx        # 8-byte Reload
+	movq	-48(%rbp), %rcx         # 8-byte Reload
+	movq	-240(%rbp), %r8         # 8-byte Reload
+	movq	-216(%rbp), %r9         # 8-byte Reload
+	movq	-224(%rbp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
@@ -1885,266 +2161,665 @@ process_data:                           # @process_data
 	movzbl	%al, %eax
 	movl	%eax, %edx
 	subq	$16, %rsp
-	movq	-200(%rbp), %rdi        # 8-byte Reload
-	movq	-200(%rbp), %rsi        # 8-byte Reload
-	movq	-200(%rbp), %rcx        # 8-byte Reload
+	movq	-48(%rbp), %rdi         # 8-byte Reload
+	movq	-48(%rbp), %rsi         # 8-byte Reload
+	movq	-48(%rbp), %rcx         # 8-byte Reload
 	movq	-208(%rbp), %r8         # 8-byte Reload
-	movq	-48(%rbp), %r9          # 8-byte Reload
-	movq	-216(%rbp), %r10        # 8-byte Reload
+	movq	-216(%rbp), %r9         # 8-byte Reload
+	movq	-224(%rbp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	movb	-377(%rbp), %al         # 1-byte Reload
 	testb	$1, %al
-	movq	-48(%rbp), %rcx         # 8-byte Reload
-	movq	%rcx, -392(%rbp)        # 8-byte Spill
-	jne	.LBB1_2
-.Ltmp47:
-# BB#1:                                 # %._crit_edge6.thread
-	movabsq	$3, %rdi
-	movabsq	$64, %rax
+	jne	.LBB1_1
+	jmp	.LBB1_9
+.Ltmp56:
+.LBB1_1:                                # %.preheader.lr.ph
+	movabsq	$0, %rax
 	movabsq	$1, %rcx
-	leaq	.L.str52, %r8
-	movabsq	$0, %rdx
-	leaq	.L.str9, %rsi
-	movabsq	$2, %r9
-	leaq	.L.str51, %r10
-	leaq	.L.str50, %r11
-	movabsq	$4, %rbx
-	leaq	kiss_fft, %r14
-	leaq	.L.str49, %r15
-	movabsq	$44, %r12
-	leaq	.L.str44, %r13
+	leaq	.L.str16, %r8
+	leaq	.L.str8, %rdx
+	movabsq	$39, %rdi
+	leaq	.L.str50, %rsi
+	leaq	.L.str11, %r9
+	leaq	.L.str15, %r10
+	movabsq	$2, %r11
+	movl	$1, %ebx
+	movabsq	$19134, %r14            # imm = 0x4ABE
+	leaq	.L.str26, %r15
+	movabsq	$32, %r12
+	leaq	.L.str14, %r13
+	movq	%rax, -392(%rbp)        # 8-byte Spill
+	leaq	.L.str7, %rax
 	movq	%rax, -400(%rbp)        # 8-byte Spill
-	leaq	.L.str47, %rax
-	movq	%rax, -408(%rbp)        # 8-byte Spill
-	leaq	.L.str48, %rax
-	movq	%rax, -416(%rbp)        # 8-byte Spill
 	movabsq	$49, %rax
-	movq	%rsi, -424(%rbp)        # 8-byte Spill
-	movl	$1, %esi
-	.loc	1 44 0                  # feature_extraction.c:44:0
+	movq	%rax, -408(%rbp)        # 8-byte Spill
+	movabsq	$46, %rax
+	movq	%rax, -416(%rbp)        # 8-byte Spill
+	leaq	.L.str25, %rax
+	movq	%rax, -424(%rbp)        # 8-byte Spill
+	movabsq	$41, %rax
+	.loc	1 41 0                  # feature_extraction.c:41:0
+.Ltmp57:
 	subq	$16, %rsp
 	movq	%rdi, -432(%rbp)        # 8-byte Spill
-	movq	%r12, %rdi
-	movl	%esi, -436(%rbp)        # 4-byte Spill
-	movq	%r13, %rsi
-	movq	-408(%rbp), %r12        # 8-byte Reload
+	movq	%rax, %rdi
+	movq	%rsi, -440(%rbp)        # 8-byte Spill
 	movq	%rdx, -448(%rbp)        # 8-byte Spill
-	movq	%r12, %rdx
-	movq	-416(%rbp), %r13        # 8-byte Reload
+	movq	%r9, %rdx
+	movq	-424(%rbp), %rax        # 8-byte Reload
 	movq	%rcx, -456(%rbp)        # 8-byte Spill
-	movq	%r13, %rcx
+	movq	%rax, %rcx
+	movq	-416(%rbp), %rax        # 8-byte Reload
 	movq	%r8, -464(%rbp)         # 8-byte Spill
 	movq	%rax, %r8
-	movl	-436(%rbp), %r12d       # 4-byte Reload
 	movq	%r9, -472(%rbp)         # 8-byte Spill
-	movl	%r12d, %r9d
+	movl	%ebx, %r9d
 	movl	$1, (%rsp)
-	movq	%r15, -480(%rbp)        # 8-byte Spill
-	movq	%rbx, -488(%rbp)        # 8-byte Spill
-	movq	%r11, -496(%rbp)        # 8-byte Spill
-	movq	%r14, -504(%rbp)        # 8-byte Spill
-	movq	%r10, -512(%rbp)        # 8-byte Spill
+	movq	%r13, -480(%rbp)        # 8-byte Spill
+	movl	%ebx, -484(%rbp)        # 4-byte Spill
+	movq	%r14, -496(%rbp)        # 8-byte Spill
+	movq	%r12, -504(%rbp)        # 8-byte Spill
+	movq	%r15, -512(%rbp)        # 8-byte Spill
+	movq	%r11, -520(%rbp)        # 8-byte Spill
+	movq	%r10, -528(%rbp)        # 8-byte Spill
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-488(%rbp), %rdi        # 8-byte Reload
-	movq	-400(%rbp), %rsi        # 8-byte Reload
-	movq	-504(%rbp), %rdx        # 8-byte Reload
-	movq	-456(%rbp), %rcx        # 8-byte Reload
-	movq	-480(%rbp), %r8         # 8-byte Reload
-	movq	-448(%rbp), %r9         # 8-byte Reload
-	movq	-424(%rbp), %rax        # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	addq	$16, %rsp
-	subq	$16, %rsp
-	movq	-456(%rbp), %rdi        # 8-byte Reload
-	movq	-400(%rbp), %rsi        # 8-byte Reload
-	movq	-184(%rbp), %rdx        # 8-byte Reload
-	movq	-456(%rbp), %rcx        # 8-byte Reload
-	movq	-496(%rbp), %r8         # 8-byte Reload
-	movq	-448(%rbp), %r9         # 8-byte Reload
-	movq	-424(%rbp), %rax        # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	addq	$16, %rsp
-	subq	$16, %rsp
-	movq	-472(%rbp), %rdi        # 8-byte Reload
-	movq	-400(%rbp), %rsi        # 8-byte Reload
-	movq	-360(%rbp), %rdx        # 8-byte Reload
-	movq	-456(%rbp), %rcx        # 8-byte Reload
-	movq	-512(%rbp), %r8         # 8-byte Reload
-	movq	-448(%rbp), %r9         # 8-byte Reload
-	movq	-424(%rbp), %rax        # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	addq	$16, %rsp
-	subq	$16, %rsp
-	movq	-432(%rbp), %rdi        # 8-byte Reload
-	movq	-400(%rbp), %rsi        # 8-byte Reload
-	movq	-376(%rbp), %rdx        # 8-byte Reload
-	movq	-456(%rbp), %rcx        # 8-byte Reload
-	movq	-464(%rbp), %r8         # 8-byte Reload
-	movq	-448(%rbp), %r9         # 8-byte Reload
-	movq	-424(%rbp), %rax        # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	addq	$16, %rsp
-	movq	-184(%rbp), %rdi        # 8-byte Reload
-	movq	-360(%rbp), %rsi        # 8-byte Reload
-	movq	-376(%rbp), %rdx        # 8-byte Reload
-	callq	kiss_fft
-	movabsq	$1, %rax
-	movabsq	$0, %rcx
-	leaq	.L.str13, %r8
-	leaq	.L.str9, %rdx
-	movabsq	$45, %rdi
-	leaq	.L.str44, %rsi
-	leaq	.L.str47, %r9
-	leaq	.L.str53, %r10
-	movabsq	$2, %r11
-	movl	$1, %r12d
-.Ltmp48:
-	#DEBUG_VALUE: i <- 0
-	.loc	1 45 0                  # feature_extraction.c:45:0
-	subq	$16, %rsp
-	movq	%rdx, -520(%rbp)        # 8-byte Spill
-	movq	%r9, %rdx
-	movq	%rcx, -528(%rbp)        # 8-byte Spill
-	movq	%r10, %rcx
-	movq	%r8, -536(%rbp)         # 8-byte Spill
-	movq	%r11, %r8
-	movl	%r12d, %r9d
-	movl	$1, (%rsp)
-	movq	%rax, -544(%rbp)        # 8-byte Spill
-	callq	trace_logger_log0
-	addq	$16, %rsp
-	subq	$16, %rsp
-	movq	-544(%rbp), %rdi        # 8-byte Reload
-	movq	-528(%rbp), %rsi        # 8-byte Reload
-	movq	-528(%rbp), %rdx        # 8-byte Reload
-	movq	-544(%rbp), %rcx        # 8-byte Reload
-	movq	-536(%rbp), %r8         # 8-byte Reload
-	movq	-528(%rbp), %r9         # 8-byte Reload
-	movq	-520(%rbp), %rax        # 8-byte Reload
+	movq	-520(%rbp), %rdi        # 8-byte Reload
+	movq	-504(%rbp), %rsi        # 8-byte Reload
+	movq	-392(%rbp), %rdx        # 8-byte Reload
+	movq	-392(%rbp), %rcx        # 8-byte Reload
+	movq	-400(%rbp), %r8         # 8-byte Reload
+	movq	-392(%rbp), %r9         # 8-byte Reload
+	movq	-448(%rbp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
-	jmp	.LBB1_5
-.Ltmp49:
-.LBB1_2:                                # %.lr.ph5
-                                        # =>This Inner Loop Header: Depth=1
-	movq	-392(%rbp), %rax        # 8-byte Reload
+	movl	-136(%rbp), %ebx        # 4-byte Reload
+	movl	%ebx, %esi
+	movl	%esi, %edx
+	subq	$16, %rsp
+	movq	-456(%rbp), %rdi        # 8-byte Reload
+	movq	-504(%rbp), %rsi        # 8-byte Reload
+	movq	-456(%rbp), %rcx        # 8-byte Reload
+	movq	-480(%rbp), %r8         # 8-byte Reload
+	movq	-392(%rbp), %r9         # 8-byte Reload
+	movq	-448(%rbp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movl	-136(%rbp), %ebx        # 4-byte Reload
+	cmpl	$0, %ebx
+	setg	%al
+.Ltmp58:
+	.loc	1 49 0                  # feature_extraction.c:49:0
+	movb	%al, %cl
+	andb	$1, %cl
+	movzbl	%cl, %ecx
+	movl	%ecx, %edx
+	subq	$16, %rsp
+	movq	-496(%rbp), %rdi        # 8-byte Reload
+	movq	-456(%rbp), %rsi        # 8-byte Reload
+	movq	-456(%rbp), %rcx        # 8-byte Reload
+	movq	-424(%rbp), %r8         # 8-byte Reload
+	movq	-392(%rbp), %r9         # 8-byte Reload
+	movq	-448(%rbp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	movb	%al, -529(%rbp)         # 1-byte Spill
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-408(%rbp), %rdi        # 8-byte Reload
+	movq	-440(%rbp), %rsi        # 8-byte Reload
+	movq	-472(%rbp), %rdx        # 8-byte Reload
+	movq	-512(%rbp), %rcx        # 8-byte Reload
+	movq	-416(%rbp), %r8         # 8-byte Reload
+	movl	-484(%rbp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-520(%rbp), %rdi        # 8-byte Reload
+	movq	-504(%rbp), %rsi        # 8-byte Reload
+	movq	-392(%rbp), %rdx        # 8-byte Reload
+	movq	-392(%rbp), %rcx        # 8-byte Reload
+	movq	-400(%rbp), %r8         # 8-byte Reload
+	movq	-392(%rbp), %r9         # 8-byte Reload
+	movq	-448(%rbp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movl	-136(%rbp), %ebx        # 4-byte Reload
+	movl	%ebx, %eax
+	movl	%eax, %edx
+	subq	$16, %rsp
+	movq	-456(%rbp), %rdi        # 8-byte Reload
+	movq	-504(%rbp), %rsi        # 8-byte Reload
+	movq	-456(%rbp), %rcx        # 8-byte Reload
+	movq	-480(%rbp), %r8         # 8-byte Reload
+	movq	-392(%rbp), %r9         # 8-byte Reload
+	movq	-448(%rbp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movl	-136(%rbp), %eax        # 4-byte Reload
+	cmpl	$0, %eax
+	setg	%al
+.Ltmp59:
+	.loc	1 39 0                  # feature_extraction.c:39:0
+	movb	%al, %cl
+	andb	$1, %cl
+	movzbl	%cl, %ebx
+	movl	%ebx, %edx
+	subq	$16, %rsp
+	movq	-496(%rbp), %rdi        # 8-byte Reload
+	movq	-456(%rbp), %rsi        # 8-byte Reload
+	movq	-456(%rbp), %rcx        # 8-byte Reload
+	movq	-512(%rbp), %r8         # 8-byte Reload
+	movq	-392(%rbp), %r9         # 8-byte Reload
+	movq	-448(%rbp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	movb	%al, -530(%rbp)         # 1-byte Spill
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-432(%rbp), %rdi        # 8-byte Reload
+	movq	-440(%rbp), %rsi        # 8-byte Reload
+	movq	-472(%rbp), %rdx        # 8-byte Reload
+	movq	-528(%rbp), %rcx        # 8-byte Reload
+	movq	-520(%rbp), %r8         # 8-byte Reload
+	movl	-484(%rbp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-456(%rbp), %rdi        # 8-byte Reload
+	movq	-392(%rbp), %rsi        # 8-byte Reload
+	movq	-392(%rbp), %rdx        # 8-byte Reload
+	movq	-456(%rbp), %rcx        # 8-byte Reload
+	movq	-464(%rbp), %r8         # 8-byte Reload
+	movq	-392(%rbp), %r9         # 8-byte Reload
+	movq	-448(%rbp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movq	-392(%rbp), %rcx        # 8-byte Reload
+	movq	%rcx, -544(%rbp)        # 8-byte Spill
+.LBB1_2:                                # %.preheader
+                                        # =>This Loop Header: Depth=1
+                                        #     Child Loop BB1_4 Depth 2
+                                        #     Child Loop BB1_7 Depth 2
+	movq	-544(%rbp), %rax        # 8-byte Reload
 	movabsq	$1, %rcx
-	leaq	.L.str59, %rdx
-	movabsq	$0, %rsi
-	leaq	.L.str9, %rdi
-	movabsq	$2, %r8
-	leaq	.L.str46, %r9
+	leaq	.L.str25, %r8
+	movabsq	$0, %rdx
+	leaq	.L.str8, %rsi
+	movabsq	$2, %rdi
+	leaq	.L.str19, %r9
 	movabsq	$3, %r10
-	leaq	.L.str61, %r11
-	movabsq	$37, %rbx
-	leaq	.L.str44, %r14
-	leaq	.L.str60, %r15
+	leaq	.L.str23, %r11
+	movabsq	$41, %rbx
+	leaq	.L.str50, %r14
+	leaq	.L.str16, %r15
+	leaq	.L.str22, %r12
+	movl	$1, %r13d
+	movq	%rax, -552(%rbp)        # 8-byte Spill
+	movabsq	$19134, %rax            # imm = 0x4ABE
+	movq	%rax, -560(%rbp)        # 8-byte Spill
+	movabsq	$64, %rax
+	movq	%rax, -568(%rbp)        # 8-byte Spill
+	leaq	.L.str53, %rax
+	movq	%rax, -576(%rbp)        # 8-byte Spill
+	leaq	.L.str11, %rax
+	movq	%rax, -584(%rbp)        # 8-byte Spill
+	leaq	.L.str7, %rax
+	movq	%rax, -592(%rbp)        # 8-byte Spill
+	leaq	.L.str54, %rax
+	movq	%rax, -600(%rbp)        # 8-byte Spill
+	leaq	.L.str55, %rax
+	movq	%rax, -608(%rbp)        # 8-byte Spill
+	movabsq	$-1, %rax
+	movq	%rax, -616(%rbp)        # 8-byte Spill
+	movabsq	$48, %rax
+	.loc	1 41 0                  # feature_extraction.c:41:0
+.Ltmp60:
+	subq	$16, %rsp
+	movq	%rax, -624(%rbp)        # 8-byte Spill
+	movq	-616(%rbp), %rax        # 8-byte Reload
+	movq	%rdi, -632(%rbp)        # 8-byte Spill
+	movq	%rax, %rdi
+	movq	%rsi, -640(%rbp)        # 8-byte Spill
+	movq	%r14, %rsi
+	movq	%rdx, -648(%rbp)        # 8-byte Spill
+	movq	%r15, %rdx
+	movq	-576(%rbp), %rax        # 8-byte Reload
+	movq	%rcx, -656(%rbp)        # 8-byte Spill
+	movq	%rax, %rcx
+	movq	-624(%rbp), %rax        # 8-byte Reload
+	movq	%r8, -664(%rbp)         # 8-byte Spill
+	movq	%rax, %r8
+	movq	%r9, -672(%rbp)         # 8-byte Spill
+	movl	%r13d, %r9d
+	movl	$1, (%rsp)
+	movq	%r14, -680(%rbp)        # 8-byte Spill
+	movq	%rbx, -688(%rbp)        # 8-byte Spill
+	movq	%r15, -696(%rbp)        # 8-byte Spill
+	movq	%r12, -704(%rbp)        # 8-byte Spill
+	movl	%r13d, -708(%rbp)       # 4-byte Spill
+	movq	%r11, -720(%rbp)        # 8-byte Spill
+	movq	%r10, -728(%rbp)        # 8-byte Spill
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-632(%rbp), %rdi        # 8-byte Reload
+	movq	-568(%rbp), %rsi        # 8-byte Reload
+	movq	-648(%rbp), %rdx        # 8-byte Reload
+	movq	-656(%rbp), %rcx        # 8-byte Reload
+	movq	-600(%rbp), %r8         # 8-byte Reload
+	movq	-656(%rbp), %r9         # 8-byte Reload
+	movq	-608(%rbp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-656(%rbp), %rdi        # 8-byte Reload
+	movq	-568(%rbp), %rsi        # 8-byte Reload
+	movq	-648(%rbp), %rdx        # 8-byte Reload
+	movq	-648(%rbp), %rcx        # 8-byte Reload
+	movq	-592(%rbp), %r8         # 8-byte Reload
+	movq	-656(%rbp), %r9         # 8-byte Reload
+	movq	-584(%rbp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-560(%rbp), %rdi        # 8-byte Reload
+	movq	-568(%rbp), %rsi        # 8-byte Reload
+	movq	-552(%rbp), %rdx        # 8-byte Reload
+	movq	-656(%rbp), %rcx        # 8-byte Reload
+	movq	-576(%rbp), %r8         # 8-byte Reload
+	movq	-648(%rbp), %r9         # 8-byte Reload
+	movq	-584(%rbp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-688(%rbp), %rdi        # 8-byte Reload
+	movq	-680(%rbp), %rsi        # 8-byte Reload
+	movq	-696(%rbp), %rdx        # 8-byte Reload
+	movq	-704(%rbp), %rcx        # 8-byte Reload
+	movq	-632(%rbp), %r8         # 8-byte Reload
+	movl	-708(%rbp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-728(%rbp), %rdi        # 8-byte Reload
+	movq	-648(%rbp), %rsi        # 8-byte Reload
+	movq	-648(%rbp), %rdx        # 8-byte Reload
+	movq	-656(%rbp), %rcx        # 8-byte Reload
+	movq	-720(%rbp), %r8         # 8-byte Reload
+	movq	-648(%rbp), %r9         # 8-byte Reload
+	movq	-640(%rbp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-632(%rbp), %rdi        # 8-byte Reload
+	movq	-648(%rbp), %rsi        # 8-byte Reload
+	movq	-648(%rbp), %rdx        # 8-byte Reload
+	movq	-656(%rbp), %rcx        # 8-byte Reload
+	movq	-672(%rbp), %r8         # 8-byte Reload
+	movq	-648(%rbp), %r9         # 8-byte Reload
+	movq	-640(%rbp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movb	-529(%rbp), %al         # 1-byte Reload
+	andb	$1, %al
+	movzbl	%al, %r13d
+	movl	%r13d, %edx
+	subq	$16, %rsp
+	movq	-656(%rbp), %rdi        # 8-byte Reload
+	movq	-656(%rbp), %rsi        # 8-byte Reload
+	movq	-656(%rbp), %rcx        # 8-byte Reload
+	movq	-664(%rbp), %r8         # 8-byte Reload
+	movq	-648(%rbp), %r9         # 8-byte Reload
+	movq	-640(%rbp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movb	-529(%rbp), %al         # 1-byte Reload
+	testb	$1, %al
+	jne	.LBB1_3
+	jmp	.LBB1_5
+.LBB1_3:                                # %.lr.ph
+                                        #   in Loop: Header=BB1_2 Depth=1
+	movabsq	$0, %rax
+	movabsq	$1, %rcx
+	leaq	.L.str57, %r8
+	leaq	.L.str8, %rdx
+	movabsq	$41, %rsi
+	leaq	.L.str50, %rdi
+	leaq	.L.str23, %r9
+	leaq	.L.str27, %r10
+	movabsq	$2, %r11
+	movl	$1, %ebx
+	movabsq	$19134, %r14            # imm = 0x4ABE
+	movabsq	$64, %r15
+	leaq	.L.str33, %r12
+	movabsq	$32, %r13
+	movq	%rax, -736(%rbp)        # 8-byte Spill
+	leaq	.L.str31, %rax
+	movq	%rax, -744(%rbp)        # 8-byte Spill
+	movabsq	$35, %rax
+	movq	%rax, -752(%rbp)        # 8-byte Spill
+	leaq	.L.str56, %rax
+	movq	%rax, -760(%rbp)        # 8-byte Spill
+	leaq	.L.str14, %rax
+	movq	%rax, -768(%rbp)        # 8-byte Spill
+	movabsq	$43, %rax
+	movq	%rax, -776(%rbp)        # 8-byte Spill
+	movabsq	$12, %rax
+	movq	%rax, -784(%rbp)        # 8-byte Spill
+	leaq	.L.str53, %rax
+	movq	%rax, -792(%rbp)        # 8-byte Spill
+	movabsq	$33, %rax
+	.loc	1 43 0                  # feature_extraction.c:43:0
+.Ltmp61:
+	subq	$16, %rsp
+	movq	%rax, -800(%rbp)        # 8-byte Spill
+	movq	-776(%rbp), %rax        # 8-byte Reload
+	movq	%rdi, -808(%rbp)        # 8-byte Spill
+	movq	%rax, %rdi
+	movq	-808(%rbp), %rax        # 8-byte Reload
+	movq	%rsi, -816(%rbp)        # 8-byte Spill
+	movq	%rax, %rsi
+	movq	%rdx, -824(%rbp)        # 8-byte Spill
+	movq	%r9, %rdx
+	movq	-760(%rbp), %rax        # 8-byte Reload
+	movq	%rcx, -832(%rbp)        # 8-byte Spill
+	movq	%rax, %rcx
+	movq	-800(%rbp), %rax        # 8-byte Reload
+	movq	%r8, -840(%rbp)         # 8-byte Spill
+	movq	%rax, %r8
+	movq	%r9, -848(%rbp)         # 8-byte Spill
+	movl	%ebx, %r9d
+	movl	$1, (%rsp)
+	movq	%r14, -856(%rbp)        # 8-byte Spill
+	movl	%ebx, -860(%rbp)        # 4-byte Spill
+	movq	%r15, -872(%rbp)        # 8-byte Spill
+	movq	%r12, -880(%rbp)        # 8-byte Spill
+	movq	%r13, -888(%rbp)        # 8-byte Spill
+	movq	%r11, -896(%rbp)        # 8-byte Spill
+	movq	%r10, -904(%rbp)        # 8-byte Spill
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-832(%rbp), %rdi        # 8-byte Reload
+	movq	-872(%rbp), %rsi        # 8-byte Reload
+	movq	-552(%rbp), %rdx        # 8-byte Reload
+	movq	-832(%rbp), %rcx        # 8-byte Reload
+	movq	-792(%rbp), %r8         # 8-byte Reload
+	movq	-736(%rbp), %r9         # 8-byte Reload
+	movq	-824(%rbp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movq	-552(%rbp), %rax        # 8-byte Reload
+	movl	%eax, %ebx
+	movl	%ebx, %esi
+	movl	%esi, %edx
+	subq	$16, %rsp
+	movq	-856(%rbp), %rdi        # 8-byte Reload
+	movq	-888(%rbp), %rsi        # 8-byte Reload
+	movq	-832(%rbp), %rcx        # 8-byte Reload
+	movq	-760(%rbp), %r8         # 8-byte Reload
+	movq	-736(%rbp), %r9         # 8-byte Reload
+	movq	-824(%rbp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	movl	%ebx, -908(%rbp)        # 4-byte Spill
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-776(%rbp), %rdi        # 8-byte Reload
+	movq	-808(%rbp), %rsi        # 8-byte Reload
+	movq	-848(%rbp), %rdx        # 8-byte Reload
+	movq	-744(%rbp), %rcx        # 8-byte Reload
+	movq	-784(%rbp), %r8         # 8-byte Reload
+	movl	-860(%rbp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	movl	-136(%rbp), %r9d        # 4-byte Reload
+	movl	%r9d, %ebx
+	movl	%ebx, %edx
+	subq	$16, %rsp
+	movq	-896(%rbp), %rdi        # 8-byte Reload
+	movq	-888(%rbp), %rsi        # 8-byte Reload
+	movq	-832(%rbp), %rcx        # 8-byte Reload
+	movq	-768(%rbp), %r8         # 8-byte Reload
+	movq	-736(%rbp), %r9         # 8-byte Reload
+	movq	-824(%rbp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movl	-908(%rbp), %ebx        # 4-byte Reload
+	movl	%ebx, %esi
+	movl	%esi, %edx
+	subq	$16, %rsp
+	movq	-832(%rbp), %rdi        # 8-byte Reload
+	movq	-888(%rbp), %rsi        # 8-byte Reload
+	movq	-832(%rbp), %rcx        # 8-byte Reload
+	movq	-760(%rbp), %r8         # 8-byte Reload
+	movq	-736(%rbp), %r9         # 8-byte Reload
+	movq	-824(%rbp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movl	-908(%rbp), %ebx        # 4-byte Reload
+	movl	-136(%rbp), %esi        # 4-byte Reload
+	imull	%esi, %ebx
+.Ltmp62:
+	.loc	1 41 0                  # feature_extraction.c:41:0
+	movl	%ebx, %esi
+	movl	%esi, %edx
+	subq	$16, %rsp
+	movq	-856(%rbp), %rdi        # 8-byte Reload
+	movq	-888(%rbp), %rsi        # 8-byte Reload
+	movq	-832(%rbp), %rcx        # 8-byte Reload
+	movq	-744(%rbp), %r8         # 8-byte Reload
+	movq	-736(%rbp), %r9         # 8-byte Reload
+	movq	-824(%rbp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	movl	%ebx, -912(%rbp)        # 4-byte Spill
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-816(%rbp), %rdi        # 8-byte Reload
+	movq	-808(%rbp), %rsi        # 8-byte Reload
+	movq	-848(%rbp), %rdx        # 8-byte Reload
+	movq	-880(%rbp), %rcx        # 8-byte Reload
+	movq	-752(%rbp), %r8         # 8-byte Reload
+	movl	-860(%rbp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	movl	-912(%rbp), %r9d        # 4-byte Reload
+	movl	%r9d, %ebx
+	movl	%ebx, %edx
+	subq	$16, %rsp
+	movq	-832(%rbp), %rdi        # 8-byte Reload
+	movq	-888(%rbp), %rsi        # 8-byte Reload
+	movq	-832(%rbp), %rcx        # 8-byte Reload
+	movq	-744(%rbp), %r8         # 8-byte Reload
+	movq	-736(%rbp), %r9         # 8-byte Reload
+	movq	-824(%rbp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movl	-912(%rbp), %ebx        # 4-byte Reload
+	movslq	%ebx, %rax
+	subq	$16, %rsp
+	movq	-856(%rbp), %rdi        # 8-byte Reload
+	movq	-872(%rbp), %rsi        # 8-byte Reload
+	movq	%rax, %rdx
+	movq	-832(%rbp), %rcx        # 8-byte Reload
+	movq	-880(%rbp), %r8         # 8-byte Reload
+	movq	-736(%rbp), %r9         # 8-byte Reload
+	movq	-824(%rbp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	movq	%rax, -920(%rbp)        # 8-byte Spill
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-816(%rbp), %rdi        # 8-byte Reload
+	movq	-808(%rbp), %rsi        # 8-byte Reload
+	movq	-848(%rbp), %rdx        # 8-byte Reload
+	movq	-904(%rbp), %rcx        # 8-byte Reload
+	movq	-896(%rbp), %r8         # 8-byte Reload
+	movl	-860(%rbp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-832(%rbp), %rdi        # 8-byte Reload
+	movq	-736(%rbp), %rsi        # 8-byte Reload
+	movq	-736(%rbp), %rdx        # 8-byte Reload
+	movq	-832(%rbp), %rcx        # 8-byte Reload
+	movq	-840(%rbp), %r8         # 8-byte Reload
+	movq	-736(%rbp), %r9         # 8-byte Reload
+	movq	-824(%rbp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movq	-736(%rbp), %rax        # 8-byte Reload
+	movq	%rax, -928(%rbp)        # 8-byte Spill
+.LBB1_4:                                #   Parent Loop BB1_2 Depth=1
+                                        # =>  This Inner Loop Header: Depth=2
+	movq	-928(%rbp), %rax        # 8-byte Reload
+	movabsq	$1, %rcx
+	leaq	.L.str41, %rdx
+	movabsq	$0, %rsi
+	leaq	.L.str8, %rdi
+	movabsq	$2, %r8
+	leaq	.L.str57, %r9
+	movabsq	$3, %r10
+	leaq	.L.str19, %r11
+	movabsq	$41, %rbx
+	leaq	.L.str50, %r14
+	leaq	.L.str67, %r15
 	movl	$1, %r12d
 	movabsq	$19134, %r13            # imm = 0x4ABE
-	movq	%rax, -552(%rbp)        # 8-byte Spill
+	movq	%rax, -936(%rbp)        # 8-byte Spill
 	movabsq	$32, %rax
-	movq	%rax, -560(%rbp)        # 8-byte Spill
-	leaq	.L.str58, %rax
-	movq	%rax, -568(%rbp)        # 8-byte Spill
-	leaq	.L.str10, %rax
-	movq	%rax, -576(%rbp)        # 8-byte Spill
+	movq	%rax, -944(%rbp)        # 8-byte Spill
+	leaq	.L.str40, %rax
+	movq	%rax, -952(%rbp)        # 8-byte Spill
+	leaq	.L.str14, %rax
+	movq	%rax, -960(%rbp)        # 8-byte Spill
 	movabsq	$46, %rax
-	movq	%rax, -584(%rbp)        # 8-byte Spill
+	movq	%rax, -968(%rbp)        # 8-byte Spill
 	movabsq	$64, %rax
-	movq	%rax, -592(%rbp)        # 8-byte Spill
-	leaq	.L.str55, %rax
-	movq	%rax, -600(%rbp)        # 8-byte Spill
+	movq	%rax, -976(%rbp)        # 8-byte Spill
+	leaq	.L.str30, %rax
+	movq	%rax, -984(%rbp)        # 8-byte Spill
 	movabsq	$33, %rax
-	movq	%rax, -608(%rbp)        # 8-byte Spill
-	leaq	.L.str54, %rax
-	movq	%rax, -616(%rbp)        # 8-byte Spill
-	leaq	.L.str8, %rax
-	movq	%rax, -624(%rbp)        # 8-byte Spill
+	movq	%rax, -992(%rbp)        # 8-byte Spill
+	leaq	.L.str29, %rax
+	movq	%rax, -1000(%rbp)       # 8-byte Spill
+	leaq	.L.str7, %rax
+	movq	%rax, -1008(%rbp)       # 8-byte Spill
 	movabsq	$8, %rax
 	vxorps	%xmm0, %xmm0, %xmm0
 	vxorps	%xmm1, %xmm1, %xmm1
-	movq	%rax, -632(%rbp)        # 8-byte Spill
-	leaq	.L.str28, %rax
-	movq	%rax, -640(%rbp)        # 8-byte Spill
-	movabsq	$42, %rax
-	movq	%rax, -648(%rbp)        # 8-byte Spill
-	leaq	.L.str57, %rax
-	movq	%rax, -656(%rbp)        # 8-byte Spill
+	movq	%rax, -1016(%rbp)       # 8-byte Spill
+	leaq	.L.str65, %rax
+	movq	%rax, -1024(%rbp)       # 8-byte Spill
+	leaq	.L.str66, %rax
+	movq	%rax, -1032(%rbp)       # 8-byte Spill
 	movabsq	$28, %rax
-	movq	%rax, -664(%rbp)        # 8-byte Spill
-	leaq	.L.str51, %rax
-	movq	%rax, -672(%rbp)        # 8-byte Spill
+	movq	%rax, -1040(%rbp)       # 8-byte Spill
+	leaq	.L.str63, %rax
+	movq	%rax, -1048(%rbp)       # 8-byte Spill
 	movabsq	$29, %rax
-	movq	%rax, -680(%rbp)        # 8-byte Spill
-	leaq	.L.str25, %rax
-	movq	%rax, -688(%rbp)        # 8-byte Spill
-	leaq	.L.str26, %rax
-	movq	%rax, -696(%rbp)        # 8-byte Spill
-	movabsq	$41, %rax
-	movq	%rax, -704(%rbp)        # 8-byte Spill
-	leaq	.L.str56, %rax
-	.loc	1 41 0                  # feature_extraction.c:41:0
-.Ltmp50:
+	movq	%rax, -1056(%rbp)       # 8-byte Spill
+	leaq	.L.str62, %rax
+	movq	%rax, -1064(%rbp)       # 8-byte Spill
+	movabsq	$45, %rax
+	movq	%rax, -1072(%rbp)       # 8-byte Spill
+	leaq	.L.str64, %rax
+	movq	%rax, -1080(%rbp)       # 8-byte Spill
+	leaq	.L.str60, %rax
+	movq	%rax, -1088(%rbp)       # 8-byte Spill
+	movabsq	$44, %rax
+	movq	%rax, -1096(%rbp)       # 8-byte Spill
+	leaq	.L.str61, %rax
+	movq	%rax, -1104(%rbp)       # 8-byte Spill
+	leaq	.L.str58, %rax
+	movq	%rax, -1112(%rbp)       # 8-byte Spill
+	leaq	.L.str32, %rax
+	movq	%rax, -1120(%rbp)       # 8-byte Spill
+	leaq	.L.str44, %rax
+	movq	%rax, -1128(%rbp)       # 8-byte Spill
+	movabsq	$43, %rax
+	movq	%rax, -1136(%rbp)       # 8-byte Spill
+	leaq	.L.str59, %rax
+	.loc	1 43 0                  # feature_extraction.c:43:0
+.Ltmp63:
 	subq	$16, %rsp
-	movq	%rax, -712(%rbp)        # 8-byte Spill
+	movq	%rax, -1144(%rbp)       # 8-byte Spill
 	movq	%rsp, %rax
 	movl	$1, (%rax)
-	movl	$.L.str44, %eax
+	movl	$.L.str50, %eax
                                         # kill: RAX<def> EAX<kill>
-	movq	%rsi, -720(%rbp)        # 8-byte Spill
-	movl	$.L.str46, %esi
+	movq	%rsi, -1152(%rbp)       # 8-byte Spill
+	movl	$.L.str57, %esi
                                         # kill: RSI<def> ESI<kill>
-	movq	%rsi, -728(%rbp)        # 8-byte Spill
-	movl	$.L.str54, %esi
+	movq	%rsi, -1160(%rbp)       # 8-byte Spill
+	movl	$.L.str29, %esi
                                         # kill: RSI<def> ESI<kill>
-	movq	%rsi, -736(%rbp)        # 8-byte Spill
+	movq	%rsi, -1168(%rbp)       # 8-byte Spill
 	movl	$48, %esi
                                         # kill: RSI<def> ESI<kill>
-	movq	%rax, -744(%rbp)        # 8-byte Spill
+	movq	%rax, -1176(%rbp)       # 8-byte Spill
 	movq	$-1, %rax
-	movq	%rsi, -752(%rbp)        # 8-byte Spill
+	movq	%rsi, -1184(%rbp)       # 8-byte Spill
 	movl	$1, %esi
-	movq	%rdi, -760(%rbp)        # 8-byte Spill
+	movq	%rdi, -1192(%rbp)       # 8-byte Spill
 	movq	%rax, %rdi
-	movq	-744(%rbp), %rax        # 8-byte Reload
-	movl	%esi, -764(%rbp)        # 4-byte Spill
+	movq	-1176(%rbp), %rax       # 8-byte Reload
+	movl	%esi, -1196(%rbp)       # 4-byte Spill
 	movq	%rax, %rsi
-	movq	-728(%rbp), %rax        # 8-byte Reload
-	movq	%rdx, -776(%rbp)        # 8-byte Spill
+	movq	-1160(%rbp), %rax       # 8-byte Reload
+	movq	%rdx, -1208(%rbp)       # 8-byte Spill
 	movq	%rax, %rdx
-	movq	-736(%rbp), %rax        # 8-byte Reload
-	movq	%rcx, -784(%rbp)        # 8-byte Spill
+	movq	-1168(%rbp), %rax       # 8-byte Reload
+	movq	%rcx, -1216(%rbp)       # 8-byte Spill
 	movq	%rax, %rcx
-	movq	-752(%rbp), %rax        # 8-byte Reload
-	movq	%r8, -792(%rbp)         # 8-byte Spill
+	movq	-1184(%rbp), %rax       # 8-byte Reload
+	movq	%r8, -1224(%rbp)        # 8-byte Spill
 	movq	%rax, %r8
-	movl	-764(%rbp), %eax        # 4-byte Reload
-	movq	%r9, -800(%rbp)         # 8-byte Spill
+	movl	-1196(%rbp), %eax       # 4-byte Reload
+	movq	%r9, -1232(%rbp)        # 8-byte Spill
 	movl	%eax, %r9d
-	vmovsd	%xmm1, -808(%rbp)       # 8-byte Spill
-	movl	%r12d, -812(%rbp)       # 4-byte Spill
-	movq	%r13, -824(%rbp)        # 8-byte Spill
-	vmovss	%xmm0, -828(%rbp)       # 4-byte Spill
-	movq	%r15, -840(%rbp)        # 8-byte Spill
-	movq	%r14, -848(%rbp)        # 8-byte Spill
-	movq	%r10, -856(%rbp)        # 8-byte Spill
-	movq	%r11, -864(%rbp)        # 8-byte Spill
-	movq	%rbx, -872(%rbp)        # 8-byte Spill
+	vmovsd	%xmm1, -1240(%rbp)      # 8-byte Spill
+	movl	%r12d, -1244(%rbp)      # 4-byte Spill
+	movq	%r13, -1256(%rbp)       # 8-byte Spill
+	vmovss	%xmm0, -1260(%rbp)      # 4-byte Spill
+	movq	%r15, -1272(%rbp)       # 8-byte Spill
+	movq	%r14, -1280(%rbp)       # 8-byte Spill
+	movq	%r10, -1288(%rbp)       # 8-byte Spill
+	movq	%r11, -1296(%rbp)       # 8-byte Spill
+	movq	%rbx, -1304(%rbp)       # 8-byte Spill
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
 	movq	%rsp, %rcx
-	movq	$.L.str6, (%rcx)
-	movl	$.L.str8, %eax
+	movq	$.L.str57, (%rcx)
+	movl	$.L.str30, %eax
 	movl	%eax, %r8d
 	movl	$2, %eax
 	movl	%eax, %ecx
@@ -2154,494 +2829,733 @@ process_data:                           # @process_data
 	movl	%eax, %esi
 	movl	$1, %eax
 	movl	%eax, %edi
-	movq	%rdi, -880(%rbp)        # 8-byte Spill
+	movq	%rdi, -1312(%rbp)       # 8-byte Spill
 	movq	%rcx, %rdi
-	movq	%rsi, -888(%rbp)        # 8-byte Spill
+	movq	%rsi, -1320(%rbp)       # 8-byte Spill
 	movq	%rdx, %rsi
-	movq	-888(%rbp), %r10        # 8-byte Reload
-	movq	%rdx, -896(%rbp)        # 8-byte Spill
+	movq	-1320(%rbp), %r10       # 8-byte Reload
+	movq	%rdx, -1328(%rbp)       # 8-byte Spill
 	movq	%r10, %rdx
-	movq	%rcx, -904(%rbp)        # 8-byte Spill
-	movq	%r10, %rcx
-	movq	-880(%rbp), %r9         # 8-byte Reload
+	movq	-1312(%rbp), %r11       # 8-byte Reload
+	movq	%rcx, -1336(%rbp)       # 8-byte Spill
+	movq	%r11, %rcx
+	movq	%r11, %r9
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
 	movq	%rsp, %rcx
-	movq	$.L.str46, (%rcx)
-	movl	$.L.str55, %eax
+	movq	$.L.str23, (%rcx)
+	movl	$.L.str7, %eax
 	movl	%eax, %r8d
-	movq	-880(%rbp), %rdi        # 8-byte Reload
-	movq	-896(%rbp), %rsi        # 8-byte Reload
-	movq	-888(%rbp), %rdx        # 8-byte Reload
-	movq	-880(%rbp), %rcx        # 8-byte Reload
-	movq	-880(%rbp), %r9         # 8-byte Reload
+	movq	-1312(%rbp), %rdi       # 8-byte Reload
+	movq	-1328(%rbp), %rsi       # 8-byte Reload
+	movq	-1320(%rbp), %rdx       # 8-byte Reload
+	movq	-1320(%rbp), %rcx       # 8-byte Reload
+	movq	-1312(%rbp), %r9        # 8-byte Reload
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
 	movq	%rsp, %rcx
-	movq	$.L.str46, (%rcx)
+	movq	$.L.str23, (%rcx)
 	movl	$19134, %eax            # imm = 0x4ABE
 	movl	%eax, %ecx
 	movq	%rcx, %rdi
-	movq	-896(%rbp), %rsi        # 8-byte Reload
-	movq	-552(%rbp), %rdx        # 8-byte Reload
-	movq	-880(%rbp), %r8         # 8-byte Reload
-	movq	%rcx, -912(%rbp)        # 8-byte Spill
+	movq	-1328(%rbp), %rsi       # 8-byte Reload
+	movq	-936(%rbp), %rdx        # 8-byte Reload
+	movq	-1312(%rbp), %r8        # 8-byte Reload
+	movq	%rcx, -1344(%rbp)       # 8-byte Spill
 	movq	%r8, %rcx
-	movq	-736(%rbp), %r8         # 8-byte Reload
-	movq	-888(%rbp), %r9         # 8-byte Reload
+	movq	-1168(%rbp), %r8        # 8-byte Reload
+	movq	-1320(%rbp), %r9        # 8-byte Reload
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
 	movq	%rsp, %rcx
 	movl	$1, (%rcx)
-	movl	$.L.str22, %eax
+	movl	$.L.str36, %eax
 	movl	%eax, %ecx
-	movl	$41, %eax
+	movl	$43, %eax
 	movl	%eax, %edx
-	movl	$29, %eax
+	movl	$8, %eax
 	movl	%eax, %r8d
 	movq	%rdx, %rdi
-	movq	-744(%rbp), %rsi        # 8-byte Reload
-	movq	-728(%rbp), %r9         # 8-byte Reload
-	movq	%rdx, -920(%rbp)        # 8-byte Spill
+	movq	-1176(%rbp), %rsi       # 8-byte Reload
+	movq	-1160(%rbp), %r9        # 8-byte Reload
+	movq	%rdx, -1352(%rbp)       # 8-byte Spill
 	movq	%r9, %rdx
-	movq	%rcx, -928(%rbp)        # 8-byte Spill
-	movl	-764(%rbp), %r9d        # 4-byte Reload
+	movq	%rcx, -1360(%rbp)       # 8-byte Spill
+	movl	-1196(%rbp), %r9d       # 4-byte Reload
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
 	movq	%rsp, %rcx
-	movq	$.L.str9, (%rcx)
-	movq	-904(%rbp), %rdi        # 8-byte Reload
-	movq	-896(%rbp), %rsi        # 8-byte Reload
-	movq	-552(%rbp), %rdx        # 8-byte Reload
-	movq	-880(%rbp), %rcx        # 8-byte Reload
-	movq	-736(%rbp), %r8         # 8-byte Reload
-	movq	-888(%rbp), %r9         # 8-byte Reload
+	movq	$.L.str8, (%rcx)
+	movl	$.L.str33, %eax
+	movl	%eax, %r8d
+	movq	-1336(%rbp), %rdi       # 8-byte Reload
+	movq	-1328(%rbp), %rsi       # 8-byte Reload
+	movq	-920(%rbp), %rdx        # 8-byte Reload
+	movq	-1312(%rbp), %rcx       # 8-byte Reload
+	movq	-1320(%rbp), %r9        # 8-byte Reload
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
 	movq	%rsp, %rcx
-	movq	$.L.str9, (%rcx)
-	movl	$.L.str27, %eax
+	movq	$.L.str8, (%rcx)
+	movq	-1312(%rbp), %rdi       # 8-byte Reload
+	movq	-1328(%rbp), %rsi       # 8-byte Reload
+	movq	-936(%rbp), %rdx        # 8-byte Reload
+	movq	-1312(%rbp), %rcx       # 8-byte Reload
+	movq	-1168(%rbp), %r8        # 8-byte Reload
+	movq	-1320(%rbp), %r9        # 8-byte Reload
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movq	-936(%rbp), %rcx        # 8-byte Reload
+	movq	-920(%rbp), %rdx        # 8-byte Reload
+	addq	%rdx, %rcx
+	subq	$16, %rsp
+	movq	%rsp, %rsi
+	movq	$.L.str8, (%rsi)
+	movq	-1344(%rbp), %rdi       # 8-byte Reload
+	movq	-1328(%rbp), %rsi       # 8-byte Reload
+	movq	%rcx, %rdx
+	movq	-1312(%rbp), %r8        # 8-byte Reload
+	movq	%rcx, -1368(%rbp)       # 8-byte Spill
+	movq	%r8, %rcx
+	movq	-1360(%rbp), %r8        # 8-byte Reload
+	movq	-1320(%rbp), %r9        # 8-byte Reload
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	%rsp, %rcx
+	movl	$1, (%rcx)
+	movl	$.L.str37, %eax
+	movl	%eax, %ecx
+	movl	$29, %eax
 	movl	%eax, %r8d
-	movq	-880(%rbp), %rdi        # 8-byte Reload
-	movq	-896(%rbp), %rsi        # 8-byte Reload
+	movq	-1352(%rbp), %rdi       # 8-byte Reload
+	movq	-1176(%rbp), %rsi       # 8-byte Reload
+	movq	-1160(%rbp), %rdx       # 8-byte Reload
+	movq	%rcx, -1376(%rbp)       # 8-byte Spill
+	movl	-1196(%rbp), %r9d       # 4-byte Reload
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	%rsp, %rcx
+	movq	$.L.str8, (%rcx)
+	movq	-1336(%rbp), %rdi       # 8-byte Reload
+	movq	-1328(%rbp), %rsi       # 8-byte Reload
+	movq	-1368(%rbp), %rdx       # 8-byte Reload
+	movq	-1312(%rbp), %rcx       # 8-byte Reload
+	movq	-1360(%rbp), %r8        # 8-byte Reload
+	movq	-1320(%rbp), %r9        # 8-byte Reload
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	%rsp, %rcx
+	movq	$.L.str8, (%rcx)
+	movl	$.L.str49, %eax
+	movl	%eax, %r8d
+	movq	-1312(%rbp), %rdi       # 8-byte Reload
+	movq	-1328(%rbp), %rsi       # 8-byte Reload
 	movq	-144(%rbp), %rdx        # 8-byte Reload
-	movq	-880(%rbp), %rcx        # 8-byte Reload
-	movq	-888(%rbp), %r9         # 8-byte Reload
+	movq	-1312(%rbp), %rcx       # 8-byte Reload
+	movq	-1320(%rbp), %r9        # 8-byte Reload
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
 	movq	-144(%rbp), %rcx        # 8-byte Reload
-	movq	-552(%rbp), %rdx        # 8-byte Reload
+	movq	-1368(%rbp), %rdx       # 8-byte Reload
 	leaq	(%rcx,%rdx,4), %rsi
 	subq	$16, %rsp
 	movq	%rsp, %rdi
-	movq	$.L.str9, (%rdi)
-	movq	-912(%rbp), %rdi        # 8-byte Reload
-	movq	-896(%rbp), %r8         # 8-byte Reload
-	movq	%rsi, -936(%rbp)        # 8-byte Spill
+	movq	$.L.str8, (%rdi)
+	movq	-1344(%rbp), %rdi       # 8-byte Reload
+	movq	-1328(%rbp), %r8        # 8-byte Reload
+	movq	%rsi, -1384(%rbp)       # 8-byte Spill
 	movq	%r8, %rsi
-	movq	-936(%rbp), %rdx        # 8-byte Reload
-	movq	-880(%rbp), %rcx        # 8-byte Reload
-	movq	-928(%rbp), %r8         # 8-byte Reload
-	movq	-888(%rbp), %r9         # 8-byte Reload
+	movq	-1384(%rbp), %rdx       # 8-byte Reload
+	movq	-1312(%rbp), %rcx       # 8-byte Reload
+	movq	-1376(%rbp), %r8        # 8-byte Reload
+	movq	-1320(%rbp), %r9        # 8-byte Reload
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
 	subq	$16, %rsp
 	movq	%rsp, %rcx
 	movl	$1, (%rcx)
-	movl	$.L.str23, %eax
+	movl	$.L.str38, %eax
 	movl	%eax, %ecx
 	movl	$27, %eax
 	movl	%eax, %r8d
-	movq	-920(%rbp), %rdi        # 8-byte Reload
-	movq	-744(%rbp), %rsi        # 8-byte Reload
-	movq	-728(%rbp), %rdx        # 8-byte Reload
-	movq	%rcx, -944(%rbp)        # 8-byte Spill
-	movl	-764(%rbp), %r9d        # 4-byte Reload
+	movq	-1352(%rbp), %rdi       # 8-byte Reload
+	movq	-1176(%rbp), %rsi       # 8-byte Reload
+	movq	-1160(%rbp), %rdx       # 8-byte Reload
+	movq	%rcx, -1392(%rbp)       # 8-byte Spill
+	movl	-1196(%rbp), %r9d       # 4-byte Reload
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
 	movq	%rsp, %rcx
-	movq	$.L.str9, (%rcx)
-	movq	-880(%rbp), %rdi        # 8-byte Reload
-	movq	-896(%rbp), %rsi        # 8-byte Reload
-	movq	-936(%rbp), %rdx        # 8-byte Reload
-	movq	-880(%rbp), %rcx        # 8-byte Reload
-	movq	-928(%rbp), %r8         # 8-byte Reload
-	movq	-888(%rbp), %r9         # 8-byte Reload
+	movq	$.L.str8, (%rcx)
+	movq	-1312(%rbp), %rdi       # 8-byte Reload
+	movq	-1328(%rbp), %rsi       # 8-byte Reload
+	movq	-1384(%rbp), %rdx       # 8-byte Reload
+	movq	-1312(%rbp), %rcx       # 8-byte Reload
+	movq	-1376(%rbp), %r8        # 8-byte Reload
+	movq	-1320(%rbp), %r9        # 8-byte Reload
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
 	movq	-144(%rbp), %rcx        # 8-byte Reload
-	movq	-552(%rbp), %rdx        # 8-byte Reload
+	movq	-1368(%rbp), %rdx       # 8-byte Reload
 	movl	(%rcx,%rdx,4), %eax
 	movl	%eax, %esi
 	subq	$16, %rsp
 	movq	%rsp, %rdi
-	movq	$.L.str9, (%rdi)
+	movq	$.L.str8, (%rdi)
 	movl	$32, %r12d
 	movl	%r12d, %edi
-	movq	-912(%rbp), %r8         # 8-byte Reload
-	movq	%rdi, -952(%rbp)        # 8-byte Spill
+	movq	-1344(%rbp), %r8        # 8-byte Reload
+	movq	%rdi, -1400(%rbp)       # 8-byte Spill
 	movq	%r8, %rdi
-	movq	-952(%rbp), %r9         # 8-byte Reload
-	movq	%rsi, -960(%rbp)        # 8-byte Spill
+	movq	-1400(%rbp), %r9        # 8-byte Reload
+	movq	%rsi, -1408(%rbp)       # 8-byte Spill
 	movq	%r9, %rsi
-	movq	-960(%rbp), %rdx        # 8-byte Reload
-	movq	-880(%rbp), %rcx        # 8-byte Reload
-	movq	-944(%rbp), %r8         # 8-byte Reload
-	movq	-888(%rbp), %r9         # 8-byte Reload
-	movl	%eax, -964(%rbp)        # 4-byte Spill
+	movq	-1408(%rbp), %rdx       # 8-byte Reload
+	movq	-1312(%rbp), %rcx       # 8-byte Reload
+	movq	-1392(%rbp), %r8        # 8-byte Reload
+	movq	-1320(%rbp), %r9        # 8-byte Reload
+	movl	%eax, -1412(%rbp)       # 4-byte Spill
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
 	movq	%rsp, %rcx
 	movl	$1, (%rcx)
-	movl	$.L.str25, %eax
+	movl	$.L.str32, %eax
 	movl	%eax, %ecx
 	movl	$39, %eax
 	movl	%eax, %r8d
-	movq	-920(%rbp), %rdi        # 8-byte Reload
-	movq	-744(%rbp), %rsi        # 8-byte Reload
-	movq	-728(%rbp), %rdx        # 8-byte Reload
-	movl	-764(%rbp), %r9d        # 4-byte Reload
+	movq	-1352(%rbp), %rdi       # 8-byte Reload
+	movq	-1176(%rbp), %rsi       # 8-byte Reload
+	movq	-1160(%rbp), %rdx       # 8-byte Reload
+	movl	-1196(%rbp), %r9d       # 4-byte Reload
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
 	movq	%rsp, %rcx
-	movq	$.L.str9, (%rcx)
-	movq	-880(%rbp), %rdi        # 8-byte Reload
-	movq	-952(%rbp), %rsi        # 8-byte Reload
-	movq	-960(%rbp), %rdx        # 8-byte Reload
-	movq	-880(%rbp), %rcx        # 8-byte Reload
-	movq	-944(%rbp), %r8         # 8-byte Reload
-	movq	-888(%rbp), %r9         # 8-byte Reload
+	movq	$.L.str8, (%rcx)
+	movq	-1312(%rbp), %rdi       # 8-byte Reload
+	movq	-1400(%rbp), %rsi       # 8-byte Reload
+	movq	-1408(%rbp), %rdx       # 8-byte Reload
+	movq	-1312(%rbp), %rcx       # 8-byte Reload
+	movq	-1392(%rbp), %r8        # 8-byte Reload
+	movq	-1320(%rbp), %r9        # 8-byte Reload
 	callq	trace_logger_log_int
 	addq	$16, %rsp
                                         # implicit-def: XMM0
-	movl	-964(%rbp), %eax        # 4-byte Reload
+	movl	-1412(%rbp), %eax       # 4-byte Reload
 	vcvtsi2ssl	%eax, %xmm0, %xmm0
 	cvtss2sd	%xmm0, %xmm1
-	movq	-824(%rbp), %rdi        # 8-byte Reload
-	movq	-560(%rbp), %rsi        # 8-byte Reload
-	vmovss	%xmm0, -968(%rbp)       # 4-byte Spill
+	movq	-1256(%rbp), %rdi       # 8-byte Reload
+	movq	-944(%rbp), %rsi        # 8-byte Reload
+	vmovss	%xmm0, -1416(%rbp)      # 4-byte Spill
 	vmovaps	%xmm1, %xmm0
-	movq	-784(%rbp), %rdx        # 8-byte Reload
-	movq	-688(%rbp), %rcx        # 8-byte Reload
-	movq	-720(%rbp), %r8         # 8-byte Reload
-	movq	-760(%rbp), %r9         # 8-byte Reload
+	movq	-1216(%rbp), %rdx       # 8-byte Reload
+	movq	-1120(%rbp), %rcx       # 8-byte Reload
+	movq	-1152(%rbp), %r8        # 8-byte Reload
+	movq	-1192(%rbp), %r9        # 8-byte Reload
 	callq	trace_logger_log_double
 	subq	$16, %rsp
-	movq	-704(%rbp), %rdi        # 8-byte Reload
-	movq	-848(%rbp), %rsi        # 8-byte Reload
-	movq	-800(%rbp), %rdx        # 8-byte Reload
-	movq	-696(%rbp), %rcx        # 8-byte Reload
-	movq	-680(%rbp), %r8         # 8-byte Reload
-	movl	-812(%rbp), %r9d        # 4-byte Reload
+	movq	-1136(%rbp), %rdi       # 8-byte Reload
+	movq	-1280(%rbp), %rsi       # 8-byte Reload
+	movq	-1232(%rbp), %rdx       # 8-byte Reload
+	movq	-1128(%rbp), %rcx       # 8-byte Reload
+	movq	-1056(%rbp), %r8        # 8-byte Reload
+	movl	-1244(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-856(%rbp), %rdi        # 8-byte Reload
-	movq	-560(%rbp), %rsi        # 8-byte Reload
-	movq	-720(%rbp), %rdx        # 8-byte Reload
-	movq	-720(%rbp), %rcx        # 8-byte Reload
-	movq	-624(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1288(%rbp), %rdi       # 8-byte Reload
+	movq	-944(%rbp), %rsi        # 8-byte Reload
+	movq	-1152(%rbp), %rdx       # 8-byte Reload
+	movq	-1152(%rbp), %rcx       # 8-byte Reload
+	movq	-1008(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-792(%rbp), %rdi        # 8-byte Reload
-	movq	-592(%rbp), %rsi        # 8-byte Reload
-	movq	-552(%rbp), %rdx        # 8-byte Reload
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-616(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1224(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	-936(%rbp), %rdx        # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1000(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-784(%rbp), %rdi        # 8-byte Reload
-	movq	-592(%rbp), %rsi        # 8-byte Reload
+	movq	-1216(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
 	movq	-360(%rbp), %rdx        # 8-byte Reload
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-672(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1112(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
-	movq	-552(%rbp), %rcx        # 8-byte Reload
+	movq	-936(%rbp), %rcx        # 8-byte Reload
 	shlq	$3, %rcx
 	movq	-360(%rbp), %rdx        # 8-byte Reload
 	addq	%rcx, %rdx
 	subq	$16, %rsp
-	movq	-824(%rbp), %rdi        # 8-byte Reload
-	movq	-592(%rbp), %rsi        # 8-byte Reload
-	movq	%rdx, -976(%rbp)        # 8-byte Spill
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-696(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1256(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	%rdx, -1424(%rbp)       # 8-byte Spill
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1128(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-704(%rbp), %rdi        # 8-byte Reload
-	movq	-848(%rbp), %rsi        # 8-byte Reload
-	movq	-800(%rbp), %rdx        # 8-byte Reload
-	movq	-712(%rbp), %rcx        # 8-byte Reload
-	movq	-664(%rbp), %r8         # 8-byte Reload
-	movl	-812(%rbp), %r9d        # 4-byte Reload
+	movq	-1136(%rbp), %rdi       # 8-byte Reload
+	movq	-1280(%rbp), %rsi       # 8-byte Reload
+	movq	-1232(%rbp), %rdx       # 8-byte Reload
+	movq	-1144(%rbp), %rcx       # 8-byte Reload
+	movq	-1040(%rbp), %r8        # 8-byte Reload
+	movl	-1244(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-792(%rbp), %rdi        # 8-byte Reload
-	movq	-592(%rbp), %rsi        # 8-byte Reload
-	movq	-976(%rbp), %rdx        # 8-byte Reload
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-696(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1224(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	-1424(%rbp), %rdx       # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1128(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
-	vmovss	-968(%rbp), %xmm0       # 4-byte Reload
+	vmovss	-1416(%rbp), %xmm0      # 4-byte Reload
 	cvtss2sd	%xmm0, %xmm0
-	movq	-784(%rbp), %rdi        # 8-byte Reload
-	movq	-560(%rbp), %rsi        # 8-byte Reload
-	movq	-784(%rbp), %rdx        # 8-byte Reload
-	movq	-688(%rbp), %rcx        # 8-byte Reload
-	movq	-720(%rbp), %r8         # 8-byte Reload
-	movq	-760(%rbp), %r9         # 8-byte Reload
+	movq	-1216(%rbp), %rdi       # 8-byte Reload
+	movq	-944(%rbp), %rsi        # 8-byte Reload
+	movq	-1216(%rbp), %rdx       # 8-byte Reload
+	movq	-1120(%rbp), %rcx       # 8-byte Reload
+	movq	-1152(%rbp), %r8        # 8-byte Reload
+	movq	-1192(%rbp), %r9        # 8-byte Reload
 	callq	trace_logger_log_double
 	movq	-360(%rbp), %rcx        # 8-byte Reload
-	movq	-552(%rbp), %rdx        # 8-byte Reload
-	vmovss	-968(%rbp), %xmm0       # 4-byte Reload
+	movq	-936(%rbp), %rdx        # 8-byte Reload
+	vmovss	-1416(%rbp), %xmm0      # 4-byte Reload
 	vmovss	%xmm0, (%rcx,%rdx,8)
-	.loc	1 42 0                  # feature_extraction.c:42:0
+	.loc	1 44 0                  # feature_extraction.c:44:0
 	subq	$16, %rsp
-	movq	-648(%rbp), %rdi        # 8-byte Reload
-	movq	-848(%rbp), %rsi        # 8-byte Reload
-	movq	-800(%rbp), %rdx        # 8-byte Reload
-	movq	-640(%rbp), %rcx        # 8-byte Reload
-	movq	-680(%rbp), %r8         # 8-byte Reload
-	movl	-812(%rbp), %r9d        # 4-byte Reload
+	movq	-1096(%rbp), %rdi       # 8-byte Reload
+	movq	-1280(%rbp), %rsi       # 8-byte Reload
+	movq	-1232(%rbp), %rdx       # 8-byte Reload
+	movq	-1088(%rbp), %rcx       # 8-byte Reload
+	movq	-1056(%rbp), %r8        # 8-byte Reload
+	movl	-1244(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-856(%rbp), %rdi        # 8-byte Reload
-	movq	-560(%rbp), %rsi        # 8-byte Reload
-	movq	-784(%rbp), %rdx        # 8-byte Reload
-	movq	-720(%rbp), %rcx        # 8-byte Reload
-	movq	-624(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1288(%rbp), %rdi       # 8-byte Reload
+	movq	-944(%rbp), %rsi        # 8-byte Reload
+	movq	-1216(%rbp), %rdx       # 8-byte Reload
+	movq	-1152(%rbp), %rcx       # 8-byte Reload
+	movq	-1008(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-792(%rbp), %rdi        # 8-byte Reload
-	movq	-592(%rbp), %rsi        # 8-byte Reload
-	movq	-552(%rbp), %rdx        # 8-byte Reload
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-616(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1224(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	-936(%rbp), %rdx        # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1000(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-784(%rbp), %rdi        # 8-byte Reload
-	movq	-592(%rbp), %rsi        # 8-byte Reload
+	movq	-1216(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
 	movq	-360(%rbp), %rdx        # 8-byte Reload
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-672(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1112(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
-	movq	-552(%rbp), %rcx        # 8-byte Reload
+	movq	-936(%rbp), %rcx        # 8-byte Reload
 	shlq	$3, %rcx
 	movq	-360(%rbp), %rdx        # 8-byte Reload
 	addq	%rcx, %rdx
 	addq	$4, %rdx
 	subq	$16, %rsp
-	movq	-824(%rbp), %rdi        # 8-byte Reload
-	movq	-592(%rbp), %rsi        # 8-byte Reload
-	movq	%rdx, -984(%rbp)        # 8-byte Spill
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-640(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1256(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	%rdx, -1432(%rbp)       # 8-byte Spill
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1088(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-648(%rbp), %rdi        # 8-byte Reload
-	movq	-848(%rbp), %rsi        # 8-byte Reload
-	movq	-800(%rbp), %rdx        # 8-byte Reload
-	movq	-656(%rbp), %rcx        # 8-byte Reload
-	movq	-664(%rbp), %r8         # 8-byte Reload
-	movl	-812(%rbp), %r9d        # 4-byte Reload
+	movq	-1096(%rbp), %rdi       # 8-byte Reload
+	movq	-1280(%rbp), %rsi       # 8-byte Reload
+	movq	-1232(%rbp), %rdx       # 8-byte Reload
+	movq	-1104(%rbp), %rcx       # 8-byte Reload
+	movq	-1040(%rbp), %r8        # 8-byte Reload
+	movl	-1244(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-792(%rbp), %rdi        # 8-byte Reload
-	movq	-592(%rbp), %rsi        # 8-byte Reload
-	movq	-984(%rbp), %rdx        # 8-byte Reload
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-640(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1224(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	-1432(%rbp), %rdx       # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1088(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
-	movq	-784(%rbp), %rdi        # 8-byte Reload
-	movq	-560(%rbp), %rsi        # 8-byte Reload
-	vmovsd	-808(%rbp), %xmm0       # 8-byte Reload
-	movq	-720(%rbp), %rdx        # 8-byte Reload
-	movq	-624(%rbp), %rcx        # 8-byte Reload
-	movq	-720(%rbp), %r8         # 8-byte Reload
-	movq	-760(%rbp), %r9         # 8-byte Reload
+	movq	-1216(%rbp), %rdi       # 8-byte Reload
+	movq	-944(%rbp), %rsi        # 8-byte Reload
+	vmovsd	-1240(%rbp), %xmm0      # 8-byte Reload
+	movq	-1152(%rbp), %rdx       # 8-byte Reload
+	movq	-1008(%rbp), %rcx       # 8-byte Reload
+	movq	-1152(%rbp), %r8        # 8-byte Reload
+	movq	-1192(%rbp), %r9        # 8-byte Reload
 	callq	trace_logger_log_double
 	movq	-360(%rbp), %rcx        # 8-byte Reload
-	movq	-552(%rbp), %rdx        # 8-byte Reload
-	vmovss	-828(%rbp), %xmm0       # 4-byte Reload
+	movq	-936(%rbp), %rdx        # 8-byte Reload
+	vmovss	-1260(%rbp), %xmm0      # 4-byte Reload
 	vmovss	%xmm0, 4(%rcx,%rdx,8)
-.Ltmp51:
-	.loc	1 37 0                  # feature_extraction.c:37:0
+	.loc	1 45 0                  # feature_extraction.c:45:0
 	subq	$16, %rsp
-	movq	-872(%rbp), %rdi        # 8-byte Reload
-	movq	-848(%rbp), %rsi        # 8-byte Reload
-	movq	-800(%rbp), %rdx        # 8-byte Reload
-	movq	-600(%rbp), %rcx        # 8-byte Reload
-	movq	-632(%rbp), %r8         # 8-byte Reload
-	movl	-812(%rbp), %r9d        # 4-byte Reload
+	movq	-1072(%rbp), %rdi       # 8-byte Reload
+	movq	-1280(%rbp), %rsi       # 8-byte Reload
+	movq	-1232(%rbp), %rdx       # 8-byte Reload
+	movq	-1064(%rbp), %rcx       # 8-byte Reload
+	movq	-1056(%rbp), %r8        # 8-byte Reload
+	movl	-1244(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-792(%rbp), %rdi        # 8-byte Reload
-	movq	-592(%rbp), %rsi        # 8-byte Reload
-	movq	-784(%rbp), %rdx        # 8-byte Reload
-	movq	-720(%rbp), %rcx        # 8-byte Reload
-	movq	-624(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1288(%rbp), %rdi       # 8-byte Reload
+	movq	-944(%rbp), %rsi        # 8-byte Reload
+	movq	-1152(%rbp), %rdx       # 8-byte Reload
+	movq	-1152(%rbp), %rcx       # 8-byte Reload
+	movq	-1008(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-784(%rbp), %rdi        # 8-byte Reload
-	movq	-592(%rbp), %rsi        # 8-byte Reload
-	movq	-552(%rbp), %rdx        # 8-byte Reload
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-616(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1224(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	-936(%rbp), %rdx        # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1000(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
-	movq	-552(%rbp), %rcx        # 8-byte Reload
+	subq	$16, %rsp
+	movq	-1216(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	-376(%rbp), %rdx        # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1048(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	addq	$16, %rsp
+	movq	-936(%rbp), %rcx        # 8-byte Reload
+	shlq	$3, %rcx
+	movq	-376(%rbp), %rdx        # 8-byte Reload
+	addq	%rcx, %rdx
+	subq	$16, %rsp
+	movq	-1256(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	%rdx, -1440(%rbp)       # 8-byte Spill
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1064(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1072(%rbp), %rdi       # 8-byte Reload
+	movq	-1280(%rbp), %rsi       # 8-byte Reload
+	movq	-1232(%rbp), %rdx       # 8-byte Reload
+	movq	-1080(%rbp), %rcx       # 8-byte Reload
+	movq	-1040(%rbp), %r8        # 8-byte Reload
+	movl	-1244(%rbp), %r9d       # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1224(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	-1440(%rbp), %rdx       # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1064(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	addq	$16, %rsp
+	movq	-1216(%rbp), %rdi       # 8-byte Reload
+	movq	-944(%rbp), %rsi        # 8-byte Reload
+	vmovsd	-1240(%rbp), %xmm0      # 8-byte Reload
+	movq	-1152(%rbp), %rdx       # 8-byte Reload
+	movq	-1008(%rbp), %rcx       # 8-byte Reload
+	movq	-1152(%rbp), %r8        # 8-byte Reload
+	movq	-1192(%rbp), %r9        # 8-byte Reload
+	callq	trace_logger_log_double
+	movq	-376(%rbp), %rcx        # 8-byte Reload
+	movq	-936(%rbp), %rdx        # 8-byte Reload
+	vmovss	-1260(%rbp), %xmm0      # 4-byte Reload
+	vmovss	%xmm0, (%rcx,%rdx,8)
+	.loc	1 46 0                  # feature_extraction.c:46:0
+	subq	$16, %rsp
+	movq	-968(%rbp), %rdi        # 8-byte Reload
+	movq	-1280(%rbp), %rsi       # 8-byte Reload
+	movq	-1232(%rbp), %rdx       # 8-byte Reload
+	movq	-1024(%rbp), %rcx       # 8-byte Reload
+	movq	-1056(%rbp), %r8        # 8-byte Reload
+	movl	-1244(%rbp), %r9d       # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1288(%rbp), %rdi       # 8-byte Reload
+	movq	-944(%rbp), %rsi        # 8-byte Reload
+	movq	-1216(%rbp), %rdx       # 8-byte Reload
+	movq	-1152(%rbp), %rcx       # 8-byte Reload
+	movq	-1008(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1224(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	-936(%rbp), %rdx        # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1000(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1216(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	-376(%rbp), %rdx        # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1048(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	addq	$16, %rsp
+	movq	-936(%rbp), %rcx        # 8-byte Reload
+	shlq	$3, %rcx
+	movq	-376(%rbp), %rdx        # 8-byte Reload
+	addq	%rcx, %rdx
+	addq	$4, %rdx
+	subq	$16, %rsp
+	movq	-1256(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	%rdx, -1448(%rbp)       # 8-byte Spill
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1024(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-968(%rbp), %rdi        # 8-byte Reload
+	movq	-1280(%rbp), %rsi       # 8-byte Reload
+	movq	-1232(%rbp), %rdx       # 8-byte Reload
+	movq	-1032(%rbp), %rcx       # 8-byte Reload
+	movq	-1040(%rbp), %r8        # 8-byte Reload
+	movl	-1244(%rbp), %r9d       # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1224(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	-1448(%rbp), %rdx       # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1024(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	addq	$16, %rsp
+	movq	-1216(%rbp), %rdi       # 8-byte Reload
+	movq	-944(%rbp), %rsi        # 8-byte Reload
+	vmovsd	-1240(%rbp), %xmm0      # 8-byte Reload
+	movq	-1152(%rbp), %rdx       # 8-byte Reload
+	movq	-1008(%rbp), %rcx       # 8-byte Reload
+	movq	-1152(%rbp), %r8        # 8-byte Reload
+	movq	-1192(%rbp), %r9        # 8-byte Reload
+	callq	trace_logger_log_double
+	movq	-376(%rbp), %rcx        # 8-byte Reload
+	movq	-936(%rbp), %rdx        # 8-byte Reload
+	vmovss	-1260(%rbp), %xmm0      # 4-byte Reload
+	vmovss	%xmm0, 4(%rcx,%rdx,8)
+.Ltmp64:
+	.loc	1 41 0                  # feature_extraction.c:41:0
+	subq	$16, %rsp
+	movq	-1304(%rbp), %rdi       # 8-byte Reload
+	movq	-1280(%rbp), %rsi       # 8-byte Reload
+	movq	-1232(%rbp), %rdx       # 8-byte Reload
+	movq	-984(%rbp), %rcx        # 8-byte Reload
+	movq	-1016(%rbp), %r8        # 8-byte Reload
+	movl	-1244(%rbp), %r9d       # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1224(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	-1216(%rbp), %rdx       # 8-byte Reload
+	movq	-1152(%rbp), %rcx       # 8-byte Reload
+	movq	-1008(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1216(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	-936(%rbp), %rdx        # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1000(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movq	-936(%rbp), %rcx        # 8-byte Reload
 	addq	$1, %rcx
 	subq	$16, %rsp
-	movq	-824(%rbp), %rdi        # 8-byte Reload
-	movq	-592(%rbp), %rsi        # 8-byte Reload
+	movq	-1256(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
 	movq	%rcx, %rdx
-	movq	-784(%rbp), %r8         # 8-byte Reload
-	movq	%rcx, -992(%rbp)        # 8-byte Spill
+	movq	-1216(%rbp), %r8        # 8-byte Reload
+	movq	%rcx, -1456(%rbp)       # 8-byte Spill
 	movq	%r8, %rcx
-	movq	-600(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-984(%rbp), %r8         # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-872(%rbp), %rdi        # 8-byte Reload
-	movq	-848(%rbp), %rsi        # 8-byte Reload
-	movq	-800(%rbp), %rdx        # 8-byte Reload
-	movq	-568(%rbp), %rcx        # 8-byte Reload
-	movq	-608(%rbp), %r8         # 8-byte Reload
-	movl	-812(%rbp), %r9d        # 4-byte Reload
+	movq	-1304(%rbp), %rdi       # 8-byte Reload
+	movq	-1280(%rbp), %rsi       # 8-byte Reload
+	movq	-1232(%rbp), %rdx       # 8-byte Reload
+	movq	-952(%rbp), %rcx        # 8-byte Reload
+	movq	-992(%rbp), %r8         # 8-byte Reload
+	movl	-1244(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-784(%rbp), %rdi        # 8-byte Reload
-	movq	-592(%rbp), %rsi        # 8-byte Reload
-	movq	-992(%rbp), %rdx        # 8-byte Reload
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-600(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1216(%rbp), %rdi       # 8-byte Reload
+	movq	-976(%rbp), %rsi        # 8-byte Reload
+	movq	-1456(%rbp), %rdx       # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-984(%rbp), %r8         # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
-	movq	-992(%rbp), %rcx        # 8-byte Reload
+	movq	-1456(%rbp), %rcx       # 8-byte Reload
 	movl	%ecx, %eax
 	movl	%eax, %r12d
 	movl	%r12d, %edx
 	subq	$16, %rsp
-	movq	-824(%rbp), %rdi        # 8-byte Reload
-	movq	-560(%rbp), %rsi        # 8-byte Reload
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-568(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1256(%rbp), %rdi       # 8-byte Reload
+	movq	-944(%rbp), %rsi        # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-952(%rbp), %r8         # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
-	movl	%eax, -996(%rbp)        # 4-byte Spill
+	movl	%eax, -1460(%rbp)       # 4-byte Spill
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-872(%rbp), %rdi        # 8-byte Reload
-	movq	-848(%rbp), %rsi        # 8-byte Reload
-	movq	-800(%rbp), %rdx        # 8-byte Reload
-	movq	-776(%rbp), %rcx        # 8-byte Reload
-	movq	-584(%rbp), %r8         # 8-byte Reload
-	movl	-812(%rbp), %r9d        # 4-byte Reload
+	movq	-1304(%rbp), %rdi       # 8-byte Reload
+	movq	-1280(%rbp), %rsi       # 8-byte Reload
+	movq	-1232(%rbp), %rdx       # 8-byte Reload
+	movq	-1208(%rbp), %rcx       # 8-byte Reload
+	movq	-968(%rbp), %r8         # 8-byte Reload
+	movl	-1244(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
-	movl	-60(%rbp), %eax         # 4-byte Reload
+	movl	-136(%rbp), %eax        # 4-byte Reload
 	movl	%eax, %r9d
 	movl	%r9d, %edx
 	subq	$16, %rsp
-	movq	-792(%rbp), %rdi        # 8-byte Reload
-	movq	-560(%rbp), %rsi        # 8-byte Reload
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-576(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1224(%rbp), %rdi       # 8-byte Reload
+	movq	-944(%rbp), %rsi        # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-960(%rbp), %r8         # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
-	movl	-996(%rbp), %eax        # 4-byte Reload
+	movl	-1460(%rbp), %eax       # 4-byte Reload
 	movl	%eax, %r12d
 	movl	%r12d, %edx
 	subq	$16, %rsp
-	movq	-784(%rbp), %rdi        # 8-byte Reload
-	movq	-560(%rbp), %rsi        # 8-byte Reload
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-568(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1216(%rbp), %rdi       # 8-byte Reload
+	movq	-944(%rbp), %rsi        # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-952(%rbp), %r8         # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
-	movl	-996(%rbp), %eax        # 4-byte Reload
-	movl	-60(%rbp), %r12d        # 4-byte Reload
+	movl	-1460(%rbp), %eax       # 4-byte Reload
+	movl	-136(%rbp), %r12d       # 4-byte Reload
 	cmpl	%r12d, %eax
 	sete	%al
 	movb	%al, %cl
@@ -2649,775 +3563,1059 @@ process_data:                           # @process_data
 	movzbl	%cl, %ecx
 	movl	%ecx, %edx
 	subq	$16, %rsp
-	movq	-824(%rbp), %rdi        # 8-byte Reload
-	movq	-784(%rbp), %rsi        # 8-byte Reload
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-776(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1256(%rbp), %rdi       # 8-byte Reload
+	movq	-1216(%rbp), %rsi       # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1208(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
-	movb	%al, -997(%rbp)         # 1-byte Spill
+	movb	%al, -1461(%rbp)        # 1-byte Spill
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-872(%rbp), %rdi        # 8-byte Reload
-	movq	-848(%rbp), %rsi        # 8-byte Reload
-	movq	-800(%rbp), %rdx        # 8-byte Reload
-	movq	-840(%rbp), %rcx        # 8-byte Reload
-	movq	-792(%rbp), %r8         # 8-byte Reload
-	movl	-812(%rbp), %r9d        # 4-byte Reload
+	movq	-1304(%rbp), %rdi       # 8-byte Reload
+	movq	-1280(%rbp), %rsi       # 8-byte Reload
+	movq	-1232(%rbp), %rdx       # 8-byte Reload
+	movq	-1272(%rbp), %rcx       # 8-byte Reload
+	movq	-1224(%rbp), %r8        # 8-byte Reload
+	movl	-1244(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-856(%rbp), %rdi        # 8-byte Reload
-	movq	-720(%rbp), %rsi        # 8-byte Reload
-	movq	-720(%rbp), %rdx        # 8-byte Reload
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-864(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1288(%rbp), %rdi       # 8-byte Reload
+	movq	-1152(%rbp), %rsi       # 8-byte Reload
+	movq	-1152(%rbp), %rdx       # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1296(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-792(%rbp), %rdi        # 8-byte Reload
-	movq	-720(%rbp), %rsi        # 8-byte Reload
-	movq	-720(%rbp), %rdx        # 8-byte Reload
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-800(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1224(%rbp), %rdi       # 8-byte Reload
+	movq	-1152(%rbp), %rsi       # 8-byte Reload
+	movq	-1152(%rbp), %rdx       # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1232(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
-	movb	-997(%rbp), %al         # 1-byte Reload
+	movb	-1461(%rbp), %al        # 1-byte Reload
 	andb	$1, %al
 	movzbl	%al, %r12d
 	movl	%r12d, %edx
 	subq	$16, %rsp
-	movq	-784(%rbp), %rdi        # 8-byte Reload
-	movq	-784(%rbp), %rsi        # 8-byte Reload
-	movq	-784(%rbp), %rcx        # 8-byte Reload
-	movq	-776(%rbp), %r8         # 8-byte Reload
-	movq	-720(%rbp), %r9         # 8-byte Reload
-	movq	-760(%rbp), %r10        # 8-byte Reload
+	movq	-1216(%rbp), %rdi       # 8-byte Reload
+	movq	-1216(%rbp), %rsi       # 8-byte Reload
+	movq	-1216(%rbp), %rcx       # 8-byte Reload
+	movq	-1208(%rbp), %r8        # 8-byte Reload
+	movq	-1152(%rbp), %r9        # 8-byte Reload
+	movq	-1192(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
-	movb	-997(%rbp), %al         # 1-byte Reload
+	movb	-1461(%rbp), %al        # 1-byte Reload
 	testb	$1, %al
-	movq	-992(%rbp), %rcx        # 8-byte Reload
-	movq	%rcx, -392(%rbp)        # 8-byte Spill
-	jne	.LBB1_3
-	jmp	.LBB1_2
-.Ltmp52:
-.LBB1_3:                                # %._crit_edge6
+	movq	-1456(%rbp), %rcx       # 8-byte Reload
+	movq	%rcx, -928(%rbp)        # 8-byte Spill
+	jne	.LBB1_5
+	jmp	.LBB1_4
+.Ltmp65:
+.LBB1_5:                                # %._crit_edge
+                                        #   in Loop: Header=BB1_2 Depth=1
 	movabsq	$3, %rdi
 	movabsq	$64, %rax
 	movabsq	$1, %rcx
-	leaq	.L.str52, %r8
+	leaq	.L.str63, %r8
 	movabsq	$0, %rdx
-	leaq	.L.str9, %rsi
+	leaq	.L.str8, %rsi
 	movabsq	$2, %r9
-	leaq	.L.str51, %r10
-	leaq	.L.str50, %r11
+	leaq	.L.str58, %r10
+	leaq	.L.str70, %r11
 	movabsq	$4, %rbx
 	leaq	kiss_fft, %r14
-	leaq	.L.str49, %r15
-	movabsq	$44, %r12
-	leaq	.L.str44, %r13
-	movq	%rax, -1008(%rbp)       # 8-byte Spill
-	leaq	.L.str61, %rax
-	movq	%rax, -1016(%rbp)       # 8-byte Spill
-	leaq	.L.str62, %rax
-	movq	%rax, -1024(%rbp)       # 8-byte Spill
-	movabsq	$49, %rax
-	movq	%rsi, -1032(%rbp)       # 8-byte Spill
-	movl	$1, %esi
-	.loc	1 44 0                  # feature_extraction.c:44:0
-	subq	$16, %rsp
-	movq	%rdi, -1040(%rbp)       # 8-byte Spill
-	movq	%r12, %rdi
-	movl	%esi, -1044(%rbp)       # 4-byte Spill
-	movq	%r13, %rsi
-	movq	-1016(%rbp), %r12       # 8-byte Reload
-	movq	%rdx, -1056(%rbp)       # 8-byte Spill
-	movq	%r12, %rdx
-	movq	-1024(%rbp), %r13       # 8-byte Reload
-	movq	%rcx, -1064(%rbp)       # 8-byte Spill
-	movq	%r13, %rcx
-	movq	%r8, -1072(%rbp)        # 8-byte Spill
-	movq	%rax, %r8
-	movl	-1044(%rbp), %r12d      # 4-byte Reload
-	movq	%r9, -1080(%rbp)        # 8-byte Spill
-	movl	%r12d, %r9d
-	movl	$1, (%rsp)
-	movq	%r15, -1088(%rbp)       # 8-byte Spill
-	movq	%rbx, -1096(%rbp)       # 8-byte Spill
-	movq	%r11, -1104(%rbp)       # 8-byte Spill
-	movq	%r14, -1112(%rbp)       # 8-byte Spill
-	movq	%r10, -1120(%rbp)       # 8-byte Spill
-	callq	trace_logger_log0
-	addq	$16, %rsp
-	subq	$16, %rsp
-	movq	-1096(%rbp), %rdi       # 8-byte Reload
-	movq	-1008(%rbp), %rsi       # 8-byte Reload
-	movq	-1112(%rbp), %rdx       # 8-byte Reload
-	movq	-1064(%rbp), %rcx       # 8-byte Reload
-	movq	-1088(%rbp), %r8        # 8-byte Reload
-	movq	-1056(%rbp), %r9        # 8-byte Reload
-	movq	-1032(%rbp), %rax       # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	addq	$16, %rsp
-	subq	$16, %rsp
-	movq	-1064(%rbp), %rdi       # 8-byte Reload
-	movq	-1008(%rbp), %rsi       # 8-byte Reload
-	movq	-184(%rbp), %rdx        # 8-byte Reload
-	movq	-1064(%rbp), %rcx       # 8-byte Reload
-	movq	-1104(%rbp), %r8        # 8-byte Reload
-	movq	-1056(%rbp), %r9        # 8-byte Reload
-	movq	-1032(%rbp), %rax       # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	addq	$16, %rsp
-	subq	$16, %rsp
-	movq	-1080(%rbp), %rdi       # 8-byte Reload
-	movq	-1008(%rbp), %rsi       # 8-byte Reload
-	movq	-360(%rbp), %rdx        # 8-byte Reload
-	movq	-1064(%rbp), %rcx       # 8-byte Reload
-	movq	-1120(%rbp), %r8        # 8-byte Reload
-	movq	-1056(%rbp), %r9        # 8-byte Reload
-	movq	-1032(%rbp), %rax       # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	addq	$16, %rsp
-	subq	$16, %rsp
-	movq	-1040(%rbp), %rdi       # 8-byte Reload
-	movq	-1008(%rbp), %rsi       # 8-byte Reload
-	movq	-376(%rbp), %rdx        # 8-byte Reload
-	movq	-1064(%rbp), %rcx       # 8-byte Reload
-	movq	-1072(%rbp), %r8        # 8-byte Reload
-	movq	-1056(%rbp), %r9        # 8-byte Reload
-	movq	-1032(%rbp), %rax       # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	addq	$16, %rsp
-	movq	-184(%rbp), %rdi        # 8-byte Reload
-	movq	-360(%rbp), %rsi        # 8-byte Reload
-	movq	-376(%rbp), %rdx        # 8-byte Reload
-	callq	kiss_fft
-	movabsq	$0, %rax
-	movabsq	$1, %rcx
-	leaq	.L.str29, %rdx
-	leaq	.L.str9, %rsi
-	movabsq	$2, %rdi
-	leaq	.L.str13, %r8
-	movabsq	$3, %r9
-	leaq	.L.str12, %r10
-	movabsq	$45, %r11
-	leaq	.L.str44, %rbx
-	leaq	.L.str61, %r14
-	leaq	.L.str63, %r15
-	movl	$1, %r12d
-	movabsq	$19134, %r13            # imm = 0x4ABE
-	movq	%rax, -1128(%rbp)       # 8-byte Spill
-	movabsq	$32, %rax
-	movq	%rax, -1136(%rbp)       # 8-byte Spill
-	leaq	.L.str10, %rax
-	movq	%rax, -1144(%rbp)       # 8-byte Spill
-	leaq	.L.str8, %rax
-	movq	%rax, -1152(%rbp)       # 8-byte Spill
-	movabsq	$46, %rax
-.Ltmp53:
-	#DEBUG_VALUE: i <- 0
-	.loc	1 45 0                  # feature_extraction.c:45:0
-	subq	$16, %rsp
-	movq	%rdi, -1160(%rbp)       # 8-byte Spill
-	movq	%r11, %rdi
-	movq	%rsi, -1168(%rbp)       # 8-byte Spill
-	movq	%rbx, %rsi
-	movq	%rdx, -1176(%rbp)       # 8-byte Spill
-	movq	%r14, %rdx
-	movq	%rax, -1184(%rbp)       # 8-byte Spill
-	movq	-1176(%rbp), %rax       # 8-byte Reload
-	movq	%rcx, -1192(%rbp)       # 8-byte Spill
-	movq	%rax, %rcx
-	movq	-1184(%rbp), %rax       # 8-byte Reload
-	movq	%r8, -1200(%rbp)        # 8-byte Spill
-	movq	%rax, %r8
-	movq	%r9, -1208(%rbp)        # 8-byte Spill
-	movl	%r12d, %r9d
-	movl	$1, (%rsp)
-	movq	%r14, -1216(%rbp)       # 8-byte Spill
-	movq	%r15, -1224(%rbp)       # 8-byte Spill
-	movl	%r12d, -1228(%rbp)      # 4-byte Spill
-	movq	%r13, -1240(%rbp)       # 8-byte Spill
-	movq	%rbx, -1248(%rbp)       # 8-byte Spill
-	movq	%r11, -1256(%rbp)       # 8-byte Spill
-	movq	%r10, -1264(%rbp)       # 8-byte Spill
-	callq	trace_logger_log0
-	addq	$16, %rsp
-	subq	$16, %rsp
-	movq	-1160(%rbp), %rdi       # 8-byte Reload
-	movq	-1136(%rbp), %rsi       # 8-byte Reload
-	movq	-1128(%rbp), %rdx       # 8-byte Reload
-	movq	-1128(%rbp), %rcx       # 8-byte Reload
-	movq	-1152(%rbp), %r8        # 8-byte Reload
-	movq	-1128(%rbp), %r9        # 8-byte Reload
-	movq	-1168(%rbp), %rax       # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_int
-	addq	$16, %rsp
-	movl	-60(%rbp), %r12d        # 4-byte Reload
-	movl	%r12d, %esi
-	movl	%esi, %edx
-	subq	$16, %rsp
-	movq	-1192(%rbp), %rdi       # 8-byte Reload
-	movq	-1136(%rbp), %rsi       # 8-byte Reload
-	movq	-1192(%rbp), %rcx       # 8-byte Reload
-	movq	-1144(%rbp), %r8        # 8-byte Reload
-	movq	-1128(%rbp), %r9        # 8-byte Reload
-	movq	-1168(%rbp), %rax       # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_int
-	addq	$16, %rsp
-	movl	-60(%rbp), %r12d        # 4-byte Reload
-	cmpl	$0, %r12d
-	setg	%al
-	movb	%al, %cl
-	andb	$1, %cl
-	movzbl	%cl, %ecx
-	movl	%ecx, %edx
-	subq	$16, %rsp
-	movq	-1240(%rbp), %rdi       # 8-byte Reload
-	movq	-1192(%rbp), %rsi       # 8-byte Reload
-	movq	-1192(%rbp), %rcx       # 8-byte Reload
-	movq	-1176(%rbp), %r8        # 8-byte Reload
-	movq	-1128(%rbp), %r9        # 8-byte Reload
-	movq	-1168(%rbp), %r10       # 8-byte Reload
-	movq	%r10, (%rsp)
-	movb	%al, -1265(%rbp)        # 1-byte Spill
-	callq	trace_logger_log_int
-	addq	$16, %rsp
-	subq	$16, %rsp
-	movq	-1256(%rbp), %rdi       # 8-byte Reload
-	movq	-1248(%rbp), %rsi       # 8-byte Reload
-	movq	-1216(%rbp), %rdx       # 8-byte Reload
-	movq	-1224(%rbp), %rcx       # 8-byte Reload
-	movq	-1160(%rbp), %r8        # 8-byte Reload
-	movl	-1228(%rbp), %r9d       # 4-byte Reload
-	movl	$1, (%rsp)
-	callq	trace_logger_log0
-	addq	$16, %rsp
-	subq	$16, %rsp
-	movq	-1208(%rbp), %rdi       # 8-byte Reload
-	movq	-1128(%rbp), %rsi       # 8-byte Reload
-	movq	-1128(%rbp), %rdx       # 8-byte Reload
-	movq	-1192(%rbp), %rcx       # 8-byte Reload
-	movq	-1264(%rbp), %r8        # 8-byte Reload
-	movq	-1128(%rbp), %r9        # 8-byte Reload
-	movq	-1168(%rbp), %r10       # 8-byte Reload
-	movq	%r10, (%rsp)
-	callq	trace_logger_log_int
-	addq	$16, %rsp
-	subq	$16, %rsp
-	movq	-1160(%rbp), %rdi       # 8-byte Reload
-	movq	-1128(%rbp), %rsi       # 8-byte Reload
-	movq	-1128(%rbp), %rdx       # 8-byte Reload
-	movq	-1192(%rbp), %rcx       # 8-byte Reload
-	movq	-1200(%rbp), %r8        # 8-byte Reload
-	movq	-1128(%rbp), %r9        # 8-byte Reload
-	movq	-1168(%rbp), %r10       # 8-byte Reload
-	movq	%r10, (%rsp)
-	callq	trace_logger_log_int
-	addq	$16, %rsp
-	movb	-1265(%rbp), %al        # 1-byte Reload
-	andb	$1, %al
-	movzbl	%al, %r12d
-	movl	%r12d, %edx
-	subq	$16, %rsp
-	movq	-1192(%rbp), %rdi       # 8-byte Reload
-	movq	-1192(%rbp), %rsi       # 8-byte Reload
-	movq	-1192(%rbp), %rcx       # 8-byte Reload
-	movq	-1176(%rbp), %r8        # 8-byte Reload
-	movq	-1128(%rbp), %r9        # 8-byte Reload
-	movq	-1168(%rbp), %r10       # 8-byte Reload
-	movq	%r10, (%rsp)
-	callq	trace_logger_log_int
-	addq	$16, %rsp
-	movb	-1265(%rbp), %al        # 1-byte Reload
-	testb	$1, %al
-	movq	-1128(%rbp), %rcx       # 8-byte Reload
-	movq	%rcx, -1280(%rbp)       # 8-byte Spill
-	jne	.LBB1_4
-	jmp	.LBB1_5
-.LBB1_4:                                # %.lr.ph
-                                        # =>This Inner Loop Header: Depth=1
-	movq	-1280(%rbp), %rax       # 8-byte Reload
-	movabsq	$1, %rcx
-	leaq	.L.str41, %rdx
-	movabsq	$0, %rsi
-	leaq	.L.str9, %rdi
-	movabsq	$2, %r8
-	leaq	.L.str12, %r9
-	movabsq	$3, %r10
-	leaq	.L.str13, %r11
-	movabsq	$45, %rbx
-	leaq	.L.str44, %r14
-	leaq	.L.str64, %r15
-	movl	$1, %r12d
-	movabsq	$19134, %r13            # imm = 0x4ABE
-	movq	%rax, -1288(%rbp)       # 8-byte Spill
-	movabsq	$32, %rax
-	movq	%rax, -1296(%rbp)       # 8-byte Spill
-	leaq	.L.str40, %rax
-	movq	%rax, -1304(%rbp)       # 8-byte Spill
-	leaq	.L.str10, %rax
-	movq	%rax, -1312(%rbp)       # 8-byte Spill
-	movabsq	$46, %rax
-	movq	%rax, -1320(%rbp)       # 8-byte Spill
-	movabsq	$64, %rax
-	movq	%rax, -1328(%rbp)       # 8-byte Spill
-	leaq	.L.str15, %rax
-	movq	%rax, -1336(%rbp)       # 8-byte Spill
-	movabsq	$33, %rax
-	movq	%rax, -1344(%rbp)       # 8-byte Spill
-	leaq	.L.str14, %rax
-	movq	%rax, -1352(%rbp)       # 8-byte Spill
-	leaq	.L.str8, %rax
-	movq	%rax, -1360(%rbp)       # 8-byte Spill
-	movabsq	$8, %rax
-	movq	%rax, -1368(%rbp)       # 8-byte Spill
-	leaq	.L.str32, %rax
-	movq	%rax, -1376(%rbp)       # 8-byte Spill
-	leaq	.L.str33, %rax
-	movq	%rax, -1384(%rbp)       # 8-byte Spill
-	movabsq	$47, %rax
-	movq	%rax, -1392(%rbp)       # 8-byte Spill
-	leaq	.L.str34, %rax
-	movq	%rax, -1400(%rbp)       # 8-byte Spill
-	movabsq	$28, %rax
-	movq	%rax, -1408(%rbp)       # 8-byte Spill
-	leaq	.L.str20, %rax
-	movq	%rax, -1416(%rbp)       # 8-byte Spill
-	movabsq	$29, %rax
-	movq	%rax, -1424(%rbp)       # 8-byte Spill
-	leaq	.L.str31, %rax
-	movq	%rax, -1432(%rbp)       # 8-byte Spill
-	movabsq	$37, %rax
-	movq	%rax, -1440(%rbp)       # 8-byte Spill
-	leaq	.L.str30, %rax
-	movq	%rax, -1448(%rbp)       # 8-byte Spill
-	movabsq	$27, %rax
-	movq	%rax, -1456(%rbp)       # 8-byte Spill
-	leaq	.L.str52, %rax
-	movq	%rax, -1464(%rbp)       # 8-byte Spill
-	leaq	.L.str61, %rax
+	leaq	.L.str71, %r15
+	movabsq	$48, %r12
+	leaq	.L.str50, %r13
 	movq	%rax, -1472(%rbp)       # 8-byte Spill
-	movabsq	$-1, %rax
+	leaq	.L.str19, %rax
 	movq	%rax, -1480(%rbp)       # 8-byte Spill
-	movabsq	$48, %rax
-	.loc	1 47 0                  # feature_extraction.c:47:0
-.Ltmp54:
-	subq	$16, %rsp
+	leaq	.L.str47, %rax
 	movq	%rax, -1488(%rbp)       # 8-byte Spill
+	movabsq	$49, %rax
+	movq	%rsi, -1496(%rbp)       # 8-byte Spill
+	movl	$1, %esi
+	movq	%rax, -1504(%rbp)       # 8-byte Spill
+	movabsq	$19134, %rax            # imm = 0x4ABE
+	movq	%rax, -1512(%rbp)       # 8-byte Spill
+	leaq	.L.str68, %rax
+	movq	%rax, -1520(%rbp)       # 8-byte Spill
+	movabsq	$27, %rax
+	movq	%rax, -1528(%rbp)       # 8-byte Spill
+	leaq	.L.str69, %rax
+	movq	%rax, -1536(%rbp)       # 8-byte Spill
+	leaq	.L.str53, %rax
+	movq	%rax, -1544(%rbp)       # 8-byte Spill
+	movabsq	$29, %rax
+	.loc	1 48 0                  # feature_extraction.c:48:0
+	subq	$16, %rsp
+	movq	%rdi, -1552(%rbp)       # 8-byte Spill
+	movq	%r12, %rdi
+	movl	%esi, -1556(%rbp)       # 4-byte Spill
+	movq	%r13, %rsi
+	movq	%rax, -1568(%rbp)       # 8-byte Spill
 	movq	-1480(%rbp), %rax       # 8-byte Reload
-	movq	%rdi, -1496(%rbp)       # 8-byte Spill
-	movq	%rax, %rdi
-	movq	%rsi, -1504(%rbp)       # 8-byte Spill
-	movq	%r14, %rsi
-	movq	%rdx, -1512(%rbp)       # 8-byte Spill
-	movq	%r9, %rdx
-	movq	-1352(%rbp), %rax       # 8-byte Reload
-	movq	%rcx, -1520(%rbp)       # 8-byte Spill
+	movq	%rdx, -1576(%rbp)       # 8-byte Spill
+	movq	%rax, %rdx
+	movq	-1520(%rbp), %rax       # 8-byte Reload
+	movq	%rcx, -1584(%rbp)       # 8-byte Spill
 	movq	%rax, %rcx
-	movq	-1488(%rbp), %rax       # 8-byte Reload
-	movq	%r8, -1528(%rbp)        # 8-byte Spill
+	movq	-1568(%rbp), %rax       # 8-byte Reload
+	movq	%r8, -1592(%rbp)        # 8-byte Spill
 	movq	%rax, %r8
-	movq	%r9, -1536(%rbp)        # 8-byte Spill
-	movl	%r12d, %r9d
+	movl	-1556(%rbp), %eax       # 4-byte Reload
+	movq	%r9, -1600(%rbp)        # 8-byte Spill
+	movl	%eax, %r9d
 	movl	$1, (%rsp)
-	movq	%r14, -1544(%rbp)       # 8-byte Spill
-	movq	%r15, -1552(%rbp)       # 8-byte Spill
-	movl	%r12d, -1556(%rbp)      # 4-byte Spill
-	movq	%r13, -1568(%rbp)       # 8-byte Spill
-	movq	%rbx, -1576(%rbp)       # 8-byte Spill
-	movq	%r11, -1584(%rbp)       # 8-byte Spill
-	movq	%r10, -1592(%rbp)       # 8-byte Spill
+	movq	%r13, -1608(%rbp)       # 8-byte Spill
+	movq	%r14, -1616(%rbp)       # 8-byte Spill
+	movq	%rbx, -1624(%rbp)       # 8-byte Spill
+	movq	%r15, -1632(%rbp)       # 8-byte Spill
+	movq	%r12, -1640(%rbp)       # 8-byte Spill
+	movq	%r11, -1648(%rbp)       # 8-byte Spill
+	movq	%r10, -1656(%rbp)       # 8-byte Spill
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1528(%rbp), %rdi       # 8-byte Reload
-	movq	-1328(%rbp), %rsi       # 8-byte Reload
-	movq	-1504(%rbp), %rdx       # 8-byte Reload
-	movq	-1504(%rbp), %rcx       # 8-byte Reload
-	movq	-1360(%rbp), %r8        # 8-byte Reload
-	movq	-1520(%rbp), %r9        # 8-byte Reload
-	movq	-1472(%rbp), %rax       # 8-byte Reload
-	movq	%rax, (%rsp)
+	movq	-1600(%rbp), %rdi       # 8-byte Reload
+	movq	-1472(%rbp), %rsi       # 8-byte Reload
+	movq	-552(%rbp), %rdx        # 8-byte Reload
+	movq	-1584(%rbp), %rcx       # 8-byte Reload
+	movq	-1544(%rbp), %r8        # 8-byte Reload
+	movq	-1576(%rbp), %r9        # 8-byte Reload
+	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1520(%rbp), %rdi       # 8-byte Reload
-	movq	-1328(%rbp), %rsi       # 8-byte Reload
-	movq	-1504(%rbp), %rdx       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1336(%rbp), %r8        # 8-byte Reload
-	movq	-1520(%rbp), %r9        # 8-byte Reload
-	movq	-1536(%rbp), %rax       # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_int
+	movq	-1584(%rbp), %rdi       # 8-byte Reload
+	movq	-1472(%rbp), %rsi       # 8-byte Reload
+	movq	-192(%rbp), %rdx        # 8-byte Reload
+	movq	-1584(%rbp), %rcx       # 8-byte Reload
+	movq	-1536(%rbp), %r8        # 8-byte Reload
+	movq	-1576(%rbp), %r9        # 8-byte Reload
+	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	addq	$16, %rsp
+	movq	-552(%rbp), %rcx        # 8-byte Reload
+	shlq	$3, %rcx
+	movq	-192(%rbp), %rdx        # 8-byte Reload
+	addq	%rcx, %rdx
+	subq	$16, %rsp
+	movq	-1512(%rbp), %rdi       # 8-byte Reload
+	movq	-1472(%rbp), %rsi       # 8-byte Reload
+	movq	%rdx, -1664(%rbp)       # 8-byte Spill
+	movq	-1584(%rbp), %rcx       # 8-byte Reload
+	movq	-1520(%rbp), %r8        # 8-byte Reload
+	movq	-1576(%rbp), %r9        # 8-byte Reload
+	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1568(%rbp), %rdi       # 8-byte Reload
-	movq	-1328(%rbp), %rsi       # 8-byte Reload
-	movq	-1288(%rbp), %rdx       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1352(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1536(%rbp), %rax       # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_int
-	addq	$16, %rsp
-	subq	$16, %rsp
-	movq	-1392(%rbp), %rdi       # 8-byte Reload
-	movq	-1544(%rbp), %rsi       # 8-byte Reload
-	movq	-1536(%rbp), %rdx       # 8-byte Reload
-	movq	-1448(%rbp), %rcx       # 8-byte Reload
-	movq	-1424(%rbp), %r8        # 8-byte Reload
+	movq	-1640(%rbp), %rdi       # 8-byte Reload
+	movq	-1608(%rbp), %rsi       # 8-byte Reload
+	movq	-1480(%rbp), %rdx       # 8-byte Reload
+	movq	-1648(%rbp), %rcx       # 8-byte Reload
+	movq	-1528(%rbp), %r8        # 8-byte Reload
 	movl	-1556(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1592(%rbp), %rdi       # 8-byte Reload
-	movq	-1296(%rbp), %rsi       # 8-byte Reload
-	movq	-1504(%rbp), %rdx       # 8-byte Reload
-	movq	-1504(%rbp), %rcx       # 8-byte Reload
-	movq	-1360(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %rax       # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_int
+	movq	-1584(%rbp), %rdi       # 8-byte Reload
+	movq	-1472(%rbp), %rsi       # 8-byte Reload
+	movq	-1664(%rbp), %rdx       # 8-byte Reload
+	movq	-1584(%rbp), %rcx       # 8-byte Reload
+	movq	-1520(%rbp), %r8        # 8-byte Reload
+	movq	-1576(%rbp), %r9        # 8-byte Reload
+	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	addq	$16, %rsp
+	movq	-192(%rbp), %rcx        # 8-byte Reload
+	movq	-552(%rbp), %rdx        # 8-byte Reload
+	movq	(%rcx,%rdx,8), %rsi
+	subq	$16, %rsp
+	movq	-1512(%rbp), %rdi       # 8-byte Reload
+	movq	-1472(%rbp), %r8        # 8-byte Reload
+	movq	%rsi, -1672(%rbp)       # 8-byte Spill
+	movq	%r8, %rsi
+	movq	-1672(%rbp), %rdx       # 8-byte Reload
+	movq	-1584(%rbp), %rcx       # 8-byte Reload
+	movq	-1648(%rbp), %r8        # 8-byte Reload
+	movq	-1576(%rbp), %r9        # 8-byte Reload
+	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1528(%rbp), %rdi       # 8-byte Reload
-	movq	-1328(%rbp), %rsi       # 8-byte Reload
-	movq	-1288(%rbp), %rdx       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1352(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %rax       # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_int
+	movq	-1640(%rbp), %rdi       # 8-byte Reload
+	movq	-1608(%rbp), %rsi       # 8-byte Reload
+	movq	-1480(%rbp), %rdx       # 8-byte Reload
+	movq	-1488(%rbp), %rcx       # 8-byte Reload
+	movq	-1504(%rbp), %r8        # 8-byte Reload
+	movl	-1556(%rbp), %r9d       # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1520(%rbp), %rdi       # 8-byte Reload
-	movq	-1328(%rbp), %rsi       # 8-byte Reload
+	movq	-1624(%rbp), %rdi       # 8-byte Reload
+	movq	-1472(%rbp), %rsi       # 8-byte Reload
+	movq	-1616(%rbp), %rdx       # 8-byte Reload
+	movq	-1584(%rbp), %rcx       # 8-byte Reload
+	movq	-1632(%rbp), %r8        # 8-byte Reload
+	movq	-1576(%rbp), %r9        # 8-byte Reload
+	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1584(%rbp), %rdi       # 8-byte Reload
+	movq	-1472(%rbp), %rsi       # 8-byte Reload
+	movq	-1672(%rbp), %rdx       # 8-byte Reload
+	movq	-1584(%rbp), %rcx       # 8-byte Reload
+	movq	-1648(%rbp), %r8        # 8-byte Reload
+	movq	-1576(%rbp), %r9        # 8-byte Reload
+	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1600(%rbp), %rdi       # 8-byte Reload
+	movq	-1472(%rbp), %rsi       # 8-byte Reload
+	movq	-360(%rbp), %rdx        # 8-byte Reload
+	movq	-1584(%rbp), %rcx       # 8-byte Reload
+	movq	-1656(%rbp), %r8        # 8-byte Reload
+	movq	-1576(%rbp), %r9        # 8-byte Reload
+	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1552(%rbp), %rdi       # 8-byte Reload
+	movq	-1472(%rbp), %rsi       # 8-byte Reload
 	movq	-376(%rbp), %rdx        # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1464(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %rax       # 8-byte Reload
+	movq	-1584(%rbp), %rcx       # 8-byte Reload
+	movq	-1592(%rbp), %r8        # 8-byte Reload
+	movq	-1576(%rbp), %r9        # 8-byte Reload
+	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	addq	$16, %rsp
+	movq	-1672(%rbp), %rdi       # 8-byte Reload
+	movq	-360(%rbp), %rsi        # 8-byte Reload
+	movq	-376(%rbp), %rdx        # 8-byte Reload
+	callq	kiss_fft
+	movabsq	$1, %rcx
+	leaq	.L.str26, %r8
+	movabsq	$0, %rdx
+	leaq	.L.str8, %rsi
+	movabsq	$2, %rdi
+	leaq	.L.str55, %r9
+	movabsq	$3, %r10
+	leaq	.L.str73, %r11
+	movabsq	$49, %rbx
+	leaq	.L.str50, %r14
+	leaq	.L.str19, %r15
+	leaq	.L.str72, %r12
+	movl	$1, %eax
+.Ltmp66:
+	#DEBUG_VALUE: i <- 0
+	.loc	1 49 0                  # feature_extraction.c:49:0
+	subq	$16, %rsp
+	movq	%rdi, -1680(%rbp)       # 8-byte Spill
+	movq	%rbx, %rdi
+	movq	%rsi, -1688(%rbp)       # 8-byte Spill
+	movq	%r14, %rsi
+	movq	%rdx, -1696(%rbp)       # 8-byte Spill
+	movq	%r15, %rdx
+	movq	%rcx, -1704(%rbp)       # 8-byte Spill
+	movq	%r12, %rcx
+	movq	-1680(%rbp), %rbx       # 8-byte Reload
+	movq	%r8, -1712(%rbp)        # 8-byte Spill
+	movq	%rbx, %r8
+	movq	%r9, -1720(%rbp)        # 8-byte Spill
+	movl	%eax, %r9d
+	movl	$1, (%rsp)
+	movq	%r10, -1728(%rbp)       # 8-byte Spill
+	movq	%r11, -1736(%rbp)       # 8-byte Spill
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1728(%rbp), %rdi       # 8-byte Reload
+	movq	-1696(%rbp), %rsi       # 8-byte Reload
+	movq	-1696(%rbp), %rdx       # 8-byte Reload
+	movq	-1704(%rbp), %rcx       # 8-byte Reload
+	movq	-1736(%rbp), %r8        # 8-byte Reload
+	movq	-1696(%rbp), %r9        # 8-byte Reload
+	movq	-1688(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1680(%rbp), %rdi       # 8-byte Reload
+	movq	-1696(%rbp), %rsi       # 8-byte Reload
+	movq	-1696(%rbp), %rdx       # 8-byte Reload
+	movq	-1704(%rbp), %rcx       # 8-byte Reload
+	movq	-1720(%rbp), %r8        # 8-byte Reload
+	movq	-1696(%rbp), %r9        # 8-byte Reload
+	movq	-1688(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movb	-530(%rbp), %al         # 1-byte Reload
+	andb	$1, %al
+	movzbl	%al, %eax
+	movl	%eax, %edx
+	subq	$16, %rsp
+	movq	-1704(%rbp), %rdi       # 8-byte Reload
+	movq	-1704(%rbp), %rsi       # 8-byte Reload
+	movq	-1704(%rbp), %rcx       # 8-byte Reload
+	movq	-1712(%rbp), %r8        # 8-byte Reload
+	movq	-1696(%rbp), %r9        # 8-byte Reload
+	movq	-1688(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movb	-530(%rbp), %al         # 1-byte Reload
+	testb	$1, %al
+	jne	.LBB1_6
+	jmp	.LBB1_8
+.LBB1_6:                                # %.lr.ph5
+                                        #   in Loop: Header=BB1_2 Depth=1
+	movabsq	$0, %rax
+	movabsq	$1, %rcx
+	leaq	.L.str78, %r8
+	leaq	.L.str8, %rdx
+	movabsq	$49, %rsi
+	leaq	.L.str50, %rdi
+	leaq	.L.str73, %r9
+	leaq	.L.str77, %r10
+	movabsq	$2, %r11
+	movl	$1, %ebx
+	movabsq	$19134, %r14            # imm = 0x4ABE
+	movabsq	$64, %r15
+	leaq	.L.str76, %r12
+	movabsq	$32, %r13
+	movq	%rax, -1744(%rbp)       # 8-byte Spill
+	leaq	.L.str75, %rax
+	movq	%rax, -1752(%rbp)       # 8-byte Spill
+	movabsq	$35, %rax
+	movq	%rax, -1760(%rbp)       # 8-byte Spill
+	leaq	.L.str74, %rax
+	movq	%rax, -1768(%rbp)       # 8-byte Spill
+	leaq	.L.str14, %rax
+	movq	%rax, -1776(%rbp)       # 8-byte Spill
+	movabsq	$51, %rax
+	movq	%rax, -1784(%rbp)       # 8-byte Spill
+	movabsq	$12, %rax
+	movq	%rax, -1792(%rbp)       # 8-byte Spill
+	leaq	.L.str53, %rax
+	movq	%rax, -1800(%rbp)       # 8-byte Spill
+	movabsq	$33, %rax
+	.loc	1 51 0                  # feature_extraction.c:51:0
+.Ltmp67:
+	subq	$16, %rsp
+	movq	%rax, -1808(%rbp)       # 8-byte Spill
+	movq	-1784(%rbp), %rax       # 8-byte Reload
+	movq	%rdi, -1816(%rbp)       # 8-byte Spill
+	movq	%rax, %rdi
+	movq	-1816(%rbp), %rax       # 8-byte Reload
+	movq	%rsi, -1824(%rbp)       # 8-byte Spill
+	movq	%rax, %rsi
+	movq	%rdx, -1832(%rbp)       # 8-byte Spill
+	movq	%r9, %rdx
+	movq	-1768(%rbp), %rax       # 8-byte Reload
+	movq	%rcx, -1840(%rbp)       # 8-byte Spill
+	movq	%rax, %rcx
+	movq	-1808(%rbp), %rax       # 8-byte Reload
+	movq	%r8, -1848(%rbp)        # 8-byte Spill
+	movq	%rax, %r8
+	movq	%r9, -1856(%rbp)        # 8-byte Spill
+	movl	%ebx, %r9d
+	movl	$1, (%rsp)
+	movq	%r14, -1864(%rbp)       # 8-byte Spill
+	movl	%ebx, -1868(%rbp)       # 4-byte Spill
+	movq	%r15, -1880(%rbp)       # 8-byte Spill
+	movq	%r12, -1888(%rbp)       # 8-byte Spill
+	movq	%r13, -1896(%rbp)       # 8-byte Spill
+	movq	%r11, -1904(%rbp)       # 8-byte Spill
+	movq	%r10, -1912(%rbp)       # 8-byte Spill
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1840(%rbp), %rdi       # 8-byte Reload
+	movq	-1880(%rbp), %rsi       # 8-byte Reload
+	movq	-552(%rbp), %rdx        # 8-byte Reload
+	movq	-1840(%rbp), %rcx       # 8-byte Reload
+	movq	-1800(%rbp), %r8        # 8-byte Reload
+	movq	-1744(%rbp), %r9        # 8-byte Reload
+	movq	-1832(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movq	-552(%rbp), %rax        # 8-byte Reload
+	movl	%eax, %ebx
+	movl	%ebx, %esi
+	movl	%esi, %edx
+	subq	$16, %rsp
+	movq	-1864(%rbp), %rdi       # 8-byte Reload
+	movq	-1896(%rbp), %rsi       # 8-byte Reload
+	movq	-1840(%rbp), %rcx       # 8-byte Reload
+	movq	-1768(%rbp), %r8        # 8-byte Reload
+	movq	-1744(%rbp), %r9        # 8-byte Reload
+	movq	-1832(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	movl	%ebx, -1916(%rbp)       # 4-byte Spill
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1784(%rbp), %rdi       # 8-byte Reload
+	movq	-1816(%rbp), %rsi       # 8-byte Reload
+	movq	-1856(%rbp), %rdx       # 8-byte Reload
+	movq	-1752(%rbp), %rcx       # 8-byte Reload
+	movq	-1792(%rbp), %r8        # 8-byte Reload
+	movl	-1868(%rbp), %r9d       # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	movl	-136(%rbp), %r9d        # 4-byte Reload
+	movl	%r9d, %ebx
+	movl	%ebx, %edx
+	subq	$16, %rsp
+	movq	-1904(%rbp), %rdi       # 8-byte Reload
+	movq	-1896(%rbp), %rsi       # 8-byte Reload
+	movq	-1840(%rbp), %rcx       # 8-byte Reload
+	movq	-1776(%rbp), %r8        # 8-byte Reload
+	movq	-1744(%rbp), %r9        # 8-byte Reload
+	movq	-1832(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movl	-1916(%rbp), %ebx       # 4-byte Reload
+	movl	%ebx, %esi
+	movl	%esi, %edx
+	subq	$16, %rsp
+	movq	-1840(%rbp), %rdi       # 8-byte Reload
+	movq	-1896(%rbp), %rsi       # 8-byte Reload
+	movq	-1840(%rbp), %rcx       # 8-byte Reload
+	movq	-1768(%rbp), %r8        # 8-byte Reload
+	movq	-1744(%rbp), %r9        # 8-byte Reload
+	movq	-1832(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movl	-1916(%rbp), %ebx       # 4-byte Reload
+	movl	-136(%rbp), %esi        # 4-byte Reload
+	imull	%esi, %ebx
+.Ltmp68:
+	.loc	1 49 0                  # feature_extraction.c:49:0
+	movl	%ebx, %esi
+	movl	%esi, %edx
+	subq	$16, %rsp
+	movq	-1864(%rbp), %rdi       # 8-byte Reload
+	movq	-1896(%rbp), %rsi       # 8-byte Reload
+	movq	-1840(%rbp), %rcx       # 8-byte Reload
+	movq	-1752(%rbp), %r8        # 8-byte Reload
+	movq	-1744(%rbp), %r9        # 8-byte Reload
+	movq	-1832(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	movl	%ebx, -1920(%rbp)       # 4-byte Spill
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1824(%rbp), %rdi       # 8-byte Reload
+	movq	-1816(%rbp), %rsi       # 8-byte Reload
+	movq	-1856(%rbp), %rdx       # 8-byte Reload
+	movq	-1888(%rbp), %rcx       # 8-byte Reload
+	movq	-1760(%rbp), %r8        # 8-byte Reload
+	movl	-1868(%rbp), %r9d       # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	movl	-1920(%rbp), %r9d       # 4-byte Reload
+	movl	%r9d, %ebx
+	movl	%ebx, %edx
+	subq	$16, %rsp
+	movq	-1840(%rbp), %rdi       # 8-byte Reload
+	movq	-1896(%rbp), %rsi       # 8-byte Reload
+	movq	-1840(%rbp), %rcx       # 8-byte Reload
+	movq	-1752(%rbp), %r8        # 8-byte Reload
+	movq	-1744(%rbp), %r9        # 8-byte Reload
+	movq	-1832(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movl	-1920(%rbp), %ebx       # 4-byte Reload
+	movslq	%ebx, %rax
+	subq	$16, %rsp
+	movq	-1864(%rbp), %rdi       # 8-byte Reload
+	movq	-1880(%rbp), %rsi       # 8-byte Reload
+	movq	%rax, %rdx
+	movq	-1840(%rbp), %rcx       # 8-byte Reload
+	movq	-1888(%rbp), %r8        # 8-byte Reload
+	movq	-1744(%rbp), %r9        # 8-byte Reload
+	movq	-1832(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	movq	%rax, -1928(%rbp)       # 8-byte Spill
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1824(%rbp), %rdi       # 8-byte Reload
+	movq	-1816(%rbp), %rsi       # 8-byte Reload
+	movq	-1856(%rbp), %rdx       # 8-byte Reload
+	movq	-1912(%rbp), %rcx       # 8-byte Reload
+	movq	-1904(%rbp), %r8        # 8-byte Reload
+	movl	-1868(%rbp), %r9d       # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-1840(%rbp), %rdi       # 8-byte Reload
+	movq	-1744(%rbp), %rsi       # 8-byte Reload
+	movq	-1744(%rbp), %rdx       # 8-byte Reload
+	movq	-1840(%rbp), %rcx       # 8-byte Reload
+	movq	-1848(%rbp), %r8        # 8-byte Reload
+	movq	-1744(%rbp), %r9        # 8-byte Reload
+	movq	-1832(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movq	-1744(%rbp), %rax       # 8-byte Reload
+	movq	%rax, -1936(%rbp)       # 8-byte Spill
+.LBB1_7:                                #   Parent Loop BB1_2 Depth=1
+                                        # =>  This Inner Loop Header: Depth=2
+	movq	-1936(%rbp), %rax       # 8-byte Reload
+	movabsq	$1, %rcx
+	leaq	.L.str88, %rdx
+	movabsq	$0, %rsi
+	leaq	.L.str8, %rdi
+	movabsq	$2, %r8
+	leaq	.L.str78, %r9
+	movabsq	$3, %r10
+	leaq	.L.str55, %r11
+	movabsq	$49, %rbx
+	leaq	.L.str50, %r14
+	leaq	.L.str89, %r15
+	movl	$1, %r12d
+	movabsq	$19134, %r13            # imm = 0x4ABE
+	movq	%rax, -1944(%rbp)       # 8-byte Spill
+	movabsq	$32, %rax
+	movq	%rax, -1952(%rbp)       # 8-byte Spill
+	leaq	.L.str87, %rax
+	movq	%rax, -1960(%rbp)       # 8-byte Spill
+	leaq	.L.str14, %rax
+	movq	%rax, -1968(%rbp)       # 8-byte Spill
+	movabsq	$46, %rax
+	movq	%rax, -1976(%rbp)       # 8-byte Spill
+	movabsq	$64, %rax
+	movq	%rax, -1984(%rbp)       # 8-byte Spill
+	leaq	.L.str80, %rax
+	movq	%rax, -1992(%rbp)       # 8-byte Spill
+	movabsq	$33, %rax
+	movq	%rax, -2000(%rbp)       # 8-byte Spill
+	leaq	.L.str79, %rax
+	movq	%rax, -2008(%rbp)       # 8-byte Spill
+	leaq	.L.str7, %rax
+	movq	%rax, -2016(%rbp)       # 8-byte Spill
+	movabsq	$8, %rax
+	movq	%rax, -2024(%rbp)       # 8-byte Spill
+	leaq	.L.str83, %rax
+	movq	%rax, -2032(%rbp)       # 8-byte Spill
+	leaq	.L.str85, %rax
+	movq	%rax, -2040(%rbp)       # 8-byte Spill
+	movabsq	$51, %rax
+	movq	%rax, -2048(%rbp)       # 8-byte Spill
+	leaq	.L.str86, %rax
+	movq	%rax, -2056(%rbp)       # 8-byte Spill
+	movabsq	$28, %rax
+	movq	%rax, -2064(%rbp)       # 8-byte Spill
+	leaq	.L.str35, %rax
+	movq	%rax, -2072(%rbp)       # 8-byte Spill
+	leaq	.L.str84, %rax
+	movq	%rax, -2080(%rbp)       # 8-byte Spill
+	movabsq	$29, %rax
+	movq	%rax, -2088(%rbp)       # 8-byte Spill
+	leaq	.L.str76, %rax
+	movq	%rax, -2096(%rbp)       # 8-byte Spill
+	leaq	.L.str82, %rax
+	movq	%rax, -2104(%rbp)       # 8-byte Spill
+	movabsq	$37, %rax
+	movq	%rax, -2112(%rbp)       # 8-byte Spill
+	leaq	.L.str81, %rax
+	movq	%rax, -2120(%rbp)       # 8-byte Spill
+	movabsq	$27, %rax
+	movq	%rax, -2128(%rbp)       # 8-byte Spill
+	leaq	.L.str63, %rax
+	movq	%rax, -2136(%rbp)       # 8-byte Spill
+	leaq	.L.str73, %rax
+	movq	%rax, -2144(%rbp)       # 8-byte Spill
+	movabsq	$-1, %rax
+	movq	%rax, -2152(%rbp)       # 8-byte Spill
+	movabsq	$48, %rax
+	.loc	1 51 0                  # feature_extraction.c:51:0
+.Ltmp69:
+	subq	$16, %rsp
+	movq	%rax, -2160(%rbp)       # 8-byte Spill
+	movq	-2152(%rbp), %rax       # 8-byte Reload
+	movq	%rdi, -2168(%rbp)       # 8-byte Spill
+	movq	%rax, %rdi
+	movq	%rsi, -2176(%rbp)       # 8-byte Spill
+	movq	%r14, %rsi
+	movq	%rdx, -2184(%rbp)       # 8-byte Spill
+	movq	%r9, %rdx
+	movq	-2008(%rbp), %rax       # 8-byte Reload
+	movq	%rcx, -2192(%rbp)       # 8-byte Spill
+	movq	%rax, %rcx
+	movq	-2160(%rbp), %rax       # 8-byte Reload
+	movq	%r8, -2200(%rbp)        # 8-byte Spill
+	movq	%rax, %r8
+	movq	%r9, -2208(%rbp)        # 8-byte Spill
+	movl	%r12d, %r9d
+	movl	$1, (%rsp)
+	movq	%r14, -2216(%rbp)       # 8-byte Spill
+	movq	%r15, -2224(%rbp)       # 8-byte Spill
+	movl	%r12d, -2228(%rbp)      # 4-byte Spill
+	movq	%r13, -2240(%rbp)       # 8-byte Spill
+	movq	%rbx, -2248(%rbp)       # 8-byte Spill
+	movq	%r11, -2256(%rbp)       # 8-byte Spill
+	movq	%r10, -2264(%rbp)       # 8-byte Spill
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2200(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
+	movq	-2176(%rbp), %rdx       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-1992(%rbp), %r8        # 8-byte Reload
+	movq	-2192(%rbp), %r9        # 8-byte Reload
+	movq	-2208(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2192(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
+	movq	-2176(%rbp), %rdx       # 8-byte Reload
+	movq	-2176(%rbp), %rcx       # 8-byte Reload
+	movq	-2016(%rbp), %r8        # 8-byte Reload
+	movq	-2192(%rbp), %r9        # 8-byte Reload
+	movq	-2144(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2240(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
+	movq	-1944(%rbp), %rdx       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2008(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2144(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2048(%rbp), %rdi       # 8-byte Reload
+	movq	-2216(%rbp), %rsi       # 8-byte Reload
+	movq	-2208(%rbp), %rdx       # 8-byte Reload
+	movq	-2120(%rbp), %rcx       # 8-byte Reload
+	movq	-2088(%rbp), %r8        # 8-byte Reload
+	movl	-2228(%rbp), %r9d       # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2264(%rbp), %rdi       # 8-byte Reload
+	movq	-1952(%rbp), %rsi       # 8-byte Reload
+	movq	-2176(%rbp), %rdx       # 8-byte Reload
+	movq	-2176(%rbp), %rcx       # 8-byte Reload
+	movq	-2016(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2200(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
+	movq	-1944(%rbp), %rdx       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2008(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2192(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
+	movq	-376(%rbp), %rdx        # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2136(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %rax       # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
-	movq	-1288(%rbp), %rax       # 8-byte Reload
+	movq	-1944(%rbp), %rax       # 8-byte Reload
 	shlq	$3, %rax
 	movq	-376(%rbp), %rcx        # 8-byte Reload
 	addq	%rax, %rcx
 	subq	$16, %rsp
-	movq	-1568(%rbp), %rdi       # 8-byte Reload
-	movq	-1328(%rbp), %rsi       # 8-byte Reload
+	movq	-2240(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
 	movq	%rcx, %rdx
-	movq	-1520(%rbp), %rax       # 8-byte Reload
-	movq	%rcx, -1600(%rbp)       # 8-byte Spill
+	movq	-2192(%rbp), %rax       # 8-byte Reload
+	movq	%rcx, -2272(%rbp)       # 8-byte Spill
 	movq	%rax, %rcx
-	movq	-1448(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	-2120(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1392(%rbp), %rdi       # 8-byte Reload
-	movq	-1544(%rbp), %rsi       # 8-byte Reload
-	movq	-1536(%rbp), %rdx       # 8-byte Reload
-	movq	-1432(%rbp), %rcx       # 8-byte Reload
-	movq	-1456(%rbp), %r8        # 8-byte Reload
-	movl	-1556(%rbp), %r9d       # 4-byte Reload
+	movq	-2048(%rbp), %rdi       # 8-byte Reload
+	movq	-2216(%rbp), %rsi       # 8-byte Reload
+	movq	-2208(%rbp), %rdx       # 8-byte Reload
+	movq	-2104(%rbp), %rcx       # 8-byte Reload
+	movq	-2128(%rbp), %r8        # 8-byte Reload
+	movl	-2228(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1520(%rbp), %rdi       # 8-byte Reload
-	movq	-1328(%rbp), %rsi       # 8-byte Reload
-	movq	-1600(%rbp), %rdx       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1448(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %rax       # 8-byte Reload
+	movq	-2192(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
+	movq	-2272(%rbp), %rdx       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2120(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %rax       # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
 	movq	-376(%rbp), %rax        # 8-byte Reload
-	movq	-1288(%rbp), %rcx       # 8-byte Reload
+	movq	-1944(%rbp), %rcx       # 8-byte Reload
 	vmovss	(%rax,%rcx,8), %xmm0
 	cvtss2sd	%xmm0, %xmm1
-	movq	-1568(%rbp), %rdi       # 8-byte Reload
-	movq	-1296(%rbp), %rsi       # 8-byte Reload
-	vmovss	%xmm0, -1604(%rbp)      # 4-byte Spill
+	movq	-2240(%rbp), %rdi       # 8-byte Reload
+	movq	-1952(%rbp), %rsi       # 8-byte Reload
+	vmovss	%xmm0, -2276(%rbp)      # 4-byte Spill
 	vmovaps	%xmm1, %xmm0
-	movq	-1520(%rbp), %rdx       # 8-byte Reload
-	movq	-1432(%rbp), %rcx       # 8-byte Reload
-	movq	-1504(%rbp), %r8        # 8-byte Reload
-	movq	-1496(%rbp), %r9        # 8-byte Reload
+	movq	-2192(%rbp), %rdx       # 8-byte Reload
+	movq	-2104(%rbp), %rcx       # 8-byte Reload
+	movq	-2176(%rbp), %r8        # 8-byte Reload
+	movq	-2168(%rbp), %r9        # 8-byte Reload
 	callq	trace_logger_log_double
 	subq	$16, %rsp
-	movq	-1392(%rbp), %rdi       # 8-byte Reload
-	movq	-1544(%rbp), %rsi       # 8-byte Reload
-	movq	-1536(%rbp), %rdx       # 8-byte Reload
-	movq	-1376(%rbp), %rcx       # 8-byte Reload
-	movq	-1440(%rbp), %r8        # 8-byte Reload
-	movl	-1556(%rbp), %r9d       # 4-byte Reload
+	movq	-2048(%rbp), %rdi       # 8-byte Reload
+	movq	-2216(%rbp), %rsi       # 8-byte Reload
+	movq	-2208(%rbp), %rdx       # 8-byte Reload
+	movq	-2032(%rbp), %rcx       # 8-byte Reload
+	movq	-2112(%rbp), %r8        # 8-byte Reload
+	movl	-2228(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
-	vmovss	-1604(%rbp), %xmm0      # 4-byte Reload
+	vmovss	-2276(%rbp), %xmm0      # 4-byte Reload
 	cvtss2sd	%xmm0, %xmm0
-	movq	-1520(%rbp), %rdi       # 8-byte Reload
-	movq	-1296(%rbp), %rsi       # 8-byte Reload
-	movq	-1520(%rbp), %rdx       # 8-byte Reload
-	movq	-1432(%rbp), %rcx       # 8-byte Reload
-	movq	-1504(%rbp), %r8        # 8-byte Reload
-	movq	-1496(%rbp), %r9        # 8-byte Reload
+	movq	-2192(%rbp), %rdi       # 8-byte Reload
+	movq	-1952(%rbp), %rsi       # 8-byte Reload
+	movq	-2192(%rbp), %rdx       # 8-byte Reload
+	movq	-2104(%rbp), %rcx       # 8-byte Reload
+	movq	-2176(%rbp), %r8        # 8-byte Reload
+	movq	-2168(%rbp), %r9        # 8-byte Reload
 	callq	trace_logger_log_double
-	vmovss	-1604(%rbp), %xmm0      # 4-byte Reload
+	vmovss	-2276(%rbp), %xmm0      # 4-byte Reload
 	vcvttss2si	%xmm0, %r12d
 	movl	%r12d, %esi
 	movl	%esi, %edx
 	subq	$16, %rsp
-	movq	-1568(%rbp), %rdi       # 8-byte Reload
-	movq	-1296(%rbp), %rsi       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1376(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %rax       # 8-byte Reload
+	movq	-2240(%rbp), %rdi       # 8-byte Reload
+	movq	-1952(%rbp), %rsi       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2032(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %rax       # 8-byte Reload
 	movq	%rax, (%rsp)
-	movl	%r12d, -1608(%rbp)      # 4-byte Spill
+	movl	%r12d, -2280(%rbp)      # 4-byte Spill
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1392(%rbp), %rdi       # 8-byte Reload
-	movq	-1544(%rbp), %rsi       # 8-byte Reload
-	movq	-1536(%rbp), %rdx       # 8-byte Reload
-	movq	-1384(%rbp), %rcx       # 8-byte Reload
-	movq	-1424(%rbp), %r8        # 8-byte Reload
-	movl	-1556(%rbp), %r9d       # 4-byte Reload
+	movq	-2048(%rbp), %rdi       # 8-byte Reload
+	movq	-2216(%rbp), %rsi       # 8-byte Reload
+	movq	-2208(%rbp), %rdx       # 8-byte Reload
+	movq	-2080(%rbp), %rcx       # 8-byte Reload
+	movq	-2024(%rbp), %r8        # 8-byte Reload
+	movl	-2228(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1528(%rbp), %rdi       # 8-byte Reload
-	movq	-1328(%rbp), %rsi       # 8-byte Reload
-	movq	-1288(%rbp), %rdx       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1352(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %rax       # 8-byte Reload
+	movq	-2200(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
+	movq	-1928(%rbp), %rdx       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2096(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %rax       # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1520(%rbp), %rdi       # 8-byte Reload
-	movq	-1328(%rbp), %rsi       # 8-byte Reload
-	movq	-136(%rbp), %rdx        # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1416(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %rax       # 8-byte Reload
+	movq	-2192(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
+	movq	-1944(%rbp), %rdx       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2008(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movq	-1944(%rbp), %rax       # 8-byte Reload
+	movq	-1928(%rbp), %rcx       # 8-byte Reload
+	addq	%rcx, %rax
+	subq	$16, %rsp
+	movq	-2240(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
+	movq	%rax, %rdx
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2080(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	movq	%rax, -2288(%rbp)       # 8-byte Spill
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2048(%rbp), %rdi       # 8-byte Reload
+	movq	-2216(%rbp), %rsi       # 8-byte Reload
+	movq	-2208(%rbp), %rdx       # 8-byte Reload
+	movq	-2040(%rbp), %rcx       # 8-byte Reload
+	movq	-2088(%rbp), %r8        # 8-byte Reload
+	movl	-2228(%rbp), %r9d       # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2200(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
+	movq	-2288(%rbp), %rdx       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2080(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2192(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
+	movq	-152(%rbp), %rdx        # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2072(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %rax       # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
-	movq	-1288(%rbp), %rax       # 8-byte Reload
+	movq	-2288(%rbp), %rax       # 8-byte Reload
 	shlq	$2, %rax
-	movq	-136(%rbp), %rcx        # 8-byte Reload
+	movq	-152(%rbp), %rcx        # 8-byte Reload
 	addq	%rax, %rcx
 	subq	$16, %rsp
-	movq	-1568(%rbp), %rdi       # 8-byte Reload
-	movq	-1328(%rbp), %rsi       # 8-byte Reload
+	movq	-2240(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
 	movq	%rcx, %rdx
-	movq	-1520(%rbp), %rax       # 8-byte Reload
-	movq	%rcx, -1616(%rbp)       # 8-byte Spill
+	movq	-2192(%rbp), %rax       # 8-byte Reload
+	movq	%rcx, -2296(%rbp)       # 8-byte Spill
 	movq	%rax, %rcx
-	movq	-1384(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	-2040(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1392(%rbp), %rdi       # 8-byte Reload
-	movq	-1544(%rbp), %rsi       # 8-byte Reload
-	movq	-1536(%rbp), %rdx       # 8-byte Reload
-	movq	-1400(%rbp), %rcx       # 8-byte Reload
-	movq	-1408(%rbp), %r8        # 8-byte Reload
-	movl	-1556(%rbp), %r9d       # 4-byte Reload
+	movq	-2048(%rbp), %rdi       # 8-byte Reload
+	movq	-2216(%rbp), %rsi       # 8-byte Reload
+	movq	-2208(%rbp), %rdx       # 8-byte Reload
+	movq	-2056(%rbp), %rcx       # 8-byte Reload
+	movq	-2064(%rbp), %r8        # 8-byte Reload
+	movl	-2228(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1528(%rbp), %rdi       # 8-byte Reload
-	movq	-1328(%rbp), %rsi       # 8-byte Reload
-	movq	-1616(%rbp), %rdx       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1384(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %rax       # 8-byte Reload
+	movq	-2200(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
+	movq	-2296(%rbp), %rdx       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2040(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %rax       # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
 	addq	$16, %rsp
-	movl	-1608(%rbp), %r12d      # 4-byte Reload
+	movl	-2280(%rbp), %r12d      # 4-byte Reload
 	movl	%r12d, %esi
 	movl	%esi, %edx
 	subq	$16, %rsp
-	movq	-1520(%rbp), %rdi       # 8-byte Reload
-	movq	-1296(%rbp), %rsi       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1376(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %rax       # 8-byte Reload
+	movq	-2192(%rbp), %rdi       # 8-byte Reload
+	movq	-1952(%rbp), %rsi       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2032(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %rax       # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
-	movq	-136(%rbp), %rax        # 8-byte Reload
-	movq	-1288(%rbp), %rcx       # 8-byte Reload
-	movl	-1608(%rbp), %r12d      # 4-byte Reload
+	movq	-152(%rbp), %rax        # 8-byte Reload
+	movq	-2288(%rbp), %rcx       # 8-byte Reload
+	movl	-2280(%rbp), %r12d      # 4-byte Reload
 	movl	%r12d, (%rax,%rcx,4)
-.Ltmp55:
-	.loc	1 45 0                  # feature_extraction.c:45:0
+.Ltmp70:
+	.loc	1 49 0                  # feature_extraction.c:49:0
 	subq	$16, %rsp
-	movq	-1576(%rbp), %rdi       # 8-byte Reload
-	movq	-1544(%rbp), %rsi       # 8-byte Reload
-	movq	-1536(%rbp), %rdx       # 8-byte Reload
-	movq	-1336(%rbp), %rcx       # 8-byte Reload
-	movq	-1368(%rbp), %r8        # 8-byte Reload
-	movl	-1556(%rbp), %r9d       # 4-byte Reload
+	movq	-2248(%rbp), %rdi       # 8-byte Reload
+	movq	-2216(%rbp), %rsi       # 8-byte Reload
+	movq	-2208(%rbp), %rdx       # 8-byte Reload
+	movq	-1992(%rbp), %rcx       # 8-byte Reload
+	movq	-2024(%rbp), %r8        # 8-byte Reload
+	movl	-2228(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1528(%rbp), %rdi       # 8-byte Reload
-	movq	-1328(%rbp), %rsi       # 8-byte Reload
-	movq	-1520(%rbp), %rdx       # 8-byte Reload
-	movq	-1504(%rbp), %rcx       # 8-byte Reload
-	movq	-1360(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %rax       # 8-byte Reload
+	movq	-2200(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
+	movq	-2192(%rbp), %rdx       # 8-byte Reload
+	movq	-2176(%rbp), %rcx       # 8-byte Reload
+	movq	-2016(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %rax       # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1520(%rbp), %rdi       # 8-byte Reload
-	movq	-1328(%rbp), %rsi       # 8-byte Reload
-	movq	-1288(%rbp), %rdx       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1352(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %rax       # 8-byte Reload
+	movq	-2192(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
+	movq	-1944(%rbp), %rdx       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2008(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %rax       # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
-	movq	-1288(%rbp), %rax       # 8-byte Reload
+	movq	-1944(%rbp), %rax       # 8-byte Reload
 	addq	$1, %rax
 	subq	$16, %rsp
-	movq	-1568(%rbp), %rdi       # 8-byte Reload
-	movq	-1328(%rbp), %rsi       # 8-byte Reload
+	movq	-2240(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
 	movq	%rax, %rdx
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1336(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-1992(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
-	movq	%rax, -1624(%rbp)       # 8-byte Spill
+	movq	%rax, -2304(%rbp)       # 8-byte Spill
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1576(%rbp), %rdi       # 8-byte Reload
-	movq	-1544(%rbp), %rsi       # 8-byte Reload
-	movq	-1536(%rbp), %rdx       # 8-byte Reload
-	movq	-1304(%rbp), %rcx       # 8-byte Reload
-	movq	-1344(%rbp), %r8        # 8-byte Reload
-	movl	-1556(%rbp), %r9d       # 4-byte Reload
+	movq	-2248(%rbp), %rdi       # 8-byte Reload
+	movq	-2216(%rbp), %rsi       # 8-byte Reload
+	movq	-2208(%rbp), %rdx       # 8-byte Reload
+	movq	-1960(%rbp), %rcx       # 8-byte Reload
+	movq	-2000(%rbp), %r8        # 8-byte Reload
+	movl	-2228(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1520(%rbp), %rdi       # 8-byte Reload
-	movq	-1328(%rbp), %rsi       # 8-byte Reload
-	movq	-1624(%rbp), %rdx       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1336(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %rax       # 8-byte Reload
+	movq	-2192(%rbp), %rdi       # 8-byte Reload
+	movq	-1984(%rbp), %rsi       # 8-byte Reload
+	movq	-2304(%rbp), %rdx       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-1992(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %rax       # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
-	movq	-1624(%rbp), %rax       # 8-byte Reload
+	movq	-2304(%rbp), %rax       # 8-byte Reload
 	movl	%eax, %r12d
 	movl	%r12d, %esi
 	movl	%esi, %edx
 	subq	$16, %rsp
-	movq	-1568(%rbp), %rdi       # 8-byte Reload
-	movq	-1296(%rbp), %rsi       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1304(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	-2240(%rbp), %rdi       # 8-byte Reload
+	movq	-1952(%rbp), %rsi       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-1960(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
-	movl	%r12d, -1628(%rbp)      # 4-byte Spill
+	movl	%r12d, -2308(%rbp)      # 4-byte Spill
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1576(%rbp), %rdi       # 8-byte Reload
-	movq	-1544(%rbp), %rsi       # 8-byte Reload
-	movq	-1536(%rbp), %rdx       # 8-byte Reload
-	movq	-1512(%rbp), %rcx       # 8-byte Reload
-	movq	-1320(%rbp), %r8        # 8-byte Reload
-	movl	-1556(%rbp), %r9d       # 4-byte Reload
+	movq	-2248(%rbp), %rdi       # 8-byte Reload
+	movq	-2216(%rbp), %rsi       # 8-byte Reload
+	movq	-2208(%rbp), %rdx       # 8-byte Reload
+	movq	-2184(%rbp), %rcx       # 8-byte Reload
+	movq	-1976(%rbp), %r8        # 8-byte Reload
+	movl	-2228(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
-	movl	-60(%rbp), %r9d         # 4-byte Reload
+	movl	-136(%rbp), %r9d        # 4-byte Reload
 	movl	%r9d, %r12d
 	movl	%r12d, %edx
 	subq	$16, %rsp
-	movq	-1528(%rbp), %rdi       # 8-byte Reload
-	movq	-1296(%rbp), %rsi       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1312(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %rax       # 8-byte Reload
+	movq	-2200(%rbp), %rdi       # 8-byte Reload
+	movq	-1952(%rbp), %rsi       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-1968(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %rax       # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
-	movl	-1628(%rbp), %r12d      # 4-byte Reload
+	movl	-2308(%rbp), %r12d      # 4-byte Reload
 	movl	%r12d, %esi
 	movl	%esi, %edx
 	subq	$16, %rsp
-	movq	-1520(%rbp), %rdi       # 8-byte Reload
-	movq	-1296(%rbp), %rsi       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1304(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %rax       # 8-byte Reload
+	movq	-2192(%rbp), %rdi       # 8-byte Reload
+	movq	-1952(%rbp), %rsi       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-1960(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %rax       # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
-	movl	-1628(%rbp), %r12d      # 4-byte Reload
-	movl	-60(%rbp), %esi         # 4-byte Reload
+	movl	-2308(%rbp), %r12d      # 4-byte Reload
+	movl	-136(%rbp), %esi        # 4-byte Reload
 	cmpl	%esi, %r12d
 	sete	%al
 	movb	%al, %cl
@@ -3425,77 +4623,320 @@ process_data:                           # @process_data
 	movzbl	%cl, %ecx
 	movl	%ecx, %edx
 	subq	$16, %rsp
-	movq	-1568(%rbp), %rdi       # 8-byte Reload
-	movq	-1520(%rbp), %rsi       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1512(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	-2240(%rbp), %rdi       # 8-byte Reload
+	movq	-2192(%rbp), %rsi       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2184(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
-	movb	%al, -1629(%rbp)        # 1-byte Spill
+	movb	%al, -2309(%rbp)        # 1-byte Spill
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1576(%rbp), %rdi       # 8-byte Reload
-	movq	-1544(%rbp), %rsi       # 8-byte Reload
-	movq	-1536(%rbp), %rdx       # 8-byte Reload
-	movq	-1552(%rbp), %rcx       # 8-byte Reload
-	movq	-1528(%rbp), %r8        # 8-byte Reload
-	movl	-1556(%rbp), %r9d       # 4-byte Reload
+	movq	-2248(%rbp), %rdi       # 8-byte Reload
+	movq	-2216(%rbp), %rsi       # 8-byte Reload
+	movq	-2208(%rbp), %rdx       # 8-byte Reload
+	movq	-2224(%rbp), %rcx       # 8-byte Reload
+	movq	-2200(%rbp), %r8        # 8-byte Reload
+	movl	-2228(%rbp), %r9d       # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1592(%rbp), %rdi       # 8-byte Reload
-	movq	-1504(%rbp), %rsi       # 8-byte Reload
-	movq	-1504(%rbp), %rdx       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1584(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	-2264(%rbp), %rdi       # 8-byte Reload
+	movq	-2176(%rbp), %rsi       # 8-byte Reload
+	movq	-2176(%rbp), %rdx       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2256(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
 	subq	$16, %rsp
-	movq	-1528(%rbp), %rdi       # 8-byte Reload
-	movq	-1504(%rbp), %rsi       # 8-byte Reload
-	movq	-1504(%rbp), %rdx       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1536(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	-2200(%rbp), %rdi       # 8-byte Reload
+	movq	-2176(%rbp), %rsi       # 8-byte Reload
+	movq	-2176(%rbp), %rdx       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2208(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
-	movb	-1629(%rbp), %al        # 1-byte Reload
+	movb	-2309(%rbp), %al        # 1-byte Reload
 	andb	$1, %al
 	movzbl	%al, %r12d
 	movl	%r12d, %edx
 	subq	$16, %rsp
-	movq	-1520(%rbp), %rdi       # 8-byte Reload
-	movq	-1520(%rbp), %rsi       # 8-byte Reload
-	movq	-1520(%rbp), %rcx       # 8-byte Reload
-	movq	-1512(%rbp), %r8        # 8-byte Reload
-	movq	-1504(%rbp), %r9        # 8-byte Reload
-	movq	-1496(%rbp), %r10       # 8-byte Reload
+	movq	-2192(%rbp), %rdi       # 8-byte Reload
+	movq	-2192(%rbp), %rsi       # 8-byte Reload
+	movq	-2192(%rbp), %rcx       # 8-byte Reload
+	movq	-2184(%rbp), %r8        # 8-byte Reload
+	movq	-2176(%rbp), %r9        # 8-byte Reload
+	movq	-2168(%rbp), %r10       # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	addq	$16, %rsp
-	movb	-1629(%rbp), %al        # 1-byte Reload
+	movb	-2309(%rbp), %al        # 1-byte Reload
 	testb	$1, %al
-	movq	-1624(%rbp), %rcx       # 8-byte Reload
-	movq	%rcx, -1280(%rbp)       # 8-byte Spill
-	jne	.LBB1_5
-	jmp	.LBB1_4
-.Ltmp56:
-.LBB1_5:                                # %._crit_edge
-	movabsq	$49, %rdi
-	leaq	.L.str44, %rsi
-	leaq	.L.str13, %rdx
-	leaq	.L.str43, %rcx
+	movq	-2304(%rbp), %rcx       # 8-byte Reload
+	movq	%rcx, -1936(%rbp)       # 8-byte Spill
+	jne	.LBB1_8
+	jmp	.LBB1_7
+.Ltmp71:
+.LBB1_8:                                # %._crit_edge6
+                                        #   in Loop: Header=BB1_2 Depth=1
+	movabsq	$1, %rax
+	leaq	.L.str91, %rcx
+	movabsq	$0, %rdx
+	leaq	.L.str8, %rsi
+	movabsq	$2, %rdi
+	leaq	.L.str16, %r8
+	movabsq	$3, %r9
+	leaq	.L.str52, %r10
+	movabsq	$39, %r11
+	leaq	.L.str50, %rbx
+	leaq	.L.str55, %r14
+	leaq	.L.str92, %r15
+	movl	$1, %r12d
+	movabsq	$19134, %r13            # imm = 0x4ABE
+	movq	%rax, -2320(%rbp)       # 8-byte Spill
+	movabsq	$32, %rax
+	movq	%rax, -2328(%rbp)       # 8-byte Spill
+	leaq	.L.str90, %rax
+	movq	%rax, -2336(%rbp)       # 8-byte Spill
+	leaq	.L.str9, %rax
+	movq	%rax, -2344(%rbp)       # 8-byte Spill
+	movabsq	$46, %rax
+	movq	%rax, -2352(%rbp)       # 8-byte Spill
+	movabsq	$64, %rax
+	movq	%rax, -2360(%rbp)       # 8-byte Spill
+	leaq	.L.str54, %rax
+	movq	%rax, -2368(%rbp)       # 8-byte Spill
+	movabsq	$33, %rax
+	movq	%rax, -2376(%rbp)       # 8-byte Spill
+	leaq	.L.str53, %rax
+	movq	%rax, -2384(%rbp)       # 8-byte Spill
+	leaq	.L.str7, %rax
+	movq	%rax, -2392(%rbp)       # 8-byte Spill
+	movabsq	$8, %rax
+	.loc	1 39 0                  # feature_extraction.c:39:0
+	subq	$16, %rsp
+	movq	%rdi, -2400(%rbp)       # 8-byte Spill
+	movq	%r11, %rdi
+	movq	%rsi, -2408(%rbp)       # 8-byte Spill
+	movq	%rbx, %rsi
+	movq	%rdx, -2416(%rbp)       # 8-byte Spill
+	movq	%r14, %rdx
+	movq	%rax, -2424(%rbp)       # 8-byte Spill
+	movq	-2368(%rbp), %rax       # 8-byte Reload
+	movq	%rcx, -2432(%rbp)       # 8-byte Spill
+	movq	%rax, %rcx
+	movq	-2424(%rbp), %rax       # 8-byte Reload
+	movq	%r8, -2440(%rbp)        # 8-byte Spill
+	movq	%rax, %r8
+	movq	%r9, -2448(%rbp)        # 8-byte Spill
+	movl	%r12d, %r9d
+	movl	$1, (%rsp)
+	movq	%r14, -2456(%rbp)       # 8-byte Spill
+	movq	%r15, -2464(%rbp)       # 8-byte Spill
+	movl	%r12d, -2468(%rbp)      # 4-byte Spill
+	movq	%r13, -2480(%rbp)       # 8-byte Spill
+	movq	%rbx, -2488(%rbp)       # 8-byte Spill
+	movq	%r11, -2496(%rbp)       # 8-byte Spill
+	movq	%r10, -2504(%rbp)       # 8-byte Spill
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2400(%rbp), %rdi       # 8-byte Reload
+	movq	-2360(%rbp), %rsi       # 8-byte Reload
+	movq	-2320(%rbp), %rdx       # 8-byte Reload
+	movq	-2416(%rbp), %rcx       # 8-byte Reload
+	movq	-2392(%rbp), %r8        # 8-byte Reload
+	movq	-2416(%rbp), %r9        # 8-byte Reload
+	movq	-2408(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2320(%rbp), %rdi       # 8-byte Reload
+	movq	-2360(%rbp), %rsi       # 8-byte Reload
+	movq	-552(%rbp), %rdx        # 8-byte Reload
+	movq	-2320(%rbp), %rcx       # 8-byte Reload
+	movq	-2384(%rbp), %r8        # 8-byte Reload
+	movq	-2416(%rbp), %r9        # 8-byte Reload
+	movq	-2408(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movq	-552(%rbp), %rax        # 8-byte Reload
+	addq	$1, %rax
+	subq	$16, %rsp
+	movq	-2480(%rbp), %rdi       # 8-byte Reload
+	movq	-2360(%rbp), %rsi       # 8-byte Reload
+	movq	%rax, %rdx
+	movq	-2320(%rbp), %rcx       # 8-byte Reload
+	movq	-2368(%rbp), %r8        # 8-byte Reload
+	movq	-2416(%rbp), %r9        # 8-byte Reload
+	movq	-2408(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	movq	%rax, -2512(%rbp)       # 8-byte Spill
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2496(%rbp), %rdi       # 8-byte Reload
+	movq	-2488(%rbp), %rsi       # 8-byte Reload
+	movq	-2456(%rbp), %rdx       # 8-byte Reload
+	movq	-2336(%rbp), %rcx       # 8-byte Reload
+	movq	-2376(%rbp), %r8        # 8-byte Reload
+	movl	-2468(%rbp), %r9d       # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2320(%rbp), %rdi       # 8-byte Reload
+	movq	-2360(%rbp), %rsi       # 8-byte Reload
+	movq	-2512(%rbp), %rdx       # 8-byte Reload
+	movq	-2320(%rbp), %rcx       # 8-byte Reload
+	movq	-2368(%rbp), %r8        # 8-byte Reload
+	movq	-2416(%rbp), %r9        # 8-byte Reload
+	movq	-2408(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movq	-2512(%rbp), %rax       # 8-byte Reload
+	movl	%eax, %r12d
+	movl	%r12d, %esi
+	movl	%esi, %edx
+	subq	$16, %rsp
+	movq	-2480(%rbp), %rdi       # 8-byte Reload
+	movq	-2328(%rbp), %rsi       # 8-byte Reload
+	movq	-2320(%rbp), %rcx       # 8-byte Reload
+	movq	-2336(%rbp), %r8        # 8-byte Reload
+	movq	-2416(%rbp), %r9        # 8-byte Reload
+	movq	-2408(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	movl	%r12d, -2516(%rbp)      # 4-byte Spill
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2496(%rbp), %rdi       # 8-byte Reload
+	movq	-2488(%rbp), %rsi       # 8-byte Reload
+	movq	-2456(%rbp), %rdx       # 8-byte Reload
+	movq	-2432(%rbp), %rcx       # 8-byte Reload
+	movq	-2352(%rbp), %r8        # 8-byte Reload
+	movl	-2468(%rbp), %r9d       # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	movl	-68(%rbp), %r9d         # 4-byte Reload
+	movl	%r9d, %r12d
+	movl	%r12d, %edx
+	subq	$16, %rsp
+	movq	-2400(%rbp), %rdi       # 8-byte Reload
+	movq	-2328(%rbp), %rsi       # 8-byte Reload
+	movq	-2320(%rbp), %rcx       # 8-byte Reload
+	movq	-2344(%rbp), %r8        # 8-byte Reload
+	movq	-2416(%rbp), %r9        # 8-byte Reload
+	movq	-2408(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movl	-2516(%rbp), %r12d      # 4-byte Reload
+	movl	%r12d, %esi
+	movl	%esi, %edx
+	subq	$16, %rsp
+	movq	-2320(%rbp), %rdi       # 8-byte Reload
+	movq	-2328(%rbp), %rsi       # 8-byte Reload
+	movq	-2320(%rbp), %rcx       # 8-byte Reload
+	movq	-2336(%rbp), %r8        # 8-byte Reload
+	movq	-2416(%rbp), %r9        # 8-byte Reload
+	movq	-2408(%rbp), %rax       # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movl	-2516(%rbp), %r12d      # 4-byte Reload
+	movl	-68(%rbp), %esi         # 4-byte Reload
+	cmpl	%esi, %r12d
+	sete	%al
+	movb	%al, %cl
+	andb	$1, %cl
+	movzbl	%cl, %ecx
+	movl	%ecx, %edx
+	subq	$16, %rsp
+	movq	-2480(%rbp), %rdi       # 8-byte Reload
+	movq	-2320(%rbp), %rsi       # 8-byte Reload
+	movq	-2320(%rbp), %rcx       # 8-byte Reload
+	movq	-2432(%rbp), %r8        # 8-byte Reload
+	movq	-2416(%rbp), %r9        # 8-byte Reload
+	movq	-2408(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	movb	%al, -2517(%rbp)        # 1-byte Spill
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2496(%rbp), %rdi       # 8-byte Reload
+	movq	-2488(%rbp), %rsi       # 8-byte Reload
+	movq	-2456(%rbp), %rdx       # 8-byte Reload
+	movq	-2464(%rbp), %rcx       # 8-byte Reload
+	movq	-2400(%rbp), %r8        # 8-byte Reload
+	movl	-2468(%rbp), %r9d       # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2448(%rbp), %rdi       # 8-byte Reload
+	movq	-2416(%rbp), %rsi       # 8-byte Reload
+	movq	-2416(%rbp), %rdx       # 8-byte Reload
+	movq	-2320(%rbp), %rcx       # 8-byte Reload
+	movq	-2504(%rbp), %r8        # 8-byte Reload
+	movq	-2416(%rbp), %r9        # 8-byte Reload
+	movq	-2408(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	subq	$16, %rsp
+	movq	-2400(%rbp), %rdi       # 8-byte Reload
+	movq	-2416(%rbp), %rsi       # 8-byte Reload
+	movq	-2416(%rbp), %rdx       # 8-byte Reload
+	movq	-2320(%rbp), %rcx       # 8-byte Reload
+	movq	-2440(%rbp), %r8        # 8-byte Reload
+	movq	-2416(%rbp), %r9        # 8-byte Reload
+	movq	-2408(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movb	-2517(%rbp), %al        # 1-byte Reload
+	andb	$1, %al
+	movzbl	%al, %r12d
+	movl	%r12d, %edx
+	subq	$16, %rsp
+	movq	-2320(%rbp), %rdi       # 8-byte Reload
+	movq	-2320(%rbp), %rsi       # 8-byte Reload
+	movq	-2320(%rbp), %rcx       # 8-byte Reload
+	movq	-2432(%rbp), %r8        # 8-byte Reload
+	movq	-2416(%rbp), %r9        # 8-byte Reload
+	movq	-2408(%rbp), %r10       # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	addq	$16, %rsp
+	movb	-2517(%rbp), %al        # 1-byte Reload
+	testb	$1, %al
+	movq	-2512(%rbp), %rcx       # 8-byte Reload
+	movq	%rcx, -544(%rbp)        # 8-byte Spill
+	jne	.LBB1_9
+	jmp	.LBB1_2
+.Ltmp72:
+.LBB1_9:                                # %._crit_edge8
+	movabsq	$54, %rdi
+	leaq	.L.str50, %rsi
+	leaq	.L.str52, %rdx
+	leaq	.L.str93, %rcx
 	movabsq	$1, %r8
 	movl	$1, %r9d
-	.loc	1 49 0                  # feature_extraction.c:49:0
+	.loc	1 54 0                  # feature_extraction.c:54:0
 	subq	$16, %rsp
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
@@ -3507,9 +4948,9 @@ process_data:                           # @process_data
 	popq	%r15
 	popq	%rbp
 	ret
-.Ltmp57:
-.Ltmp58:
-	.size	process_data, .Ltmp58-process_data
+.Ltmp73:
+.Ltmp74:
+	.size	process_data, .Ltmp74-process_data
 .Lfunc_end1:
 	.cfi_endproc
 
@@ -3519,1251 +4960,2163 @@ process_data:                           # @process_data
 main:                                   # @main
 	.cfi_startproc
 .Lfunc_begin2:
-	.loc	1 51 0                  # feature_extraction.c:51:0
+	.loc	1 56 0                  # feature_extraction.c:56:0
 # BB#0:
 	pushq	%rbp
-.Ltmp66:
+.Ltmp82:
 	.cfi_def_cfa_offset 16
 	pushq	%r15
-.Ltmp67:
+.Ltmp83:
 	.cfi_def_cfa_offset 24
 	pushq	%r14
-.Ltmp68:
+.Ltmp84:
 	.cfi_def_cfa_offset 32
 	pushq	%r13
-.Ltmp69:
+.Ltmp85:
 	.cfi_def_cfa_offset 40
 	pushq	%r12
-.Ltmp70:
+.Ltmp86:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
-.Ltmp71:
+.Ltmp87:
 	.cfi_def_cfa_offset 56
-	subq	$1560, %rsp             # imm = 0x618
-.Ltmp72:
-	.cfi_def_cfa_offset 1616
-.Ltmp73:
+	subq	$2760, %rsp             # imm = 0xAC8
+.Ltmp88:
+	.cfi_def_cfa_offset 2816
+.Ltmp89:
 	.cfi_offset %rbx, -56
-.Ltmp74:
+.Ltmp90:
 	.cfi_offset %r12, -48
-.Ltmp75:
+.Ltmp91:
 	.cfi_offset %r13, -40
-.Ltmp76:
+.Ltmp92:
 	.cfi_offset %r14, -32
-.Ltmp77:
+.Ltmp93:
 	.cfi_offset %r15, -24
-.Ltmp78:
+.Ltmp94:
 	.cfi_offset %rbp, -16
-	leaq	.L.str76, %rdi
-	movabsq	$383, %rsi              # imm = 0x17F
-	.loc	1 53 0 prologue_end     # feature_extraction.c:53:0
-.Ltmp79:
+	leaq	.L.str116, %rdi
+	movabsq	$408, %rsi              # imm = 0x198
 	callq	trace_logger_write_labelmap
 	movabsq	$1, %rsi
 	movabsq	$64, %rdi
-	movabsq	$40, %rdx
+	movabsq	$600, %rdx              # imm = 0x258
 	movabsq	$0, %rax
+	leaq	.L.str7, %rcx
 	leaq	.L.str8, %r8
-	leaq	.L.str9, %rcx
 	movabsq	$2, %r9
 	leaq	malloc, %r10
-	leaq	.L.str66, %r11
-	movabsq	$54, %rbx
-	leaq	.L.str65, %r14
-	leaq	.L.str6, %r15
-	leaq	.L.str7, %r12
+	leaq	.L.str95, %r11
+	movabsq	$58, %rbx
+	leaq	.L.str94, %r14
+	leaq	.L.str5, %r15
+	leaq	.L.str6, %r12
 	movabsq	$49, %r13
 	movl	$0, %ebp
-	movq	%rsi, 1552(%rsp)        # 8-byte Spill
+	movq	%rsi, 2632(%rsp)        # 8-byte Spill
 	movl	$1, %esi
-.Ltmp80:
-	#DEBUG_VALUE: main:num_vals <- 10
-	.loc	1 54 0                  # feature_extraction.c:54:0
-	movq	%rdi, 1544(%rsp)        # 8-byte Spill
-	movq	%rbx, %rdi
-	movl	%esi, 1540(%rsp)        # 4-byte Spill
+	movq	%rax, 2624(%rsp)        # 8-byte Spill
+	movabsq	$19134, %rax            # imm = 0x4ABE
+	movq	%rax, 2616(%rsp)        # 8-byte Spill
+	leaq	.L.str69, %rax
+	movq	%rax, 2608(%rsp)        # 8-byte Spill
+	leaq	2640(%rsp), %rax
+	movq	%rax, 2600(%rsp)        # 8-byte Spill
+	movabsq	$32, %rax
+	movq	%rax, 2592(%rsp)        # 8-byte Spill
+	movabsq	$-1, %rax
+	movq	%rax, 2584(%rsp)        # 8-byte Spill
+	movabsq	$26, %rax
+	movq	%rax, 2576(%rsp)        # 8-byte Spill
+	movq	2584(%rsp), %rax        # 8-byte Reload
+	movq	%rdi, 2568(%rsp)        # 8-byte Spill
+	movq	%rax, %rdi
+	movl	%esi, 2564(%rsp)        # 4-byte Spill
 	movq	%r14, %rsi
-	movq	%rdx, 1528(%rsp)        # 8-byte Spill
+	movq	%rdx, 2552(%rsp)        # 8-byte Spill
 	movq	%r15, %rdx
-	movq	%rcx, 1520(%rsp)        # 8-byte Spill
-	movq	%r12, %rcx
-	movq	%r8, 1512(%rsp)         # 8-byte Spill
-	movq	%r13, %r8
-	movq	%r9, 1504(%rsp)         # 8-byte Spill
+	movq	2608(%rsp), %rax        # 8-byte Reload
+	movq	%rcx, 2544(%rsp)        # 8-byte Spill
+	movq	%rax, %rcx
+	movq	2576(%rsp), %rax        # 8-byte Reload
+	movq	%r8, 2536(%rsp)         # 8-byte Spill
+	movq	%rax, %r8
+	movq	%r9, 2528(%rsp)         # 8-byte Spill
 	movl	%ebp, %r9d
 	movl	$1, (%rsp)
-	movq	%r11, 1496(%rsp)        # 8-byte Spill
-	movq	%rax, 1488(%rsp)        # 8-byte Spill
-	movq	%r10, 1480(%rsp)        # 8-byte Spill
+	movq	%r13, 2520(%rsp)        # 8-byte Spill
+	movl	%ebp, 2516(%rsp)        # 4-byte Spill
+	movq	%r12, 2504(%rsp)        # 8-byte Spill
+	movq	%r15, 2496(%rsp)        # 8-byte Spill
+	movq	%r14, 2488(%rsp)        # 8-byte Spill
+	movq	%rbx, 2480(%rsp)        # 8-byte Spill
+	movq	%r10, 2472(%rsp)        # 8-byte Spill
+	movq	%r11, 2464(%rsp)        # 8-byte Spill
 	callq	trace_logger_log0
-	movq	1504(%rsp), %rdi        # 8-byte Reload
-	movq	1544(%rsp), %rsi        # 8-byte Reload
-	movq	1480(%rsp), %rdx        # 8-byte Reload
-	movq	1552(%rsp), %rcx        # 8-byte Reload
-	movq	1496(%rsp), %r8         # 8-byte Reload
-	movq	1488(%rsp), %r9         # 8-byte Reload
-	movq	1520(%rsp), %rax        # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	1552(%rsp), %rdi        # 8-byte Reload
-	movq	1544(%rsp), %rsi        # 8-byte Reload
-	movq	1528(%rsp), %rdx        # 8-byte Reload
-	movq	1488(%rsp), %rcx        # 8-byte Reload
-	movq	1512(%rsp), %r8         # 8-byte Reload
-	movq	1488(%rsp), %r9         # 8-byte Reload
-	movq	1520(%rsp), %rax        # 8-byte Reload
+	movq	2632(%rsp), %rdi        # 8-byte Reload
+	movq	2592(%rsp), %rsi        # 8-byte Reload
+	movq	2632(%rsp), %rdx        # 8-byte Reload
+	movq	2624(%rsp), %rcx        # 8-byte Reload
+	movq	2544(%rsp), %r8         # 8-byte Reload
+	movq	2624(%rsp), %r9         # 8-byte Reload
+	movq	2536(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movl	$40, %ebp
+	.loc	1 58 0 prologue_end     # feature_extraction.c:58:0
+.Ltmp95:
+	movq	2616(%rsp), %rdi        # 8-byte Reload
+	movq	2568(%rsp), %rsi        # 8-byte Reload
+	movq	2600(%rsp), %rdx        # 8-byte Reload
+	movq	2632(%rsp), %rcx        # 8-byte Reload
+	movq	2608(%rsp), %r8         # 8-byte Reload
+	movq	2624(%rsp), %r9         # 8-byte Reload
+	movq	2536(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	2480(%rsp), %rdi        # 8-byte Reload
+	movq	2488(%rsp), %rsi        # 8-byte Reload
+	movq	2496(%rsp), %rdx        # 8-byte Reload
+	movq	2504(%rsp), %rcx        # 8-byte Reload
+	movq	2520(%rsp), %r8         # 8-byte Reload
+	movl	2516(%rsp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	2528(%rsp), %rdi        # 8-byte Reload
+	movq	2568(%rsp), %rsi        # 8-byte Reload
+	movq	2472(%rsp), %rdx        # 8-byte Reload
+	movq	2632(%rsp), %rcx        # 8-byte Reload
+	movq	2464(%rsp), %r8         # 8-byte Reload
+	movq	2624(%rsp), %r9         # 8-byte Reload
+	movq	2536(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	2632(%rsp), %rdi        # 8-byte Reload
+	movq	2568(%rsp), %rsi        # 8-byte Reload
+	movq	2552(%rsp), %rdx        # 8-byte Reload
+	movq	2624(%rsp), %rcx        # 8-byte Reload
+	movq	2544(%rsp), %r8         # 8-byte Reload
+	movq	2624(%rsp), %r9         # 8-byte Reload
+	movq	2536(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movl	$600, %ebp              # imm = 0x258
 	movl	%ebp, %edi
 	callq	malloc
 	movabsq	$1, %rcx
 	movabsq	$64, %rdx
-	movabsq	$40, %rsi
+	movabsq	$600, %rsi              # imm = 0x258
 	movabsq	$0, %rdi
-	leaq	.L.str8, %r8
-	leaq	.L.str9, %r9
+	leaq	.L.str7, %r8
+	leaq	.L.str8, %r9
 	movabsq	$2, %r10
 	leaq	malloc, %r11
-	leaq	.L.str66, %rbx
-	movabsq	$55, %r14
-	leaq	.L.str65, %r15
-	leaq	.L.str6, %r12
-	leaq	.L.str19, %r13
+	leaq	.L.str95, %rbx
+	movabsq	$59, %r14
+	leaq	.L.str94, %r15
+	leaq	.L.str5, %r12
+	leaq	.L.str20, %r13
 	movabsq	$49, %rbp
-	movq	%rsi, 1472(%rsp)        # 8-byte Spill
+	movq	%rsi, 2456(%rsp)        # 8-byte Spill
 	movl	$0, %esi
-	movl	%esi, 1468(%rsp)        # 4-byte Spill
+	movl	%esi, 2452(%rsp)        # 4-byte Spill
 	movl	$1, %esi
-	movq	%rax, 1456(%rsp)        # 8-byte Spill
+	movq	%rax, 2440(%rsp)        # 8-byte Spill
 	movabsq	$19134, %rax            # imm = 0x4ABE
-	movq	%rax, 1448(%rsp)        # 8-byte Spill
-	leaq	.L.str17, %rax
-	movq	%rax, 1440(%rsp)        # 8-byte Spill
-	leaq	.L.str7, %rax
-	movq	%rax, 1432(%rsp)        # 8-byte Spill
-	movabsq	$54, %rax
-	movq	%rax, 1424(%rsp)        # 8-byte Spill
+	movq	%rax, 2432(%rsp)        # 8-byte Spill
+	leaq	.L.str13, %rax
+	movq	%rax, 2424(%rsp)        # 8-byte Spill
+	leaq	.L.str6, %rax
+	movq	%rax, 2416(%rsp)        # 8-byte Spill
+	movabsq	$58, %rax
+	movq	%rax, 2408(%rsp)        # 8-byte Spill
 	movabsq	$44, %rax
-	movq	%rax, 1416(%rsp)        # 8-byte Spill
-	movq	1448(%rsp), %rax        # 8-byte Reload
-	movq	%rdi, 1408(%rsp)        # 8-byte Spill
+	movq	%rax, 2400(%rsp)        # 8-byte Spill
+	movq	2432(%rsp), %rax        # 8-byte Reload
+	movq	%rdi, 2392(%rsp)        # 8-byte Spill
 	movq	%rax, %rdi
-	movl	%esi, 1404(%rsp)        # 4-byte Spill
+	movl	%esi, 2388(%rsp)        # 4-byte Spill
 	movq	%rdx, %rsi
-	movq	1456(%rsp), %rax        # 8-byte Reload
-	movq	%rdx, 1392(%rsp)        # 8-byte Spill
+	movq	2440(%rsp), %rax        # 8-byte Reload
+	movq	%rdx, 2376(%rsp)        # 8-byte Spill
 	movq	%rax, %rdx
-	movq	%rcx, 1384(%rsp)        # 8-byte Spill
-	movq	1432(%rsp), %rax        # 8-byte Reload
-	movq	%r8, 1376(%rsp)         # 8-byte Spill
+	movq	%rcx, 2368(%rsp)        # 8-byte Spill
+	movq	2416(%rsp), %rax        # 8-byte Reload
+	movq	%r8, 2360(%rsp)         # 8-byte Spill
 	movq	%rax, %r8
-	movq	1408(%rsp), %rax        # 8-byte Reload
-	movq	%r9, 1368(%rsp)         # 8-byte Spill
+	movq	2392(%rsp), %rax        # 8-byte Reload
+	movq	%r9, 2352(%rsp)         # 8-byte Spill
 	movq	%rax, %r9
-	movq	1368(%rsp), %rax        # 8-byte Reload
+	movq	2352(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
-	movq	%r15, 1360(%rsp)        # 8-byte Spill
-	movq	%r12, 1352(%rsp)        # 8-byte Spill
-	movq	%r13, 1344(%rsp)        # 8-byte Spill
-	movq	%rbp, 1336(%rsp)        # 8-byte Spill
-	movq	%r14, 1328(%rsp)        # 8-byte Spill
-	movq	%rbx, 1320(%rsp)        # 8-byte Spill
-	movq	%r10, 1312(%rsp)        # 8-byte Spill
-	movq	%r11, 1304(%rsp)        # 8-byte Spill
+	movq	%r15, 2344(%rsp)        # 8-byte Spill
+	movq	%r12, 2336(%rsp)        # 8-byte Spill
+	movq	%r13, 2328(%rsp)        # 8-byte Spill
+	movq	%rbp, 2320(%rsp)        # 8-byte Spill
+	movq	%r14, 2312(%rsp)        # 8-byte Spill
+	movq	%rbx, 2304(%rsp)        # 8-byte Spill
+	movq	%r10, 2296(%rsp)        # 8-byte Spill
+	movq	%r11, 2288(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_ptr
-	movq	1424(%rsp), %rdi        # 8-byte Reload
-	movq	1360(%rsp), %rsi        # 8-byte Reload
-	movq	1352(%rsp), %rdx        # 8-byte Reload
-	movq	1440(%rsp), %rcx        # 8-byte Reload
-	movq	1416(%rsp), %r8         # 8-byte Reload
-	movl	1468(%rsp), %r9d        # 4-byte Reload
+	movq	2408(%rsp), %rdi        # 8-byte Reload
+	movq	2344(%rsp), %rsi        # 8-byte Reload
+	movq	2336(%rsp), %rdx        # 8-byte Reload
+	movq	2424(%rsp), %rcx        # 8-byte Reload
+	movq	2400(%rsp), %r8         # 8-byte Reload
+	movl	2452(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	1384(%rsp), %rdi        # 8-byte Reload
-	movq	1392(%rsp), %rsi        # 8-byte Reload
-	movq	1456(%rsp), %rdx        # 8-byte Reload
-	movq	1384(%rsp), %rcx        # 8-byte Reload
-	movq	1432(%rsp), %r8         # 8-byte Reload
-	movq	1408(%rsp), %r9         # 8-byte Reload
-	movq	1368(%rsp), %rax        # 8-byte Reload
+	movq	2368(%rsp), %rdi        # 8-byte Reload
+	movq	2376(%rsp), %rsi        # 8-byte Reload
+	movq	2440(%rsp), %rdx        # 8-byte Reload
+	movq	2368(%rsp), %rcx        # 8-byte Reload
+	movq	2416(%rsp), %r8         # 8-byte Reload
+	movq	2392(%rsp), %r9         # 8-byte Reload
+	movq	2352(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
-	movq	1456(%rsp), %rax        # 8-byte Reload
-	movq	1448(%rsp), %rdi        # 8-byte Reload
-	movq	1392(%rsp), %rsi        # 8-byte Reload
+	movq	2440(%rsp), %rax        # 8-byte Reload
+	movq	2432(%rsp), %rdi        # 8-byte Reload
+	movq	2376(%rsp), %rsi        # 8-byte Reload
 	movq	%rax, %rdx
-	movq	1384(%rsp), %rcx        # 8-byte Reload
-	movq	1440(%rsp), %r8         # 8-byte Reload
-	movq	1408(%rsp), %r9         # 8-byte Reload
-	movq	1368(%rsp), %r10        # 8-byte Reload
+	movq	2368(%rsp), %rcx        # 8-byte Reload
+	movq	2424(%rsp), %r8         # 8-byte Reload
+	movq	2392(%rsp), %r9         # 8-byte Reload
+	movq	2352(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
-	movq	%rax, 1296(%rsp)        # 8-byte Spill
+	movq	%rax, 2280(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_ptr
-.Ltmp81:
-	#DEBUG_VALUE: main:store_vals <- [RSP+1296]
-	.loc	1 55 0                  # feature_extraction.c:55:0
-	movq	1328(%rsp), %rdi        # 8-byte Reload
-	movq	1360(%rsp), %rsi        # 8-byte Reload
-	movq	1352(%rsp), %rdx        # 8-byte Reload
-	movq	1344(%rsp), %rcx        # 8-byte Reload
-	movq	1336(%rsp), %r8         # 8-byte Reload
-	movl	1468(%rsp), %r9d        # 4-byte Reload
+.Ltmp96:
+	#DEBUG_VALUE: main:store_vals <- [RSP+2280]
+	.loc	1 59 0                  # feature_extraction.c:59:0
+	movq	2312(%rsp), %rdi        # 8-byte Reload
+	movq	2344(%rsp), %rsi        # 8-byte Reload
+	movq	2336(%rsp), %rdx        # 8-byte Reload
+	movq	2328(%rsp), %rcx        # 8-byte Reload
+	movq	2320(%rsp), %r8         # 8-byte Reload
+	movl	2452(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	1312(%rsp), %rdi        # 8-byte Reload
-	movq	1392(%rsp), %rsi        # 8-byte Reload
-	movq	1304(%rsp), %rdx        # 8-byte Reload
-	movq	1384(%rsp), %rcx        # 8-byte Reload
-	movq	1320(%rsp), %r8         # 8-byte Reload
-	movq	1408(%rsp), %r9         # 8-byte Reload
-	movq	1368(%rsp), %rax        # 8-byte Reload
+	movq	2296(%rsp), %rdi        # 8-byte Reload
+	movq	2376(%rsp), %rsi        # 8-byte Reload
+	movq	2288(%rsp), %rdx        # 8-byte Reload
+	movq	2368(%rsp), %rcx        # 8-byte Reload
+	movq	2304(%rsp), %r8         # 8-byte Reload
+	movq	2392(%rsp), %r9         # 8-byte Reload
+	movq	2352(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
-	movq	1384(%rsp), %rdi        # 8-byte Reload
-	movq	1392(%rsp), %rsi        # 8-byte Reload
-	movq	1472(%rsp), %rdx        # 8-byte Reload
-	movq	1408(%rsp), %rcx        # 8-byte Reload
-	movq	1376(%rsp), %r8         # 8-byte Reload
-	movq	1408(%rsp), %r9         # 8-byte Reload
-	movq	1368(%rsp), %rax        # 8-byte Reload
+	movq	2368(%rsp), %rdi        # 8-byte Reload
+	movq	2376(%rsp), %rsi        # 8-byte Reload
+	movq	2456(%rsp), %rdx        # 8-byte Reload
+	movq	2392(%rsp), %rcx        # 8-byte Reload
+	movq	2360(%rsp), %r8         # 8-byte Reload
+	movq	2392(%rsp), %r9         # 8-byte Reload
+	movq	2352(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movl	$40, %esi
+	movl	$600, %esi              # imm = 0x258
 	movl	%esi, %edi
 	callq	malloc
-.Ltmp82:
+.Ltmp97:
 	movabsq	$0, %rcx
 	movabsq	$1, %rdx
-	leaq	.L.str68, %r8
-	leaq	.L.str9, %rdi
-	movabsq	$56, %r9
-	leaq	.L.str65, %r10
-	leaq	.L.str6, %r11
-	leaq	.L.str67, %rbx
+	leaq	.L.str16, %r8
+	leaq	.L.str8, %rdi
+	movabsq	$60, %r9
+	leaq	.L.str94, %r10
+	leaq	.L.str5, %r11
+	leaq	.L.str96, %rbx
 	movabsq	$2, %r14
 	movl	$0, %esi
 	movl	$1, %ebp
 	movabsq	$19134, %r15            # imm = 0x4ABE
 	movabsq	$64, %r12
-	leaq	.L.str21, %r13
-	movq	%rax, 1288(%rsp)        # 8-byte Spill
-	leaq	.L.str19, %rax
-	movq	%rax, 1280(%rsp)        # 8-byte Spill
-	movabsq	$55, %rax
-	movq	%rax, 1272(%rsp)        # 8-byte Spill
+	leaq	.L.str24, %r13
+	movq	%rax, 2272(%rsp)        # 8-byte Spill
+	leaq	.L.str20, %rax
+	movq	%rax, 2264(%rsp)        # 8-byte Spill
+	movabsq	$59, %rax
+	movq	%rax, 2256(%rsp)        # 8-byte Spill
 	movabsq	$44, %rax
-	movq	%rdi, 1264(%rsp)        # 8-byte Spill
+	movq	%rdi, 2248(%rsp)        # 8-byte Spill
 	movq	%r15, %rdi
-	movl	%esi, 1260(%rsp)        # 4-byte Spill
+	movl	%esi, 2244(%rsp)        # 4-byte Spill
 	movq	%r12, %rsi
-	movq	%rax, 1248(%rsp)        # 8-byte Spill
-	movq	1288(%rsp), %rax        # 8-byte Reload
-	movq	%rdx, 1240(%rsp)        # 8-byte Spill
+	movq	%rax, 2232(%rsp)        # 8-byte Spill
+	movq	2272(%rsp), %rax        # 8-byte Reload
+	movq	%rdx, 2224(%rsp)        # 8-byte Spill
 	movq	%rax, %rdx
-	movq	1240(%rsp), %rax        # 8-byte Reload
-	movq	%rcx, 1232(%rsp)        # 8-byte Spill
+	movq	2224(%rsp), %rax        # 8-byte Reload
+	movq	%rcx, 2216(%rsp)        # 8-byte Spill
 	movq	%rax, %rcx
-	movq	1280(%rsp), %rax        # 8-byte Reload
-	movq	%r8, 1224(%rsp)         # 8-byte Spill
+	movq	2264(%rsp), %rax        # 8-byte Reload
+	movq	%r8, 2208(%rsp)         # 8-byte Spill
 	movq	%rax, %r8
-	movq	1232(%rsp), %rax        # 8-byte Reload
-	movq	%r9, 1216(%rsp)         # 8-byte Spill
+	movq	2216(%rsp), %rax        # 8-byte Reload
+	movq	%r9, 2200(%rsp)         # 8-byte Spill
 	movq	%rax, %r9
-	movq	1264(%rsp), %rax        # 8-byte Reload
+	movq	2248(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
-	movl	%ebp, 1212(%rsp)        # 4-byte Spill
-	movq	%r15, 1200(%rsp)        # 8-byte Spill
-	movq	%r12, 1192(%rsp)        # 8-byte Spill
-	movq	%r13, 1184(%rsp)        # 8-byte Spill
-	movq	%r14, 1176(%rsp)        # 8-byte Spill
-	movq	%r10, 1168(%rsp)        # 8-byte Spill
-	movq	%r11, 1160(%rsp)        # 8-byte Spill
-	movq	%rbx, 1152(%rsp)        # 8-byte Spill
+	movl	%ebp, 2196(%rsp)        # 4-byte Spill
+	movq	%r15, 2184(%rsp)        # 8-byte Spill
+	movq	%r12, 2176(%rsp)        # 8-byte Spill
+	movq	%r13, 2168(%rsp)        # 8-byte Spill
+	movq	%r14, 2160(%rsp)        # 8-byte Spill
+	movq	%r10, 2152(%rsp)        # 8-byte Spill
+	movq	%r11, 2144(%rsp)        # 8-byte Spill
+	movq	%rbx, 2136(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_ptr
-	movq	1272(%rsp), %rdi        # 8-byte Reload
-	movq	1168(%rsp), %rsi        # 8-byte Reload
-	movq	1160(%rsp), %rdx        # 8-byte Reload
-	movq	1184(%rsp), %rcx        # 8-byte Reload
-	movq	1248(%rsp), %r8         # 8-byte Reload
-	movl	1260(%rsp), %r9d        # 4-byte Reload
+	movq	2256(%rsp), %rdi        # 8-byte Reload
+	movq	2152(%rsp), %rsi        # 8-byte Reload
+	movq	2144(%rsp), %rdx        # 8-byte Reload
+	movq	2168(%rsp), %rcx        # 8-byte Reload
+	movq	2232(%rsp), %r8         # 8-byte Reload
+	movl	2244(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	1240(%rsp), %rdi        # 8-byte Reload
-	movq	1192(%rsp), %rsi        # 8-byte Reload
-	movq	1288(%rsp), %rdx        # 8-byte Reload
-	movq	1240(%rsp), %rcx        # 8-byte Reload
-	movq	1280(%rsp), %r8         # 8-byte Reload
-	movq	1232(%rsp), %r9         # 8-byte Reload
-	movq	1264(%rsp), %rax        # 8-byte Reload
+	movq	2224(%rsp), %rdi        # 8-byte Reload
+	movq	2176(%rsp), %rsi        # 8-byte Reload
+	movq	2272(%rsp), %rdx        # 8-byte Reload
+	movq	2224(%rsp), %rcx        # 8-byte Reload
+	movq	2264(%rsp), %r8         # 8-byte Reload
+	movq	2216(%rsp), %r9         # 8-byte Reload
+	movq	2248(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
-	movq	1288(%rsp), %rax        # 8-byte Reload
-	movq	1200(%rsp), %rdi        # 8-byte Reload
-	movq	1192(%rsp), %rsi        # 8-byte Reload
+	movq	2272(%rsp), %rax        # 8-byte Reload
+	movq	2184(%rsp), %rdi        # 8-byte Reload
+	movq	2176(%rsp), %rsi        # 8-byte Reload
 	movq	%rax, %rdx
-	movq	1240(%rsp), %rcx        # 8-byte Reload
-	movq	1184(%rsp), %r8         # 8-byte Reload
-	movq	1232(%rsp), %r9         # 8-byte Reload
-	movq	1264(%rsp), %r10        # 8-byte Reload
+	movq	2224(%rsp), %rcx        # 8-byte Reload
+	movq	2168(%rsp), %r8         # 8-byte Reload
+	movq	2216(%rsp), %r9         # 8-byte Reload
+	movq	2248(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
-	movq	%rax, 1144(%rsp)        # 8-byte Spill
+	movq	%rax, 2128(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_ptr
-.Ltmp83:
-	#DEBUG_VALUE: main:store_loc <- [RSP+1144]
-	#DEBUG_VALUE: i <- 0
-	.loc	1 56 0                  # feature_extraction.c:56:0
-	movq	1216(%rsp), %rdi        # 8-byte Reload
-	movq	1168(%rsp), %rsi        # 8-byte Reload
-	movq	1160(%rsp), %rdx        # 8-byte Reload
-	movq	1152(%rsp), %rcx        # 8-byte Reload
-	movq	1176(%rsp), %r8         # 8-byte Reload
-	movl	1260(%rsp), %r9d        # 4-byte Reload
+.Ltmp98:
+	#DEBUG_VALUE: main:store_loc <- [RSP+2128]
+	#DEBUG_VALUE: j <- 0
+	.loc	1 60 0                  # feature_extraction.c:60:0
+	movq	2200(%rsp), %rdi        # 8-byte Reload
+	movq	2152(%rsp), %rsi        # 8-byte Reload
+	movq	2144(%rsp), %rdx        # 8-byte Reload
+	movq	2136(%rsp), %rcx        # 8-byte Reload
+	movq	2160(%rsp), %r8         # 8-byte Reload
+	movl	2244(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	1240(%rsp), %rdi        # 8-byte Reload
-	movq	1232(%rsp), %rsi        # 8-byte Reload
-	movq	1232(%rsp), %rdx        # 8-byte Reload
-	movq	1240(%rsp), %rcx        # 8-byte Reload
-	movq	1224(%rsp), %r8         # 8-byte Reload
-	movq	1232(%rsp), %r9         # 8-byte Reload
-	movq	1264(%rsp), %rax        # 8-byte Reload
+	movq	2224(%rsp), %rdi        # 8-byte Reload
+	movq	2216(%rsp), %rsi        # 8-byte Reload
+	movq	2216(%rsp), %rdx        # 8-byte Reload
+	movq	2224(%rsp), %rcx        # 8-byte Reload
+	movq	2208(%rsp), %r8         # 8-byte Reload
+	movq	2216(%rsp), %r9         # 8-byte Reload
+	movq	2248(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	1232(%rsp), %rax        # 8-byte Reload
-	movq	%rax, 1136(%rsp)        # 8-byte Spill
-.Ltmp84:
-.LBB2_1:                                # =>This Inner Loop Header: Depth=1
-	movq	1136(%rsp), %rax        # 8-byte Reload
+	movq	2216(%rsp), %rax        # 8-byte Reload
+	movq	%rax, 2120(%rsp)        # 8-byte Spill
+.Ltmp99:
+.LBB2_1:                                # %.preheader
+                                        # =>This Loop Header: Depth=1
+                                        #     Child Loop BB2_2 Depth 2
+	movq	2120(%rsp), %rax        # 8-byte Reload
+	movabsq	$0, %rcx
+	movabsq	$1, %rdx
+	leaq	.L.str100, %r8
+	leaq	.L.str8, %rsi
+	movabsq	$62, %rdi
+	leaq	.L.str94, %r9
+	leaq	.L.str16, %r10
+	leaq	.L.str22, %r11
+	movabsq	$2, %rbx
+	movl	$0, %ebp
+	movl	$1, %r14d
+	movabsq	$19134, %r15            # imm = 0x4ABE
+	movabsq	$64, %r12
+	leaq	.L.str25, %r13
+	movq	%rax, 2112(%rsp)        # 8-byte Spill
+	leaq	.L.str97, %rax
+	movq	%rax, 2104(%rsp)        # 8-byte Spill
+	movabsq	$10, %rax
+	movq	%rax, 2096(%rsp)        # 8-byte Spill
+	leaq	.L.str7, %rax
+	movq	%rax, 2088(%rsp)        # 8-byte Spill
+	movabsq	$12, %rax
+	movq	%rax, 2080(%rsp)        # 8-byte Spill
+	leaq	.L.str5, %rax
+	movq	%rax, 2072(%rsp)        # 8-byte Spill
+	leaq	.L.str98, %rax
+	movq	%rax, 2064(%rsp)        # 8-byte Spill
+	leaq	.L.str99, %rax
+	movq	%rax, 2056(%rsp)        # 8-byte Spill
+	movabsq	$-1, %rax
+	movq	%rax, 2048(%rsp)        # 8-byte Spill
+	movabsq	$48, %rax
+	.loc	1 64 0                  # feature_extraction.c:64:0
+.Ltmp100:
+	movq	%rax, 2040(%rsp)        # 8-byte Spill
+	movq	2048(%rsp), %rax        # 8-byte Reload
+	movq	%rdi, 2032(%rsp)        # 8-byte Spill
+	movq	%rax, %rdi
+	movq	%rsi, 2024(%rsp)        # 8-byte Spill
+	movq	%r9, %rsi
+	movq	%rdx, 2016(%rsp)        # 8-byte Spill
+	movq	%r10, %rdx
+	movq	2104(%rsp), %rax        # 8-byte Reload
+	movq	%rcx, 2008(%rsp)        # 8-byte Spill
+	movq	%rax, %rcx
+	movq	2040(%rsp), %rax        # 8-byte Reload
+	movq	%r8, 2000(%rsp)         # 8-byte Spill
+	movq	%rax, %r8
+	movq	%r9, 1992(%rsp)         # 8-byte Spill
+	movl	%ebp, %r9d
+	movl	$1, (%rsp)
+	movl	%r14d, 1988(%rsp)       # 4-byte Spill
+	movq	%r15, 1976(%rsp)        # 8-byte Spill
+	movl	%ebp, 1972(%rsp)        # 4-byte Spill
+	movq	%r12, 1960(%rsp)        # 8-byte Spill
+	movq	%r13, 1952(%rsp)        # 8-byte Spill
+	movq	%rbx, 1944(%rsp)        # 8-byte Spill
+	movq	%r10, 1936(%rsp)        # 8-byte Spill
+	movq	%r11, 1928(%rsp)        # 8-byte Spill
+	callq	trace_logger_log0
+	movq	1944(%rsp), %rdi        # 8-byte Reload
+	movq	1960(%rsp), %rsi        # 8-byte Reload
+	movq	2008(%rsp), %rdx        # 8-byte Reload
+	movq	2016(%rsp), %rcx        # 8-byte Reload
+	movq	2064(%rsp), %r8         # 8-byte Reload
+	movq	2016(%rsp), %r9         # 8-byte Reload
+	movq	2056(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	2016(%rsp), %rdi        # 8-byte Reload
+	movq	1960(%rsp), %rsi        # 8-byte Reload
+	movq	2008(%rsp), %rdx        # 8-byte Reload
+	movq	2008(%rsp), %rcx        # 8-byte Reload
+	movq	2088(%rsp), %r8         # 8-byte Reload
+	movq	2016(%rsp), %r9         # 8-byte Reload
+	movq	2072(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	1976(%rsp), %rdi        # 8-byte Reload
+	movq	1960(%rsp), %rsi        # 8-byte Reload
+	movq	2112(%rsp), %rdx        # 8-byte Reload
+	movq	2016(%rsp), %rcx        # 8-byte Reload
+	movq	2104(%rsp), %r8         # 8-byte Reload
+	movq	2008(%rsp), %r9         # 8-byte Reload
+	movq	2072(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	1960(%rsp), %rdi        # 8-byte Reload
+	movq	1992(%rsp), %rsi        # 8-byte Reload
+	movq	1936(%rsp), %rdx        # 8-byte Reload
+	movq	1952(%rsp), %rcx        # 8-byte Reload
+	movq	2080(%rsp), %r8         # 8-byte Reload
+	movl	1972(%rsp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	1944(%rsp), %rdi        # 8-byte Reload
+	movq	1960(%rsp), %rsi        # 8-byte Reload
+	movq	2096(%rsp), %rdx        # 8-byte Reload
+	movq	2008(%rsp), %rcx        # 8-byte Reload
+	movq	2088(%rsp), %r8         # 8-byte Reload
+	movq	2008(%rsp), %r9         # 8-byte Reload
+	movq	2024(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	2016(%rsp), %rdi        # 8-byte Reload
+	movq	1960(%rsp), %rsi        # 8-byte Reload
+	movq	2112(%rsp), %rdx        # 8-byte Reload
+	movq	2016(%rsp), %rcx        # 8-byte Reload
+	movq	2104(%rsp), %r8         # 8-byte Reload
+	movq	2008(%rsp), %r9         # 8-byte Reload
+	movq	2024(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	2112(%rsp), %rax        # 8-byte Reload
+	imulq	$10, %rax, %rcx
+.Ltmp101:
+	.loc	1 62 0                  # feature_extraction.c:62:0
+	movq	1976(%rsp), %rdi        # 8-byte Reload
+	movq	1960(%rsp), %rsi        # 8-byte Reload
+	movq	%rcx, %rdx
+	movq	2016(%rsp), %r8         # 8-byte Reload
+	movq	%rcx, 1920(%rsp)        # 8-byte Spill
+	movq	%r8, %rcx
+	movq	1952(%rsp), %r8         # 8-byte Reload
+	movq	2008(%rsp), %r9         # 8-byte Reload
+	movq	2024(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	2032(%rsp), %rdi        # 8-byte Reload
+	movq	1992(%rsp), %rsi        # 8-byte Reload
+	movq	1936(%rsp), %rdx        # 8-byte Reload
+	movq	1928(%rsp), %rcx        # 8-byte Reload
+	movq	1944(%rsp), %r8         # 8-byte Reload
+	movl	1972(%rsp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	2016(%rsp), %rdi        # 8-byte Reload
+	movq	2008(%rsp), %rsi        # 8-byte Reload
+	movq	2008(%rsp), %rdx        # 8-byte Reload
+	movq	2016(%rsp), %rcx        # 8-byte Reload
+	movq	2000(%rsp), %r8         # 8-byte Reload
+	movq	2008(%rsp), %r9         # 8-byte Reload
+	movq	2024(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	2008(%rsp), %rax        # 8-byte Reload
+	movq	%rax, 1912(%rsp)        # 8-byte Spill
+.LBB2_2:                                #   Parent Loop BB2_1 Depth=1
+                                        # =>  This Inner Loop Header: Depth=2
+	movq	1912(%rsp), %rax        # 8-byte Reload
 	movabsq	$1, %rcx
-	leaq	.L.str41, %rdx
+	leaq	.L.str103, %rdx
 	movabsq	$0, %rsi
-	leaq	.L.str9, %rdi
+	leaq	.L.str8, %rdi
 	movabsq	$2, %r8
-	leaq	.L.str68, %r9
+	leaq	.L.str100, %r9
 	movabsq	$3, %r10
-	leaq	.L.str72, %r11
-	movabsq	$56, %rbx
-	leaq	.L.str65, %r14
-	leaq	.L.str71, %r15
+	leaq	.L.str99, %r11
+	movabsq	$62, %rbx
+	leaq	.L.str94, %r14
+	leaq	.L.str104, %r15
 	movl	$0, %ebp
 	movl	$1, %r12d
 	movabsq	$19134, %r13            # imm = 0x4ABE
-	movq	%rax, 1128(%rsp)        # 8-byte Spill
+	movq	%rax, 1904(%rsp)        # 8-byte Spill
 	movabsq	$64, %rax
-	movq	%rax, 1120(%rsp)        # 8-byte Spill
-	leaq	.L.str15, %rax
-	movq	%rax, 1112(%rsp)        # 8-byte Spill
+	movq	%rax, 1896(%rsp)        # 8-byte Spill
+	leaq	.L.str18, %rax
+	movq	%rax, 1888(%rsp)        # 8-byte Spill
 	movabsq	$10, %rax
-	movq	%rax, 1104(%rsp)        # 8-byte Spill
-	leaq	.L.str8, %rax
-	movq	%rax, 1096(%rsp)        # 8-byte Spill
+	movq	%rax, 1880(%rsp)        # 8-byte Spill
+	leaq	.L.str7, %rax
+	movq	%rax, 1872(%rsp)        # 8-byte Spill
 	movabsq	$46, %rax
-	movq	%rax, 1088(%rsp)        # 8-byte Spill
-	leaq	.L.str14, %rax
-	movq	%rax, 1080(%rsp)        # 8-byte Spill
-	movabsq	$8, %rax
-	movq	%rax, 1072(%rsp)        # 8-byte Spill
-	movabsq	$32, %rax
-	movq	%rax, 1064(%rsp)        # 8-byte Spill
-	movabsq	$4294967295, %rax       # imm = 0xFFFFFFFF
-	movq	%rax, 1056(%rsp)        # 8-byte Spill
-	leaq	.L.str26, %rax
-	movq	%rax, 1048(%rsp)        # 8-byte Spill
-	movabsq	$58, %rax
-	movq	%rax, 1040(%rsp)        # 8-byte Spill
-	leaq	.L.str70, %rax
-	movq	%rax, 1032(%rsp)        # 8-byte Spill
-	movabsq	$28, %rax
-	movq	%rax, 1024(%rsp)        # 8-byte Spill
-	leaq	.L.str21, %rax
-	movq	%rax, 1016(%rsp)        # 8-byte Spill
-	movabsq	$29, %rax
-	movq	%rax, 1008(%rsp)        # 8-byte Spill
-	leaq	.L.str25, %rax
-	movq	%rax, 1000(%rsp)        # 8-byte Spill
-	leaq	.L.str23, %rax
-	movq	%rax, 992(%rsp)         # 8-byte Spill
-	movabsq	$57, %rax
-	movq	%rax, 984(%rsp)         # 8-byte Spill
-	leaq	.L.str69, %rax
-	movq	%rax, 976(%rsp)         # 8-byte Spill
-	movabsq	$33, %rax
-	movq	%rax, 968(%rsp)         # 8-byte Spill
+	movq	%rax, 1864(%rsp)        # 8-byte Spill
 	leaq	.L.str17, %rax
-	movq	%rax, 960(%rsp)         # 8-byte Spill
-	leaq	.L.str6, %rax
-	movq	%rax, 952(%rsp)         # 8-byte Spill
+	movq	%rax, 1856(%rsp)        # 8-byte Spill
+	movabsq	$8, %rax
+	movq	%rax, 1848(%rsp)        # 8-byte Spill
+	movabsq	$32, %rax
+	movq	%rax, 1840(%rsp)        # 8-byte Spill
+	movabsq	$4294967295, %rax       # imm = 0xFFFFFFFF
+	movq	%rax, 1832(%rsp)        # 8-byte Spill
+	leaq	.L.str34, %rax
+	movq	%rax, 1824(%rsp)        # 8-byte Spill
+	movabsq	$65, %rax
+	movq	%rax, 1816(%rsp)        # 8-byte Spill
+	leaq	.L.str102, %rax
+	movq	%rax, 1808(%rsp)        # 8-byte Spill
+	movabsq	$28, %rax
+	movq	%rax, 1800(%rsp)        # 8-byte Spill
+	leaq	.L.str24, %rax
+	movq	%rax, 1792(%rsp)        # 8-byte Spill
+	leaq	.L.str56, %rax
+	movq	%rax, 1784(%rsp)        # 8-byte Spill
+	movabsq	$29, %rax
+	movq	%rax, 1776(%rsp)        # 8-byte Spill
+	leaq	.L.str33, %rax
+	movq	%rax, 1768(%rsp)        # 8-byte Spill
+	leaq	.L.str31, %rax
+	movq	%rax, 1760(%rsp)        # 8-byte Spill
+	leaq	.L.str101, %rax
+	movq	%rax, 1752(%rsp)        # 8-byte Spill
+	movabsq	$33, %rax
+	movq	%rax, 1744(%rsp)        # 8-byte Spill
+	leaq	.L.str13, %rax
+	movq	%rax, 1736(%rsp)        # 8-byte Spill
+	leaq	.L.str25, %rax
+	movq	%rax, 1728(%rsp)        # 8-byte Spill
+	leaq	.L.str16, %rax
+	movq	%rax, 1720(%rsp)        # 8-byte Spill
 	movabsq	$-1, %rax
-	movq	%rax, 944(%rsp)         # 8-byte Spill
+	movq	%rax, 1712(%rsp)        # 8-byte Spill
 	movabsq	$48, %rax
-	.loc	1 57 0                  # feature_extraction.c:57:0
-.Ltmp85:
-	movq	%rax, 936(%rsp)         # 8-byte Spill
-	movq	944(%rsp), %rax         # 8-byte Reload
-	movq	%rdi, 928(%rsp)         # 8-byte Spill
+	.loc	1 64 0                  # feature_extraction.c:64:0
+.Ltmp102:
+	movq	%rax, 1704(%rsp)        # 8-byte Spill
+	movq	1712(%rsp), %rax        # 8-byte Reload
+	movq	%rdi, 1696(%rsp)        # 8-byte Spill
 	movq	%rax, %rdi
-	movq	%rsi, 920(%rsp)         # 8-byte Spill
+	movq	%rsi, 1688(%rsp)        # 8-byte Spill
 	movq	%r14, %rsi
-	movq	%rdx, 912(%rsp)         # 8-byte Spill
+	movq	%rdx, 1680(%rsp)        # 8-byte Spill
 	movq	%r9, %rdx
-	movq	1080(%rsp), %rax        # 8-byte Reload
-	movq	%rcx, 904(%rsp)         # 8-byte Spill
+	movq	1856(%rsp), %rax        # 8-byte Reload
+	movq	%rcx, 1672(%rsp)        # 8-byte Spill
 	movq	%rax, %rcx
-	movq	936(%rsp), %rax         # 8-byte Reload
-	movq	%r8, 896(%rsp)          # 8-byte Spill
+	movq	1704(%rsp), %rax        # 8-byte Reload
+	movq	%r8, 1664(%rsp)         # 8-byte Spill
 	movq	%rax, %r8
-	movq	%r9, 888(%rsp)          # 8-byte Spill
+	movq	%r9, 1656(%rsp)         # 8-byte Spill
 	movl	%ebp, %r9d
 	movl	$1, (%rsp)
-	movq	%r15, 880(%rsp)         # 8-byte Spill
-	movl	%ebp, 876(%rsp)         # 4-byte Spill
-	movl	%r12d, 872(%rsp)        # 4-byte Spill
-	movq	%r13, 864(%rsp)         # 8-byte Spill
-	movq	%r14, 856(%rsp)         # 8-byte Spill
-	movq	%rbx, 848(%rsp)         # 8-byte Spill
-	movq	%r10, 840(%rsp)         # 8-byte Spill
-	movq	%r11, 832(%rsp)         # 8-byte Spill
+	movq	%r15, 1648(%rsp)        # 8-byte Spill
+	movl	%ebp, 1644(%rsp)        # 4-byte Spill
+	movl	%r12d, 1640(%rsp)       # 4-byte Spill
+	movq	%r13, 1632(%rsp)        # 8-byte Spill
+	movq	%r14, 1624(%rsp)        # 8-byte Spill
+	movq	%rbx, 1616(%rsp)        # 8-byte Spill
+	movq	%r10, 1608(%rsp)        # 8-byte Spill
+	movq	%r11, 1600(%rsp)        # 8-byte Spill
 	callq	trace_logger_log0
-	movq	896(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
-	movq	920(%rsp), %rdx         # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	1112(%rsp), %r8         # 8-byte Reload
-	movq	904(%rsp), %r9          # 8-byte Reload
-	movq	888(%rsp), %rax         # 8-byte Reload
+	movq	1664(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	1688(%rsp), %rdx        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1888(%rsp), %r8         # 8-byte Reload
+	movq	1672(%rsp), %r9         # 8-byte Reload
+	movq	1656(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	904(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
-	movq	920(%rsp), %rdx         # 8-byte Reload
-	movq	920(%rsp), %rcx         # 8-byte Reload
-	movq	1096(%rsp), %r8         # 8-byte Reload
-	movq	904(%rsp), %r9          # 8-byte Reload
-	movq	952(%rsp), %rax         # 8-byte Reload
+	movq	1672(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	1688(%rsp), %rdx        # 8-byte Reload
+	movq	1688(%rsp), %rcx        # 8-byte Reload
+	movq	1872(%rsp), %r8         # 8-byte Reload
+	movq	1672(%rsp), %r9         # 8-byte Reload
+	movq	1720(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	864(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
-	movq	1128(%rsp), %rdx        # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	1080(%rsp), %r8         # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	952(%rsp), %rax         # 8-byte Reload
+	movq	1632(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	1904(%rsp), %rdx        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1856(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1720(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	984(%rsp), %rdi         # 8-byte Reload
-	movq	856(%rsp), %rsi         # 8-byte Reload
-	movq	888(%rsp), %rdx         # 8-byte Reload
-	movq	992(%rsp), %rcx         # 8-byte Reload
-	movq	1008(%rsp), %r8         # 8-byte Reload
-	movl	876(%rsp), %r9d         # 4-byte Reload
+	movq	1896(%rsp), %rdi        # 8-byte Reload
+	movq	1624(%rsp), %rsi        # 8-byte Reload
+	movq	1656(%rsp), %rdx        # 8-byte Reload
+	movq	1784(%rsp), %rcx        # 8-byte Reload
+	movq	1848(%rsp), %r8         # 8-byte Reload
+	movl	1644(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	896(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
-	movq	1128(%rsp), %rdx        # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	1080(%rsp), %r8         # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %rax         # 8-byte Reload
+	movq	1664(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	1920(%rsp), %rdx        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1728(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	904(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
-	movq	1296(%rsp), %rdx        # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	960(%rsp), %r8          # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %rax         # 8-byte Reload
+	movq	1672(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	1904(%rsp), %rdx        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1856(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	1904(%rsp), %rax        # 8-byte Reload
+	movq	1920(%rsp), %rcx        # 8-byte Reload
+	addq	%rcx, %rax
+	movq	1632(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	%rax, %rdx
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1784(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	movq	%rax, 1592(%rsp)        # 8-byte Spill
+	callq	trace_logger_log_int
+	movq	1896(%rsp), %rdi        # 8-byte Reload
+	movq	1624(%rsp), %rsi        # 8-byte Reload
+	movq	1656(%rsp), %rdx        # 8-byte Reload
+	movq	1760(%rsp), %rcx        # 8-byte Reload
+	movq	1776(%rsp), %r8         # 8-byte Reload
+	movl	1644(%rsp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	1664(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	1592(%rsp), %rdx        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1784(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	1672(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	2280(%rsp), %rdx        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1736(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
-	movq	1128(%rsp), %rax        # 8-byte Reload
+	movq	1592(%rsp), %rax        # 8-byte Reload
 	shlq	$2, %rax
-	movq	1296(%rsp), %rcx        # 8-byte Reload
+	movq	2280(%rsp), %rcx        # 8-byte Reload
 	addq	%rax, %rcx
-	movq	864(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
+	movq	1632(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
 	movq	%rcx, %rdx
-	movq	904(%rsp), %rax         # 8-byte Reload
-	movq	%rcx, 824(%rsp)         # 8-byte Spill
+	movq	1672(%rsp), %rax        # 8-byte Reload
+	movq	%rcx, 1584(%rsp)        # 8-byte Spill
 	movq	%rax, %rcx
-	movq	992(%rsp), %r8          # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %r10         # 8-byte Reload
+	movq	1760(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-	movq	984(%rsp), %rdi         # 8-byte Reload
-	movq	856(%rsp), %rsi         # 8-byte Reload
-	movq	888(%rsp), %rdx         # 8-byte Reload
-	movq	1000(%rsp), %rcx        # 8-byte Reload
-	movq	968(%rsp), %r8          # 8-byte Reload
-	movl	876(%rsp), %r9d         # 4-byte Reload
+	movq	1896(%rsp), %rdi        # 8-byte Reload
+	movq	1624(%rsp), %rsi        # 8-byte Reload
+	movq	1656(%rsp), %rdx        # 8-byte Reload
+	movq	1768(%rsp), %rcx        # 8-byte Reload
+	movq	1744(%rsp), %r8         # 8-byte Reload
+	movl	1644(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	904(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
-	movq	1128(%rsp), %rdx        # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	1080(%rsp), %r8         # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %rax         # 8-byte Reload
+	movq	1672(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	1904(%rsp), %rdx        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1856(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	1128(%rsp), %rax        # 8-byte Reload
+	movq	1904(%rsp), %rax        # 8-byte Reload
 	movl	%eax, %ebp
 	movl	%ebp, %r12d
 	movl	%r12d, %edx
-	movq	864(%rsp), %rdi         # 8-byte Reload
-	movq	1064(%rsp), %rsi        # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	1000(%rsp), %r8         # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %r10         # 8-byte Reload
+	movq	1632(%rsp), %rdi        # 8-byte Reload
+	movq	1840(%rsp), %rsi        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1768(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
-	movl	%ebp, 820(%rsp)         # 4-byte Spill
+	movl	%ebp, 1580(%rsp)        # 4-byte Spill
 	callq	trace_logger_log_int
-	movq	984(%rsp), %rdi         # 8-byte Reload
-	movq	856(%rsp), %rsi         # 8-byte Reload
-	movq	888(%rsp), %rdx         # 8-byte Reload
-	movq	976(%rsp), %rcx         # 8-byte Reload
-	movq	1024(%rsp), %r8         # 8-byte Reload
-	movl	876(%rsp), %r9d         # 4-byte Reload
+	movq	1896(%rsp), %rdi        # 8-byte Reload
+	movq	1624(%rsp), %rsi        # 8-byte Reload
+	movq	1656(%rsp), %rdx        # 8-byte Reload
+	movq	1752(%rsp), %rcx        # 8-byte Reload
+	movq	1800(%rsp), %r8         # 8-byte Reload
+	movl	1644(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	896(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
-	movq	824(%rsp), %rdx         # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	992(%rsp), %r8          # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %rax         # 8-byte Reload
+	movq	1664(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	1584(%rsp), %rdx        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1760(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
-	movl	820(%rsp), %ebp         # 4-byte Reload
+	movl	1580(%rsp), %ebp        # 4-byte Reload
 	movl	%ebp, %r12d
 	movl	%r12d, %edx
-	movq	904(%rsp), %rdi         # 8-byte Reload
-	movq	1064(%rsp), %rsi        # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	1000(%rsp), %r8         # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %rax         # 8-byte Reload
+	movq	1672(%rsp), %rdi        # 8-byte Reload
+	movq	1840(%rsp), %rsi        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1768(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	1296(%rsp), %rax        # 8-byte Reload
-	movq	1128(%rsp), %rcx        # 8-byte Reload
-	movl	820(%rsp), %ebp         # 4-byte Reload
+	movq	2280(%rsp), %rax        # 8-byte Reload
+	movq	1592(%rsp), %rcx        # 8-byte Reload
+	movl	1580(%rsp), %ebp        # 4-byte Reload
 	movl	%ebp, (%rax,%rcx,4)
-	.loc	1 58 0                  # feature_extraction.c:58:0
-	movq	1040(%rsp), %rdi        # 8-byte Reload
-	movq	856(%rsp), %rsi         # 8-byte Reload
-	movq	888(%rsp), %rdx         # 8-byte Reload
-	movq	1048(%rsp), %rcx        # 8-byte Reload
-	movq	1008(%rsp), %r8         # 8-byte Reload
-	movl	876(%rsp), %r9d         # 4-byte Reload
+	.loc	1 65 0                  # feature_extraction.c:65:0
+	movq	1816(%rsp), %rdi        # 8-byte Reload
+	movq	1624(%rsp), %rsi        # 8-byte Reload
+	movq	1656(%rsp), %rdx        # 8-byte Reload
+	movq	1824(%rsp), %rcx        # 8-byte Reload
+	movq	1776(%rsp), %r8         # 8-byte Reload
+	movl	1644(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	896(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
-	movq	1128(%rsp), %rdx        # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	1080(%rsp), %r8         # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %rax         # 8-byte Reload
+	movq	1664(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	1592(%rsp), %rdx        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1784(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	904(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
-	movq	1144(%rsp), %rdx        # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	1016(%rsp), %r8         # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %rax         # 8-byte Reload
+	movq	1672(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	2128(%rsp), %rdx        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1792(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
-	movq	1128(%rsp), %rax        # 8-byte Reload
+	movq	1592(%rsp), %rax        # 8-byte Reload
 	shlq	$2, %rax
-	movq	1144(%rsp), %rcx        # 8-byte Reload
+	movq	2128(%rsp), %rcx        # 8-byte Reload
 	addq	%rax, %rcx
-	movq	864(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
+	movq	1632(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
 	movq	%rcx, %rdx
-	movq	904(%rsp), %rax         # 8-byte Reload
-	movq	%rcx, 808(%rsp)         # 8-byte Spill
+	movq	1672(%rsp), %rax        # 8-byte Reload
+	movq	%rcx, 1568(%rsp)        # 8-byte Spill
 	movq	%rax, %rcx
-	movq	1048(%rsp), %r8         # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %r10         # 8-byte Reload
+	movq	1824(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-	movq	1040(%rsp), %rdi        # 8-byte Reload
-	movq	856(%rsp), %rsi         # 8-byte Reload
-	movq	888(%rsp), %rdx         # 8-byte Reload
-	movq	1032(%rsp), %rcx        # 8-byte Reload
-	movq	1024(%rsp), %r8         # 8-byte Reload
-	movl	876(%rsp), %r9d         # 4-byte Reload
+	movq	1816(%rsp), %rdi        # 8-byte Reload
+	movq	1624(%rsp), %rsi        # 8-byte Reload
+	movq	1656(%rsp), %rdx        # 8-byte Reload
+	movq	1808(%rsp), %rcx        # 8-byte Reload
+	movq	1800(%rsp), %r8         # 8-byte Reload
+	movl	1644(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	896(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
-	movq	808(%rsp), %rdx         # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	1048(%rsp), %r8         # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %rax         # 8-byte Reload
+	movq	1664(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	1568(%rsp), %rdx        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1824(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
-	movq	904(%rsp), %rdi         # 8-byte Reload
-	movq	1064(%rsp), %rsi        # 8-byte Reload
-	movq	1056(%rsp), %rdx        # 8-byte Reload
-	movq	920(%rsp), %rcx         # 8-byte Reload
-	movq	1096(%rsp), %r8         # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %rax         # 8-byte Reload
+	movq	1672(%rsp), %rdi        # 8-byte Reload
+	movq	1840(%rsp), %rsi        # 8-byte Reload
+	movq	1832(%rsp), %rdx        # 8-byte Reload
+	movq	1688(%rsp), %rcx        # 8-byte Reload
+	movq	1872(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	1144(%rsp), %rax        # 8-byte Reload
-	movq	1128(%rsp), %rcx        # 8-byte Reload
+	movq	2128(%rsp), %rax        # 8-byte Reload
+	movq	1592(%rsp), %rcx        # 8-byte Reload
 	movl	$-1, (%rax,%rcx,4)
-.Ltmp86:
-	.loc	1 56 0                  # feature_extraction.c:56:0
-	movq	848(%rsp), %rdi         # 8-byte Reload
-	movq	856(%rsp), %rsi         # 8-byte Reload
-	movq	888(%rsp), %rdx         # 8-byte Reload
-	movq	1112(%rsp), %rcx        # 8-byte Reload
-	movq	1072(%rsp), %r8         # 8-byte Reload
-	movl	876(%rsp), %r9d         # 4-byte Reload
+.Ltmp103:
+	.loc	1 62 0                  # feature_extraction.c:62:0
+	movq	1616(%rsp), %rdi        # 8-byte Reload
+	movq	1624(%rsp), %rsi        # 8-byte Reload
+	movq	1656(%rsp), %rdx        # 8-byte Reload
+	movq	1888(%rsp), %rcx        # 8-byte Reload
+	movq	1848(%rsp), %r8         # 8-byte Reload
+	movl	1644(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	896(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
-	movq	904(%rsp), %rdx         # 8-byte Reload
-	movq	920(%rsp), %rcx         # 8-byte Reload
-	movq	1096(%rsp), %r8         # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %rax         # 8-byte Reload
+	movq	1664(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	1672(%rsp), %rdx        # 8-byte Reload
+	movq	1688(%rsp), %rcx        # 8-byte Reload
+	movq	1872(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	904(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
-	movq	1128(%rsp), %rdx        # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	1080(%rsp), %r8         # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %rax         # 8-byte Reload
+	movq	1672(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	1904(%rsp), %rdx        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1856(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	1128(%rsp), %rax        # 8-byte Reload
+	movq	1904(%rsp), %rax        # 8-byte Reload
 	addq	$1, %rax
-	movq	864(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
+	movq	1632(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
 	movq	%rax, %rdx
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	1112(%rsp), %r8         # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %r10         # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1888(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
-	movq	%rax, 800(%rsp)         # 8-byte Spill
+	movq	%rax, 1560(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_int
-	movq	848(%rsp), %rdi         # 8-byte Reload
-	movq	856(%rsp), %rsi         # 8-byte Reload
-	movq	888(%rsp), %rdx         # 8-byte Reload
-	movq	912(%rsp), %rcx         # 8-byte Reload
-	movq	1088(%rsp), %r8         # 8-byte Reload
-	movl	876(%rsp), %r9d         # 4-byte Reload
+	movq	1616(%rsp), %rdi        # 8-byte Reload
+	movq	1624(%rsp), %rsi        # 8-byte Reload
+	movq	1656(%rsp), %rdx        # 8-byte Reload
+	movq	1680(%rsp), %rcx        # 8-byte Reload
+	movq	1864(%rsp), %r8         # 8-byte Reload
+	movl	1644(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	896(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
-	movq	1104(%rsp), %rdx        # 8-byte Reload
-	movq	920(%rsp), %rcx         # 8-byte Reload
-	movq	1096(%rsp), %r8         # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %rax         # 8-byte Reload
+	movq	1664(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	1880(%rsp), %rdx        # 8-byte Reload
+	movq	1688(%rsp), %rcx        # 8-byte Reload
+	movq	1872(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	904(%rsp), %rdi         # 8-byte Reload
-	movq	1120(%rsp), %rsi        # 8-byte Reload
-	movq	800(%rsp), %rdx         # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	1112(%rsp), %r8         # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %rax         # 8-byte Reload
+	movq	1672(%rsp), %rdi        # 8-byte Reload
+	movq	1896(%rsp), %rsi        # 8-byte Reload
+	movq	1560(%rsp), %rdx        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1888(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	800(%rsp), %rax         # 8-byte Reload
+	movq	1560(%rsp), %rax        # 8-byte Reload
 	cmpq	$10, %rax
 	sete	%al
 	movb	%al, %cl
 	andb	$1, %cl
 	movzbl	%cl, %ebp
 	movl	%ebp, %edx
-	movq	864(%rsp), %rdi         # 8-byte Reload
-	movq	904(%rsp), %rsi         # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	912(%rsp), %r8          # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %r10         # 8-byte Reload
+	movq	1632(%rsp), %rdi        # 8-byte Reload
+	movq	1672(%rsp), %rsi        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1680(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
-	movb	%al, 799(%rsp)          # 1-byte Spill
+	movb	%al, 1559(%rsp)         # 1-byte Spill
 	callq	trace_logger_log_int
-	movq	848(%rsp), %rdi         # 8-byte Reload
-	movq	856(%rsp), %rsi         # 8-byte Reload
-	movq	888(%rsp), %rdx         # 8-byte Reload
-	movq	880(%rsp), %rcx         # 8-byte Reload
-	movq	896(%rsp), %r8          # 8-byte Reload
-	movl	876(%rsp), %r9d         # 4-byte Reload
+	movq	1616(%rsp), %rdi        # 8-byte Reload
+	movq	1624(%rsp), %rsi        # 8-byte Reload
+	movq	1656(%rsp), %rdx        # 8-byte Reload
+	movq	1648(%rsp), %rcx        # 8-byte Reload
+	movq	1664(%rsp), %r8         # 8-byte Reload
+	movl	1644(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	840(%rsp), %rdi         # 8-byte Reload
-	movq	920(%rsp), %rsi         # 8-byte Reload
-	movq	920(%rsp), %rdx         # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	832(%rsp), %r8          # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %r10         # 8-byte Reload
+	movq	1608(%rsp), %rdi        # 8-byte Reload
+	movq	1688(%rsp), %rsi        # 8-byte Reload
+	movq	1688(%rsp), %rdx        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1600(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-	movq	896(%rsp), %rdi         # 8-byte Reload
-	movq	920(%rsp), %rsi         # 8-byte Reload
-	movq	920(%rsp), %rdx         # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	888(%rsp), %r8          # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %r10         # 8-byte Reload
+	movq	1664(%rsp), %rdi        # 8-byte Reload
+	movq	1688(%rsp), %rsi        # 8-byte Reload
+	movq	1688(%rsp), %rdx        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1656(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-	movb	799(%rsp), %al          # 1-byte Reload
+	movb	1559(%rsp), %al         # 1-byte Reload
 	andb	$1, %al
 	movzbl	%al, %ebp
 	movl	%ebp, %edx
-	movq	904(%rsp), %rdi         # 8-byte Reload
-	movq	904(%rsp), %rsi         # 8-byte Reload
-	movq	904(%rsp), %rcx         # 8-byte Reload
-	movq	912(%rsp), %r8          # 8-byte Reload
-	movq	920(%rsp), %r9          # 8-byte Reload
-	movq	928(%rsp), %r10         # 8-byte Reload
+	movq	1672(%rsp), %rdi        # 8-byte Reload
+	movq	1672(%rsp), %rsi        # 8-byte Reload
+	movq	1672(%rsp), %rcx        # 8-byte Reload
+	movq	1680(%rsp), %r8         # 8-byte Reload
+	movq	1688(%rsp), %r9         # 8-byte Reload
+	movq	1696(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-	movb	799(%rsp), %al          # 1-byte Reload
+	movb	1559(%rsp), %al         # 1-byte Reload
 	testb	$1, %al
-	movq	800(%rsp), %rcx         # 8-byte Reload
-	movq	%rcx, 1136(%rsp)        # 8-byte Spill
-	jne	.LBB2_2
-	jmp	.LBB2_1
-.Ltmp87:
-.LBB2_2:
-	movabsq	$4, %rdi
+	movq	1560(%rsp), %rcx        # 8-byte Reload
+	movq	%rcx, 1912(%rsp)        # 8-byte Spill
+	jne	.LBB2_3
+	jmp	.LBB2_2
+.Ltmp104:
+.LBB2_3:                                #   in Loop: Header=BB2_1 Depth=1
+	movabsq	$1, %rax
+	leaq	.L.str105, %rcx
+	movabsq	$0, %rdx
+	leaq	.L.str8, %rsi
+	movabsq	$2, %rdi
+	leaq	.L.str16, %r8
+	movabsq	$3, %r9
+	leaq	.L.str107, %r10
+	movabsq	$60, %r11
+	leaq	.L.str94, %rbx
+	leaq	.L.str99, %r14
+	leaq	.L.str106, %r15
+	movl	$0, %ebp
+	movl	$1, %r12d
+	movabsq	$19134, %r13            # imm = 0x4ABE
+	movq	%rax, 1544(%rsp)        # 8-byte Spill
 	movabsq	$64, %rax
-	movabsq	$0, %rcx
-	leaq	.L.str8, %rdx
-	leaq	.L.str9, %rsi
-	movabsq	$3, %r8
-	movabsq	$2, %r9
-	movabsq	$32, %r10
-	movabsq	$1, %r11
-	movabsq	$10, %rbx
-	movabsq	$5, %r14
-	leaq	kiss_fft_alloc, %r15
-	leaq	.L.str73, %r12
-	movabsq	$61, %r13
-	leaq	.L.str65, %rbp
-	movq	%rax, 784(%rsp)         # 8-byte Spill
-	leaq	.L.str72, %rax
-	movq	%rax, 776(%rsp)         # 8-byte Spill
-	leaq	.L.str29, %rax
-	movq	%rax, 768(%rsp)         # 8-byte Spill
-	movabsq	$49, %rax
-	movq	%rsi, 760(%rsp)         # 8-byte Spill
-	movl	$0, %esi
-	movl	%esi, 756(%rsp)         # 4-byte Spill
-	movl	$1, %esi
-	.loc	1 61 0                  # feature_extraction.c:61:0
-	movq	%rdi, 744(%rsp)         # 8-byte Spill
-	movq	%r13, %rdi
-	movl	%esi, 740(%rsp)         # 4-byte Spill
-	movq	%rbp, %rsi
-	movq	776(%rsp), %r13         # 8-byte Reload
-	movq	%rdx, 728(%rsp)         # 8-byte Spill
-	movq	%r13, %rdx
-	movq	768(%rsp), %rbp         # 8-byte Reload
-	movq	%rcx, 720(%rsp)         # 8-byte Spill
-	movq	%rbp, %rcx
-	movq	%r8, 712(%rsp)          # 8-byte Spill
+	movq	%rax, 1536(%rsp)        # 8-byte Spill
+	leaq	.L.str98, %rax
+	movq	%rax, 1528(%rsp)        # 8-byte Spill
+	movabsq	$15, %rax
+	movq	%rax, 1520(%rsp)        # 8-byte Spill
+	leaq	.L.str7, %rax
+	movq	%rax, 1512(%rsp)        # 8-byte Spill
+	movabsq	$46, %rax
+	movq	%rax, 1504(%rsp)        # 8-byte Spill
+	leaq	.L.str97, %rax
+	movq	%rax, 1496(%rsp)        # 8-byte Spill
+	movabsq	$8, %rax
+	.loc	1 60 0                  # feature_extraction.c:60:0
+	movq	%rdi, 1488(%rsp)        # 8-byte Spill
+	movq	%r11, %rdi
+	movq	%rsi, 1480(%rsp)        # 8-byte Spill
+	movq	%rbx, %rsi
+	movq	%rdx, 1472(%rsp)        # 8-byte Spill
+	movq	%r14, %rdx
+	movq	%rax, 1464(%rsp)        # 8-byte Spill
+	movq	1528(%rsp), %rax        # 8-byte Reload
+	movq	%rcx, 1456(%rsp)        # 8-byte Spill
+	movq	%rax, %rcx
+	movq	1464(%rsp), %rax        # 8-byte Reload
+	movq	%r8, 1448(%rsp)         # 8-byte Spill
 	movq	%rax, %r8
-	movl	756(%rsp), %ebp         # 4-byte Reload
-	movq	%r9, 704(%rsp)          # 8-byte Spill
+	movq	%r9, 1440(%rsp)         # 8-byte Spill
 	movl	%ebp, %r9d
 	movl	$1, (%rsp)
-	movq	%r12, 696(%rsp)         # 8-byte Spill
-	movq	%r14, 688(%rsp)         # 8-byte Spill
-	movq	%r15, 680(%rsp)         # 8-byte Spill
-	movq	%rbx, 672(%rsp)         # 8-byte Spill
-	movq	%r11, 664(%rsp)         # 8-byte Spill
-	movq	%r10, 656(%rsp)         # 8-byte Spill
+	movq	%r15, 1432(%rsp)        # 8-byte Spill
+	movl	%ebp, 1428(%rsp)        # 4-byte Spill
+	movl	%r12d, 1424(%rsp)       # 4-byte Spill
+	movq	%r13, 1416(%rsp)        # 8-byte Spill
+	movq	%r14, 1408(%rsp)        # 8-byte Spill
+	movq	%rbx, 1400(%rsp)        # 8-byte Spill
+	movq	%r10, 1392(%rsp)        # 8-byte Spill
+	movq	%r11, 1384(%rsp)        # 8-byte Spill
 	callq	trace_logger_log0
-	movq	688(%rsp), %rdi         # 8-byte Reload
-	movq	784(%rsp), %rsi         # 8-byte Reload
-	movq	680(%rsp), %rdx         # 8-byte Reload
-	movq	664(%rsp), %rcx         # 8-byte Reload
-	movq	696(%rsp), %r8          # 8-byte Reload
-	movq	720(%rsp), %r9          # 8-byte Reload
-	movq	760(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	664(%rsp), %rdi         # 8-byte Reload
-	movq	656(%rsp), %rsi         # 8-byte Reload
-	movq	672(%rsp), %rdx         # 8-byte Reload
-	movq	720(%rsp), %rcx         # 8-byte Reload
-	movq	728(%rsp), %r8          # 8-byte Reload
-	movq	720(%rsp), %r9          # 8-byte Reload
-	movq	760(%rsp), %rax         # 8-byte Reload
+	movq	1488(%rsp), %rdi        # 8-byte Reload
+	movq	1536(%rsp), %rsi        # 8-byte Reload
+	movq	1544(%rsp), %rdx        # 8-byte Reload
+	movq	1472(%rsp), %rcx        # 8-byte Reload
+	movq	1512(%rsp), %r8         # 8-byte Reload
+	movq	1472(%rsp), %r9         # 8-byte Reload
+	movq	1480(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	704(%rsp), %rdi         # 8-byte Reload
-	movq	656(%rsp), %rsi         # 8-byte Reload
-	movq	720(%rsp), %rdx         # 8-byte Reload
-	movq	720(%rsp), %rcx         # 8-byte Reload
-	movq	728(%rsp), %r8          # 8-byte Reload
-	movq	720(%rsp), %r9          # 8-byte Reload
-	movq	760(%rsp), %rax         # 8-byte Reload
+	movq	1544(%rsp), %rdi        # 8-byte Reload
+	movq	1536(%rsp), %rsi        # 8-byte Reload
+	movq	2112(%rsp), %rdx        # 8-byte Reload
+	movq	1544(%rsp), %rcx        # 8-byte Reload
+	movq	1496(%rsp), %r8         # 8-byte Reload
+	movq	1472(%rsp), %r9         # 8-byte Reload
+	movq	1480(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	712(%rsp), %rdi         # 8-byte Reload
-	movq	784(%rsp), %rsi         # 8-byte Reload
-	movq	720(%rsp), %rdx         # 8-byte Reload
-	movq	720(%rsp), %rcx         # 8-byte Reload
-	movq	728(%rsp), %r8          # 8-byte Reload
-	movq	720(%rsp), %r9          # 8-byte Reload
-	movq	760(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	744(%rsp), %rdi         # 8-byte Reload
-	movq	784(%rsp), %rsi         # 8-byte Reload
-	movq	720(%rsp), %rdx         # 8-byte Reload
-	movq	720(%rsp), %rcx         # 8-byte Reload
-	movq	728(%rsp), %r8          # 8-byte Reload
-	movq	720(%rsp), %r9          # 8-byte Reload
-	movq	760(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	xorl	%ebp, %ebp
-	movl	%ebp, %eax
-	movl	$10, %edi
-	movl	%ebp, %esi
+	movq	2112(%rsp), %rax        # 8-byte Reload
+	addq	$1, %rax
+	movq	1416(%rsp), %rdi        # 8-byte Reload
+	movq	1536(%rsp), %rsi        # 8-byte Reload
 	movq	%rax, %rdx
+	movq	1544(%rsp), %rcx        # 8-byte Reload
+	movq	1528(%rsp), %r8         # 8-byte Reload
+	movq	1472(%rsp), %r9         # 8-byte Reload
+	movq	1480(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	movq	%rax, 1376(%rsp)        # 8-byte Spill
+	callq	trace_logger_log_int
+	movq	1384(%rsp), %rdi        # 8-byte Reload
+	movq	1400(%rsp), %rsi        # 8-byte Reload
+	movq	1408(%rsp), %rdx        # 8-byte Reload
+	movq	1456(%rsp), %rcx        # 8-byte Reload
+	movq	1504(%rsp), %r8         # 8-byte Reload
+	movl	1428(%rsp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	1488(%rsp), %rdi        # 8-byte Reload
+	movq	1536(%rsp), %rsi        # 8-byte Reload
+	movq	1520(%rsp), %rdx        # 8-byte Reload
+	movq	1472(%rsp), %rcx        # 8-byte Reload
+	movq	1512(%rsp), %r8         # 8-byte Reload
+	movq	1472(%rsp), %r9         # 8-byte Reload
+	movq	1480(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	1544(%rsp), %rdi        # 8-byte Reload
+	movq	1536(%rsp), %rsi        # 8-byte Reload
+	movq	1376(%rsp), %rdx        # 8-byte Reload
+	movq	1544(%rsp), %rcx        # 8-byte Reload
+	movq	1528(%rsp), %r8         # 8-byte Reload
+	movq	1472(%rsp), %r9         # 8-byte Reload
+	movq	1480(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	1376(%rsp), %rax        # 8-byte Reload
+	cmpq	$15, %rax
+	sete	%al
+	movb	%al, %cl
+	andb	$1, %cl
+	movzbl	%cl, %ebp
+	movl	%ebp, %edx
+	movq	1416(%rsp), %rdi        # 8-byte Reload
+	movq	1544(%rsp), %rsi        # 8-byte Reload
+	movq	1544(%rsp), %rcx        # 8-byte Reload
+	movq	1456(%rsp), %r8         # 8-byte Reload
+	movq	1472(%rsp), %r9         # 8-byte Reload
+	movq	1480(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	movb	%al, 1375(%rsp)         # 1-byte Spill
+	callq	trace_logger_log_int
+	movq	1384(%rsp), %rdi        # 8-byte Reload
+	movq	1400(%rsp), %rsi        # 8-byte Reload
+	movq	1408(%rsp), %rdx        # 8-byte Reload
+	movq	1432(%rsp), %rcx        # 8-byte Reload
+	movq	1488(%rsp), %r8         # 8-byte Reload
+	movl	1428(%rsp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	1440(%rsp), %rdi        # 8-byte Reload
+	movq	1472(%rsp), %rsi        # 8-byte Reload
+	movq	1472(%rsp), %rdx        # 8-byte Reload
+	movq	1544(%rsp), %rcx        # 8-byte Reload
+	movq	1392(%rsp), %r8         # 8-byte Reload
+	movq	1472(%rsp), %r9         # 8-byte Reload
+	movq	1480(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	1488(%rsp), %rdi        # 8-byte Reload
+	movq	1472(%rsp), %rsi        # 8-byte Reload
+	movq	1472(%rsp), %rdx        # 8-byte Reload
+	movq	1544(%rsp), %rcx        # 8-byte Reload
+	movq	1448(%rsp), %r8         # 8-byte Reload
+	movq	1472(%rsp), %r9         # 8-byte Reload
+	movq	1480(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movb	1375(%rsp), %al         # 1-byte Reload
+	andb	$1, %al
+	movzbl	%al, %ebp
+	movl	%ebp, %edx
+	movq	1544(%rsp), %rdi        # 8-byte Reload
+	movq	1544(%rsp), %rsi        # 8-byte Reload
+	movq	1544(%rsp), %rcx        # 8-byte Reload
+	movq	1456(%rsp), %r8         # 8-byte Reload
+	movq	1472(%rsp), %r9         # 8-byte Reload
+	movq	1480(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movb	1375(%rsp), %al         # 1-byte Reload
+	testb	$1, %al
+	movq	1376(%rsp), %rcx        # 8-byte Reload
+	movq	%rcx, 2120(%rsp)        # 8-byte Spill
+	jne	.LBB2_4
+	jmp	.LBB2_1
+.Ltmp105:
+.LBB2_4:
+	movabsq	$0, %rax
+	movabsq	$1, %rcx
+	leaq	.L.str109, %r8
+	leaq	.L.str8, %rdx
+	movabsq	$69, %rdi
+	leaq	.L.str94, %rsi
+	leaq	.L.str107, %r9
+	leaq	.L.str108, %r10
+	movabsq	$2, %r11
+	movl	$0, %ebx
+	movl	$1, %ebp
+	movabsq	$19134, %r14            # imm = 0x4ABE
+	movabsq	$64, %r15
+	leaq	.L.str69, %r12
+	leaq	2640(%rsp), %r13
+	movq	%rax, 1360(%rsp)        # 8-byte Spill
+	movabsq	$68, %rax
+	movq	%rax, 1352(%rsp)        # 8-byte Spill
+	leaq	.L.str38, %rax
+	movq	%rax, 1344(%rsp)        # 8-byte Spill
+	movabsq	$44, %rax
+	.loc	1 68 0                  # feature_extraction.c:68:0
+	movq	%rax, 1336(%rsp)        # 8-byte Spill
+	movq	1352(%rsp), %rax        # 8-byte Reload
+	movq	%rdi, 1328(%rsp)        # 8-byte Spill
+	movq	%rax, %rdi
+	movq	%rsi, 1320(%rsp)        # 8-byte Spill
+	movq	%rdx, 1312(%rsp)        # 8-byte Spill
+	movq	%r9, %rdx
+	movq	1344(%rsp), %rax        # 8-byte Reload
+	movq	%rcx, 1304(%rsp)        # 8-byte Spill
 	movq	%rax, %rcx
-	callq	kiss_fft_alloc
+	movq	1336(%rsp), %rax        # 8-byte Reload
+	movq	%r8, 1296(%rsp)         # 8-byte Spill
+	movq	%rax, %r8
+	movq	%r9, 1288(%rsp)         # 8-byte Spill
+	movl	%ebx, %r9d
+	movl	$1, (%rsp)
+	movq	%r14, 1280(%rsp)        # 8-byte Spill
+	movl	%ebp, 1276(%rsp)        # 4-byte Spill
+	movq	%r15, 1264(%rsp)        # 8-byte Spill
+	movq	%r13, 1256(%rsp)        # 8-byte Spill
+	movq	%r12, 1248(%rsp)        # 8-byte Spill
+	movl	%ebx, 1244(%rsp)        # 4-byte Spill
+	movq	%r10, 1232(%rsp)        # 8-byte Spill
+	movq	%r11, 1224(%rsp)        # 8-byte Spill
+	callq	trace_logger_log0
+	movq	1304(%rsp), %rdi        # 8-byte Reload
+	movq	1264(%rsp), %rsi        # 8-byte Reload
+	movq	1256(%rsp), %rdx        # 8-byte Reload
+	movq	1304(%rsp), %rcx        # 8-byte Reload
+	movq	1248(%rsp), %r8         # 8-byte Reload
+	movq	1360(%rsp), %r9         # 8-byte Reload
+	movq	1312(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	1256(%rsp), %rax        # 8-byte Reload
+	movq	1280(%rsp), %rdi        # 8-byte Reload
+	movq	1264(%rsp), %rsi        # 8-byte Reload
+	movq	%rax, %rdx
+	movq	1304(%rsp), %rcx        # 8-byte Reload
+	movq	1248(%rsp), %r8         # 8-byte Reload
+	movq	1360(%rsp), %r9         # 8-byte Reload
+	movq	1312(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_ptr
+.Ltmp106:
+	#DEBUG_VALUE: i <- 0
+	.loc	1 69 0                  # feature_extraction.c:69:0
+	movq	1328(%rsp), %rdi        # 8-byte Reload
+	movq	1320(%rsp), %rsi        # 8-byte Reload
+	movq	1288(%rsp), %rdx        # 8-byte Reload
+	movq	1232(%rsp), %rcx        # 8-byte Reload
+	movq	1224(%rsp), %r8         # 8-byte Reload
+	movl	1244(%rsp), %r9d        # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	1304(%rsp), %rdi        # 8-byte Reload
+	movq	1360(%rsp), %rsi        # 8-byte Reload
+	movq	1360(%rsp), %rdx        # 8-byte Reload
+	movq	1304(%rsp), %rcx        # 8-byte Reload
+	movq	1296(%rsp), %r8         # 8-byte Reload
+	movq	1360(%rsp), %r9         # 8-byte Reload
+	movq	1312(%rsp), %rax        # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	1360(%rsp), %rax        # 8-byte Reload
+	movq	%rax, 1216(%rsp)        # 8-byte Spill
+.LBB2_5:                                # =>This Inner Loop Header: Depth=1
+	movq	1216(%rsp), %rax        # 8-byte Reload
 	movabsq	$4, %rdi
 	movabsq	$64, %rcx
-	movabsq	$1, %rdx
-	leaq	.L.str29, %r8
-	movabsq	$0, %r9
-	leaq	.L.str9, %r10
-	movabsq	$3, %r11
-	movabsq	$32, %rsi
-	movabsq	$10, %rbx
-	leaq	.L.str8, %r14
-	movabsq	$2, %r15
-	leaq	.L.str21, %r12
-	leaq	.L.str17, %r13
-	movabsq	$5, %rbp
-	movq	%rax, 648(%rsp)         # 8-byte Spill
-	leaq	process_data, %rax
-	movq	%rax, 640(%rsp)         # 8-byte Spill
+	movabsq	$0, %rdx
+	leaq	.L.str7, %rsi
+	leaq	.L.str8, %r8
+	movabsq	$3, %r9
+	movabsq	$2, %r10
+	movabsq	$32, %r11
+	movabsq	$1, %rbx
+	movabsq	$10, %r14
+	movabsq	$5, %r15
+	leaq	kiss_fft_alloc, %r12
+	leaq	.L.str110, %r13
+	movabsq	$71, %rbp
+	movq	%rax, 1208(%rsp)        # 8-byte Spill
+	leaq	.L.str94, %rax
+	movq	%rax, 1200(%rsp)        # 8-byte Spill
+	leaq	.L.str109, %rax
+	movq	%rax, 1192(%rsp)        # 8-byte Spill
 	leaq	.L.str44, %rax
-	movq	%rax, 632(%rsp)         # 8-byte Spill
-	movabsq	$63, %rax
-	movq	%rax, 624(%rsp)         # 8-byte Spill
-	leaq	.L.str65, %rax
-	movq	%rax, 616(%rsp)         # 8-byte Spill
-	leaq	.L.str72, %rax
-	movq	%rax, 608(%rsp)         # 8-byte Spill
-	leaq	.L.str74, %rax
-	movq	%rax, 600(%rsp)         # 8-byte Spill
+	movq	%rax, 1184(%rsp)        # 8-byte Spill
 	movabsq	$49, %rax
-	movq	%rsi, 592(%rsp)         # 8-byte Spill
+	movq	%rsi, 1176(%rsp)        # 8-byte Spill
 	movl	$0, %esi
-	movl	%esi, 588(%rsp)         # 4-byte Spill
+	movl	%esi, 1172(%rsp)        # 4-byte Spill
 	movl	$1, %esi
-	movq	%rax, 576(%rsp)         # 8-byte Spill
+	movq	%rax, 1160(%rsp)        # 8-byte Spill
 	movabsq	$19134, %rax            # imm = 0x4ABE
-	movq	%rdi, 568(%rsp)         # 8-byte Spill
+	movq	%rax, 1152(%rsp)        # 8-byte Spill
+	leaq	.L.str29, %rax
+	movq	%rax, 1144(%rsp)        # 8-byte Spill
+	leaq	.L.str107, %rax
+	movq	%rax, 1136(%rsp)        # 8-byte Spill
+	leaq	.L.str30, %rax
+	movq	%rax, 1128(%rsp)        # 8-byte Spill
+	movabsq	$-1, %rax
+	movq	%rax, 1120(%rsp)        # 8-byte Spill
+	movabsq	$48, %rax
+	.loc	1 71 0                  # feature_extraction.c:71:0
+.Ltmp107:
+	movq	%rax, 1112(%rsp)        # 8-byte Spill
+	movq	1120(%rsp), %rax        # 8-byte Reload
+	movq	%rdi, 1104(%rsp)        # 8-byte Spill
 	movq	%rax, %rdi
-	movl	%esi, 564(%rsp)         # 4-byte Spill
-	movq	%rcx, %rsi
-	movq	648(%rsp), %rax         # 8-byte Reload
-	movq	%rdx, 552(%rsp)         # 8-byte Spill
+	movq	1200(%rsp), %rax        # 8-byte Reload
+	movl	%esi, 1100(%rsp)        # 4-byte Spill
+	movq	%rax, %rsi
+	movq	1192(%rsp), %rax        # 8-byte Reload
+	movq	%rdx, 1088(%rsp)        # 8-byte Spill
 	movq	%rax, %rdx
-	movq	552(%rsp), %rax         # 8-byte Reload
-	movq	%rcx, 544(%rsp)         # 8-byte Spill
+	movq	1144(%rsp), %rax        # 8-byte Reload
+	movq	%rcx, 1080(%rsp)        # 8-byte Spill
 	movq	%rax, %rcx
-	movq	%r8, 536(%rsp)          # 8-byte Spill
-	movq	%r9, 528(%rsp)          # 8-byte Spill
+	movq	1112(%rsp), %rax        # 8-byte Reload
+	movq	%r8, 1072(%rsp)         # 8-byte Spill
+	movq	%rax, %r8
+	movl	1172(%rsp), %eax        # 4-byte Reload
+	movq	%r9, 1064(%rsp)         # 8-byte Spill
+	movl	%eax, %r9d
+	movl	$1, (%rsp)
+	movq	%rbp, 1056(%rsp)        # 8-byte Spill
+	movq	%r15, 1048(%rsp)        # 8-byte Spill
+	movq	%r12, 1040(%rsp)        # 8-byte Spill
+	movq	%r13, 1032(%rsp)        # 8-byte Spill
+	movq	%r14, 1024(%rsp)        # 8-byte Spill
+	movq	%rbx, 1016(%rsp)        # 8-byte Spill
+	movq	%r10, 1008(%rsp)        # 8-byte Spill
+	movq	%r11, 1000(%rsp)        # 8-byte Spill
+	callq	trace_logger_log0
+	movq	1008(%rsp), %rdi        # 8-byte Reload
+	movq	1080(%rsp), %rsi        # 8-byte Reload
+	movq	1088(%rsp), %rdx        # 8-byte Reload
+	movq	1016(%rsp), %rcx        # 8-byte Reload
+	movq	1128(%rsp), %r8         # 8-byte Reload
+	movq	1016(%rsp), %r9         # 8-byte Reload
+	movq	1192(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
-	movq	%rbp, 520(%rsp)         # 8-byte Spill
-	movq	%r13, 512(%rsp)         # 8-byte Spill
-	movq	%r15, 504(%rsp)         # 8-byte Spill
-	movq	%r14, 496(%rsp)         # 8-byte Spill
-	movq	%rbx, 488(%rsp)         # 8-byte Spill
-	movq	%r10, 480(%rsp)         # 8-byte Spill
-	movq	%r11, 472(%rsp)         # 8-byte Spill
-	movq	%r12, 464(%rsp)         # 8-byte Spill
-	callq	trace_logger_log_ptr
-.Ltmp88:
-	#DEBUG_VALUE: main:cfg <- [RSP+648]
-	.loc	1 63 0                  # feature_extraction.c:63:0
-	movq	624(%rsp), %rdi         # 8-byte Reload
-	movq	616(%rsp), %rsi         # 8-byte Reload
-	movq	608(%rsp), %rdx         # 8-byte Reload
-	movq	600(%rsp), %rcx         # 8-byte Reload
-	movq	576(%rsp), %r8          # 8-byte Reload
-	movl	588(%rsp), %r9d         # 4-byte Reload
+	callq	trace_logger_log_int
+	movq	1016(%rsp), %rdi        # 8-byte Reload
+	movq	1080(%rsp), %rsi        # 8-byte Reload
+	movq	1088(%rsp), %rdx        # 8-byte Reload
+	movq	1088(%rsp), %rcx        # 8-byte Reload
+	movq	1176(%rsp), %r8         # 8-byte Reload
+	movq	1016(%rsp), %r9         # 8-byte Reload
+	movq	1136(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	1152(%rsp), %rdi        # 8-byte Reload
+	movq	1080(%rsp), %rsi        # 8-byte Reload
+	movq	1208(%rsp), %rdx        # 8-byte Reload
+	movq	1016(%rsp), %rcx        # 8-byte Reload
+	movq	1144(%rsp), %r8         # 8-byte Reload
+	movq	1088(%rsp), %r9         # 8-byte Reload
+	movq	1136(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	1056(%rsp), %rdi        # 8-byte Reload
+	movq	1200(%rsp), %rsi        # 8-byte Reload
+	movq	1192(%rsp), %rdx        # 8-byte Reload
+	movq	1184(%rsp), %rcx        # 8-byte Reload
+	movq	1160(%rsp), %r8         # 8-byte Reload
+	movl	1172(%rsp), %r9d        # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	520(%rsp), %rdi         # 8-byte Reload
-	movq	544(%rsp), %rsi         # 8-byte Reload
-	movq	640(%rsp), %rdx         # 8-byte Reload
-	movq	552(%rsp), %rcx         # 8-byte Reload
-	movq	632(%rsp), %r8          # 8-byte Reload
-	movq	528(%rsp), %r9          # 8-byte Reload
-	movq	480(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
+	movq	1048(%rsp), %rdi        # 8-byte Reload
+	movq	1080(%rsp), %rsi        # 8-byte Reload
+	movq	1040(%rsp), %rdx        # 8-byte Reload
+	movq	1016(%rsp), %rcx        # 8-byte Reload
+	movq	1032(%rsp), %r8         # 8-byte Reload
+	movq	1088(%rsp), %r9         # 8-byte Reload
+	movq	1072(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-	movq	552(%rsp), %rdi         # 8-byte Reload
-	movq	544(%rsp), %rsi         # 8-byte Reload
-	movq	1296(%rsp), %rdx        # 8-byte Reload
-	movq	552(%rsp), %rcx         # 8-byte Reload
-	movq	512(%rsp), %r8          # 8-byte Reload
-	movq	528(%rsp), %r9          # 8-byte Reload
-	movq	480(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
+	movq	1016(%rsp), %rdi        # 8-byte Reload
+	movq	1000(%rsp), %rsi        # 8-byte Reload
+	movq	1024(%rsp), %rdx        # 8-byte Reload
+	movq	1088(%rsp), %rcx        # 8-byte Reload
+	movq	1176(%rsp), %r8         # 8-byte Reload
+	movq	1088(%rsp), %r9         # 8-byte Reload
+	movq	1072(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	1008(%rsp), %rdi        # 8-byte Reload
+	movq	1000(%rsp), %rsi        # 8-byte Reload
+	movq	1088(%rsp), %rdx        # 8-byte Reload
+	movq	1088(%rsp), %rcx        # 8-byte Reload
+	movq	1176(%rsp), %r8         # 8-byte Reload
+	movq	1088(%rsp), %r9         # 8-byte Reload
+	movq	1072(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	1064(%rsp), %rdi        # 8-byte Reload
+	movq	1080(%rsp), %rsi        # 8-byte Reload
+	movq	1088(%rsp), %rdx        # 8-byte Reload
+	movq	1088(%rsp), %rcx        # 8-byte Reload
+	movq	1176(%rsp), %r8         # 8-byte Reload
+	movq	1088(%rsp), %r9         # 8-byte Reload
+	movq	1072(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-	movq	504(%rsp), %rdi         # 8-byte Reload
-	movq	544(%rsp), %rsi         # 8-byte Reload
-	movq	1144(%rsp), %rdx        # 8-byte Reload
-	movq	552(%rsp), %rcx         # 8-byte Reload
-	movq	464(%rsp), %r8          # 8-byte Reload
-	movq	528(%rsp), %r9          # 8-byte Reload
-	movq	480(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
+	movq	1104(%rsp), %rdi        # 8-byte Reload
+	movq	1080(%rsp), %rsi        # 8-byte Reload
+	movq	1088(%rsp), %rdx        # 8-byte Reload
+	movq	1088(%rsp), %rcx        # 8-byte Reload
+	movq	1176(%rsp), %r8         # 8-byte Reload
+	movq	1088(%rsp), %r9         # 8-byte Reload
+	movq	1072(%rsp), %r10        # 8-byte Reload
+	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-	movq	472(%rsp), %rdi         # 8-byte Reload
-	movq	592(%rsp), %rsi         # 8-byte Reload
-	movq	488(%rsp), %rdx         # 8-byte Reload
-	movq	528(%rsp), %rcx         # 8-byte Reload
-	movq	496(%rsp), %r8          # 8-byte Reload
-	movq	528(%rsp), %r9          # 8-byte Reload
-	movq	480(%rsp), %rax         # 8-byte Reload
+	xorl	%eax, %eax
+	movl	%eax, %ecx
+	movl	$10, %edi
+	movl	%eax, %esi
+	movq	%rcx, %rdx
+	callq	kiss_fft_alloc
+	movabsq	$1, %rcx
+	leaq	.L.str41, %rdx
+	movabsq	$0, %r8
+	leaq	.L.str8, %r9
+	movabsq	$2, %r10
+	leaq	.L.str109, %r11
+	movabsq	$3, %rbx
+	leaq	.L.str113, %r14
+	movabsq	$69, %r15
+	leaq	.L.str94, %r12
+	leaq	.L.str112, %r13
+	movl	$0, %esi
+	movl	$1, %edi
+	movabsq	$19134, %rbp            # imm = 0x4ABE
+	movq	%rax, 992(%rsp)         # 8-byte Spill
+	movabsq	$64, %rax
+	movq	%rax, 984(%rsp)         # 8-byte Spill
+	leaq	.L.str30, %rax
+	movq	%rax, 976(%rsp)         # 8-byte Spill
+	movabsq	$15, %rax
+	movq	%rax, 968(%rsp)         # 8-byte Spill
+	leaq	.L.str7, %rax
+	movq	%rax, 960(%rsp)         # 8-byte Spill
+	movabsq	$46, %rax
+	movq	%rax, 952(%rsp)         # 8-byte Spill
+	leaq	.L.str29, %rax
+	movq	%rax, 944(%rsp)         # 8-byte Spill
+	movabsq	$8, %rax
+	movq	%rax, 936(%rsp)         # 8-byte Spill
+	leaq	.L.str44, %rax
+	movq	%rax, 928(%rsp)         # 8-byte Spill
+	leaq	.L.str60, %rax
+	movq	%rax, 920(%rsp)         # 8-byte Spill
+	movabsq	$71, %rax
+	movq	%rax, 912(%rsp)         # 8-byte Spill
+	leaq	.L.str111, %rax
+	movq	%rax, 904(%rsp)         # 8-byte Spill
+	movabsq	$28, %rax
+	movq	%rax, 896(%rsp)         # 8-byte Spill
+	leaq	2640(%rsp), %rax
+	movq	%rax, 888(%rsp)         # 8-byte Spill
+	leaq	.L.str69, %rax
+	movq	%rax, 880(%rsp)         # 8-byte Spill
+	movabsq	$29, %rax
+	movl	%edi, 876(%rsp)         # 4-byte Spill
+	movq	%rbp, %rdi
+	movq	%rax, 864(%rsp)         # 8-byte Spill
+	movq	984(%rsp), %rax         # 8-byte Reload
+	movl	%esi, 860(%rsp)         # 4-byte Spill
+	movq	%rax, %rsi
+	movq	992(%rsp), %rax         # 8-byte Reload
+	movq	%rdx, 848(%rsp)         # 8-byte Spill
+	movq	%rax, %rdx
+	movq	%rcx, 840(%rsp)         # 8-byte Spill
+	movq	928(%rsp), %rax         # 8-byte Reload
+	movq	%r8, 832(%rsp)          # 8-byte Spill
+	movq	%rax, %r8
+	movq	832(%rsp), %rax         # 8-byte Reload
+	movq	%r9, 824(%rsp)          # 8-byte Spill
+	movq	%rax, %r9
+	movq	824(%rsp), %rax         # 8-byte Reload
+	movq	%rax, (%rsp)
+	movq	%r13, 816(%rsp)         # 8-byte Spill
+	movq	%rbp, 808(%rsp)         # 8-byte Spill
+	movq	%r12, 800(%rsp)         # 8-byte Spill
+	movq	%r15, 792(%rsp)         # 8-byte Spill
+	movq	%r10, 784(%rsp)         # 8-byte Spill
+	movq	%r11, 776(%rsp)         # 8-byte Spill
+	movq	%rbx, 768(%rsp)         # 8-byte Spill
+	movq	%r14, 760(%rsp)         # 8-byte Spill
+	callq	trace_logger_log_ptr
+	movq	912(%rsp), %rdi         # 8-byte Reload
+	movq	800(%rsp), %rsi         # 8-byte Reload
+	movq	776(%rsp), %rdx         # 8-byte Reload
+	movq	920(%rsp), %rcx         # 8-byte Reload
+	movq	864(%rsp), %r8          # 8-byte Reload
+	movl	860(%rsp), %r9d         # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	768(%rsp), %rdi         # 8-byte Reload
+	movq	984(%rsp), %rsi         # 8-byte Reload
+	movq	1208(%rsp), %rdx        # 8-byte Reload
+	movq	840(%rsp), %rcx         # 8-byte Reload
+	movq	944(%rsp), %r8          # 8-byte Reload
+	movq	832(%rsp), %r9          # 8-byte Reload
+	movq	824(%rsp), %rax         # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
-	movq	568(%rsp), %rdi         # 8-byte Reload
-	movq	544(%rsp), %rsi         # 8-byte Reload
-	movq	648(%rsp), %rdx         # 8-byte Reload
-	movq	552(%rsp), %rcx         # 8-byte Reload
-	movq	536(%rsp), %r8          # 8-byte Reload
-	movq	528(%rsp), %r9          # 8-byte Reload
-	movq	480(%rsp), %rax         # 8-byte Reload
+	movq	784(%rsp), %rdi         # 8-byte Reload
+	movq	984(%rsp), %rsi         # 8-byte Reload
+	movq	832(%rsp), %rdx         # 8-byte Reload
+	movq	832(%rsp), %rcx         # 8-byte Reload
+	movq	960(%rsp), %r8          # 8-byte Reload
+	movq	832(%rsp), %r9          # 8-byte Reload
+	movq	824(%rsp), %rax         # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	840(%rsp), %rdi         # 8-byte Reload
+	movq	984(%rsp), %rsi         # 8-byte Reload
+	movq	888(%rsp), %rdx         # 8-byte Reload
+	movq	840(%rsp), %rcx         # 8-byte Reload
+	movq	880(%rsp), %r8          # 8-byte Reload
+	movq	832(%rsp), %r9          # 8-byte Reload
+	movq	824(%rsp), %rax         # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
-	movl	$10, %edx
-	movq	1296(%rsp), %rdi        # 8-byte Reload
-	movq	1144(%rsp), %rsi        # 8-byte Reload
-	movq	648(%rsp), %rcx         # 8-byte Reload
-	callq	process_data
-.Ltmp89:
-	movabsq	$3, %rdi
-	movabsq	$32, %rsi
-	movabsq	$10, %rdx
-	movabsq	$0, %rax
-	leaq	.L.str8, %r8
-	leaq	.L.str9, %rcx
-	movabsq	$2, %r9
-	movabsq	$64, %r10
-	movabsq	$1, %r11
-	leaq	.L.str21, %rbx
-	leaq	.L.str17, %r14
-	movabsq	$4, %r15
-	leaq	test_stores, %r12
-	leaq	.L.str5, %r13
-	movabsq	$77, %rbp
-	movq	%rax, 456(%rsp)         # 8-byte Spill
-	leaq	.L.str65, %rax
-	movq	%rax, 448(%rsp)         # 8-byte Spill
-	leaq	.L.str72, %rax
-	movq	%rax, 440(%rsp)         # 8-byte Spill
-	leaq	.L.str30, %rax
-	movq	%rax, 432(%rsp)         # 8-byte Spill
-	movabsq	$49, %rax
-	movq	%rsi, 424(%rsp)         # 8-byte Spill
-	movl	$0, %esi
-	movl	%esi, 420(%rsp)         # 4-byte Spill
-	movl	$1, %esi
-	.loc	1 77 0                  # feature_extraction.c:77:0
-	movq	%rdi, 408(%rsp)         # 8-byte Spill
-	movq	%rbp, %rdi
-	movq	448(%rsp), %rbp         # 8-byte Reload
-	movl	%esi, 404(%rsp)         # 4-byte Spill
-	movq	%rbp, %rsi
-	movq	440(%rsp), %rbp         # 8-byte Reload
-	movq	%rdx, 392(%rsp)         # 8-byte Spill
-	movq	%rbp, %rdx
-	movq	432(%rsp), %rbp         # 8-byte Reload
-	movq	%rcx, 384(%rsp)         # 8-byte Spill
-	movq	%rbp, %rcx
-	movq	%r8, 376(%rsp)          # 8-byte Spill
-	movq	%rax, %r8
-	movl	420(%rsp), %ebp         # 4-byte Reload
-	movq	%r9, 368(%rsp)          # 8-byte Spill
-	movl	%ebp, %r9d
+	movq	1208(%rsp), %rax        # 8-byte Reload
+	shlq	$3, %rax
+	movq	888(%rsp), %rcx         # 8-byte Reload
+	addq	%rax, %rcx
+	movq	808(%rsp), %rdi         # 8-byte Reload
+	movq	984(%rsp), %rsi         # 8-byte Reload
+	movq	%rcx, %rdx
+	movq	840(%rsp), %rax         # 8-byte Reload
+	movq	%rcx, 752(%rsp)         # 8-byte Spill
+	movq	%rax, %rcx
+	movq	920(%rsp), %r8          # 8-byte Reload
+	movq	832(%rsp), %r9          # 8-byte Reload
+	movq	824(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	912(%rsp), %rdi         # 8-byte Reload
+	movq	800(%rsp), %rsi         # 8-byte Reload
+	movq	776(%rsp), %rdx         # 8-byte Reload
+	movq	904(%rsp), %rcx         # 8-byte Reload
+	movq	896(%rsp), %r8          # 8-byte Reload
+	movl	860(%rsp), %r9d         # 4-byte Reload
 	movl	$1, (%rsp)
-	movq	%r13, 360(%rsp)         # 8-byte Spill
-	movq	%r12, 352(%rsp)         # 8-byte Spill
-	movq	%r14, 344(%rsp)         # 8-byte Spill
-	movq	%rbx, 336(%rsp)         # 8-byte Spill
-	movq	%r15, 328(%rsp)         # 8-byte Spill
-	movq	%r11, 320(%rsp)         # 8-byte Spill
-	movq	%r10, 312(%rsp)         # 8-byte Spill
 	callq	trace_logger_log0
-	movq	328(%rsp), %rdi         # 8-byte Reload
-	movq	312(%rsp), %rsi         # 8-byte Reload
-	movq	352(%rsp), %rdx         # 8-byte Reload
-	movq	320(%rsp), %rcx         # 8-byte Reload
-	movq	360(%rsp), %r8          # 8-byte Reload
-	movq	456(%rsp), %r9          # 8-byte Reload
-	movq	384(%rsp), %rax         # 8-byte Reload
+	movq	784(%rsp), %rdi         # 8-byte Reload
+	movq	984(%rsp), %rsi         # 8-byte Reload
+	movq	752(%rsp), %rdx         # 8-byte Reload
+	movq	840(%rsp), %rcx         # 8-byte Reload
+	movq	920(%rsp), %r8          # 8-byte Reload
+	movq	832(%rsp), %r9          # 8-byte Reload
+	movq	824(%rsp), %rax         # 8-byte Reload
 	movq	%rax, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	840(%rsp), %rdi         # 8-byte Reload
+	movq	984(%rsp), %rsi         # 8-byte Reload
+	movq	992(%rsp), %rdx         # 8-byte Reload
+	movq	840(%rsp), %rcx         # 8-byte Reload
+	movq	928(%rsp), %r8          # 8-byte Reload
+	movq	832(%rsp), %r9          # 8-byte Reload
+	movq	824(%rsp), %rax         # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	1208(%rsp), %rax        # 8-byte Reload
+	movq	992(%rsp), %rcx         # 8-byte Reload
+	movq	%rcx, 2640(%rsp,%rax,8)
+.Ltmp108:
+	.loc	1 69 0                  # feature_extraction.c:69:0
+	movq	792(%rsp), %rdi         # 8-byte Reload
+	movq	800(%rsp), %rsi         # 8-byte Reload
+	movq	776(%rsp), %rdx         # 8-byte Reload
+	movq	976(%rsp), %rcx         # 8-byte Reload
+	movq	936(%rsp), %r8          # 8-byte Reload
+	movl	860(%rsp), %r9d         # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	784(%rsp), %rdi         # 8-byte Reload
+	movq	984(%rsp), %rsi         # 8-byte Reload
+	movq	840(%rsp), %rdx         # 8-byte Reload
+	movq	832(%rsp), %rcx         # 8-byte Reload
+	movq	960(%rsp), %r8          # 8-byte Reload
+	movq	832(%rsp), %r9          # 8-byte Reload
+	movq	824(%rsp), %rax         # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	840(%rsp), %rdi         # 8-byte Reload
+	movq	984(%rsp), %rsi         # 8-byte Reload
+	movq	1208(%rsp), %rdx        # 8-byte Reload
+	movq	840(%rsp), %rcx         # 8-byte Reload
+	movq	944(%rsp), %r8          # 8-byte Reload
+	movq	832(%rsp), %r9          # 8-byte Reload
+	movq	824(%rsp), %rax         # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	1208(%rsp), %rax        # 8-byte Reload
+	addq	$1, %rax
+	movq	808(%rsp), %rdi         # 8-byte Reload
+	movq	984(%rsp), %rsi         # 8-byte Reload
+	movq	%rax, %rdx
+	movq	840(%rsp), %rcx         # 8-byte Reload
+	movq	976(%rsp), %r8          # 8-byte Reload
+	movq	832(%rsp), %r9          # 8-byte Reload
+	movq	824(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	movq	%rax, 744(%rsp)         # 8-byte Spill
+	callq	trace_logger_log_int
+	movq	792(%rsp), %rdi         # 8-byte Reload
+	movq	800(%rsp), %rsi         # 8-byte Reload
+	movq	776(%rsp), %rdx         # 8-byte Reload
+	movq	848(%rsp), %rcx         # 8-byte Reload
+	movq	952(%rsp), %r8          # 8-byte Reload
+	movl	860(%rsp), %r9d         # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	784(%rsp), %rdi         # 8-byte Reload
+	movq	984(%rsp), %rsi         # 8-byte Reload
+	movq	968(%rsp), %rdx         # 8-byte Reload
+	movq	832(%rsp), %rcx         # 8-byte Reload
+	movq	960(%rsp), %r8          # 8-byte Reload
+	movq	832(%rsp), %r9          # 8-byte Reload
+	movq	824(%rsp), %rax         # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	840(%rsp), %rdi         # 8-byte Reload
+	movq	984(%rsp), %rsi         # 8-byte Reload
+	movq	744(%rsp), %rdx         # 8-byte Reload
+	movq	840(%rsp), %rcx         # 8-byte Reload
+	movq	976(%rsp), %r8          # 8-byte Reload
+	movq	832(%rsp), %r9          # 8-byte Reload
+	movq	824(%rsp), %rax         # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_int
+	movq	744(%rsp), %rax         # 8-byte Reload
+	cmpq	$15, %rax
+	sete	%al
+	movb	%al, %cl
+	andb	$1, %cl
+	movzbl	%cl, %ecx
+	movl	%ecx, %edx
+	movq	808(%rsp), %rdi         # 8-byte Reload
+	movq	840(%rsp), %rsi         # 8-byte Reload
+	movq	840(%rsp), %rcx         # 8-byte Reload
+	movq	848(%rsp), %r8          # 8-byte Reload
+	movq	832(%rsp), %r9          # 8-byte Reload
+	movq	824(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	movb	%al, 743(%rsp)          # 1-byte Spill
+	callq	trace_logger_log_int
+	movq	792(%rsp), %rdi         # 8-byte Reload
+	movq	800(%rsp), %rsi         # 8-byte Reload
+	movq	776(%rsp), %rdx         # 8-byte Reload
+	movq	816(%rsp), %rcx         # 8-byte Reload
+	movq	784(%rsp), %r8          # 8-byte Reload
+	movl	860(%rsp), %r9d         # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	768(%rsp), %rdi         # 8-byte Reload
+	movq	832(%rsp), %rsi         # 8-byte Reload
+	movq	832(%rsp), %rdx         # 8-byte Reload
+	movq	840(%rsp), %rcx         # 8-byte Reload
+	movq	760(%rsp), %r8          # 8-byte Reload
+	movq	832(%rsp), %r9          # 8-byte Reload
+	movq	824(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	784(%rsp), %rdi         # 8-byte Reload
+	movq	832(%rsp), %rsi         # 8-byte Reload
+	movq	832(%rsp), %rdx         # 8-byte Reload
+	movq	840(%rsp), %rcx         # 8-byte Reload
+	movq	776(%rsp), %r8          # 8-byte Reload
+	movq	832(%rsp), %r9          # 8-byte Reload
+	movq	824(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movb	743(%rsp), %al          # 1-byte Reload
+	andb	$1, %al
+	movzbl	%al, %eax
+	movl	%eax, %edx
+	movq	840(%rsp), %rdi         # 8-byte Reload
+	movq	840(%rsp), %rsi         # 8-byte Reload
+	movq	840(%rsp), %rcx         # 8-byte Reload
+	movq	848(%rsp), %r8          # 8-byte Reload
+	movq	832(%rsp), %r9          # 8-byte Reload
+	movq	824(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movb	743(%rsp), %al          # 1-byte Reload
+	testb	$1, %al
+	movq	744(%rsp), %rcx         # 8-byte Reload
+	movq	%rcx, 1216(%rsp)        # 8-byte Spill
+	jne	.LBB2_6
+	jmp	.LBB2_5
+.Ltmp109:
+.LBB2_6:
+	movl	$10, %edx
+	movl	$15, %ecx
+	movabsq	$5, %rdi
+	movabsq	$64, %rax
+	movabsq	$1, %rsi
+	leaq	.L.str65, %r8
+	movabsq	$0, %r9
+	leaq	.L.str8, %r10
+	movabsq	$4, %r11
+	movabsq	$32, %rbx
+	movabsq	$15, %r14
+	leaq	.L.str7, %r15
+	movabsq	$3, %r12
+	movabsq	$10, %r13
+	movabsq	$2, %rbp
+	movq	%rax, 728(%rsp)         # 8-byte Spill
+	leaq	.L.str24, %rax
+	movq	%rax, 720(%rsp)         # 8-byte Spill
+	leaq	.L.str13, %rax
+	movq	%rax, 712(%rsp)         # 8-byte Spill
+	movabsq	$6, %rax
+	movq	%rax, 704(%rsp)         # 8-byte Spill
+	leaq	process_data, %rax
+	movq	%rax, 696(%rsp)         # 8-byte Spill
+	leaq	.L.str50, %rax
+	movq	%rax, 688(%rsp)         # 8-byte Spill
+	movabsq	$74, %rax
+	movq	%rax, 680(%rsp)         # 8-byte Spill
+	leaq	.L.str94, %rax
+	movq	%rax, 672(%rsp)         # 8-byte Spill
+	leaq	.L.str113, %rax
+	movq	%rax, 664(%rsp)         # 8-byte Spill
+	leaq	.L.str114, %rax
+	movq	%rax, 656(%rsp)         # 8-byte Spill
+	movabsq	$49, %rax
+	movl	%ecx, 652(%rsp)         # 4-byte Spill
+	movl	$0, %ecx
+	movl	%ecx, 648(%rsp)         # 4-byte Spill
+	movl	$1, %ecx
+	movq	%rax, 640(%rsp)         # 8-byte Spill
+	movabsq	$19134, %rax            # imm = 0x4ABE
+	movq	%rax, 632(%rsp)         # 8-byte Spill
+	leaq	2640(%rsp), %rax
+	movq	%rax, 624(%rsp)         # 8-byte Spill
+	leaq	.L.str69, %rax
+	movq	%rax, 616(%rsp)         # 8-byte Spill
+	movabsq	$29, %rax
+	.loc	1 74 0                  # feature_extraction.c:74:0
+	movq	%rax, 608(%rsp)         # 8-byte Spill
+	movq	680(%rsp), %rax         # 8-byte Reload
+	movq	%rdi, 600(%rsp)         # 8-byte Spill
+	movq	%rax, %rdi
+	movq	672(%rsp), %rax         # 8-byte Reload
+	movq	%rsi, 592(%rsp)         # 8-byte Spill
+	movq	%rax, %rsi
+	movq	664(%rsp), %rax         # 8-byte Reload
+	movl	%edx, 588(%rsp)         # 4-byte Spill
+	movq	%rax, %rdx
+	movl	%ecx, 584(%rsp)         # 4-byte Spill
+	movq	%r8, %rcx
+	movq	608(%rsp), %rax         # 8-byte Reload
+	movq	%r8, 576(%rsp)          # 8-byte Spill
+	movq	%rax, %r8
+	movl	648(%rsp), %eax         # 4-byte Reload
+	movq	%r9, 568(%rsp)          # 8-byte Spill
+	movl	%eax, %r9d
+	movl	$1, (%rsp)
+	movq	%r12, 560(%rsp)         # 8-byte Spill
+	movq	%r15, 552(%rsp)         # 8-byte Spill
+	movq	%rbp, 544(%rsp)         # 8-byte Spill
+	movq	%r13, 536(%rsp)         # 8-byte Spill
+	movq	%r14, 528(%rsp)         # 8-byte Spill
+	movq	%rbx, 520(%rsp)         # 8-byte Spill
+	movq	%r10, 512(%rsp)         # 8-byte Spill
+	movq	%r11, 504(%rsp)         # 8-byte Spill
+	callq	trace_logger_log0
+	movq	560(%rsp), %rdi         # 8-byte Reload
+	movq	728(%rsp), %rsi         # 8-byte Reload
+	movq	568(%rsp), %rdx         # 8-byte Reload
+	movq	568(%rsp), %rcx         # 8-byte Reload
+	movq	552(%rsp), %r8          # 8-byte Reload
+	movq	568(%rsp), %r9          # 8-byte Reload
+	movq	512(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	544(%rsp), %rdi         # 8-byte Reload
+	movq	728(%rsp), %rsi         # 8-byte Reload
+	movq	568(%rsp), %rdx         # 8-byte Reload
+	movq	568(%rsp), %rcx         # 8-byte Reload
+	movq	552(%rsp), %r8          # 8-byte Reload
+	movq	568(%rsp), %r9          # 8-byte Reload
+	movq	512(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	592(%rsp), %rdi         # 8-byte Reload
+	movq	728(%rsp), %rsi         # 8-byte Reload
+	movq	624(%rsp), %rdx         # 8-byte Reload
+	movq	592(%rsp), %rcx         # 8-byte Reload
+	movq	616(%rsp), %r8          # 8-byte Reload
+	movq	568(%rsp), %r9          # 8-byte Reload
+	movq	512(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	632(%rsp), %rdi         # 8-byte Reload
+	movq	728(%rsp), %rsi         # 8-byte Reload
+	movq	624(%rsp), %rdx         # 8-byte Reload
+	movq	592(%rsp), %rcx         # 8-byte Reload
+	movq	576(%rsp), %r8          # 8-byte Reload
+	movq	568(%rsp), %r9          # 8-byte Reload
+	movq	512(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	680(%rsp), %rdi         # 8-byte Reload
+	movq	672(%rsp), %rsi         # 8-byte Reload
+	movq	664(%rsp), %rdx         # 8-byte Reload
+	movq	656(%rsp), %rcx         # 8-byte Reload
+	movq	640(%rsp), %r8          # 8-byte Reload
+	movl	648(%rsp), %r9d         # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	704(%rsp), %rdi         # 8-byte Reload
+	movq	728(%rsp), %rsi         # 8-byte Reload
+	movq	696(%rsp), %rdx         # 8-byte Reload
+	movq	592(%rsp), %rcx         # 8-byte Reload
+	movq	688(%rsp), %r8          # 8-byte Reload
+	movq	568(%rsp), %r9          # 8-byte Reload
+	movq	512(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	592(%rsp), %rdi         # 8-byte Reload
+	movq	728(%rsp), %rsi         # 8-byte Reload
+	movq	2280(%rsp), %rdx        # 8-byte Reload
+	movq	592(%rsp), %rcx         # 8-byte Reload
+	movq	712(%rsp), %r8          # 8-byte Reload
+	movq	568(%rsp), %r9          # 8-byte Reload
+	movq	512(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	544(%rsp), %rdi         # 8-byte Reload
+	movq	728(%rsp), %rsi         # 8-byte Reload
+	movq	2128(%rsp), %rdx        # 8-byte Reload
+	movq	592(%rsp), %rcx         # 8-byte Reload
+	movq	720(%rsp), %r8          # 8-byte Reload
+	movq	568(%rsp), %r9          # 8-byte Reload
+	movq	512(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	560(%rsp), %rdi         # 8-byte Reload
+	movq	520(%rsp), %rsi         # 8-byte Reload
+	movq	536(%rsp), %rdx         # 8-byte Reload
+	movq	568(%rsp), %rcx         # 8-byte Reload
+	movq	552(%rsp), %r8          # 8-byte Reload
+	movq	568(%rsp), %r9          # 8-byte Reload
+	movq	512(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	504(%rsp), %rdi         # 8-byte Reload
+	movq	520(%rsp), %rsi         # 8-byte Reload
+	movq	528(%rsp), %rdx         # 8-byte Reload
+	movq	568(%rsp), %rcx         # 8-byte Reload
+	movq	552(%rsp), %r8          # 8-byte Reload
+	movq	568(%rsp), %r9          # 8-byte Reload
+	movq	512(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	600(%rsp), %rdi         # 8-byte Reload
+	movq	728(%rsp), %rsi         # 8-byte Reload
+	movq	624(%rsp), %rdx         # 8-byte Reload
+	movq	592(%rsp), %rcx         # 8-byte Reload
+	movq	576(%rsp), %r8          # 8-byte Reload
+	movq	568(%rsp), %r9          # 8-byte Reload
+	movq	512(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	2280(%rsp), %rdi        # 8-byte Reload
+	movq	2128(%rsp), %rsi        # 8-byte Reload
+	movl	588(%rsp), %edx         # 4-byte Reload
+	movl	652(%rsp), %ecx         # 4-byte Reload
+	movq	624(%rsp), %r8          # 8-byte Reload
+	callq	process_data
+	movabsq	$4, %rdi
+	movabsq	$32, %rsi
+	movabsq	$15, %rdx
+	movabsq	$0, %r8
+	leaq	.L.str7, %r9
+	leaq	.L.str8, %r10
+	movabsq	$3, %r11
+	movabsq	$10, %rbx
+	movabsq	$2, %r14
+	movabsq	$64, %r15
+	movabsq	$1, %r12
+	leaq	.L.str24, %r13
+                                        # implicit-def: RBP
+	movabsq	$5, %rax
+	leaq	test_stores, %rcx
+	movq	%rax, 496(%rsp)         # 8-byte Spill
+	leaq	.L.str4, %rax
+	movq	%rax, 488(%rsp)         # 8-byte Spill
+	movabsq	$88, %rax
+	movq	%rax, 480(%rsp)         # 8-byte Spill
+	leaq	.L.str94, %rax
+	movq	%rax, 472(%rsp)         # 8-byte Spill
+	leaq	.L.str113, %rax
+	movq	%rax, 464(%rsp)         # 8-byte Spill
+	leaq	.L.str68, %rax
+	movq	%rax, 456(%rsp)         # 8-byte Spill
+	movabsq	$49, %rax
+	movq	%rsi, 448(%rsp)         # 8-byte Spill
+	movl	$0, %esi
+	movl	%esi, 444(%rsp)         # 4-byte Spill
+	movl	$1, %esi
+	.loc	1 88 0                  # feature_extraction.c:88:0
+	movq	%rax, 432(%rsp)         # 8-byte Spill
+	movq	480(%rsp), %rax         # 8-byte Reload
+	movq	%rdi, 424(%rsp)         # 8-byte Spill
+	movq	%rax, %rdi
+	movq	472(%rsp), %rax         # 8-byte Reload
+	movl	%esi, 420(%rsp)         # 4-byte Spill
+	movq	%rax, %rsi
+	movq	464(%rsp), %rax         # 8-byte Reload
+	movq	%rdx, 408(%rsp)         # 8-byte Spill
+	movq	%rax, %rdx
+	movq	456(%rsp), %rax         # 8-byte Reload
+	movq	%rcx, 400(%rsp)         # 8-byte Spill
+	movq	%rax, %rcx
+	movq	432(%rsp), %rax         # 8-byte Reload
+	movq	%r8, 392(%rsp)          # 8-byte Spill
+	movq	%rax, %r8
+	movl	444(%rsp), %eax         # 4-byte Reload
+	movq	%r9, 384(%rsp)          # 8-byte Spill
+	movl	%eax, %r9d
+	movl	$1, (%rsp)
+	movq	%r13, 376(%rsp)         # 8-byte Spill
+	movq	%rbp, 368(%rsp)         # 8-byte Spill
+	movq	%r12, 360(%rsp)         # 8-byte Spill
+	movq	%r15, 352(%rsp)         # 8-byte Spill
+	movq	%r10, 344(%rsp)         # 8-byte Spill
+	movq	%r11, 336(%rsp)         # 8-byte Spill
+	movq	%rbx, 328(%rsp)         # 8-byte Spill
+	movq	%r14, 320(%rsp)         # 8-byte Spill
+	callq	trace_logger_log0
+	movq	496(%rsp), %rdi         # 8-byte Reload
+	movq	352(%rsp), %rsi         # 8-byte Reload
+	movq	400(%rsp), %rdx         # 8-byte Reload
+	movq	360(%rsp), %rcx         # 8-byte Reload
+	movq	488(%rsp), %r8          # 8-byte Reload
+	movq	392(%rsp), %r9          # 8-byte Reload
+	movq	344(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	360(%rsp), %rdi         # 8-byte Reload
+	movq	352(%rsp), %rsi         # 8-byte Reload
+	movq	368(%rsp), %rdx         # 8-byte Reload
+	movq	392(%rsp), %rcx         # 8-byte Reload
+	movq	384(%rsp), %r8          # 8-byte Reload
+	movq	392(%rsp), %r9          # 8-byte Reload
+	movq	344(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
 	movq	320(%rsp), %rdi         # 8-byte Reload
-	movq	312(%rsp), %rsi         # 8-byte Reload
-	movq	1296(%rsp), %rdx        # 8-byte Reload
-	movq	320(%rsp), %rcx         # 8-byte Reload
-	movq	344(%rsp), %r8          # 8-byte Reload
-	movq	456(%rsp), %r9          # 8-byte Reload
-	movq	384(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	368(%rsp), %rdi         # 8-byte Reload
-	movq	312(%rsp), %rsi         # 8-byte Reload
-	movq	1144(%rsp), %rdx        # 8-byte Reload
-	movq	320(%rsp), %rcx         # 8-byte Reload
-	movq	336(%rsp), %r8          # 8-byte Reload
-	movq	456(%rsp), %r9          # 8-byte Reload
-	movq	384(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	408(%rsp), %rdi         # 8-byte Reload
-	movq	424(%rsp), %rsi         # 8-byte Reload
-	movq	392(%rsp), %rdx         # 8-byte Reload
-	movq	456(%rsp), %rcx         # 8-byte Reload
+	movq	352(%rsp), %rsi         # 8-byte Reload
+	movq	2128(%rsp), %rdx        # 8-byte Reload
+	movq	360(%rsp), %rcx         # 8-byte Reload
 	movq	376(%rsp), %r8          # 8-byte Reload
-	movq	456(%rsp), %r9          # 8-byte Reload
-	movq	384(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
+	movq	392(%rsp), %r9          # 8-byte Reload
+	movq	344(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	336(%rsp), %rdi         # 8-byte Reload
+	movq	448(%rsp), %rsi         # 8-byte Reload
+	movq	328(%rsp), %rdx         # 8-byte Reload
+	movq	392(%rsp), %rcx         # 8-byte Reload
+	movq	384(%rsp), %r8          # 8-byte Reload
+	movq	392(%rsp), %r9          # 8-byte Reload
+	movq	344(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	callq	trace_logger_log_int
+	movq	424(%rsp), %rdi         # 8-byte Reload
+	movq	448(%rsp), %rsi         # 8-byte Reload
+	movq	408(%rsp), %rdx         # 8-byte Reload
+	movq	392(%rsp), %rcx         # 8-byte Reload
+	movq	384(%rsp), %r8          # 8-byte Reload
+	movq	392(%rsp), %r9          # 8-byte Reload
+	movq	344(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
 	movl	$10, %edx
-	movq	1296(%rsp), %rdi        # 8-byte Reload
-	movq	1144(%rsp), %rsi        # 8-byte Reload
+	movl	$15, %ecx
+                                        # implicit-def: RDI
+	movq	2128(%rsp), %rsi        # 8-byte Reload
 	callq	test_stores
 	movabsq	$2, %rdi
-	movabsq	$64, %rcx
-	leaq	.L.str4, %rdx
-	movabsq	$0, %rsi
-	leaq	.L.str8, %r8
-	leaq	.L.str9, %r9
-	movabsq	$1, %r10
-	leaq	.L.str31, %r11
-	movabsq	$3, %rbx
-	leaq	fprintf, %r14
-	leaq	.L.str24, %r15
-	movabsq	$82, %r12
-	leaq	.L.str65, %r13
-	leaq	.L.str72, %rbp
+	movabsq	$64, %rsi
+	leaq	.L.str3, %rdx
+	movabsq	$0, %r8
+	leaq	.L.str7, %r9
+	leaq	.L.str8, %r10
+	movabsq	$1, %r11
+	leaq	.L.str70, %rbx
+	movabsq	$3, %r14
+	leaq	fprintf, %r15
+	leaq	.L.str39, %r12
+	movabsq	$93, %r13
+	leaq	.L.str94, %rbp
+	leaq	.L.str113, %rcx
+	movq	%rcx, 312(%rsp)         # 8-byte Spill
+	leaq	.L.str74, %rcx
 	movq	%rcx, 304(%rsp)         # 8-byte Spill
-	leaq	.L.str32, %rcx
-	movq	%rcx, 296(%rsp)         # 8-byte Spill
 	movabsq	$49, %rcx
-	movl	%eax, 292(%rsp)         # 4-byte Spill
+	movl	%eax, 300(%rsp)         # 4-byte Spill
 	movl	$0, %eax
-	movl	%eax, 288(%rsp)         # 4-byte Spill
+	movl	%eax, 296(%rsp)         # 4-byte Spill
 	movl	$1, %eax
-	movq	%rcx, 280(%rsp)         # 8-byte Spill
+	movq	%rcx, 288(%rsp)         # 8-byte Spill
 	movabsq	$19134, %rcx            # imm = 0x4ABE
-	movq	%rcx, 272(%rsp)         # 8-byte Spill
+	movq	%rcx, 280(%rsp)         # 8-byte Spill
 	leaq	stdout, %rcx
+	movq	%rcx, 272(%rsp)         # 8-byte Spill
+	leaq	.L.str21, %rcx
 	movq	%rcx, 264(%rsp)         # 8-byte Spill
-	leaq	.L.str18, %rcx
+	movabsq	$90, %rcx
 	movq	%rcx, 256(%rsp)         # 8-byte Spill
-	movabsq	$79, %rcx
-	movq	%rcx, 248(%rsp)         # 8-byte Spill
 	movabsq	$27, %rcx
-	movq	%rcx, 240(%rsp)         # 8-byte Spill
+	movq	%rcx, 248(%rsp)         # 8-byte Spill
 	movabsq	$32, %rcx
-	movq	%rcx, 232(%rsp)         # 8-byte Spill
-	leaq	.L.str30, %rcx
-	movl	%eax, 228(%rsp)         # 4-byte Spill
-	movl	292(%rsp), %eax         # 4-byte Reload
+	movq	%rcx, 240(%rsp)         # 8-byte Spill
+	leaq	.L.str68, %rcx
+	movl	%eax, 236(%rsp)         # 4-byte Spill
+	movl	300(%rsp), %eax         # 4-byte Reload
 	movl	%eax, %eax
                                         # kill: RAX<def> EAX<kill>
-	movq	%rax, 216(%rsp)         # 8-byte Spill
-	movq	272(%rsp), %rax         # 8-byte Reload
-	movq	%rdi, 208(%rsp)         # 8-byte Spill
+	movq	%rax, 224(%rsp)         # 8-byte Spill
+	movq	280(%rsp), %rax         # 8-byte Reload
+	movq	%rdi, 216(%rsp)         # 8-byte Spill
 	movq	%rax, %rdi
-	movq	232(%rsp), %rax         # 8-byte Reload
-	movq	%rsi, 200(%rsp)         # 8-byte Spill
+	movq	240(%rsp), %rax         # 8-byte Reload
+	movq	%rsi, 208(%rsp)         # 8-byte Spill
 	movq	%rax, %rsi
-	movq	216(%rsp), %rax         # 8-byte Reload
-	movq	%rdx, 192(%rsp)         # 8-byte Spill
+	movq	224(%rsp), %rax         # 8-byte Reload
+	movq	%rdx, 200(%rsp)         # 8-byte Spill
 	movq	%rax, %rdx
-	movq	%rcx, 184(%rsp)         # 8-byte Spill
-	movq	%r10, %rcx
-	movq	184(%rsp), %rax         # 8-byte Reload
-	movq	%r8, 176(%rsp)          # 8-byte Spill
+	movq	%rcx, 192(%rsp)         # 8-byte Spill
+	movq	%r11, %rcx
+	movq	192(%rsp), %rax         # 8-byte Reload
+	movq	%r8, 184(%rsp)          # 8-byte Spill
 	movq	%rax, %r8
-	movq	200(%rsp), %rax         # 8-byte Reload
-	movq	%r9, 168(%rsp)          # 8-byte Spill
+	movq	184(%rsp), %rax         # 8-byte Reload
+	movq	%r9, 176(%rsp)          # 8-byte Spill
 	movq	%rax, %r9
-	movq	168(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	movq	%rbp, 160(%rsp)         # 8-byte Spill
-	movq	%r15, 152(%rsp)         # 8-byte Spill
-	movq	%r12, 144(%rsp)         # 8-byte Spill
-	movq	%r13, 136(%rsp)         # 8-byte Spill
-	movq	%r14, 128(%rsp)         # 8-byte Spill
-	movq	%rbx, 120(%rsp)         # 8-byte Spill
-	movq	%r10, 112(%rsp)         # 8-byte Spill
-	movq	%r11, 104(%rsp)         # 8-byte Spill
-	callq	trace_logger_log_int
-.Ltmp90:
-	#DEBUG_VALUE: main:num_failures <- 0
-	.loc	1 79 0                  # feature_extraction.c:79:0
-	movq	248(%rsp), %rdi         # 8-byte Reload
-	movq	136(%rsp), %rsi         # 8-byte Reload
-	movq	160(%rsp), %rdx         # 8-byte Reload
-	movq	104(%rsp), %rcx         # 8-byte Reload
-	movq	240(%rsp), %r8          # 8-byte Reload
-	movl	288(%rsp), %r9d         # 4-byte Reload
-	movl	$1, (%rsp)
-	callq	trace_logger_log0
-	movq	112(%rsp), %rdi         # 8-byte Reload
-	movq	304(%rsp), %rsi         # 8-byte Reload
-	movq	264(%rsp), %rdx         # 8-byte Reload
-	movq	112(%rsp), %rcx         # 8-byte Reload
-	movq	256(%rsp), %r8          # 8-byte Reload
-	movq	200(%rsp), %r9          # 8-byte Reload
-	movq	168(%rsp), %rax         # 8-byte Reload
-	movq	%rax, (%rsp)
-	callq	trace_logger_log_ptr
-	movq	stdout, %rax
-.Ltmp91:
-	.loc	1 82 0                  # feature_extraction.c:82:0
-	movq	272(%rsp), %rdi         # 8-byte Reload
-	movq	304(%rsp), %rsi         # 8-byte Reload
-	movq	%rax, %rdx
-	movq	112(%rsp), %rcx         # 8-byte Reload
-	movq	104(%rsp), %r8          # 8-byte Reload
-	movq	200(%rsp), %r9          # 8-byte Reload
-	movq	168(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
-	movq	%rax, 96(%rsp)          # 8-byte Spill
-	callq	trace_logger_log_ptr
-	movq	144(%rsp), %rdi         # 8-byte Reload
-	movq	136(%rsp), %rsi         # 8-byte Reload
-	movq	160(%rsp), %rdx         # 8-byte Reload
-	movq	296(%rsp), %rcx         # 8-byte Reload
-	movq	280(%rsp), %r8          # 8-byte Reload
-	movl	288(%rsp), %r9d         # 4-byte Reload
+	movq	%r12, 168(%rsp)         # 8-byte Spill
+	movq	%rbp, 160(%rsp)         # 8-byte Spill
+	movq	%r13, 152(%rsp)         # 8-byte Spill
+	movq	%r15, 144(%rsp)         # 8-byte Spill
+	movq	%r14, 136(%rsp)         # 8-byte Spill
+	movq	%r10, 128(%rsp)         # 8-byte Spill
+	movq	%r11, 120(%rsp)         # 8-byte Spill
+	movq	%rbx, 112(%rsp)         # 8-byte Spill
+	callq	trace_logger_log_int
+.Ltmp110:
+	#DEBUG_VALUE: main:num_failures <- 0
+	.loc	1 90 0                  # feature_extraction.c:90:0
+	movq	256(%rsp), %rdi         # 8-byte Reload
+	movq	160(%rsp), %rsi         # 8-byte Reload
+	movq	312(%rsp), %rdx         # 8-byte Reload
+	movq	112(%rsp), %rcx         # 8-byte Reload
+	movq	248(%rsp), %r8          # 8-byte Reload
+	movl	296(%rsp), %r9d         # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
 	movq	120(%rsp), %rdi         # 8-byte Reload
-	movq	304(%rsp), %rsi         # 8-byte Reload
-	movq	128(%rsp), %rdx         # 8-byte Reload
-	movq	112(%rsp), %rcx         # 8-byte Reload
-	movq	152(%rsp), %r8          # 8-byte Reload
-	movq	200(%rsp), %r9          # 8-byte Reload
-	movq	168(%rsp), %rax         # 8-byte Reload
+	movq	208(%rsp), %rsi         # 8-byte Reload
+	movq	272(%rsp), %rdx         # 8-byte Reload
+	movq	120(%rsp), %rcx         # 8-byte Reload
+	movq	264(%rsp), %r8          # 8-byte Reload
+	movq	184(%rsp), %r9          # 8-byte Reload
+	movq	128(%rsp), %rax         # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
-	movq	112(%rsp), %rdi         # 8-byte Reload
-	movq	304(%rsp), %rsi         # 8-byte Reload
-	movq	96(%rsp), %rdx          # 8-byte Reload
-	movq	112(%rsp), %rcx         # 8-byte Reload
-	movq	104(%rsp), %r8          # 8-byte Reload
-	movq	200(%rsp), %r9          # 8-byte Reload
-	movq	168(%rsp), %rax         # 8-byte Reload
+	movq	stdout, %rax
+.Ltmp111:
+	.loc	1 93 0                  # feature_extraction.c:93:0
+	movq	280(%rsp), %rdi         # 8-byte Reload
+	movq	208(%rsp), %rsi         # 8-byte Reload
+	movq	%rax, %rdx
+	movq	120(%rsp), %rcx         # 8-byte Reload
+	movq	112(%rsp), %r8          # 8-byte Reload
+	movq	184(%rsp), %r9          # 8-byte Reload
+	movq	128(%rsp), %r10         # 8-byte Reload
+	movq	%r10, (%rsp)
+	movq	%rax, 104(%rsp)         # 8-byte Spill
+	callq	trace_logger_log_ptr
+	movq	152(%rsp), %rdi         # 8-byte Reload
+	movq	160(%rsp), %rsi         # 8-byte Reload
+	movq	312(%rsp), %rdx         # 8-byte Reload
+	movq	304(%rsp), %rcx         # 8-byte Reload
+	movq	288(%rsp), %r8          # 8-byte Reload
+	movl	296(%rsp), %r9d         # 4-byte Reload
+	movl	$1, (%rsp)
+	callq	trace_logger_log0
+	movq	136(%rsp), %rdi         # 8-byte Reload
+	movq	208(%rsp), %rsi         # 8-byte Reload
+	movq	144(%rsp), %rdx         # 8-byte Reload
+	movq	120(%rsp), %rcx         # 8-byte Reload
+	movq	168(%rsp), %r8          # 8-byte Reload
+	movq	184(%rsp), %r9          # 8-byte Reload
+	movq	128(%rsp), %rax         # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
-	movq	208(%rsp), %rdi         # 8-byte Reload
-	movq	304(%rsp), %rsi         # 8-byte Reload
-	movq	192(%rsp), %rdx         # 8-byte Reload
-	movq	200(%rsp), %rcx         # 8-byte Reload
+	movq	120(%rsp), %rdi         # 8-byte Reload
+	movq	208(%rsp), %rsi         # 8-byte Reload
+	movq	104(%rsp), %rdx         # 8-byte Reload
+	movq	120(%rsp), %rcx         # 8-byte Reload
+	movq	112(%rsp), %r8          # 8-byte Reload
+	movq	184(%rsp), %r9          # 8-byte Reload
+	movq	128(%rsp), %rax         # 8-byte Reload
+	movq	%rax, (%rsp)
+	callq	trace_logger_log_ptr
+	movq	216(%rsp), %rdi         # 8-byte Reload
+	movq	208(%rsp), %rsi         # 8-byte Reload
+	movq	200(%rsp), %rdx         # 8-byte Reload
+	movq	184(%rsp), %rcx         # 8-byte Reload
 	movq	176(%rsp), %r8          # 8-byte Reload
-	movq	200(%rsp), %r9          # 8-byte Reload
-	movq	168(%rsp), %rax         # 8-byte Reload
+	movq	184(%rsp), %r9          # 8-byte Reload
+	movq	128(%rsp), %rax         # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
-	movl	$.L.str4, %esi
+	movl	$.L.str3, %esi
                                         # kill: RSI<def> ESI<kill>
 	xorl	%edi, %edi
 	movb	%dil, %al
-	movq	96(%rsp), %rdi          # 8-byte Reload
+	movq	104(%rsp), %rdi         # 8-byte Reload
 	callq	fprintf
 	movl	$0, %esi
 	movabsq	$1, %rcx
 	movabsq	$32, %rdx
 	movabsq	$0, %rdi
-	leaq	.L.str8, %r8
-	leaq	.L.str9, %r9
-	movabsq	$84, %r10
-	leaq	.L.str65, %r11
-	leaq	.L.str72, %rbx
-	leaq	.L.str75, %r14
+	leaq	.L.str7, %r8
+	leaq	.L.str8, %r9
+	movabsq	$95, %r10
+	leaq	.L.str94, %r11
+	leaq	.L.str113, %rbx
+	leaq	.L.str115, %r14
 	movl	$1, %ebp
 	movabsq	$19134, %r15            # imm = 0x4ABE
-	leaq	.L.str32, %r12
-	.loc	1 84 0                  # feature_extraction.c:84:0
+	leaq	.L.str74, %r12
+	.loc	1 94 0                  # feature_extraction.c:94:0
 	movl	%eax, %eax
 	movl	%eax, %r13d
-	movq	%rdi, 88(%rsp)          # 8-byte Spill
+	movq	%rdi, 96(%rsp)          # 8-byte Spill
 	movq	%r15, %rdi
-	movl	%esi, 84(%rsp)          # 4-byte Spill
+	movl	%esi, 92(%rsp)          # 4-byte Spill
 	movq	%rdx, %rsi
-	movq	%rdx, 72(%rsp)          # 8-byte Spill
+	movq	%rdx, 80(%rsp)          # 8-byte Spill
 	movq	%r13, %rdx
-	movq	%rcx, 64(%rsp)          # 8-byte Spill
-	movq	%r8, 56(%rsp)           # 8-byte Spill
+	movq	%rcx, 72(%rsp)          # 8-byte Spill
+	movq	%r8, 64(%rsp)           # 8-byte Spill
 	movq	%r12, %r8
-	movq	88(%rsp), %r15          # 8-byte Reload
-	movq	%r9, 48(%rsp)           # 8-byte Spill
+	movq	96(%rsp), %r15          # 8-byte Reload
+	movq	%r9, 56(%rsp)           # 8-byte Spill
 	movq	%r15, %r9
-	movq	48(%rsp), %r12          # 8-byte Reload
+	movq	56(%rsp), %r12          # 8-byte Reload
 	movq	%r12, (%rsp)
-	movq	%r10, 40(%rsp)          # 8-byte Spill
-	movl	%ebp, 36(%rsp)          # 4-byte Spill
-	movq	%r11, 24(%rsp)          # 8-byte Spill
-	movq	%rbx, 16(%rsp)          # 8-byte Spill
-	movq	%r14, 8(%rsp)           # 8-byte Spill
+	movq	%r10, 48(%rsp)          # 8-byte Spill
+	movl	%ebp, 44(%rsp)          # 4-byte Spill
+	movq	%r11, 32(%rsp)          # 8-byte Spill
+	movq	%rbx, 24(%rsp)          # 8-byte Spill
+	movq	%r14, 16(%rsp)          # 8-byte Spill
 	callq	trace_logger_log_int
-	movq	40(%rsp), %rdi          # 8-byte Reload
-	movq	24(%rsp), %rsi          # 8-byte Reload
-	movq	16(%rsp), %rdx          # 8-byte Reload
-	movq	8(%rsp), %rcx           # 8-byte Reload
-	movq	64(%rsp), %r8           # 8-byte Reload
-	movl	84(%rsp), %r9d          # 4-byte Reload
+	.loc	1 95 0                  # feature_extraction.c:95:0
+	movq	48(%rsp), %rdi          # 8-byte Reload
+	movq	32(%rsp), %rsi          # 8-byte Reload
+	movq	24(%rsp), %rdx          # 8-byte Reload
+	movq	16(%rsp), %rcx          # 8-byte Reload
+	movq	72(%rsp), %r8           # 8-byte Reload
+	movl	92(%rsp), %r9d          # 4-byte Reload
 	movl	$1, (%rsp)
 	callq	trace_logger_log0
-	movq	64(%rsp), %rdi          # 8-byte Reload
-	movq	72(%rsp), %rsi          # 8-byte Reload
-	movq	88(%rsp), %rdx          # 8-byte Reload
-	movq	88(%rsp), %rcx          # 8-byte Reload
-	movq	56(%rsp), %r8           # 8-byte Reload
-	movq	88(%rsp), %r9           # 8-byte Reload
-	movq	48(%rsp), %r10          # 8-byte Reload
+	movq	72(%rsp), %rdi          # 8-byte Reload
+	movq	80(%rsp), %rsi          # 8-byte Reload
+	movq	96(%rsp), %rdx          # 8-byte Reload
+	movq	96(%rsp), %rcx          # 8-byte Reload
+	movq	64(%rsp), %r8           # 8-byte Reload
+	movq	96(%rsp), %r9           # 8-byte Reload
+	movq	56(%rsp), %r10          # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-	movl	84(%rsp), %eax          # 4-byte Reload
-	addq	$1560, %rsp             # imm = 0x618
+	movl	92(%rsp), %eax          # 4-byte Reload
+	addq	$2760, %rsp             # imm = 0xAC8
 	popq	%rbx
 	popq	%r12
 	popq	%r13
@@ -4771,9 +7124,9 @@ main:                                   # @main
 	popq	%r15
 	popq	%rbp
 	ret
-.Ltmp92:
-.Ltmp93:
-	.size	main, .Ltmp93-main
+.Ltmp112:
+.Ltmp113:
+	.size	main, .Ltmp113-main
 .Lfunc_end2:
 	.cfi_endproc
 
@@ -4793,51 +7146,51 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	.loc	2 348 0                 # kiss_fft.c:348:0
 # BB#0:
 	pushq	%rbp
-.Ltmp101:
+.Ltmp121:
 	.cfi_def_cfa_offset 16
 	pushq	%r15
-.Ltmp102:
+.Ltmp122:
 	.cfi_def_cfa_offset 24
 	pushq	%r14
-.Ltmp103:
+.Ltmp123:
 	.cfi_def_cfa_offset 32
 	pushq	%r13
-.Ltmp104:
+.Ltmp124:
 	.cfi_def_cfa_offset 40
 	pushq	%r12
-.Ltmp105:
+.Ltmp125:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
-.Ltmp106:
+.Ltmp126:
 	.cfi_def_cfa_offset 56
 	subq	$3208, %rsp             # imm = 0xC88
-.Ltmp107:
+.Ltmp127:
 	.cfi_def_cfa_offset 3264
-.Ltmp108:
+.Ltmp128:
 	.cfi_offset %rbx, -56
-.Ltmp109:
+.Ltmp129:
 	.cfi_offset %r12, -48
-.Ltmp110:
+.Ltmp130:
 	.cfi_offset %r13, -40
-.Ltmp111:
+.Ltmp131:
 	.cfi_offset %r14, -32
-.Ltmp112:
+.Ltmp132:
 	.cfi_offset %r15, -24
-.Ltmp113:
+.Ltmp133:
 	.cfi_offset %rbp, -16
 	movabsq	$1, %rax
-	leaq	.L.str986, %r8
+	leaq	.L.str9126, %r8
 	movabsq	$0, %r9
-	leaq	.L.str481, %r10
+	leaq	.L.str4121, %r10
 	movabsq	$2, %r11
-	leaq	.L.str1390, %rbx
+	leaq	.L.str13130, %rbx
 	movabsq	$3, %r14
-	leaq	.L.str1289, %r15
+	leaq	.L.str12129, %r15
 	movabsq	$353, %r12              # imm = 0x161
-	leaq	.L.str77, %r13
-	leaq	.L.str178, %rbp
+	leaq	.L.str117, %r13
+	leaq	.L.str1118, %rbp
 	movq	%rax, 3200(%rsp)        # 8-byte Spill
-	leaq	.L.str1188, %rax
+	leaq	.L.str11128, %rax
 	movl	%esi, 3196(%rsp)        # 4-byte Spill
 	movl	$0, %esi
 	movl	%esi, 3192(%rsp)        # 4-byte Spill
@@ -4847,15 +7200,15 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	%rax, 3176(%rsp)        # 8-byte Spill
 	movabsq	$64, %rax
 	movq	%rax, 3168(%rsp)        # 8-byte Spill
-	leaq	.L.str1087, %rax
+	leaq	.L.str10127, %rax
 	movq	%rax, 3160(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 3152(%rsp)        # 8-byte Spill
 	movabsq	$46, %rax
 	movq	%rax, 3144(%rsp)        # 8-byte Spill
-	leaq	.L.str885, %rax
+	leaq	.L.str8125, %rax
 	movq	%rax, 3136(%rsp)        # 8-byte Spill
-	leaq	.L.str784, %rax
+	leaq	.L.str7124, %rax
 	movq	%rax, 3128(%rsp)        # 8-byte Spill
 	movabsq	$272, %rax              # imm = 0x110
 	movq	%rax, 3120(%rsp)        # 8-byte Spill
@@ -4863,27 +7216,27 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	%rax, 3112(%rsp)        # 8-byte Spill
 	movabsq	$8, %rax
 	movq	%rax, 3104(%rsp)        # 8-byte Spill
-	leaq	.L.str683, %rax
+	leaq	.L.str6123, %rax
 	movq	%rax, 3096(%rsp)        # 8-byte Spill
 	movabsq	$20, %rax
 	movq	%rax, 3088(%rsp)        # 8-byte Spill
 	movabsq	$32, %rax
 	movq	%rax, 3080(%rsp)        # 8-byte Spill
-	leaq	.L.str279, %rax
+	leaq	.L.str2119, %rax
 	movq	%rax, 3072(%rsp)        # 8-byte Spill
 	movabsq	$35, %rax
 	movq	%rax, 3064(%rsp)        # 8-byte Spill
-	leaq	.L.str582, %rax
+	leaq	.L.str5122, %rax
 	movq	%rax, 3056(%rsp)        # 8-byte Spill
 	movabsq	$4294967295, %rax       # imm = 0xFFFFFFFF
 	movq	%rax, 3048(%rsp)        # 8-byte Spill
 	movabsq	$24601, %rax            # imm = 0x6019
 	movq	%rax, 3040(%rsp)        # 8-byte Spill
-	leaq	.L.str2097, %rax
+	leaq	.L.str20137, %rax
 	movq	%rax, 3032(%rsp)        # 8-byte Spill
-	leaq	.L.str42119, %rax
+	leaq	.L.str42159, %rax
 	.loc	2 347 0 prologue_end    # kiss_fft.c:347:0
-.Ltmp114:
+.Ltmp134:
 	movl	%esi, 3028(%rsp)        # 4-byte Spill
 	movl	%edi, %esi
                                         # kill: RSI<def> ESI<kill>
@@ -5097,7 +7450,7 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	%r10, (%rsp)
 	movq	%rax, 2872(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_int
-.Ltmp115:
+.Ltmp135:
 	#DEBUG_VALUE: kiss_fft_alloc:memneeded <- [RSP+2872]
 	.loc	2 353 0                 # kiss_fft.c:353:0
 	movq	2960(%rsp), %rdi        # 8-byte Reload
@@ -5184,25 +7537,25 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	testb	$1, %al
 	jne	.LBB3_1
 	jmp	.LBB3_2
-.Ltmp116:
+.Ltmp136:
 .LBB3_1:
 	movabsq	$1, %rax
 	movabsq	$64, %rcx
-	leaq	.L.str885, %r8
+	leaq	.L.str8125, %r8
 	movabsq	$0, %rdx
-	leaq	.L.str481, %rsi
+	leaq	.L.str4121, %rsi
 	movabsq	$2, %rdi
 	leaq	malloc, %r9
-	leaq	.L.str1592, %r10
+	leaq	.L.str15132, %r10
 	movabsq	$354, %r11              # imm = 0x162
-	leaq	.L.str77, %rbx
-	leaq	.L.str1289, %r14
-	leaq	.L.str1491, %r15
+	leaq	.L.str117, %rbx
+	leaq	.L.str12129, %r14
+	leaq	.L.str14131, %r15
 	movabsq	$49, %r12
 	movl	$0, %ebp
 	movl	$1, %r13d
 	.loc	2 354 0                 # kiss_fft.c:354:0
-.Ltmp117:
+.Ltmp137:
 	movq	%rdi, 2856(%rsp)        # 8-byte Spill
 	movq	%r11, %rdi
 	movq	%rsi, 2848(%rsp)        # 8-byte Spill
@@ -5242,20 +7595,20 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	callq	malloc
 	movabsq	$1, %rcx
 	movabsq	$0, %rdx
-	leaq	.L.str1895, %r8
-	leaq	.L.str481, %rsi
+	leaq	.L.str18135, %r8
+	leaq	.L.str4121, %rsi
 	movabsq	$355, %rdi              # imm = 0x163
-	leaq	.L.str77, %r9
-	leaq	.L.str1289, %r10
-	leaq	.L.str1794, %r11
+	leaq	.L.str117, %r9
+	leaq	.L.str12129, %r10
+	leaq	.L.str17134, %r11
 	movabsq	$2, %rbx
 	movl	$0, %ebp
 	movl	$1, %r13d
 	movabsq	$19134, %r14            # imm = 0x4ABE
 	movabsq	$64, %r15
-	leaq	.L.str1693, %r12
+	leaq	.L.str16133, %r12
 	movq	%rax, 2784(%rsp)        # 8-byte Spill
-	leaq	.L.str1491, %rax
+	leaq	.L.str14131, %rax
 	movq	%rax, 2776(%rsp)        # 8-byte Spill
 	movabsq	$354, %rax              # imm = 0x162
 	movq	%rax, 2768(%rsp)        # 8-byte Spill
@@ -5314,7 +7667,7 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	%r10, (%rsp)
 	movq	%rax, 2640(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_ptr
-.Ltmp118:
+.Ltmp138:
 	#DEBUG_VALUE: kiss_fft_alloc:st <- [RSP+2640]
 	.loc	2 355 0                 # kiss_fft.c:355:0
 	movq	2760(%rsp), %rdi        # 8-byte Reload
@@ -5337,33 +7690,33 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	2640(%rsp), %rax        # 8-byte Reload
 	movq	%rax, 2632(%rsp)        # 8-byte Spill
 	jmp	.LBB3_6
-.Ltmp119:
+.Ltmp139:
 .LBB3_2:
 	movabsq	$0, %rax
 	movabsq	$1, %rcx
-	leaq	.L.str1996, %rdx
-	leaq	.L.str481, %rsi
+	leaq	.L.str19136, %rdx
+	leaq	.L.str4121, %rsi
 	movabsq	$2, %rdi
-	leaq	.L.str23100, %r8
+	leaq	.L.str23140, %r8
 	movabsq	$3, %r9
-	leaq	.L.str2299, %r10
+	leaq	.L.str22139, %r10
 	movabsq	$356, %r11              # imm = 0x164
-	leaq	.L.str77, %rbx
-	leaq	.L.str1390, %r14
-	leaq	.L.str2198, %r15
+	leaq	.L.str117, %rbx
+	leaq	.L.str13130, %r14
+	leaq	.L.str21138, %r15
 	movl	$0, %ebp
 	movl	$1, %r12d
 	movabsq	$19134, %r13            # imm = 0x4ABE
 	movq	%rax, 2624(%rsp)        # 8-byte Spill
 	movabsq	$64, %rax
 	movq	%rax, 2616(%rsp)        # 8-byte Spill
-	leaq	.L.str2097, %rax
+	leaq	.L.str20137, %rax
 	movq	%rax, 2608(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 2600(%rsp)        # 8-byte Spill
 	movabsq	$46, %rax
 	.loc	2 356 0                 # kiss_fft.c:356:0
-.Ltmp120:
+.Ltmp140:
 	movq	%rdi, 2592(%rsp)        # 8-byte Spill
 	movq	%r11, %rdi
 	movq	%rsi, 2584(%rsp)        # 8-byte Spill
@@ -5469,29 +7822,29 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 # BB#3:
 	movabsq	$0, %rax
 	movabsq	$1, %rcx
-	leaq	.L.str25102, %rdx
-	leaq	.L.str481, %rsi
+	leaq	.L.str25142, %rdx
+	leaq	.L.str4121, %rsi
 	movabsq	$2, %rdi
-	leaq	.L.str27104, %r8
+	leaq	.L.str27144, %r8
 	movabsq	$3, %r9
-	leaq	.L.str2299, %r10
+	leaq	.L.str22139, %r10
 	movabsq	$356, %r11              # imm = 0x164
-	leaq	.L.str77, %rbx
-	leaq	.L.str23100, %r14
-	leaq	.L.str26103, %r15
+	leaq	.L.str117, %rbx
+	leaq	.L.str23140, %r14
+	leaq	.L.str26143, %r15
 	movl	$0, %ebp
 	movl	$1, %r12d
 	movabsq	$19134, %r13            # imm = 0x4ABE
 	movq	%rax, 2464(%rsp)        # 8-byte Spill
 	movabsq	$64, %rax
 	movq	%rax, 2456(%rsp)        # 8-byte Spill
-	leaq	.L.str24101, %rax
+	leaq	.L.str24141, %rax
 	movq	%rax, 2448(%rsp)        # 8-byte Spill
-	leaq	.L.str885, %rax
+	leaq	.L.str8125, %rax
 	movq	%rax, 2440(%rsp)        # 8-byte Spill
 	movabsq	$46, %rax
 	movq	%rax, 2432(%rsp)        # 8-byte Spill
-	leaq	.L.str1087, %rax
+	leaq	.L.str10127, %rax
 	movq	%rax, 2424(%rsp)        # 8-byte Spill
 	movabsq	$27, %rax
 	movq	%rdi, 2416(%rsp)        # 8-byte Spill
@@ -5630,19 +7983,19 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 # BB#4:
 	movabsq	$1, %rax
 	movabsq	$0, %rcx
-	leaq	.L.str2299, %r8
-	leaq	.L.str481, %rdx
+	leaq	.L.str22139, %r8
+	leaq	.L.str4121, %rdx
 	movabsq	$357, %rsi              # imm = 0x165
-	leaq	.L.str77, %rdi
-	leaq	.L.str27104, %r9
-	leaq	.L.str29106, %r10
+	leaq	.L.str117, %rdi
+	leaq	.L.str27144, %r9
+	leaq	.L.str29146, %r10
 	movabsq	$2, %r11
 	movl	$0, %ebx
 	movl	$1, %ebp
 	movabsq	$19134, %r14            # imm = 0x4ABE
 	movabsq	$64, %r15
-	leaq	.L.str2097, %r12
-	leaq	.L.str28105, %r13
+	leaq	.L.str20137, %r12
+	leaq	.L.str28145, %r13
 	movq	%rax, 2288(%rsp)        # 8-byte Spill
 	movabsq	$44, %rax
 	.loc	2 357 0                 # kiss_fft.c:357:0
@@ -5690,7 +8043,7 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	%r10, (%rsp)
 	movq	%rax, 2168(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_ptr
-.Ltmp121:
+.Ltmp141:
 	#DEBUG_VALUE: kiss_fft_alloc:st <- [RSP+2168]
 	movq	2264(%rsp), %rdi        # 8-byte Reload
 	movq	2280(%rsp), %rsi        # 8-byte Reload
@@ -5711,45 +8064,45 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	callq	trace_logger_log_int
 	movq	2168(%rsp), %rax        # 8-byte Reload
 	movq	%rax, 2472(%rsp)        # 8-byte Spill
-.Ltmp122:
+.Ltmp142:
 .LBB3_5:
 	movq	2472(%rsp), %rax        # 8-byte Reload
 	movabsq	$1, %rcx
 	movabsq	$0, %rdx
-	leaq	.L.str1895, %r8
-	leaq	.L.str481, %rsi
+	leaq	.L.str18135, %r8
+	leaq	.L.str4121, %rsi
 	movabsq	$-1, %rdi
-	leaq	.L.str77, %r9
-	leaq	.L.str2299, %r10
-	leaq	.L.str32109, %r11
+	leaq	.L.str117, %r9
+	leaq	.L.str22139, %r10
+	leaq	.L.str32149, %r11
 	movabsq	$2, %rbx
 	movl	$0, %ebp
 	movl	$1, %r14d
 	movabsq	$64, %r15
-	leaq	.L.str885, %r12
-	leaq	.L.str1087, %r13
+	leaq	.L.str8125, %r12
+	leaq	.L.str10127, %r13
 	movq	%rax, 2160(%rsp)        # 8-byte Spill
 	movabsq	$358, %rax              # imm = 0x166
 	movq	%rax, 2152(%rsp)        # 8-byte Spill
-	leaq	.L.str31108, %rax
+	leaq	.L.str31148, %rax
 	movq	%rax, 2144(%rsp)        # 8-byte Spill
 	movabsq	$28, %rax
 	movq	%rax, 2136(%rsp)        # 8-byte Spill
 	movabsq	$19134, %rax            # imm = 0x4ABE
 	movq	%rax, 2128(%rsp)        # 8-byte Spill
-	leaq	.L.str30107, %rax
+	leaq	.L.str30147, %rax
 	movq	%rax, 2120(%rsp)        # 8-byte Spill
-	leaq	.L.str27104, %rax
+	leaq	.L.str27144, %rax
 	movq	%rax, 2112(%rsp)        # 8-byte Spill
-	leaq	.L.str2097, %rax
+	leaq	.L.str20137, %rax
 	movq	%rax, 2104(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 2096(%rsp)        # 8-byte Spill
-	leaq	.L.str23100, %rax
+	leaq	.L.str23140, %rax
 	movq	%rax, 2088(%rsp)        # 8-byte Spill
 	movabsq	$3, %rax
 	movq	%rax, 2080(%rsp)        # 8-byte Spill
-	leaq	.L.str1390, %rax
+	leaq	.L.str13130, %rax
 	movq	%rax, 2072(%rsp)        # 8-byte Spill
 	movabsq	$48, %rax
 	.loc	2 358 0                 # kiss_fft.c:358:0
@@ -5861,21 +8214,21 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	callq	trace_logger_log_int
 	movq	2160(%rsp), %rax        # 8-byte Reload
 	movq	%rax, 2632(%rsp)        # 8-byte Spill
-.Ltmp123:
+.Ltmp143:
 .LBB3_6:
 	movq	2632(%rsp), %rax        # 8-byte Reload
 	movabsq	$1, %rcx
-	leaq	.L.str34111, %rdx
+	leaq	.L.str34151, %rdx
 	movabsq	$0, %rsi
-	leaq	.L.str481, %rdi
+	leaq	.L.str4121, %rdi
 	movabsq	$2, %r8
-	leaq	.L.str37114, %r9
+	leaq	.L.str37154, %r9
 	movabsq	$3, %r10
-	leaq	.L.str36113, %r11
+	leaq	.L.str36153, %r11
 	movabsq	$360, %rbx              # imm = 0x168
-	leaq	.L.str77, %r14
-	leaq	.L.str1895, %r15
-	leaq	.L.str35112, %r12
+	leaq	.L.str117, %r14
+	leaq	.L.str18135, %r15
+	leaq	.L.str35152, %r12
 	movl	$0, %ebp
 	movl	$1, %r13d
 	movq	%rax, 1944(%rsp)        # 8-byte Spill
@@ -5883,25 +8236,25 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	%rax, 1936(%rsp)        # 8-byte Spill
 	movabsq	$64, %rax
 	movq	%rax, 1928(%rsp)        # 8-byte Spill
-	leaq	.L.str33110, %rax
+	leaq	.L.str33150, %rax
 	movq	%rax, 1920(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 1912(%rsp)        # 8-byte Spill
 	movabsq	$46, %rax
 	movq	%rax, 1904(%rsp)        # 8-byte Spill
-	leaq	.L.str1289, %rax
+	leaq	.L.str12129, %rax
 	movq	%rax, 1896(%rsp)        # 8-byte Spill
-	leaq	.L.str1693, %rax
+	leaq	.L.str16133, %rax
 	movq	%rax, 1888(%rsp)        # 8-byte Spill
-	leaq	.L.str30107, %rax
+	leaq	.L.str30147, %rax
 	movq	%rax, 1880(%rsp)        # 8-byte Spill
-	leaq	.L.str2299, %rax
+	leaq	.L.str22139, %rax
 	movq	%rax, 1872(%rsp)        # 8-byte Spill
 	movabsq	$-1, %rax
 	movq	%rax, 1864(%rsp)        # 8-byte Spill
 	movabsq	$48, %rax
 	.loc	2 360 0                 # kiss_fft.c:360:0
-.Ltmp124:
+.Ltmp144:
 	movq	%rax, 1856(%rsp)        # 8-byte Spill
 	movq	1864(%rsp), %rax        # 8-byte Reload
 	movq	%rdi, 1848(%rsp)        # 8-byte Spill
@@ -6040,52 +8393,52 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	jne	.LBB3_13
 # BB#7:
 	movabsq	$1, %rax
-	leaq	.L.str43120, %rcx
+	leaq	.L.str43160, %rcx
 	movabsq	$0, %rdx
-	leaq	.L.str481, %rsi
+	leaq	.L.str4121, %rsi
 	movabsq	$2, %rdi
-	leaq	.L.str46123, %r8
+	leaq	.L.str46163, %r8
 	movabsq	$3, %r9
-	leaq	.L.str45122, %r10
+	leaq	.L.str45162, %r10
 	movabsq	$365, %r11              # imm = 0x16D
-	leaq	.L.str77, %rbx
-	leaq	.L.str37114, %r14
-	leaq	.L.str44121, %r15
+	leaq	.L.str117, %rbx
+	leaq	.L.str37154, %r14
+	leaq	.L.str44161, %r15
 	movl	$0, %ebp
 	movl	$1, %r12d
 	movabsq	$19134, %r13            # imm = 0x4ABE
 	movq	%rax, 1736(%rsp)        # 8-byte Spill
 	movabsq	$32, %rax
 	movq	%rax, 1728(%rsp)        # 8-byte Spill
-	leaq	.L.str582, %rax
+	leaq	.L.str5122, %rax
 	movq	%rax, 1720(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 1712(%rsp)        # 8-byte Spill
 	movabsq	$46, %rax
 	movq	%rax, 1704(%rsp)        # 8-byte Spill
-	leaq	.L.str42119, %rax
+	leaq	.L.str42159, %rax
 	movq	%rax, 1696(%rsp)        # 8-byte Spill
 	movabsq	$64, %rax
 	movq	%rax, 1688(%rsp)        # 8-byte Spill
-	leaq	.L.str40117, %rax
+	leaq	.L.str40157, %rax
 	movq	%rax, 1680(%rsp)        # 8-byte Spill
 	movabsq	$363, %rax              # imm = 0x16B
 	movq	%rax, 1672(%rsp)        # 8-byte Spill
-	leaq	.L.str41118, %rax
+	leaq	.L.str41158, %rax
 	movq	%rax, 1664(%rsp)        # 8-byte Spill
 	movabsq	$28, %rax
 	movq	%rax, 1656(%rsp)        # 8-byte Spill
-	leaq	.L.str33110, %rax
+	leaq	.L.str33150, %rax
 	movq	%rax, 1648(%rsp)        # 8-byte Spill
 	movabsq	$29, %rax
 	movq	%rax, 1640(%rsp)        # 8-byte Spill
-	leaq	.L.str38115, %rax
+	leaq	.L.str38155, %rax
 	movq	%rax, 1632(%rsp)        # 8-byte Spill
 	movabsq	$362, %rax              # imm = 0x16A
 	movq	%rax, 1624(%rsp)        # 8-byte Spill
-	leaq	.L.str39116, %rax
+	leaq	.L.str39156, %rax
 	.loc	2 362 0                 # kiss_fft.c:362:0
-.Ltmp125:
+.Ltmp145:
 	movq	%rax, 1616(%rsp)        # 8-byte Spill
 	movq	1624(%rsp), %rax        # 8-byte Reload
 	movq	%rdi, 1608(%rsp)        # 8-byte Spill
@@ -6258,7 +8611,7 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	1944(%rsp), %rax        # 8-byte Reload
 	movl	3196(%rsp), %ebp        # 4-byte Reload
 	movl	%ebp, 4(%rax)
-.Ltmp126:
+.Ltmp146:
 	#DEBUG_VALUE: i <- 0
 	.loc	2 365 0                 # kiss_fft.c:365:0
 	movq	1512(%rsp), %rdi        # 8-byte Reload
@@ -6350,29 +8703,29 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 .LBB3_8:                                # %.lr.ph
 	movabsq	$0, %rax
 	movabsq	$1, %rcx
-	leaq	.L.str49126, %r8
-	leaq	.L.str481, %rdx
+	leaq	.L.str49166, %r8
+	leaq	.L.str4121, %rdx
 	movabsq	$365, %rdi              # imm = 0x16D
-	leaq	.L.str77, %rsi
-	leaq	.L.str45122, %r9
-	leaq	.L.str48125, %r10
+	leaq	.L.str117, %rsi
+	leaq	.L.str45162, %r9
+	leaq	.L.str48165, %r10
 	movabsq	$2, %r11
 	movl	$0, %ebx
 	movl	$1, %ebp
 	movabsq	$19134, %r14            # imm = 0x4ABE
 	movabsq	$64, %r15
-	leaq	.L.str47124, %r12
+	leaq	.L.str47164, %r12
 	.loc	2 367 0                 # kiss_fft.c:367:0
-.Ltmp127:
+.Ltmp147:
 	movq	%rsp, %r13
 	movl	$1, (%r13)
-	movl	$.L.str77, %r13d
+	movl	$.L.str117, %r13d
                                         # kill: R13<def> R13D<kill>
 	movq	%rsi, 1488(%rsp)        # 8-byte Spill
-	movl	$.L.str45122, %esi
+	movl	$.L.str45162, %esi
                                         # kill: RSI<def> ESI<kill>
 	movq	%rsi, 1480(%rsp)        # 8-byte Spill
-	movl	$.L.str47124, %esi
+	movl	$.L.str47164, %esi
                                         # kill: RSI<def> ESI<kill>
 	movq	%rsi, 1472(%rsp)        # 8-byte Spill
 	movl	$367, %esi              # imm = 0x16F
@@ -6412,8 +8765,8 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movl	%r9d, %ebx
 	movl	%ebx, %edx
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
-	movl	$.L.str582, %ebx
+	movq	$.L.str4121, (%rax)
+	movl	$.L.str5122, %ebx
 	movl	%ebx, %r8d
 	movl	$32, %ebx
 	movl	%ebx, %esi
@@ -6427,7 +8780,7 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
                                         # implicit-def: XMM0
 	movl	3012(%rsp), %ebx        # 4-byte Reload
 	vcvtsi2sdl	%ebx, %xmm0, %xmm0
-.Ltmp128:
+.Ltmp148:
 	.loc	2 365 0                 # kiss_fft.c:365:0
 	movq	1392(%rsp), %rdi        # 8-byte Reload
 	movq	1376(%rsp), %rsi        # 8-byte Reload
@@ -6459,17 +8812,17 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 .LBB3_9:                                # =>This Inner Loop Header: Depth=1
 	movq	1328(%rsp), %rax        # 8-byte Reload
 	movabsq	$1, %rcx
-	leaq	.L.str58135, %rdx
+	leaq	.L.str58175, %rdx
 	movabsq	$0, %rsi
-	leaq	.L.str481, %rdi
+	leaq	.L.str4121, %rdi
 	movabsq	$2, %r8
-	leaq	.L.str60137, %r9
+	leaq	.L.str60177, %r9
 	movabsq	$3, %r10
-	leaq	.L.str52129, %r11
+	leaq	.L.str52169, %r11
 	movabsq	$368, %rbx              # imm = 0x170
-	leaq	.L.str77, %r14
-	leaq	.L.str49126, %r15
-	leaq	.L.str59136, %r12
+	leaq	.L.str117, %r14
+	leaq	.L.str49166, %r15
+	leaq	.L.str59176, %r12
 	movl	$0, %ebp
 	movl	$1, %r13d
 	movq	%rax, 1320(%rsp)        # 8-byte Spill
@@ -6477,44 +8830,44 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	%rax, 1312(%rsp)        # 8-byte Spill
 	movabsq	$32, %rax
 	movq	%rax, 1304(%rsp)        # 8-byte Spill
-	leaq	.L.str57134, %rax
+	leaq	.L.str57174, %rax
 	movq	%rax, 1296(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 1288(%rsp)        # 8-byte Spill
 	movabsq	$46, %rax
 	movq	%rax, 1280(%rsp)        # 8-byte Spill
 	movabsq	$64, %rax
 	movq	%rax, 1272(%rsp)        # 8-byte Spill
-	leaq	.L.str40117, %rax
+	leaq	.L.str40157, %rax
 	movq	%rax, 1264(%rsp)        # 8-byte Spill
 	movabsq	$27, %rax
 	movq	%rax, 1256(%rsp)        # 8-byte Spill
-	leaq	.L.str56133, %rax
+	leaq	.L.str56173, %rax
 	movq	%rax, 1248(%rsp)        # 8-byte Spill
-	leaq	.L.str55132, %rax
+	leaq	.L.str55172, %rax
 	movq	%rax, 1240(%rsp)        # 8-byte Spill
-	leaq	.L.str47124, %rax
+	leaq	.L.str47164, %rax
 	movq	%rax, 1232(%rsp)        # 8-byte Spill
 	movabsq	$367, %rax              # imm = 0x16F
 	movq	%rax, 1224(%rsp)        # 8-byte Spill
 	movabsq	$16, %rax
 	vmovsd	.LCPI3_0, %xmm0
 	movq	%rax, 1216(%rsp)        # 8-byte Spill
-	leaq	.L.str54131, %rax
+	leaq	.L.str54171, %rax
 	movq	%rax, 1208(%rsp)        # 8-byte Spill
 	movabsq	$13, %rax
 	.loc	2 366 0                 # kiss_fft.c:366:0
-.Ltmp129:
+.Ltmp149:
 	movq	%rax, 1200(%rsp)        # 8-byte Spill
 	movq	%rsp, %rax
 	movl	$1, (%rax)
-	movl	$.L.str77, %eax
+	movl	$.L.str117, %eax
                                         # kill: RAX<def> EAX<kill>
 	movq	%rsi, 1192(%rsp)        # 8-byte Spill
-	movl	$.L.str49126, %esi
+	movl	$.L.str49166, %esi
                                         # kill: RSI<def> ESI<kill>
 	movq	%rsi, 1184(%rsp)        # 8-byte Spill
-	movl	$.L.str50127, %esi
+	movl	$.L.str50167, %esi
                                         # kill: RSI<def> ESI<kill>
 	movq	%rsi, 1176(%rsp)        # 8-byte Spill
 	movl	$48, %esi
@@ -6551,8 +8904,8 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	%rbx, 1048(%rsp)        # 8-byte Spill
 	callq	trace_logger_log0
 	movq	%rsp, %rcx
-	movq	$.L.str52129, (%rcx)
-	movl	$.L.str51128, %eax
+	movq	$.L.str52169, (%rcx)
+	movl	$.L.str51168, %eax
 	movl	%eax, %r8d
 	movl	$2, %eax
 	movl	%eax, %edi
@@ -6571,8 +8924,8 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	%r10, %r9
 	callq	trace_logger_log_int
 	movq	%rsp, %rcx
-	movq	$.L.str45122, (%rcx)
-	movl	$.L.str380, %eax
+	movq	$.L.str45162, (%rcx)
+	movl	$.L.str3120, %eax
 	movl	%eax, %r8d
 	movq	1040(%rsp), %rdi        # 8-byte Reload
 	movq	1024(%rsp), %rsi        # 8-byte Reload
@@ -6581,7 +8934,7 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	1040(%rsp), %r9         # 8-byte Reload
 	callq	trace_logger_log_int
 	movq	%rsp, %rcx
-	movq	$.L.str45122, (%rcx)
+	movq	$.L.str45162, (%rcx)
 	movl	$19134, %eax            # imm = 0x4ABE
 	movl	%eax, %ecx
 	movq	%rcx, %rdi
@@ -6593,12 +8946,12 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	1176(%rsp), %r8         # 8-byte Reload
 	movq	1032(%rsp), %r9         # 8-byte Reload
 	callq	trace_logger_log_int
-.Ltmp130:
+.Ltmp150:
 	#DEBUG_VALUE: pi <- 3.141593e+00
 	.loc	2 367 0                 # kiss_fft.c:367:0
 	movq	%rsp, %rcx
 	movl	$1, (%rcx)
-	movl	$.L.str53130, %eax
+	movl	$.L.str53170, %eax
 	movl	%eax, %ecx
 	movl	$367, %eax              # imm = 0x16F
 	movl	%eax, %edx
@@ -6613,7 +8966,7 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movl	1148(%rsp), %r9d        # 4-byte Reload
 	callq	trace_logger_log0
 	movq	%rsp, %rcx
-	movq	$.L.str481, (%rcx)
+	movq	$.L.str4121, (%rcx)
 	movq	1040(%rsp), %rdi        # 8-byte Reload
 	movq	1024(%rsp), %rsi        # 8-byte Reload
 	movq	1320(%rsp), %rdx        # 8-byte Reload
@@ -6626,7 +8979,7 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movl	%eax, %ebp
 	movl	%ebp, %edx
 	movq	%rsp, %rsi
-	movq	$.L.str481, (%rsi)
+	movq	$.L.str4121, (%rsi)
 	movl	$32, %ebp
 	movl	%ebp, %esi
 	movq	1016(%rsp), %rdi        # 8-byte Reload
@@ -6639,7 +8992,7 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	callq	trace_logger_log_int
 	movq	%rsp, %rcx
 	movl	$1, (%rcx)
-	movl	$.L.str54131, %eax
+	movl	$.L.str54171, %eax
 	movl	%eax, %ecx
 	movl	$39, %eax
 	movl	%eax, %r8d
@@ -6649,7 +9002,7 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movl	1148(%rsp), %r9d        # 4-byte Reload
 	callq	trace_logger_log0
 	movq	%rsp, %rcx
-	movq	$.L.str481, (%rcx)
+	movq	$.L.str4121, (%rcx)
 	movq	1040(%rsp), %rdi        # 8-byte Reload
 	movq	992(%rsp), %rsi         # 8-byte Reload
 	movq	984(%rsp), %rdx         # 8-byte Reload
@@ -6740,7 +9093,7 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	1152(%rsp), %r9         # 8-byte Reload
 	vmovsd	%xmm2, 952(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_double
-.Ltmp131:
+.Ltmp151:
 	#DEBUG_VALUE: phase <- [RSP+952]
 	.loc	2 368 0                 # kiss_fft.c:368:0
 	movq	1048(%rsp), %rdi        # 8-byte Reload
@@ -6860,28 +9213,28 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	vmovsd	952(%rsp), %xmm0        # 8-byte Reload
 	vmovsd	%xmm0, 936(%rsp)        # 8-byte Spill
 	jne	.LBB3_11
-.Ltmp132:
+.Ltmp152:
 # BB#10:                                #   in Loop: Header=BB3_9 Depth=1
 	movabsq	$1, %rax
 	movabsq	$0, %rcx
-	leaq	.L.str52129, %r8
-	leaq	.L.str481, %rdx
+	leaq	.L.str52169, %r8
+	leaq	.L.str4121, %rdx
 	movabsq	$369, %rsi              # imm = 0x171
-	leaq	.L.str77, %rdi
-	leaq	.L.str60137, %r9
-	leaq	.L.str62139, %r10
+	leaq	.L.str117, %rdi
+	leaq	.L.str60177, %r9
+	leaq	.L.str62179, %r10
 	movabsq	$2, %r11
 	movl	$0, %ebx
 	movl	$1, %ebp
 	movabsq	$19134, %r14            # imm = 0x4ABE
 	movabsq	$64, %r15
-	leaq	.L.str61138, %r12
+	leaq	.L.str61178, %r12
 	movabsq	$-1, %r13
 	vmovsd	.LCPI3_1, %xmm0
 	movq	%rax, 928(%rsp)         # 8-byte Spill
-	leaq	.L.str56133, %rax
+	leaq	.L.str56173, %rax
 	movq	%rax, 920(%rsp)         # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 912(%rsp)         # 8-byte Spill
 	movabsq	$13, %rax
 	.loc	2 369 0                 # kiss_fft.c:369:0
@@ -6939,7 +9292,7 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	880(%rsp), %r9          # 8-byte Reload
 	vmovsd	%xmm2, 776(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_double
-.Ltmp133:
+.Ltmp153:
 	#DEBUG_VALUE: phase <- [RSP+776]
 	movq	888(%rsp), %rdi         # 8-byte Reload
 	movq	904(%rsp), %rsi         # 8-byte Reload
@@ -6960,56 +9313,56 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	callq	trace_logger_log_int
 	vmovsd	776(%rsp), %xmm0        # 8-byte Reload
 	vmovsd	%xmm0, 936(%rsp)        # 8-byte Spill
-.Ltmp134:
+.Ltmp154:
 .LBB3_11:                               #   in Loop: Header=BB3_9 Depth=1
 	vmovsd	936(%rsp), %xmm0        # 8-byte Reload
 	movabsq	$1, %rax
-	leaq	.L.str75152, %rcx
+	leaq	.L.str75192, %rcx
 	movabsq	$0, %rdx
-	leaq	.L.str481, %rsi
+	leaq	.L.str4121, %rsi
 	movabsq	$2, %rdi
-	leaq	.L.str49126, %r8
+	leaq	.L.str49166, %r8
 	movabsq	$3, %r9
-	leaq	.L.str46123, %r10
+	leaq	.L.str46163, %r10
 	movabsq	$365, %r11              # imm = 0x16D
-	leaq	.L.str77, %rbx
-	leaq	.L.str52129, %r14
-	leaq	.L.str76153, %r15
+	leaq	.L.str117, %rbx
+	leaq	.L.str52169, %r14
+	leaq	.L.str76193, %r15
 	movl	$0, %ebp
 	movl	$1, %r12d
 	movabsq	$19134, %r13            # imm = 0x4ABE
 	movq	%rax, 768(%rsp)         # 8-byte Spill
 	movabsq	$32, %rax
 	movq	%rax, 760(%rsp)         # 8-byte Spill
-	leaq	.L.str74151, %rax
+	leaq	.L.str74191, %rax
 	movq	%rax, 752(%rsp)         # 8-byte Spill
-	leaq	.L.str582, %rax
+	leaq	.L.str5122, %rax
 	movq	%rax, 744(%rsp)         # 8-byte Spill
 	movabsq	$46, %rax
 	movq	%rax, 736(%rsp)         # 8-byte Spill
 	movabsq	$64, %rax
 	movq	%rax, 728(%rsp)         # 8-byte Spill
-	leaq	.L.str51128, %rax
+	leaq	.L.str51168, %rax
 	movq	%rax, 720(%rsp)         # 8-byte Spill
 	movabsq	$33, %rax
 	movq	%rax, 712(%rsp)         # 8-byte Spill
-	leaq	.L.str50127, %rax
+	leaq	.L.str50167, %rax
 	movq	%rax, 704(%rsp)         # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 696(%rsp)         # 8-byte Spill
 	movabsq	$8, %rax
 	movq	%rax, 688(%rsp)         # 8-byte Spill
-	leaq	.L.str71148, %rax
+	leaq	.L.str71188, %rax
 	movq	%rax, 680(%rsp)         # 8-byte Spill
-	leaq	.L.str72149, %rax
+	leaq	.L.str72189, %rax
 	movq	%rax, 672(%rsp)         # 8-byte Spill
 	movabsq	$370, %rax              # imm = 0x172
 	movq	%rax, 664(%rsp)         # 8-byte Spill
-	leaq	.L.str73150, %rax
+	leaq	.L.str73190, %rax
 	movq	%rax, 656(%rsp)         # 8-byte Spill
 	movabsq	$28, %rax
 	movq	%rax, 648(%rsp)         # 8-byte Spill
-	leaq	.L.str33110, %rax
+	leaq	.L.str33150, %rax
 	movq	%rax, 640(%rsp)         # 8-byte Spill
 	movabsq	$4, %rax
 	movq	%rax, 632(%rsp)         # 8-byte Spill
@@ -7017,43 +9370,43 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	%rax, 624(%rsp)         # 8-byte Spill
 	movabsq	$29, %rax
 	movq	%rax, 616(%rsp)         # 8-byte Spill
-	leaq	.L.str69146, %rax
+	leaq	.L.str69186, %rax
 	movq	%rax, 608(%rsp)         # 8-byte Spill
 	movabsq	$40, %rax
 	movq	%rax, 600(%rsp)         # 8-byte Spill
-	leaq	.L.str63140, %rax
+	leaq	.L.str63180, %rax
 	movq	%rax, 592(%rsp)         # 8-byte Spill
 	leaq	sin, %rax
 	movq	%rax, 584(%rsp)         # 8-byte Spill
-	leaq	.L.str70147, %rax
+	leaq	.L.str70187, %rax
 	movq	%rax, 576(%rsp)         # 8-byte Spill
 	movabsq	$102, %rax
 	movq	%rax, 568(%rsp)         # 8-byte Spill
-	leaq	.L.str66143, %rax
+	leaq	.L.str66183, %rax
 	movq	%rax, 560(%rsp)         # 8-byte Spill
-	leaq	.L.str67144, %rax
+	leaq	.L.str67184, %rax
 	movq	%rax, 552(%rsp)         # 8-byte Spill
-	leaq	.L.str68145, %rax
+	leaq	.L.str68185, %rax
 	movq	%rax, 544(%rsp)         # 8-byte Spill
-	leaq	.L.str64141, %rax
+	leaq	.L.str64181, %rax
 	movq	%rax, 536(%rsp)         # 8-byte Spill
 	leaq	cos, %rax
 	movq	%rax, 528(%rsp)         # 8-byte Spill
-	leaq	.L.str65142, %rax
+	leaq	.L.str65182, %rax
 	movq	%rax, 520(%rsp)         # 8-byte Spill
 	movabsq	$103, %rax
 	movq	%rax, 512(%rsp)         # 8-byte Spill
-	leaq	.L.str60137, %rax
+	leaq	.L.str60177, %rax
 	movq	%rax, 504(%rsp)         # 8-byte Spill
-	leaq	.L.str61138, %rax
+	leaq	.L.str61178, %rax
 	movq	%rax, 496(%rsp)         # 8-byte Spill
-	leaq	.L.str56133, %rax
+	leaq	.L.str56173, %rax
 	movq	%rax, 488(%rsp)         # 8-byte Spill
 	movabsq	$-1, %rax
 	movq	%rax, 480(%rsp)         # 8-byte Spill
 	movabsq	$48, %rax
 	.loc	2 370 0                 # kiss_fft.c:370:0
-.Ltmp135:
+.Ltmp155:
 	movq	%rax, 472(%rsp)         # 8-byte Spill
 	movq	480(%rsp), %rax         # 8-byte Reload
 	movq	%rdi, 464(%rsp)         # 8-byte Spill
@@ -7428,7 +9781,7 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	1320(%rsp), %rcx        # 8-byte Reload
 	vmovss	324(%rsp), %xmm0        # 4-byte Reload
 	vmovss	%xmm0, 268(%rax,%rcx,8)
-.Ltmp136:
+.Ltmp156:
 	.loc	2 365 0                 # kiss_fft.c:365:0
 	movq	360(%rsp), %rdi         # 8-byte Reload
 	movq	376(%rsp), %rsi         # 8-byte Reload
@@ -7589,23 +9942,23 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	%rcx, 1328(%rsp)        # 8-byte Spill
 	jne	.LBB3_12
 	jmp	.LBB3_9
-.Ltmp137:
+.Ltmp157:
 .LBB3_12:                               # %._crit_edge
 	movabsq	$2, %rax
 	movabsq	$64, %rcx
 	movabsq	$1, %rdx
-	leaq	.L.str77154, %rsi
+	leaq	.L.str77194, %rsi
 	movabsq	$0, %rdi
-	leaq	.L.str481, %r8
+	leaq	.L.str4121, %r8
 	movabsq	$32, %r9
-	leaq	.L.str582, %r10
+	leaq	.L.str5122, %r10
 	movabsq	$3, %r11
 	leaq	kf_factor, %rbx
-	leaq	.L.str79, %r14
+	leaq	.L.str79196, %r14
 	movabsq	$373, %r15              # imm = 0x175
-	leaq	.L.str77, %r12
-	leaq	.L.str46123, %r13
-	leaq	.L.str78, %rbp
+	leaq	.L.str117, %r12
+	leaq	.L.str46163, %r13
+	leaq	.L.str78195, %rbp
 	movq	%rax, 288(%rsp)         # 8-byte Spill
 	movabsq	$49, %rax
 	movq	%rsi, 280(%rsp)         # 8-byte Spill
@@ -7615,9 +9968,9 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	%rax, 264(%rsp)         # 8-byte Spill
 	movabsq	$19134, %rax            # imm = 0x4ABE
 	movq	%rax, 256(%rsp)         # 8-byte Spill
-	leaq	.L.str33110, %rax
+	leaq	.L.str33150, %rax
 	movq	%rax, 248(%rsp)         # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 240(%rsp)         # 8-byte Spill
 	movabsq	$4, %rax
 	movq	%rax, 232(%rsp)         # 8-byte Spill
@@ -7740,12 +10093,12 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	callq	kf_factor
 	movabsq	$1, %rcx
 	movabsq	$0, %rdx
-	leaq	.L.str36113, %r8
-	leaq	.L.str481, %rsi
+	leaq	.L.str36153, %r8
+	leaq	.L.str4121, %rsi
 	movabsq	$374, %rdi              # imm = 0x176
-	leaq	.L.str77, %r9
-	leaq	.L.str46123, %r10
-	leaq	.L.str80, %r11
+	leaq	.L.str117, %r9
+	leaq	.L.str46163, %r10
+	leaq	.L.str80197, %r11
 	movabsq	$2, %rbx
 	movl	$0, %eax
 	movl	$1, %ebp
@@ -7771,17 +10124,17 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	movq	96(%rsp), %r10          # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-.Ltmp138:
+.Ltmp158:
 .LBB3_13:
 	movabsq	$1, %rax
 	movabsq	$64, %rsi
-	leaq	.L.str33110, %r8
+	leaq	.L.str33150, %r8
 	movabsq	$0, %r9
-	leaq	.L.str481, %rcx
+	leaq	.L.str4121, %rcx
 	movabsq	$375, %rdi              # imm = 0x177
-	leaq	.L.str77, %rdx
-	leaq	.L.str36113, %r10
-	leaq	.L.str81, %r11
+	leaq	.L.str117, %rdx
+	leaq	.L.str36153, %r10
+	leaq	.L.str81198, %r11
 	movl	$0, %ebx
 	movl	$1, %ebp
 	.loc	2 375 0                 # kiss_fft.c:375:0
@@ -7816,9 +10169,9 @@ kiss_fft_alloc:                         # @kiss_fft_alloc
 	popq	%r15
 	popq	%rbp
 	ret
-.Ltmp139:
-.Ltmp140:
-	.size	kiss_fft_alloc, .Ltmp140-kiss_fft_alloc
+.Ltmp159:
+.Ltmp160:
+	.size	kiss_fft_alloc, .Ltmp160-kiss_fft_alloc
 .Lfunc_end3:
 	.cfi_endproc
 
@@ -7831,48 +10184,48 @@ kiss_fft_stride:                        # @kiss_fft_stride
 	.loc	2 380 0                 # kiss_fft.c:380:0
 # BB#0:
 	pushq	%rbp
-.Ltmp148:
+.Ltmp168:
 	.cfi_def_cfa_offset 16
 	pushq	%r15
-.Ltmp149:
+.Ltmp169:
 	.cfi_def_cfa_offset 24
 	pushq	%r14
-.Ltmp150:
+.Ltmp170:
 	.cfi_def_cfa_offset 32
 	pushq	%r13
-.Ltmp151:
+.Ltmp171:
 	.cfi_def_cfa_offset 40
 	pushq	%r12
-.Ltmp152:
+.Ltmp172:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
-.Ltmp153:
+.Ltmp173:
 	.cfi_def_cfa_offset 56
 	subq	$376, %rsp              # imm = 0x178
-.Ltmp154:
+.Ltmp174:
 	.cfi_def_cfa_offset 432
-.Ltmp155:
+.Ltmp175:
 	.cfi_offset %rbx, -56
-.Ltmp156:
+.Ltmp176:
 	.cfi_offset %r12, -48
-.Ltmp157:
+.Ltmp177:
 	.cfi_offset %r13, -40
-.Ltmp158:
+.Ltmp178:
 	.cfi_offset %r14, -32
-.Ltmp159:
+.Ltmp179:
 	.cfi_offset %r15, -24
-.Ltmp160:
+.Ltmp180:
 	.cfi_offset %rbp, -16
 	leaq	360(%rsp), %rax
 	leaq	368(%rsp), %r8
 	movabsq	$1, %r9
 	movabsq	$6, %r10
 	movabsq	$64, %r11
-	leaq	.L.str117, %rbx
+	leaq	.L.str117234, %rbx
 	movabsq	$0, %r14
-	leaq	.L.str481, %r15
+	leaq	.L.str4121, %r15
 	movabsq	$5, %r12
-	leaq	.L.str784, %r13
+	leaq	.L.str7124, %r13
 	movabsq	$4, %rbp
 	movq	%rax, 352(%rsp)         # 8-byte Spill
 	movabsq	$32, %rax
@@ -7881,13 +10234,13 @@ kiss_fft_stride:                        # @kiss_fft_stride
 	movq	%rax, 336(%rsp)         # 8-byte Spill
 	movabsq	$3, %rax
 	movq	%rax, 328(%rsp)         # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 320(%rsp)         # 8-byte Spill
 	movabsq	$2, %rax
 	movq	%rax, 312(%rsp)         # 8-byte Spill
-	leaq	.L.str114, %rax
+	leaq	.L.str114231, %rax
 	movq	%rax, 304(%rsp)         # 8-byte Spill
-	leaq	.L.str116, %rax
+	leaq	.L.str116233, %rax
 	movq	%rax, 296(%rsp)         # 8-byte Spill
 	movabsq	$7, %rax
 	movq	%rax, 288(%rsp)         # 8-byte Spill
@@ -7897,9 +10250,9 @@ kiss_fft_stride:                        # @kiss_fft_stride
 	movq	%rax, 272(%rsp)         # 8-byte Spill
 	movabsq	$391, %rax              # imm = 0x187
 	movq	%rax, 264(%rsp)         # 8-byte Spill
-	leaq	.L.str112, %rax
+	leaq	.L.str112229, %rax
 	movq	%rax, 256(%rsp)         # 8-byte Spill
-	leaq	.L.str178, %rax
+	leaq	.L.str1118, %rax
 	movq	%rax, 248(%rsp)         # 8-byte Spill
 	leaq	.L.str118, %rax
 	movq	%rax, 240(%rsp)         # 8-byte Spill
@@ -7915,17 +10268,17 @@ kiss_fft_stride:                        # @kiss_fft_stride
 	movq	%rax, 208(%rsp)         # 8-byte Spill
 	movabsq	$-1, %rax
 	movq	%rax, 200(%rsp)         # 8-byte Spill
-	leaq	.L.str115, %rax
+	leaq	.L.str115232, %rax
 	movq	%rax, 192(%rsp)         # 8-byte Spill
 	movabsq	$28, %rax
 	movq	%rax, 184(%rsp)         # 8-byte Spill
-	leaq	.L.str113, %rax
+	leaq	.L.str113230, %rax
 	movq	%rax, 176(%rsp)         # 8-byte Spill
-	leaq	.L.str683, %rax
+	leaq	.L.str6123, %rax
 	movq	%rax, 168(%rsp)         # 8-byte Spill
 	movabsq	$26, %rax
 	movq	%rax, 160(%rsp)         # 8-byte Spill
-	leaq	.L.str279, %rax
+	leaq	.L.str2119, %rax
 	movq	%rax, 152(%rsp)         # 8-byte Spill
 	movabsq	$24601, %rax            # imm = 0x6019
 	movq	%rdi, 144(%rsp)         # 8-byte Spill
@@ -8025,7 +10378,7 @@ kiss_fft_stride:                        # @kiss_fft_stride
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
 	.loc	2 379 0 prologue_end    # kiss_fft.c:379:0
-.Ltmp161:
+.Ltmp181:
 	movq	216(%rsp), %rdi         # 8-byte Reload
 	movq	32(%rsp), %rsi          # 8-byte Reload
 	movq	352(%rsp), %rdx         # 8-byte Reload
@@ -8065,7 +10418,7 @@ kiss_fft_stride:                        # @kiss_fft_stride
 	callq	trace_logger_log_ptr
 	movq	136(%rsp), %rax         # 8-byte Reload
 	movq	%rax, 368(%rsp)
-.Ltmp162:
+.Ltmp182:
 	#DEBUG_VALUE: kiss_fft_stride:fin <- [RSP+104]
 	#DEBUG_VALUE: kiss_fft_stride:fout <- [RSP+120]
 	movq	200(%rsp), %rdi         # 8-byte Reload
@@ -8096,7 +10449,7 @@ kiss_fft_stride:                        # @kiss_fft_stride
 	callq	trace_logger_log_ptr
 	movq	120(%rsp), %rax         # 8-byte Reload
 	movq	%rax, 360(%rsp)
-.Ltmp163:
+.Ltmp183:
 	#DEBUG_VALUE: kiss_fft_stride:fout <- [RSP+352]
 	#DEBUG_VALUE: kiss_fft_stride:in_stride <- [RSP+236]
 	.loc	2 391 0                 # kiss_fft.c:391:0
@@ -8237,8 +10590,8 @@ kiss_fft_stride:                        # @kiss_fft_stride
 	movq	144(%rsp), %r9          # 8-byte Reload
 	callq	kf_work
 	movabsq	$392, %rdi              # imm = 0x188
-	leaq	.L.str112, %rsi
-	leaq	.L.str178, %rdx
+	leaq	.L.str112229, %rsi
+	leaq	.L.str1118, %rdx
 	leaq	.L.str121, %rcx
 	movabsq	$1, %r8
 	movl	$0, %r9d
@@ -8248,7 +10601,7 @@ kiss_fft_stride:                        # @kiss_fft_stride
 	movl	%r10d, 20(%rsp)         # 4-byte Spill
 	callq	trace_logger_log0
 	addq	$376, %rsp              # imm = 0x178
-.Ltmp164:
+.Ltmp184:
 	popq	%rbx
 	popq	%r12
 	popq	%r13
@@ -8256,9 +10609,9 @@ kiss_fft_stride:                        # @kiss_fft_stride
 	popq	%r15
 	popq	%rbp
 	ret
-.Ltmp165:
-.Ltmp166:
-	.size	kiss_fft_stride, .Ltmp166-kiss_fft_stride
+.Ltmp185:
+.Ltmp186:
+	.size	kiss_fft_stride, .Ltmp186-kiss_fft_stride
 .Lfunc_end4:
 	.cfi_endproc
 
@@ -8271,64 +10624,64 @@ kiss_fft:                               # @kiss_fft
 	.loc	2 395 0                 # kiss_fft.c:395:0
 # BB#0:
 	pushq	%rbp
-.Ltmp174:
+.Ltmp194:
 	.cfi_def_cfa_offset 16
 	pushq	%r15
-.Ltmp175:
+.Ltmp195:
 	.cfi_def_cfa_offset 24
 	pushq	%r14
-.Ltmp176:
+.Ltmp196:
 	.cfi_def_cfa_offset 32
 	pushq	%r13
-.Ltmp177:
+.Ltmp197:
 	.cfi_def_cfa_offset 40
 	pushq	%r12
-.Ltmp178:
+.Ltmp198:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
-.Ltmp179:
+.Ltmp199:
 	.cfi_def_cfa_offset 56
 	subq	$232, %rsp
-.Ltmp180:
+.Ltmp200:
 	.cfi_def_cfa_offset 288
-.Ltmp181:
+.Ltmp201:
 	.cfi_offset %rbx, -56
-.Ltmp182:
+.Ltmp202:
 	.cfi_offset %r12, -48
-.Ltmp183:
+.Ltmp203:
 	.cfi_offset %r13, -40
-.Ltmp184:
+.Ltmp204:
 	.cfi_offset %r14, -32
-.Ltmp185:
+.Ltmp205:
 	.cfi_offset %r15, -24
-.Ltmp186:
+.Ltmp206:
 	.cfi_offset %rbp, -16
 	movabsq	$4, %rax
 	movabsq	$32, %rcx
 	movabsq	$1, %r8
 	movabsq	$0, %r9
-	leaq	.L.str380, %r10
-	leaq	.L.str481, %r11
+	leaq	.L.str3120, %r10
+	leaq	.L.str4121, %r11
 	movabsq	$3, %rbx
 	movabsq	$64, %r14
-	leaq	.L.str116, %r15
+	leaq	.L.str116233, %r15
 	movabsq	$2, %r12
-	leaq	.L.str114, %r13
+	leaq	.L.str114231, %r13
 	leaq	.L.str179, %rbp
 	movq	%rax, 224(%rsp)         # 8-byte Spill
 	movabsq	$5, %rax
 	movq	%rax, 216(%rsp)         # 8-byte Spill
 	leaq	kiss_fft_stride, %rax
 	movq	%rax, 208(%rsp)         # 8-byte Spill
-	leaq	.L.str112, %rax
+	leaq	.L.str112229, %rax
 	movq	%rax, 200(%rsp)         # 8-byte Spill
 	movabsq	$396, %rax              # imm = 0x18C
 	movq	%rax, 192(%rsp)         # 8-byte Spill
 	leaq	.L.str177, %rax
 	movq	%rax, 184(%rsp)         # 8-byte Spill
-	leaq	.L.str178, %rax
+	leaq	.L.str1118, %rax
 	movq	%rax, 176(%rsp)         # 8-byte Spill
-	leaq	.L.str178155, %rax
+	leaq	.L.str178, %rax
 	movq	%rax, 168(%rsp)         # 8-byte Spill
 	movabsq	$49, %rax
 	movq	%rsi, 160(%rsp)         # 8-byte Spill
@@ -8338,7 +10691,7 @@ kiss_fft:                               # @kiss_fft
 	movq	%rax, 144(%rsp)         # 8-byte Spill
 	movabsq	$24601, %rax            # imm = 0x6019
 	.loc	2 394 0 prologue_end    # kiss_fft.c:394:0
-.Ltmp187:
+.Ltmp207:
 	movq	%rdi, 136(%rsp)         # 8-byte Spill
 	movq	%rax, %rdi
 	movl	%esi, 132(%rsp)         # 4-byte Spill
@@ -8442,11 +10795,11 @@ kiss_fft:                               # @kiss_fft
 	movq	160(%rsp), %rsi         # 8-byte Reload
 	movq	112(%rsp), %rdx         # 8-byte Reload
 	callq	kiss_fft_stride
-.Ltmp188:
+.Ltmp208:
 	movabsq	$397, %rdi              # imm = 0x18D
 	leaq	.L.str177, %rsi
-	leaq	.L.str178, %rdx
-	leaq	.L.str85, %rcx
+	leaq	.L.str1118, %rdx
+	leaq	.L.str85202, %rcx
 	movabsq	$1, %r8
 	movl	$0, %r9d
 	movl	$1, %r10d
@@ -8462,9 +10815,9 @@ kiss_fft:                               # @kiss_fft
 	popq	%r15
 	popq	%rbp
 	ret
-.Ltmp189:
-.Ltmp190:
-	.size	kiss_fft, .Ltmp190-kiss_fft
+.Ltmp209:
+.Ltmp210:
+	.size	kiss_fft, .Ltmp210-kiss_fft
 .Lfunc_end5:
 	.cfi_endproc
 
@@ -8477,25 +10830,25 @@ kiss_fft_cleanup:                       # @kiss_fft_cleanup
 	.loc	2 401 0                 # kiss_fft.c:401:0
 # BB#0:
 	subq	$24, %rsp
-.Ltmp192:
+.Ltmp212:
 	.cfi_def_cfa_offset 32
 	movabsq	$403, %rdi              # imm = 0x193
 	leaq	.L.str180, %rsi
-	leaq	.L.str178, %rdx
+	leaq	.L.str1118, %rdx
 	leaq	.L.str181, %rcx
 	movabsq	$1, %r8
 	movl	$0, %r9d
 	movl	$1, %eax
 	.loc	2 403 0 prologue_end    # kiss_fft.c:403:0
-.Ltmp193:
+.Ltmp213:
 	movl	$1, (%rsp)
 	movl	%eax, 20(%rsp)          # 4-byte Spill
 	callq	trace_logger_log0
 	addq	$24, %rsp
 	ret
-.Ltmp194:
-.Ltmp195:
-	.size	kiss_fft_cleanup, .Ltmp195-kiss_fft_cleanup
+.Ltmp214:
+.Ltmp215:
+	.size	kiss_fft_cleanup, .Ltmp215-kiss_fft_cleanup
 .Lfunc_end6:
 	.cfi_endproc
 
@@ -8508,54 +10861,54 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	.loc	2 406 0                 # kiss_fft.c:406:0
 # BB#0:
 	pushq	%rbp
-.Ltmp203:
+.Ltmp223:
 	.cfi_def_cfa_offset 16
 	pushq	%r15
-.Ltmp204:
+.Ltmp224:
 	.cfi_def_cfa_offset 24
 	pushq	%r14
-.Ltmp205:
+.Ltmp225:
 	.cfi_def_cfa_offset 32
 	pushq	%r13
-.Ltmp206:
+.Ltmp226:
 	.cfi_def_cfa_offset 40
 	pushq	%r12
-.Ltmp207:
+.Ltmp227:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
-.Ltmp208:
+.Ltmp228:
 	.cfi_def_cfa_offset 56
 	subq	$1832, %rsp             # imm = 0x728
-.Ltmp209:
+.Ltmp229:
 	.cfi_def_cfa_offset 1888
-.Ltmp210:
+.Ltmp230:
 	.cfi_offset %rbx, -56
-.Ltmp211:
+.Ltmp231:
 	.cfi_offset %r12, -48
-.Ltmp212:
+.Ltmp232:
 	.cfi_offset %r13, -40
-.Ltmp213:
+.Ltmp233:
 	.cfi_offset %r14, -32
-.Ltmp214:
+.Ltmp234:
 	.cfi_offset %r15, -24
-.Ltmp215:
+.Ltmp235:
 	.cfi_offset %rbp, -16
 	movabsq	$1, %rax
 	movabsq	$0, %rcx
 	leaq	.L.str184, %r8
-	leaq	.L.str481, %rdx
+	leaq	.L.str4121, %rdx
 	movabsq	$407, %rsi              # imm = 0x197
 	leaq	.L.str182, %r9
-	leaq	.L.str178, %r10
+	leaq	.L.str1118, %r10
 	leaq	.L.str183, %r11
 	movabsq	$2, %rbx
 	movl	$0, %ebp
 	movl	$1, %r14d
 	movabsq	$24601, %r15            # imm = 0x6019
 	movabsq	$32, %r12
-	leaq	.L.str82, %r13
+	leaq	.L.str82199, %r13
 	.loc	2 405 0 prologue_end    # kiss_fft.c:405:0
-.Ltmp216:
+.Ltmp236:
 	movq	%rsi, 1824(%rsp)        # 8-byte Spill
 	movl	%edi, %esi
                                         # kill: RSI<def> ESI<kill>
@@ -8603,20 +10956,20 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	callq	trace_logger_log_int
 	movl	1820(%rsp), %ebp        # 4-byte Reload
 	movl	%ebp, 1724(%rsp)        # 4-byte Spill
-.Ltmp217:
+.Ltmp237:
 .LBB7_1:                                # =>This Loop Header: Depth=1
                                         #     Child Loop BB7_2 Depth 2
                                         #     Child Loop BB7_4 Depth 2
                                         #     Child Loop BB7_6 Depth 2
 	movl	1724(%rsp), %eax        # 4-byte Reload
 	movabsq	$1, %rcx
-	leaq	.L.str784, %rdx
+	leaq	.L.str7124, %rdx
 	movabsq	$0, %rsi
-	leaq	.L.str481, %rdi
+	leaq	.L.str4121, %rdi
 	movabsq	$2, %r8
 	leaq	.L.str187, %r9
 	movabsq	$3, %r10
-	leaq	.L.str94, %r11
+	leaq	.L.str94211, %r11
 	movabsq	$409, %rbx              # imm = 0x199
 	leaq	.L.str182, %r14
 	leaq	.L.str184, %r15
@@ -8628,9 +10981,9 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	%rcx, 1704(%rsp)        # 8-byte Spill
 	movabsq	$32, %rcx
 	movq	%rcx, 1696(%rsp)        # 8-byte Spill
-	leaq	.L.str683, %rcx
+	leaq	.L.str6123, %rcx
 	movq	%rcx, 1688(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rcx
+	leaq	.L.str3120, %rcx
 	movq	%rcx, 1680(%rsp)        # 8-byte Spill
 	movabsq	$46, %rcx
 	movq	%rcx, 1672(%rsp)        # 8-byte Spill
@@ -8638,19 +10991,19 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	%rcx, 1664(%rsp)        # 8-byte Spill
 	movabsq	$23, %rcx
 	movq	%rcx, 1656(%rsp)        # 8-byte Spill
-	leaq	.L.str178, %rcx
+	leaq	.L.str1118, %rcx
 	movq	%rcx, 1648(%rsp)        # 8-byte Spill
-	leaq	.L.str82, %rcx
+	leaq	.L.str82199, %rcx
 	movq	%rcx, 1640(%rsp)        # 8-byte Spill
-	leaq	.L.str34111, %rcx
+	leaq	.L.str34151, %rcx
 	movq	%rcx, 1632(%rsp)        # 8-byte Spill
-	leaq	.L.str88, %rcx
+	leaq	.L.str88205, %rcx
 	movq	%rcx, 1624(%rsp)        # 8-byte Spill
 	movabsq	$-1, %rcx
 	movq	%rcx, 1616(%rsp)        # 8-byte Spill
 	movabsq	$48, %rcx
 	.loc	2 408 0                 # kiss_fft.c:408:0
-.Ltmp218:
+.Ltmp238:
 	movq	%rcx, 1608(%rsp)        # 8-byte Spill
 	movq	1616(%rsp), %rcx        # 8-byte Reload
 	movq	%rdi, 1600(%rsp)        # 8-byte Spill
@@ -8706,7 +11059,7 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	1648(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-.Ltmp219:
+.Ltmp239:
 	#DEBUG_VALUE: m <- [RSP+1564]
 	.loc	2 409 0                 # kiss_fft.c:409:0
 	movq	1520(%rsp), %rdi        # 8-byte Reload
@@ -8838,7 +11191,7 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movl	%ebp, 1492(%rsp)        # 4-byte Spill
 	jne	.LBB7_2
 	jmp	.LBB7_3
-.Ltmp220:
+.Ltmp240:
 .LBB7_2:                                # %.lr.ph
                                         #   Parent Loop BB7_1 Depth=1
                                         # =>  This Inner Loop Header: Depth=2
@@ -8846,11 +11199,11 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movabsq	$1, %rcx
 	leaq	.L.str125, %rdx
 	movabsq	$0, %rsi
-	leaq	.L.str481, %rdi
+	leaq	.L.str4121, %rdi
 	movabsq	$2, %r8
 	leaq	.L.str187, %r9
 	movabsq	$3, %r10
-	leaq	.L.str94, %r11
+	leaq	.L.str94211, %r11
 	movabsq	$409, %rbx              # imm = 0x199
 	leaq	.L.str182, %r14
 	leaq	.L.str189, %r15
@@ -8860,13 +11213,13 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	%rcx, 1480(%rsp)        # 8-byte Spill
 	movabsq	$32, %rcx
 	movq	%rcx, 1472(%rsp)        # 8-byte Spill
-	leaq	.L.str986, %rcx
+	leaq	.L.str9126, %rcx
 	movq	%rcx, 1464(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rcx
+	leaq	.L.str3120, %rcx
 	movq	%rcx, 1456(%rsp)        # 8-byte Spill
 	movabsq	$46, %rcx
 	movq	%rcx, 1448(%rsp)        # 8-byte Spill
-	leaq	.L.str885, %rcx
+	leaq	.L.str8125, %rcx
 	movq	%rcx, 1440(%rsp)        # 8-byte Spill
 	movabsq	$23, %rcx
 	movl	%eax, 1436(%rsp)        # 4-byte Spill
@@ -8979,7 +11332,7 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	%r10, (%rsp)
 	movl	%eax, 1268(%rsp)        # 4-byte Spill
 	callq	trace_logger_log_int
-.Ltmp221:
+.Ltmp241:
 	#DEBUG_VALUE: m <- [RSP+1268]
 	movq	1288(%rsp), %rdi        # 8-byte Reload
 	movq	1296(%rsp), %rsi        # 8-byte Reload
@@ -9109,14 +11462,14 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movl	1268(%rsp), %ebp        # 4-byte Reload
 	movl	%ebp, 1492(%rsp)        # 4-byte Spill
 	jne	.LBB7_2
-.Ltmp222:
+.Ltmp242:
 .LBB7_3:                                # %.loopexit
                                         #   in Loop: Header=BB7_1 Depth=1
 	movl	1492(%rsp), %eax        # 4-byte Reload
 	movabsq	$1, %rcx
-	leaq	.L.str1693, %rdx
+	leaq	.L.str16133, %rdx
 	movabsq	$0, %rsi
-	leaq	.L.str481, %rdi
+	leaq	.L.str4121, %rdi
 	movabsq	$2, %r8
 	leaq	.L.str193, %r9
 	movabsq	$3, %r10
@@ -9132,9 +11485,9 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	%rcx, 1240(%rsp)        # 8-byte Spill
 	movabsq	$32, %rcx
 	movq	%rcx, 1232(%rsp)        # 8-byte Spill
-	leaq	.L.str1491, %rcx
+	leaq	.L.str14131, %rcx
 	movq	%rcx, 1224(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rcx
+	leaq	.L.str3120, %rcx
 	movq	%rcx, 1216(%rsp)        # 8-byte Spill
 	movabsq	$46, %rcx
 	movl	%eax, 1212(%rsp)        # 4-byte Spill
@@ -9148,9 +11501,9 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	%rcx, 1176(%rsp)        # 8-byte Spill
 	leaq	.L.str185, %rcx
 	movq	%rcx, 1168(%rsp)        # 8-byte Spill
-	leaq	.L.str885, %rcx
+	leaq	.L.str8125, %rcx
 	movq	%rcx, 1160(%rsp)        # 8-byte Spill
-	leaq	.L.str94, %rcx
+	leaq	.L.str94211, %rcx
 	movq	%rcx, 1152(%rsp)        # 8-byte Spill
 	movabsq	$-1, %rcx
 	movq	%rcx, 1144(%rsp)        # 8-byte Spill
@@ -9346,9 +11699,9 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
                                         # =>  This Inner Loop Header: Depth=2
 	movl	1020(%rsp), %eax        # 4-byte Reload
 	movabsq	$1, %rcx
-	leaq	.L.str105, %rdx
+	leaq	.L.str105222, %rdx
 	movabsq	$0, %rsi
-	leaq	.L.str481, %rdi
+	leaq	.L.str4121, %rdi
 	movabsq	$2, %r8
 	leaq	.L.str193, %r9
 	movabsq	$3, %r10
@@ -9362,15 +11715,15 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	%rcx, 1008(%rsp)        # 8-byte Spill
 	movabsq	$32, %rcx
 	movq	%rcx, 1000(%rsp)        # 8-byte Spill
-	leaq	.L.str1996, %rcx
+	leaq	.L.str19136, %rcx
 	movq	%rcx, 992(%rsp)         # 8-byte Spill
-	leaq	.L.str380, %rcx
+	leaq	.L.str3120, %rcx
 	movq	%rcx, 984(%rsp)         # 8-byte Spill
 	movabsq	$46, %rcx
 	movl	%eax, 980(%rsp)         # 4-byte Spill
 	movl	$3, %eax
 	movq	%rcx, 968(%rsp)         # 8-byte Spill
-	leaq	.L.str104, %rcx
+	leaq	.L.str104221, %rcx
 	movq	%rcx, 960(%rsp)         # 8-byte Spill
 	movabsq	$18, %rcx
 	movq	%rcx, 952(%rsp)         # 8-byte Spill
@@ -9481,7 +11834,7 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	%r10, (%rsp)
 	movl	%eax, 796(%rsp)         # 4-byte Spill
 	callq	trace_logger_log_int
-.Ltmp223:
+.Ltmp243:
 	#DEBUG_VALUE: m <- [RSP+796]
 	movq	816(%rsp), %rdi         # 8-byte Reload
 	movq	824(%rsp), %rsi         # 8-byte Reload
@@ -9614,16 +11967,16 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movl	796(%rsp), %ebp         # 4-byte Reload
 	movl	%ebp, 1020(%rsp)        # 4-byte Spill
 	jne	.LBB7_4
-.Ltmp224:
+.Ltmp244:
 .LBB7_5:                                # %.loopexit2
                                         #   in Loop: Header=BB7_1 Depth=1
 	movl	1020(%rsp), %eax        # 4-byte Reload
 	movabsq	$1, %rcx
-	leaq	.L.str25102, %rdx
+	leaq	.L.str25142, %rdx
 	movabsq	$0, %rsi
-	leaq	.L.str481, %rdi
+	leaq	.L.str4121, %rdi
 	movabsq	$2, %r8
-	leaq	.L.str88, %r9
+	leaq	.L.str88205, %r9
 	movabsq	$3, %r10
 	leaq	.L.str198, %r11
 	movabsq	$411, %rbx              # imm = 0x19B
@@ -9637,9 +11990,9 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	%rcx, 768(%rsp)         # 8-byte Spill
 	movabsq	$32, %rcx
 	movq	%rcx, 760(%rsp)         # 8-byte Spill
-	leaq	.L.str24101, %rcx
+	leaq	.L.str24141, %rcx
 	movq	%rcx, 752(%rsp)         # 8-byte Spill
-	leaq	.L.str380, %rcx
+	leaq	.L.str3120, %rcx
 	movq	%rcx, 744(%rsp)         # 8-byte Spill
 	movabsq	$46, %rcx
 	movl	%eax, 740(%rsp)         # 4-byte Spill
@@ -9655,7 +12008,7 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	%rcx, 696(%rsp)         # 8-byte Spill
 	leaq	.L.str190, %rcx
 	movq	%rcx, 688(%rsp)         # 8-byte Spill
-	leaq	.L.str104, %rcx
+	leaq	.L.str104221, %rcx
 	movq	%rcx, 680(%rsp)         # 8-byte Spill
 	leaq	.L.str192, %rcx
 	movq	%rcx, 672(%rsp)         # 8-byte Spill
@@ -9853,11 +12206,11 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
                                         # =>  This Inner Loop Header: Depth=2
 	movl	540(%rsp), %eax         # 4-byte Reload
 	movabsq	$1, %rcx
-	leaq	.L.str110, %rdx
+	leaq	.L.str110227, %rdx
 	movabsq	$0, %rsi
-	leaq	.L.str481, %rdi
+	leaq	.L.str4121, %rdi
 	movabsq	$2, %r8
-	leaq	.L.str88, %r9
+	leaq	.L.str88205, %r9
 	movabsq	$3, %r10
 	leaq	.L.str198, %r11
 	movabsq	$411, %rbx              # imm = 0x19B
@@ -9869,15 +12222,15 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	%rcx, 528(%rsp)         # 8-byte Spill
 	movabsq	$32, %rcx
 	movq	%rcx, 520(%rsp)         # 8-byte Spill
-	leaq	.L.str28105, %rcx
+	leaq	.L.str28145, %rcx
 	movq	%rcx, 512(%rsp)         # 8-byte Spill
-	leaq	.L.str380, %rcx
+	leaq	.L.str3120, %rcx
 	movq	%rcx, 504(%rsp)         # 8-byte Spill
 	movabsq	$46, %rcx
 	movl	%eax, 500(%rsp)         # 4-byte Spill
 	movl	$5, %eax
 	movq	%rcx, 488(%rsp)         # 8-byte Spill
-	leaq	.L.str107, %rcx
+	leaq	.L.str107224, %rcx
 	movq	%rcx, 480(%rsp)         # 8-byte Spill
 	movabsq	$5, %rcx
 	movq	%rcx, 472(%rsp)         # 8-byte Spill
@@ -9990,7 +12343,7 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	%r10, (%rsp)
 	movl	%eax, 308(%rsp)         # 4-byte Spill
 	callq	trace_logger_log_int
-.Ltmp225:
+.Ltmp245:
 	#DEBUG_VALUE: m <- [RSP+308]
 	movq	328(%rsp), %rdi         # 8-byte Reload
 	movq	336(%rsp), %rsi         # 8-byte Reload
@@ -10123,21 +12476,21 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movl	308(%rsp), %ebp         # 4-byte Reload
 	movl	%ebp, 540(%rsp)         # 4-byte Spill
 	jne	.LBB7_6
-.Ltmp226:
+.Ltmp246:
 .LBB7_7:                                # %._crit_edge
                                         #   in Loop: Header=BB7_1 Depth=1
 	movl	540(%rsp), %eax         # 4-byte Reload
 	movabsq	$1, %rcx
 	leaq	.L.str132, %rdx
 	movabsq	$0, %rsi
-	leaq	.L.str481, %rdi
+	leaq	.L.str4121, %rdi
 	movabsq	$2, %r8
 	leaq	.L.str184, %r9
 	movabsq	$3, %r10
-	leaq	.L.str37114, %r11
+	leaq	.L.str37154, %r11
 	movabsq	$412, %rbx              # imm = 0x19C
 	leaq	.L.str182, %r14
-	leaq	.L.str88, %r15
+	leaq	.L.str88205, %r15
 	leaq	.L.str202, %r12
 	movl	$0, %ebp
 	movl	$1, %r13d
@@ -10146,11 +12499,11 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	%rcx, 280(%rsp)         # 8-byte Spill
 	movabsq	$32, %rcx
 	movq	%rcx, 272(%rsp)         # 8-byte Spill
-	leaq	.L.str34111, %rcx
+	leaq	.L.str34151, %rcx
 	movq	%rcx, 264(%rsp)         # 8-byte Spill
 	leaq	.L.str185, %rcx
 	movq	%rcx, 256(%rsp)         # 8-byte Spill
-	leaq	.L.str380, %rcx
+	leaq	.L.str3120, %rcx
 	movq	%rcx, 248(%rsp)         # 8-byte Spill
 	movabsq	$414, %rcx              # imm = 0x19E
 	movq	%rcx, 240(%rsp)         # 8-byte Spill
@@ -10164,7 +12517,7 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	%rcx, 208(%rsp)         # 8-byte Spill
 	leaq	.L.str196, %rcx
 	movq	%rcx, 200(%rsp)         # 8-byte Spill
-	leaq	.L.str107, %rcx
+	leaq	.L.str107224, %rcx
 	movq	%rcx, 192(%rsp)         # 8-byte Spill
 	leaq	.L.str198, %rcx
 	movq	%rcx, 184(%rsp)         # 8-byte Spill
@@ -10172,7 +12525,7 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	%rcx, 176(%rsp)         # 8-byte Spill
 	movabsq	$48, %rcx
 	.loc	2 412 0                 # kiss_fft.c:412:0
-.Ltmp227:
+.Ltmp247:
 	movq	%rcx, 168(%rsp)         # 8-byte Spill
 	movq	176(%rsp), %rcx         # 8-byte Reload
 	movq	%rdi, 160(%rsp)         # 8-byte Spill
@@ -10257,7 +12610,7 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movl	124(%rsp), %eax         # 4-byte Reload
 	cmpl	$2, %eax
 	setl	%al
-.Ltmp228:
+.Ltmp248:
 	.loc	2 414 0                 # kiss_fft.c:414:0
 	movb	%al, %cl
 	andb	$1, %cl
@@ -10313,7 +12666,7 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movq	%r10, (%rsp)
 	movl	%ebp, 56(%rsp)          # 4-byte Spill
 	callq	trace_logger_log_int
-.Ltmp229:
+.Ltmp249:
 	#DEBUG_VALUE: kiss_fft_next_fast_size:n <- [RSP+56]
 	.loc	2 412 0                 # kiss_fft.c:412:0
 	movq	80(%rsp), %rdi          # 8-byte Reload
@@ -10360,17 +12713,17 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	movl	%ebp, 1724(%rsp)        # 4-byte Spill
 	jne	.LBB7_8
 	jmp	.LBB7_1
-.Ltmp230:
+.Ltmp250:
 .LBB7_8:
 	movabsq	$1, %rax
 	movabsq	$32, %rsi
 	leaq	.L.str185, %r8
 	movabsq	$0, %r9
-	leaq	.L.str481, %rcx
+	leaq	.L.str4121, %rcx
 	movabsq	$416, %rdi              # imm = 0x1A0
 	leaq	.L.str182, %rdx
-	leaq	.L.str37114, %r10
-	leaq	.L.str39116, %r11
+	leaq	.L.str37154, %r10
+	leaq	.L.str39156, %r11
 	movl	$0, %ebx
 	movl	$1, %ebp
 	.loc	2 416 0                 # kiss_fft.c:416:0
@@ -10407,9 +12760,9 @@ kiss_fft_next_fast_size:                # @kiss_fft_next_fast_size
 	popq	%r15
 	popq	%rbp
 	ret
-.Ltmp231:
-.Ltmp232:
-	.size	kiss_fft_next_fast_size, .Ltmp232-kiss_fft_next_fast_size
+.Ltmp251:
+.Ltmp252:
+	.size	kiss_fft_next_fast_size, .Ltmp252-kiss_fft_next_fast_size
 .Lfunc_end7:
 	.cfi_endproc
 
@@ -10421,49 +12774,49 @@ kf_factor:                              # @kf_factor
 	.loc	2 318 0                 # kiss_fft.c:318:0
 # BB#0:
 	pushq	%rbp
-.Ltmp240:
+.Ltmp260:
 	.cfi_def_cfa_offset 16
 	pushq	%r15
-.Ltmp241:
+.Ltmp261:
 	.cfi_def_cfa_offset 24
 	pushq	%r14
-.Ltmp242:
+.Ltmp262:
 	.cfi_def_cfa_offset 32
 	pushq	%r13
-.Ltmp243:
+.Ltmp263:
 	.cfi_def_cfa_offset 40
 	pushq	%r12
-.Ltmp244:
+.Ltmp264:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
-.Ltmp245:
+.Ltmp265:
 	.cfi_def_cfa_offset 56
 	subq	$1608, %rsp             # imm = 0x648
-.Ltmp246:
+.Ltmp266:
 	.cfi_def_cfa_offset 1664
-.Ltmp247:
+.Ltmp267:
 	.cfi_offset %rbx, -56
-.Ltmp248:
+.Ltmp268:
 	.cfi_offset %r12, -48
-.Ltmp249:
+.Ltmp269:
 	.cfi_offset %r13, -40
-.Ltmp250:
+.Ltmp270:
 	.cfi_offset %r14, -32
-.Ltmp251:
+.Ltmp271:
 	.cfi_offset %r15, -24
-.Ltmp252:
+.Ltmp272:
 	.cfi_offset %rbp, -16
 	#DEBUG_VALUE: kf_factor:facbuf <- RSI
 	#DEBUG_VALUE: kf_factor:n <- EDI
 	movl	$4, %eax
 	movabsq	$1, %rcx
 	movabsq	$0, %rdx
-	leaq	.L.str86, %r8
-	leaq	.L.str481, %r9
+	leaq	.L.str86203, %r8
+	leaq	.L.str4121, %r9
 	movabsq	$324, %r10              # imm = 0x144
-	leaq	.L.str79, %r11
-	leaq	.L.str178, %rbx
-	leaq	.L.str85, %r14
+	leaq	.L.str79196, %r11
+	leaq	.L.str1118, %rbx
+	leaq	.L.str85202, %r14
 	movabsq	$2, %r15
 	movl	$0, %ebp
 	movl	$1, %r12d
@@ -10471,35 +12824,35 @@ kf_factor:                              # @kf_factor
 	movq	%rcx, 1600(%rsp)        # 8-byte Spill
 	movabsq	$64, %rcx
 	movq	%rcx, 1592(%rsp)        # 8-byte Spill
-	leaq	.L.str784, %rcx
+	leaq	.L.str7124, %rcx
 	movq	%rcx, 1584(%rsp)        # 8-byte Spill
-	leaq	.L.str683, %rcx
+	leaq	.L.str6123, %rcx
 	movq	%rcx, 1576(%rsp)        # 8-byte Spill
 	leaq	floor, %rcx
 	movq	%rcx, 1568(%rsp)        # 8-byte Spill
-	leaq	.L.str84, %rcx
+	leaq	.L.str84201, %rcx
 	movq	%rcx, 1560(%rsp)        # 8-byte Spill
 	movabsq	$321, %rcx              # imm = 0x141
 	movq	%rcx, 1552(%rsp)        # 8-byte Spill
 	movabsq	$49, %rcx
 	movq	%rcx, 1544(%rsp)        # 8-byte Spill
-	leaq	.L.str279, %rcx
+	leaq	.L.str2119, %rcx
 	movq	%rcx, 1536(%rsp)        # 8-byte Spill
 	leaq	sqrt, %rcx
 	movq	%rcx, 1528(%rsp)        # 8-byte Spill
-	leaq	.L.str83, %rcx
+	leaq	.L.str83200, %rcx
 	.loc	2 317 0 prologue_end    # kiss_fft.c:317:0
-.Ltmp253:
+.Ltmp273:
 	movl	%eax, 1524(%rsp)        # 4-byte Spill
 	movl	%edi, %eax
                                         # kill: RAX<def> EAX<kill>
 	movq	%rax, 1512(%rsp)        # 8-byte Spill
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
-	movl	$.L.str82, %eax
+	movq	$.L.str4121, (%rax)
+	movl	$.L.str82199, %eax
                                         # kill: RAX<def> EAX<kill>
 	movq	%rsi, 1504(%rsp)        # 8-byte Spill
-.Ltmp254:
+.Ltmp274:
 	#DEBUG_VALUE: kf_factor:facbuf <- [RSP+1504]
 	movl	$24601, %esi            # imm = 0x6019
                                         # kill: RSI<def> ESI<kill>
@@ -10516,7 +12869,7 @@ kf_factor:                              # @kf_factor
 	movq	%rax, 1464(%rsp)        # 8-byte Spill
 	movq	1496(%rsp), %rax        # 8-byte Reload
 	movl	%edi, 1460(%rsp)        # 4-byte Spill
-.Ltmp255:
+.Ltmp275:
 	#DEBUG_VALUE: kf_factor:n <- [RSP+1460]
 	movq	%rax, %rdi
 	movq	1488(%rsp), %rax        # 8-byte Reload
@@ -10543,10 +12896,10 @@ kf_factor:                              # @kf_factor
 	movq	%r10, 1368(%rsp)        # 8-byte Spill
 	movq	%r11, 1360(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_int
-.Ltmp256:
+.Ltmp276:
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
-	movl	$.L.str89, %ebp
+	movq	$.L.str4121, (%rax)
+	movl	$.L.str89206, %ebp
 	movl	%ebp, %r8d
 	movl	$64, %ebp
 	movl	%ebp, %esi
@@ -10555,16 +12908,16 @@ kf_factor:                              # @kf_factor
 	movq	1480(%rsp), %rcx        # 8-byte Reload
 	movq	1464(%rsp), %r9         # 8-byte Reload
 	callq	trace_logger_log_ptr
-.Ltmp257:
+.Ltmp277:
 	#DEBUG_VALUE: kf_factor:p <- 4
 	.loc	2 321 0                 # kiss_fft.c:321:0
 	movq	%rsp, %rax
 	movl	$1, (%rax)
-	movl	$.L.str79, %ebp
+	movl	$.L.str79196, %ebp
 	movl	%ebp, %esi
-	movl	$.L.str178, %ebp
+	movl	$.L.str1118, %ebp
 	movl	%ebp, %edx
-	movl	$.L.str279, %ebp
+	movl	$.L.str2119, %ebp
 	movl	%ebp, %ecx
 	movl	$321, %ebp              # imm = 0x141
 	movl	%ebp, %edi
@@ -10573,7 +12926,7 @@ kf_factor:                              # @kf_factor
 	movl	1456(%rsp), %r9d        # 4-byte Reload
 	callq	trace_logger_log0
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
+	movq	$.L.str4121, (%rax)
 	movq	1480(%rsp), %rdi        # 8-byte Reload
 	movq	1488(%rsp), %rsi        # 8-byte Reload
 	movq	1512(%rsp), %rdx        # 8-byte Reload
@@ -10663,7 +13016,7 @@ kf_factor:                              # @kf_factor
 	movq	1448(%rsp), %r8         # 8-byte Reload
 	movq	1424(%rsp), %r9         # 8-byte Reload
 	callq	trace_logger_log_double
-.Ltmp258:
+.Ltmp278:
 	#DEBUG_VALUE: kf_factor:floor_sqrt <- [RSP+1336]
 	.loc	2 324 0                 # kiss_fft.c:324:0
 	movq	1368(%rsp), %rdi        # 8-byte Reload
@@ -10689,7 +13042,7 @@ kf_factor:                              # @kf_factor
 	movq	%rax, 1328(%rsp)        # 8-byte Spill
 	movl	%ebp, 1324(%rsp)        # 4-byte Spill
 	movl	%r12d, 1320(%rsp)       # 4-byte Spill
-.Ltmp259:
+.Ltmp279:
 .LBB8_1:                                # %.outer
                                         # =>This Loop Header: Depth=1
                                         #     Child Loop BB8_2 Depth 2
@@ -10697,17 +13050,17 @@ kf_factor:                              # @kf_factor
 	movl	1324(%rsp), %ecx        # 4-byte Reload
 	movq	1328(%rsp), %rdx        # 8-byte Reload
 	movabsq	$1, %rsi
-	leaq	.L.str986, %rdi
+	leaq	.L.str9126, %rdi
 	movabsq	$0, %r8
-	leaq	.L.str481, %r9
+	leaq	.L.str4121, %r9
 	movabsq	$2, %r10
-	leaq	.L.str94, %r11
+	leaq	.L.str94211, %r11
 	movabsq	$3, %rbx
-	leaq	.L.str88, %r14
+	leaq	.L.str88205, %r14
 	movabsq	$325, %r15              # imm = 0x145
-	leaq	.L.str79, %r12
-	leaq	.L.str86, %r13
-	leaq	.L.str93, %rbp
+	leaq	.L.str79196, %r12
+	leaq	.L.str86203, %r13
+	leaq	.L.str93210, %rbp
 	movl	%eax, 1316(%rsp)        # 4-byte Spill
 	movl	$0, %eax
 	movl	%eax, 1312(%rsp)        # 4-byte Spill
@@ -10717,23 +13070,23 @@ kf_factor:                              # @kf_factor
 	movq	%rdx, 1296(%rsp)        # 8-byte Spill
 	movabsq	$32, %rdx
 	movq	%rdx, 1288(%rsp)        # 8-byte Spill
-	leaq	.L.str885, %rdx
+	leaq	.L.str8125, %rdx
 	movq	%rdx, 1280(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rdx
+	leaq	.L.str3120, %rdx
 	movq	%rdx, 1272(%rsp)        # 8-byte Spill
 	movabsq	$46, %rdx
 	movq	%rdx, 1264(%rsp)        # 8-byte Spill
-	leaq	.L.str92, %rdx
+	leaq	.L.str92209, %rdx
 	movq	%rdx, 1256(%rsp)        # 8-byte Spill
-	leaq	.L.str90, %rdx
+	leaq	.L.str90207, %rdx
 	movq	%rdx, 1248(%rsp)        # 8-byte Spill
 	movabsq	$18, %rdx
 	movq	%rdx, 1240(%rsp)        # 8-byte Spill
-	leaq	.L.str178, %rdx
+	leaq	.L.str1118, %rdx
 	movq	%rdx, 1232(%rsp)        # 8-byte Spill
-	leaq	.L.str82, %rdx
+	leaq	.L.str82199, %rdx
 	movq	%rdx, 1224(%rsp)        # 8-byte Spill
-	leaq	.L.str25102, %rdx
+	leaq	.L.str25142, %rdx
 	movq	%rdx, 1216(%rsp)        # 8-byte Spill
 	movabsq	$-1, %rdx
 	movq	%rdx, 1208(%rsp)        # 8-byte Spill
@@ -10741,17 +13094,17 @@ kf_factor:                              # @kf_factor
 	movq	%rdx, 1200(%rsp)        # 8-byte Spill
 	movabsq	$4, %rdx
 	movq	%rdx, 1192(%rsp)        # 8-byte Spill
-	leaq	.L.str91, %rdx
+	leaq	.L.str91208, %rdx
 	movq	%rdx, 1184(%rsp)        # 8-byte Spill
 	movabsq	$64, %rdx
 	movq	%rdx, 1176(%rsp)        # 8-byte Spill
-	leaq	.L.str87, %rdx
+	leaq	.L.str87204, %rdx
 	movq	%rdx, 1168(%rsp)        # 8-byte Spill
-	leaq	.L.str89, %rdx
+	leaq	.L.str89206, %rdx
 	movq	%rdx, 1160(%rsp)        # 8-byte Spill
-	leaq	.L.str28105, %rdx
+	leaq	.L.str28145, %rdx
 	.loc	2 325 0                 # kiss_fft.c:325:0
-.Ltmp260:
+.Ltmp280:
 	movq	%rdx, 1152(%rsp)        # 8-byte Spill
 	movq	1208(%rsp), %rdx        # 8-byte Reload
 	movq	%rdi, 1144(%rsp)        # 8-byte Spill
@@ -11020,14 +13373,14 @@ kf_factor:                              # @kf_factor
 	movl	1036(%rsp), %eax        # 4-byte Reload
 	movl	$2, %ecx
 	.loc	2 326 0                 # kiss_fft.c:326:0
-.Ltmp261:
+.Ltmp281:
 	movq	%rsp, %rdx
 	movl	$1, (%rdx)
-	movl	$.L.str79, %esi
+	movl	$.L.str79196, %esi
 	movl	%esi, %edx
-	movl	$.L.str94, %esi
+	movl	$.L.str94211, %esi
 	movl	%esi, %edi
-	movl	$.L.str95, %esi
+	movl	$.L.str95212, %esi
 	movl	%esi, %r8d
 	movl	$48, %esi
 	movl	%esi, %r9d
@@ -11048,8 +13401,8 @@ kf_factor:                              # @kf_factor
 	movl	%eax, 988(%rsp)         # 4-byte Spill
 	callq	trace_logger_log0
 	movq	%rsp, %rcx
-	movq	$.L.str86, (%rcx)
-	movl	$.L.str90, %eax
+	movq	$.L.str86203, (%rcx)
+	movl	$.L.str90207, %eax
 	movl	%eax, %r8d
 	movl	$2, %eax
 	movl	%eax, %ecx
@@ -11072,8 +13425,8 @@ kf_factor:                              # @kf_factor
 	movq	%r11, %r9
 	callq	trace_logger_log_int
 	movq	%rsp, %rcx
-	movq	$.L.str97, (%rcx)
-	movl	$.L.str96, %eax
+	movq	$.L.str97214, (%rcx)
+	movl	$.L.str96213, %eax
 	movl	%eax, %r8d
 	movq	976(%rsp), %rdi         # 8-byte Reload
 	movq	960(%rsp), %rsi         # 8-byte Reload
@@ -11081,13 +13434,13 @@ kf_factor:                              # @kf_factor
 	movq	976(%rsp), %rcx         # 8-byte Reload
 	movq	976(%rsp), %r9          # 8-byte Reload
 	callq	trace_logger_log_int
-	movl	$.L.str97, %eax
+	movl	$.L.str97214, %eax
 	movl	%eax, %r8d
 	movl	988(%rsp), %eax         # 4-byte Reload
 	movl	%eax, %ebx
 	movl	%ebx, %ecx
 	movq	%rsp, %rdx
-	movq	$.L.str97, (%rdx)
+	movq	$.L.str97214, (%rdx)
 	movl	$19134, %ebx            # imm = 0x4ABE
 	movl	%ebx, %edi
 	movq	960(%rsp), %rsi         # 8-byte Reload
@@ -11102,7 +13455,7 @@ kf_factor:                              # @kf_factor
 	callq	trace_logger_log_int
 	movq	%rsp, %rcx
 	movl	$1, (%rcx)
-	movl	$.L.str98, %eax
+	movl	$.L.str98215, %eax
 	movl	%eax, %ecx
 	movl	$326, %eax              # imm = 0x146
 	movl	%eax, %edi
@@ -11116,8 +13469,8 @@ kf_factor:                              # @kf_factor
 	movl	1020(%rsp), %r9d        # 4-byte Reload
 	callq	trace_logger_log0
 	movq	%rsp, %rcx
-	movq	$.L.str481, (%rcx)
-	movl	$.L.str99, %eax
+	movq	$.L.str4121, (%rcx)
+	movl	$.L.str99216, %eax
 	movl	%eax, %r8d
 	movl	$6, %eax
 	movl	%eax, %edi
@@ -11127,8 +13480,8 @@ kf_factor:                              # @kf_factor
 	movq	968(%rsp), %r9          # 8-byte Reload
 	callq	trace_logger_log_int
 	movq	%rsp, %rcx
-	movq	$.L.str481, (%rcx)
-	movl	$.L.str380, %eax
+	movq	$.L.str4121, (%rcx)
+	movl	$.L.str3120, %eax
 	movl	%eax, %ecx
 	movl	$5, %eax
 	movl	%eax, %edi
@@ -11141,7 +13494,7 @@ kf_factor:                              # @kf_factor
 	movq	968(%rsp), %r9          # 8-byte Reload
 	callq	trace_logger_log_int
 	movq	%rsp, %rcx
-	movq	$.L.str481, (%rcx)
+	movq	$.L.str4121, (%rcx)
 	movl	$4, %eax
 	movl	%eax, %ecx
 	movq	%rcx, %rdi
@@ -11154,7 +13507,7 @@ kf_factor:                              # @kf_factor
 	movq	968(%rsp), %r9          # 8-byte Reload
 	callq	trace_logger_log_int
 	movq	%rsp, %rcx
-	movq	$.L.str481, (%rcx)
+	movq	$.L.str4121, (%rcx)
 	movq	928(%rsp), %rdi         # 8-byte Reload
 	movq	960(%rsp), %rsi         # 8-byte Reload
 	movq	912(%rsp), %rdx         # 8-byte Reload
@@ -11163,8 +13516,8 @@ kf_factor:                              # @kf_factor
 	movq	968(%rsp), %r9          # 8-byte Reload
 	callq	trace_logger_log_int
 	movq	%rsp, %rcx
-	movq	$.L.str481, (%rcx)
-	movl	$.L.str100, %eax
+	movq	$.L.str4121, (%rcx)
+	movl	$.L.str100217, %eax
 	movl	%eax, %r8d
 	movq	952(%rsp), %rdi         # 8-byte Reload
 	movq	968(%rsp), %rsi         # 8-byte Reload
@@ -11173,7 +13526,7 @@ kf_factor:                              # @kf_factor
 	movq	968(%rsp), %r9          # 8-byte Reload
 	callq	trace_logger_log_int
 	movq	%rsp, %rcx
-	movq	$.L.str481, (%rcx)
+	movq	$.L.str4121, (%rcx)
 	movq	976(%rsp), %rdi         # 8-byte Reload
 	movq	960(%rsp), %rsi         # 8-byte Reload
 	movq	944(%rsp), %rdx         # 8-byte Reload
@@ -11199,16 +13552,16 @@ kf_factor:                              # @kf_factor
 	movl	$3, %eax
 	movabsq	$1, %rcx
 	movabsq	$0, %rdx
-	leaq	.L.str97, %r8
-	leaq	.L.str481, %rsi
+	leaq	.L.str97214, %r8
+	leaq	.L.str4121, %rsi
 	movabsq	$328, %rdi              # imm = 0x148
-	leaq	.L.str79, %r9
-	leaq	.L.str99, %r10
-	leaq	.L.str101, %r11
+	leaq	.L.str79196, %r9
+	leaq	.L.str99216, %r10
+	leaq	.L.str101218, %r11
 	movabsq	$2, %rbx
 	movl	$0, %ebp
 	movl	$1, %r14d
-.Ltmp262:
+.Ltmp282:
 	#DEBUG_VALUE: kf_factor:p <- 3
 	.loc	2 328 0                 # kiss_fft.c:328:0
 	movq	%rsi, 888(%rsp)         # 8-byte Spill
@@ -11239,21 +13592,21 @@ kf_factor:                              # @kf_factor
 .LBB8_4:                                #   in Loop: Header=BB8_2 Depth=2
 	movabsq	$1, %rax
 	movabsq	$0, %rcx
-	leaq	.L.str97, %r8
-	leaq	.L.str481, %rdx
+	leaq	.L.str97214, %r8
+	leaq	.L.str4121, %rdx
 	movabsq	$329, %rsi              # imm = 0x149
-	leaq	.L.str79, %rdi
-	leaq	.L.str100, %r9
-	leaq	.L.str102, %r10
+	leaq	.L.str79196, %rdi
+	leaq	.L.str100217, %r9
+	leaq	.L.str102219, %r10
 	movabsq	$2, %r11
 	movl	$0, %ebx
 	movl	$1, %ebp
 	movabsq	$19134, %r14            # imm = 0x4ABE
 	movabsq	$32, %r15
-	leaq	.L.str1693, %r12
-	leaq	.L.str95, %r13
+	leaq	.L.str16133, %r12
+	leaq	.L.str95212, %r13
 	movq	%rax, 848(%rsp)         # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 840(%rsp)         # 8-byte Spill
 	movabsq	$8, %rax
 	.loc	2 329 0                 # kiss_fft.c:329:0
@@ -11315,7 +13668,7 @@ kf_factor:                              # @kf_factor
 	movq	%rax, (%rsp)
 	movl	%ebx, 716(%rsp)         # 4-byte Spill
 	callq	trace_logger_log_int
-.Ltmp263:
+.Ltmp283:
 	#DEBUG_VALUE: kf_factor:p <- [RSP+716]
 	movq	816(%rsp), %rdi         # 8-byte Reload
 	movq	832(%rsp), %rsi         # 8-byte Reload
@@ -11336,22 +13689,22 @@ kf_factor:                              # @kf_factor
 	callq	trace_logger_log_int
 	movl	716(%rsp), %ebx         # 4-byte Reload
 	movl	%ebx, 904(%rsp)         # 4-byte Spill
-.Ltmp264:
+.Ltmp284:
 .LBB8_5:                                # %.backedge
                                         #   in Loop: Header=BB8_2 Depth=2
 	movl	904(%rsp), %eax         # 4-byte Reload
 	movabsq	$1, %rcx
-	leaq	.L.str24101, %rdx
+	leaq	.L.str24141, %rdx
 	movabsq	$0, %rsi
-	leaq	.L.str481, %rdi
+	leaq	.L.str4121, %rdi
 	movabsq	$2, %r8
-	leaq	.L.str94, %r9
+	leaq	.L.str94211, %r9
 	movabsq	$3, %r10
-	leaq	.L.str88, %r11
+	leaq	.L.str88205, %r11
 	movabsq	$325, %rbx              # imm = 0x145
-	leaq	.L.str79, %r14
-	leaq	.L.str97, %r15
-	leaq	.L.str106, %r12
+	leaq	.L.str79196, %r14
+	leaq	.L.str97214, %r15
+	leaq	.L.str106223, %r12
 	movl	$0, %ebp
 	movl	$1, %r13d
 	movq	%rcx, 704(%rsp)         # 8-byte Spill
@@ -11359,21 +13712,21 @@ kf_factor:                              # @kf_factor
 	movq	%rcx, 696(%rsp)         # 8-byte Spill
 	movabsq	$32, %rcx
 	movq	%rcx, 688(%rsp)         # 8-byte Spill
-	leaq	.L.str105, %rcx
+	leaq	.L.str105222, %rcx
 	movq	%rcx, 680(%rsp)         # 8-byte Spill
-	leaq	.L.str380, %rcx
+	leaq	.L.str3120, %rcx
 	movq	%rcx, 672(%rsp)         # 8-byte Spill
 	movabsq	$46, %rcx
 	movq	%rcx, 664(%rsp)         # 8-byte Spill
-	leaq	.L.str92, %rcx
+	leaq	.L.str92209, %rcx
 	movq	%rcx, 656(%rsp)         # 8-byte Spill
-	leaq	.L.str96, %rcx
+	leaq	.L.str96213, %rcx
 	movq	%rcx, 648(%rsp)         # 8-byte Spill
 	movabsq	$18, %rcx
 	movq	%rcx, 640(%rsp)         # 8-byte Spill
-	leaq	.L.str1996, %rcx
+	leaq	.L.str19136, %rcx
 	movq	%rcx, 632(%rsp)         # 8-byte Spill
-	leaq	.L.str103, %rcx
+	leaq	.L.str103220, %rcx
 	movq	%rcx, 624(%rsp)         # 8-byte Spill
 	movabsq	$331, %rcx              # imm = 0x14B
 	movq	%rcx, 616(%rsp)         # 8-byte Spill
@@ -11381,23 +13734,23 @@ kf_factor:                              # @kf_factor
 	movq	%rcx, 608(%rsp)         # 8-byte Spill
 	movabsq	$64, %rcx
 	movq	%rcx, 600(%rsp)         # 8-byte Spill
-	leaq	.L.str104, %rcx
+	leaq	.L.str104221, %rcx
 	movq	%rcx, 592(%rsp)         # 8-byte Spill
-	leaq	.L.str784, %rcx
+	leaq	.L.str7124, %rcx
 	movq	%rcx, 584(%rsp)         # 8-byte Spill
 	movabsq	$47, %rcx
 	.loc	2 331 0                 # kiss_fft.c:331:0
-.Ltmp265:
+.Ltmp285:
 	movq	%rcx, 576(%rsp)         # 8-byte Spill
 	movq	%rsp, %rcx
 	movl	$1, (%rcx)
-	movl	$.L.str79, %ecx
+	movl	$.L.str79196, %ecx
                                         # kill: RCX<def> ECX<kill>
 	movl	%eax, 572(%rsp)         # 4-byte Spill
-	movl	$.L.str97, %eax
+	movl	$.L.str97214, %eax
                                         # kill: RAX<def> EAX<kill>
 	movq	%rsi, 560(%rsp)         # 8-byte Spill
-	movl	$.L.str103, %esi
+	movl	$.L.str103220, %esi
                                         # kill: RSI<def> ESI<kill>
 	movq	%rsi, 552(%rsp)         # 8-byte Spill
 	movl	$48, %esi
@@ -11432,8 +13785,8 @@ kf_factor:                              # @kf_factor
 	movq	%r11, 424(%rsp)         # 8-byte Spill
 	callq	trace_logger_log0
 	movq	%rsp, %rcx
-	movq	$.L.str94, (%rcx)
-	movl	$.L.str380, %eax
+	movq	$.L.str94211, (%rcx)
+	movl	$.L.str3120, %eax
 	movl	%eax, %ecx
 	movl	$3, %eax
 	movl	%eax, %edx
@@ -11460,7 +13813,7 @@ kf_factor:                              # @kf_factor
 	movq	%r10, 376(%rsp)         # 8-byte Spill
 	callq	trace_logger_log_int
 	movq	%rsp, %rcx
-	movq	$.L.str99, (%rcx)
+	movq	$.L.str99216, (%rcx)
 	movq	416(%rsp), %rdi         # 8-byte Reload
 	movq	408(%rsp), %rsi         # 8-byte Reload
 	movq	400(%rsp), %rdx         # 8-byte Reload
@@ -11469,8 +13822,8 @@ kf_factor:                              # @kf_factor
 	movq	376(%rsp), %r9          # 8-byte Reload
 	callq	trace_logger_log_int
 	movq	%rsp, %rcx
-	movq	$.L.str100, (%rcx)
-	movl	$.L.str1693, %eax
+	movq	$.L.str100217, (%rcx)
+	movl	$.L.str16133, %eax
 	movl	%eax, %r8d
 	movq	376(%rsp), %rdi         # 8-byte Reload
 	movq	408(%rsp), %rsi         # 8-byte Reload
@@ -11482,7 +13835,7 @@ kf_factor:                              # @kf_factor
 	movl	%eax, %ebp
 	movl	%ebp, %ecx
 	movq	%rsp, %rdx
-	movq	$.L.str100, (%rdx)
+	movq	$.L.str100217, (%rdx)
 	movl	$19134, %ebp            # imm = 0x4ABE
 	movl	%ebp, %edi
 	movq	408(%rsp), %rsi         # 8-byte Reload
@@ -11495,7 +13848,7 @@ kf_factor:                              # @kf_factor
 	callq	trace_logger_log_int
 	movq	%rsp, %rcx
 	movl	$1, (%rcx)
-	movl	$.L.str104, %eax
+	movl	$.L.str104221, %eax
 	movl	%eax, %ecx
 	movl	$331, %eax              # imm = 0x14B
 	movl	%eax, %edi
@@ -11506,7 +13859,7 @@ kf_factor:                              # @kf_factor
 	movl	524(%rsp), %r9d         # 4-byte Reload
 	callq	trace_logger_log0
 	movq	%rsp, %rcx
-	movq	$.L.str481, (%rcx)
+	movq	$.L.str4121, (%rcx)
 	movq	376(%rsp), %rdi         # 8-byte Reload
 	movq	408(%rsp), %rsi         # 8-byte Reload
 	movq	368(%rsp), %rdx         # 8-byte Reload
@@ -11567,7 +13920,7 @@ kf_factor:                              # @kf_factor
 	movq	%r10, (%rsp)
 	movb	%al, 359(%rsp)          # 1-byte Spill
 	callq	trace_logger_log_int
-.Ltmp266:
+.Ltmp286:
 	#DEBUG_VALUE: kf_factor:p <- [RSP+1316]
 	.loc	2 331 0                 # kiss_fft.c:331:0
 	movq	616(%rsp), %rdi         # 8-byte Reload
@@ -11617,7 +13970,7 @@ kf_factor:                              # @kf_factor
 	movl	1316(%rsp), %ebp        # 4-byte Reload
 	movl	572(%rsp), %r13d        # 4-byte Reload
 	cmovel	%r13d, %ebp
-.Ltmp267:
+.Ltmp287:
 	.loc	2 325 0                 # kiss_fft.c:325:0
 	movl	%ebp, %eax
 	movl	%eax, %edx
@@ -11764,22 +14117,22 @@ kf_factor:                              # @kf_factor
 	movl	%ebp, 1036(%rsp)        # 4-byte Spill
 	jne	.LBB8_6
 	jmp	.LBB8_2
-.Ltmp268:
+.Ltmp288:
 .LBB8_6:                                # %._crit_edge
                                         #   in Loop: Header=BB8_1 Depth=1
 	movl	1036(%rsp), %eax        # 4-byte Reload
 	movabsq	$1, %rcx
-	leaq	.L.str110, %rdx
+	leaq	.L.str110227, %rdx
 	movabsq	$0, %rsi
-	leaq	.L.str481, %rdi
+	leaq	.L.str4121, %rdi
 	movabsq	$2, %r8
-	leaq	.L.str1895, %r9
+	leaq	.L.str18135, %r9
 	movabsq	$3, %r10
-	leaq	.L.str86, %r11
+	leaq	.L.str86203, %r11
 	movabsq	$337, %rbx              # imm = 0x151
-	leaq	.L.str79, %r14
-	leaq	.L.str88, %r15
-	leaq	.L.str111, %r12
+	leaq	.L.str79196, %r14
+	leaq	.L.str88205, %r15
+	leaq	.L.str111228, %r12
 	movl	$0, %ebp
 	movl	$1, %r13d
 	movq	%rcx, 336(%rsp)         # 8-byte Spill
@@ -11787,45 +14140,45 @@ kf_factor:                              # @kf_factor
 	movq	%rcx, 328(%rsp)         # 8-byte Spill
 	movabsq	$32, %rcx
 	movq	%rcx, 320(%rsp)         # 8-byte Spill
-	leaq	.L.str25102, %rcx
+	leaq	.L.str25142, %rcx
 	movq	%rcx, 312(%rsp)         # 8-byte Spill
-	leaq	.L.str380, %rcx
+	leaq	.L.str3120, %rcx
 	movq	%rcx, 304(%rsp)         # 8-byte Spill
 	movabsq	$46, %rcx
 	movq	%rcx, 296(%rsp)         # 8-byte Spill
 	movabsq	$64, %rcx
 	movq	%rcx, 288(%rsp)         # 8-byte Spill
-	leaq	.L.str107, %rcx
+	leaq	.L.str107224, %rcx
 	movq	%rcx, 280(%rsp)         # 8-byte Spill
 	movabsq	$336, %rcx              # imm = 0x150
 	movq	%rcx, 272(%rsp)         # 8-byte Spill
-	leaq	.L.str109, %rcx
+	leaq	.L.str109226, %rcx
 	movq	%rcx, 264(%rsp)         # 8-byte Spill
 	movabsq	$28, %rcx
 	movq	%rcx, 256(%rsp)         # 8-byte Spill
-	leaq	.L.str28105, %rcx
+	leaq	.L.str28145, %rcx
 	movq	%rcx, 248(%rsp)         # 8-byte Spill
-	leaq	.L.str87, %rcx
+	leaq	.L.str87204, %rcx
 	movq	%rcx, 240(%rsp)         # 8-byte Spill
 	movabsq	$29, %rcx
 	movq	%rcx, 232(%rsp)         # 8-byte Spill
-	leaq	.L.str91, %rcx
+	leaq	.L.str91208, %rcx
 	movq	%rcx, 224(%rsp)         # 8-byte Spill
 	movabsq	$335, %rcx              # imm = 0x14F
 	movq	%rcx, 216(%rsp)         # 8-byte Spill
-	leaq	.L.str108, %rcx
+	leaq	.L.str108225, %rcx
 	movq	%rcx, 208(%rsp)         # 8-byte Spill
-	leaq	.L.str92, %rcx
+	leaq	.L.str92209, %rcx
 	movq	%rcx, 200(%rsp)         # 8-byte Spill
 	movabsq	$334, %rcx              # imm = 0x14E
 	movq	%rcx, 192(%rsp)         # 8-byte Spill
 	movabsq	$15, %rcx
 	movq	%rcx, 184(%rsp)         # 8-byte Spill
-	leaq	.L.str90, %rcx
+	leaq	.L.str90207, %rcx
 	movq	%rcx, 176(%rsp)         # 8-byte Spill
-	leaq	.L.str96, %rcx
+	leaq	.L.str96213, %rcx
 	movq	%rcx, 168(%rsp)         # 8-byte Spill
-	leaq	.L.str97, %rcx
+	leaq	.L.str97214, %rcx
 	movq	%rcx, 160(%rsp)         # 8-byte Spill
 	movabsq	$-1, %rcx
 	movq	%rcx, 152(%rsp)         # 8-byte Spill
@@ -11929,7 +14282,7 @@ kf_factor:                              # @kf_factor
 	movq	%r10, (%rsp)
 	movl	%eax, 36(%rsp)          # 4-byte Spill
 	callq	trace_logger_log_int
-.Ltmp269:
+.Ltmp289:
 	#DEBUG_VALUE: kf_factor:n <- [RSP+36]
 	.loc	2 335 0                 # kiss_fft.c:335:0
 	movq	216(%rsp), %rdi         # 8-byte Reload
@@ -11971,7 +14324,7 @@ kf_factor:                              # @kf_factor
 	movq	136(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp270:
+.Ltmp290:
 	#DEBUG_VALUE: kf_factor:facbuf <- [RSP+24]
 	movq	216(%rsp), %rdi         # 8-byte Reload
 	movq	64(%rsp), %rsi          # 8-byte Reload
@@ -12044,7 +14397,7 @@ kf_factor:                              # @kf_factor
 	movq	136(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp271:
+.Ltmp291:
 	#DEBUG_VALUE: kf_factor:facbuf <- [RSP+16]
 	movq	272(%rsp), %rdi         # 8-byte Reload
 	movq	64(%rsp), %rsi          # 8-byte Reload
@@ -12169,12 +14522,12 @@ kf_factor:                              # @kf_factor
 	movl	%ebp, 1324(%rsp)        # 4-byte Spill
 	movl	%r13d, 1320(%rsp)       # 4-byte Spill
 	jne	.LBB8_1
-.Ltmp272:
+.Ltmp292:
 # BB#7:
 	movabsq	$338, %rdi              # imm = 0x152
-	leaq	.L.str79, %rsi
-	leaq	.L.str1895, %rdx
-	leaq	.L.str35112, %rcx
+	leaq	.L.str79196, %rsi
+	leaq	.L.str18135, %rdx
+	leaq	.L.str35152, %rcx
 	movabsq	$1, %r8
 	movl	$0, %r9d
 	movl	$1, %eax
@@ -12190,9 +14543,9 @@ kf_factor:                              # @kf_factor
 	popq	%r15
 	popq	%rbp
 	ret
-.Ltmp273:
-.Ltmp274:
-	.size	kf_factor, .Ltmp274-kf_factor
+.Ltmp293:
+.Ltmp294:
+	.size	kf_factor, .Ltmp294-kf_factor
 .Lfunc_end8:
 	.cfi_endproc
 
@@ -12204,42 +14557,42 @@ kf_work:                                # @kf_work
 	.loc	2 252 0                 # kiss_fft.c:252:0
 # BB#0:
 	pushq	%rbp
-.Ltmp282:
+.Ltmp302:
 	.cfi_def_cfa_offset 16
 	pushq	%r15
-.Ltmp283:
+.Ltmp303:
 	.cfi_def_cfa_offset 24
 	pushq	%r14
-.Ltmp284:
+.Ltmp304:
 	.cfi_def_cfa_offset 32
 	pushq	%r13
-.Ltmp285:
+.Ltmp305:
 	.cfi_def_cfa_offset 40
 	pushq	%r12
-.Ltmp286:
+.Ltmp306:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
-.Ltmp287:
+.Ltmp307:
 	.cfi_def_cfa_offset 56
 	subq	$3208, %rsp             # imm = 0xC88
-.Ltmp288:
+.Ltmp308:
 	.cfi_def_cfa_offset 3264
-.Ltmp289:
+.Ltmp309:
 	.cfi_offset %rbx, -56
-.Ltmp290:
+.Ltmp310:
 	.cfi_offset %r12, -48
-.Ltmp291:
+.Ltmp311:
 	.cfi_offset %r13, -40
-.Ltmp292:
+.Ltmp312:
 	.cfi_offset %r14, -32
-.Ltmp293:
+.Ltmp313:
 	.cfi_offset %r15, -24
-.Ltmp294:
+.Ltmp314:
 	.cfi_offset %rbp, -16
 	movabsq	$1, %rax
-	leaq	.L.str1996, %r10
+	leaq	.L.str19136, %r10
 	movabsq	$0, %r11
-	leaq	.L.str481, %rbx
+	leaq	.L.str4121, %rbx
 	movabsq	$2, %r14
 	leaq	.L.str128, %r15
 	movabsq	$3, %r12
@@ -12248,7 +14601,7 @@ kf_work:                                # @kf_work
 	movq	%rax, 3200(%rsp)        # 8-byte Spill
 	leaq	.L.str119, %rax
 	movq	%rax, 3192(%rsp)        # 8-byte Spill
-	leaq	.L.str178, %rax
+	leaq	.L.str1118, %rax
 	movq	%rax, 3184(%rsp)        # 8-byte Spill
 	leaq	.L.str126, %rax
 	movl	%ecx, 3180(%rsp)        # 4-byte Spill
@@ -12262,43 +14615,43 @@ kf_work:                                # @kf_work
 	movq	%rax, 3152(%rsp)        # 8-byte Spill
 	leaq	.L.str125, %rax
 	movq	%rax, 3144(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 3136(%rsp)        # 8-byte Spill
 	movabsq	$46, %rax
 	movq	%rax, 3128(%rsp)        # 8-byte Spill
 	movabsq	$64, %rax
 	movq	%rax, 3120(%rsp)        # 8-byte Spill
-	leaq	.L.str104, %rax
+	leaq	.L.str104221, %rax
 	movq	%rax, 3112(%rsp)        # 8-byte Spill
-	leaq	.L.str279, %rax
+	leaq	.L.str2119, %rax
 	movq	%rax, 3104(%rsp)        # 8-byte Spill
-	leaq	.L.str1693, %rax
+	leaq	.L.str16133, %rax
 	movq	%rax, 3096(%rsp)        # 8-byte Spill
 	movabsq	$257, %rax              # imm = 0x101
 	movq	%rax, 3088(%rsp)        # 8-byte Spill
 	movabsq	$29, %rax
 	movq	%rax, 3080(%rsp)        # 8-byte Spill
-	leaq	.L.str1491, %rax
+	leaq	.L.str14131, %rax
 	movq	%rax, 3072(%rsp)        # 8-byte Spill
 	movabsq	$35, %rax
 	movq	%rax, 3064(%rsp)        # 8-byte Spill
-	leaq	.L.str885, %rax
+	leaq	.L.str8125, %rax
 	movq	%rax, 3056(%rsp)        # 8-byte Spill
 	movabsq	$12, %rax
 	movq	%rax, 3048(%rsp)        # 8-byte Spill
-	leaq	.L.str784, %rax
+	leaq	.L.str7124, %rax
 	movq	%rax, 3040(%rsp)        # 8-byte Spill
 	movabsq	$256, %rax              # imm = 0x100
 	movq	%rax, 3032(%rsp)        # 8-byte Spill
 	movabsq	$27, %rax
 	movq	%rax, 3024(%rsp)        # 8-byte Spill
-	leaq	.L.str986, %rax
+	leaq	.L.str9126, %rax
 	movq	%rax, 3016(%rsp)        # 8-byte Spill
 	leaq	.L.str124, %rax
 	movq	%rax, 3008(%rsp)        # 8-byte Spill
 	movabsq	$255, %rax
 	movq	%rax, 3000(%rsp)        # 8-byte Spill
-	leaq	.L.str683, %rax
+	leaq	.L.str6123, %rax
 	movq	%rax, 2992(%rsp)        # 8-byte Spill
 	leaq	.L.str123, %rax
 	movq	%rax, 2984(%rsp)        # 8-byte Spill
@@ -12310,13 +14663,13 @@ kf_work:                                # @kf_work
 	movq	%rax, 2960(%rsp)        # 8-byte Spill
 	movabsq	$24601, %rax            # imm = 0x6019
 	movq	%rax, 2952(%rsp)        # 8-byte Spill
-	leaq	.L.str117, %rax
+	leaq	.L.str117234, %rax
 	movq	%rax, 2944(%rsp)        # 8-byte Spill
 	leaq	.L.str120, %rax
 	movq	%rax, 2936(%rsp)        # 8-byte Spill
 	leaq	.L.str129, %rax
 	.loc	2 245 0 prologue_end    # kiss_fft.c:245:0
-.Ltmp295:
+.Ltmp315:
 	movq	%rax, 2928(%rsp)        # 8-byte Spill
 	movq	2952(%rsp), %rax        # 8-byte Reload
 	movq	%rdi, 2920(%rsp)        # 8-byte Spill
@@ -12429,7 +14782,7 @@ kf_work:                                # @kf_work
 	movq	2864(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp296:
+.Ltmp316:
 	#DEBUG_VALUE: kf_work:Fout_beg <- [RSP+2808]
 	.loc	2 254 0                 # kiss_fft.c:254:0
 	movq	2976(%rsp), %rdi        # 8-byte Reload
@@ -12462,7 +14815,7 @@ kf_work:                                # @kf_work
 	movq	2864(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp297:
+.Ltmp317:
 	#DEBUG_VALUE: kf_work:f_beg <- [RSP+2800]
 	.loc	2 255 0                 # kiss_fft.c:255:0
 	movq	3000(%rsp), %rdi        # 8-byte Reload
@@ -12503,7 +14856,7 @@ kf_work:                                # @kf_work
 	movq	%r10, (%rsp)
 	movq	%rax, 2792(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_ptr
-.Ltmp298:
+.Ltmp318:
 	#DEBUG_VALUE: kf_work:factors <- [RSP+2792]
 	movq	3000(%rsp), %rdi        # 8-byte Reload
 	movq	3192(%rsp), %rsi        # 8-byte Reload
@@ -12536,7 +14889,7 @@ kf_work:                                # @kf_work
 	movq	2864(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-.Ltmp299:
+.Ltmp319:
 	#DEBUG_VALUE: kf_work:p <- [RSP+2788]
 	.loc	2 256 0                 # kiss_fft.c:256:0
 	movq	3032(%rsp), %rdi        # 8-byte Reload
@@ -12577,7 +14930,7 @@ kf_work:                                # @kf_work
 	movq	%r10, (%rsp)
 	movq	%rax, 2776(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_ptr
-.Ltmp300:
+.Ltmp320:
 	#DEBUG_VALUE: kf_work:factors <- [RSP+2776]
 	movq	3032(%rsp), %rdi        # 8-byte Reload
 	movq	3192(%rsp), %rsi        # 8-byte Reload
@@ -12610,7 +14963,7 @@ kf_work:                                # @kf_work
 	movq	2864(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-.Ltmp301:
+.Ltmp321:
 	#DEBUG_VALUE: kf_work:m <- [RSP+2772]
 	.loc	2 257 0                 # kiss_fft.c:257:0
 	movq	3088(%rsp), %rdi        # 8-byte Reload
@@ -12730,7 +15083,7 @@ kf_work:                                # @kf_work
 	movq	2864(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp302:
+.Ltmp322:
 	#DEBUG_VALUE: kf_work:Fout_end <- [RSP+2752]
 	.loc	2 283 0                 # kiss_fft.c:283:0
 	movq	2832(%rsp), %rdi        # 8-byte Reload
@@ -12818,12 +15171,12 @@ kf_work:                                # @kf_work
 	movb	2751(%rsp), %al         # 1-byte Reload
 	testb	$1, %al
 	jne	.LBB9_2
-.Ltmp303:
+.Ltmp323:
 # BB#1:                                 # %.preheader1
 	movabsq	$1, %rax
 	movabsq	$0, %rcx
 	leaq	.L.str131, %r8
-	leaq	.L.str481, %rdx
+	leaq	.L.str4121, %rdx
 	movabsq	$294, %rsi              # imm = 0x126
 	leaq	.L.str119, %rdi
 	leaq	.L.str128, %r9
@@ -12833,7 +15186,7 @@ kf_work:                                # @kf_work
 	movl	$1, %ebp
 	movabsq	$19134, %r14            # imm = 0x4ABE
 	movabsq	$64, %r15
-	leaq	.L.str28105, %r12
+	leaq	.L.str28145, %r12
 	movabsq	$32, %r13
 	movq	%rax, 2736(%rsp)        # 8-byte Spill
 	leaq	.L.str125, %rax
@@ -12842,9 +15195,9 @@ kf_work:                                # @kf_work
 	movq	%rax, 2720(%rsp)        # 8-byte Spill
 	movabsq	$35, %rax
 	movq	%rax, 2712(%rsp)        # 8-byte Spill
-	leaq	.L.str107, %rax
+	leaq	.L.str107224, %rax
 	movq	%rax, 2704(%rsp)        # 8-byte Spill
-	leaq	.L.str25102, %rax
+	leaq	.L.str25142, %rax
 	movq	%rax, 2696(%rsp)        # 8-byte Spill
 	leaq	.L.str129, %rax
 	movq	%rax, 2688(%rsp)        # 8-byte Spill
@@ -12854,13 +15207,13 @@ kf_work:                                # @kf_work
 	movq	%rax, 2672(%rsp)        # 8-byte Spill
 	leaq	.L.str120, %rax
 	movq	%rax, 2664(%rsp)        # 8-byte Spill
-	leaq	.L.str24101, %rax
+	leaq	.L.str24141, %rax
 	movq	%rax, 2656(%rsp)        # 8-byte Spill
-	leaq	.L.str105, %rax
+	leaq	.L.str105222, %rax
 	movq	%rax, 2648(%rsp)        # 8-byte Spill
-	leaq	.L.str885, %rax
+	leaq	.L.str8125, %rax
 	.loc	2 294 0                 # kiss_fft.c:294:0
-.Ltmp304:
+.Ltmp324:
 	movq	%rdi, 2640(%rsp)        # 8-byte Spill
 	movq	%rsi, %rdi
 	movq	%rax, 2632(%rsp)        # 8-byte Spill
@@ -13071,12 +15424,12 @@ kf_work:                                # @kf_work
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_int
 	jmp	.LBB9_4
-.Ltmp305:
+.Ltmp325:
 .LBB9_2:                                # %.preheader
 	movabsq	$1, %rax
 	movabsq	$0, %rcx
 	leaq	.L.str134, %r8
-	leaq	.L.str481, %rdx
+	leaq	.L.str4121, %rdx
 	movabsq	$285, %rdi              # imm = 0x11D
 	leaq	.L.str119, %rsi
 	leaq	.L.str127, %r9
@@ -13087,7 +15440,7 @@ kf_work:                                # @kf_work
 	movabsq	$19134, %r14            # imm = 0x4ABE
 	movabsq	$64, %r15
 	leaq	.L.str132, %r12
-	leaq	.L.str110, %r13
+	leaq	.L.str110227, %r13
 	movq	%rax, 2480(%rsp)        # 8-byte Spill
 	leaq	.L.str129, %rax
 	movq	%rax, 2472(%rsp)        # 8-byte Spill
@@ -13101,7 +15454,7 @@ kf_work:                                # @kf_work
 	movq	%rax, 2440(%rsp)        # 8-byte Spill
 	movabsq	$35, %rax
 	.loc	2 286 0                 # kiss_fft.c:286:0
-.Ltmp306:
+.Ltmp326:
 	movq	%rax, 2432(%rsp)        # 8-byte Spill
 	movq	2464(%rsp), %rax        # 8-byte Reload
 	movq	%rdi, 2424(%rsp)        # 8-byte Spill
@@ -13208,9 +15561,9 @@ kf_work:                                # @kf_work
 	callq	trace_logger_log_int
 .LBB9_3:                                # =>This Inner Loop Header: Depth=1
 	movabsq	$1, %rax
-	leaq	.L.str56133, %rcx
+	leaq	.L.str56173, %rcx
 	movabsq	$0, %rdx
-	leaq	.L.str481, %rsi
+	leaq	.L.str4121, %rsi
 	movabsq	$2, %rdi
 	leaq	.L.str134, %r8
 	movabsq	$3, %r9
@@ -13223,9 +15576,9 @@ kf_work:                                # @kf_work
 	movabsq	$19134, %r12            # imm = 0x4ABE
 	movabsq	$64, %r13
 	movq	%rax, 2296(%rsp)        # 8-byte Spill
-	leaq	.L.str55132, %rax
+	leaq	.L.str55172, %rax
 	movq	%rax, 2288(%rsp)        # 8-byte Spill
-	leaq	.L.str104, %rax
+	leaq	.L.str104221, %rax
 	movq	%rax, 2280(%rsp)        # 8-byte Spill
 	movabsq	$46, %rax
 	movq	%rax, 2272(%rsp)        # 8-byte Spill
@@ -13235,15 +15588,15 @@ kf_work:                                # @kf_work
 	movq	%rax, 2256(%rsp)        # 8-byte Spill
 	movabsq	$28, %rax
 	movq	%rax, 2248(%rsp)        # 8-byte Spill
-	leaq	.L.str54131, %rax
+	leaq	.L.str54171, %rax
 	movq	%rax, 2240(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 2232(%rsp)        # 8-byte Spill
 	movabsq	$29, %rax
 	movq	%rax, 2224(%rsp)        # 8-byte Spill
 	movabsq	$27, %rax
 	movq	%rax, 2216(%rsp)        # 8-byte Spill
-	leaq	.L.str53130, %rax
+	leaq	.L.str53170, %rax
 	movq	%rax, 2208(%rsp)        # 8-byte Spill
 	leaq	.L.str123, %rax
 	movq	%rax, 2200(%rsp)        # 8-byte Spill
@@ -13255,21 +15608,21 @@ kf_work:                                # @kf_work
 	movq	%rax, 2176(%rsp)        # 8-byte Spill
 	leaq	.L.str132, %rax
 	movq	%rax, 2168(%rsp)        # 8-byte Spill
-	leaq	.L.str47124, %rax
+	leaq	.L.str47164, %rax
 	movq	%rax, 2160(%rsp)        # 8-byte Spill
-	leaq	.L.str43120, %rax
+	leaq	.L.str43160, %rax
 	movq	%rax, 2152(%rsp)        # 8-byte Spill
 	movabsq	$285, %rax              # imm = 0x11D
 	movq	%rax, 2144(%rsp)        # 8-byte Spill
 	leaq	.L.str136, %rax
 	movq	%rax, 2136(%rsp)        # 8-byte Spill
-	leaq	.L.str40117, %rax
+	leaq	.L.str40157, %rax
 	movq	%rax, 2128(%rsp)        # 8-byte Spill
 	leaq	.L.str135, %rax
 	movq	%rax, 2120(%rsp)        # 8-byte Spill
 	movabsq	$44, %rax
 	movq	%rax, 2112(%rsp)        # 8-byte Spill
-	leaq	.L.str38115, %rax
+	leaq	.L.str38155, %rax
 	movq	%rax, 2104(%rsp)        # 8-byte Spill
 	movq	2144(%rsp), %rax        # 8-byte Reload
 	movq	%rdi, 2096(%rsp)        # 8-byte Spill
@@ -13747,21 +16100,21 @@ kf_work:                                # @kf_work
 	testb	$1, %al
 	jne	.LBB9_5
 	jmp	.LBB9_3
-.Ltmp307:
+.Ltmp327:
 .LBB9_4:                                # =>This Inner Loop Header: Depth=1
 	movabsq	$6, %rdi
 	movabsq	$64, %rax
 	movabsq	$1, %rcx
-	leaq	.L.str117, %r8
+	leaq	.L.str117234, %r8
 	movabsq	$0, %rdx
-	leaq	.L.str481, %rsi
+	leaq	.L.str4121, %rsi
 	movabsq	$5, %r9
-	leaq	.L.str986, %r10
+	leaq	.L.str9126, %r10
 	movabsq	$4, %r11
 	movabsq	$32, %rbx
 	leaq	.L.str120, %r14
 	movabsq	$3, %r15
-	leaq	.L.str24101, %r12
+	leaq	.L.str24141, %r12
 	movabsq	$2, %r13
 	leaq	.L.str123, %rbp
 	movq	%rax, 1912(%rsp)        # 8-byte Spill
@@ -13785,7 +16138,7 @@ kf_work:                                # @kf_work
 	movl	%esi, 1844(%rsp)        # 4-byte Spill
 	movl	$1, %esi
 	.loc	2 294 0                 # kiss_fft.c:294:0
-.Ltmp308:
+.Ltmp328:
 	movq	%rax, 1832(%rsp)        # 8-byte Spill
 	movq	1872(%rsp), %rax        # 8-byte Reload
 	movq	%rdi, 1824(%rsp)        # 8-byte Spill
@@ -13888,9 +16241,9 @@ kf_work:                                # @kf_work
 	movq	2880(%rsp), %r9         # 8-byte Reload
 	callq	kf_work
 	movabsq	$1, %rdx
-	leaq	.L.str64141, %rsi
+	leaq	.L.str64181, %rsi
 	movabsq	$0, %rdi
-	leaq	.L.str481, %r8
+	leaq	.L.str4121, %r8
 	movabsq	$2, %r9
 	leaq	.L.str131, %r10
 	movabsq	$3, %r11
@@ -13905,7 +16258,7 @@ kf_work:                                # @kf_work
 	movq	%rcx, 1712(%rsp)        # 8-byte Spill
 	leaq	.L.str145, %rcx
 	movq	%rcx, 1704(%rsp)        # 8-byte Spill
-	leaq	.L.str104, %rcx
+	leaq	.L.str104221, %rcx
 	movq	%rcx, 1696(%rsp)        # 8-byte Spill
 	movabsq	$46, %rcx
 	movq	%rcx, 1688(%rsp)        # 8-byte Spill
@@ -13915,9 +16268,9 @@ kf_work:                                # @kf_work
 	movq	%rcx, 1672(%rsp)        # 8-byte Spill
 	movabsq	$28, %rcx
 	movq	%rcx, 1664(%rsp)        # 8-byte Spill
-	leaq	.L.str61138, %rcx
+	leaq	.L.str61178, %rcx
 	movq	%rcx, 1656(%rsp)        # 8-byte Spill
-	leaq	.L.str28105, %rcx
+	leaq	.L.str28145, %rcx
 	movq	%rcx, 1648(%rsp)        # 8-byte Spill
 	movabsq	$29, %rcx
 	movq	%rcx, 1640(%rsp)        # 8-byte Spill
@@ -13931,9 +16284,9 @@ kf_work:                                # @kf_work
 	movq	%rcx, 1608(%rsp)        # 8-byte Spill
 	leaq	.L.str144, %rcx
 	movq	%rcx, 1600(%rsp)        # 8-byte Spill
-	leaq	.L.str58135, %rcx
+	leaq	.L.str58175, %rcx
 	movq	%rcx, 1592(%rsp)        # 8-byte Spill
-	leaq	.L.str107, %rcx
+	leaq	.L.str107224, %rcx
 	.loc	2 295 0                 # kiss_fft.c:295:0
 	movq	%rcx, 1584(%rsp)        # 8-byte Spill
 	movq	1608(%rsp), %rcx        # 8-byte Reload
@@ -14229,7 +16582,7 @@ kf_work:                                # @kf_work
 	testb	$1, %al
 	jne	.LBB9_5
 	jmp	.LBB9_4
-.Ltmp309:
+.Ltmp329:
 .LBB9_5:                                # %.loopexit
 	.loc	2 299 0                 # kiss_fft.c:299:0
 	movq	%rsp, %rax
@@ -14253,7 +16606,7 @@ kf_work:                                # @kf_work
 	movq	%rax, 1408(%rsp)        # 8-byte Spill
 	callq	trace_logger_log0
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
+	movq	$.L.str4121, (%rax)
 	movl	$.L.str122, %r9d
 	movl	%r9d, %r8d
 	movl	$2, %r9d
@@ -14277,8 +16630,8 @@ kf_work:                                # @kf_work
 	movq	%rax, 1376(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_ptr
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
-	movl	$.L.str279, %ebx
+	movq	$.L.str4121, (%rax)
+	movl	$.L.str2119, %ebx
 	movl	%ebx, %r8d
 	movq	1392(%rsp), %rdi        # 8-byte Reload
 	movq	1384(%rsp), %rsi        # 8-byte Reload
@@ -14302,7 +16655,7 @@ kf_work:                                # @kf_work
 	movl	1432(%rsp), %r9d        # 4-byte Reload
 	callq	trace_logger_log0
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
+	movq	$.L.str4121, (%rax)
 	movl	$.L.str123, %r9d
 	movl	%r9d, %r8d
 	movq	1376(%rsp), %rdi        # 8-byte Reload
@@ -14312,8 +16665,8 @@ kf_work:                                # @kf_work
 	movq	1400(%rsp), %r9         # 8-byte Reload
 	callq	trace_logger_log_ptr
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
-	movl	$.L.str683, %ebx
+	movq	$.L.str4121, (%rax)
+	movl	$.L.str6123, %ebx
 	movl	%ebx, %r8d
 	movq	1392(%rsp), %rdi        # 8-byte Reload
 	movq	1384(%rsp), %rsi        # 8-byte Reload
@@ -14341,7 +16694,7 @@ kf_work:                                # @kf_work
 	movl	1432(%rsp), %r9d        # 4-byte Reload
 	callq	trace_logger_log0
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
+	movq	$.L.str4121, (%rax)
 	movl	$.L.str151, %r9d
 	movl	%r9d, %r8d
 	movl	$10, %r9d
@@ -14352,8 +16705,8 @@ kf_work:                                # @kf_work
 	movq	1400(%rsp), %r9         # 8-byte Reload
 	callq	trace_logger_log_int
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
-	movl	$.L.str380, %ebx
+	movq	$.L.str4121, (%rax)
+	movl	$.L.str3120, %ebx
 	movl	%ebx, %eax
 	movl	$9, %ebx
 	movl	%ebx, %edi
@@ -14371,7 +16724,7 @@ kf_work:                                # @kf_work
 	movq	%rax, 1344(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_int
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
+	movq	$.L.str4121, (%rax)
 	movl	$.L.str152, %ebx
 	movl	%ebx, %r8d
 	movl	$8, %ebx
@@ -14382,7 +16735,7 @@ kf_work:                                # @kf_work
 	movq	1400(%rsp), %r9         # 8-byte Reload
 	callq	trace_logger_log_int
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
+	movq	$.L.str4121, (%rax)
 	movl	$7, %ebx
 	movl	%ebx, %edi
 	movl	$4, %ebx
@@ -14395,7 +16748,7 @@ kf_work:                                # @kf_work
 	movq	%rax, 1336(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_int
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
+	movq	$.L.str4121, (%rax)
 	movl	$.L.str153, %ebx
 	movl	%ebx, %r8d
 	movl	$6, %ebx
@@ -14406,7 +16759,7 @@ kf_work:                                # @kf_work
 	movq	1400(%rsp), %r9         # 8-byte Reload
 	callq	trace_logger_log_int
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
+	movq	$.L.str4121, (%rax)
 	movq	1360(%rsp), %rdi        # 8-byte Reload
 	movq	1352(%rsp), %rsi        # 8-byte Reload
 	movq	1368(%rsp), %rdx        # 8-byte Reload
@@ -14415,7 +16768,7 @@ kf_work:                                # @kf_work
 	movq	1400(%rsp), %r9         # 8-byte Reload
 	callq	trace_logger_log_int
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
+	movq	$.L.str4121, (%rax)
 	movl	$.L.str154, %ebx
 	movl	%ebx, %r8d
 	movq	1336(%rsp), %rdi        # 8-byte Reload
@@ -14425,7 +16778,7 @@ kf_work:                                # @kf_work
 	movq	1400(%rsp), %r9         # 8-byte Reload
 	callq	trace_logger_log_int
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
+	movq	$.L.str4121, (%rax)
 	movq	1368(%rsp), %rdi        # 8-byte Reload
 	movq	1352(%rsp), %rsi        # 8-byte Reload
 	movq	1376(%rsp), %rdx        # 8-byte Reload
@@ -14434,7 +16787,7 @@ kf_work:                                # @kf_work
 	movq	1400(%rsp), %r9         # 8-byte Reload
 	callq	trace_logger_log_int
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
+	movq	$.L.str4121, (%rax)
 	movl	$.L.str155, %ebx
 	movl	%ebx, %r8d
 	movq	1376(%rsp), %rdi        # 8-byte Reload
@@ -14447,8 +16800,8 @@ kf_work:                                # @kf_work
 	movl	%ebx, %ebp
 	movl	%ebp, %edx
 	movq	%rsp, %rax
-	movq	$.L.str481, (%rax)
-	movl	$.L.str885, %ebp
+	movq	$.L.str4121, (%rax)
+	movl	$.L.str8125, %ebp
 	movl	%ebp, %r8d
 	movq	1392(%rsp), %rdi        # 8-byte Reload
 	movq	1352(%rsp), %rsi        # 8-byte Reload
@@ -14472,13 +16825,13 @@ kf_work:                                # @kf_work
 	movabsq	$1, %rax
 	leaq	.L.str125, %r8
 	movabsq	$0, %rcx
-	leaq	.L.str481, %rdx
+	leaq	.L.str4121, %rdx
 	movabsq	$3, %r9
 	movabsq	$64, %r10
-	leaq	.L.str117, %r11
+	leaq	.L.str117234, %r11
 	movabsq	$2, %rbx
 	leaq	.L.str129, %r14
-	leaq	.L.str67144, %r15
+	leaq	.L.str67184, %r15
 	movabsq	$5, %r12
 	leaq	kf_bfly2, %r13
 	leaq	.L.str157, %rbp
@@ -14503,7 +16856,7 @@ kf_work:                                # @kf_work
 	movq	%rax, 1240(%rsp)        # 8-byte Spill
 	movabsq	$27, %rax
 	.loc	2 304 0                 # kiss_fft.c:304:0
-.Ltmp310:
+.Ltmp330:
 	movq	%rax, 1232(%rsp)        # 8-byte Spill
 	movq	1304(%rsp), %rax        # 8-byte Reload
 	movq	%rdi, 1224(%rsp)        # 8-byte Spill
@@ -14615,7 +16968,7 @@ kf_work:                                # @kf_work
 	movabsq	$1, %rdx
 	movabsq	$0, %rsi
 	leaq	.L.str159, %r8
-	leaq	.L.str481, %rdi
+	leaq	.L.str4121, %rdi
 	movabsq	$304, %r9               # imm = 0x130
 	leaq	.L.str119, %r10
 	leaq	.L.str154, %r11
@@ -14649,14 +17002,14 @@ kf_work:                                # @kf_work
 	movabsq	$4, %rdi
 	movabsq	$64, %rax
 	movabsq	$1, %rcx
-	leaq	.L.str72149, %rdx
+	leaq	.L.str72189, %rdx
 	movabsq	$0, %rsi
-	leaq	.L.str481, %r8
+	leaq	.L.str4121, %r8
 	movabsq	$3, %r9
-	leaq	.L.str117, %r10
+	leaq	.L.str117234, %r10
 	movabsq	$2, %r11
 	leaq	.L.str129, %rbx
-	leaq	.L.str71148, %r14
+	leaq	.L.str71188, %r14
 	movabsq	$5, %r15
 	leaq	kf_bfly3, %r12
 	leaq	.L.str161, %r13
@@ -14826,7 +17179,7 @@ kf_work:                                # @kf_work
 	movabsq	$1, %rcx
 	movabsq	$0, %rdx
 	leaq	.L.str159, %r8
-	leaq	.L.str481, %rsi
+	leaq	.L.str4121, %rsi
 	movabsq	$305, %rdi              # imm = 0x131
 	leaq	.L.str119, %r9
 	leaq	.L.str153, %r10
@@ -14862,9 +17215,9 @@ kf_work:                                # @kf_work
 	movabsq	$1, %rcx
 	leaq	.L.str164, %rdx
 	movabsq	$0, %rsi
-	leaq	.L.str481, %r8
+	leaq	.L.str4121, %r8
 	movabsq	$3, %r9
-	leaq	.L.str117, %r10
+	leaq	.L.str117234, %r10
 	movabsq	$2, %r11
 	leaq	.L.str129, %rbx
 	leaq	.L.str163, %r14
@@ -15037,7 +17390,7 @@ kf_work:                                # @kf_work
 	movabsq	$1, %rcx
 	movabsq	$0, %rdx
 	leaq	.L.str159, %r8
-	leaq	.L.str481, %rsi
+	leaq	.L.str4121, %rsi
 	movabsq	$306, %rdi              # imm = 0x132
 	leaq	.L.str119, %r9
 	leaq	.L.str152, %r10
@@ -15073,10 +17426,10 @@ kf_work:                                # @kf_work
 	movabsq	$1, %rax
 	leaq	.L.str125, %r8
 	movabsq	$0, %rcx
-	leaq	.L.str481, %rdx
+	leaq	.L.str4121, %rdx
 	movabsq	$3, %r9
 	movabsq	$64, %r10
-	leaq	.L.str117, %r11
+	leaq	.L.str117234, %r11
 	movabsq	$2, %rbx
 	leaq	.L.str129, %r14
 	leaq	.L.str168, %r15
@@ -15215,7 +17568,7 @@ kf_work:                                # @kf_work
 	movabsq	$1, %rdx
 	movabsq	$0, %rsi
 	leaq	.L.str159, %r8
-	leaq	.L.str481, %rdi
+	leaq	.L.str4121, %rdi
 	movabsq	$307, %r9               # imm = 0x133
 	leaq	.L.str119, %r10
 	leaq	.L.str151, %r11
@@ -15249,14 +17602,14 @@ kf_work:                                # @kf_work
 	movabsq	$5, %rdi
 	movabsq	$32, %rax
 	movabsq	$1, %rcx
-	leaq	.L.str885, %r8
+	leaq	.L.str8125, %r8
 	movabsq	$0, %rdx
-	leaq	.L.str481, %rsi
+	leaq	.L.str4121, %rsi
 	movabsq	$4, %r9
 	leaq	.L.str125, %r10
 	movabsq	$3, %r11
 	movabsq	$64, %rbx
-	leaq	.L.str117, %r14
+	leaq	.L.str117234, %r14
 	movabsq	$2, %r15
 	leaq	.L.str129, %r12
 	leaq	.L.str172, %r13
@@ -15409,7 +17762,7 @@ kf_work:                                # @kf_work
 	movabsq	$1, %rdx
 	movabsq	$0, %rsi
 	leaq	.L.str159, %r8
-	leaq	.L.str481, %rdi
+	leaq	.L.str4121, %rdi
 	movabsq	$308, %r9               # imm = 0x134
 	leaq	.L.str119, %r10
 	leaq	.L.str155, %r11
@@ -15438,7 +17791,7 @@ kf_work:                                # @kf_work
 	movq	48(%rsp), %r10          # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-.Ltmp311:
+.Ltmp331:
 .LBB9_11:
 	movabsq	$310, %rdi              # imm = 0x136
 	leaq	.L.str119, %rsi
@@ -15459,9 +17812,9 @@ kf_work:                                # @kf_work
 	popq	%r15
 	popq	%rbp
 	ret
-.Ltmp312:
-.Ltmp313:
-	.size	kf_work, .Ltmp313-kf_work
+.Ltmp332:
+.Ltmp333:
+	.size	kf_work, .Ltmp333-kf_work
 .Lfunc_end9:
 	.cfi_endproc
 	.section	.rodata,"a",@progbits
@@ -15481,52 +17834,52 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	.loc	2 211 0                 # kiss_fft.c:211:0
 # BB#0:
 	pushq	%rbp
-.Ltmp321:
+.Ltmp341:
 	.cfi_def_cfa_offset 16
 	pushq	%r15
-.Ltmp322:
+.Ltmp342:
 	.cfi_def_cfa_offset 24
 	pushq	%r14
-.Ltmp323:
+.Ltmp343:
 	.cfi_def_cfa_offset 32
 	pushq	%r13
-.Ltmp324:
+.Ltmp344:
 	.cfi_def_cfa_offset 40
 	pushq	%r12
-.Ltmp325:
+.Ltmp345:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
-.Ltmp326:
+.Ltmp346:
 	.cfi_def_cfa_offset 56
 	subq	$3512, %rsp             # imm = 0xDB8
-.Ltmp327:
+.Ltmp347:
 	.cfi_def_cfa_offset 3568
-.Ltmp328:
+.Ltmp348:
 	.cfi_offset %rbx, -56
-.Ltmp329:
+.Ltmp349:
 	.cfi_offset %r12, -48
-.Ltmp330:
+.Ltmp350:
 	.cfi_offset %r13, -40
-.Ltmp331:
+.Ltmp351:
 	.cfi_offset %r14, -32
-.Ltmp332:
+.Ltmp352:
 	.cfi_offset %r15, -24
-.Ltmp333:
+.Ltmp353:
 	.cfi_offset %rbp, -16
 	movabsq	$1, %rax
 	movabsq	$64, %r9
-	leaq	.L.str885, %r10
+	leaq	.L.str8125, %r10
 	movabsq	$0, %r11
-	leaq	.L.str481, %rbx
+	leaq	.L.str4121, %rbx
 	movabsq	$2, %r14
 	leaq	malloc, %r15
-	leaq	.L.str1592, %r12
+	leaq	.L.str15132, %r12
 	movabsq	$217, %r13
 	leaq	.L.str174, %rbp
 	movq	%rax, 3504(%rsp)        # 8-byte Spill
-	leaq	.L.str178, %rax
+	leaq	.L.str1118, %rax
 	movq	%rax, 3496(%rsp)        # 8-byte Spill
-	leaq	.L.str986, %rax
+	leaq	.L.str9126, %rax
 	movq	%rax, 3488(%rsp)        # 8-byte Spill
 	movabsq	$49, %rax
 	movl	%ecx, 3484(%rsp)        # 4-byte Spill
@@ -15536,11 +17889,11 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, 3472(%rsp)        # 8-byte Spill
 	movabsq	$19134, %rax            # imm = 0x4ABE
 	movq	%rax, 3464(%rsp)        # 8-byte Spill
-	leaq	.L.str784, %rax
+	leaq	.L.str7124, %rax
 	movq	%rax, 3456(%rsp)        # 8-byte Spill
 	movabsq	$3, %rax
 	movq	%rax, 3448(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 3440(%rsp)        # 8-byte Spill
 	movabsq	$20, %rax
 	movq	%rax, 3432(%rsp)        # 8-byte Spill
@@ -15550,15 +17903,15 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, 3416(%rsp)        # 8-byte Spill
 	movabsq	$35, %rax
 	movq	%rax, 3408(%rsp)        # 8-byte Spill
-	leaq	.L.str683, %rax
+	leaq	.L.str6123, %rax
 	movq	%rax, 3400(%rsp)        # 8-byte Spill
-	leaq	.L.str279, %rax
+	leaq	.L.str2119, %rax
 	movq	%rax, 3392(%rsp)        # 8-byte Spill
 	movabsq	$215, %rax
 	movq	%rax, 3384(%rsp)        # 8-byte Spill
 	movabsq	$27, %rax
 	movq	%rax, 3376(%rsp)        # 8-byte Spill
-	leaq	.L.str117, %rax
+	leaq	.L.str117234, %rax
 	movq	%rax, 3368(%rsp)        # 8-byte Spill
 	movabsq	$29, %rax
 	movq	%rax, 3360(%rsp)        # 8-byte Spill
@@ -15570,7 +17923,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, 3336(%rsp)        # 8-byte Spill
 	leaq	.L.str122, %rax
 	.loc	2 205 0 prologue_end    # kiss_fft.c:205:0
-.Ltmp334:
+.Ltmp354:
 	movq	%rax, 3328(%rsp)        # 8-byte Spill
 	movq	3352(%rsp), %rax        # 8-byte Reload
 	movq	%rdi, 3320(%rsp)        # 8-byte Spill
@@ -15719,7 +18072,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	3240(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-.Ltmp335:
+.Ltmp355:
 	#DEBUG_VALUE: kf_bfly_generic:Norig <- [RSP+3220]
 	.loc	2 217 0                 # kiss_fft.c:217:0
 	movq	3280(%rsp), %rdi        # 8-byte Reload
@@ -15819,18 +18172,18 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	callq	trace_logger_log_int
 	movq	3200(%rsp), %rdi        # 8-byte Reload
 	callq	malloc
-.Ltmp336:
+.Ltmp356:
 	movabsq	$1, %rcx
-	leaq	.L.str1491, %rdx
+	leaq	.L.str14131, %rdx
 	movabsq	$0, %rsi
-	leaq	.L.str481, %rdi
+	leaq	.L.str4121, %rdi
 	movabsq	$2, %r8
 	leaq	.L.str399, %r9
 	movabsq	$3, %r10
 	leaq	.L.str398, %r11
 	movabsq	$219, %rbx
 	leaq	.L.str174, %r14
-	leaq	.L.str178, %r15
+	leaq	.L.str1118, %r15
 	leaq	.L.str121, %r12
 	movl	$0, %ebp
 	movl	$1, %r13d
@@ -15841,7 +18194,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, 3176(%rsp)        # 8-byte Spill
 	leaq	.L.str203, %rax
 	movq	%rax, 3168(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 3160(%rsp)        # 8-byte Spill
 	movabsq	$46, %rax
 	movq	%rax, 3152(%rsp)        # 8-byte Spill
@@ -15849,7 +18202,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, 3144(%rsp)        # 8-byte Spill
 	leaq	.L.str125, %rax
 	movq	%rax, 3136(%rsp)        # 8-byte Spill
-	leaq	.L.str986, %rax
+	leaq	.L.str9126, %rax
 	movq	%rax, 3128(%rsp)        # 8-byte Spill
 	movabsq	$217, %rax
 	movq	%rax, 3120(%rsp)        # 8-byte Spill
@@ -15910,7 +18263,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%r10, (%rsp)
 	movq	%rax, 3000(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_ptr
-.Ltmp337:
+.Ltmp357:
 	#DEBUG_VALUE: kf_bfly_generic:scratch <- [RSP+3000]
 	#DEBUG_VALUE: kf_bfly_generic:u <- 0
 	.loc	2 219 0                 # kiss_fft.c:219:0
@@ -16000,12 +18353,12 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	testb	$1, %al
 	jne	.LBB10_1
 	jmp	.LBB10_11
-.Ltmp338:
+.Ltmp358:
 .LBB10_1:                               # %.preheader.lr.ph
 	movabsq	$0, %rax
 	movabsq	$1, %rcx
 	leaq	.L.str401, %r8
-	leaq	.L.str481, %rdx
+	leaq	.L.str4121, %rdx
 	movabsq	$219, %rdi
 	leaq	.L.str174, %rsi
 	leaq	.L.str398, %r9
@@ -16015,7 +18368,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movl	$1, %ebp
 	movabsq	$19134, %r14            # imm = 0x4ABE
 	movabsq	$64, %r15
-	leaq	.L.str25102, %r12
+	leaq	.L.str25142, %r12
 	movabsq	$32, %r13
 	movq	%rax, 2984(%rsp)        # 8-byte Spill
 	leaq	.L.str203, %rax
@@ -16024,35 +18377,35 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, 2968(%rsp)        # 8-byte Spill
 	movabsq	$35, %rax
 	movq	%rax, 2960(%rsp)        # 8-byte Spill
-	leaq	.L.str24101, %rax
+	leaq	.L.str24141, %rax
 	movq	%rax, 2952(%rsp)        # 8-byte Spill
-	leaq	.L.str105, %rax
+	leaq	.L.str105222, %rax
 	movq	%rax, 2944(%rsp)        # 8-byte Spill
 	leaq	.L.str397, %rax
 	movq	%rax, 2936(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 2928(%rsp)        # 8-byte Spill
 	movabsq	$231, %rax
 	movq	%rax, 2920(%rsp)        # 8-byte Spill
 	movabsq	$46, %rax
 	movq	%rax, 2912(%rsp)        # 8-byte Spill
-	leaq	.L.str1996, %rax
+	leaq	.L.str19136, %rax
 	movq	%rax, 2904(%rsp)        # 8-byte Spill
-	leaq	.L.str986, %rax
+	leaq	.L.str9126, %rax
 	movq	%rax, 2896(%rsp)        # 8-byte Spill
 	movabsq	$230, %rax
 	movq	%rax, 2888(%rsp)        # 8-byte Spill
 	movabsq	$44, %rax
 	movq	%rax, 2880(%rsp)        # 8-byte Spill
-	leaq	.L.str104, %rax
+	leaq	.L.str104221, %rax
 	movq	%rax, 2872(%rsp)        # 8-byte Spill
 	movabsq	$228, %rax
 	movq	%rax, 2864(%rsp)        # 8-byte Spill
-	leaq	.L.str1693, %rax
+	leaq	.L.str16133, %rax
 	movq	%rax, 2856(%rsp)        # 8-byte Spill
 	movabsq	$221, %rax
 	.loc	2 221 0                 # kiss_fft.c:221:0
-.Ltmp339:
+.Ltmp359:
 	movq	%rdi, 2848(%rsp)        # 8-byte Spill
 	movq	%rax, %rdi
 	movq	%rsi, 2840(%rsp)        # 8-byte Spill
@@ -16099,7 +18452,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movl	3296(%rsp), %ebx        # 4-byte Reload
 	cmpl	$0, %ebx
 	setg	%al
-.Ltmp340:
+.Ltmp360:
 	.loc	2 228 0                 # kiss_fft.c:228:0
 	movb	%al, %cl
 	andb	$1, %cl
@@ -16146,7 +18499,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	cmpl	$0, %ebx
 	setg	%al
 	.loc	2 230 0                 # kiss_fft.c:230:0
-.Ltmp341:
+.Ltmp361:
 	movb	%al, %cl
 	andb	$1, %cl
 	movzbl	%cl, %ebp
@@ -16179,7 +18532,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	callq	trace_logger_log_ptr
 	movq	3192(%rsp), %rcx        # 8-byte Reload
 	.loc	2 231 0                 # kiss_fft.c:231:0
-.Ltmp342:
+.Ltmp362:
 	movq	2784(%rsp), %rdi        # 8-byte Reload
 	movq	2768(%rsp), %rsi        # 8-byte Reload
 	movq	%rcx, %rdx
@@ -16288,7 +18641,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	callq	trace_logger_log_int
 	movl	3484(%rsp), %ebx        # 4-byte Reload
 	movslq	%ebx, %rcx
-.Ltmp343:
+.Ltmp363:
 	.loc	2 219 0                 # kiss_fft.c:219:0
 	movq	2784(%rsp), %rdi        # 8-byte Reload
 	movq	2768(%rsp), %rsi        # 8-byte Reload
@@ -16328,12 +18681,12 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	2696(%rsp), %rax        # 8-byte Reload
 	movabsq	$0, %rcx
 	movabsq	$1, %rdx
-	leaq	.L.str1693, %r8
-	leaq	.L.str481, %rsi
+	leaq	.L.str16133, %r8
+	leaq	.L.str4121, %rsi
 	movabsq	$2, %rdi
 	leaq	.L.str187, %r9
 	movabsq	$3, %r10
-	leaq	.L.str94, %r11
+	leaq	.L.str94211, %r11
 	movabsq	$221, %rbx
 	leaq	.L.str174, %r14
 	leaq	.L.str401, %r15
@@ -16349,7 +18702,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, 2664(%rsp)        # 8-byte Spill
 	leaq	.L.str398, %rax
 	movq	%rax, 2656(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 2648(%rsp)        # 8-byte Spill
 	leaq	.L.str403, %rax
 	movq	%rax, 2640(%rsp)        # 8-byte Spill
@@ -16359,7 +18712,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, 2624(%rsp)        # 8-byte Spill
 	movabsq	$48, %rax
 	.loc	2 221 0                 # kiss_fft.c:221:0
-.Ltmp344:
+.Ltmp364:
 	movq	%rax, 2616(%rsp)        # 8-byte Spill
 	movq	2624(%rsp), %rax        # 8-byte Reload
 	movq	%rdi, 2608(%rsp)        # 8-byte Spill
@@ -16465,11 +18818,11 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	2496(%rsp), %rax        # 8-byte Reload
 	movq	2504(%rsp), %rcx        # 8-byte Reload
 	movabsq	$1, %rdx
-	leaq	.L.str75152, %rsi
+	leaq	.L.str75192, %rsi
 	movabsq	$0, %rdi
-	leaq	.L.str481, %r8
+	leaq	.L.str4121, %r8
 	movabsq	$2, %r9
-	leaq	.L.str94, %r10
+	leaq	.L.str94211, %r10
 	movabsq	$3, %r11
 	leaq	.L.str187, %rbx
 	movabsq	$221, %r14
@@ -16482,7 +18835,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, 2480(%rsp)        # 8-byte Spill
 	movabsq	$32, %rax
 	movq	%rax, 2472(%rsp)        # 8-byte Spill
-	leaq	.L.str74151, %rax
+	leaq	.L.str74191, %rax
 	movq	%rax, 2464(%rsp)        # 8-byte Spill
 	leaq	.L.str397, %rax
 	movq	%rax, 2456(%rsp)        # 8-byte Spill
@@ -16498,33 +18851,33 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, 2416(%rsp)        # 8-byte Spill
 	leaq	.L.str408, %rax
 	movq	%rax, 2408(%rsp)        # 8-byte Spill
-	leaq	.L.str24101, %rax
+	leaq	.L.str24141, %rax
 	movq	%rax, 2400(%rsp)        # 8-byte Spill
 	movabsq	$8, %rax
 	movq	%rax, 2392(%rsp)        # 8-byte Spill
 	leaq	.L.str406, %rax
 	movq	%rax, 2384(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 2376(%rsp)        # 8-byte Spill
-	leaq	.L.str34111, %rax
+	leaq	.L.str34151, %rax
 	movq	%rax, 2368(%rsp)        # 8-byte Spill
 	leaq	.L.str132, %rax
 	movq	%rax, 2360(%rsp)        # 8-byte Spill
 	movabsq	$222, %rax
 	movq	%rax, 2352(%rsp)        # 8-byte Spill
-	leaq	.L.str98, %rax
+	leaq	.L.str98215, %rax
 	movq	%rax, 2344(%rsp)        # 8-byte Spill
 	movabsq	$28, %rax
 	movq	%rax, 2336(%rsp)        # 8-byte Spill
-	leaq	.L.str110, %rax
+	leaq	.L.str110227, %rax
 	movq	%rax, 2328(%rsp)        # 8-byte Spill
 	movabsq	$27, %rax
 	movq	%rax, 2320(%rsp)        # 8-byte Spill
-	leaq	.L.str107, %rax
+	leaq	.L.str107224, %rax
 	movq	%rax, 2312(%rsp)        # 8-byte Spill
 	movabsq	$44, %rax
 	movq	%rax, 2304(%rsp)        # 8-byte Spill
-	leaq	.L.str28105, %rax
+	leaq	.L.str28145, %rax
 	movq	%rax, 2296(%rsp)        # 8-byte Spill
 	leaq	.L.str122, %rax
 	movq	%rax, 2288(%rsp)        # 8-byte Spill
@@ -16540,7 +18893,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, 2248(%rsp)        # 8-byte Spill
 	movabsq	$48, %rax
 	.loc	2 222 0                 # kiss_fft.c:222:0
-.Ltmp345:
+.Ltmp365:
 	movq	%rax, 2240(%rsp)        # 8-byte Spill
 	movq	2248(%rsp), %rax        # 8-byte Reload
 	movq	%rdi, 2232(%rsp)        # 8-byte Spill
@@ -16826,7 +19179,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	2208(%rsp), %rcx        # 8-byte Reload
 	movq	2096(%rsp), %rdx        # 8-byte Reload
 	movq	%rdx, (%rax,%rcx,8)
-.Ltmp346:
+.Ltmp366:
 	.loc	2 221 0                 # kiss_fft.c:221:0
 	movq	2160(%rsp), %rdi        # 8-byte Reload
 	movq	2184(%rsp), %rsi        # 8-byte Reload
@@ -17028,13 +19381,13 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rdx, 2496(%rsp)        # 8-byte Spill
 	jne	.LBB10_4
 	jmp	.LBB10_3
-.Ltmp347:
+.Ltmp367:
 .LBB10_4:                               # %.loopexit
                                         #   in Loop: Header=BB10_2 Depth=1
 	movabsq	$1, %rax
-	leaq	.L.str104, %r8
+	leaq	.L.str104221, %r8
 	movabsq	$0, %rcx
-	leaq	.L.str481, %rdx
+	leaq	.L.str4121, %rdx
 	movabsq	$2, %rsi
 	leaq	.L.str404, %rdi
 	movabsq	$3, %r9
@@ -17046,7 +19399,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movl	$0, %ebp
 	movl	$1, %r12d
 	.loc	2 228 0                 # kiss_fft.c:228:0
-.Ltmp348:
+.Ltmp368:
 	movq	%rdi, 2064(%rsp)        # 8-byte Spill
 	movq	%r11, %rdi
 	movq	%rsi, 2056(%rsp)        # 8-byte Spill
@@ -17105,7 +19458,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movabsq	$1, %rcx
 	movabsq	$0, %rdx
 	leaq	.L.str412, %r8
-	leaq	.L.str481, %rsi
+	leaq	.L.str4121, %rsi
 	movabsq	$228, %rdi
 	leaq	.L.str174, %r9
 	leaq	.L.str410, %r10
@@ -17115,13 +19468,13 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movabsq	$19134, %r14            # imm = 0x4ABE
 	movabsq	$64, %r15
 	leaq	.L.str135, %r12
-	leaq	.L.str1996, %r13
+	leaq	.L.str19136, %r13
 	movq	%rcx, 1992(%rsp)        # 8-byte Spill
 	movabsq	$230, %rcx
 	movq	%rcx, 1984(%rsp)        # 8-byte Spill
 	movabsq	$27, %rcx
 	.loc	2 230 0                 # kiss_fft.c:230:0
-.Ltmp349:
+.Ltmp369:
 	movq	%rcx, 1976(%rsp)        # 8-byte Spill
 	movq	1984(%rsp), %rcx        # 8-byte Reload
 	movq	%rdi, 1968(%rsp)        # 8-byte Spill
@@ -17157,7 +19510,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	callq	trace_logger_log_ptr
 	movq	2728(%rsp), %rcx        # 8-byte Reload
 	movq	(%rcx), %rdx
-.Ltmp350:
+.Ltmp370:
 	.loc	2 228 0                 # kiss_fft.c:228:0
 	movq	1920(%rsp), %rdi        # 8-byte Reload
 	movq	1912(%rsp), %rsi        # 8-byte Reload
@@ -17195,9 +19548,9 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movl	1844(%rsp), %eax        # 4-byte Reload
 	movq	1848(%rsp), %rcx        # 8-byte Reload
 	movabsq	$1, %rdx
-	leaq	.L.str105, %r8
+	leaq	.L.str105222, %r8
 	movabsq	$0, %rsi
-	leaq	.L.str481, %rdi
+	leaq	.L.str4121, %rdi
 	movabsq	$2, %r9
 	leaq	.L.str415, %r10
 	movabsq	$3, %r11
@@ -17214,7 +19567,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rcx, 1824(%rsp)        # 8-byte Spill
 	leaq	.L.str135, %rcx
 	movq	%rcx, 1816(%rsp)        # 8-byte Spill
-	leaq	.L.str43120, %rcx
+	leaq	.L.str43160, %rcx
 	movq	%rcx, 1808(%rsp)        # 8-byte Spill
 	movabsq	$230, %rcx
 	movq	%rcx, 1800(%rsp)        # 8-byte Spill
@@ -17224,7 +19577,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rcx, 1784(%rsp)        # 8-byte Spill
 	movabsq	$19134, %rcx            # imm = 0x4ABE
 	movq	%rcx, 1776(%rsp)        # 8-byte Spill
-	leaq	.L.str40117, %rcx
+	leaq	.L.str40157, %rcx
 	movq	%rcx, 1768(%rsp)        # 8-byte Spill
 	movabsq	$44, %rcx
 	movq	%rcx, 1760(%rsp)        # 8-byte Spill
@@ -17240,7 +19593,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rcx, 1720(%rsp)        # 8-byte Spill
 	leaq	.L.str410, %rcx
 	movq	%rcx, 1712(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rcx
+	leaq	.L.str3120, %rcx
 	movq	%rcx, 1704(%rsp)        # 8-byte Spill
 	leaq	.L.str229, %rcx
 	movq	%rcx, 1696(%rsp)        # 8-byte Spill
@@ -17252,7 +19605,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rcx, 1672(%rsp)        # 8-byte Spill
 	leaq	.L.str414, %rcx
 	.loc	2 229 0                 # kiss_fft.c:229:0
-.Ltmp351:
+.Ltmp371:
 	movq	%rcx, 1664(%rsp)        # 8-byte Spill
 	movq	1688(%rsp), %rcx        # 8-byte Reload
 	movq	%rdi, 1656(%rsp)        # 8-byte Spill
@@ -17341,7 +19694,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	1712(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-.Ltmp352:
+.Ltmp372:
 	#DEBUG_VALUE: twidx <- 0
 	.loc	2 230 0                 # kiss_fft.c:230:0
 	movq	1800(%rsp), %rdi        # 8-byte Reload
@@ -17442,7 +19795,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	1832(%rsp), %rdx        # 8-byte Reload
 	movq	1856(%rsp), %rsi        # 8-byte Reload
 	movq	%rsi, (%rcx,%rdx,8)
-.Ltmp353:
+.Ltmp373:
 	#DEBUG_VALUE: kf_bfly_generic:q <- 1
 	.loc	2 231 0                 # kiss_fft.c:231:0
 	movq	1592(%rsp), %rdi        # 8-byte Reload
@@ -17493,7 +19846,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movl	$0, %ecx
 	movabsq	$0, %rdx
 	leaq	.L.str421, %r8
-	leaq	.L.str481, %rsi
+	leaq	.L.str4121, %rsi
 	movabsq	$231, %rdi
 	leaq	.L.str174, %r9
 	leaq	.L.str419, %r10
@@ -17502,7 +19855,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movl	$1, %ebp
 	movabsq	$19134, %r14            # imm = 0x4ABE
 	movabsq	$64, %r15
-	leaq	.L.str53130, %r12
+	leaq	.L.str53170, %r12
 	leaq	.L.str122, %r13
 	movq	%rax, 1528(%rsp)        # 8-byte Spill
 	leaq	.L.str413, %rax
@@ -17511,7 +19864,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, 1512(%rsp)        # 8-byte Spill
 	movabsq	$32, %rax
 	movq	%rax, 1504(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 1496(%rsp)        # 8-byte Spill
 	movabsq	$235, %rax
 	movq	%rax, 1488(%rsp)        # 8-byte Spill
@@ -17519,9 +19872,9 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, 1480(%rsp)        # 8-byte Spill
 	leaq	.L.str137, %rax
 	movq	%rax, 1472(%rsp)        # 8-byte Spill
-	leaq	.L.str40117, %rax
+	leaq	.L.str40157, %rax
 	movq	%rax, 1464(%rsp)        # 8-byte Spill
-	leaq	.L.str47124, %rax
+	leaq	.L.str47164, %rax
 	movq	%rax, 1456(%rsp)        # 8-byte Spill
 	leaq	.L.str129, %rax
 	movq	%rax, 1448(%rsp)        # 8-byte Spill
@@ -17529,7 +19882,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, 1440(%rsp)        # 8-byte Spill
 	movabsq	$12, %rax
 	.loc	2 232 0                 # kiss_fft.c:232:0
-.Ltmp354:
+.Ltmp374:
 	movq	%rax, 1432(%rsp)        # 8-byte Spill
 	movq	1440(%rsp), %rax        # 8-byte Reload
 	movq	%rdi, 1424(%rsp)        # 8-byte Spill
@@ -17579,7 +19932,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	3312(%rsp), %rdx        # 8-byte Reload
 	imulq	%rdx, %rcx
 	.loc	2 235 0                 # kiss_fft.c:235:0
-.Ltmp355:
+.Ltmp375:
 	movq	1376(%rsp), %rdi        # 8-byte Reload
 	movq	1368(%rsp), %rsi        # 8-byte Reload
 	movq	%rcx, %rdx
@@ -17675,7 +20028,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	3320(%rsp), %rdx        # 8-byte Reload
 	addq	%rcx, %rdx
 	addq	$4, %rdx
-.Ltmp356:
+.Ltmp376:
 	.loc	2 231 0                 # kiss_fft.c:231:0
 	movq	1376(%rsp), %rdi        # 8-byte Reload
 	movq	1368(%rsp), %rsi        # 8-byte Reload
@@ -17715,7 +20068,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movabsq	$1, %rdx
 	leaq	.L.str429, %rsi
 	movabsq	$0, %rdi
-	leaq	.L.str481, %r8
+	leaq	.L.str4121, %r8
 	movabsq	$2, %r9
 	leaq	.L.str421, %r10
 	movabsq	$3, %r11
@@ -17744,13 +20097,13 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rcx, 1216(%rsp)        # 8-byte Spill
 	leaq	.L.str422, %rcx
 	movq	%rcx, 1208(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rcx
+	leaq	.L.str3120, %rcx
 	movq	%rcx, 1200(%rsp)        # 8-byte Spill
 	movabsq	$8, %rcx
 	movq	%rcx, 1192(%rsp)        # 8-byte Spill
 	leaq	.L.str228, %rcx
 	movq	%rcx, 1184(%rsp)        # 8-byte Spill
-	leaq	.L.str53130, %rcx
+	leaq	.L.str53170, %rcx
 	movq	%rcx, 1176(%rsp)        # 8-byte Spill
 	movabsq	$235, %rcx
 	movq	%rcx, 1168(%rsp)        # 8-byte Spill
@@ -17782,9 +20135,9 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rcx, 1064(%rsp)        # 8-byte Spill
 	movabsq	$234, %rcx
 	movq	%rcx, 1056(%rsp)        # 8-byte Spill
-	leaq	.L.str67144, %rcx
+	leaq	.L.str67184, %rcx
 	movq	%rcx, 1048(%rsp)        # 8-byte Spill
-	leaq	.L.str72149, %rcx
+	leaq	.L.str72189, %rcx
 	movq	%rcx, 1040(%rsp)        # 8-byte Spill
 	movabsq	$13, %rcx
 	movq	%rcx, 1032(%rsp)        # 8-byte Spill
@@ -17792,37 +20145,37 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rcx, 1024(%rsp)        # 8-byte Spill
 	leaq	.L.str163, %rcx
 	movq	%rcx, 1016(%rsp)        # 8-byte Spill
-	leaq	.L.str69146, %rcx
+	leaq	.L.str69186, %rcx
 	movq	%rcx, 1008(%rsp)        # 8-byte Spill
 	leaq	.L.str164, %rcx
 	movq	%rcx, 1000(%rsp)        # 8-byte Spill
 	movabsq	$11, %rcx
 	movq	%rcx, 992(%rsp)         # 8-byte Spill
-	leaq	.L.str77154, %rcx
+	leaq	.L.str77194, %rcx
 	movq	%rcx, 984(%rsp)         # 8-byte Spill
-	leaq	.L.str117, %rcx
+	leaq	.L.str117234, %rcx
 	movq	%rcx, 976(%rsp)         # 8-byte Spill
 	movabsq	$4, %rcx
 	movq	%rcx, 968(%rsp)         # 8-byte Spill
-	leaq	.L.str64141, %rcx
+	leaq	.L.str64181, %rcx
 	movq	%rcx, 960(%rsp)         # 8-byte Spill
 	movabsq	$5, %rcx
 	movq	%rcx, 952(%rsp)         # 8-byte Spill
 	movabsq	$29, %rcx
 	movq	%rcx, 944(%rsp)         # 8-byte Spill
-	leaq	.L.str71148, %rcx
+	leaq	.L.str71188, %rcx
 	movq	%rcx, 936(%rsp)         # 8-byte Spill
 	leaq	.L.str125, %rcx
 	movq	%rcx, 928(%rsp)         # 8-byte Spill
-	leaq	.L.str66143, %rcx
+	leaq	.L.str66183, %rcx
 	movq	%rcx, 920(%rsp)         # 8-byte Spill
 	leaq	.L.str425, %rcx
 	movq	%rcx, 912(%rsp)         # 8-byte Spill
 	movabsq	$35, %rcx
 	movq	%rcx, 904(%rsp)         # 8-byte Spill
-	leaq	.L.str61138, %rcx
+	leaq	.L.str61178, %rcx
 	movq	%rcx, 896(%rsp)         # 8-byte Spill
-	leaq	.L.str57134, %rcx
+	leaq	.L.str57174, %rcx
 	movq	%rcx, 888(%rsp)         # 8-byte Spill
 	leaq	.L.str143, %rcx
 	movq	%rcx, 880(%rsp)         # 8-byte Spill
@@ -17830,19 +20183,19 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rcx, 872(%rsp)         # 8-byte Spill
 	movabsq	$10, %rcx
 	movq	%rcx, 864(%rsp)         # 8-byte Spill
-	leaq	.L.str58135, %rcx
+	leaq	.L.str58175, %rcx
 	movq	%rcx, 856(%rsp)         # 8-byte Spill
-	leaq	.L.str683, %rcx
+	leaq	.L.str6123, %rcx
 	movq	%rcx, 848(%rsp)         # 8-byte Spill
 	movabsq	$50, %rcx
 	movq	%rcx, 840(%rsp)         # 8-byte Spill
-	leaq	.L.str56133, %rcx
+	leaq	.L.str56173, %rcx
 	movq	%rcx, 832(%rsp)         # 8-byte Spill
 	movabsq	$232, %rcx
 	movq	%rcx, 824(%rsp)         # 8-byte Spill
-	leaq	.L.str55132, %rcx
+	leaq	.L.str55172, %rcx
 	movq	%rcx, 816(%rsp)         # 8-byte Spill
-	leaq	.L.str47124, %rcx
+	leaq	.L.str47164, %rcx
 	movq	%rcx, 808(%rsp)         # 8-byte Spill
 	leaq	.L.str424, %rcx
 	movq	%rcx, 800(%rsp)         # 8-byte Spill
@@ -17854,7 +20207,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rcx, 776(%rsp)         # 8-byte Spill
 	movabsq	$48, %rcx
 	.loc	2 232 0                 # kiss_fft.c:232:0
-.Ltmp357:
+.Ltmp377:
 	movq	%rcx, 768(%rsp)         # 8-byte Spill
 	movq	776(%rsp), %rcx         # 8-byte Reload
 	movq	%rdi, 760(%rsp)         # 8-byte Spill
@@ -18046,7 +20399,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%r10, (%rsp)
 	movl	%eax, 644(%rsp)         # 4-byte Spill
 	callq	trace_logger_log_int
-.Ltmp358:
+.Ltmp378:
 	#DEBUG_VALUE: twidx <- [RSP+644]
 	.loc	2 233 0                 # kiss_fft.c:233:0
 	movq	872(%rsp), %rdi         # 8-byte Reload
@@ -18185,7 +20538,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movl	644(%rsp), %eax         # 4-byte Reload
 	movl	636(%rsp), %ebp         # 4-byte Reload
 	subl	%ebp, %eax
-.Ltmp359:
+.Ltmp379:
 	.loc	2 234 0                 # kiss_fft.c:234:0
 	movl	%eax, %r13d
 	movl	%r13d, %edx
@@ -18805,7 +21158,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	vmovss	548(%rsp), %xmm0        # 4-byte Reload
 	vmovss	552(%rsp), %xmm1        # 4-byte Reload
 	vaddss	%xmm1, %xmm0, %xmm2
-.Ltmp360:
+.Ltmp380:
 	.loc	2 235 0                 # kiss_fft.c:235:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	1272(%rsp), %rdi        # 8-byte Reload
@@ -19008,7 +21361,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	1304(%rsp), %rcx        # 8-byte Reload
 	vmovss	528(%rsp), %xmm0        # 4-byte Reload
 	vmovss	%xmm0, (%rcx)
-.Ltmp361:
+.Ltmp381:
 	.loc	2 231 0                 # kiss_fft.c:231:0
 	movq	688(%rsp), %rdi         # 8-byte Reload
 	movq	712(%rsp), %rsi         # 8-byte Reload
@@ -19172,13 +21525,13 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movl	%ebp, 1292(%rsp)        # 4-byte Spill
 	jne	.LBB10_9
 	jmp	.LBB10_8
-.Ltmp362:
+.Ltmp382:
 .LBB10_9:                               # %._crit_edge
                                         #   in Loop: Header=BB10_6 Depth=2
 	movabsq	$1, %rax
 	leaq	.L.str431, %rcx
 	movabsq	$0, %rdx
-	leaq	.L.str481, %rsi
+	leaq	.L.str4121, %rsi
 	movabsq	$2, %rdi
 	leaq	.L.str412, %r8
 	movabsq	$3, %r9
@@ -19205,13 +21558,13 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, 456(%rsp)         # 8-byte Spill
 	leaq	.L.str413, %rax
 	movq	%rax, 448(%rsp)         # 8-byte Spill
-	leaq	.L.str25102, %rax
+	leaq	.L.str25142, %rax
 	movq	%rax, 440(%rsp)         # 8-byte Spill
 	movabsq	$8, %rax
 	movq	%rax, 432(%rsp)         # 8-byte Spill
 	leaq	.L.str416, %rax
 	movq	%rax, 424(%rsp)         # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	.loc	2 228 0                 # kiss_fft.c:228:0
 	movq	%rdi, 416(%rsp)         # 8-byte Spill
 	movq	%r11, %rdi
@@ -19271,7 +21624,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, (%rsp)
 	movl	%ebp, 308(%rsp)         # 4-byte Spill
 	callq	trace_logger_log_int
-.Ltmp363:
+.Ltmp383:
 	#DEBUG_VALUE: kf_bfly_generic:q1 <- [RSP+308]
 	movq	312(%rsp), %rdi         # 8-byte Reload
 	movq	328(%rsp), %rsi         # 8-byte Reload
@@ -19405,13 +21758,13 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movl	%ebp, 1844(%rsp)        # 4-byte Spill
 	jne	.LBB10_10
 	jmp	.LBB10_6
-.Ltmp364:
+.Ltmp384:
 .LBB10_10:                              # %._crit_edge9
                                         #   in Loop: Header=BB10_2 Depth=1
 	movabsq	$1, %rax
 	leaq	.L.str434, %rcx
 	movabsq	$0, %rdx
-	leaq	.L.str481, %rsi
+	leaq	.L.str4121, %rsi
 	movabsq	$2, %rdi
 	leaq	.L.str401, %r8
 	movabsq	$3, %r9
@@ -19440,7 +21793,7 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rax, 224(%rsp)         # 8-byte Spill
 	leaq	.L.str402, %rax
 	movq	%rax, 216(%rsp)         # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 208(%rsp)         # 8-byte Spill
 	movabsq	$8, %rax
 	.loc	2 219 0                 # kiss_fft.c:219:0
@@ -19620,13 +21973,13 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	movq	%rcx, 2696(%rsp)        # 8-byte Spill
 	jne	.LBB10_11
 	jmp	.LBB10_2
-.Ltmp365:
+.Ltmp385:
 .LBB10_11:                              # %._crit_edge11
 	movabsq	$1, %rax
 	movabsq	$64, %rcx
-	leaq	.L.str986, %r8
+	leaq	.L.str9126, %r8
 	movabsq	$0, %rdx
-	leaq	.L.str481, %rsi
+	leaq	.L.str4121, %rsi
 	movabsq	$2, %rdi
 	leaq	free, %r9
 	leaq	.L.str437, %r10
@@ -19694,9 +22047,9 @@ kf_bfly_generic:                        # @kf_bfly_generic
 	popq	%r15
 	popq	%rbp
 	ret
-.Ltmp366:
-.Ltmp367:
-	.size	kf_bfly_generic, .Ltmp367-kf_bfly_generic
+.Ltmp386:
+.Ltmp387:
+	.size	kf_bfly_generic, .Ltmp387-kf_bfly_generic
 .Lfunc_end10:
 	.cfi_endproc
 
@@ -19713,49 +22066,49 @@ kf_bfly5:                               # @kf_bfly5
 	.loc	2 142 0                 # kiss_fft.c:142:0
 # BB#0:
 	pushq	%rbp
-.Ltmp375:
+.Ltmp395:
 	.cfi_def_cfa_offset 16
 	pushq	%r15
-.Ltmp376:
+.Ltmp396:
 	.cfi_def_cfa_offset 24
 	pushq	%r14
-.Ltmp377:
+.Ltmp397:
 	.cfi_def_cfa_offset 32
 	pushq	%r13
-.Ltmp378:
+.Ltmp398:
 	.cfi_def_cfa_offset 40
 	pushq	%r12
-.Ltmp379:
+.Ltmp399:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
-.Ltmp380:
+.Ltmp400:
 	.cfi_def_cfa_offset 56
 	subq	$3640, %rsp             # imm = 0xE38
-.Ltmp381:
+.Ltmp401:
 	.cfi_def_cfa_offset 3696
-.Ltmp382:
+.Ltmp402:
 	.cfi_offset %rbx, -56
-.Ltmp383:
+.Ltmp403:
 	.cfi_offset %r12, -48
-.Ltmp384:
+.Ltmp404:
 	.cfi_offset %r13, -40
-.Ltmp385:
+.Ltmp405:
 	.cfi_offset %r14, -32
-.Ltmp386:
+.Ltmp406:
 	.cfi_offset %r15, -24
-.Ltmp387:
+.Ltmp407:
 	.cfi_offset %rbp, -16
 	movabsq	$1, %rax
-	leaq	.L.str25102, %r8
+	leaq	.L.str25142, %r8
 	movabsq	$0, %r9
-	leaq	.L.str481, %r10
+	leaq	.L.str4121, %r10
 	movabsq	$2, %r11
-	leaq	.L.str46123, %rbx
+	leaq	.L.str46163, %rbx
 	movabsq	$3, %r14
-	leaq	.L.str45122, %r15
+	leaq	.L.str45162, %r15
 	movabsq	$161, %r12
 	leaq	.L.str170, %r13
-	leaq	.L.str178, %rbp
+	leaq	.L.str1118, %rbp
 	movq	%rax, 3632(%rsp)        # 8-byte Spill
 	leaq	.L.str126, %rax
 	movl	%ecx, 3628(%rsp)        # 4-byte Spill
@@ -19769,37 +22122,37 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rax, 3600(%rsp)        # 8-byte Spill
 	leaq	.L.str203, %rax
 	movq	%rax, 3592(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 3584(%rsp)        # 8-byte Spill
 	movabsq	$46, %rax
 	movq	%rax, 3576(%rsp)        # 8-byte Spill
-	leaq	.L.str24101, %rax
+	leaq	.L.str24141, %rax
 	movq	%rax, 3568(%rsp)        # 8-byte Spill
 	movabsq	$64, %rax
 	movq	%rax, 3560(%rsp)        # 8-byte Spill
-	leaq	.L.str105, %rax
+	leaq	.L.str105222, %rax
 	movq	%rax, 3552(%rsp)        # 8-byte Spill
 	movabsq	$152, %rax
 	movq	%rax, 3544(%rsp)        # 8-byte Spill
 	movabsq	$27, %rax
 	movq	%rax, 3536(%rsp)        # 8-byte Spill
-	leaq	.L.str117, %rax
+	leaq	.L.str117234, %rax
 	movq	%rax, 3528(%rsp)        # 8-byte Spill
 	movabsq	$4, %rax
 	movq	%rax, 3520(%rsp)        # 8-byte Spill
-	leaq	.L.str1693, %rax
+	leaq	.L.str16133, %rax
 	movq	%rax, 3512(%rsp)        # 8-byte Spill
 	movabsq	$5, %rax
 	movq	%rax, 3504(%rsp)        # 8-byte Spill
 	movabsq	$29, %rax
 	movq	%rax, 3496(%rsp)        # 8-byte Spill
-	leaq	.L.str1996, %rax
+	leaq	.L.str19136, %rax
 	movq	%rax, 3488(%rsp)        # 8-byte Spill
-	leaq	.L.str104, %rax
+	leaq	.L.str104221, %rax
 	movq	%rax, 3480(%rsp)        # 8-byte Spill
-	leaq	.L.str279, %rax
+	leaq	.L.str2119, %rax
 	movq	%rax, 3472(%rsp)        # 8-byte Spill
-	leaq	.L.str1491, %rax
+	leaq	.L.str14131, %rax
 	movq	%rax, 3464(%rsp)        # 8-byte Spill
 	movabsq	$12, %rax
 	movq	%rax, 3456(%rsp)        # 8-byte Spill
@@ -19809,15 +22162,15 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rax, 3440(%rsp)        # 8-byte Spill
 	leaq	.L.str125, %rax
 	movq	%rax, 3432(%rsp)        # 8-byte Spill
-	leaq	.L.str986, %rax
+	leaq	.L.str9126, %rax
 	movq	%rax, 3424(%rsp)        # 8-byte Spill
 	movabsq	$150, %rax
 	movq	%rax, 3416(%rsp)        # 8-byte Spill
-	leaq	.L.str683, %rax
+	leaq	.L.str6123, %rax
 	movq	%rax, 3408(%rsp)        # 8-byte Spill
-	leaq	.L.str885, %rax
+	leaq	.L.str8125, %rax
 	movq	%rax, 3400(%rsp)        # 8-byte Spill
-	leaq	.L.str784, %rax
+	leaq	.L.str7124, %rax
 	movq	%rax, 3392(%rsp)        # 8-byte Spill
 	movabsq	$35, %rax
 	movq	%rax, 3384(%rsp)        # 8-byte Spill
@@ -19825,7 +22178,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rax, 3376(%rsp)        # 8-byte Spill
 	leaq	.L.str122, %rax
 	.loc	2 137 0 prologue_end    # kiss_fft.c:137:0
-.Ltmp388:
+.Ltmp408:
 	movq	%rax, 3368(%rsp)        # 8-byte Spill
 	movq	3376(%rsp), %rax        # 8-byte Reload
 	movq	%rdi, 3360(%rsp)        # 8-byte Spill
@@ -20430,7 +22783,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	3320(%rsp), %r8         # 8-byte Reload
 	movq	3264(%rsp), %r9         # 8-byte Reload
 	callq	trace_logger_log_double
-.Ltmp389:
+.Ltmp409:
 	#DEBUG_VALUE: kf_bfly5:Fout0 <- [RSP+3360]
 	#DEBUG_VALUE: kf_bfly5:Fout1 <- undef
 	#DEBUG_VALUE: kf_bfly5:Fout2 <- undef
@@ -20524,16 +22877,16 @@ kf_bfly5:                               # @kf_bfly5
 	testb	$1, %al
 	jne	.LBB11_1
 	jmp	.LBB11_3
-.Ltmp390:
+.Ltmp410:
 .LBB11_1:                               # %.lr.ph
 	movabsq	$0, %rax
 	movabsq	$1, %rcx
 	leaq	.L.str299, %r8
-	leaq	.L.str481, %rdx
+	leaq	.L.str4121, %rdx
 	movabsq	$161, %rdi
 	leaq	.L.str170, %rsi
-	leaq	.L.str45122, %r9
-	leaq	.L.str48125, %r10
+	leaq	.L.str45162, %r9
+	leaq	.L.str48165, %r10
 	movabsq	$2, %r11
 	movl	$0, %ebx
 	movl	$1, %ebp
@@ -20546,27 +22899,27 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rax, 3144(%rsp)        # 8-byte Spill
 	movabsq	$42, %rax
 	movq	%rax, 3136(%rsp)        # 8-byte Spill
-	leaq	.L.str47124, %rax
+	leaq	.L.str47164, %rax
 	movq	%rax, 3128(%rsp)        # 8-byte Spill
-	leaq	.L.str279, %rax
+	leaq	.L.str2119, %rax
 	movq	%rax, 3120(%rsp)        # 8-byte Spill
 	movabsq	$155, %rax
 	movq	%rax, 3112(%rsp)        # 8-byte Spill
 	movabsq	$29, %rax
 	movq	%rax, 3104(%rsp)        # 8-byte Spill
-	leaq	.L.str43120, %rax
+	leaq	.L.str43160, %rax
 	movq	%rax, 3096(%rsp)        # 8-byte Spill
 	leaq	.L.str135, %rax
 	movq	%rax, 3088(%rsp)        # 8-byte Spill
 	movabsq	$156, %rax
 	movq	%rax, 3080(%rsp)        # 8-byte Spill
-	leaq	.L.str40117, %rax
+	leaq	.L.str40157, %rax
 	movq	%rax, 3072(%rsp)        # 8-byte Spill
-	leaq	.L.str34111, %rax
+	leaq	.L.str34151, %rax
 	movq	%rax, 3064(%rsp)        # 8-byte Spill
 	movabsq	$157, %rax
 	movq	%rax, 3056(%rsp)        # 8-byte Spill
-	leaq	.L.str38115, %rax
+	leaq	.L.str38155, %rax
 	movq	%rax, 3048(%rsp)        # 8-byte Spill
 	leaq	.L.str132, %rax
 	movq	%rax, 3040(%rsp)        # 8-byte Spill
@@ -20574,17 +22927,17 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rax, 3032(%rsp)        # 8-byte Spill
 	movabsq	$32, %rax
 	movq	%rax, 3024(%rsp)        # 8-byte Spill
-	leaq	.L.str110, %rax
+	leaq	.L.str110227, %rax
 	movq	%rax, 3016(%rsp)        # 8-byte Spill
 	movabsq	$35, %rax
 	movq	%rax, 3008(%rsp)        # 8-byte Spill
-	leaq	.L.str28105, %rax
+	leaq	.L.str28145, %rax
 	movq	%rax, 3000(%rsp)        # 8-byte Spill
-	leaq	.L.str107, %rax
+	leaq	.L.str107224, %rax
 	movq	%rax, 2992(%rsp)        # 8-byte Spill
 	leaq	.L.str203, %rax
 	movq	%rax, 2984(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 2976(%rsp)        # 8-byte Spill
 	movabsq	$20, %rax
 	movq	%rax, 2968(%rsp)        # 8-byte Spill
@@ -20867,7 +23220,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rcx, %rdx
 	movq	2920(%rsp), %rax        # 8-byte Reload
 	movq	%rcx, 2792(%rsp)        # 8-byte Spill
-.Ltmp391:
+.Ltmp411:
 	#DEBUG_VALUE: kf_bfly5:Fout4 <- [RSP+2792]
 	movq	%rax, %rcx
 	movq	3048(%rsp), %r8         # 8-byte Reload
@@ -20911,7 +23264,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rcx, %rdx
 	movq	2920(%rsp), %rax        # 8-byte Reload
 	movq	%rcx, 2784(%rsp)        # 8-byte Spill
-.Ltmp392:
+.Ltmp412:
 	#DEBUG_VALUE: kf_bfly5:Fout3 <- [RSP+2784]
 	movq	%rax, %rcx
 	movq	3072(%rsp), %r8         # 8-byte Reload
@@ -20955,7 +23308,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rcx, %rdx
 	movq	2920(%rsp), %rax        # 8-byte Reload
 	movq	%rcx, 2776(%rsp)        # 8-byte Spill
-.Ltmp393:
+.Ltmp413:
 	#DEBUG_VALUE: kf_bfly5:Fout2 <- [RSP+2776]
 	movq	%rax, %rcx
 	movq	3096(%rsp), %r8         # 8-byte Reload
@@ -20994,13 +23347,13 @@ kf_bfly5:                               # @kf_bfly5
 	movq	3360(%rsp), %rcx        # 8-byte Reload
 	addq	%rax, %rcx
 	.loc	2 167 0                 # kiss_fft.c:167:0
-.Ltmp394:
+.Ltmp414:
 	movq	2896(%rsp), %rdi        # 8-byte Reload
 	movq	2880(%rsp), %rsi        # 8-byte Reload
 	movq	%rcx, %rdx
 	movq	2920(%rsp), %rax        # 8-byte Reload
 	movq	%rcx, 2768(%rsp)        # 8-byte Spill
-.Ltmp395:
+.Ltmp415:
 	#DEBUG_VALUE: kf_bfly5:Fout1 <- [RSP+2768]
 	movq	%rax, %rcx
 	movq	3128(%rsp), %r8         # 8-byte Reload
@@ -21025,7 +23378,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	2928(%rsp), %rax        # 8-byte Reload
 	movq	%rax, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp396:
+.Ltmp416:
 	.loc	2 161 0                 # kiss_fft.c:161:0
 	movq	2896(%rsp), %rdi        # 8-byte Reload
 	movq	2880(%rsp), %rsi        # 8-byte Reload
@@ -21073,13 +23426,13 @@ kf_bfly5:                               # @kf_bfly5
 	movq	2752(%rsp), %rdi        # 8-byte Reload
 	movq	2760(%rsp), %r8         # 8-byte Reload
 	movabsq	$1, %r9
-	leaq	.L.str75152, %r10
+	leaq	.L.str75192, %r10
 	movabsq	$0, %r11
-	leaq	.L.str481, %rbx
+	leaq	.L.str4121, %rbx
 	movabsq	$2, %r14
 	leaq	.L.str299, %r15
 	movabsq	$3, %r12
-	leaq	.L.str46123, %r13
+	leaq	.L.str46163, %r13
 	movabsq	$161, %rbp
 	movq	%rax, 2712(%rsp)        # 8-byte Spill
 	leaq	.L.str170, %rax
@@ -21094,7 +23447,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rax, 2672(%rsp)        # 8-byte Spill
 	movabsq	$32, %rax
 	movq	%rax, 2664(%rsp)        # 8-byte Spill
-	leaq	.L.str74151, %rax
+	leaq	.L.str74191, %rax
 	movq	%rax, 2656(%rsp)        # 8-byte Spill
 	leaq	.L.str203, %rax
 	movq	%rax, 2648(%rsp)        # 8-byte Spill
@@ -21102,13 +23455,13 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rax, 2640(%rsp)        # 8-byte Spill
 	movabsq	$64, %rax
 	movq	%rax, 2632(%rsp)        # 8-byte Spill
-	leaq	.L.str51128, %rax
+	leaq	.L.str51168, %rax
 	movq	%rax, 2624(%rsp)        # 8-byte Spill
 	movabsq	$33, %rax
 	movq	%rax, 2616(%rsp)        # 8-byte Spill
-	leaq	.L.str50127, %rax
+	leaq	.L.str50167, %rax
 	movq	%rax, 2608(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 2600(%rsp)        # 8-byte Spill
 	movabsq	$8, %rax
 	movq	%rax, 2592(%rsp)        # 8-byte Spill
@@ -21190,7 +23543,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rax, 2288(%rsp)        # 8-byte Spill
 	movabsq	$13, %rax
 	movq	%rax, 2280(%rsp)        # 8-byte Spill
-	leaq	.L.str24101, %rax
+	leaq	.L.str24141, %rax
 	movq	%rax, 2272(%rsp)        # 8-byte Spill
 	leaq	.L.str338, %rax
 	movq	%rax, 2264(%rsp)        # 8-byte Spill
@@ -21204,21 +23557,21 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rax, 2232(%rsp)        # 8-byte Spill
 	leaq	.L.str339, %rax
 	movq	%rax, 2224(%rsp)        # 8-byte Spill
-	leaq	.L.str380157, %rax
+	leaq	.L.str380, %rax
 	movq	%rax, 2216(%rsp)        # 8-byte Spill
 	leaq	.L.str379, %rax
 	movq	%rax, 2208(%rsp)        # 8-byte Spill
 	movabsq	$192, %rax
 	movq	%rax, 2200(%rsp)        # 8-byte Spill
-	leaq	.L.str885, %rax
+	leaq	.L.str8125, %rax
 	movq	%rax, 2192(%rsp)        # 8-byte Spill
 	leaq	.L.str341, %rax
 	movq	%rax, 2184(%rsp)        # 8-byte Spill
-	leaq	.L.str61138, %rax
+	leaq	.L.str61178, %rax
 	movq	%rax, 2176(%rsp)        # 8-byte Spill
 	leaq	.L.str378, %rax
 	movq	%rax, 2168(%rsp)        # 8-byte Spill
-	leaq	.L.str1996, %rax
+	leaq	.L.str19136, %rax
 	movq	%rax, 2160(%rsp)        # 8-byte Spill
 	leaq	.L.str337, %rax
 	movq	%rax, 2152(%rsp)        # 8-byte Spill
@@ -21230,7 +23583,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rax, 2128(%rsp)        # 8-byte Spill
 	leaq	.L.str340, %rax
 	movq	%rax, 2120(%rsp)        # 8-byte Spill
-	leaq	.L.str58135, %rax
+	leaq	.L.str58175, %rax
 	movq	%rax, 2112(%rsp)        # 8-byte Spill
 	leaq	.L.str374, %rax
 	movq	%rax, 2104(%rsp)        # 8-byte Spill
@@ -21268,7 +23621,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rax, 1976(%rsp)        # 8-byte Spill
 	leaq	.L.str366, %rax
 	movq	%rax, 1968(%rsp)        # 8-byte Spill
-	leaq	.L.str67144, %rax
+	leaq	.L.str67184, %rax
 	movq	%rax, 1960(%rsp)        # 8-byte Spill
 	leaq	.L.str367, %rax
 	movq	%rax, 1952(%rsp)        # 8-byte Spill
@@ -21319,7 +23672,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rax, 1776(%rsp)        # 8-byte Spill
 	leaq	.L.str345, %rax
 	movq	%rax, 1768(%rsp)        # 8-byte Spill
-	leaq	.L.str57134, %rax
+	leaq	.L.str57174, %rax
 	movq	%rax, 1760(%rsp)        # 8-byte Spill
 	movabsq	$179, %rax
 	movq	%rax, 1752(%rsp)        # 8-byte Spill
@@ -21371,7 +23724,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rax, 1568(%rsp)        # 8-byte Spill
 	leaq	.L.str329, %rax
 	movq	%rax, 1560(%rsp)        # 8-byte Spill
-	leaq	.L.str117, %rax
+	leaq	.L.str117234, %rax
 	movq	%rax, 1552(%rsp)        # 8-byte Spill
 	movabsq	$4, %rax
 	movq	%rax, 1544(%rsp)        # 8-byte Spill
@@ -21431,7 +23784,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rax, 1328(%rsp)        # 8-byte Spill
 	leaq	.L.str289, %rax
 	movq	%rax, 1320(%rsp)        # 8-byte Spill
-	leaq	.L.str279156, %rax
+	leaq	.L.str279, %rax
 	movq	%rax, 1312(%rsp)        # 8-byte Spill
 	leaq	.L.str271, %rax
 	movq	%rax, 1304(%rsp)        # 8-byte Spill
@@ -21489,11 +23842,11 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rax, 1096(%rsp)        # 8-byte Spill
 	movabsq	$169, %rax
 	movq	%rax, 1088(%rsp)        # 8-byte Spill
-	leaq	.L.str77154, %rax
+	leaq	.L.str77194, %rax
 	movq	%rax, 1080(%rsp)        # 8-byte Spill
 	leaq	.L.str222, %rax
 	movq	%rax, 1072(%rsp)        # 8-byte Spill
-	leaq	.L.str69146, %rax
+	leaq	.L.str69186, %rax
 	movq	%rax, 1064(%rsp)        # 8-byte Spill
 	leaq	.L.str223, %rax
 	movq	%rax, 1056(%rsp)        # 8-byte Spill
@@ -21503,39 +23856,39 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%rax, 1040(%rsp)        # 8-byte Spill
 	leaq	.L.str168, %rax
 	movq	%rax, 1032(%rsp)        # 8-byte Spill
-	leaq	.L.str71148, %rax
+	leaq	.L.str71188, %rax
 	movq	%rax, 1024(%rsp)        # 8-byte Spill
-	leaq	.L.str66143, %rax
+	leaq	.L.str66183, %rax
 	movq	%rax, 1016(%rsp)        # 8-byte Spill
-	leaq	.L.str72149, %rax
+	leaq	.L.str72189, %rax
 	movq	%rax, 1008(%rsp)        # 8-byte Spill
-	leaq	.L.str64141, %rax
+	leaq	.L.str64181, %rax
 	movq	%rax, 1000(%rsp)        # 8-byte Spill
 	leaq	.L.str145, %rax
 	movq	%rax, 992(%rsp)         # 8-byte Spill
 	movabsq	$167, %rax
 	movq	%rax, 984(%rsp)         # 8-byte Spill
-	leaq	.L.str56133, %rax
+	leaq	.L.str56173, %rax
 	movq	%rax, 976(%rsp)         # 8-byte Spill
-	leaq	.L.str55132, %rax
+	leaq	.L.str55172, %rax
 	movq	%rax, 968(%rsp)         # 8-byte Spill
-	leaq	.L.str54131, %rax
+	leaq	.L.str54171, %rax
 	movq	%rax, 960(%rsp)         # 8-byte Spill
-	leaq	.L.str45122, %rax
+	leaq	.L.str45162, %rax
 	movq	%rax, 952(%rsp)         # 8-byte Spill
-	leaq	.L.str38115, %rax
+	leaq	.L.str38155, %rax
 	movq	%rax, 944(%rsp)         # 8-byte Spill
 	movabsq	$-1, %rax
 	movq	%rax, 936(%rsp)         # 8-byte Spill
 	movabsq	$48, %rax
 	movq	%rax, 928(%rsp)         # 8-byte Spill
-	leaq	.L.str40117, %rax
+	leaq	.L.str40157, %rax
 	movq	%rax, 920(%rsp)         # 8-byte Spill
-	leaq	.L.str43120, %rax
+	leaq	.L.str43160, %rax
 	movq	%rax, 912(%rsp)         # 8-byte Spill
-	leaq	.L.str47124, %rax
+	leaq	.L.str47164, %rax
 	.loc	2 167 0                 # kiss_fft.c:167:0
-.Ltmp397:
+.Ltmp417:
 	movq	%rax, 904(%rsp)         # 8-byte Spill
 	movq	936(%rsp), %rax         # 8-byte Reload
 	movq	%rdi, 896(%rsp)         # 8-byte Spill
@@ -22020,7 +24373,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	768(%rsp), %rdx         # 8-byte Reload
 	vmovss	4(%rcx,%rdx,8), %xmm0
 	.loc	2 169 0                 # kiss_fft.c:169:0
-.Ltmp398:
+.Ltmp418:
 	cvtss2sd	%xmm0, %xmm1
 	movq	2672(%rsp), %rdi        # 8-byte Reload
 	movq	2664(%rsp), %rsi        # 8-byte Reload
@@ -22751,7 +25104,7 @@ kf_bfly5:                               # @kf_bfly5
 	vmovss	636(%rsp), %xmm0        # 4-byte Reload
 	vmovss	640(%rsp), %xmm1        # 4-byte Reload
 	vaddss	%xmm1, %xmm0, %xmm2
-.Ltmp399:
+.Ltmp419:
 	.loc	2 170 0                 # kiss_fft.c:170:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	2672(%rsp), %rdi        # 8-byte Reload
@@ -23585,7 +25938,7 @@ kf_bfly5:                               # @kf_bfly5
 	vmovss	516(%rsp), %xmm0        # 4-byte Reload
 	vmovss	520(%rsp), %xmm1        # 4-byte Reload
 	vaddss	%xmm1, %xmm0, %xmm2
-.Ltmp400:
+.Ltmp420:
 	.loc	2 171 0                 # kiss_fft.c:171:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	2672(%rsp), %rdi        # 8-byte Reload
@@ -24393,7 +26746,7 @@ kf_bfly5:                               # @kf_bfly5
 	vmovss	396(%rsp), %xmm0        # 4-byte Reload
 	vmovss	400(%rsp), %xmm1        # 4-byte Reload
 	vaddss	%xmm1, %xmm0, %xmm2
-.Ltmp401:
+.Ltmp421:
 	.loc	2 172 0                 # kiss_fft.c:172:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	2672(%rsp), %rdi        # 8-byte Reload
@@ -25227,7 +27580,7 @@ kf_bfly5:                               # @kf_bfly5
 	vmovss	276(%rsp), %xmm0        # 4-byte Reload
 	vmovss	280(%rsp), %xmm1        # 4-byte Reload
 	vaddss	%xmm1, %xmm0, %xmm2
-.Ltmp402:
+.Ltmp422:
 	.loc	2 174 0                 # kiss_fft.c:174:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	2672(%rsp), %rdi        # 8-byte Reload
@@ -25305,7 +27658,7 @@ kf_bfly5:                               # @kf_bfly5
 	vmovss	632(%rsp), %xmm0        # 4-byte Reload
 	vmovss	272(%rsp), %xmm1        # 4-byte Reload
 	vaddss	%xmm1, %xmm0, %xmm2
-.Ltmp403:
+.Ltmp423:
 	.loc	2 175 0                 # kiss_fft.c:175:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	2672(%rsp), %rdi        # 8-byte Reload
@@ -25383,7 +27736,7 @@ kf_bfly5:                               # @kf_bfly5
 	vmovss	632(%rsp), %xmm0        # 4-byte Reload
 	vmovss	272(%rsp), %xmm1        # 4-byte Reload
 	vsubss	%xmm1, %xmm0, %xmm2
-.Ltmp404:
+.Ltmp424:
 	.loc	2 176 0                 # kiss_fft.c:176:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	2672(%rsp), %rdi        # 8-byte Reload
@@ -25461,7 +27814,7 @@ kf_bfly5:                               # @kf_bfly5
 	vmovss	512(%rsp), %xmm0        # 4-byte Reload
 	vmovss	392(%rsp), %xmm1        # 4-byte Reload
 	vaddss	%xmm1, %xmm0, %xmm2
-.Ltmp405:
+.Ltmp425:
 	.loc	2 177 0                 # kiss_fft.c:177:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	2672(%rsp), %rdi        # 8-byte Reload
@@ -25539,7 +27892,7 @@ kf_bfly5:                               # @kf_bfly5
 	vmovss	512(%rsp), %xmm0        # 4-byte Reload
 	vmovss	392(%rsp), %xmm1        # 4-byte Reload
 	vsubss	%xmm1, %xmm0, %xmm2
-.Ltmp406:
+.Ltmp426:
 	.loc	2 179 0                 # kiss_fft.c:179:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	2672(%rsp), %rdi        # 8-byte Reload
@@ -26359,7 +28712,7 @@ kf_bfly5:                               # @kf_bfly5
 	vmovss	164(%rsp), %xmm1        # 4-byte Reload
 	vsubss	%xmm1, %xmm0, %xmm2
 	.loc	2 188 0                 # kiss_fft.c:188:0
-.Ltmp407:
+.Ltmp427:
 	cvtss2sd	%xmm2, %xmm0
 	movq	2672(%rsp), %rdi        # 8-byte Reload
 	movq	2664(%rsp), %rsi        # 8-byte Reload
@@ -26505,7 +28858,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	720(%rsp), %rdx         # 8-byte Reload
 	vmovss	152(%rsp), %xmm0        # 4-byte Reload
 	vmovss	%xmm0, 4(%rcx,%rdx,8)
-.Ltmp408:
+.Ltmp428:
 	.loc	2 189 0                 # kiss_fft.c:189:0
 	movq	2072(%rsp), %rdi        # 8-byte Reload
 	movq	2704(%rsp), %rsi        # 8-byte Reload
@@ -26643,7 +28996,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	376(%rsp), %rdx         # 8-byte Reload
 	vmovss	144(%rsp), %xmm0        # 4-byte Reload
 	vmovss	%xmm0, 4(%rcx,%rdx,8)
-.Ltmp409:
+.Ltmp429:
 	.loc	2 191 0                 # kiss_fft.c:191:0
 	movq	2128(%rsp), %rdi        # 8-byte Reload
 	movq	2704(%rsp), %rsi        # 8-byte Reload
@@ -27172,7 +29525,7 @@ kf_bfly5:                               # @kf_bfly5
 	vmovss	92(%rsp), %xmm1         # 4-byte Reload
 	vsubss	%xmm1, %xmm0, %xmm2
 	.loc	2 196 0                 # kiss_fft.c:196:0
-.Ltmp410:
+.Ltmp430:
 	cvtss2sd	%xmm2, %xmm0
 	movq	2672(%rsp), %rdi        # 8-byte Reload
 	movq	2664(%rsp), %rsi        # 8-byte Reload
@@ -27318,7 +29671,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	616(%rsp), %rdx         # 8-byte Reload
 	vmovss	80(%rsp), %xmm0         # 4-byte Reload
 	vmovss	%xmm0, 4(%rcx,%rdx,8)
-.Ltmp411:
+.Ltmp431:
 	.loc	2 197 0                 # kiss_fft.c:197:0
 	movq	2472(%rsp), %rdi        # 8-byte Reload
 	movq	2704(%rsp), %rsi        # 8-byte Reload
@@ -27456,7 +29809,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	496(%rsp), %rdx         # 8-byte Reload
 	vmovss	72(%rsp), %xmm0         # 4-byte Reload
 	vmovss	%xmm0, 4(%rcx,%rdx,8)
-.Ltmp412:
+.Ltmp432:
 	.loc	2 199 0                 # kiss_fft.c:199:0
 	movq	2568(%rsp), %rdi        # 8-byte Reload
 	movq	2704(%rsp), %rsi        # 8-byte Reload
@@ -27497,7 +29850,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	784(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp413:
+.Ltmp433:
 	#DEBUG_VALUE: kf_bfly5:Fout0 <- [RSP+64]
 	movq	2568(%rsp), %rdi        # 8-byte Reload
 	movq	2704(%rsp), %rsi        # 8-byte Reload
@@ -27538,7 +29891,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	784(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp414:
+.Ltmp434:
 	#DEBUG_VALUE: kf_bfly5:Fout1 <- [RSP+56]
 	movq	2568(%rsp), %rdi        # 8-byte Reload
 	movq	2704(%rsp), %rsi        # 8-byte Reload
@@ -27579,7 +29932,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	784(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp415:
+.Ltmp435:
 	#DEBUG_VALUE: kf_bfly5:Fout2 <- [RSP+48]
 	movq	2568(%rsp), %rdi        # 8-byte Reload
 	movq	2704(%rsp), %rsi        # 8-byte Reload
@@ -27620,7 +29973,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	784(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp416:
+.Ltmp436:
 	#DEBUG_VALUE: kf_bfly5:Fout3 <- [RSP+40]
 	movq	2568(%rsp), %rdi        # 8-byte Reload
 	movq	2704(%rsp), %rsi        # 8-byte Reload
@@ -27661,7 +30014,7 @@ kf_bfly5:                               # @kf_bfly5
 	movq	784(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp417:
+.Ltmp437:
 	#DEBUG_VALUE: kf_bfly5:Fout4 <- [RSP+32]
 	.loc	2 161 0                 # kiss_fft.c:161:0
 	movq	832(%rsp), %rdi         # 8-byte Reload
@@ -27834,12 +30187,12 @@ kf_bfly5:                               # @kf_bfly5
 	movq	%r9, 2720(%rsp)         # 8-byte Spill
 	jne	.LBB11_3
 	jmp	.LBB11_2
-.Ltmp418:
+.Ltmp438:
 .LBB11_3:                               # %._crit_edge
 	movabsq	$201, %rdi
 	leaq	.L.str170, %rsi
-	leaq	.L.str46123, %rdx
-	leaq	.L.str78, %rcx
+	leaq	.L.str46163, %rdx
+	leaq	.L.str78195, %rcx
 	movabsq	$1, %r8
 	movl	$0, %r9d
 	movl	$1, %eax
@@ -27855,9 +30208,9 @@ kf_bfly5:                               # @kf_bfly5
 	popq	%r15
 	popq	%rbp
 	ret
-.Ltmp419:
-.Ltmp420:
-	.size	kf_bfly5, .Ltmp420-kf_bfly5
+.Ltmp439:
+.Ltmp440:
+	.size	kf_bfly5, .Ltmp440-kf_bfly5
 .Lfunc_end11:
 	.cfi_endproc
 
@@ -27869,45 +30222,45 @@ kf_bfly4:                               # @kf_bfly4
 	.loc	2 50 0                  # kiss_fft.c:50:0
 # BB#0:
 	pushq	%rbp
-.Ltmp428:
+.Ltmp448:
 	.cfi_def_cfa_offset 16
 	pushq	%r15
-.Ltmp429:
+.Ltmp449:
 	.cfi_def_cfa_offset 24
 	pushq	%r14
-.Ltmp430:
+.Ltmp450:
 	.cfi_def_cfa_offset 32
 	pushq	%r13
-.Ltmp431:
+.Ltmp451:
 	.cfi_def_cfa_offset 40
 	pushq	%r12
-.Ltmp432:
+.Ltmp452:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
-.Ltmp433:
+.Ltmp453:
 	.cfi_def_cfa_offset 56
 	subq	$2760, %rsp             # imm = 0xAC8
-.Ltmp434:
+.Ltmp454:
 	.cfi_def_cfa_offset 2816
-.Ltmp435:
+.Ltmp455:
 	.cfi_offset %rbx, -56
-.Ltmp436:
+.Ltmp456:
 	.cfi_offset %r12, -48
-.Ltmp437:
+.Ltmp457:
 	.cfi_offset %r13, -40
-.Ltmp438:
+.Ltmp458:
 	.cfi_offset %r14, -32
-.Ltmp439:
+.Ltmp459:
 	.cfi_offset %r15, -24
-.Ltmp440:
+.Ltmp460:
 	.cfi_offset %rbp, -16
 	movabsq	$1, %rax
 	movabsq	$0, %r8
 	leaq	.L.str260, %r9
-	leaq	.L.str481, %r10
+	leaq	.L.str4121, %r10
 	movabsq	$60, %r11
 	leaq	.L.str166, %rbx
-	leaq	.L.str178, %r14
+	leaq	.L.str1118, %r14
 	leaq	.L.str259, %r15
 	movabsq	$2, %r12
 	movl	$0, %ebp
@@ -27915,13 +30268,13 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 2752(%rsp)        # 8-byte Spill
 	movabsq	$19134, %rax            # imm = 0x4ABE
 	movq	%rax, 2744(%rsp)        # 8-byte Spill
-	leaq	.L.str1693, %rax
+	leaq	.L.str16133, %rax
 	movq	%rax, 2736(%rsp)        # 8-byte Spill
 	movabsq	$32, %rax
 	movq	%rax, 2728(%rsp)        # 8-byte Spill
-	leaq	.L.str1491, %rax
+	leaq	.L.str14131, %rax
 	movq	%rax, 2720(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 2712(%rsp)        # 8-byte Spill
 	movabsq	$77, %rax
 	movq	%rax, 2704(%rsp)        # 8-byte Spill
@@ -27933,13 +30286,13 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 2680(%rsp)        # 8-byte Spill
 	movabsq	$27, %rax
 	movq	%rax, 2672(%rsp)        # 8-byte Spill
-	leaq	.L.str117, %rax
+	leaq	.L.str117234, %rax
 	movq	%rax, 2664(%rsp)        # 8-byte Spill
 	movabsq	$3, %rax
 	movq	%rax, 2656(%rsp)        # 8-byte Spill
 	movabsq	$29, %rax
 	movq	%rax, 2648(%rsp)        # 8-byte Spill
-	leaq	.L.str986, %rax
+	leaq	.L.str9126, %rax
 	movq	%rax, 2640(%rsp)        # 8-byte Spill
 	leaq	.L.str129, %rax
 	movq	%rax, 2632(%rsp)        # 8-byte Spill
@@ -27947,25 +30300,25 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 2624(%rsp)        # 8-byte Spill
 	movabsq	$12, %rax
 	movq	%rax, 2616(%rsp)        # 8-byte Spill
-	leaq	.L.str885, %rax
+	leaq	.L.str8125, %rax
 	movq	%rax, 2608(%rsp)        # 8-byte Spill
 	movabsq	$73, %rax
 	movq	%rax, 2600(%rsp)        # 8-byte Spill
 	movabsq	$20, %rax
 	movq	%rax, 2592(%rsp)        # 8-byte Spill
-	leaq	.L.str784, %rax
+	leaq	.L.str7124, %rax
 	movq	%rax, 2584(%rsp)        # 8-byte Spill
 	movabsq	$4, %rax
 	movq	%rax, 2576(%rsp)        # 8-byte Spill
 	movabsq	$58, %rax
 	movq	%rax, 2568(%rsp)        # 8-byte Spill
-	leaq	.L.str683, %rax
+	leaq	.L.str6123, %rax
 	movq	%rax, 2560(%rsp)        # 8-byte Spill
 	leaq	.L.str203, %rax
 	movq	%rax, 2552(%rsp)        # 8-byte Spill
 	movabsq	$55, %rax
 	movq	%rax, 2544(%rsp)        # 8-byte Spill
-	leaq	.L.str279, %rax
+	leaq	.L.str2119, %rax
 	movq	%rax, 2536(%rsp)        # 8-byte Spill
 	movabsq	$54, %rax
 	movq	%rax, 2528(%rsp)        # 8-byte Spill
@@ -27973,7 +30326,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 2520(%rsp)        # 8-byte Spill
 	leaq	.L.str122, %rax
 	.loc	2 45 0 prologue_end     # kiss_fft.c:45:0
-.Ltmp441:
+.Ltmp461:
 	movq	%rax, 2512(%rsp)        # 8-byte Spill
 	movq	2520(%rsp), %rax        # 8-byte Reload
 	movq	%rdi, 2504(%rsp)        # 8-byte Spill
@@ -28034,7 +30387,7 @@ kf_bfly4:                               # @kf_bfly4
 	#DEBUG_VALUE: kf_bfly4:fstride <- [RSP+2496]
 	#DEBUG_VALUE: kf_bfly4:st <- [RSP+2488]
 	#DEBUG_VALUE: kf_bfly4:m <- [RSP+2480]
-.Ltmp442:
+.Ltmp462:
 	#DEBUG_VALUE: kf_bfly4:k <- [RSP+2480]
 	.loc	2 54 0                  # kiss_fft.c:54:0
 	movq	2528(%rsp), %rdi        # 8-byte Reload
@@ -28075,7 +30428,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%r10, (%rsp)
 	movq	%rax, 2392(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_int
-.Ltmp443:
+.Ltmp463:
 	#DEBUG_VALUE: kf_bfly4:m2 <- [RSP+2392]
 	.loc	2 55 0                  # kiss_fft.c:55:0
 	movq	2544(%rsp), %rdi        # 8-byte Reload
@@ -28117,7 +30470,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	2408(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-.Ltmp444:
+.Ltmp464:
 	#DEBUG_VALUE: kf_bfly4:m3 <- [RSP+2384]
 	.loc	2 58 0                  # kiss_fft.c:58:0
 	movq	2568(%rsp), %rdi        # 8-byte Reload
@@ -28176,7 +30529,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%r10, (%rsp)
 	movq	%rax, 2376(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_ptr
-.Ltmp445:
+.Ltmp465:
 	#DEBUG_VALUE: kf_bfly4:tw1 <- [RSP+2376]
 	#DEBUG_VALUE: kf_bfly4:tw2 <- [RSP+2376]
 	#DEBUG_VALUE: kf_bfly4:tw3 <- [RSP+2376]
@@ -28249,7 +30602,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	2496(%rsp), %rax        # 8-byte Reload
 	imulq	$3, %rax, %rcx
 	.loc	2 77 0                  # kiss_fft.c:77:0
-.Ltmp446:
+.Ltmp466:
 	movq	2744(%rsp), %rdi        # 8-byte Reload
 	movq	2688(%rsp), %rsi        # 8-byte Reload
 	movq	%rcx, %rdx
@@ -28369,7 +30722,7 @@ kf_bfly4:                               # @kf_bfly4
 	movl	2348(%rsp), %ebp        # 4-byte Reload
 	cmpl	$0, %ebp
 	sete	%al
-.Ltmp447:
+.Ltmp467:
 	.loc	2 60 0                  # kiss_fft.c:60:0
 	movb	%al, %cl
 	andb	$1, %cl
@@ -28411,7 +30764,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rsi, 2320(%rsp)        # 8-byte Spill
 	movq	%rdi, 2312(%rsp)        # 8-byte Spill
 	movq	%r8, 2304(%rsp)         # 8-byte Spill
-.Ltmp448:
+.Ltmp468:
 .LBB12_1:                               # =>This Inner Loop Header: Depth=1
 	movq	2304(%rsp), %rax        # 8-byte Reload
 	movq	2312(%rsp), %rcx        # 8-byte Reload
@@ -28419,9 +30772,9 @@ kf_bfly4:                               # @kf_bfly4
 	movq	2328(%rsp), %rsi        # 8-byte Reload
 	movq	2336(%rsp), %rdi        # 8-byte Reload
 	movabsq	$1, %r8
-	leaq	.L.str1693, %r9
+	leaq	.L.str16133, %r9
 	movabsq	$0, %r10
-	leaq	.L.str481, %r11
+	leaq	.L.str4121, %r11
 	movabsq	$2, %rbx
 	leaq	.L.str276, %r14
 	movabsq	$3, %r15
@@ -28475,7 +30828,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 2120(%rsp)        # 8-byte Spill
 	leaq	.L.str261, %rax
 	movq	%rax, 2112(%rsp)        # 8-byte Spill
-	leaq	.L.str986, %rax
+	leaq	.L.str9126, %rax
 	movq	%rax, 2104(%rsp)        # 8-byte Spill
 	movabsq	$74, %rax
 	movq	%rax, 2096(%rsp)        # 8-byte Spill
@@ -28485,7 +30838,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 2080(%rsp)        # 8-byte Spill
 	leaq	.L.str218, %rax
 	movq	%rax, 2072(%rsp)        # 8-byte Spill
-	leaq	.L.str885, %rax
+	leaq	.L.str8125, %rax
 	movq	%rax, 2064(%rsp)        # 8-byte Spill
 	movabsq	$73, %rax
 	movq	%rax, 2056(%rsp)        # 8-byte Spill
@@ -28499,7 +30852,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 2024(%rsp)        # 8-byte Spill
 	leaq	.L.str252, %rax
 	movq	%rax, 2016(%rsp)        # 8-byte Spill
-	leaq	.L.str57134, %rax
+	leaq	.L.str57174, %rax
 	movq	%rax, 2008(%rsp)        # 8-byte Spill
 	movabsq	$71, %rax
 	movq	%rax, 2000(%rsp)        # 8-byte Spill
@@ -28519,7 +30872,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 1944(%rsp)        # 8-byte Spill
 	leaq	.L.str246, %rax
 	movq	%rax, 1936(%rsp)        # 8-byte Spill
-	leaq	.L.str47124, %rax
+	leaq	.L.str47164, %rax
 	movq	%rax, 1928(%rsp)        # 8-byte Spill
 	leaq	.L.str229, %rax
 	movq	%rax, 1920(%rsp)        # 8-byte Spill
@@ -28527,7 +30880,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 1912(%rsp)        # 8-byte Spill
 	leaq	.L.str244, %rax
 	movq	%rax, 1904(%rsp)        # 8-byte Spill
-	leaq	.L.str38115, %rax
+	leaq	.L.str38155, %rax
 	movq	%rax, 1896(%rsp)        # 8-byte Spill
 	leaq	.L.str225, %rax
 	movq	%rax, 1888(%rsp)        # 8-byte Spill
@@ -28539,7 +30892,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 1864(%rsp)        # 8-byte Spill
 	leaq	.L.str266, %rax
 	movq	%rax, 1856(%rsp)        # 8-byte Spill
-	leaq	.L.str69146, %rax
+	leaq	.L.str69186, %rax
 	movq	%rax, 1848(%rsp)        # 8-byte Spill
 	leaq	.L.str238, %rax
 	movq	%rax, 1840(%rsp)        # 8-byte Spill
@@ -28547,7 +30900,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 1832(%rsp)        # 8-byte Spill
 	leaq	.L.str265, %rax
 	movq	%rax, 1824(%rsp)        # 8-byte Spill
-	leaq	.L.str64141, %rax
+	leaq	.L.str64181, %rax
 	movq	%rax, 1816(%rsp)        # 8-byte Spill
 	leaq	.L.str231, %rax
 	movq	%rax, 1808(%rsp)        # 8-byte Spill
@@ -28559,7 +30912,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 1784(%rsp)        # 8-byte Spill
 	leaq	.L.str185, %rax
 	movq	%rax, 1776(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 1768(%rsp)        # 8-byte Spill
 	leaq	.L.str232, %rax
 	movq	%rax, 1760(%rsp)        # 8-byte Spill
@@ -28575,7 +30928,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 1720(%rsp)        # 8-byte Spill
 	movabsq	$13, %rax
 	movq	%rax, 1712(%rsp)        # 8-byte Spill
-	leaq	.L.str72149, %rax
+	leaq	.L.str72189, %rax
 	movq	%rax, 1704(%rsp)        # 8-byte Spill
 	leaq	.L.str172, %rax
 	movq	%rax, 1696(%rsp)        # 8-byte Spill
@@ -28587,63 +30940,63 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 1672(%rsp)        # 8-byte Spill
 	leaq	.L.str222, %rax
 	movq	%rax, 1664(%rsp)        # 8-byte Spill
-	leaq	.L.str683, %rax
+	leaq	.L.str6123, %rax
 	movq	%rax, 1656(%rsp)        # 8-byte Spill
-	leaq	.L.str77154, %rax
+	leaq	.L.str77194, %rax
 	movq	%rax, 1648(%rsp)        # 8-byte Spill
-	leaq	.L.str71148, %rax
+	leaq	.L.str71188, %rax
 	movq	%rax, 1640(%rsp)        # 8-byte Spill
-	leaq	.L.str67144, %rax
+	leaq	.L.str67184, %rax
 	movq	%rax, 1632(%rsp)        # 8-byte Spill
-	leaq	.L.str66143, %rax
+	leaq	.L.str66183, %rax
 	movq	%rax, 1624(%rsp)        # 8-byte Spill
-	leaq	.L.str55132, %rax
+	leaq	.L.str55172, %rax
 	movq	%rax, 1616(%rsp)        # 8-byte Spill
-	leaq	.L.str58135, %rax
+	leaq	.L.str58175, %rax
 	movq	%rax, 1608(%rsp)        # 8-byte Spill
-	leaq	.L.str53130, %rax
+	leaq	.L.str53170, %rax
 	movq	%rax, 1600(%rsp)        # 8-byte Spill
-	leaq	.L.str61138, %rax
+	leaq	.L.str61178, %rax
 	movq	%rax, 1592(%rsp)        # 8-byte Spill
-	leaq	.L.str56133, %rax
+	leaq	.L.str56173, %rax
 	movq	%rax, 1584(%rsp)        # 8-byte Spill
 	leaq	.L.str145, %rax
 	movq	%rax, 1576(%rsp)        # 8-byte Spill
 	leaq	.L.str143, %rax
 	movq	%rax, 1568(%rsp)        # 8-byte Spill
-	leaq	.L.str279, %rax
+	leaq	.L.str2119, %rax
 	movq	%rax, 1560(%rsp)        # 8-byte Spill
-	leaq	.L.str54131, %rax
+	leaq	.L.str54171, %rax
 	movq	%rax, 1552(%rsp)        # 8-byte Spill
-	leaq	.L.str43120, %rax
+	leaq	.L.str43160, %rax
 	movq	%rax, 1544(%rsp)        # 8-byte Spill
-	leaq	.L.str40117, %rax
+	leaq	.L.str40157, %rax
 	movq	%rax, 1536(%rsp)        # 8-byte Spill
 	movabsq	$63, %rax
 	movq	%rax, 1528(%rsp)        # 8-byte Spill
-	leaq	.L.str25102, %rax
+	leaq	.L.str25142, %rax
 	movq	%rax, 1520(%rsp)        # 8-byte Spill
-	leaq	.L.str110, %rax
+	leaq	.L.str110227, %rax
 	movq	%rax, 1512(%rsp)        # 8-byte Spill
-	leaq	.L.str105, %rax
+	leaq	.L.str105222, %rax
 	movq	%rax, 1504(%rsp)        # 8-byte Spill
-	leaq	.L.str34111, %rax
+	leaq	.L.str34151, %rax
 	movq	%rax, 1496(%rsp)        # 8-byte Spill
-	leaq	.L.str107, %rax
+	leaq	.L.str107224, %rax
 	movq	%rax, 1488(%rsp)        # 8-byte Spill
 	leaq	.L.str135, %rax
 	movq	%rax, 1480(%rsp)        # 8-byte Spill
 	leaq	.L.str132, %rax
 	movq	%rax, 1472(%rsp)        # 8-byte Spill
-	leaq	.L.str28105, %rax
+	leaq	.L.str28145, %rax
 	movq	%rax, 1464(%rsp)        # 8-byte Spill
 	leaq	.L.str203, %rax
 	movq	%rax, 1456(%rsp)        # 8-byte Spill
-	leaq	.L.str24101, %rax
+	leaq	.L.str24141, %rax
 	movq	%rax, 1448(%rsp)        # 8-byte Spill
-	leaq	.L.str1996, %rax
+	leaq	.L.str19136, %rax
 	movq	%rax, 1440(%rsp)        # 8-byte Spill
-	leaq	.L.str178, %rax
+	leaq	.L.str1118, %rax
 	movq	%rax, 1432(%rsp)        # 8-byte Spill
 	leaq	.L.str122, %rax
 	movq	%rax, 1424(%rsp)        # 8-byte Spill
@@ -28655,13 +31008,13 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 1400(%rsp)        # 8-byte Spill
 	movabsq	$48, %rax
 	movq	%rax, 1392(%rsp)        # 8-byte Spill
-	leaq	.L.str784, %rax
+	leaq	.L.str7124, %rax
 	movq	%rax, 1384(%rsp)        # 8-byte Spill
 	leaq	.L.str219, %rax
 	movq	%rax, 1376(%rsp)        # 8-byte Spill
 	leaq	.L.str263, %rax
 	.loc	2 63 0                  # kiss_fft.c:63:0
-.Ltmp449:
+.Ltmp469:
 	movq	%rax, 1368(%rsp)        # 8-byte Spill
 	movq	1400(%rsp), %rax        # 8-byte Reload
 	movq	%rdi, 1360(%rsp)        # 8-byte Spill
@@ -29383,7 +31736,7 @@ kf_bfly4:                               # @kf_bfly4
 	vmovss	1188(%rsp), %xmm0       # 4-byte Reload
 	vmovss	1192(%rsp), %xmm1       # 4-byte Reload
 	vaddss	%xmm1, %xmm0, %xmm2
-.Ltmp450:
+.Ltmp470:
 	.loc	2 64 0                  # kiss_fft.c:64:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	2200(%rsp), %rdi        # 8-byte Reload
@@ -29920,7 +32273,7 @@ kf_bfly4:                               # @kf_bfly4
 	vmovss	1116(%rsp), %xmm0       # 4-byte Reload
 	vmovss	1120(%rsp), %xmm1       # 4-byte Reload
 	vaddss	%xmm1, %xmm0, %xmm2
-.Ltmp451:
+.Ltmp471:
 	.loc	2 65 0                  # kiss_fft.c:65:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	2200(%rsp), %rdi        # 8-byte Reload
@@ -30457,7 +32810,7 @@ kf_bfly4:                               # @kf_bfly4
 	vmovss	1044(%rsp), %xmm0       # 4-byte Reload
 	vmovss	1048(%rsp), %xmm1       # 4-byte Reload
 	vaddss	%xmm1, %xmm0, %xmm2
-.Ltmp452:
+.Ltmp472:
 	.loc	2 67 0                  # kiss_fft.c:67:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	2200(%rsp), %rdi        # 8-byte Reload
@@ -30685,7 +33038,7 @@ kf_bfly4:                               # @kf_bfly4
 	vmovss	1020(%rsp), %xmm0       # 4-byte Reload
 	vmovss	1112(%rsp), %xmm1       # 4-byte Reload
 	vsubss	%xmm1, %xmm0, %xmm2
-.Ltmp453:
+.Ltmp473:
 	.loc	2 68 0                  # kiss_fft.c:68:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	2200(%rsp), %rdi        # 8-byte Reload
@@ -30859,7 +33212,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	2296(%rsp), %rcx        # 8-byte Reload
 	vmovss	1004(%rsp), %xmm0       # 4-byte Reload
 	vmovss	%xmm0, 4(%rcx)
-.Ltmp454:
+.Ltmp474:
 	.loc	2 69 0                  # kiss_fft.c:69:0
 	movq	1880(%rsp), %rdi        # 8-byte Reload
 	movq	1288(%rsp), %rsi        # 8-byte Reload
@@ -30928,7 +33281,7 @@ kf_bfly4:                               # @kf_bfly4
 	vmovss	1184(%rsp), %xmm0       # 4-byte Reload
 	vmovss	1040(%rsp), %xmm1       # 4-byte Reload
 	vaddss	%xmm1, %xmm0, %xmm2
-.Ltmp455:
+.Ltmp475:
 	.loc	2 70 0                  # kiss_fft.c:70:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	2200(%rsp), %rdi        # 8-byte Reload
@@ -31006,7 +33359,7 @@ kf_bfly4:                               # @kf_bfly4
 	vmovss	1184(%rsp), %xmm0       # 4-byte Reload
 	vmovss	1040(%rsp), %xmm1       # 4-byte Reload
 	vsubss	%xmm1, %xmm0, %xmm2
-.Ltmp456:
+.Ltmp476:
 	.loc	2 71 0                  # kiss_fft.c:71:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	2200(%rsp), %rdi        # 8-byte Reload
@@ -31211,7 +33564,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	2392(%rsp), %rdx        # 8-byte Reload
 	vmovss	972(%rsp), %xmm0        # 4-byte Reload
 	vmovss	%xmm0, 4(%rcx,%rdx,8)
-.Ltmp457:
+.Ltmp477:
 	.loc	2 72 0                  # kiss_fft.c:72:0
 	movq	2024(%rsp), %rdi        # 8-byte Reload
 	movq	1288(%rsp), %rsi        # 8-byte Reload
@@ -31252,7 +33605,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	1256(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp458:
+.Ltmp478:
 	#DEBUG_VALUE: kf_bfly4:tw1 <- [RSP+960]
 	.loc	2 73 0                  # kiss_fft.c:73:0
 	movq	2056(%rsp), %rdi        # 8-byte Reload
@@ -31294,7 +33647,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	1256(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp459:
+.Ltmp479:
 	#DEBUG_VALUE: kf_bfly4:tw2 <- [RSP+952]
 	.loc	2 74 0                  # kiss_fft.c:74:0
 	movq	2096(%rsp), %rdi        # 8-byte Reload
@@ -31336,7 +33689,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	1256(%rsp), %r10        # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp460:
+.Ltmp480:
 	#DEBUG_VALUE: kf_bfly4:tw3 <- [RSP+944]
 	.loc	2 75 0                  # kiss_fft.c:75:0
 	movq	2224(%rsp), %rdi        # 8-byte Reload
@@ -31531,7 +33884,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	2296(%rsp), %rcx        # 8-byte Reload
 	vmovss	928(%rsp), %xmm0        # 4-byte Reload
 	vmovss	%xmm0, 4(%rcx)
-.Ltmp461:
+.Ltmp481:
 	.loc	2 77 0                  # kiss_fft.c:77:0
 	movq	1296(%rsp), %rdi        # 8-byte Reload
 	movq	1288(%rsp), %rsi        # 8-byte Reload
@@ -31574,12 +33927,12 @@ kf_bfly4:                               # @kf_bfly4
 	movb	2347(%rsp), %al         # 1-byte Reload
 	testb	$1, %al
 	jne	.LBB12_3
-.Ltmp462:
+.Ltmp482:
 # BB#2:                                 #   in Loop: Header=BB12_1 Depth=1
 	movabsq	$1, %rax
 	movabsq	$0, %rcx
 	leaq	.L.str262, %r8
-	leaq	.L.str481, %rdx
+	leaq	.L.str4121, %rdx
 	movabsq	$82, %rdi
 	leaq	.L.str166, %rsi
 	leaq	.L.str276, %r9
@@ -31602,7 +33955,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 888(%rsp)         # 8-byte Spill
 	movabsq	$64, %rax
 	movq	%rax, 880(%rsp)         # 8-byte Spill
-	leaq	.L.str71148, %rax
+	leaq	.L.str71188, %rax
 	movq	%rax, 872(%rsp)         # 8-byte Spill
 	movabsq	$80, %rax
 	movq	%rax, 864(%rsp)         # 8-byte Spill
@@ -31616,9 +33969,9 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 832(%rsp)         # 8-byte Spill
 	movabsq	$9, %rax
 	movq	%rax, 824(%rsp)         # 8-byte Spill
-	leaq	.L.str279156, %rax
+	leaq	.L.str279, %rax
 	movq	%rax, 816(%rsp)         # 8-byte Spill
-	leaq	.L.str28105, %rax
+	leaq	.L.str28145, %rax
 	movq	%rax, 808(%rsp)         # 8-byte Spill
 	movabsq	$79, %rax
 	movq	%rax, 800(%rsp)         # 8-byte Spill
@@ -31626,13 +33979,13 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 792(%rsp)         # 8-byte Spill
 	leaq	.L.str277, %rax
 	movq	%rax, 784(%rsp)         # 8-byte Spill
-	leaq	.L.str1996, %rax
+	leaq	.L.str19136, %rax
 	movq	%rax, 776(%rsp)         # 8-byte Spill
 	movabsq	$78, %rax
 	movq	%rax, 768(%rsp)         # 8-byte Spill
 	leaq	.L.str278, %rax
 	.loc	2 78 0                  # kiss_fft.c:78:0
-.Ltmp463:
+.Ltmp483:
 	movq	%rax, 760(%rsp)         # 8-byte Spill
 	movq	768(%rsp), %rax         # 8-byte Reload
 	movq	%rdi, 752(%rsp)         # 8-byte Spill
@@ -31913,12 +34266,12 @@ kf_bfly4:                               # @kf_bfly4
 	vmovss	632(%rsp), %xmm0        # 4-byte Reload
 	vmovss	%xmm0, 628(%rsp)        # 4-byte Spill
 	jmp	.LBB12_4
-.Ltmp464:
+.Ltmp484:
 .LBB12_3:                               #   in Loop: Header=BB12_1 Depth=1
 	movabsq	$1, %rax
 	movabsq	$0, %rcx
 	leaq	.L.str262, %r8
-	leaq	.L.str481, %rdx
+	leaq	.L.str4121, %rdx
 	movabsq	$-1, %rdi
 	leaq	.L.str166, %rsi
 	leaq	.L.str275, %r9
@@ -31941,7 +34294,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 584(%rsp)         # 8-byte Spill
 	movabsq	$64, %rax
 	movq	%rax, 576(%rsp)         # 8-byte Spill
-	leaq	.L.str71148, %rax
+	leaq	.L.str71188, %rax
 	movq	%rax, 568(%rsp)         # 8-byte Spill
 	movabsq	$85, %rax
 	movq	%rax, 560(%rsp)         # 8-byte Spill
@@ -31957,7 +34310,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 520(%rsp)         # 8-byte Spill
 	leaq	.L.str287, %rax
 	movq	%rax, 512(%rsp)         # 8-byte Spill
-	leaq	.L.str28105, %rax
+	leaq	.L.str28145, %rax
 	movq	%rax, 504(%rsp)         # 8-byte Spill
 	movabsq	$84, %rax
 	movq	%rax, 496(%rsp)         # 8-byte Spill
@@ -31965,13 +34318,13 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 488(%rsp)         # 8-byte Spill
 	leaq	.L.str285, %rax
 	movq	%rax, 480(%rsp)         # 8-byte Spill
-	leaq	.L.str1996, %rax
+	leaq	.L.str19136, %rax
 	movq	%rax, 472(%rsp)         # 8-byte Spill
 	movabsq	$83, %rax
 	movq	%rax, 464(%rsp)         # 8-byte Spill
 	leaq	.L.str286, %rax
 	.loc	2 83 0                  # kiss_fft.c:83:0
-.Ltmp465:
+.Ltmp485:
 	movq	%rax, 456(%rsp)         # 8-byte Spill
 	movq	464(%rsp), %rax         # 8-byte Reload
 	movq	%rdi, 448(%rsp)         # 8-byte Spill
@@ -32250,13 +34603,13 @@ kf_bfly4:                               # @kf_bfly4
 	callq	trace_logger_log_int
 	vmovss	328(%rsp), %xmm0        # 4-byte Reload
 	vmovss	%xmm0, 628(%rsp)        # 4-byte Spill
-.Ltmp466:
+.Ltmp486:
 .LBB12_4:                               #   in Loop: Header=BB12_1 Depth=1
 	vmovss	628(%rsp), %xmm0        # 4-byte Reload
 	movabsq	$1, %rax
 	leaq	.L.str295, %rcx
 	movabsq	$0, %rdx
-	leaq	.L.str481, %rsi
+	leaq	.L.str4121, %rsi
 	movabsq	$2, %rdi
 	leaq	.L.str260, %r8
 	movabsq	$3, %r9
@@ -32273,7 +34626,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 312(%rsp)         # 8-byte Spill
 	leaq	.L.str263, %rax
 	movq	%rax, 304(%rsp)         # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 296(%rsp)         # 8-byte Spill
 	movabsq	$46, %rax
 	movq	%rax, 288(%rsp)         # 8-byte Spill
@@ -32313,7 +34666,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%rax, 152(%rsp)         # 8-byte Spill
 	movabsq	$48, %rax
 	.loc	2 81 0                  # kiss_fft.c:81:0
-.Ltmp467:
+.Ltmp487:
 	movq	%rax, 144(%rsp)         # 8-byte Spill
 	movq	272(%rsp), %rax         # 8-byte Reload
 	movq	%rdi, 136(%rsp)         # 8-byte Spill
@@ -32397,7 +34750,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	1080(%rsp), %rax        # 8-byte Reload
 	vmovss	92(%rsp), %xmm0         # 4-byte Reload
 	vmovss	%xmm0, (%rax)
-.Ltmp468:
+.Ltmp488:
 	.loc	2 88 0                  # kiss_fft.c:88:0
 	movq	240(%rsp), %rdi         # 8-byte Reload
 	movq	48(%rsp), %rsi          # 8-byte Reload
@@ -32437,7 +34790,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%r10, (%rsp)
 	movq	%rax, 24(%rsp)          # 8-byte Spill
 	callq	trace_logger_log_ptr
-.Ltmp469:
+.Ltmp489:
 	#DEBUG_VALUE: kf_bfly4:Fout <- [RSP+24]
 	.loc	2 89 0                  # kiss_fft.c:89:0
 	movq	32(%rsp), %rdi          # 8-byte Reload
@@ -32478,7 +34831,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%r10, (%rsp)
 	movq	%rax, 16(%rsp)          # 8-byte Spill
 	callq	trace_logger_log_int
-.Ltmp470:
+.Ltmp490:
 	#DEBUG_VALUE: kf_bfly4:k <- [RSP+16]
 	movq	32(%rsp), %rdi          # 8-byte Reload
 	movq	48(%rsp), %rsi          # 8-byte Reload
@@ -32574,7 +34927,7 @@ kf_bfly4:                               # @kf_bfly4
 	movq	%r8, 2304(%rsp)         # 8-byte Spill
 	jne	.LBB12_5
 	jmp	.LBB12_1
-.Ltmp471:
+.Ltmp491:
 .LBB12_5:
 	movabsq	$90, %rdi
 	leaq	.L.str166, %rsi
@@ -32595,9 +34948,9 @@ kf_bfly4:                               # @kf_bfly4
 	popq	%r15
 	popq	%rbp
 	ret
-.Ltmp472:
-.Ltmp473:
-	.size	kf_bfly4, .Ltmp473-kf_bfly4
+.Ltmp492:
+.Ltmp493:
+	.size	kf_bfly4, .Ltmp493-kf_bfly4
 .Lfunc_end12:
 	.cfi_endproc
 
@@ -32614,45 +34967,45 @@ kf_bfly3:                               # @kf_bfly3
 	.loc	2 98 0                  # kiss_fft.c:98:0
 # BB#0:
 	pushq	%rbp
-.Ltmp481:
+.Ltmp501:
 	.cfi_def_cfa_offset 16
 	pushq	%r15
-.Ltmp482:
+.Ltmp502:
 	.cfi_def_cfa_offset 24
 	pushq	%r14
-.Ltmp483:
+.Ltmp503:
 	.cfi_def_cfa_offset 32
 	pushq	%r13
-.Ltmp484:
+.Ltmp504:
 	.cfi_def_cfa_offset 40
 	pushq	%r12
-.Ltmp485:
+.Ltmp505:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
-.Ltmp486:
+.Ltmp506:
 	.cfi_def_cfa_offset 56
 	subq	$1848, %rsp             # imm = 0x738
-.Ltmp487:
+.Ltmp507:
 	.cfi_def_cfa_offset 1904
-.Ltmp488:
+.Ltmp508:
 	.cfi_offset %rbx, -56
-.Ltmp489:
+.Ltmp509:
 	.cfi_offset %r12, -48
-.Ltmp490:
+.Ltmp510:
 	.cfi_offset %r13, -40
-.Ltmp491:
+.Ltmp511:
 	.cfi_offset %r14, -32
-.Ltmp492:
+.Ltmp512:
 	.cfi_offset %r15, -24
-.Ltmp493:
+.Ltmp513:
 	.cfi_offset %rbp, -16
 	movabsq	$1, %rax
 	movabsq	$0, %r8
 	leaq	.L.str217, %r9
-	leaq	.L.str481, %r10
+	leaq	.L.str4121, %r10
 	movabsq	$108, %r11
 	leaq	.L.str161, %rbx
-	leaq	.L.str178, %r14
+	leaq	.L.str1118, %r14
 	leaq	.L.str216, %r15
 	movabsq	$2, %r12
 	movl	$0, %ebp
@@ -32666,15 +35019,15 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%rax, 1816(%rsp)        # 8-byte Spill
 	leaq	.L.str129, %rax
 	movq	%rax, 1808(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 1800(%rsp)        # 8-byte Spill
 	movabsq	$117, %rax
 	movq	%rax, 1792(%rsp)        # 8-byte Spill
 	movabsq	$20, %rax
 	movq	%rax, 1784(%rsp)        # 8-byte Spill
-	leaq	.L.str986, %rax
+	leaq	.L.str9126, %rax
 	movq	%rax, 1776(%rsp)        # 8-byte Spill
-	leaq	.L.str117, %rax
+	leaq	.L.str117234, %rax
 	movq	%rax, 1768(%rsp)        # 8-byte Spill
 	movabsq	$3, %rax
 	movq	%rax, 1760(%rsp)        # 8-byte Spill
@@ -32686,15 +35039,15 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%rax, 1736(%rsp)        # 8-byte Spill
 	movabsq	$29, %rax
 	movq	%rax, 1728(%rsp)        # 8-byte Spill
-	leaq	.L.str885, %rax
+	leaq	.L.str8125, %rax
 	movq	%rax, 1720(%rsp)        # 8-byte Spill
-	leaq	.L.str784, %rax
+	leaq	.L.str7124, %rax
 	movq	%rax, 1712(%rsp)        # 8-byte Spill
 	movabsq	$104, %rax
 	movq	%rax, 1704(%rsp)        # 8-byte Spill
 	movabsq	$27, %rax
 	movq	%rax, 1696(%rsp)        # 8-byte Spill
-	leaq	.L.str683, %rax
+	leaq	.L.str6123, %rax
 	movq	%rax, 1688(%rsp)        # 8-byte Spill
 	movabsq	$5, %rax
 	movq	%rax, 1680(%rsp)        # 8-byte Spill
@@ -32702,7 +35055,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%rax, 1672(%rsp)        # 8-byte Spill
 	movabsq	$12, %rax
 	movq	%rax, 1664(%rsp)        # 8-byte Spill
-	leaq	.L.str279, %rax
+	leaq	.L.str2119, %rax
 	movq	%rax, 1656(%rsp)        # 8-byte Spill
 	movabsq	$100, %rax
 	movq	%rax, 1648(%rsp)        # 8-byte Spill
@@ -32710,7 +35063,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%rax, 1640(%rsp)        # 8-byte Spill
 	leaq	.L.str122, %rax
 	.loc	2 93 0 prologue_end     # kiss_fft.c:93:0
-.Ltmp494:
+.Ltmp514:
 	movq	%rax, 1632(%rsp)        # 8-byte Spill
 	movq	1640(%rsp), %rax        # 8-byte Reload
 	movq	%rdi, 1624(%rsp)        # 8-byte Spill
@@ -32771,7 +35124,7 @@ kf_bfly3:                               # @kf_bfly3
 	#DEBUG_VALUE: kf_bfly3:fstride <- [RSP+1616]
 	#DEBUG_VALUE: kf_bfly3:st <- [RSP+1608]
 	#DEBUG_VALUE: kf_bfly3:m <- [RSP+1600]
-.Ltmp495:
+.Ltmp515:
 	#DEBUG_VALUE: kf_bfly3:k <- [RSP+1600]
 	.loc	2 100 0                 # kiss_fft.c:100:0
 	movq	1648(%rsp), %rdi        # 8-byte Reload
@@ -32812,7 +35165,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%r10, (%rsp)
 	movq	%rax, 1512(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_int
-.Ltmp496:
+.Ltmp516:
 	#DEBUG_VALUE: kf_bfly3:m2 <- [RSP+1512]
 	.loc	2 104 0                 # kiss_fft.c:104:0
 	movq	1704(%rsp), %rdi        # 8-byte Reload
@@ -33010,7 +35363,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%r10, (%rsp)
 	movq	%rax, 1480(%rsp)        # 8-byte Spill
 	callq	trace_logger_log_ptr
-.Ltmp497:
+.Ltmp517:
 	#DEBUG_VALUE: kf_bfly3:tw2 <- [RSP+1480]
 	#DEBUG_VALUE: kf_bfly3:tw1 <- [RSP+1480]
 	.loc	2 117 0                 # kiss_fft.c:117:0
@@ -33042,7 +35395,7 @@ kf_bfly3:                               # @kf_bfly3
 	callq	trace_logger_log_int
 	movq	1616(%rsp), %rax        # 8-byte Reload
 	shlq	$1, %rax
-.Ltmp498:
+.Ltmp518:
 	.loc	2 108 0                 # kiss_fft.c:108:0
 	movq	1832(%rsp), %rdi        # 8-byte Reload
 	movq	1824(%rsp), %rsi        # 8-byte Reload
@@ -33079,7 +35432,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%rcx, 1456(%rsp)        # 8-byte Spill
 	movq	%rdx, 1448(%rsp)        # 8-byte Spill
 	movq	%rsi, 1440(%rsp)        # 8-byte Spill
-.Ltmp499:
+.Ltmp519:
 .LBB13_1:                               # =>This Inner Loop Header: Depth=1
 	movq	1440(%rsp), %rax        # 8-byte Reload
 	movq	1448(%rsp), %rcx        # 8-byte Reload
@@ -33088,7 +35441,7 @@ kf_bfly3:                               # @kf_bfly3
 	movabsq	$1, %rdi
 	leaq	.L.str255, %r8
 	movabsq	$0, %r9
-	leaq	.L.str481, %r10
+	leaq	.L.str4121, %r10
 	movabsq	$2, %r11
 	leaq	.L.str217, %rbx
 	movabsq	$3, %r14
@@ -33107,7 +35460,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%rax, 1400(%rsp)        # 8-byte Spill
 	leaq	.L.str220, %rax
 	movq	%rax, 1392(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 1384(%rsp)        # 8-byte Spill
 	movabsq	$46, %rax
 	movq	%rax, 1376(%rsp)        # 8-byte Spill
@@ -33129,7 +35482,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%rax, 1312(%rsp)        # 8-byte Spill
 	leaq	.L.str253, %rax
 	movq	%rax, 1304(%rsp)        # 8-byte Spill
-	leaq	.L.str25102, %rax
+	leaq	.L.str25142, %rax
 	movq	%rax, 1296(%rsp)        # 8-byte Spill
 	movabsq	$130, %rax
 	movq	%rax, 1288(%rsp)        # 8-byte Spill
@@ -33147,7 +35500,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%rax, 1240(%rsp)        # 8-byte Spill
 	leaq	.L.str250, %rax
 	movq	%rax, 1232(%rsp)        # 8-byte Spill
-	leaq	.L.str1693, %rax
+	leaq	.L.str16133, %rax
 	movq	%rax, 1224(%rsp)        # 8-byte Spill
 	movabsq	$129, %rax
 	movq	%rax, 1216(%rsp)        # 8-byte Spill
@@ -33161,7 +35514,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%rax, 1184(%rsp)        # 8-byte Spill
 	leaq	.L.str247, %rax
 	movq	%rax, 1176(%rsp)        # 8-byte Spill
-	leaq	.L.str55132, %rax
+	leaq	.L.str55172, %rax
 	movq	%rax, 1168(%rsp)        # 8-byte Spill
 	movabsq	$127, %rax
 	movq	%rax, 1160(%rsp)        # 8-byte Spill
@@ -33171,7 +35524,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%rax, 1144(%rsp)        # 8-byte Spill
 	leaq	.L.str244, %rax
 	movq	%rax, 1136(%rsp)        # 8-byte Spill
-	leaq	.L.str43120, %rax
+	leaq	.L.str43160, %rax
 	movq	%rax, 1128(%rsp)        # 8-byte Spill
 	movabsq	$126, %rax
 	movq	%rax, 1120(%rsp)        # 8-byte Spill
@@ -33187,7 +35540,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%rax, 1080(%rsp)        # 8-byte Spill
 	leaq	.L.str242, %rax
 	movq	%rax, 1072(%rsp)        # 8-byte Spill
-	leaq	.L.str69146, %rax
+	leaq	.L.str69186, %rax
 	movq	%rax, 1064(%rsp)        # 8-byte Spill
 	leaq	.L.str240, %rax
 	movq	%rax, 1056(%rsp)        # 8-byte Spill
@@ -33199,17 +35552,17 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%rax, 1032(%rsp)        # 8-byte Spill
 	leaq	.L.str237, %rax
 	movq	%rax, 1024(%rsp)        # 8-byte Spill
-	leaq	.L.str67144, %rax
+	leaq	.L.str67184, %rax
 	movq	%rax, 1016(%rsp)        # 8-byte Spill
-	leaq	.L.str885, %rax
+	leaq	.L.str8125, %rax
 	movq	%rax, 1008(%rsp)        # 8-byte Spill
-	leaq	.L.str72149, %rax
+	leaq	.L.str72189, %rax
 	movq	%rax, 1000(%rsp)        # 8-byte Spill
 	movabsq	$122, %rax
 	movq	%rax, 992(%rsp)         # 8-byte Spill
 	movabsq	$13, %rax
 	movq	%rax, 984(%rsp)         # 8-byte Spill
-	leaq	.L.str71148, %rax
+	leaq	.L.str71188, %rax
 	movq	%rax, 976(%rsp)         # 8-byte Spill
 	leaq	.L.str233, %rax
 	movq	%rax, 968(%rsp)         # 8-byte Spill
@@ -33256,7 +35609,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%rax, 808(%rsp)         # 8-byte Spill
 	movabsq	$117, %rax
 	movq	%rax, 800(%rsp)         # 8-byte Spill
-	leaq	.L.str77154, %rax
+	leaq	.L.str77194, %rax
 	movq	%rax, 792(%rsp)         # 8-byte Spill
 	leaq	.L.str207, %rax
 	movq	%rax, 784(%rsp)         # 8-byte Spill
@@ -33264,75 +35617,75 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%rax, 776(%rsp)         # 8-byte Spill
 	movabsq	$116, %rax
 	movq	%rax, 768(%rsp)         # 8-byte Spill
-	leaq	.L.str40117, %rax
+	leaq	.L.str40157, %rax
 	movq	%rax, 760(%rsp)         # 8-byte Spill
-	leaq	.L.str66143, %rax
+	leaq	.L.str66183, %rax
 	movq	%rax, 752(%rsp)         # 8-byte Spill
 	movabsq	$115, %rax
 	movq	%rax, 744(%rsp)         # 8-byte Spill
-	leaq	.L.str34111, %rax
+	leaq	.L.str34151, %rax
 	movq	%rax, 736(%rsp)         # 8-byte Spill
-	leaq	.L.str61138, %rax
+	leaq	.L.str61178, %rax
 	movq	%rax, 728(%rsp)         # 8-byte Spill
 	movabsq	$114, %rax
 	movq	%rax, 720(%rsp)         # 8-byte Spill
-	leaq	.L.str64141, %rax
+	leaq	.L.str64181, %rax
 	movq	%rax, 712(%rsp)         # 8-byte Spill
 	leaq	.L.str145, %rax
 	movq	%rax, 704(%rsp)         # 8-byte Spill
 	movabsq	$112, %rax
 	movq	%rax, 696(%rsp)         # 8-byte Spill
-	leaq	.L.str53130, %rax
+	leaq	.L.str53170, %rax
 	movq	%rax, 688(%rsp)         # 8-byte Spill
-	leaq	.L.str56133, %rax
+	leaq	.L.str56173, %rax
 	movq	%rax, 680(%rsp)         # 8-byte Spill
-	leaq	.L.str47124, %rax
+	leaq	.L.str47164, %rax
 	movq	%rax, 672(%rsp)         # 8-byte Spill
-	leaq	.L.str58135, %rax
+	leaq	.L.str58175, %rax
 	movq	%rax, 664(%rsp)         # 8-byte Spill
-	leaq	.L.str54131, %rax
+	leaq	.L.str54171, %rax
 	movq	%rax, 656(%rsp)         # 8-byte Spill
 	leaq	.L.str143, %rax
 	movq	%rax, 648(%rsp)         # 8-byte Spill
-	leaq	.L.str57134, %rax
+	leaq	.L.str57174, %rax
 	movq	%rax, 640(%rsp)         # 8-byte Spill
-	leaq	.L.str279, %rax
+	leaq	.L.str2119, %rax
 	movq	%rax, 632(%rsp)         # 8-byte Spill
 	leaq	.L.str137, %rax
 	movq	%rax, 624(%rsp)         # 8-byte Spill
-	leaq	.L.str38115, %rax
+	leaq	.L.str38155, %rax
 	movq	%rax, 616(%rsp)         # 8-byte Spill
 	leaq	.L.str135, %rax
 	movq	%rax, 608(%rsp)         # 8-byte Spill
 	movabsq	$111, %rax
 	movq	%rax, 600(%rsp)         # 8-byte Spill
-	leaq	.L.str105, %rax
+	leaq	.L.str105222, %rax
 	movq	%rax, 592(%rsp)         # 8-byte Spill
-	leaq	.L.str107, %rax
+	leaq	.L.str107224, %rax
 	movq	%rax, 584(%rsp)         # 8-byte Spill
-	leaq	.L.str104, %rax
+	leaq	.L.str104221, %rax
 	movq	%rax, 576(%rsp)         # 8-byte Spill
-	leaq	.L.str110, %rax
+	leaq	.L.str110227, %rax
 	movq	%rax, 568(%rsp)         # 8-byte Spill
-	leaq	.L.str24101, %rax
+	leaq	.L.str24141, %rax
 	movq	%rax, 560(%rsp)         # 8-byte Spill
 	leaq	.L.str132, %rax
 	movq	%rax, 552(%rsp)         # 8-byte Spill
-	leaq	.L.str28105, %rax
+	leaq	.L.str28145, %rax
 	movq	%rax, 544(%rsp)         # 8-byte Spill
 	leaq	.L.str203, %rax
 	movq	%rax, 536(%rsp)         # 8-byte Spill
-	leaq	.L.str1996, %rax
+	leaq	.L.str19136, %rax
 	movq	%rax, 528(%rsp)         # 8-byte Spill
-	leaq	.L.str178, %rax
+	leaq	.L.str1118, %rax
 	movq	%rax, 520(%rsp)         # 8-byte Spill
 	leaq	.L.str122, %rax
 	movq	%rax, 512(%rsp)         # 8-byte Spill
 	movabsq	$48, %rax
 	movq	%rax, 504(%rsp)         # 8-byte Spill
-	leaq	.L.str986, %rax
+	leaq	.L.str9126, %rax
 	.loc	2 111 0                 # kiss_fft.c:111:0
-.Ltmp500:
+.Ltmp520:
 	movq	%rax, 496(%rsp)         # 8-byte Spill
 	movq	1360(%rsp), %rax        # 8-byte Reload
 	movq	%rdi, 488(%rsp)         # 8-byte Spill
@@ -34019,7 +36372,7 @@ kf_bfly3:                               # @kf_bfly3
 	vmovss	308(%rsp), %xmm0        # 4-byte Reload
 	vmovss	312(%rsp), %xmm1        # 4-byte Reload
 	vaddss	%xmm1, %xmm0, %xmm2
-.Ltmp501:
+.Ltmp521:
 	.loc	2 112 0                 # kiss_fft.c:112:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	1408(%rsp), %rdi        # 8-byte Reload
@@ -34556,7 +36909,7 @@ kf_bfly3:                               # @kf_bfly3
 	vmovss	236(%rsp), %xmm0        # 4-byte Reload
 	vmovss	240(%rsp), %xmm1        # 4-byte Reload
 	vaddss	%xmm1, %xmm0, %xmm2
-.Ltmp502:
+.Ltmp522:
 	.loc	2 114 0                 # kiss_fft.c:114:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	1408(%rsp), %rdi        # 8-byte Reload
@@ -34634,7 +36987,7 @@ kf_bfly3:                               # @kf_bfly3
 	vmovss	304(%rsp), %xmm0        # 4-byte Reload
 	vmovss	232(%rsp), %xmm1        # 4-byte Reload
 	vaddss	%xmm1, %xmm0, %xmm2
-.Ltmp503:
+.Ltmp523:
 	.loc	2 115 0                 # kiss_fft.c:115:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	1408(%rsp), %rdi        # 8-byte Reload
@@ -34712,7 +37065,7 @@ kf_bfly3:                               # @kf_bfly3
 	vmovss	304(%rsp), %xmm0        # 4-byte Reload
 	vmovss	232(%rsp), %xmm1        # 4-byte Reload
 	vsubss	%xmm1, %xmm0, %xmm2
-.Ltmp504:
+.Ltmp524:
 	.loc	2 116 0                 # kiss_fft.c:116:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	1408(%rsp), %rdi        # 8-byte Reload
@@ -34762,7 +37115,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	392(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp505:
+.Ltmp525:
 	#DEBUG_VALUE: kf_bfly3:tw1 <- [RSP+208]
 	.loc	2 117 0                 # kiss_fft.c:117:0
 	movq	800(%rsp), %rdi         # 8-byte Reload
@@ -34804,7 +37157,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	392(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp506:
+.Ltmp526:
 	#DEBUG_VALUE: kf_bfly3:tw2 <- [RSP+200]
 	.loc	2 119 0                 # kiss_fft.c:119:0
 	movq	880(%rsp), %rdi         # 8-byte Reload
@@ -35329,7 +37682,7 @@ kf_bfly3:                               # @kf_bfly3
 	vmovss	100(%rsp), %xmm0        # 4-byte Reload
 	vmovss	%xmm0, 4(%rcx,%rdx,8)
 	.loc	2 122 0                 # kiss_fft.c:122:0
-.Ltmp507:
+.Ltmp527:
 	movq	992(%rsp), %rdi         # 8-byte Reload
 	movq	432(%rsp), %rsi         # 8-byte Reload
 	movq	376(%rsp), %rdx         # 8-byte Reload
@@ -35397,7 +37750,7 @@ kf_bfly3:                               # @kf_bfly3
 	vmovss	1492(%rsp), %xmm0       # 4-byte Reload
 	vmovss	216(%rsp), %xmm1        # 4-byte Reload
 	vmulss	%xmm1, %xmm0, %xmm2
-.Ltmp508:
+.Ltmp528:
 	.loc	2 124 0                 # kiss_fft.c:124:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	1408(%rsp), %rdi        # 8-byte Reload
@@ -35600,7 +37953,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	1416(%rsp), %rcx        # 8-byte Reload
 	vmovss	76(%rsp), %xmm0         # 4-byte Reload
 	vmovss	%xmm0, 4(%rcx)
-.Ltmp509:
+.Ltmp529:
 	.loc	2 126 0                 # kiss_fft.c:126:0
 	movq	1120(%rsp), %rdi        # 8-byte Reload
 	movq	432(%rsp), %rsi         # 8-byte Reload
@@ -36037,7 +38390,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	392(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp510:
+.Ltmp530:
 	#DEBUG_VALUE: kf_bfly3:Fout <- [RSP+32]
 	.loc	2 133 0                 # kiss_fft.c:133:0
 	movq	440(%rsp), %rdi         # 8-byte Reload
@@ -36079,7 +38432,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	392(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_int
-.Ltmp511:
+.Ltmp531:
 	#DEBUG_VALUE: kf_bfly3:k <- [RSP+24]
 	movq	440(%rsp), %rdi         # 8-byte Reload
 	movq	432(%rsp), %rsi         # 8-byte Reload
@@ -36173,7 +38526,7 @@ kf_bfly3:                               # @kf_bfly3
 	movq	%rdi, 1440(%rsp)        # 8-byte Spill
 	jne	.LBB13_2
 	jmp	.LBB13_1
-.Ltmp512:
+.Ltmp532:
 .LBB13_2:
 	movabsq	$134, %rdi
 	leaq	.L.str161, %rsi
@@ -36194,9 +38547,9 @@ kf_bfly3:                               # @kf_bfly3
 	popq	%r15
 	popq	%rbp
 	ret
-.Ltmp513:
-.Ltmp514:
-	.size	kf_bfly3, .Ltmp514-kf_bfly3
+.Ltmp533:
+.Ltmp534:
+	.size	kf_bfly3, .Ltmp534-kf_bfly3
 .Lfunc_end13:
 	.cfi_endproc
 
@@ -36208,45 +38561,45 @@ kf_bfly2:                               # @kf_bfly2
 	.loc	2 27 0                  # kiss_fft.c:27:0
 # BB#0:
 	pushq	%rbp
-.Ltmp522:
+.Ltmp542:
 	.cfi_def_cfa_offset 16
 	pushq	%r15
-.Ltmp523:
+.Ltmp543:
 	.cfi_def_cfa_offset 24
 	pushq	%r14
-.Ltmp524:
+.Ltmp544:
 	.cfi_def_cfa_offset 32
 	pushq	%r13
-.Ltmp525:
+.Ltmp545:
 	.cfi_def_cfa_offset 40
 	pushq	%r12
-.Ltmp526:
+.Ltmp546:
 	.cfi_def_cfa_offset 48
 	pushq	%rbx
-.Ltmp527:
+.Ltmp547:
 	.cfi_def_cfa_offset 56
 	subq	$1096, %rsp             # imm = 0x448
-.Ltmp528:
+.Ltmp548:
 	.cfi_def_cfa_offset 1152
-.Ltmp529:
+.Ltmp549:
 	.cfi_offset %rbx, -56
-.Ltmp530:
+.Ltmp550:
 	.cfi_offset %r12, -48
-.Ltmp531:
+.Ltmp551:
 	.cfi_offset %r13, -40
-.Ltmp532:
+.Ltmp552:
 	.cfi_offset %r14, -32
-.Ltmp533:
+.Ltmp553:
 	.cfi_offset %r15, -24
-.Ltmp534:
+.Ltmp554:
 	.cfi_offset %rbp, -16
 	movabsq	$1, %rax
 	movabsq	$0, %r8
 	leaq	.L.str205, %r9
-	leaq	.L.str481, %r10
+	leaq	.L.str4121, %r10
 	movabsq	$32, %r11
 	leaq	.L.str157, %rbx
-	leaq	.L.str178, %r14
+	leaq	.L.str1118, %r14
 	leaq	.L.str204, %r15
 	movabsq	$2, %r12
 	movl	$0, %ebp
@@ -36256,11 +38609,11 @@ kf_bfly2:                               # @kf_bfly2
 	movq	%rax, 1080(%rsp)        # 8-byte Spill
 	movabsq	$64, %rax
 	movq	%rax, 1072(%rsp)        # 8-byte Spill
-	leaq	.L.str784, %rax
+	leaq	.L.str7124, %rax
 	movq	%rax, 1064(%rsp)        # 8-byte Spill
 	leaq	.L.str122, %rax
 	movq	%rax, 1056(%rsp)        # 8-byte Spill
-	leaq	.L.str683, %rax
+	leaq	.L.str6123, %rax
 	movq	%rax, 1048(%rsp)        # 8-byte Spill
 	movabsq	$31, %rax
 	movq	%rax, 1040(%rsp)        # 8-byte Spill
@@ -36270,11 +38623,11 @@ kf_bfly2:                               # @kf_bfly2
 	movq	%rax, 1024(%rsp)        # 8-byte Spill
 	movabsq	$35, %rax
 	movq	%rax, 1016(%rsp)        # 8-byte Spill
-	leaq	.L.str279, %rax
+	leaq	.L.str2119, %rax
 	movq	%rax, 1008(%rsp)        # 8-byte Spill
-	leaq	.L.str117, %rax
+	leaq	.L.str117234, %rax
 	movq	%rax, 1000(%rsp)        # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 992(%rsp)         # 8-byte Spill
 	movabsq	$3, %rax
 	movq	%rax, 984(%rsp)         # 8-byte Spill
@@ -36284,7 +38637,7 @@ kf_bfly2:                               # @kf_bfly2
 	movq	%rax, 968(%rsp)         # 8-byte Spill
 	leaq	.L.str129, %rax
 	.loc	2 22 0 prologue_end     # kiss_fft.c:22:0
-.Ltmp535:
+.Ltmp555:
 	movq	%rax, 960(%rsp)         # 8-byte Spill
 	movq	968(%rsp), %rax         # 8-byte Reload
 	movq	%rdi, 952(%rsp)         # 8-byte Spill
@@ -36404,7 +38757,7 @@ kf_bfly2:                               # @kf_bfly2
 	movq	%r10, (%rsp)
 	movq	%rax, 840(%rsp)         # 8-byte Spill
 	callq	trace_logger_log_ptr
-.Ltmp536:
+.Ltmp556:
 	#DEBUG_VALUE: kf_bfly2:tw1 <- [RSP+840]
 	.loc	2 31 0                  # kiss_fft.c:31:0
 	movq	1040(%rsp), %rdi        # 8-byte Reload
@@ -36479,7 +38832,7 @@ kf_bfly2:                               # @kf_bfly2
 	movq	856(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp537:
+.Ltmp557:
 	#DEBUG_VALUE: kf_bfly2:Fout2 <- [RSP+824]
 	.loc	2 32 0                  # kiss_fft.c:32:0
 	movq	848(%rsp), %rdi         # 8-byte Reload
@@ -36507,7 +38860,7 @@ kf_bfly2:                               # @kf_bfly2
 	movq	%rcx, 808(%rsp)         # 8-byte Spill
 	movl	%ebp, 804(%rsp)         # 4-byte Spill
 	movq	%rdx, 792(%rsp)         # 8-byte Spill
-.Ltmp538:
+.Ltmp558:
 .LBB14_1:                               # =>This Inner Loop Header: Depth=1
 	movq	792(%rsp), %rax         # 8-byte Reload
 	movl	804(%rsp), %ecx         # 4-byte Reload
@@ -36516,7 +38869,7 @@ kf_bfly2:                               # @kf_bfly2
 	movabsq	$1, %rdi
 	leaq	.L.str145, %r8
 	movabsq	$0, %r9
-	leaq	.L.str481, %r10
+	leaq	.L.str4121, %r10
 	movabsq	$2, %r11
 	leaq	.L.str205, %rbx
 	movabsq	$3, %r14
@@ -36533,9 +38886,9 @@ kf_bfly2:                               # @kf_bfly2
 	movq	%rax, 768(%rsp)         # 8-byte Spill
 	movabsq	$32, %rax
 	movq	%rax, 760(%rsp)         # 8-byte Spill
-	leaq	.L.str61138, %rax
+	leaq	.L.str61178, %rax
 	movq	%rax, 752(%rsp)         # 8-byte Spill
-	leaq	.L.str380, %rax
+	leaq	.L.str3120, %rax
 	movq	%rax, 744(%rsp)         # 8-byte Spill
 	movabsq	$46, %rax
 	movq	%rax, 736(%rsp)         # 8-byte Spill
@@ -36555,15 +38908,15 @@ kf_bfly2:                               # @kf_bfly2
 	movq	%rax, 680(%rsp)         # 8-byte Spill
 	movabsq	$29, %rax
 	movq	%rax, 672(%rsp)         # 8-byte Spill
-	leaq	.L.str58135, %rax
+	leaq	.L.str58175, %rax
 	movq	%rax, 664(%rsp)         # 8-byte Spill
 	leaq	.L.str206, %rax
 	movq	%rax, 656(%rsp)         # 8-byte Spill
 	movabsq	$39, %rax
 	movq	%rax, 648(%rsp)         # 8-byte Spill
-	leaq	.L.str57134, %rax
+	leaq	.L.str57174, %rax
 	movq	%rax, 640(%rsp)         # 8-byte Spill
-	leaq	.L.str47124, %rax
+	leaq	.L.str47164, %rax
 	movq	%rax, 632(%rsp)         # 8-byte Spill
 	movabsq	$38, %rax
 	movq	%rax, 624(%rsp)         # 8-byte Spill
@@ -36571,27 +38924,27 @@ kf_bfly2:                               # @kf_bfly2
 	movq	%rax, 616(%rsp)         # 8-byte Spill
 	movabsq	$28, %rax
 	movq	%rax, 608(%rsp)         # 8-byte Spill
-	leaq	.L.str34111, %rax
+	leaq	.L.str34151, %rax
 	movq	%rax, 600(%rsp)         # 8-byte Spill
-	leaq	.L.str56133, %rax
+	leaq	.L.str56173, %rax
 	movq	%rax, 592(%rsp)         # 8-byte Spill
 	movabsq	$9, %rax
 	movq	%rax, 584(%rsp)         # 8-byte Spill
 	movabsq	$27, %rax
 	movq	%rax, 576(%rsp)         # 8-byte Spill
-	leaq	.L.str55132, %rax
+	leaq	.L.str55172, %rax
 	movq	%rax, 568(%rsp)         # 8-byte Spill
-	leaq	.L.str38115, %rax
+	leaq	.L.str38155, %rax
 	movq	%rax, 560(%rsp)         # 8-byte Spill
 	leaq	.L.str211, %rax
 	movq	%rax, 552(%rsp)         # 8-byte Spill
-	leaq	.L.str28105, %rax
+	leaq	.L.str28145, %rax
 	movq	%rax, 544(%rsp)         # 8-byte Spill
-	leaq	.L.str54131, %rax
+	leaq	.L.str54171, %rax
 	movq	%rax, 536(%rsp)         # 8-byte Spill
-	leaq	.L.str53130, %rax
+	leaq	.L.str53170, %rax
 	movq	%rax, 528(%rsp)         # 8-byte Spill
-	leaq	.L.str1996, %rax
+	leaq	.L.str19136, %rax
 	movq	%rax, 520(%rsp)         # 8-byte Spill
 	movabsq	$37, %rax
 	movq	%rax, 512(%rsp)         # 8-byte Spill
@@ -36601,13 +38954,13 @@ kf_bfly2:                               # @kf_bfly2
 	movq	%rax, 496(%rsp)         # 8-byte Spill
 	movabsq	$11, %rax
 	movq	%rax, 488(%rsp)         # 8-byte Spill
-	leaq	.L.str43120, %rax
+	leaq	.L.str43160, %rax
 	movq	%rax, 480(%rsp)         # 8-byte Spill
-	leaq	.L.str986, %rax
+	leaq	.L.str9126, %rax
 	movq	%rax, 472(%rsp)         # 8-byte Spill
 	leaq	.L.str209, %rax
 	movq	%rax, 464(%rsp)         # 8-byte Spill
-	leaq	.L.str40117, %rax
+	leaq	.L.str40157, %rax
 	movq	%rax, 456(%rsp)         # 8-byte Spill
 	leaq	.L.str135, %rax
 	movq	%rax, 448(%rsp)         # 8-byte Spill
@@ -36619,29 +38972,29 @@ kf_bfly2:                               # @kf_bfly2
 	movq	%rax, 424(%rsp)         # 8-byte Spill
 	leaq	.L.str132, %rax
 	movq	%rax, 416(%rsp)         # 8-byte Spill
-	leaq	.L.str110, %rax
+	leaq	.L.str110227, %rax
 	movq	%rax, 408(%rsp)         # 8-byte Spill
 	movabsq	$35, %rax
 	movq	%rax, 400(%rsp)         # 8-byte Spill
-	leaq	.L.str1693, %rax
+	leaq	.L.str16133, %rax
 	movq	%rax, 392(%rsp)         # 8-byte Spill
-	leaq	.L.str105, %rax
+	leaq	.L.str105222, %rax
 	movq	%rax, 384(%rsp)         # 8-byte Spill
 	movabsq	$13, %rax
 	movq	%rax, 376(%rsp)         # 8-byte Spill
 	leaq	.L.str125, %rax
 	movq	%rax, 368(%rsp)         # 8-byte Spill
-	leaq	.L.str25102, %rax
+	leaq	.L.str25142, %rax
 	movq	%rax, 360(%rsp)         # 8-byte Spill
-	leaq	.L.str104, %rax
+	leaq	.L.str104221, %rax
 	movq	%rax, 352(%rsp)         # 8-byte Spill
-	leaq	.L.str107, %rax
+	leaq	.L.str107224, %rax
 	movq	%rax, 344(%rsp)         # 8-byte Spill
-	leaq	.L.str24101, %rax
+	leaq	.L.str24141, %rax
 	movq	%rax, 336(%rsp)         # 8-byte Spill
-	leaq	.L.str1491, %rax
+	leaq	.L.str14131, %rax
 	movq	%rax, 328(%rsp)         # 8-byte Spill
-	leaq	.L.str178, %rax
+	leaq	.L.str1118, %rax
 	movq	%rax, 320(%rsp)         # 8-byte Spill
 	leaq	.L.str122, %rax
 	movq	%rax, 312(%rsp)         # 8-byte Spill
@@ -36651,11 +39004,11 @@ kf_bfly2:                               # @kf_bfly2
 	movq	%rax, 296(%rsp)         # 8-byte Spill
 	leaq	.L.str203, %rax
 	movq	%rax, 288(%rsp)         # 8-byte Spill
-	leaq	.L.str279, %rax
+	leaq	.L.str2119, %rax
 	movq	%rax, 280(%rsp)         # 8-byte Spill
-	leaq	.L.str784, %rax
+	leaq	.L.str7124, %rax
 	.loc	2 35 0                  # kiss_fft.c:35:0
-.Ltmp539:
+.Ltmp559:
 	movq	%rax, 272(%rsp)         # 8-byte Spill
 	movq	304(%rsp), %rax         # 8-byte Reload
 	movq	%rdi, 264(%rsp)         # 8-byte Spill
@@ -37338,7 +39691,7 @@ kf_bfly2:                               # @kf_bfly2
 	vmovss	100(%rsp), %xmm0        # 4-byte Reload
 	vmovss	104(%rsp), %xmm1        # 4-byte Reload
 	vaddss	%xmm1, %xmm0, %xmm2
-.Ltmp540:
+.Ltmp560:
 	.loc	2 36 0                  # kiss_fft.c:36:0
 	cvtss2sd	%xmm2, %xmm0
 	movq	768(%rsp), %rdi         # 8-byte Reload
@@ -37388,7 +39741,7 @@ kf_bfly2:                               # @kf_bfly2
 	movq	168(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp541:
+.Ltmp561:
 	#DEBUG_VALUE: kf_bfly2:tw1 <- [RSP+88]
 	.loc	2 37 0                  # kiss_fft.c:37:0
 	movq	512(%rsp), %rdi         # 8-byte Reload
@@ -37675,7 +40028,7 @@ kf_bfly2:                               # @kf_bfly2
 	movq	256(%rsp), %rcx         # 8-byte Reload
 	vmovss	64(%rsp), %xmm0         # 4-byte Reload
 	vmovss	%xmm0, 4(%rcx)
-.Ltmp542:
+.Ltmp562:
 	.loc	2 38 0                  # kiss_fft.c:38:0
 	movq	624(%rsp), %rdi         # 8-byte Reload
 	movq	200(%rsp), %rsi         # 8-byte Reload
@@ -37869,7 +40222,7 @@ kf_bfly2:                               # @kf_bfly2
 	movq	776(%rsp), %rcx         # 8-byte Reload
 	vmovss	48(%rsp), %xmm0         # 4-byte Reload
 	vmovss	%xmm0, 4(%rcx)
-.Ltmp543:
+.Ltmp563:
 	.loc	2 39 0                  # kiss_fft.c:39:0
 	movq	648(%rsp), %rdi         # 8-byte Reload
 	movq	200(%rsp), %rsi         # 8-byte Reload
@@ -37910,7 +40263,7 @@ kf_bfly2:                               # @kf_bfly2
 	movq	168(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp544:
+.Ltmp564:
 	#DEBUG_VALUE: kf_bfly2:Fout2 <- [RSP+40]
 	.loc	2 40 0                  # kiss_fft.c:40:0
 	movq	680(%rsp), %rdi         # 8-byte Reload
@@ -37952,7 +40305,7 @@ kf_bfly2:                               # @kf_bfly2
 	movq	168(%rsp), %r10         # 8-byte Reload
 	movq	%r10, (%rsp)
 	callq	trace_logger_log_ptr
-.Ltmp545:
+.Ltmp565:
 	#DEBUG_VALUE: kf_bfly2:Fout <- [RSP+32]
 	.loc	2 41 0                  # kiss_fft.c:41:0
 	movq	208(%rsp), %rdi         # 8-byte Reload
@@ -37996,7 +40349,7 @@ kf_bfly2:                               # @kf_bfly2
 	movq	%r10, (%rsp)
 	movl	%eax, 28(%rsp)          # 4-byte Spill
 	callq	trace_logger_log_int
-.Ltmp546:
+.Ltmp566:
 	#DEBUG_VALUE: kf_bfly2:m <- [RSP+28]
 	movq	208(%rsp), %rdi         # 8-byte Reload
 	movq	200(%rsp), %rsi         # 8-byte Reload
@@ -38092,7 +40445,7 @@ kf_bfly2:                               # @kf_bfly2
 	movq	%rsi, 792(%rsp)         # 8-byte Spill
 	jne	.LBB14_2
 	jmp	.LBB14_1
-.Ltmp547:
+.Ltmp567:
 .LBB14_2:
 	movabsq	$42, %rdi
 	leaq	.L.str157, %rsi
@@ -38113,9 +40466,9 @@ kf_bfly2:                               # @kf_bfly2
 	popq	%r15
 	popq	%rbp
 	ret
-.Ltmp548:
-.Ltmp549:
-	.size	kf_bfly2, .Ltmp549-kf_bfly2
+.Ltmp568:
+.Ltmp569:
+	.size	kf_bfly2, .Ltmp569-kf_bfly2
 .Lfunc_end14:
 	.cfi_endproc
 
@@ -38126,7 +40479,7 @@ trace_logger_write_labelmap:            # @trace_logger_write_labelmap
 	.cfi_startproc
 # BB#0:
 	subq	$24, %rsp
-.Ltmp551:
+.Ltmp571:
 	.cfi_def_cfa_offset 32
 	cmpb	$0, initp
 	movq	%rdi, 16(%rsp)          # 8-byte Spill
@@ -38153,8 +40506,8 @@ trace_logger_write_labelmap:            # @trace_logger_write_labelmap
 	movl	%eax, (%rsp)            # 4-byte Spill
 	addq	$24, %rsp
 	jmp	gzwrite                 # TAILCALL
-.Ltmp552:
-	.size	trace_logger_write_labelmap, .Ltmp552-trace_logger_write_labelmap
+.Ltmp572:
+	.size	trace_logger_write_labelmap, .Ltmp572-trace_logger_write_labelmap
 	.cfi_endproc
 
 	.globl	trace_logger_init
@@ -38164,7 +40517,7 @@ trace_logger_init:                      # @trace_logger_init
 	.cfi_startproc
 # BB#0:
 	pushq	%rax
-.Ltmp554:
+.Ltmp574:
 	.cfi_def_cfa_offset 16
 	movl	$.L.str2441, %eax
 	movl	%eax, %edi
@@ -38195,8 +40548,8 @@ trace_logger_init:                      # @trace_logger_init
 	movl	%eax, 4(%rsp)           # 4-byte Spill
 	popq	%rax
 	ret
-.Ltmp555:
-	.size	trace_logger_init, .Ltmp555-trace_logger_init
+.Ltmp575:
+	.size	trace_logger_init, .Ltmp575-trace_logger_init
 	.cfi_endproc
 
 	.globl	trace_logger_fin
@@ -38206,15 +40559,15 @@ trace_logger_fin:                       # @trace_logger_fin
 	.cfi_startproc
 # BB#0:
 	pushq	%rax
-.Ltmp557:
+.Ltmp577:
 	.cfi_def_cfa_offset 16
 	movq	current_toplevel_function(%rip), %rdi
 	callq	free
 	movq	full_trace_file(%rip), %rdi
 	popq	%rax
 	jmp	gzclose                 # TAILCALL
-.Ltmp558:
-	.size	trace_logger_fin, .Ltmp558-trace_logger_fin
+.Ltmp578:
+	.size	trace_logger_fin, .Ltmp578-trace_logger_fin
 	.cfi_endproc
 
 	.globl	log_or_not
@@ -38224,7 +40577,7 @@ log_or_not:                             # @log_or_not
 	.cfi_startproc
 # BB#0:
 	subq	$40, %rsp
-.Ltmp560:
+.Ltmp580:
 	.cfi_def_cfa_offset 48
 	movb	%sil, %al
 	movb	%dil, %r8b
@@ -38294,8 +40647,8 @@ log_or_not:                             # @log_or_not
 	movl	16(%rsp), %eax          # 4-byte Reload
 	addq	$40, %rsp
 	ret
-.Ltmp561:
-	.size	log_or_not, .Ltmp561-log_or_not
+.Ltmp581:
+	.size	log_or_not, .Ltmp581-log_or_not
 	.cfi_endproc
 
 	.globl	convert_bytes_to_hex
@@ -38305,7 +40658,7 @@ convert_bytes_to_hex:                   # @convert_bytes_to_hex
 	.cfi_startproc
 # BB#0:
 	subq	$56, %rsp
-.Ltmp563:
+.Ltmp583:
 	.cfi_def_cfa_offset 64
 	movabsq	$0, %rax
 	movw	.L.str8447, %cx
@@ -38350,8 +40703,8 @@ convert_bytes_to_hex:                   # @convert_bytes_to_hex
 	movb	$0, (%rax)
 	addq	$56, %rsp
 	ret
-.Ltmp564:
-	.size	convert_bytes_to_hex, .Ltmp564-convert_bytes_to_hex
+.Ltmp584:
+	.size	convert_bytes_to_hex, .Ltmp584-convert_bytes_to_hex
 	.cfi_endproc
 
 	.globl	update_logging_status
@@ -38361,7 +40714,7 @@ update_logging_status:                  # @update_logging_status
 	.cfi_startproc
 # BB#0:
 	subq	$56, %rsp
-.Ltmp566:
+.Ltmp586:
 	.cfi_def_cfa_offset 64
 	movb	%cl, %al
 	movb	%dl, %r8b
@@ -38447,8 +40800,8 @@ update_logging_status:                  # @update_logging_status
 .LBB20_8:
 	addq	$56, %rsp
 	ret
-.Ltmp567:
-	.size	update_logging_status, .Ltmp567-update_logging_status
+.Ltmp587:
+	.size	update_logging_status, .Ltmp587-update_logging_status
 	.cfi_endproc
 
 	.globl	do_not_log
@@ -38462,8 +40815,8 @@ do_not_log:                             # @do_not_log
 	andb	$1, %al
 	movzbl	%al, %eax
 	ret
-.Ltmp568:
-	.size	do_not_log, .Ltmp568-do_not_log
+.Ltmp588:
+	.size	do_not_log, .Ltmp588-do_not_log
 	.cfi_endproc
 
 	.globl	trace_logger_log_entry
@@ -38473,7 +40826,7 @@ trace_logger_log_entry:                 # @trace_logger_log_entry
 	.cfi_startproc
 # BB#0:
 	subq	$24, %rsp
-.Ltmp570:
+.Ltmp590:
 	.cfi_def_cfa_offset 32
 	cmpb	$0, initp
 	movq	%rdi, 16(%rsp)          # 8-byte Spill
@@ -38506,8 +40859,8 @@ trace_logger_log_entry:                 # @trace_logger_log_entry
 .LBB22_4:
 	addq	$24, %rsp
 	ret
-.Ltmp571:
-	.size	trace_logger_log_entry, .Ltmp571-trace_logger_log_entry
+.Ltmp591:
+	.size	trace_logger_log_entry, .Ltmp591-trace_logger_log_entry
 	.cfi_endproc
 
 	.globl	trace_logger_log0
@@ -38517,7 +40870,7 @@ trace_logger_log0:                      # @trace_logger_log0
 	.cfi_startproc
 # BB#0:
 	subq	$72, %rsp
-.Ltmp573:
+.Ltmp593:
 	.cfi_def_cfa_offset 80
 	movb	%r9b, %al
 	movb	80(%rsp), %r10b
@@ -38574,8 +40927,8 @@ trace_logger_log0:                      # @trace_logger_log0
 .LBB23_4:
 	addq	$72, %rsp
 	ret
-.Ltmp574:
-	.size	trace_logger_log0, .Ltmp574-trace_logger_log0
+.Ltmp594:
+	.size	trace_logger_log0, .Ltmp594-trace_logger_log0
 	.cfi_endproc
 
 	.globl	trace_logger_log_int
@@ -38585,7 +40938,7 @@ trace_logger_log_int:                   # @trace_logger_log_int
 	.cfi_startproc
 # BB#0:
 	subq	$120, %rsp
-.Ltmp576:
+.Ltmp596:
 	.cfi_def_cfa_offset 128
 	movq	128(%rsp), %rax
 	cmpb	$0, initp
@@ -38720,8 +41073,8 @@ trace_logger_log_int:                   # @trace_logger_log_int
 .LBB24_14:
 	addq	$120, %rsp
 	ret
-.Ltmp577:
-	.size	trace_logger_log_int, .Ltmp577-trace_logger_log_int
+.Ltmp597:
+	.size	trace_logger_log_int, .Ltmp597-trace_logger_log_int
 	.cfi_endproc
 
 	.globl	trace_logger_log_ptr
@@ -38731,7 +41084,7 @@ trace_logger_log_ptr:                   # @trace_logger_log_ptr
 	.cfi_startproc
 # BB#0:
 	subq	$120, %rsp
-.Ltmp579:
+.Ltmp599:
 	.cfi_def_cfa_offset 128
 	movq	128(%rsp), %rax
 	cmpb	$0, initp
@@ -38866,8 +41219,8 @@ trace_logger_log_ptr:                   # @trace_logger_log_ptr
 .LBB25_14:
 	addq	$120, %rsp
 	ret
-.Ltmp580:
-	.size	trace_logger_log_ptr, .Ltmp580-trace_logger_log_ptr
+.Ltmp600:
+	.size	trace_logger_log_ptr, .Ltmp600-trace_logger_log_ptr
 	.cfi_endproc
 
 	.globl	trace_logger_log_double
@@ -38877,7 +41230,7 @@ trace_logger_log_double:                # @trace_logger_log_double
 	.cfi_startproc
 # BB#0:
 	subq	$104, %rsp
-.Ltmp582:
+.Ltmp602:
 	.cfi_def_cfa_offset 112
 	cmpb	$0, initp
 	movl	%esi, 100(%rsp)         # 4-byte Spill
@@ -38999,8 +41352,8 @@ trace_logger_log_double:                # @trace_logger_log_double
 .LBB26_14:
 	addq	$104, %rsp
 	ret
-.Ltmp583:
-	.size	trace_logger_log_double, .Ltmp583-trace_logger_log_double
+.Ltmp603:
+	.size	trace_logger_log_double, .Ltmp603-trace_logger_log_double
 	.cfi_endproc
 
 	.globl	trace_logger_log_vector
@@ -39010,12 +41363,12 @@ trace_logger_log_vector:                # @trace_logger_log_vector
 	.cfi_startproc
 # BB#0:
 	pushq	%rbp
-.Ltmp586:
+.Ltmp606:
 	.cfi_def_cfa_offset 16
-.Ltmp587:
+.Ltmp607:
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
-.Ltmp588:
+.Ltmp608:
 	.cfi_def_cfa_register %rbp
 	subq	$128, %rsp
 	movq	16(%rbp), %rax
@@ -39152,211 +41505,214 @@ trace_logger_log_vector:                # @trace_logger_log_vector
 	movq	%rbp, %rsp
 	popq	%rbp
 	ret
-.Ltmp589:
-	.size	trace_logger_log_vector, .Ltmp589-trace_logger_log_vector
+.Ltmp609:
+	.size	trace_logger_log_vector, .Ltmp609-trace_logger_log_vector
 	.cfi_endproc
 
 	.type	.L.str,@object          # @.str
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .L.str:
-	.asciz	"\nstore_loc[%d] = %d\n"
-	.size	.L.str, 21
+	.asciz	"store_loc[%d] = %d\n"
+	.size	.L.str, 20
 
 	.type	.L.str1,@object         # @.str1
 .L.str1:
-	.asciz	"store_vals[%d] = %d\n"
-	.size	.L.str1, 21
+	.asciz	"\n"
+	.size	.L.str1, 2
 
 	.type	.L.str2,@object         # @.str2
 .L.str2:
-	.asciz	"FAILED: store_loc[%d] = %d, should be %d\n"
-	.size	.L.str2, 42
+	.asciz	"Test failed with %d errors."
+	.size	.L.str2, 28
 
 	.type	.L.str3,@object         # @.str3
 .L.str3:
-	.asciz	"Test failed with %d errors."
-	.size	.L.str3, 28
+	.asciz	"Test passed!\n"
+	.size	.L.str3, 14
 
 	.type	.L.str4,@object         # @.str4
+	.section	.rodata,"a",@progbits
 .L.str4:
-	.asciz	"Test passed!\n"
-	.size	.L.str4, 14
+	.asciz	"test_stores"
+	.size	.L.str4, 12
 
 	.type	.L.str5,@object         # @.str5
-	.section	.rodata,"a",@progbits
 .L.str5:
-	.asciz	"test_stores"
-	.size	.L.str5, 12
+	.asciz	"0:0"
+	.size	.L.str5, 4
 
 	.type	.L.str6,@object         # @.str6
 .L.str6:
-	.asciz	"0:0"
-	.size	.L.str6, 4
+	.asciz	"1"
+	.size	.L.str6, 2
 
 	.type	.L.str7,@object         # @.str7
 .L.str7:
-	.asciz	"1"
-	.size	.L.str7, 2
+	.zero	1
+	.size	.L.str7, 1
 
 	.type	.L.str8,@object         # @.str8
 .L.str8:
-	.zero	1
-	.size	.L.str8, 1
+	.asciz	"phi"
+	.size	.L.str8, 4
 
 	.type	.L.str9,@object         # @.str9
 .L.str9:
-	.asciz	"phi"
-	.size	.L.str9, 4
+	.asciz	"n_channels"
+	.size	.L.str9, 11
 
 	.type	.L.str10,@object        # @.str10
 .L.str10:
-	.asciz	"num_vals"
-	.size	.L.str10, 9
+	.asciz	"0:0-5"
+	.size	.L.str10, 6
 
 	.type	.L.str11,@object        # @.str11
+	.align	16
 .L.str11:
-	.asciz	"0:0-5"
-	.size	.L.str11, 6
+	.asciz	".preheader.lr.ph:0"
+	.size	.L.str11, 19
 
 	.type	.L.str12,@object        # @.str12
 .L.str12:
-	.asciz	".lr.ph:1"
-	.size	.L.str12, 9
+	.asciz	"._crit_edge3:0"
+	.size	.L.str12, 15
 
 	.type	.L.str13,@object        # @.str13
 .L.str13:
-	.asciz	"._crit_edge:0"
-	.size	.L.str13, 14
+	.asciz	"2"
+	.size	.L.str13, 2
 
 	.type	.L.str14,@object        # @.str14
 .L.str14:
-	.asciz	"indvars.iv"
-	.size	.L.str14, 11
+	.asciz	"n_samples"
+	.size	.L.str14, 10
 
 	.type	.L.str15,@object        # @.str15
+	.align	16
 .L.str15:
-	.asciz	"indvars.iv.next"
-	.size	.L.str15, 16
+	.asciz	".preheader.lr.ph:0-0"
+	.size	.L.str15, 21
 
 	.type	.L.str16,@object        # @.str16
 .L.str16:
-	.asciz	"19:1"
-	.size	.L.str16, 5
+	.asciz	".preheader:1"
+	.size	.L.str16, 13
 
 	.type	.L.str17,@object        # @.str17
 .L.str17:
-	.asciz	"2"
-	.size	.L.str17, 2
+	.asciz	"indvars.iv5"
+	.size	.L.str17, 12
 
 	.type	.L.str18,@object        # @.str18
+	.align	16
 .L.str18:
-	.asciz	"stdout"
-	.size	.L.str18, 7
+	.asciz	"indvars.iv.next6"
+	.size	.L.str18, 17
 
 	.type	.L.str19,@object        # @.str19
 .L.str19:
-	.asciz	"3"
-	.size	.L.str19, 2
+	.asciz	"._crit_edge:1"
+	.size	.L.str19, 14
 
 	.type	.L.str20,@object        # @.str20
 .L.str20:
-	.asciz	"store_loc"
-	.size	.L.str20, 10
+	.asciz	"3"
+	.size	.L.str20, 2
 
 	.type	.L.str21,@object        # @.str21
 .L.str21:
-	.asciz	"4"
-	.size	.L.str21, 2
+	.asciz	"stdout"
+	.size	.L.str21, 7
 
 	.type	.L.str22,@object        # @.str22
 .L.str22:
-	.asciz	"5"
-	.size	.L.str22, 2
+	.asciz	".preheader:1-0"
+	.size	.L.str22, 15
 
 	.type	.L.str23,@object        # @.str23
 .L.str23:
-	.asciz	"6"
-	.size	.L.str23, 2
+	.asciz	".lr.ph:1"
+	.size	.L.str23, 9
 
 	.type	.L.str24,@object        # @.str24
 .L.str24:
-	.asciz	"fprintf"
-	.size	.L.str24, 8
+	.asciz	"4"
+	.size	.L.str24, 2
 
 	.type	.L.str25,@object        # @.str25
 .L.str25:
-	.asciz	"7"
+	.asciz	"5"
 	.size	.L.str25, 2
 
 	.type	.L.str26,@object        # @.str26
 .L.str26:
-	.asciz	"8"
+	.asciz	"6"
 	.size	.L.str26, 2
 
 	.type	.L.str27,@object        # @.str27
 .L.str27:
-	.asciz	"store_vals"
+	.asciz	".lr.ph:1-0"
 	.size	.L.str27, 11
 
 	.type	.L.str28,@object        # @.str28
 .L.str28:
-	.asciz	"9"
-	.size	.L.str28, 2
+	.asciz	"7:2"
+	.size	.L.str28, 4
 
 	.type	.L.str29,@object        # @.str29
 .L.str29:
-	.asciz	"10"
-	.size	.L.str29, 3
+	.asciz	"indvars.iv"
+	.size	.L.str29, 11
 
 	.type	.L.str30,@object        # @.str30
 .L.str30:
-	.asciz	"11"
-	.size	.L.str30, 3
+	.asciz	"indvars.iv.next"
+	.size	.L.str30, 16
 
 	.type	.L.str31,@object        # @.str31
 .L.str31:
-	.asciz	"12"
-	.size	.L.str31, 3
+	.asciz	"8"
+	.size	.L.str31, 2
 
 	.type	.L.str32,@object        # @.str32
 .L.str32:
-	.asciz	"13"
+	.asciz	"14"
 	.size	.L.str32, 3
 
 	.type	.L.str33,@object        # @.str33
 .L.str33:
-	.asciz	"14"
-	.size	.L.str33, 3
+	.asciz	"9"
+	.size	.L.str33, 2
 
 	.type	.L.str34,@object        # @.str34
 .L.str34:
-	.asciz	".lr.ph:1-0"
-	.size	.L.str34, 11
+	.asciz	"10"
+	.size	.L.str34, 3
 
 	.type	.L.str35,@object        # @.str35
 .L.str35:
-	.asciz	"15:1"
-	.size	.L.str35, 5
+	.asciz	"store_loc"
+	.size	.L.str35, 10
 
 	.type	.L.str36,@object        # @.str36
 .L.str36:
-	.asciz	"16"
+	.asciz	"11"
 	.size	.L.str36, 3
 
 	.type	.L.str37,@object        # @.str37
 .L.str37:
-	.asciz	"17"
+	.asciz	"12"
 	.size	.L.str37, 3
 
 	.type	.L.str38,@object        # @.str38
 .L.str38:
-	.asciz	"18"
+	.asciz	"13"
 	.size	.L.str38, 3
 
 	.type	.L.str39,@object        # @.str39
 .L.str39:
-	.asciz	"15:1-0"
-	.size	.L.str39, 7
+	.asciz	"fprintf"
+	.size	.L.str39, 8
 
 	.type	.L.str40,@object        # @.str40
 .L.str40:
@@ -39370,775 +41726,975 @@ trace_logger_log_vector:                # @trace_logger_log_vector
 
 	.type	.L.str42,@object        # @.str42
 .L.str42:
-	.asciz	"19:1-0"
-	.size	.L.str42, 7
+	.asciz	"7:2-0"
+	.size	.L.str42, 6
 
 	.type	.L.str43,@object        # @.str43
 .L.str43:
-	.asciz	"._crit_edge:0-0"
-	.size	.L.str43, 16
+	.asciz	".lcssa"
+	.size	.L.str43, 7
 
 	.type	.L.str44,@object        # @.str44
 .L.str44:
-	.asciz	"process_data"
-	.size	.L.str44, 13
+	.asciz	"15"
+	.size	.L.str44, 3
 
 	.type	.L.str45,@object        # @.str45
 .L.str45:
-	.asciz	"0:0-7"
-	.size	.L.str45, 6
+	.asciz	"lftr.wideiv7"
+	.size	.L.str45, 13
 
 	.type	.L.str46,@object        # @.str46
 .L.str46:
-	.asciz	".lr.ph5:1"
+	.asciz	"exitcond8"
 	.size	.L.str46, 10
 
 	.type	.L.str47,@object        # @.str47
-	.align	16
 .L.str47:
-	.asciz	"._crit_edge6.thread:0"
-	.size	.L.str47, 22
+	.asciz	"._crit_edge:1-0"
+	.size	.L.str47, 16
 
 	.type	.L.str48,@object        # @.str48
 	.align	16
 .L.str48:
-	.asciz	"._crit_edge6.thread:0-0"
-	.size	.L.str48, 24
+	.asciz	"._crit_edge3:0-0"
+	.size	.L.str48, 17
 
 	.type	.L.str49,@object        # @.str49
 .L.str49:
-	.asciz	"kiss_fft"
-	.size	.L.str49, 9
+	.asciz	"store_vals"
+	.size	.L.str49, 11
 
 	.type	.L.str50,@object        # @.str50
 .L.str50:
-	.asciz	"cfg"
-	.size	.L.str50, 4
+	.asciz	"process_data"
+	.size	.L.str50, 13
 
 	.type	.L.str51,@object        # @.str51
 .L.str51:
-	.asciz	"in"
-	.size	.L.str51, 3
+	.asciz	"0:0-8"
+	.size	.L.str51, 6
 
 	.type	.L.str52,@object        # @.str52
 .L.str52:
-	.asciz	"out"
-	.size	.L.str52, 4
+	.asciz	"._crit_edge8:0"
+	.size	.L.str52, 15
 
 	.type	.L.str53,@object        # @.str53
-	.align	16
 .L.str53:
-	.asciz	"._crit_edge6.thread:0-2"
-	.size	.L.str53, 24
+	.asciz	"indvars.iv13"
+	.size	.L.str53, 13
 
 	.type	.L.str54,@object        # @.str54
+	.align	16
 .L.str54:
-	.asciz	"indvars.iv7"
-	.size	.L.str54, 12
+	.asciz	"indvars.iv.next14"
+	.size	.L.str54, 18
 
 	.type	.L.str55,@object        # @.str55
-	.align	16
 .L.str55:
-	.asciz	"indvars.iv.next8"
-	.size	.L.str55, 17
+	.asciz	"._crit_edge6:1"
+	.size	.L.str55, 15
 
 	.type	.L.str56,@object        # @.str56
 .L.str56:
-	.asciz	".lr.ph5:1-0"
-	.size	.L.str56, 12
+	.asciz	"7"
+	.size	.L.str56, 2
 
 	.type	.L.str57,@object        # @.str57
 .L.str57:
-	.asciz	".lr.ph5:1-1"
-	.size	.L.str57, 12
+	.asciz	"10:2"
+	.size	.L.str57, 5
 
 	.type	.L.str58,@object        # @.str58
 .L.str58:
-	.asciz	"lftr.wideiv9"
-	.size	.L.str58, 13
+	.asciz	"in"
+	.size	.L.str58, 3
 
 	.type	.L.str59,@object        # @.str59
 .L.str59:
-	.asciz	"exitcond10"
-	.size	.L.str59, 11
+	.asciz	"10:2-0"
+	.size	.L.str59, 7
 
 	.type	.L.str60,@object        # @.str60
 .L.str60:
-	.asciz	".lr.ph5:1-2"
-	.size	.L.str60, 12
+	.asciz	"16"
+	.size	.L.str60, 3
 
 	.type	.L.str61,@object        # @.str61
 .L.str61:
-	.asciz	"._crit_edge6:0"
-	.size	.L.str61, 15
+	.asciz	"10:2-1"
+	.size	.L.str61, 7
 
 	.type	.L.str62,@object        # @.str62
-	.align	16
 .L.str62:
-	.asciz	"._crit_edge6:0-0"
-	.size	.L.str62, 17
+	.asciz	"17"
+	.size	.L.str62, 3
 
 	.type	.L.str63,@object        # @.str63
-	.align	16
 .L.str63:
-	.asciz	"._crit_edge6:0-2"
-	.size	.L.str63, 17
+	.asciz	"out"
+	.size	.L.str63, 4
 
 	.type	.L.str64,@object        # @.str64
 .L.str64:
-	.asciz	".lr.ph:1-1"
-	.size	.L.str64, 11
+	.asciz	"10:2-2"
+	.size	.L.str64, 7
 
 	.type	.L.str65,@object        # @.str65
 .L.str65:
-	.asciz	"main"
-	.size	.L.str65, 5
+	.asciz	"18"
+	.size	.L.str65, 3
 
 	.type	.L.str66,@object        # @.str66
 .L.str66:
-	.asciz	"malloc"
+	.asciz	"10:2-3"
 	.size	.L.str66, 7
 
 	.type	.L.str67,@object        # @.str67
 .L.str67:
-	.asciz	"0:0-4"
-	.size	.L.str67, 6
+	.asciz	"10:2-4"
+	.size	.L.str67, 7
 
 	.type	.L.str68,@object        # @.str68
 .L.str68:
-	.asciz	"5:1"
-	.size	.L.str68, 4
+	.asciz	"19"
+	.size	.L.str68, 3
 
 	.type	.L.str69,@object        # @.str69
 .L.str69:
-	.asciz	"5:1-0"
-	.size	.L.str69, 6
+	.asciz	"cfg"
+	.size	.L.str69, 4
 
 	.type	.L.str70,@object        # @.str70
 .L.str70:
-	.asciz	"5:1-1"
-	.size	.L.str70, 6
+	.asciz	"20"
+	.size	.L.str70, 3
 
 	.type	.L.str71,@object        # @.str71
 .L.str71:
-	.asciz	"5:1-2"
-	.size	.L.str71, 6
+	.asciz	"kiss_fft"
+	.size	.L.str71, 9
 
 	.type	.L.str72,@object        # @.str72
 .L.str72:
-	.asciz	"9:0"
-	.size	.L.str72, 4
+	.asciz	"._crit_edge:1-2"
+	.size	.L.str72, 16
 
 	.type	.L.str73,@object        # @.str73
 .L.str73:
-	.asciz	"kiss_fft_alloc"
-	.size	.L.str73, 15
+	.asciz	".lr.ph5:1"
+	.size	.L.str73, 10
 
 	.type	.L.str74,@object        # @.str74
 .L.str74:
-	.asciz	"9:0-1"
-	.size	.L.str74, 6
+	.asciz	"21"
+	.size	.L.str74, 3
 
 	.type	.L.str75,@object        # @.str75
 .L.str75:
-	.asciz	"9:0-3"
-	.size	.L.str75, 6
+	.asciz	"22"
+	.size	.L.str75, 3
 
 	.type	.L.str76,@object        # @.str76
-	.align	16
 .L.str76:
-	.asciz	"process_data/loop 37\nprocess_data/loop2 45\nkf_bfly2/kf_bfly2_loop 32\nkf_bfly3/kf_bfly3_loop 108\nkf_bfly4/kf_bfly4_loop 60\nkf_bfly5/kf_bfly5_loop 161\nkf_bfly_generic/kf_bfly_loop 219\nkf_bfly_generic/kf_bfly_loop_1 221\nkf_bfly_generic/kf_bfly_loop_2 228\nkf_bfly_generic/kf_bfly_loop_3 231\nkf_factor/kf_factor_1 324\nkf_factor/kf_factor_2 325\nkf_work/kf_work_1 284\nkf_work/kf_work_2 289\n"
-	.size	.L.str76, 384
+	.asciz	"23"
+	.size	.L.str76, 3
 
 	.type	.L.str77,@object        # @.str77
 .L.str77:
-	.asciz	"kiss_fft_alloc"
-	.size	.L.str77, 15
-
-	.type	.L.str178,@object       # @.str178
-.L.str178:
-	.asciz	"0:0"
-	.size	.L.str178, 4
-
-	.type	.L.str279,@object       # @.str279
-.L.str279:
-	.asciz	"1"
-	.size	.L.str279, 2
-
-	.type	.L.str380,@object       # @.str380
-.L.str380:
-	.zero	1
-	.size	.L.str380, 1
-
-	.type	.L.str481,@object       # @.str481
-.L.str481:
-	.asciz	"phi"
-	.size	.L.str481, 4
-
-	.type	.L.str582,@object       # @.str582
-.L.str582:
-	.asciz	"nfft"
-	.size	.L.str582, 5
-
-	.type	.L.str683,@object       # @.str683
-.L.str683:
-	.asciz	"2"
-	.size	.L.str683, 2
-
-	.type	.L.str784,@object       # @.str784
-.L.str784:
-	.asciz	"3"
-	.size	.L.str784, 2
-
-	.type	.L.str885,@object       # @.str885
-.L.str885:
-	.asciz	"4"
-	.size	.L.str885, 2
-
-	.type	.L.str986,@object       # @.str986
-.L.str986:
-	.asciz	"5"
-	.size	.L.str986, 2
-
-	.type	.L.str1087,@object      # @.str1087
-.L.str1087:
-	.asciz	"lenmem"
-	.size	.L.str1087, 7
-
-	.type	.L.str1188,@object      # @.str1188
-.L.str1188:
-	.asciz	"0:0-6"
-	.size	.L.str1188, 6
-
-	.type	.L.str1289,@object      # @.str1289
-.L.str1289:
-	.asciz	"6:0"
-	.size	.L.str1289, 4
-
-	.type	.L.str1390,@object      # @.str1390
-.L.str1390:
-	.asciz	"9:0"
-	.size	.L.str1390, 4
-
-	.type	.L.str1491,@object      # @.str1491
-.L.str1491:
-	.asciz	"7"
-	.size	.L.str1491, 2
-
-	.type	.L.str1592,@object      # @.str1592
-.L.str1592:
-	.asciz	"malloc"
-	.size	.L.str1592, 7
-
-	.type	.L.str1693,@object      # @.str1693
-.L.str1693:
-	.asciz	"8"
-	.size	.L.str1693, 2
-
-	.type	.L.str1794,@object      # @.str1794
-.L.str1794:
-	.asciz	"6:0-1"
-	.size	.L.str1794, 6
-
-	.type	.L.str1895,@object      # @.str1895
-.L.str1895:
-	.asciz	"17:0"
-	.size	.L.str1895, 5
-
-	.type	.L.str1996,@object      # @.str1996
-.L.str1996:
-	.asciz	"10"
-	.size	.L.str1996, 3
-
-	.type	.L.str2097,@object      # @.str2097
-.L.str2097:
-	.asciz	"mem"
-	.size	.L.str2097, 4
-
-	.type	.L.str2198,@object      # @.str2198
-.L.str2198:
-	.asciz	"9:0-0"
-	.size	.L.str2198, 6
-
-	.type	.L.str2299,@object      # @.str2299
-.L.str2299:
-	.asciz	"16:0"
-	.size	.L.str2299, 5
-
-	.type	.L.str23100,@object     # @.str23100
-.L.str23100:
-	.asciz	"11:0"
-	.size	.L.str23100, 5
-
-	.type	.L.str24101,@object     # @.str24101
-.L.str24101:
-	.asciz	"12"
-	.size	.L.str24101, 3
-
-	.type	.L.str25102,@object     # @.str25102
-.L.str25102:
-	.asciz	"13"
-	.size	.L.str25102, 3
-
-	.type	.L.str26103,@object     # @.str26103
-.L.str26103:
-	.asciz	"11:0-0"
-	.size	.L.str26103, 7
-
-	.type	.L.str27104,@object     # @.str27104
-.L.str27104:
-	.asciz	"14:0"
-	.size	.L.str27104, 5
-
-	.type	.L.str28105,@object     # @.str28105
-.L.str28105:
-	.asciz	"15"
-	.size	.L.str28105, 3
-
-	.type	.L.str29106,@object     # @.str29106
-.L.str29106:
-	.asciz	"14:0-1"
-	.size	.L.str29106, 7
-
-	.type	.L.str30107,@object     # @.str30107
-.L.str30107:
-	.asciz	"st.0"
-	.size	.L.str30107, 5
-
-	.type	.L.str31108,@object     # @.str31108
-.L.str31108:
-	.asciz	"16:0-0"
-	.size	.L.str31108, 7
-
-	.type	.L.str32109,@object     # @.str32109
-.L.str32109:
-	.asciz	"16:0-1"
-	.size	.L.str32109, 7
-
-	.type	.L.str33110,@object     # @.str33110
-.L.str33110:
-	.asciz	"st.1"
-	.size	.L.str33110, 5
-
-	.type	.L.str34111,@object     # @.str34111
-.L.str34111:
-	.asciz	"18"
-	.size	.L.str34111, 3
-
-	.type	.L.str35112,@object     # @.str35112
-.L.str35112:
-	.asciz	"17:0-0"
-	.size	.L.str35112, 7
-
-	.type	.L.str36113,@object     # @.str36113
-.L.str36113:
-	.asciz	"41:0"
-	.size	.L.str36113, 5
-
-	.type	.L.str37114,@object     # @.str37114
-.L.str37114:
-	.asciz	"19:0"
-	.size	.L.str37114, 5
-
-	.type	.L.str38115,@object     # @.str38115
-.L.str38115:
-	.asciz	"20"
-	.size	.L.str38115, 3
-
-	.type	.L.str39116,@object     # @.str39116
-.L.str39116:
-	.asciz	"19:0-0"
-	.size	.L.str39116, 7
-
-	.type	.L.str40117,@object     # @.str40117
-.L.str40117:
-	.asciz	"21"
-	.size	.L.str40117, 3
-
-	.type	.L.str41118,@object     # @.str41118
-.L.str41118:
-	.asciz	"19:0-1"
-	.size	.L.str41118, 7
-
-	.type	.L.str42119,@object     # @.str42119
-.L.str42119:
-	.asciz	"inverse_fft"
-	.size	.L.str42119, 12
-
-	.type	.L.str43120,@object     # @.str43120
-.L.str43120:
-	.asciz	"22"
-	.size	.L.str43120, 3
-
-	.type	.L.str44121,@object     # @.str44121
-.L.str44121:
-	.asciz	"19:0-3"
-	.size	.L.str44121, 7
-
-	.type	.L.str45122,@object     # @.str45122
-.L.str45122:
-	.asciz	".lr.ph:0"
-	.size	.L.str45122, 9
-
-	.type	.L.str46123,@object     # @.str46123
-.L.str46123:
-	.asciz	"._crit_edge:0"
-	.size	.L.str46123, 14
-
-	.type	.L.str47124,@object     # @.str47124
-.L.str47124:
-	.asciz	"23"
-	.size	.L.str47124, 3
-
-	.type	.L.str48125,@object     # @.str48125
-.L.str48125:
-	.asciz	".lr.ph:0-0"
-	.size	.L.str48125, 11
-
-	.type	.L.str49126,@object     # @.str49126
-.L.str49126:
-	.asciz	"24:1"
-	.size	.L.str49126, 5
-
-	.type	.L.str50127,@object     # @.str50127
-.L.str50127:
-	.asciz	"indvars.iv"
-	.size	.L.str50127, 11
-
-	.type	.L.str51128,@object     # @.str51128
-.L.str51128:
-	.asciz	"indvars.iv.next"
-	.size	.L.str51128, 16
-
-	.type	.L.str52129,@object     # @.str52129
-.L.str52129:
-	.asciz	"33:1"
-	.size	.L.str52129, 5
-
-	.type	.L.str53130,@object     # @.str53130
-.L.str53130:
-	.asciz	"25"
-	.size	.L.str53130, 3
-
-	.type	.L.str54131,@object     # @.str54131
-.L.str54131:
-	.asciz	"26"
-	.size	.L.str54131, 3
-
-	.type	.L.str55132,@object     # @.str55132
-.L.str55132:
-	.asciz	"27"
-	.size	.L.str55132, 3
-
-	.type	.L.str56133,@object     # @.str56133
-.L.str56133:
-	.asciz	"28"
-	.size	.L.str56133, 3
-
-	.type	.L.str57134,@object     # @.str57134
-.L.str57134:
-	.asciz	"29"
-	.size	.L.str57134, 3
-
-	.type	.L.str58135,@object     # @.str58135
-.L.str58135:
-	.asciz	"30"
-	.size	.L.str58135, 3
-
-	.type	.L.str59136,@object     # @.str59136
-.L.str59136:
-	.asciz	"24:1-2"
-	.size	.L.str59136, 7
-
-	.type	.L.str60137,@object     # @.str60137
-.L.str60137:
-	.asciz	"31:1"
-	.size	.L.str60137, 5
-
-	.type	.L.str61138,@object     # @.str61138
-.L.str61138:
-	.asciz	"32"
-	.size	.L.str61138, 3
-
-	.type	.L.str62139,@object     # @.str62139
-.L.str62139:
-	.asciz	"31:1-1"
-	.size	.L.str62139, 7
-
-	.type	.L.str63140,@object     # @.str63140
-.L.str63140:
-	.asciz	"phase.0"
-	.size	.L.str63140, 8
-
-	.type	.L.str64141,@object     # @.str64141
-.L.str64141:
-	.asciz	"34"
-	.size	.L.str64141, 3
-
-	.type	.L.str65142,@object     # @.str65142
-.L.str65142:
-	.asciz	"cos"
-	.size	.L.str65142, 4
-
-	.type	.L.str66143,@object     # @.str66143
-.L.str66143:
-	.asciz	"35"
-	.size	.L.str66143, 3
-
-	.type	.L.str67144,@object     # @.str67144
-.L.str67144:
-	.asciz	"36"
-	.size	.L.str67144, 3
-
-	.type	.L.str68145,@object     # @.str68145
-.L.str68145:
-	.asciz	"33:1-0"
-	.size	.L.str68145, 7
-
-	.type	.L.str69146,@object     # @.str69146
-.L.str69146:
-	.asciz	"37"
-	.size	.L.str69146, 3
-
-	.type	.L.str70147,@object     # @.str70147
-.L.str70147:
-	.asciz	"sin"
-	.size	.L.str70147, 4
-
-	.type	.L.str71148,@object     # @.str71148
-.L.str71148:
-	.asciz	"38"
-	.size	.L.str71148, 3
-
-	.type	.L.str72149,@object     # @.str72149
-.L.str72149:
-	.asciz	"39"
-	.size	.L.str72149, 3
-
-	.type	.L.str73150,@object     # @.str73150
-.L.str73150:
-	.asciz	"33:1-1"
-	.size	.L.str73150, 7
-
-	.type	.L.str74151,@object     # @.str74151
-.L.str74151:
-	.asciz	"lftr.wideiv"
-	.size	.L.str74151, 12
-
-	.type	.L.str75152,@object     # @.str75152
-.L.str75152:
-	.asciz	"exitcond"
-	.size	.L.str75152, 9
-
-	.type	.L.str76153,@object     # @.str76153
-.L.str76153:
-	.asciz	"33:1-2"
-	.size	.L.str76153, 7
-
-	.type	.L.str77154,@object     # @.str77154
-.L.str77154:
-	.asciz	"40"
-	.size	.L.str77154, 3
+	.asciz	".lr.ph5:1-0"
+	.size	.L.str77, 12
 
 	.type	.L.str78,@object        # @.str78
 .L.str78:
-	.asciz	"._crit_edge:0-0"
-	.size	.L.str78, 16
+	.asciz	"24:2"
+	.size	.L.str78, 5
 
 	.type	.L.str79,@object        # @.str79
 .L.str79:
-	.asciz	"kf_factor"
-	.size	.L.str79, 10
+	.asciz	"indvars.iv9"
+	.size	.L.str79, 12
 
 	.type	.L.str80,@object        # @.str80
+	.align	16
 .L.str80:
-	.asciz	"._crit_edge:0-1"
-	.size	.L.str80, 16
+	.asciz	"indvars.iv.next10"
+	.size	.L.str80, 18
 
 	.type	.L.str81,@object        # @.str81
 .L.str81:
-	.asciz	"41:0-0"
-	.size	.L.str81, 7
+	.asciz	"25"
+	.size	.L.str81, 3
 
 	.type	.L.str82,@object        # @.str82
 .L.str82:
-	.asciz	"n"
-	.size	.L.str82, 2
+	.asciz	"26"
+	.size	.L.str82, 3
 
 	.type	.L.str83,@object        # @.str83
 .L.str83:
-	.asciz	"sqrt"
-	.size	.L.str83, 5
+	.asciz	"27"
+	.size	.L.str83, 3
 
 	.type	.L.str84,@object        # @.str84
 .L.str84:
-	.asciz	"floor"
-	.size	.L.str84, 6
+	.asciz	"28"
+	.size	.L.str84, 3
 
 	.type	.L.str85,@object        # @.str85
 .L.str85:
-	.asciz	"0:0-4"
-	.size	.L.str85, 6
+	.asciz	"29"
+	.size	.L.str85, 3
 
 	.type	.L.str86,@object        # @.str86
 .L.str86:
-	.asciz	".outer:1"
-	.size	.L.str86, 9
+	.asciz	"24:2-0"
+	.size	.L.str86, 7
 
 	.type	.L.str87,@object        # @.str87
 .L.str87:
-	.asciz	".01.ph"
-	.size	.L.str87, 7
+	.asciz	"lftr.wideiv11"
+	.size	.L.str87, 14
 
 	.type	.L.str88,@object        # @.str88
 .L.str88:
-	.asciz	"._crit_edge:1"
-	.size	.L.str88, 14
+	.asciz	"exitcond12"
+	.size	.L.str88, 11
 
 	.type	.L.str89,@object        # @.str89
 .L.str89:
-	.asciz	"facbuf"
+	.asciz	"24:2-1"
 	.size	.L.str89, 7
 
 	.type	.L.str90,@object        # @.str90
 .L.str90:
-	.asciz	"p.0.ph"
-	.size	.L.str90, 7
+	.asciz	"lftr.wideiv15"
+	.size	.L.str90, 14
 
 	.type	.L.str91,@object        # @.str91
 .L.str91:
-	.asciz	"p.0.lcssa"
-	.size	.L.str91, 10
+	.asciz	"exitcond16"
+	.size	.L.str91, 11
 
 	.type	.L.str92,@object        # @.str92
+	.align	16
 .L.str92:
-	.asciz	".0.ph"
-	.size	.L.str92, 6
+	.asciz	"._crit_edge6:1-0"
+	.size	.L.str92, 17
 
 	.type	.L.str93,@object        # @.str93
+	.align	16
 .L.str93:
-	.asciz	".outer:1-0"
-	.size	.L.str93, 11
+	.asciz	"._crit_edge8:0-0"
+	.size	.L.str93, 17
 
 	.type	.L.str94,@object        # @.str94
 .L.str94:
-	.asciz	".lr.ph:2"
-	.size	.L.str94, 9
+	.asciz	"main"
+	.size	.L.str94, 5
 
 	.type	.L.str95,@object        # @.str95
 .L.str95:
-	.asciz	"p.02"
-	.size	.L.str95, 5
+	.asciz	"malloc"
+	.size	.L.str95, 7
 
 	.type	.L.str96,@object        # @.str96
 .L.str96:
-	.asciz	"p.0.be"
-	.size	.L.str96, 7
+	.asciz	"0:0-3"
+	.size	.L.str96, 6
 
 	.type	.L.str97,@object        # @.str97
 .L.str97:
-	.asciz	".backedge:2"
+	.asciz	"indvars.iv8"
 	.size	.L.str97, 12
 
 	.type	.L.str98,@object        # @.str98
+	.align	16
 .L.str98:
-	.asciz	".lr.ph:2-0"
-	.size	.L.str98, 11
+	.asciz	"indvars.iv.next9"
+	.size	.L.str98, 17
 
 	.type	.L.str99,@object        # @.str99
 .L.str99:
-	.asciz	"6:2"
-	.size	.L.str99, 4
+	.asciz	"11:1"
+	.size	.L.str99, 5
 
 	.type	.L.str100,@object       # @.str100
 .L.str100:
-	.asciz	"7:2"
+	.asciz	"6:2"
 	.size	.L.str100, 4
 
 	.type	.L.str101,@object       # @.str101
 .L.str101:
-	.asciz	"6:2-1"
+	.asciz	"6:2-0"
 	.size	.L.str101, 6
 
 	.type	.L.str102,@object       # @.str102
 .L.str102:
-	.asciz	"7:2-1"
+	.asciz	"6:2-1"
 	.size	.L.str102, 6
 
 	.type	.L.str103,@object       # @.str103
 .L.str103:
-	.asciz	"p.1"
-	.size	.L.str103, 4
+	.asciz	"exitcond7"
+	.size	.L.str103, 10
 
 	.type	.L.str104,@object       # @.str104
 .L.str104:
-	.asciz	"9"
-	.size	.L.str104, 2
+	.asciz	"6:2-2"
+	.size	.L.str104, 6
 
 	.type	.L.str105,@object       # @.str105
 .L.str105:
-	.asciz	"11"
-	.size	.L.str105, 3
+	.asciz	"exitcond10"
+	.size	.L.str105, 11
 
 	.type	.L.str106,@object       # @.str106
 .L.str106:
-	.asciz	".backedge:2-1"
-	.size	.L.str106, 14
+	.asciz	"11:1-0"
+	.size	.L.str106, 7
 
 	.type	.L.str107,@object       # @.str107
 .L.str107:
-	.asciz	"14"
-	.size	.L.str107, 3
+	.asciz	"12:0"
+	.size	.L.str107, 5
 
 	.type	.L.str108,@object       # @.str108
 .L.str108:
-	.asciz	"._crit_edge:1-2"
-	.size	.L.str108, 16
+	.asciz	"12:0-3"
+	.size	.L.str108, 7
 
 	.type	.L.str109,@object       # @.str109
 .L.str109:
-	.asciz	"._crit_edge:1-4"
-	.size	.L.str109, 16
+	.asciz	"14:1"
+	.size	.L.str109, 5
 
 	.type	.L.str110,@object       # @.str110
 .L.str110:
-	.asciz	"16"
-	.size	.L.str110, 3
+	.asciz	"kiss_fft_alloc"
+	.size	.L.str110, 15
 
 	.type	.L.str111,@object       # @.str111
 .L.str111:
-	.asciz	"._crit_edge:1-5"
-	.size	.L.str111, 16
+	.asciz	"14:1-0"
+	.size	.L.str111, 7
 
 	.type	.L.str112,@object       # @.str112
 .L.str112:
-	.asciz	"kiss_fft_stride"
-	.size	.L.str112, 16
+	.asciz	"14:1-1"
+	.size	.L.str112, 7
 
 	.type	.L.str113,@object       # @.str113
 .L.str113:
-	.asciz	"0:0-2"
-	.size	.L.str113, 6
+	.asciz	"17:0"
+	.size	.L.str113, 5
 
 	.type	.L.str114,@object       # @.str114
 .L.str114:
-	.asciz	"fin"
-	.size	.L.str114, 4
+	.asciz	"17:0-0"
+	.size	.L.str114, 7
 
 	.type	.L.str115,@object       # @.str115
 .L.str115:
-	.asciz	"0:0-5"
-	.size	.L.str115, 6
+	.asciz	"17:0-3"
+	.size	.L.str115, 7
 
 	.type	.L.str116,@object       # @.str116
+	.align	16
 .L.str116:
-	.asciz	"fout"
-	.size	.L.str116, 5
+	.asciz	"process_data/fft_loop 39\nprocess_data/loop 41\nprocess_data/loop2 49\nkf_bfly2/kf_bfly2_loop 32\nkf_bfly3/kf_bfly3_loop 108\nkf_bfly4/kf_bfly4_loop 60\nkf_bfly5/kf_bfly5_loop 161\nkf_bfly_generic/kf_bfly_loop 219\nkf_bfly_generic/kf_bfly_loop_1 221\nkf_bfly_generic/kf_bfly_loop_2 228\nkf_bfly_generic/kf_bfly_loop_3 231\nkf_factor/kf_factor_1 324\nkf_factor/kf_factor_2 325\nkf_work/kf_work_1 284\nkf_work/kf_work_2 289\n"
+	.size	.L.str116, 409
 
 	.type	.L.str117,@object       # @.str117
 .L.str117:
+	.asciz	"kiss_fft_alloc"
+	.size	.L.str117, 15
+
+	.type	.L.str1118,@object      # @.str1118
+.L.str1118:
+	.asciz	"0:0"
+	.size	.L.str1118, 4
+
+	.type	.L.str2119,@object      # @.str2119
+.L.str2119:
+	.asciz	"1"
+	.size	.L.str2119, 2
+
+	.type	.L.str3120,@object      # @.str3120
+.L.str3120:
+	.zero	1
+	.size	.L.str3120, 1
+
+	.type	.L.str4121,@object      # @.str4121
+.L.str4121:
+	.asciz	"phi"
+	.size	.L.str4121, 4
+
+	.type	.L.str5122,@object      # @.str5122
+.L.str5122:
+	.asciz	"nfft"
+	.size	.L.str5122, 5
+
+	.type	.L.str6123,@object      # @.str6123
+.L.str6123:
+	.asciz	"2"
+	.size	.L.str6123, 2
+
+	.type	.L.str7124,@object      # @.str7124
+.L.str7124:
+	.asciz	"3"
+	.size	.L.str7124, 2
+
+	.type	.L.str8125,@object      # @.str8125
+.L.str8125:
+	.asciz	"4"
+	.size	.L.str8125, 2
+
+	.type	.L.str9126,@object      # @.str9126
+.L.str9126:
+	.asciz	"5"
+	.size	.L.str9126, 2
+
+	.type	.L.str10127,@object     # @.str10127
+.L.str10127:
+	.asciz	"lenmem"
+	.size	.L.str10127, 7
+
+	.type	.L.str11128,@object     # @.str11128
+.L.str11128:
+	.asciz	"0:0-6"
+	.size	.L.str11128, 6
+
+	.type	.L.str12129,@object     # @.str12129
+.L.str12129:
+	.asciz	"6:0"
+	.size	.L.str12129, 4
+
+	.type	.L.str13130,@object     # @.str13130
+.L.str13130:
+	.asciz	"9:0"
+	.size	.L.str13130, 4
+
+	.type	.L.str14131,@object     # @.str14131
+.L.str14131:
+	.asciz	"7"
+	.size	.L.str14131, 2
+
+	.type	.L.str15132,@object     # @.str15132
+.L.str15132:
+	.asciz	"malloc"
+	.size	.L.str15132, 7
+
+	.type	.L.str16133,@object     # @.str16133
+.L.str16133:
+	.asciz	"8"
+	.size	.L.str16133, 2
+
+	.type	.L.str17134,@object     # @.str17134
+.L.str17134:
+	.asciz	"6:0-1"
+	.size	.L.str17134, 6
+
+	.type	.L.str18135,@object     # @.str18135
+.L.str18135:
+	.asciz	"17:0"
+	.size	.L.str18135, 5
+
+	.type	.L.str19136,@object     # @.str19136
+.L.str19136:
+	.asciz	"10"
+	.size	.L.str19136, 3
+
+	.type	.L.str20137,@object     # @.str20137
+.L.str20137:
+	.asciz	"mem"
+	.size	.L.str20137, 4
+
+	.type	.L.str21138,@object     # @.str21138
+.L.str21138:
+	.asciz	"9:0-0"
+	.size	.L.str21138, 6
+
+	.type	.L.str22139,@object     # @.str22139
+.L.str22139:
+	.asciz	"16:0"
+	.size	.L.str22139, 5
+
+	.type	.L.str23140,@object     # @.str23140
+.L.str23140:
+	.asciz	"11:0"
+	.size	.L.str23140, 5
+
+	.type	.L.str24141,@object     # @.str24141
+.L.str24141:
+	.asciz	"12"
+	.size	.L.str24141, 3
+
+	.type	.L.str25142,@object     # @.str25142
+.L.str25142:
+	.asciz	"13"
+	.size	.L.str25142, 3
+
+	.type	.L.str26143,@object     # @.str26143
+.L.str26143:
+	.asciz	"11:0-0"
+	.size	.L.str26143, 7
+
+	.type	.L.str27144,@object     # @.str27144
+.L.str27144:
+	.asciz	"14:0"
+	.size	.L.str27144, 5
+
+	.type	.L.str28145,@object     # @.str28145
+.L.str28145:
+	.asciz	"15"
+	.size	.L.str28145, 3
+
+	.type	.L.str29146,@object     # @.str29146
+.L.str29146:
+	.asciz	"14:0-1"
+	.size	.L.str29146, 7
+
+	.type	.L.str30147,@object     # @.str30147
+.L.str30147:
+	.asciz	"st.0"
+	.size	.L.str30147, 5
+
+	.type	.L.str31148,@object     # @.str31148
+.L.str31148:
+	.asciz	"16:0-0"
+	.size	.L.str31148, 7
+
+	.type	.L.str32149,@object     # @.str32149
+.L.str32149:
+	.asciz	"16:0-1"
+	.size	.L.str32149, 7
+
+	.type	.L.str33150,@object     # @.str33150
+.L.str33150:
+	.asciz	"st.1"
+	.size	.L.str33150, 5
+
+	.type	.L.str34151,@object     # @.str34151
+.L.str34151:
+	.asciz	"18"
+	.size	.L.str34151, 3
+
+	.type	.L.str35152,@object     # @.str35152
+.L.str35152:
+	.asciz	"17:0-0"
+	.size	.L.str35152, 7
+
+	.type	.L.str36153,@object     # @.str36153
+.L.str36153:
+	.asciz	"41:0"
+	.size	.L.str36153, 5
+
+	.type	.L.str37154,@object     # @.str37154
+.L.str37154:
+	.asciz	"19:0"
+	.size	.L.str37154, 5
+
+	.type	.L.str38155,@object     # @.str38155
+.L.str38155:
+	.asciz	"20"
+	.size	.L.str38155, 3
+
+	.type	.L.str39156,@object     # @.str39156
+.L.str39156:
+	.asciz	"19:0-0"
+	.size	.L.str39156, 7
+
+	.type	.L.str40157,@object     # @.str40157
+.L.str40157:
+	.asciz	"21"
+	.size	.L.str40157, 3
+
+	.type	.L.str41158,@object     # @.str41158
+.L.str41158:
+	.asciz	"19:0-1"
+	.size	.L.str41158, 7
+
+	.type	.L.str42159,@object     # @.str42159
+.L.str42159:
+	.asciz	"inverse_fft"
+	.size	.L.str42159, 12
+
+	.type	.L.str43160,@object     # @.str43160
+.L.str43160:
+	.asciz	"22"
+	.size	.L.str43160, 3
+
+	.type	.L.str44161,@object     # @.str44161
+.L.str44161:
+	.asciz	"19:0-3"
+	.size	.L.str44161, 7
+
+	.type	.L.str45162,@object     # @.str45162
+.L.str45162:
+	.asciz	".lr.ph:0"
+	.size	.L.str45162, 9
+
+	.type	.L.str46163,@object     # @.str46163
+.L.str46163:
+	.asciz	"._crit_edge:0"
+	.size	.L.str46163, 14
+
+	.type	.L.str47164,@object     # @.str47164
+.L.str47164:
+	.asciz	"23"
+	.size	.L.str47164, 3
+
+	.type	.L.str48165,@object     # @.str48165
+.L.str48165:
+	.asciz	".lr.ph:0-0"
+	.size	.L.str48165, 11
+
+	.type	.L.str49166,@object     # @.str49166
+.L.str49166:
+	.asciz	"24:1"
+	.size	.L.str49166, 5
+
+	.type	.L.str50167,@object     # @.str50167
+.L.str50167:
+	.asciz	"indvars.iv"
+	.size	.L.str50167, 11
+
+	.type	.L.str51168,@object     # @.str51168
+.L.str51168:
+	.asciz	"indvars.iv.next"
+	.size	.L.str51168, 16
+
+	.type	.L.str52169,@object     # @.str52169
+.L.str52169:
+	.asciz	"33:1"
+	.size	.L.str52169, 5
+
+	.type	.L.str53170,@object     # @.str53170
+.L.str53170:
+	.asciz	"25"
+	.size	.L.str53170, 3
+
+	.type	.L.str54171,@object     # @.str54171
+.L.str54171:
+	.asciz	"26"
+	.size	.L.str54171, 3
+
+	.type	.L.str55172,@object     # @.str55172
+.L.str55172:
+	.asciz	"27"
+	.size	.L.str55172, 3
+
+	.type	.L.str56173,@object     # @.str56173
+.L.str56173:
+	.asciz	"28"
+	.size	.L.str56173, 3
+
+	.type	.L.str57174,@object     # @.str57174
+.L.str57174:
+	.asciz	"29"
+	.size	.L.str57174, 3
+
+	.type	.L.str58175,@object     # @.str58175
+.L.str58175:
+	.asciz	"30"
+	.size	.L.str58175, 3
+
+	.type	.L.str59176,@object     # @.str59176
+.L.str59176:
+	.asciz	"24:1-2"
+	.size	.L.str59176, 7
+
+	.type	.L.str60177,@object     # @.str60177
+.L.str60177:
+	.asciz	"31:1"
+	.size	.L.str60177, 5
+
+	.type	.L.str61178,@object     # @.str61178
+.L.str61178:
+	.asciz	"32"
+	.size	.L.str61178, 3
+
+	.type	.L.str62179,@object     # @.str62179
+.L.str62179:
+	.asciz	"31:1-1"
+	.size	.L.str62179, 7
+
+	.type	.L.str63180,@object     # @.str63180
+.L.str63180:
+	.asciz	"phase.0"
+	.size	.L.str63180, 8
+
+	.type	.L.str64181,@object     # @.str64181
+.L.str64181:
+	.asciz	"34"
+	.size	.L.str64181, 3
+
+	.type	.L.str65182,@object     # @.str65182
+.L.str65182:
+	.asciz	"cos"
+	.size	.L.str65182, 4
+
+	.type	.L.str66183,@object     # @.str66183
+.L.str66183:
+	.asciz	"35"
+	.size	.L.str66183, 3
+
+	.type	.L.str67184,@object     # @.str67184
+.L.str67184:
+	.asciz	"36"
+	.size	.L.str67184, 3
+
+	.type	.L.str68185,@object     # @.str68185
+.L.str68185:
+	.asciz	"33:1-0"
+	.size	.L.str68185, 7
+
+	.type	.L.str69186,@object     # @.str69186
+.L.str69186:
+	.asciz	"37"
+	.size	.L.str69186, 3
+
+	.type	.L.str70187,@object     # @.str70187
+.L.str70187:
+	.asciz	"sin"
+	.size	.L.str70187, 4
+
+	.type	.L.str71188,@object     # @.str71188
+.L.str71188:
+	.asciz	"38"
+	.size	.L.str71188, 3
+
+	.type	.L.str72189,@object     # @.str72189
+.L.str72189:
+	.asciz	"39"
+	.size	.L.str72189, 3
+
+	.type	.L.str73190,@object     # @.str73190
+.L.str73190:
+	.asciz	"33:1-1"
+	.size	.L.str73190, 7
+
+	.type	.L.str74191,@object     # @.str74191
+.L.str74191:
+	.asciz	"lftr.wideiv"
+	.size	.L.str74191, 12
+
+	.type	.L.str75192,@object     # @.str75192
+.L.str75192:
+	.asciz	"exitcond"
+	.size	.L.str75192, 9
+
+	.type	.L.str76193,@object     # @.str76193
+.L.str76193:
+	.asciz	"33:1-2"
+	.size	.L.str76193, 7
+
+	.type	.L.str77194,@object     # @.str77194
+.L.str77194:
+	.asciz	"40"
+	.size	.L.str77194, 3
+
+	.type	.L.str78195,@object     # @.str78195
+.L.str78195:
+	.asciz	"._crit_edge:0-0"
+	.size	.L.str78195, 16
+
+	.type	.L.str79196,@object     # @.str79196
+.L.str79196:
+	.asciz	"kf_factor"
+	.size	.L.str79196, 10
+
+	.type	.L.str80197,@object     # @.str80197
+.L.str80197:
+	.asciz	"._crit_edge:0-1"
+	.size	.L.str80197, 16
+
+	.type	.L.str81198,@object     # @.str81198
+.L.str81198:
+	.asciz	"41:0-0"
+	.size	.L.str81198, 7
+
+	.type	.L.str82199,@object     # @.str82199
+.L.str82199:
+	.asciz	"n"
+	.size	.L.str82199, 2
+
+	.type	.L.str83200,@object     # @.str83200
+.L.str83200:
+	.asciz	"sqrt"
+	.size	.L.str83200, 5
+
+	.type	.L.str84201,@object     # @.str84201
+.L.str84201:
+	.asciz	"floor"
+	.size	.L.str84201, 6
+
+	.type	.L.str85202,@object     # @.str85202
+.L.str85202:
+	.asciz	"0:0-4"
+	.size	.L.str85202, 6
+
+	.type	.L.str86203,@object     # @.str86203
+.L.str86203:
+	.asciz	".outer:1"
+	.size	.L.str86203, 9
+
+	.type	.L.str87204,@object     # @.str87204
+.L.str87204:
+	.asciz	".01.ph"
+	.size	.L.str87204, 7
+
+	.type	.L.str88205,@object     # @.str88205
+.L.str88205:
+	.asciz	"._crit_edge:1"
+	.size	.L.str88205, 14
+
+	.type	.L.str89206,@object     # @.str89206
+.L.str89206:
+	.asciz	"facbuf"
+	.size	.L.str89206, 7
+
+	.type	.L.str90207,@object     # @.str90207
+.L.str90207:
+	.asciz	"p.0.ph"
+	.size	.L.str90207, 7
+
+	.type	.L.str91208,@object     # @.str91208
+.L.str91208:
+	.asciz	"p.0.lcssa"
+	.size	.L.str91208, 10
+
+	.type	.L.str92209,@object     # @.str92209
+.L.str92209:
+	.asciz	".0.ph"
+	.size	.L.str92209, 6
+
+	.type	.L.str93210,@object     # @.str93210
+.L.str93210:
+	.asciz	".outer:1-0"
+	.size	.L.str93210, 11
+
+	.type	.L.str94211,@object     # @.str94211
+.L.str94211:
+	.asciz	".lr.ph:2"
+	.size	.L.str94211, 9
+
+	.type	.L.str95212,@object     # @.str95212
+.L.str95212:
+	.asciz	"p.02"
+	.size	.L.str95212, 5
+
+	.type	.L.str96213,@object     # @.str96213
+.L.str96213:
+	.asciz	"p.0.be"
+	.size	.L.str96213, 7
+
+	.type	.L.str97214,@object     # @.str97214
+.L.str97214:
+	.asciz	".backedge:2"
+	.size	.L.str97214, 12
+
+	.type	.L.str98215,@object     # @.str98215
+.L.str98215:
+	.asciz	".lr.ph:2-0"
+	.size	.L.str98215, 11
+
+	.type	.L.str99216,@object     # @.str99216
+.L.str99216:
+	.asciz	"6:2"
+	.size	.L.str99216, 4
+
+	.type	.L.str100217,@object    # @.str100217
+.L.str100217:
+	.asciz	"7:2"
+	.size	.L.str100217, 4
+
+	.type	.L.str101218,@object    # @.str101218
+.L.str101218:
+	.asciz	"6:2-1"
+	.size	.L.str101218, 6
+
+	.type	.L.str102219,@object    # @.str102219
+.L.str102219:
+	.asciz	"7:2-1"
+	.size	.L.str102219, 6
+
+	.type	.L.str103220,@object    # @.str103220
+.L.str103220:
+	.asciz	"p.1"
+	.size	.L.str103220, 4
+
+	.type	.L.str104221,@object    # @.str104221
+.L.str104221:
+	.asciz	"9"
+	.size	.L.str104221, 2
+
+	.type	.L.str105222,@object    # @.str105222
+.L.str105222:
+	.asciz	"11"
+	.size	.L.str105222, 3
+
+	.type	.L.str106223,@object    # @.str106223
+.L.str106223:
+	.asciz	".backedge:2-1"
+	.size	.L.str106223, 14
+
+	.type	.L.str107224,@object    # @.str107224
+.L.str107224:
+	.asciz	"14"
+	.size	.L.str107224, 3
+
+	.type	.L.str108225,@object    # @.str108225
+.L.str108225:
+	.asciz	"._crit_edge:1-2"
+	.size	.L.str108225, 16
+
+	.type	.L.str109226,@object    # @.str109226
+.L.str109226:
+	.asciz	"._crit_edge:1-4"
+	.size	.L.str109226, 16
+
+	.type	.L.str110227,@object    # @.str110227
+.L.str110227:
+	.asciz	"16"
+	.size	.L.str110227, 3
+
+	.type	.L.str111228,@object    # @.str111228
+.L.str111228:
+	.asciz	"._crit_edge:1-5"
+	.size	.L.str111228, 16
+
+	.type	.L.str112229,@object    # @.str112229
+.L.str112229:
+	.asciz	"kiss_fft_stride"
+	.size	.L.str112229, 16
+
+	.type	.L.str113230,@object    # @.str113230
+.L.str113230:
+	.asciz	"0:0-2"
+	.size	.L.str113230, 6
+
+	.type	.L.str114231,@object    # @.str114231
+.L.str114231:
+	.asciz	"fin"
+	.size	.L.str114231, 4
+
+	.type	.L.str115232,@object    # @.str115232
+.L.str115232:
+	.asciz	"0:0-5"
+	.size	.L.str115232, 6
+
+	.type	.L.str116233,@object    # @.str116233
+.L.str116233:
+	.asciz	"fout"
+	.size	.L.str116233, 5
+
+	.type	.L.str117234,@object    # @.str117234
+.L.str117234:
 	.asciz	"st"
-	.size	.L.str117, 3
+	.size	.L.str117234, 3
 
 	.type	.L.str118,@object       # @.str118
 .L.str118:
@@ -40440,10 +42996,10 @@ trace_logger_log_vector:                # @trace_logger_log_vector
 	.asciz	"kiss_fft"
 	.size	.L.str177, 9
 
-	.type	.L.str178155,@object    # @.str178155
-.L.str178155:
+	.type	.L.str178,@object       # @.str178
+.L.str178:
 	.asciz	"0:0-3"
-	.size	.L.str178155, 6
+	.size	.L.str178, 6
 
 	.type	.L.str179,@object       # @.str179
 .L.str179:
@@ -40947,10 +43503,10 @@ trace_logger_log_vector:                # @trace_logger_log_vector
 	.asciz	"76:1-0"
 	.size	.L.str278, 7
 
-	.type	.L.str279156,@object    # @.str279156
-.L.str279156:
+	.type	.L.str279,@object       # @.str279
+.L.str279:
 	.asciz	"78"
-	.size	.L.str279156, 3
+	.size	.L.str279, 3
 
 	.type	.L.str280,@object       # @.str280
 .L.str280:
@@ -41452,10 +44008,10 @@ trace_logger_log_vector:                # @trace_logger_log_vector
 	.asciz	"149"
 	.size	.L.str379, 4
 
-	.type	.L.str380157,@object    # @.str380157
-.L.str380157:
+	.type	.L.str380,@object       # @.str380
+.L.str380:
 	.asciz	"150"
-	.size	.L.str380157, 4
+	.size	.L.str380, 4
 
 	.type	.L.str381,@object       # @.str381
 .L.str381:
@@ -41968,170 +44524,176 @@ inst_count:
 .Linfo_string2:
 	.asciz	"/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction"
 .Linfo_string3:
-	.asciz	"num_vals"
+	.asciz	"test_stores"
 .Linfo_string4:
 	.asciz	"int"
 .Linfo_string5:
-	.asciz	"test_stores"
-.Linfo_string6:
 	.asciz	"process_data"
-.Linfo_string7:
+.Linfo_string6:
 	.asciz	"main"
-.Linfo_string8:
+.Linfo_string7:
 	.asciz	"kiss_fft.c"
-.Linfo_string9:
+.Linfo_string8:
 	.asciz	"pi"
-.Linfo_string10:
+.Linfo_string9:
 	.asciz	"double"
-.Linfo_string11:
+.Linfo_string10:
 	.asciz	"kiss_fft_alloc"
-.Linfo_string12:
+.Linfo_string11:
 	.asciz	"nfft"
-.Linfo_string13:
+.Linfo_string12:
 	.asciz	"inverse"
-.Linfo_string14:
+.Linfo_string13:
 	.asciz	"factors"
-.Linfo_string15:
+.Linfo_string14:
 	.asciz	"twiddles"
-.Linfo_string16:
+.Linfo_string15:
 	.asciz	"r"
-.Linfo_string17:
+.Linfo_string16:
 	.asciz	"float"
-.Linfo_string18:
+.Linfo_string17:
 	.asciz	"i"
-.Linfo_string19:
+.Linfo_string18:
 	.asciz	"kiss_fft_cpx"
-.Linfo_string20:
+.Linfo_string19:
 	.asciz	"kiss_fft_state"
-.Linfo_string21:
+.Linfo_string20:
 	.asciz	"kiss_fft_cfg"
-.Linfo_string22:
+.Linfo_string21:
 	.asciz	"kiss_fft_stride"
-.Linfo_string23:
+.Linfo_string22:
 	.asciz	"kiss_fft"
-.Linfo_string24:
+.Linfo_string23:
 	.asciz	"kiss_fft_cleanup"
-.Linfo_string25:
+.Linfo_string24:
 	.asciz	"kiss_fft_next_fast_size"
-.Linfo_string26:
+.Linfo_string25:
 	.asciz	"kf_work"
-.Linfo_string27:
+.Linfo_string26:
 	.asciz	"kf_bfly_generic"
-.Linfo_string28:
+.Linfo_string27:
 	.asciz	"kf_bfly5"
-.Linfo_string29:
+.Linfo_string28:
 	.asciz	"kf_bfly4"
-.Linfo_string30:
+.Linfo_string29:
 	.asciz	"kf_bfly3"
-.Linfo_string31:
+.Linfo_string30:
 	.asciz	"kf_bfly2"
-.Linfo_string32:
+.Linfo_string31:
 	.asciz	"kf_factor"
-.Linfo_string33:
+.Linfo_string32:
 	.asciz	"store_vals"
-.Linfo_string34:
+.Linfo_string33:
 	.asciz	"store_loc"
+.Linfo_string34:
+	.asciz	"n_samples"
 .Linfo_string35:
-	.asciz	"num_failures"
+	.asciz	"n_channels"
 .Linfo_string36:
-	.asciz	"cfg"
+	.asciz	"j"
 .Linfo_string37:
-	.asciz	"out"
+	.asciz	"cfg"
 .Linfo_string38:
-	.asciz	"in"
+	.asciz	"out"
 .Linfo_string39:
-	.asciz	"inverse_fft"
+	.asciz	"in"
 .Linfo_string40:
-	.asciz	"mem"
+	.asciz	"channel"
 .Linfo_string41:
-	.asciz	"lenmem"
+	.asciz	"num_failures"
 .Linfo_string42:
-	.asciz	"long unsigned int"
+	.asciz	"inverse_fft"
 .Linfo_string43:
-	.asciz	"size_t"
+	.asciz	"mem"
 .Linfo_string44:
-	.asciz	"memneeded"
+	.asciz	"lenmem"
 .Linfo_string45:
-	.asciz	"st"
+	.asciz	"long unsigned int"
 .Linfo_string46:
-	.asciz	"phase"
+	.asciz	"size_t"
 .Linfo_string47:
-	.asciz	"fin"
+	.asciz	"memneeded"
 .Linfo_string48:
-	.asciz	"fout"
+	.asciz	"st"
 .Linfo_string49:
-	.asciz	"in_stride"
+	.asciz	"phase"
 .Linfo_string50:
-	.asciz	"n"
+	.asciz	"fin"
 .Linfo_string51:
-	.asciz	"m"
+	.asciz	"fout"
 .Linfo_string52:
-	.asciz	"facbuf"
+	.asciz	"in_stride"
 .Linfo_string53:
-	.asciz	"p"
+	.asciz	"n"
 .Linfo_string54:
-	.asciz	"floor_sqrt"
+	.asciz	"m"
 .Linfo_string55:
-	.asciz	"Fout"
+	.asciz	"facbuf"
 .Linfo_string56:
-	.asciz	"f"
+	.asciz	"p"
 .Linfo_string57:
-	.asciz	"fstride"
+	.asciz	"floor_sqrt"
 .Linfo_string58:
-	.asciz	"Fout_beg"
+	.asciz	"Fout"
 .Linfo_string59:
-	.asciz	"f_beg"
+	.asciz	"f"
 .Linfo_string60:
-	.asciz	"Fout_end"
+	.asciz	"fstride"
 .Linfo_string61:
-	.asciz	"Norig"
+	.asciz	"Fout_beg"
 .Linfo_string62:
-	.asciz	"scratch"
+	.asciz	"f_beg"
 .Linfo_string63:
-	.asciz	"u"
+	.asciz	"Fout_end"
 .Linfo_string64:
-	.asciz	"q"
+	.asciz	"Norig"
 .Linfo_string65:
-	.asciz	"q1"
+	.asciz	"scratch"
 .Linfo_string66:
-	.asciz	"k"
+	.asciz	"u"
 .Linfo_string67:
-	.asciz	"t"
+	.asciz	"q"
 .Linfo_string68:
-	.asciz	"twidx"
+	.asciz	"q1"
 .Linfo_string69:
-	.asciz	"Fout0"
+	.asciz	"k"
 .Linfo_string70:
-	.asciz	"Fout1"
+	.asciz	"t"
 .Linfo_string71:
-	.asciz	"Fout2"
+	.asciz	"twidx"
 .Linfo_string72:
-	.asciz	"Fout3"
+	.asciz	"Fout0"
 .Linfo_string73:
-	.asciz	"Fout4"
+	.asciz	"Fout1"
 .Linfo_string74:
-	.asciz	"ya"
+	.asciz	"Fout2"
 .Linfo_string75:
-	.asciz	"yb"
+	.asciz	"Fout3"
 .Linfo_string76:
-	.asciz	"m2"
+	.asciz	"Fout4"
 .Linfo_string77:
-	.asciz	"m3"
+	.asciz	"ya"
 .Linfo_string78:
-	.asciz	"tw1"
+	.asciz	"yb"
 .Linfo_string79:
-	.asciz	"tw2"
+	.asciz	"m2"
 .Linfo_string80:
-	.asciz	"tw3"
+	.asciz	"m3"
 .Linfo_string81:
+	.asciz	"tw1"
+.Linfo_string82:
+	.asciz	"tw2"
+.Linfo_string83:
+	.asciz	"tw3"
+.Linfo_string84:
 	.asciz	"epi3"
 	.section	.debug_info,"",@progbits
 .L.debug_info_begin0:
-	.long	609                     # Length of Unit
+	.long	750                     # Length of Unit
 	.short	4                       # DWARF version number
 	.long	.L.debug_abbrev_begin   # Offset Into Abbrev. Section
 	.byte	8                       # Address Size (in bytes)
-	.byte	1                       # Abbrev [1] 0xb:0x25a DW_TAG_compile_unit
+	.byte	1                       # Abbrev [1] 0xb:0x2e7 DW_TAG_compile_unit
 	.long	.Linfo_string0          # DW_AT_producer
 	.short	12                      # DW_AT_language
 	.long	.Linfo_string1          # DW_AT_name
@@ -42139,69 +44701,72 @@ inst_count:
 	.long	.Lsection_line          # DW_AT_stmt_list
 	.long	.Linfo_string2          # DW_AT_comp_dir
                                         # DW_AT_APPLE_optimized
-	.byte	2                       # Abbrev [2] 0x26:0xc DW_TAG_variable
+	.byte	2                       # Abbrev [2] 0x26:0x8f DW_TAG_subprogram
 	.long	.Linfo_string3          # DW_AT_name
-	.long	50                      # DW_AT_type
 	.byte	1                       # DW_AT_decl_file
-	.byte	53                      # DW_AT_decl_line
-	.byte	10                      # DW_AT_const_value
-	.byte	3                       # Abbrev [3] 0x32:0x5 DW_TAG_const_type
-	.long	55                      # DW_AT_type
-	.byte	4                       # Abbrev [4] 0x37:0x7 DW_TAG_base_type
-	.long	.Linfo_string4          # DW_AT_name
-	.byte	5                       # DW_AT_encoding
-	.byte	4                       # DW_AT_byte_size
-	.byte	5                       # Abbrev [5] 0x3e:0x75 DW_TAG_subprogram
-	.long	.Linfo_string5          # DW_AT_name
-	.byte	1                       # DW_AT_decl_file
-	.byte	17                      # DW_AT_decl_line
+	.byte	22                      # DW_AT_decl_line
                                         # DW_AT_prototyped
-	.long	55                      # DW_AT_type
+	.long	181                     # DW_AT_type
                                         # DW_AT_external
 	.quad	.Lfunc_begin0           # DW_AT_low_pc
 	.quad	.Lfunc_end0             # DW_AT_high_pc
 	.byte	1                       # DW_AT_frame_base
 	.byte	87
                                         # DW_AT_APPLE_omit_frame_ptr
-	.byte	6                       # Abbrev [6] 0x5b:0xf DW_TAG_formal_parameter
+	.byte	3                       # Abbrev [3] 0x43:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string32         # DW_AT_name
+	.byte	1                       # DW_AT_decl_file
+	.byte	22                      # DW_AT_decl_line
+	.long	580                     # DW_AT_type
+	.long	.Ldebug_loc0            # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x52:0xf DW_TAG_formal_parameter
 	.long	.Linfo_string33         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	17                      # DW_AT_decl_line
-	.long	456                     # DW_AT_type
-	.long	.Ldebug_loc0            # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x6a:0xf DW_TAG_formal_parameter
+	.byte	22                      # DW_AT_decl_line
+	.long	580                     # DW_AT_type
+	.long	.Ldebug_loc2            # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x61:0xf DW_TAG_formal_parameter
 	.long	.Linfo_string34         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	17                      # DW_AT_decl_line
-	.long	456                     # DW_AT_type
-	.long	.Ldebug_loc2            # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x79:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string3          # DW_AT_name
-	.byte	1                       # DW_AT_decl_file
-	.byte	17                      # DW_AT_decl_line
-	.long	55                      # DW_AT_type
+	.byte	22                      # DW_AT_decl_line
+	.long	181                     # DW_AT_type
 	.long	.Ldebug_loc4            # DW_AT_location
-	.byte	7                       # Abbrev [7] 0x88:0xc DW_TAG_variable
+	.byte	3                       # Abbrev [3] 0x70:0xf DW_TAG_formal_parameter
 	.long	.Linfo_string35         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	18                      # DW_AT_decl_line
-	.long	55                      # DW_AT_type
-	.byte	0                       # DW_AT_const_value
-	.byte	8                       # Abbrev [8] 0x94:0x1e DW_TAG_lexical_block
+	.byte	22                      # DW_AT_decl_line
+	.long	181                     # DW_AT_type
+	.long	.Ldebug_loc6            # DW_AT_location
+	.byte	4                       # Abbrev [4] 0x7f:0x35 DW_TAG_lexical_block
 	.quad	.Ltmp21                 # DW_AT_low_pc
-	.quad	.Ltmp27                 # DW_AT_high_pc
-	.byte	7                       # Abbrev [7] 0xa5:0xc DW_TAG_variable
-	.long	.Linfo_string18         # DW_AT_name
+	.quad	.Ltmp35                 # DW_AT_high_pc
+	.byte	5                       # Abbrev [5] 0x90:0xc DW_TAG_variable
+	.long	.Linfo_string36         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	19                      # DW_AT_decl_line
-	.long	55                      # DW_AT_type
+	.byte	23                      # DW_AT_decl_line
+	.long	181                     # DW_AT_type
 	.byte	0                       # DW_AT_const_value
-	.byte	0                       # End Of Children Mark
-	.byte	0                       # End Of Children Mark
-	.byte	9                       # Abbrev [9] 0xb3:0x94 DW_TAG_subprogram
-	.long	.Linfo_string6          # DW_AT_name
+	.byte	6                       # Abbrev [6] 0x9c:0x17 DW_TAG_lexical_block
+	.long	.Ldebug_range+48        # DW_AT_ranges
+	.byte	6                       # Abbrev [6] 0xa1:0x11 DW_TAG_lexical_block
+	.long	.Ldebug_range           # DW_AT_ranges
+	.byte	7                       # Abbrev [7] 0xa6:0xb DW_TAG_variable
+	.long	.Linfo_string17         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	34                      # DW_AT_decl_line
+	.byte	25                      # DW_AT_decl_line
+	.long	181                     # DW_AT_type
+	.byte	0                       # End Of Children Mark
+	.byte	0                       # End Of Children Mark
+	.byte	0                       # End Of Children Mark
+	.byte	0                       # End Of Children Mark
+	.byte	8                       # Abbrev [8] 0xb5:0x7 DW_TAG_base_type
+	.long	.Linfo_string4          # DW_AT_name
+	.byte	5                       # DW_AT_encoding
+	.byte	4                       # DW_AT_byte_size
+	.byte	9                       # Abbrev [9] 0xbc:0xc6 DW_TAG_subprogram
+	.long	.Linfo_string5          # DW_AT_name
+	.byte	1                       # DW_AT_decl_file
+	.byte	36                      # DW_AT_decl_line
                                         # DW_AT_prototyped
                                         # DW_AT_external
 	.quad	.Lfunc_begin1           # DW_AT_low_pc
@@ -42209,228 +44774,273 @@ inst_count:
 	.byte	1                       # DW_AT_frame_base
 	.byte	86
                                         # DW_AT_APPLE_omit_frame_ptr
-	.byte	6                       # Abbrev [6] 0xcc:0xf DW_TAG_formal_parameter
+	.byte	3                       # Abbrev [3] 0xd5:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string32         # DW_AT_name
+	.byte	1                       # DW_AT_decl_file
+	.byte	36                      # DW_AT_decl_line
+	.long	580                     # DW_AT_type
+	.long	.Ldebug_loc8            # DW_AT_location
+	.byte	3                       # Abbrev [3] 0xe4:0xf DW_TAG_formal_parameter
 	.long	.Linfo_string33         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	34                      # DW_AT_decl_line
-	.long	456                     # DW_AT_type
-	.long	.Ldebug_loc6            # DW_AT_location
-	.byte	6                       # Abbrev [6] 0xdb:0xf DW_TAG_formal_parameter
+	.byte	36                      # DW_AT_decl_line
+	.long	580                     # DW_AT_type
+	.long	.Ldebug_loc11           # DW_AT_location
+	.byte	3                       # Abbrev [3] 0xf3:0xf DW_TAG_formal_parameter
 	.long	.Linfo_string34         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	34                      # DW_AT_decl_line
-	.long	456                     # DW_AT_type
-	.long	.Ldebug_loc9            # DW_AT_location
-	.byte	6                       # Abbrev [6] 0xea:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string3          # DW_AT_name
+	.byte	36                      # DW_AT_decl_line
+	.long	181                     # DW_AT_type
+	.long	.Ldebug_loc14           # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x102:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string35         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	34                      # DW_AT_decl_line
-	.long	55                      # DW_AT_type
-	.long	.Ldebug_loc12           # DW_AT_location
-	.byte	6                       # Abbrev [6] 0xf9:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string36         # DW_AT_name
-	.byte	1                       # DW_AT_decl_file
-	.byte	34                      # DW_AT_decl_line
-	.long	461                     # DW_AT_type
-	.long	.Ldebug_loc15           # DW_AT_location
-	.byte	10                      # Abbrev [10] 0x108:0xf DW_TAG_variable
+	.byte	36                      # DW_AT_decl_line
+	.long	181                     # DW_AT_type
+	.long	.Ldebug_loc17           # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x111:0xf DW_TAG_formal_parameter
 	.long	.Linfo_string37         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
 	.byte	36                      # DW_AT_decl_line
-	.long	601                     # DW_AT_type
-	.long	.Ldebug_loc18           # DW_AT_location
-	.byte	11                      # Abbrev [11] 0x117:0xb DW_TAG_variable
+	.long	585                     # DW_AT_type
+	.long	.Ldebug_loc20           # DW_AT_location
+	.byte	10                      # Abbrev [10] 0x120:0xf DW_TAG_variable
 	.long	.Linfo_string38         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	35                      # DW_AT_decl_line
-	.long	601                     # DW_AT_type
-	.byte	12                      # Abbrev [12] 0x122:0x12 DW_TAG_lexical_block
-	.long	.Ldebug_range           # DW_AT_ranges
-	.byte	7                       # Abbrev [7] 0x127:0xc DW_TAG_variable
-	.long	.Linfo_string18         # DW_AT_name
+	.byte	38                      # DW_AT_decl_line
+	.long	730                     # DW_AT_type
+	.long	.Ldebug_loc23           # DW_AT_location
+	.byte	7                       # Abbrev [7] 0x12f:0xb DW_TAG_variable
+	.long	.Linfo_string39         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
 	.byte	37                      # DW_AT_decl_line
-	.long	55                      # DW_AT_type
+	.long	730                     # DW_AT_type
+	.byte	4                       # Abbrev [4] 0x13a:0x47 DW_TAG_lexical_block
+	.quad	.Ltmp55                 # DW_AT_low_pc
+	.quad	.Ltmp72                 # DW_AT_high_pc
+	.byte	5                       # Abbrev [5] 0x14b:0xc DW_TAG_variable
+	.long	.Linfo_string40         # DW_AT_name
+	.byte	1                       # DW_AT_decl_file
+	.byte	39                      # DW_AT_decl_line
+	.long	181                     # DW_AT_type
+	.byte	0                       # DW_AT_const_value
+	.byte	6                       # Abbrev [6] 0x157:0x29 DW_TAG_lexical_block
+	.long	.Ldebug_range+192       # DW_AT_ranges
+	.byte	6                       # Abbrev [6] 0x15c:0x11 DW_TAG_lexical_block
+	.long	.Ldebug_range+96        # DW_AT_ranges
+	.byte	7                       # Abbrev [7] 0x161:0xb DW_TAG_variable
+	.long	.Linfo_string17         # DW_AT_name
+	.byte	1                       # DW_AT_decl_file
+	.byte	41                      # DW_AT_decl_line
+	.long	181                     # DW_AT_type
+	.byte	0                       # End Of Children Mark
+	.byte	6                       # Abbrev [6] 0x16d:0x12 DW_TAG_lexical_block
+	.long	.Ldebug_range+144       # DW_AT_ranges
+	.byte	5                       # Abbrev [5] 0x172:0xc DW_TAG_variable
+	.long	.Linfo_string17         # DW_AT_name
+	.byte	1                       # DW_AT_decl_file
+	.byte	49                      # DW_AT_decl_line
+	.long	181                     # DW_AT_type
 	.byte	0                       # DW_AT_const_value
 	.byte	0                       # End Of Children Mark
-	.byte	12                      # Abbrev [12] 0x134:0x12 DW_TAG_lexical_block
-	.long	.Ldebug_range+48        # DW_AT_ranges
-	.byte	7                       # Abbrev [7] 0x139:0xc DW_TAG_variable
-	.long	.Linfo_string18         # DW_AT_name
-	.byte	1                       # DW_AT_decl_file
-	.byte	45                      # DW_AT_decl_line
-	.long	55                      # DW_AT_type
-	.byte	0                       # DW_AT_const_value
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
-	.byte	13                      # Abbrev [13] 0x147:0x81 DW_TAG_subprogram
-	.long	.Linfo_string7          # DW_AT_name
+	.byte	0                       # End Of Children Mark
+	.byte	11                      # Abbrev [11] 0x182:0xc2 DW_TAG_subprogram
+	.long	.Linfo_string6          # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	51                      # DW_AT_decl_line
-	.long	55                      # DW_AT_type
+	.byte	56                      # DW_AT_decl_line
+	.long	181                     # DW_AT_type
                                         # DW_AT_external
 	.quad	.Lfunc_begin2           # DW_AT_low_pc
 	.quad	.Lfunc_end2             # DW_AT_high_pc
 	.byte	1                       # DW_AT_frame_base
 	.byte	87
                                         # DW_AT_APPLE_omit_frame_ptr
-	.byte	7                       # Abbrev [7] 0x164:0xc DW_TAG_variable
-	.long	.Linfo_string3          # DW_AT_name
+	.byte	12                      # Abbrev [12] 0x19f:0xf DW_TAG_variable
+	.long	.Linfo_string37         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	53                      # DW_AT_decl_line
-	.long	50                      # DW_AT_type
-	.byte	10                      # DW_AT_const_value
-	.byte	10                      # Abbrev [10] 0x170:0xf DW_TAG_variable
+	.byte	68                      # DW_AT_decl_line
+	.long	741                     # DW_AT_type
+	.byte	3                       # DW_AT_location
+	.byte	145
+	.ascii	"\320\024"
+	.byte	10                      # Abbrev [10] 0x1ae:0xf DW_TAG_variable
+	.long	.Linfo_string32         # DW_AT_name
+	.byte	1                       # DW_AT_decl_file
+	.byte	58                      # DW_AT_decl_line
+	.long	580                     # DW_AT_type
+	.long	.Ldebug_loc25           # DW_AT_location
+	.byte	10                      # Abbrev [10] 0x1bd:0xf DW_TAG_variable
 	.long	.Linfo_string33         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	54                      # DW_AT_decl_line
-	.long	456                     # DW_AT_type
-	.long	.Ldebug_loc20           # DW_AT_location
-	.byte	10                      # Abbrev [10] 0x17f:0xf DW_TAG_variable
-	.long	.Linfo_string34         # DW_AT_name
+	.byte	59                      # DW_AT_decl_line
+	.long	580                     # DW_AT_type
+	.long	.Ldebug_loc27           # DW_AT_location
+	.byte	5                       # Abbrev [5] 0x1cc:0xc DW_TAG_variable
+	.long	.Linfo_string41         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	55                      # DW_AT_decl_line
-	.long	456                     # DW_AT_type
-	.long	.Ldebug_loc22           # DW_AT_location
-	.byte	10                      # Abbrev [10] 0x18e:0xf DW_TAG_variable
+	.byte	88                      # DW_AT_decl_line
+	.long	181                     # DW_AT_type
+	.byte	0                       # DW_AT_const_value
+	.byte	4                       # Abbrev [4] 0x1d8:0x4d DW_TAG_lexical_block
+	.quad	.Ltmp98                 # DW_AT_low_pc
+	.quad	.Ltmp105                # DW_AT_high_pc
+	.byte	5                       # Abbrev [5] 0x1e9:0xc DW_TAG_variable
 	.long	.Linfo_string36         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
 	.byte	60                      # DW_AT_decl_line
-	.long	461                     # DW_AT_type
-	.long	.Ldebug_loc24           # DW_AT_location
-	.byte	7                       # Abbrev [7] 0x19d:0xc DW_TAG_variable
-	.long	.Linfo_string35         # DW_AT_name
-	.byte	1                       # DW_AT_decl_file
-	.byte	77                      # DW_AT_decl_line
-	.long	55                      # DW_AT_type
+	.long	181                     # DW_AT_type
 	.byte	0                       # DW_AT_const_value
-	.byte	8                       # Abbrev [8] 0x1a9:0x1e DW_TAG_lexical_block
-	.quad	.Ltmp83                 # DW_AT_low_pc
-	.quad	.Ltmp87                 # DW_AT_high_pc
-	.byte	7                       # Abbrev [7] 0x1ba:0xc DW_TAG_variable
-	.long	.Linfo_string18         # DW_AT_name
+	.byte	4                       # Abbrev [4] 0x1f5:0x2f DW_TAG_lexical_block
+	.quad	.Ltmp100                # DW_AT_low_pc
+	.quad	.Ltmp104                # DW_AT_high_pc
+	.byte	4                       # Abbrev [4] 0x206:0x1d DW_TAG_lexical_block
+	.quad	.Ltmp100                # DW_AT_low_pc
+	.quad	.Ltmp104                # DW_AT_high_pc
+	.byte	7                       # Abbrev [7] 0x217:0xb DW_TAG_variable
+	.long	.Linfo_string17         # DW_AT_name
 	.byte	1                       # DW_AT_decl_file
-	.byte	56                      # DW_AT_decl_line
-	.long	55                      # DW_AT_type
+	.byte	62                      # DW_AT_decl_line
+	.long	181                     # DW_AT_type
+	.byte	0                       # End Of Children Mark
+	.byte	0                       # End Of Children Mark
+	.byte	0                       # End Of Children Mark
+	.byte	4                       # Abbrev [4] 0x225:0x1e DW_TAG_lexical_block
+	.quad	.Ltmp106                # DW_AT_low_pc
+	.quad	.Ltmp109                # DW_AT_high_pc
+	.byte	5                       # Abbrev [5] 0x236:0xc DW_TAG_variable
+	.long	.Linfo_string17         # DW_AT_name
+	.byte	1                       # DW_AT_decl_file
+	.byte	69                      # DW_AT_decl_line
+	.long	181                     # DW_AT_type
 	.byte	0                       # DW_AT_const_value
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
-	.byte	14                      # Abbrev [14] 0x1c8:0x5 DW_TAG_pointer_type
-	.long	55                      # DW_AT_type
-	.byte	15                      # Abbrev [15] 0x1cd:0xb DW_TAG_typedef
-	.long	472                     # DW_AT_type
-	.long	.Linfo_string21         # DW_AT_name
-	.byte	1                       # DW_AT_decl_file
-	.byte	56                      # DW_AT_decl_line
-	.byte	14                      # Abbrev [14] 0x1d8:0x5 DW_TAG_pointer_type
-	.long	477                     # DW_AT_type
-	.byte	16                      # Abbrev [16] 0x1dd:0x3f DW_TAG_structure_type
+	.byte	13                      # Abbrev [13] 0x244:0x5 DW_TAG_pointer_type
+	.long	181                     # DW_AT_type
+	.byte	13                      # Abbrev [13] 0x249:0x5 DW_TAG_pointer_type
+	.long	590                     # DW_AT_type
+	.byte	14                      # Abbrev [14] 0x24e:0xb DW_TAG_typedef
+	.long	601                     # DW_AT_type
 	.long	.Linfo_string20         # DW_AT_name
+	.byte	1                       # DW_AT_decl_file
+	.byte	56                      # DW_AT_decl_line
+	.byte	13                      # Abbrev [13] 0x259:0x5 DW_TAG_pointer_type
+	.long	606                     # DW_AT_type
+	.byte	15                      # Abbrev [15] 0x25e:0x3f DW_TAG_structure_type
+	.long	.Linfo_string19         # DW_AT_name
 	.short	272                     # DW_AT_byte_size
 	.byte	3                       # DW_AT_decl_file
 	.byte	28                      # DW_AT_decl_line
-	.byte	17                      # Abbrev [17] 0x1e6:0xd DW_TAG_member
-	.long	.Linfo_string12         # DW_AT_name
-	.long	55                      # DW_AT_type
+	.byte	16                      # Abbrev [16] 0x267:0xd DW_TAG_member
+	.long	.Linfo_string11         # DW_AT_name
+	.long	181                     # DW_AT_type
 	.byte	3                       # DW_AT_decl_file
 	.byte	29                      # DW_AT_decl_line
 	.byte	0                       # DW_AT_data_member_location
 	.byte	1                       # DW_AT_accessibility
                                         # DW_ACCESS_public
-	.byte	17                      # Abbrev [17] 0x1f3:0xd DW_TAG_member
-	.long	.Linfo_string13         # DW_AT_name
-	.long	55                      # DW_AT_type
+	.byte	16                      # Abbrev [16] 0x274:0xd DW_TAG_member
+	.long	.Linfo_string12         # DW_AT_name
+	.long	181                     # DW_AT_type
 	.byte	3                       # DW_AT_decl_file
 	.byte	30                      # DW_AT_decl_line
 	.byte	4                       # DW_AT_data_member_location
 	.byte	1                       # DW_AT_accessibility
                                         # DW_ACCESS_public
-	.byte	18                      # Abbrev [18] 0x200:0xd DW_TAG_member
-	.long	.Linfo_string14         # DW_AT_name
-	.long	.Lsection_info+991      # DW_AT_type
+	.byte	17                      # Abbrev [17] 0x281:0xd DW_TAG_member
+	.long	.Linfo_string13         # DW_AT_name
+	.long	.Lsection_info+1132     # DW_AT_type
 	.byte	3                       # DW_AT_decl_file
 	.byte	31                      # DW_AT_decl_line
 	.byte	8                       # DW_AT_data_member_location
 	.byte	1                       # DW_AT_accessibility
                                         # DW_ACCESS_public
-	.byte	19                      # Abbrev [19] 0x20d:0xe DW_TAG_member
-	.long	.Linfo_string15         # DW_AT_name
-	.long	540                     # DW_AT_type
+	.byte	18                      # Abbrev [18] 0x28e:0xe DW_TAG_member
+	.long	.Linfo_string14         # DW_AT_name
+	.long	669                     # DW_AT_type
 	.byte	3                       # DW_AT_decl_file
 	.byte	32                      # DW_AT_decl_line
 	.short	264                     # DW_AT_data_member_location
 	.byte	1                       # DW_AT_accessibility
                                         # DW_ACCESS_public
 	.byte	0                       # End Of Children Mark
-	.byte	20                      # Abbrev [20] 0x21c:0xc DW_TAG_array_type
-	.long	552                     # DW_AT_type
-	.byte	21                      # Abbrev [21] 0x221:0x6 DW_TAG_subrange_type
-	.long	594                     # DW_AT_type
+	.byte	19                      # Abbrev [19] 0x29d:0xc DW_TAG_array_type
+	.long	681                     # DW_AT_type
+	.byte	20                      # Abbrev [20] 0x2a2:0x6 DW_TAG_subrange_type
+	.long	723                     # DW_AT_type
 	.byte	0                       # DW_AT_upper_bound
 	.byte	0                       # End Of Children Mark
-	.byte	15                      # Abbrev [15] 0x228:0xb DW_TAG_typedef
-	.long	563                     # DW_AT_type
-	.long	.Linfo_string19         # DW_AT_name
+	.byte	14                      # Abbrev [14] 0x2a9:0xb DW_TAG_typedef
+	.long	692                     # DW_AT_type
+	.long	.Linfo_string18         # DW_AT_name
 	.byte	3                       # DW_AT_decl_file
 	.byte	54                      # DW_AT_decl_line
-	.byte	22                      # Abbrev [22] 0x233:0x1f DW_TAG_structure_type
+	.byte	21                      # Abbrev [21] 0x2b4:0x1f DW_TAG_structure_type
 	.byte	8                       # DW_AT_byte_size
 	.byte	4                       # DW_AT_decl_file
 	.byte	51                      # DW_AT_decl_line
-	.byte	18                      # Abbrev [18] 0x237:0xd DW_TAG_member
-	.long	.Linfo_string16         # DW_AT_name
-	.long	.Lsection_info+1064     # DW_AT_type
+	.byte	17                      # Abbrev [17] 0x2b8:0xd DW_TAG_member
+	.long	.Linfo_string15         # DW_AT_name
+	.long	.Lsection_info+1205     # DW_AT_type
 	.byte	4                       # DW_AT_decl_file
 	.byte	52                      # DW_AT_decl_line
 	.byte	0                       # DW_AT_data_member_location
 	.byte	1                       # DW_AT_accessibility
                                         # DW_ACCESS_public
-	.byte	18                      # Abbrev [18] 0x244:0xd DW_TAG_member
-	.long	.Linfo_string18         # DW_AT_name
-	.long	.Lsection_info+1064     # DW_AT_type
+	.byte	17                      # Abbrev [17] 0x2c5:0xd DW_TAG_member
+	.long	.Linfo_string17         # DW_AT_name
+	.long	.Lsection_info+1205     # DW_AT_type
 	.byte	4                       # DW_AT_decl_file
 	.byte	53                      # DW_AT_decl_line
 	.byte	4                       # DW_AT_data_member_location
 	.byte	1                       # DW_AT_accessibility
                                         # DW_ACCESS_public
 	.byte	0                       # End Of Children Mark
-	.byte	23                      # Abbrev [23] 0x252:0x7 DW_TAG_base_type
+	.byte	22                      # Abbrev [22] 0x2d3:0x7 DW_TAG_base_type
 	.long	.Linfo_string4          # DW_AT_name
 	.byte	4                       # DW_AT_byte_size
 	.byte	5                       # DW_AT_encoding
-	.byte	20                      # Abbrev [20] 0x259:0xb DW_TAG_array_type
-	.long	552                     # DW_AT_type
-	.byte	24                      # Abbrev [24] 0x25e:0x5 DW_TAG_subrange_type
-	.long	594                     # DW_AT_type
+	.byte	19                      # Abbrev [19] 0x2da:0xb DW_TAG_array_type
+	.long	681                     # DW_AT_type
+	.byte	23                      # Abbrev [23] 0x2df:0x5 DW_TAG_subrange_type
+	.long	723                     # DW_AT_type
+	.byte	0                       # End Of Children Mark
+	.byte	19                      # Abbrev [19] 0x2e5:0xc DW_TAG_array_type
+	.long	590                     # DW_AT_type
+	.byte	20                      # Abbrev [20] 0x2ea:0x6 DW_TAG_subrange_type
+	.long	723                     # DW_AT_type
+	.byte	14                      # DW_AT_upper_bound
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
 .L.debug_info_end0:
 .L.debug_info_begin1:
-	.long	2049                    # Length of Unit
+	.long	2054                    # Length of Unit
 	.short	4                       # DWARF version number
 	.long	.L.debug_abbrev_begin   # Offset Into Abbrev. Section
 	.byte	8                       # Address Size (in bytes)
-	.byte	1                       # Abbrev [1] 0xb:0x7fa DW_TAG_compile_unit
+	.byte	1                       # Abbrev [1] 0xb:0x7ff DW_TAG_compile_unit
 	.long	.Linfo_string0          # DW_AT_producer
 	.short	12                      # DW_AT_language
-	.long	.Linfo_string8          # DW_AT_name
+	.long	.Linfo_string7          # DW_AT_name
 	.quad	0                       # DW_AT_low_pc
 	.long	.Lsection_line          # DW_AT_stmt_list
 	.long	.Linfo_string2          # DW_AT_comp_dir
                                         # DW_AT_APPLE_optimized
-	.byte	25                      # Abbrev [25] 0x26:0xc DW_TAG_variable
-	.long	.Linfo_string9          # DW_AT_name
+	.byte	24                      # Abbrev [24] 0x26:0xc DW_TAG_variable
+	.long	.Linfo_string8          # DW_AT_name
 	.long	50                      # DW_AT_type
 	.byte	2                       # DW_AT_decl_file
 	.short	366                     # DW_AT_decl_line
-	.byte	3                       # Abbrev [3] 0x32:0x5 DW_TAG_const_type
+	.byte	25                      # Abbrev [25] 0x32:0x5 DW_TAG_const_type
 	.long	55                      # DW_AT_type
-	.byte	4                       # Abbrev [4] 0x37:0x7 DW_TAG_base_type
-	.long	.Linfo_string10         # DW_AT_name
+	.byte	8                       # Abbrev [8] 0x37:0x7 DW_TAG_base_type
+	.long	.Linfo_string9          # DW_AT_name
 	.byte	4                       # DW_AT_encoding
 	.byte	8                       # DW_AT_byte_size
 	.byte	26                      # Abbrev [26] 0x3e:0xed DW_TAG_subprogram
-	.long	.Linfo_string11         # DW_AT_name
+	.long	.Linfo_string10         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	347                     # DW_AT_decl_line
                                         # DW_AT_prototyped
@@ -42442,60 +45052,60 @@ inst_count:
 	.byte	87
                                         # DW_AT_APPLE_omit_frame_ptr
 	.byte	27                      # Abbrev [27] 0x5c:0x10 DW_TAG_formal_parameter
-	.long	.Linfo_string12         # DW_AT_name
+	.long	.Linfo_string11         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	347                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.long	.Ldebug_loc26           # DW_AT_location
+	.long	.Lsection_info+181      # DW_AT_type
+	.long	.Ldebug_loc29           # DW_AT_location
 	.byte	27                      # Abbrev [27] 0x6c:0x10 DW_TAG_formal_parameter
-	.long	.Linfo_string39         # DW_AT_name
+	.long	.Linfo_string42         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	347                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.long	.Ldebug_loc28           # DW_AT_location
+	.long	.Lsection_info+181      # DW_AT_type
+	.long	.Ldebug_loc31           # DW_AT_location
 	.byte	28                      # Abbrev [28] 0x7c:0x10 DW_TAG_formal_parameter
-	.long	.Linfo_string40         # DW_AT_name
+	.long	.Linfo_string43         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	347                     # DW_AT_decl_line
 	.long	1957                    # DW_AT_type
-	.long	.Ldebug_loc30           # DW_AT_location
+	.long	.Ldebug_loc33           # DW_AT_location
 	.byte	28                      # Abbrev [28] 0x8c:0x10 DW_TAG_formal_parameter
-	.long	.Linfo_string41         # DW_AT_name
+	.long	.Linfo_string44         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	347                     # DW_AT_decl_line
 	.long	1958                    # DW_AT_type
-	.long	.Ldebug_loc32           # DW_AT_location
+	.long	.Ldebug_loc35           # DW_AT_location
 	.byte	29                      # Abbrev [29] 0x9c:0x10 DW_TAG_variable
-	.long	.Linfo_string44         # DW_AT_name
+	.long	.Linfo_string47         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	350                     # DW_AT_decl_line
 	.long	1963                    # DW_AT_type
-	.long	.Ldebug_loc34           # DW_AT_location
+	.long	.Ldebug_loc37           # DW_AT_location
 	.byte	29                      # Abbrev [29] 0xac:0x10 DW_TAG_variable
-	.long	.Linfo_string45         # DW_AT_name
+	.long	.Linfo_string48         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	349                     # DW_AT_decl_line
 	.long	299                     # DW_AT_type
-	.long	.Ldebug_loc36           # DW_AT_location
-	.byte	8                       # Abbrev [8] 0xbc:0x6e DW_TAG_lexical_block
-	.quad	.Ltmp124                # DW_AT_low_pc
-	.quad	.Ltmp138                # DW_AT_high_pc
-	.byte	8                       # Abbrev [8] 0xcd:0x5c DW_TAG_lexical_block
-	.quad	.Ltmp125                # DW_AT_low_pc
-	.quad	.Ltmp138                # DW_AT_high_pc
+	.long	.Ldebug_loc39           # DW_AT_location
+	.byte	4                       # Abbrev [4] 0xbc:0x6e DW_TAG_lexical_block
+	.quad	.Ltmp144                # DW_AT_low_pc
+	.quad	.Ltmp158                # DW_AT_high_pc
+	.byte	4                       # Abbrev [4] 0xcd:0x5c DW_TAG_lexical_block
+	.quad	.Ltmp145                # DW_AT_low_pc
+	.quad	.Ltmp158                # DW_AT_high_pc
 	.byte	30                      # Abbrev [30] 0xde:0xd DW_TAG_variable
-	.long	.Linfo_string18         # DW_AT_name
+	.long	.Linfo_string17         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	361                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
+	.long	.Lsection_info+181      # DW_AT_type
 	.byte	0                       # DW_AT_const_value
-	.byte	8                       # Abbrev [8] 0xeb:0x3d DW_TAG_lexical_block
-	.quad	.Ltmp126                # DW_AT_low_pc
-	.quad	.Ltmp137                # DW_AT_high_pc
-	.byte	12                      # Abbrev [12] 0xfc:0x2b DW_TAG_lexical_block
-	.long	.Ldebug_range+96        # DW_AT_ranges
+	.byte	4                       # Abbrev [4] 0xeb:0x3d DW_TAG_lexical_block
+	.quad	.Ltmp146                # DW_AT_low_pc
+	.quad	.Ltmp157                # DW_AT_high_pc
+	.byte	6                       # Abbrev [6] 0xfc:0x2b DW_TAG_lexical_block
+	.long	.Ldebug_range+240       # DW_AT_ranges
 	.byte	31                      # Abbrev [31] 0x101:0x15 DW_TAG_variable
-	.long	.Linfo_string9          # DW_AT_name
+	.long	.Linfo_string8          # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	366                     # DW_AT_decl_line
 	.long	50                      # DW_AT_type
@@ -42509,54 +45119,54 @@ inst_count:
 	.byte	9
 	.byte	64
 	.byte	29                      # Abbrev [29] 0x116:0x10 DW_TAG_variable
-	.long	.Linfo_string46         # DW_AT_name
+	.long	.Linfo_string49         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	367                     # DW_AT_decl_line
 	.long	55                      # DW_AT_type
-	.long	.Ldebug_loc39           # DW_AT_location
+	.long	.Ldebug_loc42           # DW_AT_location
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
-	.byte	15                      # Abbrev [15] 0x12b:0xb DW_TAG_typedef
+	.byte	14                      # Abbrev [14] 0x12b:0xb DW_TAG_typedef
 	.long	310                     # DW_AT_type
-	.long	.Linfo_string21         # DW_AT_name
+	.long	.Linfo_string20         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	56                      # DW_AT_decl_line
-	.byte	14                      # Abbrev [14] 0x136:0x5 DW_TAG_pointer_type
+	.byte	13                      # Abbrev [13] 0x136:0x5 DW_TAG_pointer_type
 	.long	315                     # DW_AT_type
-	.byte	16                      # Abbrev [16] 0x13b:0x3f DW_TAG_structure_type
-	.long	.Linfo_string20         # DW_AT_name
+	.byte	15                      # Abbrev [15] 0x13b:0x3f DW_TAG_structure_type
+	.long	.Linfo_string19         # DW_AT_name
 	.short	272                     # DW_AT_byte_size
 	.byte	3                       # DW_AT_decl_file
 	.byte	28                      # DW_AT_decl_line
-	.byte	18                      # Abbrev [18] 0x144:0xd DW_TAG_member
-	.long	.Linfo_string12         # DW_AT_name
-	.long	.Lsection_info+55       # DW_AT_type
+	.byte	17                      # Abbrev [17] 0x144:0xd DW_TAG_member
+	.long	.Linfo_string11         # DW_AT_name
+	.long	.Lsection_info+181      # DW_AT_type
 	.byte	3                       # DW_AT_decl_file
 	.byte	29                      # DW_AT_decl_line
 	.byte	0                       # DW_AT_data_member_location
 	.byte	1                       # DW_AT_accessibility
                                         # DW_ACCESS_public
-	.byte	18                      # Abbrev [18] 0x151:0xd DW_TAG_member
-	.long	.Linfo_string13         # DW_AT_name
-	.long	.Lsection_info+55       # DW_AT_type
+	.byte	17                      # Abbrev [17] 0x151:0xd DW_TAG_member
+	.long	.Linfo_string12         # DW_AT_name
+	.long	.Lsection_info+181      # DW_AT_type
 	.byte	3                       # DW_AT_decl_file
 	.byte	30                      # DW_AT_decl_line
 	.byte	4                       # DW_AT_data_member_location
 	.byte	1                       # DW_AT_accessibility
                                         # DW_ACCESS_public
-	.byte	17                      # Abbrev [17] 0x15e:0xd DW_TAG_member
-	.long	.Linfo_string14         # DW_AT_name
+	.byte	16                      # Abbrev [16] 0x15e:0xd DW_TAG_member
+	.long	.Linfo_string13         # DW_AT_name
 	.long	378                     # DW_AT_type
 	.byte	3                       # DW_AT_decl_file
 	.byte	31                      # DW_AT_decl_line
 	.byte	8                       # DW_AT_data_member_location
 	.byte	1                       # DW_AT_accessibility
                                         # DW_ACCESS_public
-	.byte	19                      # Abbrev [19] 0x16b:0xe DW_TAG_member
-	.long	.Linfo_string15         # DW_AT_name
+	.byte	18                      # Abbrev [18] 0x16b:0xe DW_TAG_member
+	.long	.Linfo_string14         # DW_AT_name
 	.long	397                     # DW_AT_type
 	.byte	3                       # DW_AT_decl_file
 	.byte	32                      # DW_AT_decl_line
@@ -42565,40 +45175,40 @@ inst_count:
                                         # DW_ACCESS_public
 	.byte	0                       # End Of Children Mark
 	.byte	32                      # Abbrev [32] 0x17a:0xc DW_TAG_array_type
-	.long	.Lsection_info+55       # DW_AT_type
-	.byte	21                      # Abbrev [21] 0x17f:0x6 DW_TAG_subrange_type
+	.long	.Lsection_info+181      # DW_AT_type
+	.byte	20                      # Abbrev [20] 0x17f:0x6 DW_TAG_subrange_type
 	.long	390                     # DW_AT_type
 	.byte	63                      # DW_AT_upper_bound
 	.byte	0                       # End Of Children Mark
-	.byte	23                      # Abbrev [23] 0x186:0x7 DW_TAG_base_type
+	.byte	22                      # Abbrev [22] 0x186:0x7 DW_TAG_base_type
 	.long	.Linfo_string4          # DW_AT_name
 	.byte	4                       # DW_AT_byte_size
 	.byte	5                       # DW_AT_encoding
-	.byte	20                      # Abbrev [20] 0x18d:0xc DW_TAG_array_type
+	.byte	19                      # Abbrev [19] 0x18d:0xc DW_TAG_array_type
 	.long	409                     # DW_AT_type
-	.byte	21                      # Abbrev [21] 0x192:0x6 DW_TAG_subrange_type
+	.byte	20                      # Abbrev [20] 0x192:0x6 DW_TAG_subrange_type
 	.long	390                     # DW_AT_type
 	.byte	0                       # DW_AT_upper_bound
 	.byte	0                       # End Of Children Mark
-	.byte	15                      # Abbrev [15] 0x199:0xb DW_TAG_typedef
+	.byte	14                      # Abbrev [14] 0x199:0xb DW_TAG_typedef
 	.long	420                     # DW_AT_type
-	.long	.Linfo_string19         # DW_AT_name
+	.long	.Linfo_string18         # DW_AT_name
 	.byte	3                       # DW_AT_decl_file
 	.byte	54                      # DW_AT_decl_line
-	.byte	22                      # Abbrev [22] 0x1a4:0x1f DW_TAG_structure_type
+	.byte	21                      # Abbrev [21] 0x1a4:0x1f DW_TAG_structure_type
 	.byte	8                       # DW_AT_byte_size
 	.byte	4                       # DW_AT_decl_file
 	.byte	51                      # DW_AT_decl_line
-	.byte	17                      # Abbrev [17] 0x1a8:0xd DW_TAG_member
-	.long	.Linfo_string16         # DW_AT_name
+	.byte	16                      # Abbrev [16] 0x1a8:0xd DW_TAG_member
+	.long	.Linfo_string15         # DW_AT_name
 	.long	451                     # DW_AT_type
 	.byte	4                       # DW_AT_decl_file
 	.byte	52                      # DW_AT_decl_line
 	.byte	0                       # DW_AT_data_member_location
 	.byte	1                       # DW_AT_accessibility
                                         # DW_ACCESS_public
-	.byte	17                      # Abbrev [17] 0x1b5:0xd DW_TAG_member
-	.long	.Linfo_string18         # DW_AT_name
+	.byte	16                      # Abbrev [16] 0x1b5:0xd DW_TAG_member
+	.long	.Linfo_string17         # DW_AT_name
 	.long	451                     # DW_AT_type
 	.byte	4                       # DW_AT_decl_file
 	.byte	53                      # DW_AT_decl_line
@@ -42606,12 +45216,12 @@ inst_count:
 	.byte	1                       # DW_AT_accessibility
                                         # DW_ACCESS_public
 	.byte	0                       # End Of Children Mark
-	.byte	4                       # Abbrev [4] 0x1c3:0x7 DW_TAG_base_type
-	.long	.Linfo_string17         # DW_AT_name
+	.byte	8                       # Abbrev [8] 0x1c3:0x7 DW_TAG_base_type
+	.long	.Linfo_string16         # DW_AT_name
 	.byte	4                       # DW_AT_encoding
 	.byte	4                       # DW_AT_byte_size
 	.byte	33                      # Abbrev [33] 0x1ca:0x5b DW_TAG_subprogram
-	.long	.Linfo_string22         # DW_AT_name
+	.long	.Linfo_string21         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	379                     # DW_AT_decl_line
                                         # DW_AT_prototyped
@@ -42622,7 +45232,7 @@ inst_count:
 	.byte	87
                                         # DW_AT_APPLE_omit_frame_ptr
 	.byte	34                      # Abbrev [34] 0x1e4:0x10 DW_TAG_formal_parameter
-	.long	.Linfo_string45         # DW_AT_name
+	.long	.Linfo_string48         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	379                     # DW_AT_decl_line
 	.long	299                     # DW_AT_type
@@ -42630,7 +45240,7 @@ inst_count:
 	.byte	145
 	.ascii	"\220\001"
 	.byte	34                      # Abbrev [34] 0x1f4:0x10 DW_TAG_formal_parameter
-	.long	.Linfo_string47         # DW_AT_name
+	.long	.Linfo_string50         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	379                     # DW_AT_decl_line
 	.long	1981                    # DW_AT_type
@@ -42638,7 +45248,7 @@ inst_count:
 	.byte	145
 	.ascii	"\360\002"
 	.byte	34                      # Abbrev [34] 0x204:0x10 DW_TAG_formal_parameter
-	.long	.Linfo_string48         # DW_AT_name
+	.long	.Linfo_string51         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	379                     # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
@@ -42646,14 +45256,14 @@ inst_count:
 	.byte	145
 	.ascii	"\350\002"
 	.byte	27                      # Abbrev [27] 0x214:0x10 DW_TAG_formal_parameter
-	.long	.Linfo_string49         # DW_AT_name
+	.long	.Linfo_string52         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	379                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.long	.Ldebug_loc42           # DW_AT_location
+	.long	.Lsection_info+181      # DW_AT_type
+	.long	.Ldebug_loc45           # DW_AT_location
 	.byte	0                       # End Of Children Mark
 	.byte	33                      # Abbrev [33] 0x225:0x4b DW_TAG_subprogram
-	.long	.Linfo_string23         # DW_AT_name
+	.long	.Linfo_string22         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	394                     # DW_AT_decl_line
                                         # DW_AT_prototyped
@@ -42664,7 +45274,7 @@ inst_count:
 	.byte	87
                                         # DW_AT_APPLE_omit_frame_ptr
 	.byte	34                      # Abbrev [34] 0x23f:0x10 DW_TAG_formal_parameter
-	.long	.Linfo_string36         # DW_AT_name
+	.long	.Linfo_string37         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	394                     # DW_AT_decl_line
 	.long	299                     # DW_AT_type
@@ -42672,7 +45282,7 @@ inst_count:
 	.byte	145
 	.ascii	"\210\001"
 	.byte	34                      # Abbrev [34] 0x24f:0x10 DW_TAG_formal_parameter
-	.long	.Linfo_string47         # DW_AT_name
+	.long	.Linfo_string50         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	394                     # DW_AT_decl_line
 	.long	1981                    # DW_AT_type
@@ -42680,14 +45290,14 @@ inst_count:
 	.byte	145
 	.ascii	"\240\001"
 	.byte	28                      # Abbrev [28] 0x25f:0x10 DW_TAG_formal_parameter
-	.long	.Linfo_string48         # DW_AT_name
+	.long	.Linfo_string51         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	394                     # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc44           # DW_AT_location
+	.long	.Ldebug_loc47           # DW_AT_location
 	.byte	0                       # End Of Children Mark
 	.byte	35                      # Abbrev [35] 0x270:0x1a DW_TAG_subprogram
-	.long	.Linfo_string24         # DW_AT_name
+	.long	.Linfo_string23         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	400                     # DW_AT_decl_line
                                         # DW_AT_prototyped
@@ -42698,11 +45308,11 @@ inst_count:
 	.byte	87
                                         # DW_AT_APPLE_omit_frame_ptr
 	.byte	36                      # Abbrev [36] 0x28a:0x51 DW_TAG_subprogram
-	.long	.Linfo_string25         # DW_AT_name
+	.long	.Linfo_string24         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	405                     # DW_AT_decl_line
                                         # DW_AT_prototyped
-	.long	.Lsection_info+55       # DW_AT_type
+	.long	.Lsection_info+181      # DW_AT_type
                                         # DW_AT_external
 	.quad	.Lfunc_begin7           # DW_AT_low_pc
 	.quad	.Lfunc_end7             # DW_AT_high_pc
@@ -42710,24 +45320,24 @@ inst_count:
 	.byte	87
                                         # DW_AT_APPLE_omit_frame_ptr
 	.byte	27                      # Abbrev [27] 0x2a8:0x10 DW_TAG_formal_parameter
-	.long	.Linfo_string50         # DW_AT_name
+	.long	.Linfo_string53         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	405                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.long	.Ldebug_loc46           # DW_AT_location
-	.byte	8                       # Abbrev [8] 0x2b8:0x22 DW_TAG_lexical_block
-	.quad	.Ltmp218                # DW_AT_low_pc
-	.quad	.Ltmp230                # DW_AT_high_pc
+	.long	.Lsection_info+181      # DW_AT_type
+	.long	.Ldebug_loc49           # DW_AT_location
+	.byte	4                       # Abbrev [4] 0x2b8:0x22 DW_TAG_lexical_block
+	.quad	.Ltmp238                # DW_AT_low_pc
+	.quad	.Ltmp250                # DW_AT_high_pc
 	.byte	37                      # Abbrev [37] 0x2c9:0x10 DW_TAG_variable
-	.long	.Linfo_string51         # DW_AT_name
+	.long	.Linfo_string54         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	408                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.long	.Ldebug_loc49           # DW_AT_location
+	.long	.Lsection_info+181      # DW_AT_type
+	.long	.Ldebug_loc52           # DW_AT_location
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
 	.byte	38                      # Abbrev [38] 0x2db:0xc1 DW_TAG_subprogram
-	.long	.Linfo_string26         # DW_AT_name
+	.long	.Linfo_string25         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	244                     # DW_AT_decl_line
                                         # DW_AT_prototyped
@@ -42736,75 +45346,75 @@ inst_count:
 	.byte	1                       # DW_AT_frame_base
 	.byte	87
                                         # DW_AT_APPLE_omit_frame_ptr
-	.byte	6                       # Abbrev [6] 0x2f4:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string55         # DW_AT_name
+	.byte	3                       # Abbrev [3] 0x2f4:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string58         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	245                     # DW_AT_decl_line
 	.long	1996                    # DW_AT_type
-	.long	.Ldebug_loc70           # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x303:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string56         # DW_AT_name
+	.long	.Ldebug_loc73           # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x303:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string59         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	246                     # DW_AT_decl_line
 	.long	2001                    # DW_AT_type
-	.long	.Ldebug_loc72           # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x312:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string57         # DW_AT_name
+	.long	.Ldebug_loc75           # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x312:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string60         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	247                     # DW_AT_decl_line
 	.long	2006                    # DW_AT_type
-	.long	.Ldebug_loc74           # DW_AT_location
+	.long	.Ldebug_loc77           # DW_AT_location
 	.byte	39                      # Abbrev [39] 0x321:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string49         # DW_AT_name
+	.long	.Linfo_string52         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	248                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.long	.Ldebug_loc76           # DW_AT_location
+	.long	.Lsection_info+181      # DW_AT_type
+	.long	.Ldebug_loc79           # DW_AT_location
 	.byte	39                      # Abbrev [39] 0x330:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string14         # DW_AT_name
+	.long	.Linfo_string13         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	249                     # DW_AT_decl_line
-	.long	.Lsection_info+456      # DW_AT_type
-	.long	.Ldebug_loc78           # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x33f:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string45         # DW_AT_name
+	.long	.Lsection_info+580      # DW_AT_type
+	.long	.Ldebug_loc81           # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x33f:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string48         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	250                     # DW_AT_decl_line
 	.long	2011                    # DW_AT_type
-	.long	.Ldebug_loc82           # DW_AT_location
+	.long	.Ldebug_loc85           # DW_AT_location
 	.byte	10                      # Abbrev [10] 0x34e:0xf DW_TAG_variable
-	.long	.Linfo_string58         # DW_AT_name
+	.long	.Linfo_string61         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	253                     # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc84           # DW_AT_location
+	.long	.Ldebug_loc87           # DW_AT_location
 	.byte	10                      # Abbrev [10] 0x35d:0xf DW_TAG_variable
-	.long	.Linfo_string59         # DW_AT_name
+	.long	.Linfo_string62         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	254                     # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc86           # DW_AT_location
-	.byte	40                      # Abbrev [40] 0x36c:0xf DW_TAG_variable
-	.long	.Linfo_string53         # DW_AT_name
+	.long	.Ldebug_loc89           # DW_AT_location
+	.byte	10                      # Abbrev [10] 0x36c:0xf DW_TAG_variable
+	.long	.Linfo_string56         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	255                     # DW_AT_decl_line
-	.long	.Lsection_info+50       # DW_AT_type
-	.long	.Ldebug_loc88           # DW_AT_location
-	.byte	37                      # Abbrev [37] 0x37b:0x10 DW_TAG_variable
-	.long	.Linfo_string51         # DW_AT_name
+	.long	2016                    # DW_AT_type
+	.long	.Ldebug_loc91           # DW_AT_location
+	.byte	29                      # Abbrev [29] 0x37b:0x10 DW_TAG_variable
+	.long	.Linfo_string54         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	256                     # DW_AT_decl_line
-	.long	.Lsection_info+50       # DW_AT_type
-	.long	.Ldebug_loc90           # DW_AT_location
+	.long	2016                    # DW_AT_type
+	.long	.Ldebug_loc93           # DW_AT_location
 	.byte	29                      # Abbrev [29] 0x38b:0x10 DW_TAG_variable
-	.long	.Linfo_string60         # DW_AT_name
+	.long	.Linfo_string63         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	257                     # DW_AT_decl_line
 	.long	1981                    # DW_AT_type
-	.long	.Ldebug_loc92           # DW_AT_location
+	.long	.Ldebug_loc95           # DW_AT_location
 	.byte	0                       # End Of Children Mark
 	.byte	38                      # Abbrev [38] 0x39c:0xfe DW_TAG_subprogram
-	.long	.Linfo_string27         # DW_AT_name
+	.long	.Linfo_string26         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	204                     # DW_AT_decl_line
                                         # DW_AT_prototyped
@@ -42813,103 +45423,103 @@ inst_count:
 	.byte	1                       # DW_AT_frame_base
 	.byte	87
                                         # DW_AT_APPLE_omit_frame_ptr
-	.byte	6                       # Abbrev [6] 0x3b5:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string55         # DW_AT_name
+	.byte	3                       # Abbrev [3] 0x3b5:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string58         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	205                     # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc94           # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x3c4:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string57         # DW_AT_name
+	.long	.Ldebug_loc97           # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x3c4:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string60         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	206                     # DW_AT_decl_line
 	.long	2006                    # DW_AT_type
-	.long	.Ldebug_loc96           # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x3d3:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string45         # DW_AT_name
+	.long	.Ldebug_loc99           # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x3d3:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string48         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	207                     # DW_AT_decl_line
 	.long	2011                    # DW_AT_type
-	.long	.Ldebug_loc98           # DW_AT_location
+	.long	.Ldebug_loc101          # DW_AT_location
 	.byte	39                      # Abbrev [39] 0x3e2:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string51         # DW_AT_name
+	.long	.Linfo_string54         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	208                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.long	.Ldebug_loc100          # DW_AT_location
+	.long	.Lsection_info+181      # DW_AT_type
+	.long	.Ldebug_loc103          # DW_AT_location
 	.byte	39                      # Abbrev [39] 0x3f1:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string53         # DW_AT_name
+	.long	.Linfo_string56         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	209                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.long	.Ldebug_loc102          # DW_AT_location
+	.long	.Lsection_info+181      # DW_AT_type
+	.long	.Ldebug_loc105          # DW_AT_location
 	.byte	40                      # Abbrev [40] 0x400:0xf DW_TAG_variable
-	.long	.Linfo_string61         # DW_AT_name
+	.long	.Linfo_string64         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	215                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.long	.Ldebug_loc104          # DW_AT_location
+	.long	.Lsection_info+181      # DW_AT_type
+	.long	.Ldebug_loc107          # DW_AT_location
 	.byte	10                      # Abbrev [10] 0x40f:0xf DW_TAG_variable
-	.long	.Linfo_string62         # DW_AT_name
+	.long	.Linfo_string65         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	217                     # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc106          # DW_AT_location
+	.long	.Ldebug_loc109          # DW_AT_location
 	.byte	41                      # Abbrev [41] 0x41e:0xc DW_TAG_variable
-	.long	.Linfo_string63         # DW_AT_name
-	.byte	2                       # DW_AT_decl_file
-	.byte	212                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.byte	0                       # DW_AT_const_value
-	.byte	41                      # Abbrev [41] 0x42a:0xc DW_TAG_variable
-	.long	.Linfo_string64         # DW_AT_name
-	.byte	2                       # DW_AT_decl_file
-	.byte	212                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.byte	1                       # DW_AT_const_value
-	.byte	40                      # Abbrev [40] 0x436:0xf DW_TAG_variable
-	.long	.Linfo_string65         # DW_AT_name
-	.byte	2                       # DW_AT_decl_file
-	.byte	212                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.long	.Ldebug_loc111          # DW_AT_location
-	.byte	42                      # Abbrev [42] 0x445:0xb DW_TAG_variable
 	.long	.Linfo_string66         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	212                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.byte	11                      # Abbrev [11] 0x450:0xb DW_TAG_variable
-	.long	.Linfo_string15         # DW_AT_name
+	.long	.Lsection_info+181      # DW_AT_type
+	.byte	0                       # DW_AT_const_value
+	.byte	41                      # Abbrev [41] 0x42a:0xc DW_TAG_variable
+	.long	.Linfo_string67         # DW_AT_name
+	.byte	2                       # DW_AT_decl_file
+	.byte	212                     # DW_AT_decl_line
+	.long	.Lsection_info+181      # DW_AT_type
+	.byte	1                       # DW_AT_const_value
+	.byte	40                      # Abbrev [40] 0x436:0xf DW_TAG_variable
+	.long	.Linfo_string68         # DW_AT_name
+	.byte	2                       # DW_AT_decl_file
+	.byte	212                     # DW_AT_decl_line
+	.long	.Lsection_info+181      # DW_AT_type
+	.long	.Ldebug_loc114          # DW_AT_location
+	.byte	42                      # Abbrev [42] 0x445:0xb DW_TAG_variable
+	.long	.Linfo_string69         # DW_AT_name
+	.byte	2                       # DW_AT_decl_file
+	.byte	212                     # DW_AT_decl_line
+	.long	.Lsection_info+181      # DW_AT_type
+	.byte	7                       # Abbrev [7] 0x450:0xb DW_TAG_variable
+	.long	.Linfo_string14         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	213                     # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
-	.byte	11                      # Abbrev [11] 0x45b:0xb DW_TAG_variable
-	.long	.Linfo_string67         # DW_AT_name
+	.byte	7                       # Abbrev [7] 0x45b:0xb DW_TAG_variable
+	.long	.Linfo_string70         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	214                     # DW_AT_decl_line
 	.long	409                     # DW_AT_type
-	.byte	8                       # Abbrev [8] 0x466:0x33 DW_TAG_lexical_block
-	.quad	.Ltmp337                # DW_AT_low_pc
-	.quad	.Ltmp365                # DW_AT_high_pc
-	.byte	12                      # Abbrev [12] 0x477:0x21 DW_TAG_lexical_block
-	.long	.Ldebug_range+256       # DW_AT_ranges
-	.byte	12                      # Abbrev [12] 0x47c:0x1b DW_TAG_lexical_block
-	.long	.Ldebug_range+208       # DW_AT_ranges
-	.byte	12                      # Abbrev [12] 0x481:0x15 DW_TAG_lexical_block
-	.long	.Ldebug_range+144       # DW_AT_ranges
+	.byte	4                       # Abbrev [4] 0x466:0x33 DW_TAG_lexical_block
+	.quad	.Ltmp357                # DW_AT_low_pc
+	.quad	.Ltmp385                # DW_AT_high_pc
+	.byte	6                       # Abbrev [6] 0x477:0x21 DW_TAG_lexical_block
+	.long	.Ldebug_range+400       # DW_AT_ranges
+	.byte	6                       # Abbrev [6] 0x47c:0x1b DW_TAG_lexical_block
+	.long	.Ldebug_range+352       # DW_AT_ranges
+	.byte	6                       # Abbrev [6] 0x481:0x15 DW_TAG_lexical_block
+	.long	.Ldebug_range+288       # DW_AT_ranges
 	.byte	40                      # Abbrev [40] 0x486:0xf DW_TAG_variable
-	.long	.Linfo_string68         # DW_AT_name
+	.long	.Linfo_string71         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	229                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.long	.Ldebug_loc108          # DW_AT_location
+	.long	.Lsection_info+181      # DW_AT_type
+	.long	.Ldebug_loc111          # DW_AT_location
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
 	.byte	0                       # End Of Children Mark
 	.byte	38                      # Abbrev [38] 0x49a:0xce DW_TAG_subprogram
-	.long	.Linfo_string28         # DW_AT_name
+	.long	.Linfo_string27         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	136                     # DW_AT_decl_line
                                         # DW_AT_prototyped
@@ -42918,84 +45528,84 @@ inst_count:
 	.byte	1                       # DW_AT_frame_base
 	.byte	87
                                         # DW_AT_APPLE_omit_frame_ptr
-	.byte	6                       # Abbrev [6] 0x4b3:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string55         # DW_AT_name
+	.byte	3                       # Abbrev [3] 0x4b3:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string58         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	137                     # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc113          # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x4c2:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string57         # DW_AT_name
+	.long	.Ldebug_loc116          # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x4c2:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string60         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	138                     # DW_AT_decl_line
 	.long	2006                    # DW_AT_type
-	.long	.Ldebug_loc115          # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x4d1:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string45         # DW_AT_name
+	.long	.Ldebug_loc118          # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x4d1:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string48         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	139                     # DW_AT_decl_line
 	.long	2011                    # DW_AT_type
-	.long	.Ldebug_loc117          # DW_AT_location
+	.long	.Ldebug_loc120          # DW_AT_location
 	.byte	39                      # Abbrev [39] 0x4e0:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string51         # DW_AT_name
+	.long	.Linfo_string54         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	140                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.long	.Ldebug_loc119          # DW_AT_location
+	.long	.Lsection_info+181      # DW_AT_type
+	.long	.Ldebug_loc122          # DW_AT_location
 	.byte	10                      # Abbrev [10] 0x4ef:0xf DW_TAG_variable
-	.long	.Linfo_string69         # DW_AT_name
-	.byte	2                       # DW_AT_decl_file
-	.byte	143                     # DW_AT_decl_line
-	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc121          # DW_AT_location
-	.byte	10                      # Abbrev [10] 0x4fe:0xf DW_TAG_variable
-	.long	.Linfo_string70         # DW_AT_name
-	.byte	2                       # DW_AT_decl_file
-	.byte	143                     # DW_AT_decl_line
-	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc124          # DW_AT_location
-	.byte	10                      # Abbrev [10] 0x50d:0xf DW_TAG_variable
-	.long	.Linfo_string71         # DW_AT_name
-	.byte	2                       # DW_AT_decl_file
-	.byte	143                     # DW_AT_decl_line
-	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc127          # DW_AT_location
-	.byte	10                      # Abbrev [10] 0x51c:0xf DW_TAG_variable
 	.long	.Linfo_string72         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	143                     # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc130          # DW_AT_location
-	.byte	10                      # Abbrev [10] 0x52b:0xf DW_TAG_variable
+	.long	.Ldebug_loc124          # DW_AT_location
+	.byte	10                      # Abbrev [10] 0x4fe:0xf DW_TAG_variable
 	.long	.Linfo_string73         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	143                     # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
+	.long	.Ldebug_loc127          # DW_AT_location
+	.byte	10                      # Abbrev [10] 0x50d:0xf DW_TAG_variable
+	.long	.Linfo_string74         # DW_AT_name
+	.byte	2                       # DW_AT_decl_file
+	.byte	143                     # DW_AT_decl_line
+	.long	1991                    # DW_AT_type
+	.long	.Ldebug_loc130          # DW_AT_location
+	.byte	10                      # Abbrev [10] 0x51c:0xf DW_TAG_variable
+	.long	.Linfo_string75         # DW_AT_name
+	.byte	2                       # DW_AT_decl_file
+	.byte	143                     # DW_AT_decl_line
+	.long	1991                    # DW_AT_type
 	.long	.Ldebug_loc133          # DW_AT_location
+	.byte	10                      # Abbrev [10] 0x52b:0xf DW_TAG_variable
+	.long	.Linfo_string76         # DW_AT_name
+	.byte	2                       # DW_AT_decl_file
+	.byte	143                     # DW_AT_decl_line
+	.long	1991                    # DW_AT_type
+	.long	.Ldebug_loc136          # DW_AT_location
 	.byte	41                      # Abbrev [41] 0x53a:0xc DW_TAG_variable
-	.long	.Linfo_string63         # DW_AT_name
+	.long	.Linfo_string66         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	144                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
+	.long	.Lsection_info+181      # DW_AT_type
 	.byte	0                       # DW_AT_const_value
-	.byte	11                      # Abbrev [11] 0x546:0xb DW_TAG_variable
-	.long	.Linfo_string62         # DW_AT_name
+	.byte	7                       # Abbrev [7] 0x546:0xb DW_TAG_variable
+	.long	.Linfo_string65         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	145                     # DW_AT_decl_line
-	.long	2016                    # DW_AT_type
-	.byte	11                      # Abbrev [11] 0x551:0xb DW_TAG_variable
-	.long	.Linfo_string74         # DW_AT_name
+	.long	2021                    # DW_AT_type
+	.byte	7                       # Abbrev [7] 0x551:0xb DW_TAG_variable
+	.long	.Linfo_string77         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	148                     # DW_AT_decl_line
 	.long	409                     # DW_AT_type
-	.byte	11                      # Abbrev [11] 0x55c:0xb DW_TAG_variable
-	.long	.Linfo_string75         # DW_AT_name
+	.byte	7                       # Abbrev [7] 0x55c:0xb DW_TAG_variable
+	.long	.Linfo_string78         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	148                     # DW_AT_decl_line
 	.long	409                     # DW_AT_type
 	.byte	0                       # End Of Children Mark
 	.byte	38                      # Abbrev [38] 0x568:0xbb DW_TAG_subprogram
-	.long	.Linfo_string29         # DW_AT_name
+	.long	.Linfo_string28         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	44                      # DW_AT_decl_line
                                         # DW_AT_prototyped
@@ -43004,74 +45614,74 @@ inst_count:
 	.byte	1                       # DW_AT_frame_base
 	.byte	87
                                         # DW_AT_APPLE_omit_frame_ptr
-	.byte	6                       # Abbrev [6] 0x581:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string55         # DW_AT_name
+	.byte	3                       # Abbrev [3] 0x581:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string58         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	45                      # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc136          # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x590:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string57         # DW_AT_name
+	.long	.Ldebug_loc139          # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x590:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string60         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	46                      # DW_AT_decl_line
 	.long	2006                    # DW_AT_type
-	.long	.Ldebug_loc139          # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x59f:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string45         # DW_AT_name
+	.long	.Ldebug_loc142          # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x59f:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string48         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	47                      # DW_AT_decl_line
 	.long	2011                    # DW_AT_type
-	.long	.Ldebug_loc141          # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x5ae:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string51         # DW_AT_name
+	.long	.Ldebug_loc144          # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x5ae:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string54         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	48                      # DW_AT_decl_line
 	.long	2006                    # DW_AT_type
-	.long	.Ldebug_loc143          # DW_AT_location
+	.long	.Ldebug_loc146          # DW_AT_location
 	.byte	10                      # Abbrev [10] 0x5bd:0xf DW_TAG_variable
-	.long	.Linfo_string66         # DW_AT_name
+	.long	.Linfo_string69         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	53                      # DW_AT_decl_line
 	.long	1963                    # DW_AT_type
-	.long	.Ldebug_loc145          # DW_AT_location
+	.long	.Ldebug_loc148          # DW_AT_location
 	.byte	10                      # Abbrev [10] 0x5cc:0xf DW_TAG_variable
-	.long	.Linfo_string76         # DW_AT_name
+	.long	.Linfo_string79         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	54                      # DW_AT_decl_line
 	.long	2006                    # DW_AT_type
-	.long	.Ldebug_loc148          # DW_AT_location
+	.long	.Ldebug_loc151          # DW_AT_location
 	.byte	10                      # Abbrev [10] 0x5db:0xf DW_TAG_variable
-	.long	.Linfo_string77         # DW_AT_name
+	.long	.Linfo_string80         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	55                      # DW_AT_decl_line
 	.long	2006                    # DW_AT_type
-	.long	.Ldebug_loc150          # DW_AT_location
+	.long	.Ldebug_loc153          # DW_AT_location
 	.byte	10                      # Abbrev [10] 0x5ea:0xf DW_TAG_variable
-	.long	.Linfo_string78         # DW_AT_name
-	.byte	2                       # DW_AT_decl_file
-	.byte	51                      # DW_AT_decl_line
-	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc152          # DW_AT_location
-	.byte	10                      # Abbrev [10] 0x5f9:0xf DW_TAG_variable
-	.long	.Linfo_string79         # DW_AT_name
+	.long	.Linfo_string81         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	51                      # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
 	.long	.Ldebug_loc155          # DW_AT_location
-	.byte	10                      # Abbrev [10] 0x608:0xf DW_TAG_variable
-	.long	.Linfo_string80         # DW_AT_name
+	.byte	10                      # Abbrev [10] 0x5f9:0xf DW_TAG_variable
+	.long	.Linfo_string82         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	51                      # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
 	.long	.Ldebug_loc158          # DW_AT_location
-	.byte	11                      # Abbrev [11] 0x617:0xb DW_TAG_variable
-	.long	.Linfo_string62         # DW_AT_name
+	.byte	10                      # Abbrev [10] 0x608:0xf DW_TAG_variable
+	.long	.Linfo_string83         # DW_AT_name
+	.byte	2                       # DW_AT_decl_file
+	.byte	51                      # DW_AT_decl_line
+	.long	1991                    # DW_AT_type
+	.long	.Ldebug_loc161          # DW_AT_location
+	.byte	7                       # Abbrev [7] 0x617:0xb DW_TAG_variable
+	.long	.Linfo_string65         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	52                      # DW_AT_decl_line
-	.long	2028                    # DW_AT_type
+	.long	2033                    # DW_AT_type
 	.byte	0                       # End Of Children Mark
 	.byte	38                      # Abbrev [38] 0x623:0xa8 DW_TAG_subprogram
-	.long	.Linfo_string30         # DW_AT_name
+	.long	.Linfo_string29         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	92                      # DW_AT_decl_line
                                         # DW_AT_prototyped
@@ -43080,67 +45690,67 @@ inst_count:
 	.byte	1                       # DW_AT_frame_base
 	.byte	87
                                         # DW_AT_APPLE_omit_frame_ptr
-	.byte	6                       # Abbrev [6] 0x63c:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string55         # DW_AT_name
+	.byte	3                       # Abbrev [3] 0x63c:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string58         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	93                      # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc161          # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x64b:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string57         # DW_AT_name
+	.long	.Ldebug_loc164          # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x64b:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string60         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	94                      # DW_AT_decl_line
 	.long	2006                    # DW_AT_type
-	.long	.Ldebug_loc164          # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x65a:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string45         # DW_AT_name
+	.long	.Ldebug_loc167          # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x65a:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string48         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	95                      # DW_AT_decl_line
 	.long	2011                    # DW_AT_type
-	.long	.Ldebug_loc166          # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x669:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string51         # DW_AT_name
+	.long	.Ldebug_loc169          # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x669:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string54         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	96                      # DW_AT_decl_line
 	.long	1963                    # DW_AT_type
-	.long	.Ldebug_loc168          # DW_AT_location
+	.long	.Ldebug_loc171          # DW_AT_location
 	.byte	10                      # Abbrev [10] 0x678:0xf DW_TAG_variable
-	.long	.Linfo_string66         # DW_AT_name
+	.long	.Linfo_string69         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	99                      # DW_AT_decl_line
 	.long	1963                    # DW_AT_type
-	.long	.Ldebug_loc170          # DW_AT_location
+	.long	.Ldebug_loc173          # DW_AT_location
 	.byte	10                      # Abbrev [10] 0x687:0xf DW_TAG_variable
-	.long	.Linfo_string76         # DW_AT_name
+	.long	.Linfo_string79         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	100                     # DW_AT_decl_line
 	.long	2006                    # DW_AT_type
-	.long	.Ldebug_loc173          # DW_AT_location
+	.long	.Ldebug_loc176          # DW_AT_location
 	.byte	10                      # Abbrev [10] 0x696:0xf DW_TAG_variable
-	.long	.Linfo_string79         # DW_AT_name
-	.byte	2                       # DW_AT_decl_file
-	.byte	101                     # DW_AT_decl_line
-	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc175          # DW_AT_location
-	.byte	10                      # Abbrev [10] 0x6a5:0xf DW_TAG_variable
-	.long	.Linfo_string78         # DW_AT_name
+	.long	.Linfo_string82         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	101                     # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
 	.long	.Ldebug_loc178          # DW_AT_location
-	.byte	11                      # Abbrev [11] 0x6b4:0xb DW_TAG_variable
-	.long	.Linfo_string62         # DW_AT_name
+	.byte	10                      # Abbrev [10] 0x6a5:0xf DW_TAG_variable
+	.long	.Linfo_string81         # DW_AT_name
+	.byte	2                       # DW_AT_decl_file
+	.byte	101                     # DW_AT_decl_line
+	.long	1991                    # DW_AT_type
+	.long	.Ldebug_loc181          # DW_AT_location
+	.byte	7                       # Abbrev [7] 0x6b4:0xb DW_TAG_variable
+	.long	.Linfo_string65         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	102                     # DW_AT_decl_line
-	.long	2040                    # DW_AT_type
-	.byte	11                      # Abbrev [11] 0x6bf:0xb DW_TAG_variable
-	.long	.Linfo_string81         # DW_AT_name
+	.long	2045                    # DW_AT_type
+	.byte	7                       # Abbrev [7] 0x6bf:0xb DW_TAG_variable
+	.long	.Linfo_string84         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	103                     # DW_AT_decl_line
 	.long	409                     # DW_AT_type
 	.byte	0                       # End Of Children Mark
 	.byte	38                      # Abbrev [38] 0x6cb:0x7f DW_TAG_subprogram
-	.long	.Linfo_string31         # DW_AT_name
+	.long	.Linfo_string30         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	21                      # DW_AT_decl_line
                                         # DW_AT_prototyped
@@ -43149,50 +45759,50 @@ inst_count:
 	.byte	1                       # DW_AT_frame_base
 	.byte	87
                                         # DW_AT_APPLE_omit_frame_ptr
-	.byte	6                       # Abbrev [6] 0x6e4:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string55         # DW_AT_name
+	.byte	3                       # Abbrev [3] 0x6e4:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string58         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	22                      # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc181          # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x6f3:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string57         # DW_AT_name
+	.long	.Ldebug_loc184          # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x6f3:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string60         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	23                      # DW_AT_decl_line
 	.long	2006                    # DW_AT_type
-	.long	.Ldebug_loc184          # DW_AT_location
-	.byte	6                       # Abbrev [6] 0x702:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string45         # DW_AT_name
+	.long	.Ldebug_loc187          # DW_AT_location
+	.byte	3                       # Abbrev [3] 0x702:0xf DW_TAG_formal_parameter
+	.long	.Linfo_string48         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	24                      # DW_AT_decl_line
 	.long	2011                    # DW_AT_type
-	.long	.Ldebug_loc186          # DW_AT_location
+	.long	.Ldebug_loc189          # DW_AT_location
 	.byte	39                      # Abbrev [39] 0x711:0xf DW_TAG_formal_parameter
-	.long	.Linfo_string51         # DW_AT_name
+	.long	.Linfo_string54         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	25                      # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.long	.Ldebug_loc188          # DW_AT_location
+	.long	.Lsection_info+181      # DW_AT_type
+	.long	.Ldebug_loc191          # DW_AT_location
 	.byte	10                      # Abbrev [10] 0x720:0xf DW_TAG_variable
-	.long	.Linfo_string78         # DW_AT_name
+	.long	.Linfo_string81         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	29                      # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc191          # DW_AT_location
+	.long	.Ldebug_loc194          # DW_AT_location
 	.byte	10                      # Abbrev [10] 0x72f:0xf DW_TAG_variable
-	.long	.Linfo_string71         # DW_AT_name
+	.long	.Linfo_string74         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	28                      # DW_AT_decl_line
 	.long	1991                    # DW_AT_type
-	.long	.Ldebug_loc194          # DW_AT_location
-	.byte	11                      # Abbrev [11] 0x73e:0xb DW_TAG_variable
-	.long	.Linfo_string67         # DW_AT_name
+	.long	.Ldebug_loc197          # DW_AT_location
+	.byte	7                       # Abbrev [7] 0x73e:0xb DW_TAG_variable
+	.long	.Linfo_string70         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	30                      # DW_AT_decl_line
 	.long	409                     # DW_AT_type
 	.byte	0                       # End Of Children Mark
 	.byte	43                      # Abbrev [43] 0x74a:0x5b DW_TAG_subprogram
-	.long	.Linfo_string32         # DW_AT_name
+	.long	.Linfo_string31         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	317                     # DW_AT_decl_line
                                         # DW_AT_prototyped
@@ -43202,71 +45812,73 @@ inst_count:
 	.byte	87
                                         # DW_AT_APPLE_omit_frame_ptr
 	.byte	27                      # Abbrev [27] 0x764:0x10 DW_TAG_formal_parameter
-	.long	.Linfo_string50         # DW_AT_name
-	.byte	2                       # DW_AT_decl_file
-	.short	317                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.long	.Ldebug_loc59           # DW_AT_location
-	.byte	27                      # Abbrev [27] 0x774:0x10 DW_TAG_formal_parameter
-	.long	.Linfo_string52         # DW_AT_name
-	.byte	2                       # DW_AT_decl_file
-	.short	317                     # DW_AT_decl_line
-	.long	.Lsection_info+456      # DW_AT_type
-	.long	.Ldebug_loc54           # DW_AT_location
-	.byte	37                      # Abbrev [37] 0x784:0x10 DW_TAG_variable
 	.long	.Linfo_string53         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
+	.short	317                     # DW_AT_decl_line
+	.long	.Lsection_info+181      # DW_AT_type
+	.long	.Ldebug_loc62           # DW_AT_location
+	.byte	27                      # Abbrev [27] 0x774:0x10 DW_TAG_formal_parameter
+	.long	.Linfo_string55         # DW_AT_name
+	.byte	2                       # DW_AT_decl_file
+	.short	317                     # DW_AT_decl_line
+	.long	.Lsection_info+580      # DW_AT_type
+	.long	.Ldebug_loc57           # DW_AT_location
+	.byte	37                      # Abbrev [37] 0x784:0x10 DW_TAG_variable
+	.long	.Linfo_string56         # DW_AT_name
+	.byte	2                       # DW_AT_decl_file
 	.short	319                     # DW_AT_decl_line
-	.long	.Lsection_info+55       # DW_AT_type
-	.long	.Ldebug_loc63           # DW_AT_location
+	.long	.Lsection_info+181      # DW_AT_type
+	.long	.Ldebug_loc66           # DW_AT_location
 	.byte	29                      # Abbrev [29] 0x794:0x10 DW_TAG_variable
-	.long	.Linfo_string54         # DW_AT_name
+	.long	.Linfo_string57         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.short	320                     # DW_AT_decl_line
 	.long	55                      # DW_AT_type
-	.long	.Ldebug_loc68           # DW_AT_location
+	.long	.Ldebug_loc71           # DW_AT_location
 	.byte	0                       # End Of Children Mark
 	.byte	44                      # Abbrev [44] 0x7a5:0x1 DW_TAG_pointer_type
-	.byte	14                      # Abbrev [14] 0x7a6:0x5 DW_TAG_pointer_type
+	.byte	13                      # Abbrev [13] 0x7a6:0x5 DW_TAG_pointer_type
 	.long	1963                    # DW_AT_type
-	.byte	15                      # Abbrev [15] 0x7ab:0xb DW_TAG_typedef
+	.byte	14                      # Abbrev [14] 0x7ab:0xb DW_TAG_typedef
 	.long	1974                    # DW_AT_type
-	.long	.Linfo_string43         # DW_AT_name
+	.long	.Linfo_string46         # DW_AT_name
 	.byte	2                       # DW_AT_decl_file
 	.byte	42                      # DW_AT_decl_line
-	.byte	4                       # Abbrev [4] 0x7b6:0x7 DW_TAG_base_type
-	.long	.Linfo_string42         # DW_AT_name
+	.byte	8                       # Abbrev [8] 0x7b6:0x7 DW_TAG_base_type
+	.long	.Linfo_string45         # DW_AT_name
 	.byte	7                       # DW_AT_encoding
 	.byte	8                       # DW_AT_byte_size
-	.byte	14                      # Abbrev [14] 0x7bd:0x5 DW_TAG_pointer_type
+	.byte	13                      # Abbrev [13] 0x7bd:0x5 DW_TAG_pointer_type
 	.long	1986                    # DW_AT_type
-	.byte	3                       # Abbrev [3] 0x7c2:0x5 DW_TAG_const_type
+	.byte	25                      # Abbrev [25] 0x7c2:0x5 DW_TAG_const_type
 	.long	409                     # DW_AT_type
-	.byte	14                      # Abbrev [14] 0x7c7:0x5 DW_TAG_pointer_type
+	.byte	13                      # Abbrev [13] 0x7c7:0x5 DW_TAG_pointer_type
 	.long	409                     # DW_AT_type
-	.byte	14                      # Abbrev [14] 0x7cc:0x5 DW_TAG_pointer_type
+	.byte	13                      # Abbrev [13] 0x7cc:0x5 DW_TAG_pointer_type
 	.long	1991                    # DW_AT_type
-	.byte	14                      # Abbrev [14] 0x7d1:0x5 DW_TAG_pointer_type
+	.byte	13                      # Abbrev [13] 0x7d1:0x5 DW_TAG_pointer_type
 	.long	1981                    # DW_AT_type
-	.byte	3                       # Abbrev [3] 0x7d6:0x5 DW_TAG_const_type
+	.byte	25                      # Abbrev [25] 0x7d6:0x5 DW_TAG_const_type
 	.long	1963                    # DW_AT_type
-	.byte	3                       # Abbrev [3] 0x7db:0x5 DW_TAG_const_type
+	.byte	25                      # Abbrev [25] 0x7db:0x5 DW_TAG_const_type
 	.long	299                     # DW_AT_type
-	.byte	20                      # Abbrev [20] 0x7e0:0xc DW_TAG_array_type
+	.byte	45                      # Abbrev [45] 0x7e0:0x5 DW_TAG_const_type
+	.long	.Lsection_info+181      # DW_AT_type
+	.byte	19                      # Abbrev [19] 0x7e5:0xc DW_TAG_array_type
 	.long	409                     # DW_AT_type
-	.byte	21                      # Abbrev [21] 0x7e5:0x6 DW_TAG_subrange_type
+	.byte	20                      # Abbrev [20] 0x7ea:0x6 DW_TAG_subrange_type
 	.long	390                     # DW_AT_type
 	.byte	12                      # DW_AT_upper_bound
 	.byte	0                       # End Of Children Mark
-	.byte	20                      # Abbrev [20] 0x7ec:0xc DW_TAG_array_type
+	.byte	19                      # Abbrev [19] 0x7f1:0xc DW_TAG_array_type
 	.long	409                     # DW_AT_type
-	.byte	21                      # Abbrev [21] 0x7f1:0x6 DW_TAG_subrange_type
+	.byte	20                      # Abbrev [20] 0x7f6:0x6 DW_TAG_subrange_type
 	.long	390                     # DW_AT_type
 	.byte	5                       # DW_AT_upper_bound
 	.byte	0                       # End Of Children Mark
-	.byte	20                      # Abbrev [20] 0x7f8:0xc DW_TAG_array_type
+	.byte	19                      # Abbrev [19] 0x7fd:0xc DW_TAG_array_type
 	.long	409                     # DW_AT_type
-	.byte	21                      # Abbrev [21] 0x7fd:0x6 DW_TAG_subrange_type
+	.byte	20                      # Abbrev [20] 0x802:0x6 DW_TAG_subrange_type
 	.long	390                     # DW_AT_type
 	.byte	4                       # DW_AT_upper_bound
 	.byte	0                       # End Of Children Mark
@@ -43294,39 +45906,6 @@ inst_count:
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
 	.byte	2                       # Abbreviation Code
-	.byte	52                      # DW_TAG_variable
-	.byte	0                       # DW_CHILDREN_no
-	.byte	3                       # DW_AT_name
-	.byte	14                      # DW_FORM_strp
-	.byte	73                      # DW_AT_type
-	.byte	19                      # DW_FORM_ref4
-	.byte	58                      # DW_AT_decl_file
-	.byte	11                      # DW_FORM_data1
-	.byte	59                      # DW_AT_decl_line
-	.byte	11                      # DW_FORM_data1
-	.byte	28                      # DW_AT_const_value
-	.byte	13                      # DW_FORM_sdata
-	.byte	0                       # EOM(1)
-	.byte	0                       # EOM(2)
-	.byte	3                       # Abbreviation Code
-	.byte	38                      # DW_TAG_const_type
-	.byte	0                       # DW_CHILDREN_no
-	.byte	73                      # DW_AT_type
-	.byte	19                      # DW_FORM_ref4
-	.byte	0                       # EOM(1)
-	.byte	0                       # EOM(2)
-	.byte	4                       # Abbreviation Code
-	.byte	36                      # DW_TAG_base_type
-	.byte	0                       # DW_CHILDREN_no
-	.byte	3                       # DW_AT_name
-	.byte	14                      # DW_FORM_strp
-	.byte	62                      # DW_AT_encoding
-	.byte	11                      # DW_FORM_data1
-	.byte	11                      # DW_AT_byte_size
-	.byte	11                      # DW_FORM_data1
-	.byte	0                       # EOM(1)
-	.byte	0                       # EOM(2)
-	.byte	5                       # Abbreviation Code
 	.byte	46                      # DW_TAG_subprogram
 	.byte	1                       # DW_CHILDREN_yes
 	.byte	3                       # DW_AT_name
@@ -43351,7 +45930,7 @@ inst_count:
 	.byte	25                      # DW_FORM_flag_present
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
-	.byte	6                       # Abbreviation Code
+	.byte	3                       # Abbreviation Code
 	.byte	5                       # DW_TAG_formal_parameter
 	.byte	0                       # DW_CHILDREN_no
 	.byte	3                       # DW_AT_name
@@ -43366,7 +45945,16 @@ inst_count:
 	.byte	23                      # DW_FORM_sec_offset
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
-	.byte	7                       # Abbreviation Code
+	.byte	4                       # Abbreviation Code
+	.byte	11                      # DW_TAG_lexical_block
+	.byte	1                       # DW_CHILDREN_yes
+	.byte	17                      # DW_AT_low_pc
+	.byte	1                       # DW_FORM_addr
+	.byte	18                      # DW_AT_high_pc
+	.byte	1                       # DW_FORM_addr
+	.byte	0                       # EOM(1)
+	.byte	0                       # EOM(2)
+	.byte	5                       # Abbreviation Code
 	.byte	52                      # DW_TAG_variable
 	.byte	0                       # DW_CHILDREN_no
 	.byte	3                       # DW_AT_name
@@ -43381,13 +45969,35 @@ inst_count:
 	.byte	13                      # DW_FORM_sdata
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
-	.byte	8                       # Abbreviation Code
+	.byte	6                       # Abbreviation Code
 	.byte	11                      # DW_TAG_lexical_block
 	.byte	1                       # DW_CHILDREN_yes
-	.byte	17                      # DW_AT_low_pc
-	.byte	1                       # DW_FORM_addr
-	.byte	18                      # DW_AT_high_pc
-	.byte	1                       # DW_FORM_addr
+	.byte	85                      # DW_AT_ranges
+	.byte	6                       # DW_FORM_data4
+	.byte	0                       # EOM(1)
+	.byte	0                       # EOM(2)
+	.byte	7                       # Abbreviation Code
+	.byte	52                      # DW_TAG_variable
+	.byte	0                       # DW_CHILDREN_no
+	.byte	3                       # DW_AT_name
+	.byte	14                      # DW_FORM_strp
+	.byte	58                      # DW_AT_decl_file
+	.byte	11                      # DW_FORM_data1
+	.byte	59                      # DW_AT_decl_line
+	.byte	11                      # DW_FORM_data1
+	.byte	73                      # DW_AT_type
+	.byte	19                      # DW_FORM_ref4
+	.byte	0                       # EOM(1)
+	.byte	0                       # EOM(2)
+	.byte	8                       # Abbreviation Code
+	.byte	36                      # DW_TAG_base_type
+	.byte	0                       # DW_CHILDREN_no
+	.byte	3                       # DW_AT_name
+	.byte	14                      # DW_FORM_strp
+	.byte	62                      # DW_AT_encoding
+	.byte	11                      # DW_FORM_data1
+	.byte	11                      # DW_AT_byte_size
+	.byte	11                      # DW_FORM_data1
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
 	.byte	9                       # Abbreviation Code
@@ -43429,26 +46039,6 @@ inst_count:
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
 	.byte	11                      # Abbreviation Code
-	.byte	52                      # DW_TAG_variable
-	.byte	0                       # DW_CHILDREN_no
-	.byte	3                       # DW_AT_name
-	.byte	14                      # DW_FORM_strp
-	.byte	58                      # DW_AT_decl_file
-	.byte	11                      # DW_FORM_data1
-	.byte	59                      # DW_AT_decl_line
-	.byte	11                      # DW_FORM_data1
-	.byte	73                      # DW_AT_type
-	.byte	19                      # DW_FORM_ref4
-	.byte	0                       # EOM(1)
-	.byte	0                       # EOM(2)
-	.byte	12                      # Abbreviation Code
-	.byte	11                      # DW_TAG_lexical_block
-	.byte	1                       # DW_CHILDREN_yes
-	.byte	85                      # DW_AT_ranges
-	.byte	6                       # DW_FORM_data4
-	.byte	0                       # EOM(1)
-	.byte	0                       # EOM(2)
-	.byte	13                      # Abbreviation Code
 	.byte	46                      # DW_TAG_subprogram
 	.byte	1                       # DW_CHILDREN_yes
 	.byte	3                       # DW_AT_name
@@ -43471,14 +46061,29 @@ inst_count:
 	.byte	25                      # DW_FORM_flag_present
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
-	.byte	14                      # Abbreviation Code
+	.byte	12                      # Abbreviation Code
+	.byte	52                      # DW_TAG_variable
+	.byte	0                       # DW_CHILDREN_no
+	.byte	3                       # DW_AT_name
+	.byte	14                      # DW_FORM_strp
+	.byte	58                      # DW_AT_decl_file
+	.byte	11                      # DW_FORM_data1
+	.byte	59                      # DW_AT_decl_line
+	.byte	11                      # DW_FORM_data1
+	.byte	73                      # DW_AT_type
+	.byte	19                      # DW_FORM_ref4
+	.byte	2                       # DW_AT_location
+	.byte	10                      # DW_FORM_block1
+	.byte	0                       # EOM(1)
+	.byte	0                       # EOM(2)
+	.byte	13                      # Abbreviation Code
 	.byte	15                      # DW_TAG_pointer_type
 	.byte	0                       # DW_CHILDREN_no
 	.byte	73                      # DW_AT_type
 	.byte	19                      # DW_FORM_ref4
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
-	.byte	15                      # Abbreviation Code
+	.byte	14                      # Abbreviation Code
 	.byte	22                      # DW_TAG_typedef
 	.byte	0                       # DW_CHILDREN_no
 	.byte	73                      # DW_AT_type
@@ -43491,7 +46096,7 @@ inst_count:
 	.byte	11                      # DW_FORM_data1
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
-	.byte	16                      # Abbreviation Code
+	.byte	15                      # Abbreviation Code
 	.byte	19                      # DW_TAG_structure_type
 	.byte	1                       # DW_CHILDREN_yes
 	.byte	3                       # DW_AT_name
@@ -43504,7 +46109,7 @@ inst_count:
 	.byte	11                      # DW_FORM_data1
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
-	.byte	17                      # Abbreviation Code
+	.byte	16                      # Abbreviation Code
 	.byte	13                      # DW_TAG_member
 	.byte	0                       # DW_CHILDREN_no
 	.byte	3                       # DW_AT_name
@@ -43521,7 +46126,7 @@ inst_count:
 	.byte	11                      # DW_FORM_data1
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
-	.byte	18                      # Abbreviation Code
+	.byte	17                      # Abbreviation Code
 	.byte	13                      # DW_TAG_member
 	.byte	0                       # DW_CHILDREN_no
 	.byte	3                       # DW_AT_name
@@ -43538,7 +46143,7 @@ inst_count:
 	.byte	11                      # DW_FORM_data1
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
-	.byte	19                      # Abbreviation Code
+	.byte	18                      # Abbreviation Code
 	.byte	13                      # DW_TAG_member
 	.byte	0                       # DW_CHILDREN_no
 	.byte	3                       # DW_AT_name
@@ -43555,14 +46160,14 @@ inst_count:
 	.byte	11                      # DW_FORM_data1
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
-	.byte	20                      # Abbreviation Code
+	.byte	19                      # Abbreviation Code
 	.byte	1                       # DW_TAG_array_type
 	.byte	1                       # DW_CHILDREN_yes
 	.byte	73                      # DW_AT_type
 	.byte	19                      # DW_FORM_ref4
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
-	.byte	21                      # Abbreviation Code
+	.byte	20                      # Abbreviation Code
 	.byte	33                      # DW_TAG_subrange_type
 	.byte	0                       # DW_CHILDREN_no
 	.byte	73                      # DW_AT_type
@@ -43571,7 +46176,7 @@ inst_count:
 	.byte	11                      # DW_FORM_data1
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
-	.byte	22                      # Abbreviation Code
+	.byte	21                      # Abbreviation Code
 	.byte	19                      # DW_TAG_structure_type
 	.byte	1                       # DW_CHILDREN_yes
 	.byte	11                      # DW_AT_byte_size
@@ -43582,7 +46187,7 @@ inst_count:
 	.byte	11                      # DW_FORM_data1
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
-	.byte	23                      # Abbreviation Code
+	.byte	22                      # Abbreviation Code
 	.byte	36                      # DW_TAG_base_type
 	.byte	0                       # DW_CHILDREN_no
 	.byte	3                       # DW_AT_name
@@ -43593,14 +46198,14 @@ inst_count:
 	.byte	11                      # DW_FORM_data1
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
-	.byte	24                      # Abbreviation Code
+	.byte	23                      # Abbreviation Code
 	.byte	33                      # DW_TAG_subrange_type
 	.byte	0                       # DW_CHILDREN_no
 	.byte	73                      # DW_AT_type
 	.byte	19                      # DW_FORM_ref4
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
-	.byte	25                      # Abbreviation Code
+	.byte	24                      # Abbreviation Code
 	.byte	52                      # DW_TAG_variable
 	.byte	0                       # DW_CHILDREN_no
 	.byte	3                       # DW_AT_name
@@ -43611,6 +46216,13 @@ inst_count:
 	.byte	11                      # DW_FORM_data1
 	.byte	59                      # DW_AT_decl_line
 	.byte	5                       # DW_FORM_data2
+	.byte	0                       # EOM(1)
+	.byte	0                       # EOM(2)
+	.byte	25                      # Abbreviation Code
+	.byte	38                      # DW_TAG_const_type
+	.byte	0                       # DW_CHILDREN_no
+	.byte	73                      # DW_AT_type
+	.byte	19                      # DW_FORM_ref4
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
 	.byte	26                      # Abbreviation Code
@@ -43926,1178 +46538,1203 @@ inst_count:
 	.byte	0                       # DW_CHILDREN_no
 	.byte	0                       # EOM(1)
 	.byte	0                       # EOM(2)
+	.byte	45                      # Abbreviation Code
+	.byte	38                      # DW_TAG_const_type
+	.byte	0                       # DW_CHILDREN_no
+	.byte	73                      # DW_AT_type
+	.byte	16                      # DW_FORM_ref_addr
+	.byte	0                       # EOM(1)
+	.byte	0                       # EOM(2)
 	.byte	0                       # EOM(3)
 .L.debug_abbrev_end:
 	.section	.debug_loc,"",@progbits
 .Ldebug_loc0:
 	.quad	.Lfunc_begin0
 	.quad	.Ltmp22
-.Lset0 = .Ltmp591-.Ltmp590              # Loc expr size
+.Lset0 = .Ltmp611-.Ltmp610              # Loc expr size
 	.short	.Lset0
-.Ltmp590:
+.Ltmp610:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\330\013"
-.Ltmp591:
+	.ascii	"\210\016"
+.Ltmp611:
 	.quad	0
 	.quad	0
 .Ldebug_loc2:
 	.quad	.Lfunc_begin0
 	.quad	.Ltmp22
-.Lset1 = .Ltmp593-.Ltmp592              # Loc expr size
+.Lset1 = .Ltmp613-.Ltmp612              # Loc expr size
 	.short	.Lset1
-.Ltmp592:
+.Ltmp612:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\320\013"
-.Ltmp593:
+	.ascii	"\200\016"
+.Ltmp613:
 	.quad	0
 	.quad	0
 .Ldebug_loc4:
 	.quad	.Lfunc_begin0
 	.quad	.Ltmp22
-.Lset2 = .Ltmp595-.Ltmp594              # Loc expr size
+.Lset2 = .Ltmp615-.Ltmp614              # Loc expr size
 	.short	.Lset2
-.Ltmp594:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\264\f"
-.Ltmp595:
-	.quad	0
-	.quad	0
-.Ldebug_loc6:
-	.quad	.Lfunc_begin1
-	.quad	.Ltmp44
-.Lset3 = .Ltmp597-.Ltmp596              # Loc expr size
-	.short	.Lset3
-.Ltmp596:
-	.byte	85                      # DW_OP_reg5
-.Ltmp597:
-	.quad	.Ltmp44
-	.quad	.Ltmp47
-.Lset4 = .Ltmp599-.Ltmp598              # Loc expr size
-	.short	.Lset4
-.Ltmp598:
-	.byte	118                     # DW_OP_breg6
-	.ascii	"\360~"
-.Ltmp599:
-	.quad	0
-	.quad	0
-.Ldebug_loc9:
-	.quad	.Lfunc_begin1
-	.quad	.Ltmp43
-.Lset5 = .Ltmp601-.Ltmp600              # Loc expr size
-	.short	.Lset5
-.Ltmp600:
-	.byte	84                      # DW_OP_reg4
-.Ltmp601:
-	.quad	.Ltmp43
-	.quad	.Ltmp47
-.Lset6 = .Ltmp603-.Ltmp602              # Loc expr size
-	.short	.Lset6
-.Ltmp602:
-	.byte	118                     # DW_OP_breg6
-	.ascii	"\370~"
-.Ltmp603:
-	.quad	0
-	.quad	0
-.Ldebug_loc12:
-	.quad	.Lfunc_begin1
-	.quad	.Ltmp41
-.Lset7 = .Ltmp605-.Ltmp604              # Loc expr size
-	.short	.Lset7
-.Ltmp604:
-	.byte	81                      # DW_OP_reg1
-.Ltmp605:
-	.quad	.Ltmp41
-	.quad	.Ltmp47
-.Lset8 = .Ltmp607-.Ltmp606              # Loc expr size
-	.short	.Lset8
-.Ltmp606:
-	.byte	118                     # DW_OP_breg6
-	.byte	68
-.Ltmp607:
-	.quad	0
-	.quad	0
-.Ldebug_loc15:
-	.quad	.Lfunc_begin1
-	.quad	.Ltmp45
-.Lset9 = .Ltmp609-.Ltmp608              # Loc expr size
-	.short	.Lset9
-.Ltmp608:
-	.byte	82                      # DW_OP_reg2
-.Ltmp609:
-	.quad	.Ltmp45
-	.quad	.Ltmp47
-.Lset10 = .Ltmp611-.Ltmp610             # Loc expr size
-	.short	.Lset10
-.Ltmp610:
-	.byte	118                     # DW_OP_breg6
-	.ascii	"\310~"
-.Ltmp611:
-	.quad	0
-	.quad	0
-.Ldebug_loc18:
-	.quad	.Ltmp46
-	.quad	.Ltmp47
-.Lset11 = .Ltmp613-.Ltmp612             # Loc expr size
-	.short	.Lset11
-.Ltmp612:
-	.byte	118                     # DW_OP_breg6
-	.ascii	"\210}"
-	.byte	6
-.Ltmp613:
-	.quad	0
-	.quad	0
-.Ldebug_loc20:
-	.quad	.Ltmp81
-	.quad	.Ltmp82
-.Lset12 = .Ltmp615-.Ltmp614             # Loc expr size
-	.short	.Lset12
 .Ltmp614:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\220\n"
+	.ascii	"\374\r"
 .Ltmp615:
 	.quad	0
 	.quad	0
-.Ldebug_loc22:
-	.quad	.Ltmp83
-	.quad	.Ltmp84
-.Lset13 = .Ltmp617-.Ltmp616             # Loc expr size
-	.short	.Lset13
+.Ldebug_loc6:
+	.quad	.Lfunc_begin0
+	.quad	.Ltmp22
+.Lset3 = .Ltmp617-.Ltmp616              # Loc expr size
+	.short	.Lset3
 .Ltmp616:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\370\b"
+	.ascii	"\354\016"
 .Ltmp617:
 	.quad	0
 	.quad	0
-.Ldebug_loc24:
-	.quad	.Ltmp88
-	.quad	.Ltmp89
-.Lset14 = .Ltmp619-.Ltmp618             # Loc expr size
-	.short	.Lset14
+.Ldebug_loc8:
+	.quad	.Lfunc_begin1
+	.quad	.Ltmp52
+.Lset4 = .Ltmp619-.Ltmp618              # Loc expr size
+	.short	.Lset4
 .Ltmp618:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\210\005"
+	.byte	85                      # DW_OP_reg5
 .Ltmp619:
-	.quad	0
-	.quad	0
-.Ldebug_loc26:
-	.quad	.Lfunc_begin3
-	.quad	.Ltmp116
-.Lset15 = .Ltmp621-.Ltmp620             # Loc expr size
-	.short	.Lset15
+	.quad	.Ltmp52
+	.quad	.Ltmp56
+.Lset5 = .Ltmp621-.Ltmp620              # Loc expr size
+	.short	.Lset5
 .Ltmp620:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\304\027"
+	.byte	118                     # DW_OP_breg6
+	.ascii	"\360~"
 .Ltmp621:
 	.quad	0
 	.quad	0
-.Ldebug_loc28:
-	.quad	.Lfunc_begin3
-	.quad	.Ltmp116
-.Lset16 = .Ltmp623-.Ltmp622             # Loc expr size
-	.short	.Lset16
+.Ldebug_loc11:
+	.quad	.Lfunc_begin1
+	.quad	.Ltmp53
+.Lset6 = .Ltmp623-.Ltmp622              # Loc expr size
+	.short	.Lset6
 .Ltmp622:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\374\030"
+	.byte	84                      # DW_OP_reg4
 .Ltmp623:
-	.quad	0
-	.quad	0
-.Ldebug_loc30:
-	.quad	.Lfunc_begin3
-	.quad	.Ltmp116
-.Lset17 = .Ltmp625-.Ltmp624             # Loc expr size
-	.short	.Lset17
+	.quad	.Ltmp53
+	.quad	.Ltmp56
+.Lset7 = .Ltmp625-.Ltmp624              # Loc expr size
+	.short	.Lset7
 .Ltmp624:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\260\027"
+	.byte	118                     # DW_OP_breg6
+	.ascii	"\350~"
 .Ltmp625:
 	.quad	0
 	.quad	0
-.Ldebug_loc32:
-	.quad	.Lfunc_begin3
-	.quad	.Ltmp116
-.Lset18 = .Ltmp627-.Ltmp626             # Loc expr size
-	.short	.Lset18
+.Ldebug_loc14:
+	.quad	.Lfunc_begin1
+	.quad	.Ltmp51
+.Lset8 = .Ltmp627-.Ltmp626              # Loc expr size
+	.short	.Lset8
 .Ltmp626:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\250\027"
+	.byte	81                      # DW_OP_reg1
 .Ltmp627:
-	.quad	0
-	.quad	0
-.Ldebug_loc34:
-	.quad	.Ltmp115
-	.quad	.Ltmp116
-.Lset19 = .Ltmp629-.Ltmp628             # Loc expr size
-	.short	.Lset19
+	.quad	.Ltmp51
+	.quad	.Ltmp56
+.Lset9 = .Ltmp629-.Ltmp628              # Loc expr size
+	.short	.Lset9
 .Ltmp628:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\270\026"
+	.byte	118                     # DW_OP_breg6
+	.ascii	"\370~"
 .Ltmp629:
 	.quad	0
 	.quad	0
-.Ldebug_loc36:
-	.quad	.Ltmp118
-	.quad	.Ltmp119
-.Lset20 = .Ltmp631-.Ltmp630             # Loc expr size
-	.short	.Lset20
+.Ldebug_loc17:
+	.quad	.Lfunc_begin1
+	.quad	.Ltmp49
+.Lset10 = .Ltmp631-.Ltmp630             # Loc expr size
+	.short	.Lset10
 .Ltmp630:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\320\024"
+	.byte	82                      # DW_OP_reg2
 .Ltmp631:
-	.quad	.Ltmp121
-	.quad	.Ltmp122
-.Lset21 = .Ltmp633-.Ltmp632             # Loc expr size
-	.short	.Lset21
+	.quad	.Ltmp49
+	.quad	.Ltmp56
+.Lset11 = .Ltmp633-.Ltmp632             # Loc expr size
+	.short	.Lset11
 .Ltmp632:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\370\020"
+	.byte	118                     # DW_OP_breg6
+	.ascii	"\274\177"
 .Ltmp633:
 	.quad	0
 	.quad	0
-.Ldebug_loc39:
-	.quad	.Ltmp131
-	.quad	.Ltmp132
-.Lset22 = .Ltmp635-.Ltmp634             # Loc expr size
-	.short	.Lset22
+.Ldebug_loc20:
+	.quad	.Lfunc_begin1
+	.quad	.Ltmp54
+.Lset12 = .Ltmp635-.Ltmp634             # Loc expr size
+	.short	.Lset12
 .Ltmp634:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\270\007"
+	.byte	88                      # DW_OP_reg8
 .Ltmp635:
-	.quad	.Ltmp133
-	.quad	.Ltmp134
-.Lset23 = .Ltmp637-.Ltmp636             # Loc expr size
-	.short	.Lset23
+	.quad	.Ltmp54
+	.quad	.Ltmp56
+.Lset13 = .Ltmp637-.Ltmp636             # Loc expr size
+	.short	.Lset13
 .Ltmp636:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\210\006"
+	.byte	118                     # DW_OP_breg6
+	.ascii	"\300~"
 .Ltmp637:
 	.quad	0
 	.quad	0
-.Ldebug_loc42:
-	.quad	.Lfunc_begin4
-	.quad	.Ltmp164
-.Lset24 = .Ltmp639-.Ltmp638             # Loc expr size
-	.short	.Lset24
+.Ldebug_loc23:
+	.quad	.Ltmp55
+	.quad	.Ltmp56
+.Lset14 = .Ltmp639-.Ltmp638             # Loc expr size
+	.short	.Lset14
 .Ltmp638:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\354\001"
+	.byte	118                     # DW_OP_breg6
+	.ascii	"\210}"
+	.byte	6
 .Ltmp639:
 	.quad	0
 	.quad	0
-.Ldebug_loc44:
-	.quad	.Lfunc_begin5
-	.quad	.Ltmp188
-.Lset25 = .Ltmp641-.Ltmp640             # Loc expr size
-	.short	.Lset25
+.Ldebug_loc25:
+	.quad	.Ltmp96
+	.quad	.Ltmp97
+.Lset15 = .Ltmp641-.Ltmp640             # Loc expr size
+	.short	.Lset15
 .Ltmp640:
 	.byte	119                     # DW_OP_breg7
-	.asciz	"\360"
+	.ascii	"\350\021"
 .Ltmp641:
 	.quad	0
 	.quad	0
-.Ldebug_loc46:
-	.quad	.Lfunc_begin7
-	.quad	.Ltmp217
-.Lset26 = .Ltmp643-.Ltmp642             # Loc expr size
-	.short	.Lset26
+.Ldebug_loc27:
+	.quad	.Ltmp98
+	.quad	.Ltmp99
+.Lset16 = .Ltmp643-.Ltmp642             # Loc expr size
+	.short	.Lset16
 .Ltmp642:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\234\016"
+	.ascii	"\320\020"
 .Ltmp643:
-	.quad	.Ltmp229
-	.quad	.Ltmp230
-.Lset27 = .Ltmp645-.Ltmp644             # Loc expr size
-	.short	.Lset27
+	.quad	0
+	.quad	0
+.Ldebug_loc29:
+	.quad	.Lfunc_begin3
+	.quad	.Ltmp136
+.Lset17 = .Ltmp645-.Ltmp644             # Loc expr size
+	.short	.Lset17
 .Ltmp644:
 	.byte	119                     # DW_OP_breg7
-	.byte	56
+	.ascii	"\304\027"
 .Ltmp645:
 	.quad	0
 	.quad	0
-.Ldebug_loc49:
-	.quad	.Ltmp219
-	.quad	.Ltmp220
-.Lset28 = .Ltmp647-.Ltmp646             # Loc expr size
-	.short	.Lset28
+.Ldebug_loc31:
+	.quad	.Lfunc_begin3
+	.quad	.Ltmp136
+.Lset18 = .Ltmp647-.Ltmp646             # Loc expr size
+	.short	.Lset18
 .Ltmp646:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\234\f"
+	.ascii	"\374\030"
 .Ltmp647:
-	.quad	.Ltmp221
-	.quad	.Ltmp222
-.Lset29 = .Ltmp649-.Ltmp648             # Loc expr size
-	.short	.Lset29
+	.quad	0
+	.quad	0
+.Ldebug_loc33:
+	.quad	.Lfunc_begin3
+	.quad	.Ltmp136
+.Lset19 = .Ltmp649-.Ltmp648             # Loc expr size
+	.short	.Lset19
 .Ltmp648:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\364\t"
+	.ascii	"\260\027"
 .Ltmp649:
-	.quad	.Ltmp223
-	.quad	.Ltmp224
-.Lset30 = .Ltmp651-.Ltmp650             # Loc expr size
-	.short	.Lset30
+	.quad	0
+	.quad	0
+.Ldebug_loc35:
+	.quad	.Lfunc_begin3
+	.quad	.Ltmp136
+.Lset20 = .Ltmp651-.Ltmp650             # Loc expr size
+	.short	.Lset20
 .Ltmp650:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\234\006"
+	.ascii	"\250\027"
 .Ltmp651:
-	.quad	.Ltmp225
-	.quad	.Ltmp226
-.Lset31 = .Ltmp653-.Ltmp652             # Loc expr size
-	.short	.Lset31
+	.quad	0
+	.quad	0
+.Ldebug_loc37:
+	.quad	.Ltmp135
+	.quad	.Ltmp136
+.Lset21 = .Ltmp653-.Ltmp652             # Loc expr size
+	.short	.Lset21
 .Ltmp652:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\264\002"
+	.ascii	"\270\026"
 .Ltmp653:
 	.quad	0
 	.quad	0
-.Ldebug_loc54:
-	.quad	.Lfunc_begin8
-	.quad	.Ltmp254
-.Lset32 = .Ltmp655-.Ltmp654             # Loc expr size
-	.short	.Lset32
+.Ldebug_loc39:
+	.quad	.Ltmp138
+	.quad	.Ltmp139
+.Lset22 = .Ltmp655-.Ltmp654             # Loc expr size
+	.short	.Lset22
 .Ltmp654:
-	.byte	84                      # DW_OP_reg4
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\320\024"
 .Ltmp655:
-	.quad	.Ltmp254
-	.quad	.Ltmp259
-.Lset33 = .Ltmp657-.Ltmp656             # Loc expr size
-	.short	.Lset33
+	.quad	.Ltmp141
+	.quad	.Ltmp142
+.Lset23 = .Ltmp657-.Ltmp656             # Loc expr size
+	.short	.Lset23
 .Ltmp656:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\340\013"
+	.ascii	"\370\020"
 .Ltmp657:
-	.quad	.Ltmp270
-	.quad	.Ltmp271
-.Lset34 = .Ltmp659-.Ltmp658             # Loc expr size
-	.short	.Lset34
+	.quad	0
+	.quad	0
+.Ldebug_loc42:
+	.quad	.Ltmp151
+	.quad	.Ltmp152
+.Lset24 = .Ltmp659-.Ltmp658             # Loc expr size
+	.short	.Lset24
 .Ltmp658:
 	.byte	119                     # DW_OP_breg7
-	.byte	24
+	.ascii	"\270\007"
 .Ltmp659:
-	.quad	.Ltmp271
-	.quad	.Ltmp272
-.Lset35 = .Ltmp661-.Ltmp660             # Loc expr size
-	.short	.Lset35
+	.quad	.Ltmp153
+	.quad	.Ltmp154
+.Lset25 = .Ltmp661-.Ltmp660             # Loc expr size
+	.short	.Lset25
 .Ltmp660:
 	.byte	119                     # DW_OP_breg7
-	.byte	16
+	.ascii	"\210\006"
 .Ltmp661:
 	.quad	0
 	.quad	0
-.Ldebug_loc59:
-	.quad	.Lfunc_begin8
-	.quad	.Ltmp255
-.Lset36 = .Ltmp663-.Ltmp662             # Loc expr size
-	.short	.Lset36
+.Ldebug_loc45:
+	.quad	.Lfunc_begin4
+	.quad	.Ltmp184
+.Lset26 = .Ltmp663-.Ltmp662             # Loc expr size
+	.short	.Lset26
 .Ltmp662:
-	.byte	85                      # DW_OP_reg5
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\354\001"
 .Ltmp663:
-	.quad	.Ltmp255
-	.quad	.Ltmp256
-.Lset37 = .Ltmp665-.Ltmp664             # Loc expr size
-	.short	.Lset37
+	.quad	0
+	.quad	0
+.Ldebug_loc47:
+	.quad	.Lfunc_begin5
+	.quad	.Ltmp208
+.Lset27 = .Ltmp665-.Ltmp664             # Loc expr size
+	.short	.Lset27
 .Ltmp664:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\264\013"
+	.asciz	"\360"
 .Ltmp665:
-	.quad	.Ltmp269
-	.quad	.Ltmp272
-.Lset38 = .Ltmp667-.Ltmp666             # Loc expr size
-	.short	.Lset38
+	.quad	0
+	.quad	0
+.Ldebug_loc49:
+	.quad	.Lfunc_begin7
+	.quad	.Ltmp237
+.Lset28 = .Ltmp667-.Ltmp666             # Loc expr size
+	.short	.Lset28
 .Ltmp666:
 	.byte	119                     # DW_OP_breg7
-	.byte	36
+	.ascii	"\234\016"
 .Ltmp667:
-	.quad	0
-	.quad	0
-.Ldebug_loc63:
-	.quad	.Ltmp257
-	.quad	.Ltmp263
-.Lset39 = .Ltmp669-.Ltmp668             # Loc expr size
-	.short	.Lset39
+	.quad	.Ltmp249
+	.quad	.Ltmp250
+.Lset29 = .Ltmp669-.Ltmp668             # Loc expr size
+	.short	.Lset29
 .Ltmp668:
-	.byte	16                      # DW_OP_constu
-	.byte	3
+	.byte	119                     # DW_OP_breg7
+	.byte	56
 .Ltmp669:
-	.quad	.Ltmp263
-	.quad	.Ltmp264
-.Lset40 = .Ltmp671-.Ltmp670             # Loc expr size
-	.short	.Lset40
+	.quad	0
+	.quad	0
+.Ldebug_loc52:
+	.quad	.Ltmp239
+	.quad	.Ltmp240
+.Lset30 = .Ltmp671-.Ltmp670             # Loc expr size
+	.short	.Lset30
 .Ltmp670:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\314\005"
+	.ascii	"\234\f"
 .Ltmp671:
-	.quad	.Ltmp266
-	.quad	.Ltmp268
-.Lset41 = .Ltmp673-.Ltmp672             # Loc expr size
-	.short	.Lset41
+	.quad	.Ltmp241
+	.quad	.Ltmp242
+.Lset31 = .Ltmp673-.Ltmp672             # Loc expr size
+	.short	.Lset31
 .Ltmp672:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\244\n"
+	.ascii	"\364\t"
 .Ltmp673:
-	.quad	0
-	.quad	0
-.Ldebug_loc68:
-	.quad	.Ltmp258
-	.quad	.Ltmp259
-.Lset42 = .Ltmp675-.Ltmp674             # Loc expr size
-	.short	.Lset42
+	.quad	.Ltmp243
+	.quad	.Ltmp244
+.Lset32 = .Ltmp675-.Ltmp674             # Loc expr size
+	.short	.Lset32
 .Ltmp674:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\270\n"
+	.ascii	"\234\006"
 .Ltmp675:
-	.quad	0
-	.quad	0
-.Ldebug_loc70:
-	.quad	.Lfunc_begin9
-	.quad	.Ltmp303
-.Lset43 = .Ltmp677-.Ltmp676             # Loc expr size
-	.short	.Lset43
+	.quad	.Ltmp245
+	.quad	.Ltmp246
+.Lset33 = .Ltmp677-.Ltmp676             # Loc expr size
+	.short	.Lset33
 .Ltmp676:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\350\026"
+	.ascii	"\264\002"
 .Ltmp677:
 	.quad	0
 	.quad	0
-.Ldebug_loc72:
-	.quad	.Lfunc_begin9
-	.quad	.Ltmp303
-.Lset44 = .Ltmp679-.Ltmp678             # Loc expr size
-	.short	.Lset44
+.Ldebug_loc57:
+	.quad	.Lfunc_begin8
+	.quad	.Ltmp274
+.Lset34 = .Ltmp679-.Ltmp678             # Loc expr size
+	.short	.Lset34
 .Ltmp678:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\340\026"
+	.byte	84                      # DW_OP_reg4
 .Ltmp679:
-	.quad	0
-	.quad	0
-.Ldebug_loc74:
-	.quad	.Lfunc_begin9
-	.quad	.Ltmp303
-.Lset45 = .Ltmp681-.Ltmp680             # Loc expr size
-	.short	.Lset45
+	.quad	.Ltmp274
+	.quad	.Ltmp279
+.Lset35 = .Ltmp681-.Ltmp680             # Loc expr size
+	.short	.Lset35
 .Ltmp680:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\330\026"
+	.ascii	"\340\013"
 .Ltmp681:
-	.quad	0
-	.quad	0
-.Ldebug_loc76:
-	.quad	.Lfunc_begin9
-	.quad	.Ltmp303
-.Lset46 = .Ltmp683-.Ltmp682             # Loc expr size
-	.short	.Lset46
+	.quad	.Ltmp290
+	.quad	.Ltmp291
+.Lset36 = .Ltmp683-.Ltmp682             # Loc expr size
+	.short	.Lset36
 .Ltmp682:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\354\030"
+	.byte	24
 .Ltmp683:
-	.quad	0
-	.quad	0
-.Ldebug_loc78:
-	.quad	.Lfunc_begin9
-	.quad	.Ltmp298
-.Lset47 = .Ltmp685-.Ltmp684             # Loc expr size
-	.short	.Lset47
+	.quad	.Ltmp291
+	.quad	.Ltmp292
+.Lset37 = .Ltmp685-.Ltmp684             # Loc expr size
+	.short	.Lset37
 .Ltmp684:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\310\026"
+	.byte	16
 .Ltmp685:
-	.quad	.Ltmp298
-	.quad	.Ltmp300
-.Lset48 = .Ltmp687-.Ltmp686             # Loc expr size
-	.short	.Lset48
+	.quad	0
+	.quad	0
+.Ldebug_loc62:
+	.quad	.Lfunc_begin8
+	.quad	.Ltmp275
+.Lset38 = .Ltmp687-.Ltmp686             # Loc expr size
+	.short	.Lset38
 .Ltmp686:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\350\025"
+	.byte	85                      # DW_OP_reg5
 .Ltmp687:
-	.quad	.Ltmp300
-	.quad	.Ltmp303
-.Lset49 = .Ltmp689-.Ltmp688             # Loc expr size
-	.short	.Lset49
+	.quad	.Ltmp275
+	.quad	.Ltmp276
+.Lset39 = .Ltmp689-.Ltmp688             # Loc expr size
+	.short	.Lset39
 .Ltmp688:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\330\025"
+	.ascii	"\264\013"
 .Ltmp689:
-	.quad	0
-	.quad	0
-.Ldebug_loc82:
-	.quad	.Lfunc_begin9
-	.quad	.Ltmp303
-.Lset50 = .Ltmp691-.Ltmp690             # Loc expr size
-	.short	.Lset50
+	.quad	.Ltmp289
+	.quad	.Ltmp292
+.Lset40 = .Ltmp691-.Ltmp690             # Loc expr size
+	.short	.Lset40
 .Ltmp690:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\300\026"
+	.byte	36
 .Ltmp691:
 	.quad	0
 	.quad	0
-.Ldebug_loc84:
-	.quad	.Ltmp296
-	.quad	.Ltmp303
-.Lset51 = .Ltmp693-.Ltmp692             # Loc expr size
-	.short	.Lset51
+.Ldebug_loc66:
+	.quad	.Ltmp277
+	.quad	.Ltmp283
+.Lset41 = .Ltmp693-.Ltmp692             # Loc expr size
+	.short	.Lset41
 .Ltmp692:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\370\025"
+	.byte	16                      # DW_OP_constu
+	.byte	3
 .Ltmp693:
-	.quad	0
-	.quad	0
-.Ldebug_loc86:
-	.quad	.Ltmp297
-	.quad	.Ltmp303
-.Lset52 = .Ltmp695-.Ltmp694             # Loc expr size
-	.short	.Lset52
+	.quad	.Ltmp283
+	.quad	.Ltmp284
+.Lset42 = .Ltmp695-.Ltmp694             # Loc expr size
+	.short	.Lset42
 .Ltmp694:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\360\025"
+	.ascii	"\314\005"
 .Ltmp695:
-	.quad	0
-	.quad	0
-.Ldebug_loc88:
-	.quad	.Ltmp299
-	.quad	.Ltmp303
-.Lset53 = .Ltmp697-.Ltmp696             # Loc expr size
-	.short	.Lset53
+	.quad	.Ltmp286
+	.quad	.Ltmp288
+.Lset43 = .Ltmp697-.Ltmp696             # Loc expr size
+	.short	.Lset43
 .Ltmp696:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\344\025"
+	.ascii	"\244\n"
 .Ltmp697:
 	.quad	0
 	.quad	0
-.Ldebug_loc90:
-	.quad	.Ltmp301
-	.quad	.Ltmp303
-.Lset54 = .Ltmp699-.Ltmp698             # Loc expr size
-	.short	.Lset54
+.Ldebug_loc71:
+	.quad	.Ltmp278
+	.quad	.Ltmp279
+.Lset44 = .Ltmp699-.Ltmp698             # Loc expr size
+	.short	.Lset44
 .Ltmp698:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\324\025"
+	.ascii	"\270\n"
 .Ltmp699:
 	.quad	0
 	.quad	0
-.Ldebug_loc92:
-	.quad	.Ltmp302
-	.quad	.Ltmp303
-.Lset55 = .Ltmp701-.Ltmp700             # Loc expr size
-	.short	.Lset55
+.Ldebug_loc73:
+	.quad	.Lfunc_begin9
+	.quad	.Ltmp323
+.Lset45 = .Ltmp701-.Ltmp700             # Loc expr size
+	.short	.Lset45
 .Ltmp700:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\300\025"
+	.ascii	"\350\026"
 .Ltmp701:
 	.quad	0
 	.quad	0
-.Ldebug_loc94:
-	.quad	.Lfunc_begin10
-	.quad	.Ltmp338
-.Lset56 = .Ltmp703-.Ltmp702             # Loc expr size
-	.short	.Lset56
+.Ldebug_loc75:
+	.quad	.Lfunc_begin9
+	.quad	.Ltmp323
+.Lset46 = .Ltmp703-.Ltmp702             # Loc expr size
+	.short	.Lset46
 .Ltmp702:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\370\031"
+	.ascii	"\340\026"
 .Ltmp703:
 	.quad	0
 	.quad	0
-.Ldebug_loc96:
-	.quad	.Lfunc_begin10
-	.quad	.Ltmp338
-.Lset57 = .Ltmp705-.Ltmp704             # Loc expr size
-	.short	.Lset57
+.Ldebug_loc77:
+	.quad	.Lfunc_begin9
+	.quad	.Ltmp323
+.Lset47 = .Ltmp705-.Ltmp704             # Loc expr size
+	.short	.Lset47
 .Ltmp704:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\360\031"
+	.ascii	"\330\026"
 .Ltmp705:
 	.quad	0
 	.quad	0
-.Ldebug_loc98:
-	.quad	.Lfunc_begin10
-	.quad	.Ltmp338
-.Lset58 = .Ltmp707-.Ltmp706             # Loc expr size
-	.short	.Lset58
+.Ldebug_loc79:
+	.quad	.Lfunc_begin9
+	.quad	.Ltmp323
+.Lset48 = .Ltmp707-.Ltmp706             # Loc expr size
+	.short	.Lset48
 .Ltmp706:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\350\031"
+	.ascii	"\354\030"
 .Ltmp707:
 	.quad	0
 	.quad	0
-.Ldebug_loc100:
-	.quad	.Lfunc_begin10
-	.quad	.Ltmp338
-.Lset59 = .Ltmp709-.Ltmp708             # Loc expr size
-	.short	.Lset59
+.Ldebug_loc81:
+	.quad	.Lfunc_begin9
+	.quad	.Ltmp318
+.Lset49 = .Ltmp709-.Ltmp708             # Loc expr size
+	.short	.Lset49
 .Ltmp708:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\234\033"
+	.ascii	"\310\026"
 .Ltmp709:
-	.quad	0
-	.quad	0
-.Ldebug_loc102:
-	.quad	.Lfunc_begin10
-	.quad	.Ltmp338
-.Lset60 = .Ltmp711-.Ltmp710             # Loc expr size
-	.short	.Lset60
+	.quad	.Ltmp318
+	.quad	.Ltmp320
+.Lset50 = .Ltmp711-.Ltmp710             # Loc expr size
+	.short	.Lset50
 .Ltmp710:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\340\031"
+	.ascii	"\350\025"
 .Ltmp711:
-	.quad	0
-	.quad	0
-.Ldebug_loc104:
-	.quad	.Ltmp335
-	.quad	.Ltmp336
-.Lset61 = .Ltmp713-.Ltmp712             # Loc expr size
-	.short	.Lset61
+	.quad	.Ltmp320
+	.quad	.Ltmp323
+.Lset51 = .Ltmp713-.Ltmp712             # Loc expr size
+	.short	.Lset51
 .Ltmp712:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\224\031"
+	.ascii	"\330\025"
 .Ltmp713:
 	.quad	0
 	.quad	0
-.Ldebug_loc106:
-	.quad	.Ltmp337
-	.quad	.Ltmp338
-.Lset62 = .Ltmp715-.Ltmp714             # Loc expr size
-	.short	.Lset62
+.Ldebug_loc85:
+	.quad	.Lfunc_begin9
+	.quad	.Ltmp323
+.Lset52 = .Ltmp715-.Ltmp714             # Loc expr size
+	.short	.Lset52
 .Ltmp714:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\270\027"
+	.ascii	"\300\026"
 .Ltmp715:
 	.quad	0
 	.quad	0
-.Ldebug_loc108:
-	.quad	.Ltmp352
-	.quad	.Ltmp358
-.Lset63 = .Ltmp717-.Ltmp716             # Loc expr size
-	.short	.Lset63
+.Ldebug_loc87:
+	.quad	.Ltmp316
+	.quad	.Ltmp323
+.Lset53 = .Ltmp717-.Ltmp716             # Loc expr size
+	.short	.Lset53
 .Ltmp716:
-	.byte	16                      # DW_OP_constu
-	.byte	0
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\370\025"
 .Ltmp717:
-	.quad	.Ltmp358
-	.quad	.Ltmp362
-.Lset64 = .Ltmp719-.Ltmp718             # Loc expr size
-	.short	.Lset64
+	.quad	0
+	.quad	0
+.Ldebug_loc89:
+	.quad	.Ltmp317
+	.quad	.Ltmp323
+.Lset54 = .Ltmp719-.Ltmp718             # Loc expr size
+	.short	.Lset54
 .Ltmp718:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\204\005"
+	.ascii	"\360\025"
 .Ltmp719:
 	.quad	0
 	.quad	0
-.Ldebug_loc111:
-	.quad	.Ltmp363
-	.quad	.Ltmp364
-.Lset65 = .Ltmp721-.Ltmp720             # Loc expr size
-	.short	.Lset65
+.Ldebug_loc91:
+	.quad	.Ltmp319
+	.quad	.Ltmp323
+.Lset55 = .Ltmp721-.Ltmp720             # Loc expr size
+	.short	.Lset55
 .Ltmp720:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\264\002"
+	.ascii	"\344\025"
 .Ltmp721:
 	.quad	0
 	.quad	0
-.Ldebug_loc113:
-	.quad	.Lfunc_begin11
-	.quad	.Ltmp390
-.Lset66 = .Ltmp723-.Ltmp722             # Loc expr size
-	.short	.Lset66
+.Ldebug_loc93:
+	.quad	.Ltmp321
+	.quad	.Ltmp323
+.Lset56 = .Ltmp723-.Ltmp722             # Loc expr size
+	.short	.Lset56
 .Ltmp722:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\240\032"
+	.ascii	"\324\025"
 .Ltmp723:
 	.quad	0
 	.quad	0
-.Ldebug_loc115:
-	.quad	.Lfunc_begin11
-	.quad	.Ltmp390
-.Lset67 = .Ltmp725-.Ltmp724             # Loc expr size
-	.short	.Lset67
+.Ldebug_loc95:
+	.quad	.Ltmp322
+	.quad	.Ltmp323
+.Lset57 = .Ltmp725-.Ltmp724             # Loc expr size
+	.short	.Lset57
 .Ltmp724:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\230\032"
+	.ascii	"\300\025"
 .Ltmp725:
 	.quad	0
 	.quad	0
-.Ldebug_loc117:
-	.quad	.Lfunc_begin11
-	.quad	.Ltmp390
-.Lset68 = .Ltmp727-.Ltmp726             # Loc expr size
-	.short	.Lset68
+.Ldebug_loc97:
+	.quad	.Lfunc_begin10
+	.quad	.Ltmp358
+.Lset58 = .Ltmp727-.Ltmp726             # Loc expr size
+	.short	.Lset58
 .Ltmp726:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\220\032"
+	.ascii	"\370\031"
 .Ltmp727:
 	.quad	0
 	.quad	0
-.Ldebug_loc119:
-	.quad	.Lfunc_begin11
-	.quad	.Ltmp390
-.Lset69 = .Ltmp729-.Ltmp728             # Loc expr size
-	.short	.Lset69
+.Ldebug_loc99:
+	.quad	.Lfunc_begin10
+	.quad	.Ltmp358
+.Lset59 = .Ltmp729-.Ltmp728             # Loc expr size
+	.short	.Lset59
 .Ltmp728:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\254\034"
+	.ascii	"\360\031"
 .Ltmp729:
 	.quad	0
 	.quad	0
-.Ldebug_loc121:
-	.quad	.Ltmp389
-	.quad	.Ltmp390
-.Lset70 = .Ltmp731-.Ltmp730             # Loc expr size
-	.short	.Lset70
+.Ldebug_loc101:
+	.quad	.Lfunc_begin10
+	.quad	.Ltmp358
+.Lset60 = .Ltmp731-.Ltmp730             # Loc expr size
+	.short	.Lset60
 .Ltmp730:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\240\032"
+	.ascii	"\350\031"
 .Ltmp731:
-	.quad	.Ltmp413
-	.quad	.Ltmp418
-.Lset71 = .Ltmp733-.Ltmp732             # Loc expr size
-	.short	.Lset71
+	.quad	0
+	.quad	0
+.Ldebug_loc103:
+	.quad	.Lfunc_begin10
+	.quad	.Ltmp358
+.Lset61 = .Ltmp733-.Ltmp732             # Loc expr size
+	.short	.Lset61
 .Ltmp732:
 	.byte	119                     # DW_OP_breg7
-	.asciz	"\300"
+	.ascii	"\234\033"
 .Ltmp733:
 	.quad	0
 	.quad	0
-.Ldebug_loc124:
-	.quad	.Ltmp395
-	.quad	.Ltmp390
-.Lset72 = .Ltmp735-.Ltmp734             # Loc expr size
-	.short	.Lset72
+.Ldebug_loc105:
+	.quad	.Lfunc_begin10
+	.quad	.Ltmp358
+.Lset62 = .Ltmp735-.Ltmp734             # Loc expr size
+	.short	.Lset62
 .Ltmp734:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\320\025"
+	.ascii	"\340\031"
 .Ltmp735:
-	.quad	.Ltmp414
-	.quad	.Ltmp418
-.Lset73 = .Ltmp737-.Ltmp736             # Loc expr size
-	.short	.Lset73
+	.quad	0
+	.quad	0
+.Ldebug_loc107:
+	.quad	.Ltmp355
+	.quad	.Ltmp356
+.Lset63 = .Ltmp737-.Ltmp736             # Loc expr size
+	.short	.Lset63
 .Ltmp736:
 	.byte	119                     # DW_OP_breg7
-	.byte	56
+	.ascii	"\224\031"
 .Ltmp737:
 	.quad	0
 	.quad	0
-.Ldebug_loc127:
-	.quad	.Ltmp393
-	.quad	.Ltmp390
-.Lset74 = .Ltmp739-.Ltmp738             # Loc expr size
-	.short	.Lset74
+.Ldebug_loc109:
+	.quad	.Ltmp357
+	.quad	.Ltmp358
+.Lset64 = .Ltmp739-.Ltmp738             # Loc expr size
+	.short	.Lset64
 .Ltmp738:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\330\025"
+	.ascii	"\270\027"
 .Ltmp739:
-	.quad	.Ltmp415
-	.quad	.Ltmp418
-.Lset75 = .Ltmp741-.Ltmp740             # Loc expr size
-	.short	.Lset75
+	.quad	0
+	.quad	0
+.Ldebug_loc111:
+	.quad	.Ltmp372
+	.quad	.Ltmp378
+.Lset65 = .Ltmp741-.Ltmp740             # Loc expr size
+	.short	.Lset65
 .Ltmp740:
-	.byte	119                     # DW_OP_breg7
-	.byte	48
+	.byte	16                      # DW_OP_constu
+	.byte	0
 .Ltmp741:
-	.quad	0
-	.quad	0
-.Ldebug_loc130:
-	.quad	.Ltmp392
-	.quad	.Ltmp390
-.Lset76 = .Ltmp743-.Ltmp742             # Loc expr size
-	.short	.Lset76
+	.quad	.Ltmp378
+	.quad	.Ltmp382
+.Lset66 = .Ltmp743-.Ltmp742             # Loc expr size
+	.short	.Lset66
 .Ltmp742:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\340\025"
+	.ascii	"\204\005"
 .Ltmp743:
-	.quad	.Ltmp416
-	.quad	.Ltmp418
-.Lset77 = .Ltmp745-.Ltmp744             # Loc expr size
-	.short	.Lset77
+	.quad	0
+	.quad	0
+.Ldebug_loc114:
+	.quad	.Ltmp383
+	.quad	.Ltmp384
+.Lset67 = .Ltmp745-.Ltmp744             # Loc expr size
+	.short	.Lset67
 .Ltmp744:
 	.byte	119                     # DW_OP_breg7
-	.byte	40
+	.ascii	"\264\002"
 .Ltmp745:
 	.quad	0
 	.quad	0
-.Ldebug_loc133:
-	.quad	.Ltmp391
-	.quad	.Ltmp390
-.Lset78 = .Ltmp747-.Ltmp746             # Loc expr size
-	.short	.Lset78
+.Ldebug_loc116:
+	.quad	.Lfunc_begin11
+	.quad	.Ltmp410
+.Lset68 = .Ltmp747-.Ltmp746             # Loc expr size
+	.short	.Lset68
 .Ltmp746:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\350\025"
+	.ascii	"\240\032"
 .Ltmp747:
-	.quad	.Ltmp417
-	.quad	.Ltmp418
-.Lset79 = .Ltmp749-.Ltmp748             # Loc expr size
-	.short	.Lset79
+	.quad	0
+	.quad	0
+.Ldebug_loc118:
+	.quad	.Lfunc_begin11
+	.quad	.Ltmp410
+.Lset69 = .Ltmp749-.Ltmp748             # Loc expr size
+	.short	.Lset69
 .Ltmp748:
 	.byte	119                     # DW_OP_breg7
-	.byte	32
+	.ascii	"\230\032"
 .Ltmp749:
 	.quad	0
 	.quad	0
-.Ldebug_loc136:
-	.quad	.Lfunc_begin12
-	.quad	.Ltmp448
-.Lset80 = .Ltmp751-.Ltmp750             # Loc expr size
-	.short	.Lset80
+.Ldebug_loc120:
+	.quad	.Lfunc_begin11
+	.quad	.Ltmp410
+.Lset70 = .Ltmp751-.Ltmp750             # Loc expr size
+	.short	.Lset70
 .Ltmp750:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\310\023"
+	.ascii	"\220\032"
 .Ltmp751:
-	.quad	.Ltmp469
-	.quad	.Ltmp471
-.Lset81 = .Ltmp753-.Ltmp752             # Loc expr size
-	.short	.Lset81
+	.quad	0
+	.quad	0
+.Ldebug_loc122:
+	.quad	.Lfunc_begin11
+	.quad	.Ltmp410
+.Lset71 = .Ltmp753-.Ltmp752             # Loc expr size
+	.short	.Lset71
 .Ltmp752:
 	.byte	119                     # DW_OP_breg7
-	.byte	24
+	.ascii	"\254\034"
 .Ltmp753:
+	.quad	0
+	.quad	0
+.Ldebug_loc124:
+	.quad	.Ltmp409
+	.quad	.Ltmp410
+.Lset72 = .Ltmp755-.Ltmp754             # Loc expr size
+	.short	.Lset72
+.Ltmp754:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\240\032"
+.Ltmp755:
+	.quad	.Ltmp433
+	.quad	.Ltmp438
+.Lset73 = .Ltmp757-.Ltmp756             # Loc expr size
+	.short	.Lset73
+.Ltmp756:
+	.byte	119                     # DW_OP_breg7
+	.asciz	"\300"
+.Ltmp757:
+	.quad	0
+	.quad	0
+.Ldebug_loc127:
+	.quad	.Ltmp415
+	.quad	.Ltmp410
+.Lset74 = .Ltmp759-.Ltmp758             # Loc expr size
+	.short	.Lset74
+.Ltmp758:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\320\025"
+.Ltmp759:
+	.quad	.Ltmp434
+	.quad	.Ltmp438
+.Lset75 = .Ltmp761-.Ltmp760             # Loc expr size
+	.short	.Lset75
+.Ltmp760:
+	.byte	119                     # DW_OP_breg7
+	.byte	56
+.Ltmp761:
+	.quad	0
+	.quad	0
+.Ldebug_loc130:
+	.quad	.Ltmp413
+	.quad	.Ltmp410
+.Lset76 = .Ltmp763-.Ltmp762             # Loc expr size
+	.short	.Lset76
+.Ltmp762:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\330\025"
+.Ltmp763:
+	.quad	.Ltmp435
+	.quad	.Ltmp438
+.Lset77 = .Ltmp765-.Ltmp764             # Loc expr size
+	.short	.Lset77
+.Ltmp764:
+	.byte	119                     # DW_OP_breg7
+	.byte	48
+.Ltmp765:
+	.quad	0
+	.quad	0
+.Ldebug_loc133:
+	.quad	.Ltmp412
+	.quad	.Ltmp410
+.Lset78 = .Ltmp767-.Ltmp766             # Loc expr size
+	.short	.Lset78
+.Ltmp766:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\340\025"
+.Ltmp767:
+	.quad	.Ltmp436
+	.quad	.Ltmp438
+.Lset79 = .Ltmp769-.Ltmp768             # Loc expr size
+	.short	.Lset79
+.Ltmp768:
+	.byte	119                     # DW_OP_breg7
+	.byte	40
+.Ltmp769:
+	.quad	0
+	.quad	0
+.Ldebug_loc136:
+	.quad	.Ltmp411
+	.quad	.Ltmp410
+.Lset80 = .Ltmp771-.Ltmp770             # Loc expr size
+	.short	.Lset80
+.Ltmp770:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\350\025"
+.Ltmp771:
+	.quad	.Ltmp437
+	.quad	.Ltmp438
+.Lset81 = .Ltmp773-.Ltmp772             # Loc expr size
+	.short	.Lset81
+.Ltmp772:
+	.byte	119                     # DW_OP_breg7
+	.byte	32
+.Ltmp773:
 	.quad	0
 	.quad	0
 .Ldebug_loc139:
 	.quad	.Lfunc_begin12
-	.quad	.Ltmp448
-.Lset82 = .Ltmp755-.Ltmp754             # Loc expr size
+	.quad	.Ltmp468
+.Lset82 = .Ltmp775-.Ltmp774             # Loc expr size
 	.short	.Lset82
-.Ltmp754:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\300\023"
-.Ltmp755:
-	.quad	0
-	.quad	0
-.Ldebug_loc141:
-	.quad	.Lfunc_begin12
-	.quad	.Ltmp448
-.Lset83 = .Ltmp757-.Ltmp756             # Loc expr size
-	.short	.Lset83
-.Ltmp756:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\270\023"
-.Ltmp757:
-	.quad	0
-	.quad	0
-.Ldebug_loc143:
-	.quad	.Lfunc_begin12
-	.quad	.Ltmp448
-.Lset84 = .Ltmp759-.Ltmp758             # Loc expr size
-	.short	.Lset84
-.Ltmp758:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\260\023"
-.Ltmp759:
-	.quad	0
-	.quad	0
-.Ldebug_loc145:
-	.quad	.Ltmp442
-	.quad	.Ltmp448
-.Lset85 = .Ltmp761-.Ltmp760             # Loc expr size
-	.short	.Lset85
-.Ltmp760:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\260\023"
-.Ltmp761:
-	.quad	.Ltmp470
-	.quad	.Ltmp471
-.Lset86 = .Ltmp763-.Ltmp762             # Loc expr size
-	.short	.Lset86
-.Ltmp762:
-	.byte	119                     # DW_OP_breg7
-	.byte	16
-.Ltmp763:
-	.quad	0
-	.quad	0
-.Ldebug_loc148:
-	.quad	.Ltmp443
-	.quad	.Ltmp448
-.Lset87 = .Ltmp765-.Ltmp764             # Loc expr size
-	.short	.Lset87
-.Ltmp764:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\330\022"
-.Ltmp765:
-	.quad	0
-	.quad	0
-.Ldebug_loc150:
-	.quad	.Ltmp444
-	.quad	.Ltmp448
-.Lset88 = .Ltmp767-.Ltmp766             # Loc expr size
-	.short	.Lset88
-.Ltmp766:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\320\022"
-.Ltmp767:
-	.quad	0
-	.quad	0
-.Ldebug_loc152:
-	.quad	.Ltmp445
-	.quad	.Ltmp448
-.Lset89 = .Ltmp769-.Ltmp768             # Loc expr size
-	.short	.Lset89
-.Ltmp768:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\310\022"
-.Ltmp769:
-	.quad	.Ltmp458
-	.quad	.Ltmp462
-.Lset90 = .Ltmp771-.Ltmp770             # Loc expr size
-	.short	.Lset90
-.Ltmp770:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\300\007"
-.Ltmp771:
-	.quad	0
-	.quad	0
-.Ldebug_loc155:
-	.quad	.Ltmp445
-	.quad	.Ltmp448
-.Lset91 = .Ltmp773-.Ltmp772             # Loc expr size
-	.short	.Lset91
-.Ltmp772:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\310\022"
-.Ltmp773:
-	.quad	.Ltmp459
-	.quad	.Ltmp462
-.Lset92 = .Ltmp775-.Ltmp774             # Loc expr size
-	.short	.Lset92
 .Ltmp774:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\270\007"
+	.ascii	"\310\023"
 .Ltmp775:
-	.quad	0
-	.quad	0
-.Ldebug_loc158:
-	.quad	.Ltmp445
-	.quad	.Ltmp448
-.Lset93 = .Ltmp777-.Ltmp776             # Loc expr size
-	.short	.Lset93
+	.quad	.Ltmp489
+	.quad	.Ltmp491
+.Lset83 = .Ltmp777-.Ltmp776             # Loc expr size
+	.short	.Lset83
 .Ltmp776:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\310\022"
+	.byte	24
 .Ltmp777:
-	.quad	.Ltmp460
-	.quad	.Ltmp462
-.Lset94 = .Ltmp779-.Ltmp778             # Loc expr size
-	.short	.Lset94
+	.quad	0
+	.quad	0
+.Ldebug_loc142:
+	.quad	.Lfunc_begin12
+	.quad	.Ltmp468
+.Lset84 = .Ltmp779-.Ltmp778             # Loc expr size
+	.short	.Lset84
 .Ltmp778:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\260\007"
+	.ascii	"\300\023"
 .Ltmp779:
 	.quad	0
 	.quad	0
-.Ldebug_loc161:
-	.quad	.Lfunc_begin13
-	.quad	.Ltmp499
-.Lset95 = .Ltmp781-.Ltmp780             # Loc expr size
-	.short	.Lset95
+.Ldebug_loc144:
+	.quad	.Lfunc_begin12
+	.quad	.Ltmp468
+.Lset85 = .Ltmp781-.Ltmp780             # Loc expr size
+	.short	.Lset85
 .Ltmp780:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\330\f"
+	.ascii	"\270\023"
 .Ltmp781:
-	.quad	.Ltmp510
-	.quad	.Ltmp512
-.Lset96 = .Ltmp783-.Ltmp782             # Loc expr size
-	.short	.Lset96
+	.quad	0
+	.quad	0
+.Ldebug_loc146:
+	.quad	.Lfunc_begin12
+	.quad	.Ltmp468
+.Lset86 = .Ltmp783-.Ltmp782             # Loc expr size
+	.short	.Lset86
 .Ltmp782:
 	.byte	119                     # DW_OP_breg7
-	.byte	32
+	.ascii	"\260\023"
 .Ltmp783:
+	.quad	0
+	.quad	0
+.Ldebug_loc148:
+	.quad	.Ltmp462
+	.quad	.Ltmp468
+.Lset87 = .Ltmp785-.Ltmp784             # Loc expr size
+	.short	.Lset87
+.Ltmp784:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\260\023"
+.Ltmp785:
+	.quad	.Ltmp490
+	.quad	.Ltmp491
+.Lset88 = .Ltmp787-.Ltmp786             # Loc expr size
+	.short	.Lset88
+.Ltmp786:
+	.byte	119                     # DW_OP_breg7
+	.byte	16
+.Ltmp787:
+	.quad	0
+	.quad	0
+.Ldebug_loc151:
+	.quad	.Ltmp463
+	.quad	.Ltmp468
+.Lset89 = .Ltmp789-.Ltmp788             # Loc expr size
+	.short	.Lset89
+.Ltmp788:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\330\022"
+.Ltmp789:
+	.quad	0
+	.quad	0
+.Ldebug_loc153:
+	.quad	.Ltmp464
+	.quad	.Ltmp468
+.Lset90 = .Ltmp791-.Ltmp790             # Loc expr size
+	.short	.Lset90
+.Ltmp790:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\320\022"
+.Ltmp791:
+	.quad	0
+	.quad	0
+.Ldebug_loc155:
+	.quad	.Ltmp465
+	.quad	.Ltmp468
+.Lset91 = .Ltmp793-.Ltmp792             # Loc expr size
+	.short	.Lset91
+.Ltmp792:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\310\022"
+.Ltmp793:
+	.quad	.Ltmp478
+	.quad	.Ltmp482
+.Lset92 = .Ltmp795-.Ltmp794             # Loc expr size
+	.short	.Lset92
+.Ltmp794:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\300\007"
+.Ltmp795:
+	.quad	0
+	.quad	0
+.Ldebug_loc158:
+	.quad	.Ltmp465
+	.quad	.Ltmp468
+.Lset93 = .Ltmp797-.Ltmp796             # Loc expr size
+	.short	.Lset93
+.Ltmp796:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\310\022"
+.Ltmp797:
+	.quad	.Ltmp479
+	.quad	.Ltmp482
+.Lset94 = .Ltmp799-.Ltmp798             # Loc expr size
+	.short	.Lset94
+.Ltmp798:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\270\007"
+.Ltmp799:
+	.quad	0
+	.quad	0
+.Ldebug_loc161:
+	.quad	.Ltmp465
+	.quad	.Ltmp468
+.Lset95 = .Ltmp801-.Ltmp800             # Loc expr size
+	.short	.Lset95
+.Ltmp800:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\310\022"
+.Ltmp801:
+	.quad	.Ltmp480
+	.quad	.Ltmp482
+.Lset96 = .Ltmp803-.Ltmp802             # Loc expr size
+	.short	.Lset96
+.Ltmp802:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\260\007"
+.Ltmp803:
 	.quad	0
 	.quad	0
 .Ldebug_loc164:
 	.quad	.Lfunc_begin13
-	.quad	.Ltmp499
-.Lset97 = .Ltmp785-.Ltmp784             # Loc expr size
+	.quad	.Ltmp519
+.Lset97 = .Ltmp805-.Ltmp804             # Loc expr size
 	.short	.Lset97
-.Ltmp784:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\320\f"
-.Ltmp785:
-	.quad	0
-	.quad	0
-.Ldebug_loc166:
-	.quad	.Lfunc_begin13
-	.quad	.Ltmp499
-.Lset98 = .Ltmp787-.Ltmp786             # Loc expr size
-	.short	.Lset98
-.Ltmp786:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\310\f"
-.Ltmp787:
-	.quad	0
-	.quad	0
-.Ldebug_loc168:
-	.quad	.Lfunc_begin13
-	.quad	.Ltmp499
-.Lset99 = .Ltmp789-.Ltmp788             # Loc expr size
-	.short	.Lset99
-.Ltmp788:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\300\f"
-.Ltmp789:
-	.quad	0
-	.quad	0
-.Ldebug_loc170:
-	.quad	.Ltmp495
-	.quad	.Ltmp499
-.Lset100 = .Ltmp791-.Ltmp790            # Loc expr size
-	.short	.Lset100
-.Ltmp790:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\300\f"
-.Ltmp791:
-	.quad	.Ltmp511
-	.quad	.Ltmp512
-.Lset101 = .Ltmp793-.Ltmp792            # Loc expr size
-	.short	.Lset101
-.Ltmp792:
-	.byte	119                     # DW_OP_breg7
-	.byte	24
-.Ltmp793:
-	.quad	0
-	.quad	0
-.Ldebug_loc173:
-	.quad	.Ltmp496
-	.quad	.Ltmp499
-.Lset102 = .Ltmp795-.Ltmp794            # Loc expr size
-	.short	.Lset102
-.Ltmp794:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\350\013"
-.Ltmp795:
-	.quad	0
-	.quad	0
-.Ldebug_loc175:
-	.quad	.Ltmp497
-	.quad	.Ltmp499
-.Lset103 = .Ltmp797-.Ltmp796            # Loc expr size
-	.short	.Lset103
-.Ltmp796:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\310\013"
-.Ltmp797:
-	.quad	.Ltmp506
-	.quad	.Ltmp512
-.Lset104 = .Ltmp799-.Ltmp798            # Loc expr size
-	.short	.Lset104
-.Ltmp798:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\310\001"
-.Ltmp799:
-	.quad	0
-	.quad	0
-.Ldebug_loc178:
-	.quad	.Ltmp497
-	.quad	.Ltmp499
-.Lset105 = .Ltmp801-.Ltmp800            # Loc expr size
-	.short	.Lset105
-.Ltmp800:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\310\013"
-.Ltmp801:
-	.quad	.Ltmp505
-	.quad	.Ltmp512
-.Lset106 = .Ltmp803-.Ltmp802            # Loc expr size
-	.short	.Lset106
-.Ltmp802:
-	.byte	119                     # DW_OP_breg7
-	.ascii	"\320\001"
-.Ltmp803:
-	.quad	0
-	.quad	0
-.Ldebug_loc181:
-	.quad	.Lfunc_begin14
-	.quad	.Ltmp538
-.Lset107 = .Ltmp805-.Ltmp804            # Loc expr size
-	.short	.Lset107
 .Ltmp804:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\270\007"
+	.ascii	"\330\f"
 .Ltmp805:
-	.quad	.Ltmp545
-	.quad	.Ltmp547
-.Lset108 = .Ltmp807-.Ltmp806            # Loc expr size
-	.short	.Lset108
+	.quad	.Ltmp530
+	.quad	.Ltmp532
+.Lset98 = .Ltmp807-.Ltmp806             # Loc expr size
+	.short	.Lset98
 .Ltmp806:
 	.byte	119                     # DW_OP_breg7
 	.byte	32
 .Ltmp807:
 	.quad	0
 	.quad	0
-.Ldebug_loc184:
-	.quad	.Lfunc_begin14
-	.quad	.Ltmp538
-.Lset109 = .Ltmp809-.Ltmp808            # Loc expr size
-	.short	.Lset109
+.Ldebug_loc167:
+	.quad	.Lfunc_begin13
+	.quad	.Ltmp519
+.Lset99 = .Ltmp809-.Ltmp808             # Loc expr size
+	.short	.Lset99
 .Ltmp808:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\260\007"
+	.ascii	"\320\f"
 .Ltmp809:
 	.quad	0
 	.quad	0
-.Ldebug_loc186:
-	.quad	.Lfunc_begin14
-	.quad	.Ltmp538
-.Lset110 = .Ltmp811-.Ltmp810            # Loc expr size
-	.short	.Lset110
+.Ldebug_loc169:
+	.quad	.Lfunc_begin13
+	.quad	.Ltmp519
+.Lset100 = .Ltmp811-.Ltmp810            # Loc expr size
+	.short	.Lset100
 .Ltmp810:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\250\007"
+	.ascii	"\310\f"
 .Ltmp811:
 	.quad	0
 	.quad	0
-.Ldebug_loc188:
-	.quad	.Lfunc_begin14
-	.quad	.Ltmp538
-.Lset111 = .Ltmp813-.Ltmp812            # Loc expr size
-	.short	.Lset111
+.Ldebug_loc171:
+	.quad	.Lfunc_begin13
+	.quad	.Ltmp519
+.Lset101 = .Ltmp813-.Ltmp812            # Loc expr size
+	.short	.Lset101
 .Ltmp812:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\244\007"
+	.ascii	"\300\f"
 .Ltmp813:
-	.quad	.Ltmp546
-	.quad	.Ltmp547
-.Lset112 = .Ltmp815-.Ltmp814            # Loc expr size
-	.short	.Lset112
+	.quad	0
+	.quad	0
+.Ldebug_loc173:
+	.quad	.Ltmp515
+	.quad	.Ltmp519
+.Lset102 = .Ltmp815-.Ltmp814            # Loc expr size
+	.short	.Lset102
 .Ltmp814:
 	.byte	119                     # DW_OP_breg7
-	.byte	28
+	.ascii	"\300\f"
 .Ltmp815:
-	.quad	0
-	.quad	0
-.Ldebug_loc191:
-	.quad	.Ltmp536
-	.quad	.Ltmp538
-.Lset113 = .Ltmp817-.Ltmp816            # Loc expr size
-	.short	.Lset113
+	.quad	.Ltmp531
+	.quad	.Ltmp532
+.Lset103 = .Ltmp817-.Ltmp816            # Loc expr size
+	.short	.Lset103
 .Ltmp816:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\310\006"
+	.byte	24
 .Ltmp817:
-	.quad	.Ltmp541
-	.quad	.Ltmp547
-.Lset114 = .Ltmp819-.Ltmp818            # Loc expr size
-	.short	.Lset114
+	.quad	0
+	.quad	0
+.Ldebug_loc176:
+	.quad	.Ltmp516
+	.quad	.Ltmp519
+.Lset104 = .Ltmp819-.Ltmp818            # Loc expr size
+	.short	.Lset104
 .Ltmp818:
 	.byte	119                     # DW_OP_breg7
-	.asciz	"\330"
+	.ascii	"\350\013"
 .Ltmp819:
 	.quad	0
 	.quad	0
-.Ldebug_loc194:
-	.quad	.Ltmp537
-	.quad	.Ltmp538
-.Lset115 = .Ltmp821-.Ltmp820            # Loc expr size
-	.short	.Lset115
+.Ldebug_loc178:
+	.quad	.Ltmp517
+	.quad	.Ltmp519
+.Lset105 = .Ltmp821-.Ltmp820            # Loc expr size
+	.short	.Lset105
 .Ltmp820:
 	.byte	119                     # DW_OP_breg7
-	.ascii	"\270\006"
+	.ascii	"\310\013"
 .Ltmp821:
-	.quad	.Ltmp544
-	.quad	.Ltmp547
-.Lset116 = .Ltmp823-.Ltmp822            # Loc expr size
-	.short	.Lset116
+	.quad	.Ltmp526
+	.quad	.Ltmp532
+.Lset106 = .Ltmp823-.Ltmp822            # Loc expr size
+	.short	.Lset106
 .Ltmp822:
 	.byte	119                     # DW_OP_breg7
-	.byte	40
+	.ascii	"\310\001"
 .Ltmp823:
 	.quad	0
 	.quad	0
+.Ldebug_loc181:
+	.quad	.Ltmp517
+	.quad	.Ltmp519
+.Lset107 = .Ltmp825-.Ltmp824            # Loc expr size
+	.short	.Lset107
+.Ltmp824:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\310\013"
+.Ltmp825:
+	.quad	.Ltmp525
+	.quad	.Ltmp532
+.Lset108 = .Ltmp827-.Ltmp826            # Loc expr size
+	.short	.Lset108
+.Ltmp826:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\320\001"
+.Ltmp827:
+	.quad	0
+	.quad	0
+.Ldebug_loc184:
+	.quad	.Lfunc_begin14
+	.quad	.Ltmp558
+.Lset109 = .Ltmp829-.Ltmp828            # Loc expr size
+	.short	.Lset109
+.Ltmp828:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\270\007"
+.Ltmp829:
+	.quad	.Ltmp565
+	.quad	.Ltmp567
+.Lset110 = .Ltmp831-.Ltmp830            # Loc expr size
+	.short	.Lset110
+.Ltmp830:
+	.byte	119                     # DW_OP_breg7
+	.byte	32
+.Ltmp831:
+	.quad	0
+	.quad	0
+.Ldebug_loc187:
+	.quad	.Lfunc_begin14
+	.quad	.Ltmp558
+.Lset111 = .Ltmp833-.Ltmp832            # Loc expr size
+	.short	.Lset111
+.Ltmp832:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\260\007"
+.Ltmp833:
+	.quad	0
+	.quad	0
+.Ldebug_loc189:
+	.quad	.Lfunc_begin14
+	.quad	.Ltmp558
+.Lset112 = .Ltmp835-.Ltmp834            # Loc expr size
+	.short	.Lset112
+.Ltmp834:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\250\007"
+.Ltmp835:
+	.quad	0
+	.quad	0
+.Ldebug_loc191:
+	.quad	.Lfunc_begin14
+	.quad	.Ltmp558
+.Lset113 = .Ltmp837-.Ltmp836            # Loc expr size
+	.short	.Lset113
+.Ltmp836:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\244\007"
+.Ltmp837:
+	.quad	.Ltmp566
+	.quad	.Ltmp567
+.Lset114 = .Ltmp839-.Ltmp838            # Loc expr size
+	.short	.Lset114
+.Ltmp838:
+	.byte	119                     # DW_OP_breg7
+	.byte	28
+.Ltmp839:
+	.quad	0
+	.quad	0
+.Ldebug_loc194:
+	.quad	.Ltmp556
+	.quad	.Ltmp558
+.Lset115 = .Ltmp841-.Ltmp840            # Loc expr size
+	.short	.Lset115
+.Ltmp840:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\310\006"
+.Ltmp841:
+	.quad	.Ltmp561
+	.quad	.Ltmp567
+.Lset116 = .Ltmp843-.Ltmp842            # Loc expr size
+	.short	.Lset116
+.Ltmp842:
+	.byte	119                     # DW_OP_breg7
+	.asciz	"\330"
+.Ltmp843:
+	.quad	0
+	.quad	0
 .Ldebug_loc197:
+	.quad	.Ltmp557
+	.quad	.Ltmp558
+.Lset117 = .Ltmp845-.Ltmp844            # Loc expr size
+	.short	.Lset117
+.Ltmp844:
+	.byte	119                     # DW_OP_breg7
+	.ascii	"\270\006"
+.Ltmp845:
+	.quad	.Ltmp564
+	.quad	.Ltmp567
+.Lset118 = .Ltmp847-.Ltmp846            # Loc expr size
+	.short	.Lset118
+.Ltmp846:
+	.byte	119                     # DW_OP_breg7
+	.byte	40
+.Ltmp847:
+	.quad	0
+	.quad	0
+.Ldebug_loc200:
 	.section	.debug_aranges,"",@progbits
 	.long	44                      # Length of ARange Set
 	.short	2                       # DWARF Arange version number
@@ -45109,8 +47746,8 @@ inst_count:
 	.byte	255
 	.byte	255
 	.quad	.Lfunc_begin0
-.Lset117 = .Lfunc_begin3-.Lfunc_begin0
-	.quad	.Lset117
+.Lset119 = .Lfunc_begin3-.Lfunc_begin0
+	.quad	.Lset119
 	.quad	0                       # ARange terminator
 	.quad	0
 	.long	44                      # Length of ARange Set
@@ -45123,66 +47760,69 @@ inst_count:
 	.byte	255
 	.byte	255
 	.quad	.Lfunc_begin3
-.Lset118 = .Ldebug_end0-.Lfunc_begin3
-	.quad	.Lset118
+.Lset120 = .Ldebug_end0-.Lfunc_begin3
+	.quad	.Lset120
 	.quad	0                       # ARange terminator
 	.quad	0
 	.section	.debug_ranges,"",@progbits
-	.quad	.Ltmp46
-	.quad	.Ltmp47
-	.quad	.Ltmp50
-	.quad	.Ltmp52
+	.quad	.Ltmp23
+	.quad	.Ltmp24
+	.quad	.Ltmp25
+	.quad	.Ltmp33
 	.quad	0
 	.quad	0
-	.quad	.Ltmp48
-	.quad	.Ltmp49
-	.quad	.Ltmp53
-	.quad	.Ltmp56
+	.quad	.Ltmp23
+	.quad	.Ltmp24
+	.quad	.Ltmp25
+	.quad	.Ltmp34
 	.quad	0
 	.quad	0
-	.quad	.Ltmp127
-	.quad	.Ltmp128
-	.quad	.Ltmp129
-	.quad	.Ltmp136
+	.quad	.Ltmp57
+	.quad	.Ltmp58
+	.quad	.Ltmp60
+	.quad	.Ltmp65
 	.quad	0
 	.quad	0
-	.quad	.Ltmp341
-	.quad	.Ltmp343
-	.quad	.Ltmp349
-	.quad	.Ltmp350
-	.quad	.Ltmp351
-	.quad	.Ltmp362
+	.quad	.Ltmp58
+	.quad	.Ltmp59
+	.quad	.Ltmp66
+	.quad	.Ltmp71
 	.quad	0
 	.quad	0
-	.quad	.Ltmp340
-	.quad	.Ltmp343
-	.quad	.Ltmp348
+	.quad	.Ltmp57
+	.quad	.Ltmp59
+	.quad	.Ltmp60
+	.quad	.Ltmp71
+	.quad	0
+	.quad	0
+	.quad	.Ltmp147
+	.quad	.Ltmp148
+	.quad	.Ltmp149
+	.quad	.Ltmp156
+	.quad	0
+	.quad	0
+	.quad	.Ltmp361
+	.quad	.Ltmp363
+	.quad	.Ltmp369
+	.quad	.Ltmp370
+	.quad	.Ltmp371
+	.quad	.Ltmp382
+	.quad	0
+	.quad	0
+	.quad	.Ltmp360
+	.quad	.Ltmp363
+	.quad	.Ltmp368
+	.quad	.Ltmp384
+	.quad	0
+	.quad	0
+	.quad	.Ltmp359
+	.quad	.Ltmp363
 	.quad	.Ltmp364
-	.quad	0
-	.quad	0
-	.quad	.Ltmp339
-	.quad	.Ltmp343
-	.quad	.Ltmp344
-	.quad	.Ltmp364
+	.quad	.Ltmp384
 	.quad	0
 	.quad	0
 	.section	.debug_macinfo,"",@progbits
 	.section	.debug_pubnames,"",@progbits
-.Lset119 = .Lpubnames_end0-.Lpubnames_begin0 # Length of Public Names Info
-	.long	.Lset119
-.Lpubnames_begin0:
-	.short	2                       # DWARF Version
-	.long	.L.debug_info_begin0    # Offset of Compilation Unit Info
-.Lset120 = .L.debug_info_end0-.L.debug_info_begin0 # Compilation Unit Length
-	.long	.Lset120
-	.long	327                     # DIE offset
-	.asciz	"main"                  # External Name
-	.long	179                     # DIE offset
-	.asciz	"process_data"          # External Name
-	.long	62                      # DIE offset
-	.asciz	"test_stores"           # External Name
-	.long	0                       # End Mark
-.Lpubnames_end0:
 .Lset121 = .Lpubnames_end1-.Lpubnames_begin1 # Length of Public Names Info
 	.long	.Lset121
 .Lpubnames_begin1:
@@ -45216,26 +47856,22 @@ inst_count:
 	.asciz	"kf_bfly3"              # External Name
 	.long	0                       # End Mark
 .Lpubnames_end1:
-	.section	.debug_pubtypes,"",@progbits
-.Lset123 = .Lpubtypes_end0-.Lpubtypes_begin0 # Length of Public Types Info
+.Lset123 = .Lpubnames_end0-.Lpubnames_begin0 # Length of Public Names Info
 	.long	.Lset123
-.Lpubtypes_begin0:
+.Lpubnames_begin0:
 	.short	2                       # DWARF Version
 	.long	.L.debug_info_begin0    # Offset of Compilation Unit Info
 .Lset124 = .L.debug_info_end0-.L.debug_info_begin0 # Compilation Unit Length
 	.long	.Lset124
-	.long	552                     # DIE offset
-	.asciz	"kiss_fft_cpx"          # External Name
-	.long	451                     # DIE offset
-	.asciz	"float"                 # External Name
-	.long	461                     # DIE offset
-	.asciz	"kiss_fft_cfg"          # External Name
-	.long	477                     # DIE offset
-	.asciz	"kiss_fft_state"        # External Name
-	.long	55                      # DIE offset
-	.asciz	"int"                   # External Name
+	.long	386                     # DIE offset
+	.asciz	"main"                  # External Name
+	.long	188                     # DIE offset
+	.asciz	"process_data"          # External Name
+	.long	38                      # DIE offset
+	.asciz	"test_stores"           # External Name
 	.long	0                       # End Mark
-.Lpubtypes_end0:
+.Lpubnames_end0:
+	.section	.debug_pubtypes,"",@progbits
 .Lset125 = .Lpubtypes_end1-.Lpubtypes_begin1 # Length of Public Types Info
 	.long	.Lset125
 .Lpubtypes_begin1:
@@ -45253,7 +47889,7 @@ inst_count:
 	.asciz	"kiss_fft_state"        # External Name
 	.long	55                      # DIE offset
 	.asciz	"double"                # External Name
-	.long	55                      # DIE offset
+	.long	181                     # DIE offset
 	.asciz	"int"                   # External Name
 	.long	1974                    # DIE offset
 	.asciz	"long unsigned int"     # External Name
@@ -45261,6 +47897,25 @@ inst_count:
 	.asciz	"size_t"                # External Name
 	.long	0                       # End Mark
 .Lpubtypes_end1:
+.Lset127 = .Lpubtypes_end0-.Lpubtypes_begin0 # Length of Public Types Info
+	.long	.Lset127
+.Lpubtypes_begin0:
+	.short	2                       # DWARF Version
+	.long	.L.debug_info_begin0    # Offset of Compilation Unit Info
+.Lset128 = .L.debug_info_end0-.L.debug_info_begin0 # Compilation Unit Length
+	.long	.Lset128
+	.long	681                     # DIE offset
+	.asciz	"kiss_fft_cpx"          # External Name
+	.long	451                     # DIE offset
+	.asciz	"float"                 # External Name
+	.long	590                     # DIE offset
+	.asciz	"kiss_fft_cfg"          # External Name
+	.long	606                     # DIE offset
+	.asciz	"kiss_fft_state"        # External Name
+	.long	181                     # DIE offset
+	.asciz	"int"                   # External Name
+	.long	0                       # End Mark
+.Lpubtypes_end0:
 
 	.ident	"clang version 3.4.2 (tags/RELEASE_34/dot2-final)"
 	.ident	"clang version 3.4.2 (tags/RELEASE_34/dot2-final)"
