@@ -81,7 +81,7 @@ double pythag ( double a, double b )
     r = r8_min ( fabs ( a ), fabs ( b ) ) / p;
     r = r * r;
 
-    while ( 1 )
+    pythag_loop:while ( 1 )
     {
       t = 4.0 + r;
 
@@ -456,7 +456,7 @@ int tqlrat ( int n, double d[], double e2[] )
     return ierr;
   }
 
-  for ( i = 1; i < n; i++ )
+  tqlrat_1:for ( i = 1; i < n; i++ )
   {
     e2[i-1] = e2[i];
   }
@@ -465,7 +465,7 @@ int tqlrat ( int n, double d[], double e2[] )
   t = 0.0;
   e2[n-1] = 0.0;
 
-  for ( l = 0; l < n; l++ )
+  tqlrat_2:for ( l = 0; l < n; l++ )
   {
      j = 0;
      h = fabs ( d[l] ) + sqrt ( e2[l] );
@@ -479,7 +479,7 @@ int tqlrat ( int n, double d[], double e2[] )
 /*
   Look for small squared sub-diagonal element.
 */
-    for ( m = l; m < n; m++ )
+    tqlrat_3:for ( m = l; m < n; m++ )
     {  
       if ( e2[m] <= c )
       {
@@ -489,7 +489,7 @@ int tqlrat ( int n, double d[], double e2[] )
 
     if ( m != l )
     {
-      for ( ; ; )
+      tqlrat_4:for ( ; ; )
       {
         if ( 30 <= j )
         {
@@ -508,7 +508,7 @@ int tqlrat ( int n, double d[], double e2[] )
         r = pythag ( p, 1.0 );
         d[l] = s / ( p + fabs ( r ) * r8_sign ( p ) );
         h = g - d[l];
-        for ( i = l1; i < n; i++ )
+        tqlrat_5:for ( i = l1; i < n; i++ )
         {
           d[i] = d[i] - h;
         }
@@ -526,7 +526,7 @@ int tqlrat ( int n, double d[], double e2[] )
         s = 0.0;
         mml = m - l;
 
-        for ( ii = 1; ii <= mml; ii++ )
+        tqlrat_6:for ( ii = 1; ii <= mml; ii++ )
         {
           i = m - ii;
           p = g * h;
@@ -569,7 +569,7 @@ int tqlrat ( int n, double d[], double e2[] )
 /*
   Order the eigenvalues.
 */
-    for ( i = l; 0 <= i; i-- )
+    tqlrat_7:for ( i = l; 0 <= i; i-- )
     {
       if ( i == 0 )
       {
@@ -668,21 +668,21 @@ void trbak1 ( int n, double a[], double e[], int m, double z[] )
     return;
   }
 
-  for ( i = 1; i < n; i++ )
+  trbak1_1:for ( i = 1; i < n; i++ )
   {
     l = i - 1;
 
     if ( e[i] != 0.0 )
     {
-      for ( j = 0; j < m; j++ )
+      trbak1_2:for ( j = 0; j < m; j++ )
       {
         s = 0.0;
-        for ( k = 0; k < i; k++ )
+        trbak1_3:for ( k = 0; k < i; k++ )
         {
           s = s + a[i+k*n] * z[k+j*n];
         }
         s = ( s / a[i+l*n] ) / e[i];
-        for ( k = 0; k < i; k++ )
+        trbak1_4:for ( k = 0; k < i; k++ )
         {
           z[k+j*n] = z[k+j*n] + s * a[i+k*n];
         }
@@ -775,17 +775,17 @@ void tred1 ( int n, double a[], double d[], double e[], double e2[] )
     int l;
     double scale;
 
-    for ( j = 0; j < n; j++ )
+    tred1_1:for ( j = 0; j < n; j++ )
     {
         d[j] = a[n-1+j*n];
     }
 
-    for ( i = 0; i < n; i++ )
+    tred1_2:for ( i = 0; i < n; i++ )
     {
         a[n-1+i*n] = a[i+i*n];
     }
 
-    for ( i = n - 1; 0 <= i; i-- )
+    tred1_3:for ( i = n - 1; 0 <= i; i-- )
     {
         l = i - 1;
         h = 0.0;
@@ -793,14 +793,14 @@ void tred1 ( int n, double a[], double d[], double e[], double e2[] )
          *   Scale row.
          *   */
         scale = 0.0;
-        for ( k = 0; k <= l; k++ )
+        tred1_4:for ( k = 0; k <= l; k++ )
         {
             scale = scale + fabs ( d[k] );
         }
 
         if ( scale == 0.0 )
         {
-            for ( j = 0; j <= l; j++ )
+            tred1_5:for ( j = 0; j <= l; j++ )
             {
                 d[j]     = a[l+j*n];
                 a[l+j*n] = a[i+j*n];
@@ -812,12 +812,12 @@ void tred1 ( int n, double a[], double d[], double e[], double e2[] )
             continue;
         }
 
-        for ( k = 0; k <= l; k++ )
+        tred1_6:for ( k = 0; k <= l; k++ )
         {
             d[k] = d[k] / scale;
         }
 
-        for ( k = 0; k <= l; k++ )
+        tred1_7:for ( k = 0; k <= l; k++ )
         {
             h = h + d[k] * d[k];
         }
@@ -834,17 +834,17 @@ void tred1 ( int n, double a[], double d[], double e[], double e2[] )
             /*
              *   Form A * U.
              *   */
-            for ( k = 0; k <= l; k++ )
+            tred1_8:for ( k = 0; k <= l; k++ )
             {
                 e[k] = 0.0;
             }
 
-            for ( j = 0; j <= l; j++ )
+            tred1_9:for ( j = 0; j <= l; j++ )
             {
                 f = d[j];
                 g = e[j] + a[j+j*n] * f;
 
-                for ( k = j + 1; k <= l; k++ )
+                tred1_10:for ( k = j + 1; k <= l; k++ )
                 {
                     g = g + a[k+j*n] * d[k];
                     e[k] = e[k] + a[k+j*n] * f;
@@ -855,7 +855,7 @@ void tred1 ( int n, double a[], double d[], double e[], double e2[] )
              *   Form P.
              *   */
             f = 0.0;
-            for ( j = 0; j <= l; j++ )
+            tred1_11:for ( j = 0; j <= l; j++ )
             {
                 e[j] = e[j] / h;
                 f = f + e[j] * d[j];
@@ -865,25 +865,25 @@ void tred1 ( int n, double a[], double d[], double e[], double e2[] )
             /*
              *   Form Q.
              *   */
-            for ( j = 0; j <= l; j++ )
+            tred1_12:for ( j = 0; j <= l; j++ )
             {
                 e[j] = e[j] - h * d[j];
             }
             /*
              *   Form reduced A.
              *   */
-            for ( j = 0; j <= l; j++ )
+            tred1_13:for ( j = 0; j <= l; j++ )
             {
                 f = d[j];
                 g = e[j];
-                for ( k = j; k <= l; k++ )
+                tred1_14:for ( k = j; k <= l; k++ )
                 {
                     a[k+j*n] = a[k+j*n] - f * e[k] - g * d[k];
                 }
             }
         }
 
-        for ( j = 0; j <= l; j++ )
+        tred1_15:for ( j = 0; j <= l; j++ )
         {
             f        = d[j];
             d[j]     = a[l+j*n];
