@@ -1,0 +1,23 @@
+===============================
+        Aladdin Results        
+===============================
+Running : ./outputs/mma_test_xcorr
+Top level function: store_kernel
+Cycle : 257 cycles
+Avg Power: 9.61215 mW
+Idle FU Cycles: 128 cycles
+Avg FU Power: 5.63446 mW
+Avg FU Dynamic Power: 3.14872 mW
+Avg FU leakage Power: 2.48574 mW
+Avg MEM Power: 3.97769 mW
+Avg MEM Dynamic Power: 0.06308 mW
+Avg MEM Leakage Power: 3.91461 mW
+Total Area: 1.09162e+06 uM^2
+FU Area: 288643 uM^2
+MEM Area: 802977 uM^2
+Num of Double Precision FP Multipliers: 15
+Num of Double Precision FP Adders: 18
+Num of Registers (32-bit): 40
+===============================
+        Aladdin Results        
+===============================
