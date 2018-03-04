@@ -329,15 +329,17 @@ int rs ( int n, double a[], double w[], bool matz, double z[] )
     The normal completion code is zero.
 */
 {
-  double *fv1;
-  double *fv2;
+  //double *fv1;
+  //double *fv2;
+  double fv1[n];
+  double fv2[n];
   int ierr;
 
-  fv1 = ( double * ) malloc ( n * sizeof ( double ) );
+  //fv1 = ( double * ) malloc ( n * sizeof ( double ) );
 
   if ( ! matz )
   {
-    fv2 = ( double * ) malloc ( n * sizeof ( double ) );
+    //fv2 = ( double * ) malloc ( n * sizeof ( double ) );
 
     tred1 ( n, a, w, fv1, fv2 );
 
@@ -345,7 +347,7 @@ int rs ( int n, double a[], double w[], bool matz, double z[] )
 
     if ( ierr != 0 )
     {
-      free ( fv2 );
+      //free ( fv2 );
 
       printf ( "\n" );
       printf ( "RS - Fatal error!\n" );
@@ -353,9 +355,9 @@ int rs ( int n, double a[], double w[], bool matz, double z[] )
       return ierr;
     }
 
-    free ( fv2 );
+    //free ( fv2 );
   }
-  free ( fv1 );
+  //free ( fv1 );
 
   return ierr;
 }

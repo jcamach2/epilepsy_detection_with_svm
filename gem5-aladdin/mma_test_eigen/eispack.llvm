@@ -8,137 +8,129 @@ target triple = "x86_64-unknown-linux-gnu"
 
 ; Function Attrs: nounwind readnone uwtable
 define double @pythag(double %a, double %b) #0 {
-  tail call void @llvm.dbg.value(metadata !{double %a}, i64 0, metadata !10), !dbg !115
-  tail call void @llvm.dbg.value(metadata !{double %b}, i64 0, metadata !11), !dbg !115
-  %1 = tail call double @fabs(double %a) #6, !dbg !116
-  %2 = tail call double @fabs(double %b) #6, !dbg !116
-  %3 = tail call double @r8_max(double %1, double %2) #7, !dbg !116
-  tail call void @llvm.dbg.value(metadata !{double %3}, i64 0, metadata !12), !dbg !116
-  %4 = fcmp une double %3, 0.000000e+00, !dbg !117
-  br i1 %4, label %5, label %.loopexit, !dbg !117
+  tail call void @llvm.dbg.value(metadata !{double %a}, i64 0, metadata !10), !dbg !118
+  tail call void @llvm.dbg.value(metadata !{double %b}, i64 0, metadata !11), !dbg !118
+  %1 = tail call double @fabs(double %a) #6, !dbg !119
+  %2 = tail call double @fabs(double %b) #6, !dbg !119
+  %3 = tail call double @r8_max(double %1, double %2) #7, !dbg !119
+  tail call void @llvm.dbg.value(metadata !{double %3}, i64 0, metadata !12), !dbg !119
+  %4 = fcmp une double %3, 0.000000e+00, !dbg !120
+  br i1 %4, label %5, label %.loopexit, !dbg !120
 
 ; <label>:5                                       ; preds = %0
-  %6 = tail call double @r8_min(double %1, double %2) #7, !dbg !119
-  %7 = fdiv double %6, %3, !dbg !119
-  tail call void @llvm.dbg.value(metadata !{double %7}, i64 0, metadata !13), !dbg !119
-  %8 = fmul double %7, %7, !dbg !121
-  tail call void @llvm.dbg.value(metadata !{double %8}, i64 0, metadata !13), !dbg !121
-  %9 = fadd double %8, 4.000000e+00, !dbg !122
-  tail call void @llvm.dbg.value(metadata !{double %9}, i64 0, metadata !15), !dbg !122
-  %10 = fcmp oeq double %9, 4.000000e+00, !dbg !124
-  br i1 %10, label %.loopexit, label %.lr.ph, !dbg !124
+  %6 = tail call double @r8_min(double %1, double %2) #7, !dbg !122
+  %7 = fdiv double %6, %3, !dbg !122
+  tail call void @llvm.dbg.value(metadata !{double %7}, i64 0, metadata !13), !dbg !122
+  %8 = fmul double %7, %7, !dbg !124
+  tail call void @llvm.dbg.value(metadata !{double %8}, i64 0, metadata !13), !dbg !124
+  %9 = fadd double %8, 4.000000e+00, !dbg !125
+  tail call void @llvm.dbg.value(metadata !{double %9}, i64 0, metadata !15), !dbg !125
+  %10 = fcmp oeq double %9, 4.000000e+00, !dbg !127
+  br i1 %10, label %.loopexit, label %.lr.ph, !dbg !127
 
 .lr.ph:                                           ; preds = %5, %.lr.ph
   %11 = phi double [ %19, %.lr.ph ], [ %9, %5 ]
   %p.02 = phi double [ %15, %.lr.ph ], [ %3, %5 ]
   %r.01 = phi double [ %18, %.lr.ph ], [ %8, %5 ]
-  %12 = fdiv double %r.01, %11, !dbg !126
-  tail call void @llvm.dbg.value(metadata !{double %12}, i64 0, metadata !14), !dbg !126
-  %13 = fmul double %12, 2.000000e+00, !dbg !127
-  %14 = fadd double %13, 1.000000e+00, !dbg !127
-  tail call void @llvm.dbg.value(metadata !{double %14}, i64 0, metadata !16), !dbg !127
-  %15 = fmul double %p.02, %14, !dbg !128
-  tail call void @llvm.dbg.value(metadata !{double %15}, i64 0, metadata !12), !dbg !128
-  %16 = fdiv double %12, %14, !dbg !129
-  %17 = fmul double %16, %16, !dbg !129
-  %18 = fmul double %r.01, %17, !dbg !129
-  tail call void @llvm.dbg.value(metadata !{double %18}, i64 0, metadata !13), !dbg !129
-  %19 = fadd double %18, 4.000000e+00, !dbg !122
-  tail call void @llvm.dbg.value(metadata !{double %11}, i64 0, metadata !15), !dbg !122
-  %20 = fcmp oeq double %19, 4.000000e+00, !dbg !124
-  br i1 %20, label %.loopexit, label %.lr.ph, !dbg !124
+  %12 = fdiv double %r.01, %11, !dbg !129
+  tail call void @llvm.dbg.value(metadata !{double %12}, i64 0, metadata !14), !dbg !129
+  %13 = fmul double %12, 2.000000e+00, !dbg !130
+  %14 = fadd double %13, 1.000000e+00, !dbg !130
+  tail call void @llvm.dbg.value(metadata !{double %14}, i64 0, metadata !16), !dbg !130
+  %15 = fmul double %p.02, %14, !dbg !131
+  tail call void @llvm.dbg.value(metadata !{double %15}, i64 0, metadata !12), !dbg !131
+  %16 = fdiv double %12, %14, !dbg !132
+  %17 = fmul double %16, %16, !dbg !132
+  %18 = fmul double %r.01, %17, !dbg !132
+  tail call void @llvm.dbg.value(metadata !{double %18}, i64 0, metadata !13), !dbg !132
+  %19 = fadd double %18, 4.000000e+00, !dbg !125
+  tail call void @llvm.dbg.value(metadata !{double %11}, i64 0, metadata !15), !dbg !125
+  %20 = fcmp oeq double %19, 4.000000e+00, !dbg !127
+  br i1 %20, label %.loopexit, label %.lr.ph, !dbg !127
 
 .loopexit:                                        ; preds = %5, %.lr.ph, %0
   %p.1 = phi double [ %3, %0 ], [ %3, %5 ], [ %15, %.lr.ph ]
-  ret double %p.1, !dbg !130
-}
-
-; Function Attrs: nounwind readnone uwtable
-define double @r8_max(double %x, double %y) #0 {
-  tail call void @llvm.dbg.value(metadata !{double %x}, i64 0, metadata !25), !dbg !131
-  tail call void @llvm.dbg.value(metadata !{double %y}, i64 0, metadata !26), !dbg !131
-  %1 = fcmp olt double %y, %x, !dbg !132
-  %x.y = select i1 %1, double %x, double %y, !dbg !134
-  ret double %x.y, !dbg !136
+  ret double %p.1, !dbg !133
 }
 
 ; Function Attrs: nounwind readnone
-declare double @fabs(double) #1
+declare void @llvm.dbg.declare(metadata, metadata) #1
+
+; Function Attrs: nounwind readnone uwtable
+define double @r8_max(double %x, double %y) #0 {
+  tail call void @llvm.dbg.value(metadata !{double %x}, i64 0, metadata !25), !dbg !134
+  tail call void @llvm.dbg.value(metadata !{double %y}, i64 0, metadata !26), !dbg !134
+  %1 = fcmp olt double %y, %x, !dbg !135
+  %x.y = select i1 %1, double %x, double %y, !dbg !137
+  ret double %x.y, !dbg !139
+}
+
+; Function Attrs: nounwind readnone
+declare double @fabs(double) #2
 
 ; Function Attrs: nounwind readnone uwtable
 define double @r8_min(double %x, double %y) #0 {
-  tail call void @llvm.dbg.value(metadata !{double %x}, i64 0, metadata !30), !dbg !137
-  tail call void @llvm.dbg.value(metadata !{double %y}, i64 0, metadata !31), !dbg !137
-  %1 = fcmp olt double %y, %x, !dbg !138
-  %y.x = select i1 %1, double %y, double %x, !dbg !140
-  ret double %y.x, !dbg !142
+  tail call void @llvm.dbg.value(metadata !{double %x}, i64 0, metadata !30), !dbg !140
+  tail call void @llvm.dbg.value(metadata !{double %y}, i64 0, metadata !31), !dbg !140
+  %1 = fcmp olt double %y, %x, !dbg !141
+  %y.x = select i1 %1, double %y, double %x, !dbg !143
+  ret double %y.x, !dbg !145
 }
 
 ; Function Attrs: nounwind readnone uwtable
 define double @r8_epsilon() #0 {
-  tail call void @llvm.dbg.value(metadata !143, i64 0, metadata !21), !dbg !144
-  ret double 0x3CB0000000000000, !dbg !145
+  tail call void @llvm.dbg.value(metadata !146, i64 0, metadata !21), !dbg !147
+  ret double 0x3CB0000000000000, !dbg !148
 }
 
 ; Function Attrs: nounwind readnone uwtable
 define double @r8_sign(double %x) #0 {
-  tail call void @llvm.dbg.value(metadata !{double %x}, i64 0, metadata !37), !dbg !146
-  %1 = fcmp olt double %x, 0.000000e+00, !dbg !147
-  %. = select i1 %1, double -1.000000e+00, double 1.000000e+00, !dbg !149
-  ret double %., !dbg !151
+  tail call void @llvm.dbg.value(metadata !{double %x}, i64 0, metadata !37), !dbg !149
+  %1 = fcmp olt double %x, 0.000000e+00, !dbg !150
+  %. = select i1 %1, double -1.000000e+00, double 1.000000e+00, !dbg !152
+  ret double %., !dbg !154
 }
 
 ; Function Attrs: nounwind uwtable
-define i32 @rs(i32 %n, double* nocapture %a, double* nocapture %w, i1 zeroext %matz, double* nocapture readnone %z) #2 {
-  tail call void @llvm.dbg.value(metadata !{i32 %n}, i64 0, metadata !46), !dbg !152
-  tail call void @llvm.dbg.value(metadata !{double* %a}, i64 0, metadata !47), !dbg !152
-  tail call void @llvm.dbg.value(metadata !{double* %w}, i64 0, metadata !48), !dbg !152
-  tail call void @llvm.dbg.value(metadata !{i1 %matz}, i64 0, metadata !49), !dbg !152
-  tail call void @llvm.dbg.value(metadata !{double* %z}, i64 0, metadata !50), !dbg !152
-  %1 = sext i32 %n to i64, !dbg !153
-  %2 = shl nsw i64 %1, 3, !dbg !153
-  %3 = tail call noalias i8* @malloc(i64 %2) #8, !dbg !153
-  tail call void @llvm.dbg.value(metadata !{double* %5}, i64 0, metadata !51), !dbg !153
-  br i1 %matz, label %14, label %4, !dbg !154
+define i32 @rs(i32 %n, double* nocapture %a, double* nocapture %w, i1 zeroext %matz, double* nocapture readnone %z) #3 {
+  tail call void @llvm.dbg.value(metadata !{i32 %n}, i64 0, metadata !46), !dbg !155
+  tail call void @llvm.dbg.value(metadata !{double* %a}, i64 0, metadata !47), !dbg !155
+  tail call void @llvm.dbg.value(metadata !{double* %w}, i64 0, metadata !48), !dbg !155
+  tail call void @llvm.dbg.value(metadata !{i1 %matz}, i64 0, metadata !49), !dbg !155
+  tail call void @llvm.dbg.value(metadata !{double* %z}, i64 0, metadata !50), !dbg !155
+  %1 = zext i32 %n to i64, !dbg !156
+  %2 = alloca double, i64 %1, align 16, !dbg !156
+  tail call void @llvm.dbg.declare(metadata !{double* %2}, metadata !51), !dbg !156
+  %3 = alloca double, i64 %1, align 16, !dbg !157
+  tail call void @llvm.dbg.declare(metadata !{double* %3}, metadata !55), !dbg !157
+  br i1 %matz, label %11, label %4, !dbg !158
 
 ; <label>:4                                       ; preds = %0
-  %5 = bitcast i8* %3 to double*, !dbg !153
-  %6 = tail call noalias i8* @malloc(i64 %2) #8, !dbg !156
-  %7 = bitcast i8* %6 to double*, !dbg !156
-  tail call void @llvm.dbg.value(metadata !{double* %7}, i64 0, metadata !52), !dbg !156
-  tail call void @tred1(i32 %n, double* %a, double* %w, double* %5, double* %7) #7, !dbg !158
-  %8 = tail call i32 @tqlrat(i32 %n, double* %w, double* %7) #7, !dbg !159
-  tail call void @llvm.dbg.value(metadata !{i32 %8}, i64 0, metadata !53), !dbg !159
-  %9 = icmp eq i32 %8, 0, !dbg !160
-  tail call void @free(i8* %6) #8, !dbg !162
-  br i1 %9, label %14, label %10, !dbg !160
+  call void @tred1(i32 %n, double* %a, double* %w, double* %2, double* %3) #7, !dbg !160
+  %5 = call i32 @tqlrat(i32 %n, double* %w, double* %3) #7, !dbg !162
+  tail call void @llvm.dbg.value(metadata !{i32 %5}, i64 0, metadata !56), !dbg !162
+  %6 = icmp eq i32 %5, 0, !dbg !163
+  br i1 %6, label %11, label %7, !dbg !163
 
-; <label>:10                                      ; preds = %4
-  %11 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([2 x i8]* @.str, i64 0, i64 0)) #8, !dbg !164
-  %12 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([19 x i8]* @.str1, i64 0, i64 0)) #8, !dbg !165
-  %13 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([29 x i8]* @.str2, i64 0, i64 0)) #8, !dbg !166
-  br label %15, !dbg !167
+; <label>:7                                       ; preds = %4
+  %8 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([2 x i8]* @.str, i64 0, i64 0)) #8, !dbg !165
+  %9 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([19 x i8]* @.str1, i64 0, i64 0)) #8, !dbg !167
+  %10 = tail call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([29 x i8]* @.str2, i64 0, i64 0)) #8, !dbg !168
+  br label %11, !dbg !169
 
-; <label>:14                                      ; preds = %4, %0
-  tail call void @free(i8* %3) #8, !dbg !168
-  br label %15, !dbg !169
-
-; <label>:15                                      ; preds = %14, %10
-  %.0 = phi i32 [ 0, %14 ], [ %8, %10 ]
+; <label>:11                                      ; preds = %0, %4, %7
+  %.0 = phi i32 [ %5, %7 ], [ undef, %0 ], [ 0, %4 ]
   ret i32 %.0, !dbg !170
 }
 
-; Function Attrs: nounwind
-declare noalias i8* @malloc(i64) #3
-
 ; Function Attrs: nounwind uwtable
-define void @tred1(i32 %n, double* nocapture %a, double* nocapture %d, double* nocapture %e, double* nocapture %e2) #2 {
-  tail call void @llvm.dbg.value(metadata !{i32 %n}, i64 0, metadata !96), !dbg !171
-  tail call void @llvm.dbg.value(metadata !{double* %a}, i64 0, metadata !97), !dbg !171
-  tail call void @llvm.dbg.value(metadata !{double* %d}, i64 0, metadata !98), !dbg !171
-  tail call void @llvm.dbg.value(metadata !{double* %e}, i64 0, metadata !99), !dbg !171
-  tail call void @llvm.dbg.value(metadata !{double* %e2}, i64 0, metadata !100), !dbg !171
-  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !106), !dbg !172
+define void @tred1(i32 %n, double* nocapture %a, double* nocapture %d, double* nocapture %e, double* nocapture %e2) #3 {
+  tail call void @llvm.dbg.value(metadata !{i32 %n}, i64 0, metadata !99), !dbg !171
+  tail call void @llvm.dbg.value(metadata !{double* %a}, i64 0, metadata !100), !dbg !171
+  tail call void @llvm.dbg.value(metadata !{double* %d}, i64 0, metadata !101), !dbg !171
+  tail call void @llvm.dbg.value(metadata !{double* %e}, i64 0, metadata !102), !dbg !171
+  tail call void @llvm.dbg.value(metadata !{double* %e2}, i64 0, metadata !103), !dbg !171
+  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !109), !dbg !172
   %1 = icmp sgt i32 %n, 0, !dbg !172
   br i1 %1, label %.lr.ph58, label %._crit_edge52, !dbg !172
 
@@ -203,10 +195,10 @@ define void @tred1(i32 %n, double* nocapture %a, double* nocapture %d, double* n
   %indvars.iv.next135 = add nsw i64 %indvars.iv134, -1, !dbg !184
   %i.150 = add nsw i32 %i.150.in, -1, !dbg !184
   %27 = add nsw i32 %i.150.in, -2, !dbg !186
-  tail call void @llvm.dbg.value(metadata !{i32 %27}, i64 0, metadata !108), !dbg !186
-  tail call void @llvm.dbg.value(metadata !188, i64 0, metadata !103), !dbg !189
-  tail call void @llvm.dbg.value(metadata !188, i64 0, metadata !109), !dbg !190
-  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !107), !dbg !191
+  tail call void @llvm.dbg.value(metadata !{i32 %27}, i64 0, metadata !111), !dbg !186
+  tail call void @llvm.dbg.value(metadata !188, i64 0, metadata !106), !dbg !189
+  tail call void @llvm.dbg.value(metadata !188, i64 0, metadata !112), !dbg !190
+  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !110), !dbg !191
   %28 = icmp slt i32 %27, 0, !dbg !191
   br i1 %28, label %._crit_edge46, label %.lr.ph, !dbg !191
 
@@ -217,7 +209,7 @@ define void @tred1(i32 %n, double* nocapture %a, double* nocapture %d, double* n
   %30 = load double* %29, align 8, !dbg !193, !tbaa !180
   %31 = tail call double @fabs(double %30) #6, !dbg !193
   %32 = fadd double %scale.02, %31, !dbg !193
-  tail call void @llvm.dbg.value(metadata !{double %32}, i64 0, metadata !109), !dbg !193
+  tail call void @llvm.dbg.value(metadata !{double %32}, i64 0, metadata !112), !dbg !193
   %indvars.iv.next = add nuw nsw i64 %indvars.iv, 1, !dbg !191
   %lftr.wideiv = trunc i64 %indvars.iv.next to i32, !dbg !191
   %exitcond = icmp eq i32 %lftr.wideiv, %indvars.iv130, !dbg !191
@@ -290,7 +282,7 @@ define void @tred1(i32 %n, double* nocapture %a, double* nocapture %d, double* n
   %56 = load double* %55, align 8, !dbg !213, !tbaa !180
   %57 = fmul double %56, %56, !dbg !213
   %58 = fadd double %h.05, %57, !dbg !213
-  tail call void @llvm.dbg.value(metadata !{double %58}, i64 0, metadata !103), !dbg !213
+  tail call void @llvm.dbg.value(metadata !{double %58}, i64 0, metadata !106), !dbg !213
   %indvars.iv.next69 = add nuw nsw i64 %indvars.iv68, 1, !dbg !211
   %lftr.wideiv72 = trunc i64 %indvars.iv.next69 to i32, !dbg !211
   %exitcond73 = icmp eq i32 %lftr.wideiv72, %indvars.iv130, !dbg !211
@@ -305,18 +297,18 @@ define void @tred1(i32 %n, double* nocapture %a, double* nocapture %d, double* n
   %62 = sext i32 %27 to i64, !dbg !216
   %63 = getelementptr inbounds double* %d, i64 %62, !dbg !216
   %64 = load double* %63, align 8, !dbg !216, !tbaa !180
-  tail call void @llvm.dbg.value(metadata !{double %64}, i64 0, metadata !101), !dbg !216
+  tail call void @llvm.dbg.value(metadata !{double %64}, i64 0, metadata !104), !dbg !216
   %65 = tail call double @sqrt(double %h.0.lcssa) #8, !dbg !217
   %66 = tail call double @r8_sign(double %64) #7, !dbg !217
   %67 = fmul double %65, %66, !dbg !217
   %68 = fsub double -0.000000e+00, %67, !dbg !217
-  tail call void @llvm.dbg.value(metadata !{double %68}, i64 0, metadata !102), !dbg !217
+  tail call void @llvm.dbg.value(metadata !{double %68}, i64 0, metadata !105), !dbg !217
   %69 = fmul double %32, %68, !dbg !218
   %70 = getelementptr inbounds double* %e, i64 %indvars.iv.next135, !dbg !218
   store double %69, double* %70, align 8, !dbg !218, !tbaa !180
   %71 = fmul double %64, %68, !dbg !219
   %72 = fsub double %h.0.lcssa, %71, !dbg !219
-  tail call void @llvm.dbg.value(metadata !{double %72}, i64 0, metadata !103), !dbg !219
+  tail call void @llvm.dbg.value(metadata !{double %72}, i64 0, metadata !106), !dbg !219
   %73 = fadd double %64, %67, !dbg !220
   store double %73, double* %63, align 8, !dbg !220, !tbaa !180
   %74 = icmp sgt i32 %27, -1, !dbg !221
@@ -340,7 +332,7 @@ define void @tred1(i32 %n, double* nocapture %a, double* nocapture %d, double* n
   %indvars.iv81 = phi i64 [ %indvars.iv.next82, %._crit_edge18 ], [ 1, %.loopexit11 ]
   %77 = getelementptr inbounds double* %d, i64 %indvars.iv89, !dbg !230
   %78 = load double* %77, align 8, !dbg !230, !tbaa !180
-  tail call void @llvm.dbg.value(metadata !{double %78}, i64 0, metadata !101), !dbg !230
+  tail call void @llvm.dbg.value(metadata !{double %78}, i64 0, metadata !104), !dbg !230
   %79 = getelementptr inbounds double* %e, i64 %indvars.iv89, !dbg !232
   %80 = load double* %79, align 8, !dbg !232, !tbaa !180
   %81 = trunc i64 %indvars.iv89 to i32, !dbg !232
@@ -352,7 +344,7 @@ define void @tred1(i32 %n, double* nocapture %a, double* nocapture %d, double* n
   %87 = load double* %86, align 8, !dbg !232, !tbaa !180
   %88 = fmul double %78, %87, !dbg !232
   %89 = fadd double %80, %88, !dbg !232
-  tail call void @llvm.dbg.value(metadata !{double %89}, i64 0, metadata !102), !dbg !232
+  tail call void @llvm.dbg.value(metadata !{double %89}, i64 0, metadata !105), !dbg !232
   %indvars.iv.next90 = add nuw nsw i64 %indvars.iv89, 1, !dbg !228
   %90 = trunc i64 %indvars.iv89 to i32, !dbg !233
   %91 = icmp slt i32 %90, %27, !dbg !233
@@ -372,7 +364,7 @@ define void @tred1(i32 %n, double* nocapture %a, double* nocapture %d, double* n
   %98 = load double* %97, align 8, !dbg !235, !tbaa !180
   %99 = fmul double %96, %98, !dbg !235
   %100 = fadd double %g.014, %99, !dbg !235
-  tail call void @llvm.dbg.value(metadata !{double %100}, i64 0, metadata !102), !dbg !235
+  tail call void @llvm.dbg.value(metadata !{double %100}, i64 0, metadata !105), !dbg !235
   %101 = getelementptr inbounds double* %e, i64 %indvars.iv83, !dbg !237
   %102 = load double* %101, align 8, !dbg !237, !tbaa !180
   %103 = fmul double %78, %96, !dbg !237
@@ -406,7 +398,7 @@ define void @tred1(i32 %n, double* nocapture %a, double* nocapture %d, double* n
   %110 = load double* %109, align 8, !dbg !243, !tbaa !180
   %111 = fmul double %108, %110, !dbg !243
   %112 = fadd double %f.024, %111, !dbg !243
-  tail call void @llvm.dbg.value(metadata !{double %112}, i64 0, metadata !101), !dbg !243
+  tail call void @llvm.dbg.value(metadata !{double %112}, i64 0, metadata !104), !dbg !243
   %indvars.iv.next97 = add nuw nsw i64 %indvars.iv96, 1, !dbg !239
   %lftr.wideiv100 = trunc i64 %indvars.iv.next97 to i32, !dbg !239
   %exitcond101 = icmp eq i32 %lftr.wideiv100, %indvars.iv130, !dbg !239
@@ -415,8 +407,8 @@ define void @tred1(i32 %n, double* nocapture %a, double* nocapture %d, double* n
 ._crit_edge26:                                    ; preds = %.lr.ph25
   %113 = fadd double %72, %72, !dbg !244
   %114 = fdiv double %112, %113, !dbg !244
-  tail call void @llvm.dbg.value(metadata !{double %114}, i64 0, metadata !103), !dbg !244
-  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !106), !dbg !245
+  tail call void @llvm.dbg.value(metadata !{double %114}, i64 0, metadata !106), !dbg !244
+  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !109), !dbg !245
   %115 = icmp slt i32 %27, 0, !dbg !245
   br i1 %115, label %.backedge, label %.lr.ph31, !dbg !245
 
@@ -442,11 +434,11 @@ define void @tred1(i32 %n, double* nocapture %a, double* nocapture %d, double* n
   %indvars.iv116 = phi i64 [ %indvars.iv.next117, %._crit_edge35 ], [ 0, %.loopexit28 ]
   %123 = getelementptr inbounds double* %d, i64 %indvars.iv116, !dbg !251
   %124 = load double* %123, align 8, !dbg !251, !tbaa !180
-  tail call void @llvm.dbg.value(metadata !{double %124}, i64 0, metadata !101), !dbg !251
+  tail call void @llvm.dbg.value(metadata !{double %124}, i64 0, metadata !104), !dbg !251
   %125 = getelementptr inbounds double* %e, i64 %indvars.iv116, !dbg !253
   %126 = load double* %125, align 8, !dbg !253, !tbaa !180
-  tail call void @llvm.dbg.value(metadata !{double %126}, i64 0, metadata !102), !dbg !253
-  tail call void @llvm.dbg.value(metadata !254, i64 0, metadata !107), !dbg !255
+  tail call void @llvm.dbg.value(metadata !{double %126}, i64 0, metadata !105), !dbg !253
+  tail call void @llvm.dbg.value(metadata !254, i64 0, metadata !110), !dbg !255
   %127 = trunc i64 %indvars.iv116 to i32, !dbg !257
   %128 = mul nsw i32 %127, %n, !dbg !257
   %129 = sext i32 %128 to i64, !dbg !255
@@ -485,7 +477,7 @@ define void @tred1(i32 %n, double* nocapture %a, double* nocapture %d, double* n
   %indvars.iv122 = phi i64 [ %indvars.iv.next123, %.lr.ph42 ], [ 0, %.preheader39 ]
   %143 = getelementptr inbounds double* %d, i64 %indvars.iv122, !dbg !261
   %144 = load double* %143, align 8, !dbg !261, !tbaa !180
-  tail call void @llvm.dbg.value(metadata !{double %144}, i64 0, metadata !101), !dbg !261
+  tail call void @llvm.dbg.value(metadata !{double %144}, i64 0, metadata !104), !dbg !261
   %145 = trunc i64 %indvars.iv122 to i32, !dbg !263
   %146 = mul nsw i32 %145, %n, !dbg !263
   %147 = add nsw i32 %146, %27, !dbg !263
@@ -511,11 +503,11 @@ define void @tred1(i32 %n, double* nocapture %a, double* nocapture %d, double* n
 }
 
 ; Function Attrs: nounwind uwtable
-define i32 @tqlrat(i32 %n, double* nocapture %d, double* nocapture %e2) #2 {
-  tail call void @llvm.dbg.value(metadata !{i32 %n}, i64 0, metadata !58), !dbg !267
-  tail call void @llvm.dbg.value(metadata !{double* %d}, i64 0, metadata !59), !dbg !267
-  tail call void @llvm.dbg.value(metadata !{double* %e2}, i64 0, metadata !60), !dbg !267
-  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !67), !dbg !268
+define i32 @tqlrat(i32 %n, double* nocapture %d, double* nocapture %e2) #3 {
+  tail call void @llvm.dbg.value(metadata !{i32 %n}, i64 0, metadata !61), !dbg !267
+  tail call void @llvm.dbg.value(metadata !{double* %d}, i64 0, metadata !62), !dbg !267
+  tail call void @llvm.dbg.value(metadata !{double* %e2}, i64 0, metadata !63), !dbg !267
+  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !70), !dbg !268
   %1 = icmp eq i32 %n, 1, !dbg !269
   br i1 %1, label %.loopexit24, label %.preheader34, !dbg !269
 
@@ -524,13 +516,13 @@ define i32 @tqlrat(i32 %n, double* nocapture %d, double* nocapture %e2) #2 {
   br i1 %2, label %.lr.ph36, label %._crit_edge37.thread, !dbg !271
 
 ._crit_edge37.thread:                             ; preds = %.preheader34
-  tail call void @llvm.dbg.value(metadata !188, i64 0, metadata !63), !dbg !273
-  tail call void @llvm.dbg.value(metadata !188, i64 0, metadata !77), !dbg !274
+  tail call void @llvm.dbg.value(metadata !188, i64 0, metadata !66), !dbg !273
+  tail call void @llvm.dbg.value(metadata !188, i64 0, metadata !80), !dbg !274
   %3 = add nsw i32 %n, -1, !dbg !275
   %4 = sext i32 %3 to i64, !dbg !275
   %5 = getelementptr inbounds double* %e2, i64 %4, !dbg !275
   store double 0.000000e+00, double* %5, align 8, !dbg !275, !tbaa !180
-  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !70), !dbg !276
+  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !73), !dbg !276
   br label %.loopexit24, !dbg !276
 
 .lr.ph36:                                         ; preds = %.preheader34, %.lr.ph36
@@ -546,13 +538,13 @@ define i32 @tqlrat(i32 %n, double* nocapture %d, double* nocapture %e2) #2 {
   br i1 %exitcond66, label %._crit_edge37, label %.lr.ph36, !dbg !271
 
 ._crit_edge37:                                    ; preds = %.lr.ph36
-  tail call void @llvm.dbg.value(metadata !188, i64 0, metadata !63), !dbg !273
-  tail call void @llvm.dbg.value(metadata !188, i64 0, metadata !77), !dbg !274
+  tail call void @llvm.dbg.value(metadata !188, i64 0, metadata !66), !dbg !273
+  tail call void @llvm.dbg.value(metadata !188, i64 0, metadata !80), !dbg !274
   %10 = add nsw i32 %n, -1, !dbg !275
   %11 = sext i32 %10 to i64, !dbg !275
   %12 = getelementptr inbounds double* %e2, i64 %11, !dbg !275
   store double 0.000000e+00, double* %12, align 8, !dbg !275, !tbaa !180
-  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !70), !dbg !276
+  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !73), !dbg !276
   %13 = icmp sgt i32 %n, 0, !dbg !276
   br i1 %13, label %.lr.ph33, label %.loopexit24, !dbg !276
 
@@ -565,7 +557,7 @@ define i32 @tqlrat(i32 %n, double* nocapture %d, double* nocapture %e2) #2 {
   %l.028 = phi i32 [ %127, %.loopexit17 ], [ 0, %._crit_edge37 ]
   %f.027 = phi double [ %f.2, %.loopexit17 ], [ 0.000000e+00, %._crit_edge37 ]
   %c.026 = phi double [ %c.1, %.loopexit17 ], [ undef, %._crit_edge37 ]
-  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !69), !dbg !280
+  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !72), !dbg !280
   %14 = getelementptr inbounds double* %d, i64 %indvars.iv63, !dbg !282
   %15 = load double* %14, align 8, !dbg !282, !tbaa !180
   %16 = tail call double @fabs(double %15) #6, !dbg !282
@@ -573,24 +565,24 @@ define i32 @tqlrat(i32 %n, double* nocapture %d, double* nocapture %e2) #2 {
   %18 = load double* %17, align 8, !dbg !282, !tbaa !180
   %19 = tail call double @sqrt(double %18) #8, !dbg !282
   %20 = fadd double %16, %19, !dbg !282
-  tail call void @llvm.dbg.value(metadata !{double %20}, i64 0, metadata !65), !dbg !282
+  tail call void @llvm.dbg.value(metadata !{double %20}, i64 0, metadata !68), !dbg !282
   %21 = fcmp ugt double %t.031, %20, !dbg !283
   br i1 %21, label %.lr.ph, label %22, !dbg !283
 
 ; <label>:22                                      ; preds = %.lr.ph33
-  tail call void @llvm.dbg.value(metadata !{double %20}, i64 0, metadata !77), !dbg !285
+  tail call void @llvm.dbg.value(metadata !{double %20}, i64 0, metadata !80), !dbg !285
   %23 = tail call double @fabs(double %20) #6, !dbg !287
   %24 = fmul double %23, 0x3CB0000000000000, !dbg !287
-  tail call void @llvm.dbg.value(metadata !{double %24}, i64 0, metadata !61), !dbg !287
+  tail call void @llvm.dbg.value(metadata !{double %24}, i64 0, metadata !64), !dbg !287
   %25 = fmul double %24, %24, !dbg !288
-  tail call void @llvm.dbg.value(metadata !{double %25}, i64 0, metadata !62), !dbg !288
+  tail call void @llvm.dbg.value(metadata !{double %25}, i64 0, metadata !65), !dbg !288
   br label %.lr.ph, !dbg !289
 
 .lr.ph:                                           ; preds = %22, %.lr.ph33
   %c.1 = phi double [ %25, %22 ], [ %c.026, %.lr.ph33 ]
   %b.1 = phi double [ %24, %22 ], [ %b.030, %.lr.ph33 ]
   %t.1 = phi double [ %20, %22 ], [ %t.031, %.lr.ph33 ]
-  tail call void @llvm.dbg.value(metadata !{i32 %l.028}, i64 0, metadata !72), !dbg !290
+  tail call void @llvm.dbg.value(metadata !{i32 %l.028}, i64 0, metadata !75), !dbg !290
   br label %29, !dbg !290
 
 ; <label>:26                                      ; preds = %29
@@ -606,7 +598,7 @@ define i32 @tqlrat(i32 %n, double* nocapture %d, double* nocapture %e2) #2 {
   %32 = fcmp ugt double %31, %c.1, !dbg !292
   %indvars.iv.next41 = add nuw nsw i64 %indvars.iv40, 1, !dbg !290
   %33 = add nsw i32 %m.01, 1, !dbg !290
-  tail call void @llvm.dbg.value(metadata !{i32 %33}, i64 0, metadata !72), !dbg !290
+  tail call void @llvm.dbg.value(metadata !{i32 %33}, i64 0, metadata !75), !dbg !290
   br i1 %32, label %26, label %split2, !dbg !292
 
 split2:                                           ; preds = %26, %29
@@ -636,24 +628,24 @@ split2:                                           ; preds = %26, %29
 
 ; <label>:48                                      ; preds = %46
   %49 = add nsw i32 %l.028, 1, !dbg !310
-  tail call void @llvm.dbg.value(metadata !{i32 %49}, i64 0, metadata !67), !dbg !310
+  tail call void @llvm.dbg.value(metadata !{i32 %49}, i64 0, metadata !70), !dbg !310
   br label %.loopexit24, !dbg !312
 
 ; <label>:50                                      ; preds = %46
   %51 = add nsw i32 %j.0, 1, !dbg !313
-  tail call void @llvm.dbg.value(metadata !{i32 %51}, i64 0, metadata !69), !dbg !313
+  tail call void @llvm.dbg.value(metadata !{i32 %51}, i64 0, metadata !72), !dbg !313
   %52 = load double* %17, align 8, !dbg !314, !tbaa !180
   %53 = tail call double @sqrt(double %52) #8, !dbg !314
-  tail call void @llvm.dbg.value(metadata !{double %53}, i64 0, metadata !76), !dbg !314
+  tail call void @llvm.dbg.value(metadata !{double %53}, i64 0, metadata !79), !dbg !314
   %54 = load double* %14, align 8, !dbg !315, !tbaa !180
-  tail call void @llvm.dbg.value(metadata !{double %54}, i64 0, metadata !64), !dbg !315
+  tail call void @llvm.dbg.value(metadata !{double %54}, i64 0, metadata !67), !dbg !315
   %55 = load double* %37, align 8, !dbg !301, !tbaa !180
   %56 = fsub double %55, %54, !dbg !301
   %57 = fmul double %53, 2.000000e+00, !dbg !301
   %58 = fdiv double %56, %57, !dbg !301
-  tail call void @llvm.dbg.value(metadata !{double %58}, i64 0, metadata !74), !dbg !301
+  tail call void @llvm.dbg.value(metadata !{double %58}, i64 0, metadata !77), !dbg !301
   %59 = tail call double @pythag(double %58, double 1.000000e+00) #7, !dbg !316
-  tail call void @llvm.dbg.value(metadata !{double %59}, i64 0, metadata !75), !dbg !316
+  tail call void @llvm.dbg.value(metadata !{double %59}, i64 0, metadata !78), !dbg !316
   %60 = tail call double @fabs(double %59) #6, !dbg !317
   %61 = tail call double @r8_sign(double %58) #7, !dbg !317
   %62 = fmul double %60, %61, !dbg !317
@@ -661,7 +653,7 @@ split2:                                           ; preds = %26, %29
   %64 = fdiv double %53, %63, !dbg !317
   store double %64, double* %14, align 8, !dbg !317, !tbaa !180
   %65 = fsub double %54, %64, !dbg !318
-  tail call void @llvm.dbg.value(metadata !{double %65}, i64 0, metadata !65), !dbg !318
+  tail call void @llvm.dbg.value(metadata !{double %65}, i64 0, metadata !68), !dbg !318
   br i1 %39, label %.lr.ph5, label %._crit_edge6, !dbg !302
 
 .lr.ph5:                                          ; preds = %50, %.lr.ph5
@@ -677,16 +669,16 @@ split2:                                           ; preds = %26, %29
 
 ._crit_edge6:                                     ; preds = %.lr.ph5, %50
   %69 = fadd double %f.1, %65, !dbg !321
-  tail call void @llvm.dbg.value(metadata !{double %69}, i64 0, metadata !63), !dbg !321
+  tail call void @llvm.dbg.value(metadata !{double %69}, i64 0, metadata !66), !dbg !321
   %70 = load double* %41, align 8, !dbg !304, !tbaa !180
-  tail call void @llvm.dbg.value(metadata !{double %70}, i64 0, metadata !64), !dbg !304
+  tail call void @llvm.dbg.value(metadata !{double %70}, i64 0, metadata !67), !dbg !304
   %71 = fcmp oeq double %70, 0.000000e+00, !dbg !322
-  tail call void @llvm.dbg.value(metadata !{double %b.1}, i64 0, metadata !64), !dbg !324
+  tail call void @llvm.dbg.value(metadata !{double %b.1}, i64 0, metadata !67), !dbg !324
   %g.0 = select i1 %71, double %b.1, double %70, !dbg !322
-  tail call void @llvm.dbg.value(metadata !{double %g.0}, i64 0, metadata !65), !dbg !326
-  tail call void @llvm.dbg.value(metadata !188, i64 0, metadata !76), !dbg !327
-  tail call void @llvm.dbg.value(metadata !{i32 %43}, i64 0, metadata !73), !dbg !305
-  tail call void @llvm.dbg.value(metadata !328, i64 0, metadata !68), !dbg !306
+  tail call void @llvm.dbg.value(metadata !{double %g.0}, i64 0, metadata !68), !dbg !326
+  tail call void @llvm.dbg.value(metadata !188, i64 0, metadata !79), !dbg !327
+  tail call void @llvm.dbg.value(metadata !{i32 %43}, i64 0, metadata !76), !dbg !305
+  tail call void @llvm.dbg.value(metadata !328, i64 0, metadata !71), !dbg !306
   br i1 %44, label %._crit_edge13, label %.lr.ph12, !dbg !306
 
 .lr.ph12:                                         ; preds = %._crit_edge6, %.lr.ph12
@@ -696,14 +688,14 @@ split2:                                           ; preds = %26, %29
   %g.17 = phi double [ %g.2, %.lr.ph12 ], [ %g.0, %._crit_edge6 ]
   %72 = trunc i64 %indvars.iv47 to i32, !dbg !329
   %73 = sub nsw i32 %m.0.lcssa, %72, !dbg !329
-  tail call void @llvm.dbg.value(metadata !{i32 %73}, i64 0, metadata !66), !dbg !329
+  tail call void @llvm.dbg.value(metadata !{i32 %73}, i64 0, metadata !69), !dbg !329
   %74 = fmul double %g.17, %h.08, !dbg !331
-  tail call void @llvm.dbg.value(metadata !{double %74}, i64 0, metadata !74), !dbg !331
+  tail call void @llvm.dbg.value(metadata !{double %74}, i64 0, metadata !77), !dbg !331
   %75 = sext i32 %73 to i64, !dbg !332
   %76 = getelementptr inbounds double* %e2, i64 %75, !dbg !332
   %77 = load double* %76, align 8, !dbg !332, !tbaa !180
   %78 = fadd double %74, %77, !dbg !332
-  tail call void @llvm.dbg.value(metadata !{double %78}, i64 0, metadata !75), !dbg !332
+  tail call void @llvm.dbg.value(metadata !{double %78}, i64 0, metadata !78), !dbg !332
   %79 = fmul double %s.010, %78, !dbg !333
   %80 = add nsw i32 %73, 1, !dbg !333
   %81 = sext i32 %80 to i64, !dbg !333
@@ -711,7 +703,7 @@ split2:                                           ; preds = %26, %29
   store double %79, double* %82, align 8, !dbg !333, !tbaa !180
   %83 = load double* %76, align 8, !dbg !334, !tbaa !180
   %84 = fdiv double %83, %78, !dbg !334
-  tail call void @llvm.dbg.value(metadata !{double %84}, i64 0, metadata !76), !dbg !334
+  tail call void @llvm.dbg.value(metadata !{double %84}, i64 0, metadata !79), !dbg !334
   %85 = getelementptr inbounds double* %d, i64 %75, !dbg !335
   %86 = load double* %85, align 8, !dbg !335, !tbaa !180
   %87 = fadd double %h.08, %86, !dbg !335
@@ -723,13 +715,13 @@ split2:                                           ; preds = %26, %29
   %92 = load double* %76, align 8, !dbg !336, !tbaa !180
   %93 = fdiv double %92, %g.17, !dbg !336
   %94 = fsub double %91, %93, !dbg !336
-  tail call void @llvm.dbg.value(metadata !{double %94}, i64 0, metadata !64), !dbg !336
+  tail call void @llvm.dbg.value(metadata !{double %94}, i64 0, metadata !67), !dbg !336
   %95 = fcmp oeq double %94, 0.000000e+00, !dbg !337
-  tail call void @llvm.dbg.value(metadata !{double %b.1}, i64 0, metadata !64), !dbg !339
+  tail call void @llvm.dbg.value(metadata !{double %b.1}, i64 0, metadata !67), !dbg !339
   %g.2 = select i1 %95, double %b.1, double %94, !dbg !337
   %96 = fmul double %74, %g.2, !dbg !341
   %97 = fdiv double %96, %78, !dbg !341
-  tail call void @llvm.dbg.value(metadata !{double %97}, i64 0, metadata !65), !dbg !341
+  tail call void @llvm.dbg.value(metadata !{double %97}, i64 0, metadata !68), !dbg !341
   %indvars.iv.next48 = add nuw nsw i64 %indvars.iv47, 1, !dbg !306
   %lftr.wideiv51 = trunc i64 %indvars.iv.next48 to i32, !dbg !306
   %exitcond52 = icmp eq i32 %lftr.wideiv51, %45, !dbg !306
@@ -763,8 +755,8 @@ split2:                                           ; preds = %26, %29
   %f.2 = phi double [ %f.027, %split2 ], [ %69, %106 ], [ %69, %._crit_edge13 ], [ %69, %100 ]
   %109 = load double* %14, align 8, !dbg !351, !tbaa !180
   %110 = fadd double %f.2, %109, !dbg !351
-  tail call void @llvm.dbg.value(metadata !{double %110}, i64 0, metadata !74), !dbg !351
-  tail call void @llvm.dbg.value(metadata !{i32 %l.028}, i64 0, metadata !66), !dbg !352
+  tail call void @llvm.dbg.value(metadata !{double %110}, i64 0, metadata !77), !dbg !351
+  tail call void @llvm.dbg.value(metadata !{i32 %l.028}, i64 0, metadata !69), !dbg !352
   br label %111, !dbg !352
 
 ; <label>:111                                     ; preds = %.lr.ph23, %123
@@ -795,7 +787,7 @@ split2:                                           ; preds = %26, %29
 ; <label>:123                                     ; preds = %117
   %124 = add nsw i32 %i.221, -1, !dbg !360
   store double %119, double* %121, align 8, !dbg !362, !tbaa !180
-  tail call void @llvm.dbg.value(metadata !{i32 %124}, i64 0, metadata !66), !dbg !352
+  tail call void @llvm.dbg.value(metadata !{i32 %124}, i64 0, metadata !69), !dbg !352
   %125 = trunc i64 %indvars.iv60 to i32, !dbg !352
   %126 = icmp sgt i32 %125, 0, !dbg !352
   br i1 %126, label %111, label %.loopexit17, !dbg !352
@@ -803,7 +795,7 @@ split2:                                           ; preds = %26, %29
 .loopexit17:                                      ; preds = %123, %114, %122
   %indvars.iv.next64 = add nuw nsw i64 %indvars.iv63, 1, !dbg !276
   %127 = add nsw i32 %l.028, 1, !dbg !276
-  tail call void @llvm.dbg.value(metadata !{i32 %127}, i64 0, metadata !70), !dbg !276
+  tail call void @llvm.dbg.value(metadata !{i32 %127}, i64 0, metadata !73), !dbg !276
   %128 = trunc i64 %indvars.iv.next64 to i32, !dbg !276
   %129 = icmp slt i32 %128, %n, !dbg !276
   %indvars.iv.next43 = add nuw nsw i64 %indvars.iv42, 1, !dbg !276
@@ -815,21 +807,18 @@ split2:                                           ; preds = %26, %29
   ret i32 %.0, !dbg !366
 }
 
-; Function Attrs: nounwind
-declare void @free(i8*) #3
-
 declare i32 @printf(i8*, ...) #4
 
 ; Function Attrs: nounwind
-declare double @sqrt(double) #3
+declare double @sqrt(double) #5
 
 ; Function Attrs: nounwind uwtable
-define void @trbak1(i32 %n, double* nocapture readonly %a, double* nocapture readonly %e, i32 %m, double* nocapture %z) #2 {
-  tail call void @llvm.dbg.value(metadata !{i32 %n}, i64 0, metadata !82), !dbg !367
-  tail call void @llvm.dbg.value(metadata !{double* %a}, i64 0, metadata !83), !dbg !367
-  tail call void @llvm.dbg.value(metadata !{double* %e}, i64 0, metadata !84), !dbg !367
-  tail call void @llvm.dbg.value(metadata !{i32 %m}, i64 0, metadata !85), !dbg !367
-  tail call void @llvm.dbg.value(metadata !{double* %z}, i64 0, metadata !86), !dbg !367
+define void @trbak1(i32 %n, double* nocapture readonly %a, double* nocapture readonly %e, i32 %m, double* nocapture %z) #3 {
+  tail call void @llvm.dbg.value(metadata !{i32 %n}, i64 0, metadata !85), !dbg !367
+  tail call void @llvm.dbg.value(metadata !{double* %a}, i64 0, metadata !86), !dbg !367
+  tail call void @llvm.dbg.value(metadata !{double* %e}, i64 0, metadata !87), !dbg !367
+  tail call void @llvm.dbg.value(metadata !{i32 %m}, i64 0, metadata !88), !dbg !367
+  tail call void @llvm.dbg.value(metadata !{double* %z}, i64 0, metadata !89), !dbg !367
   %notlhs = icmp sgt i32 %m, 0, !dbg !368
   %notrhs = icmp sgt i32 %n, 1, !dbg !368
   %or.cond.not = and i1 %notrhs, %notlhs, !dbg !368
@@ -882,7 +871,7 @@ define void @trbak1(i32 %n, double* nocapture readonly %a, double* nocapture rea
   %25 = load double* %24, align 8, !dbg !381, !tbaa !180
   %26 = fmul double %22, %25, !dbg !381
   %27 = fadd double %s.03, %26, !dbg !381
-  tail call void @llvm.dbg.value(metadata !{double %27}, i64 0, metadata !91), !dbg !381
+  tail call void @llvm.dbg.value(metadata !{double %27}, i64 0, metadata !94), !dbg !381
   %indvars.iv.next = add nuw nsw i64 %indvars.iv, 1, !dbg !384
   %lftr.wideiv = trunc i64 %indvars.iv.next to i32, !dbg !384
   %exitcond = icmp eq i32 %lftr.wideiv, %indvars.iv20, !dbg !384
@@ -893,8 +882,8 @@ define void @trbak1(i32 %n, double* nocapture readonly %a, double* nocapture rea
   %29 = fdiv double %27, %28, !dbg !376
   %30 = load double* %3, align 8, !dbg !376, !tbaa !180
   %31 = fdiv double %29, %30, !dbg !376
-  tail call void @llvm.dbg.value(metadata !{double %31}, i64 0, metadata !91), !dbg !376
-  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !89), !dbg !385
+  tail call void @llvm.dbg.value(metadata !{double %31}, i64 0, metadata !94), !dbg !376
+  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !92), !dbg !385
   %32 = trunc i64 %indvars.iv24 to i32, !dbg !387
   %33 = mul nsw i32 %32, %n, !dbg !387
   %34 = sext i32 %33 to i64, !dbg !385
@@ -929,7 +918,7 @@ define void @trbak1(i32 %n, double* nocapture readonly %a, double* nocapture rea
 .loopexit:                                        ; preds = %2, %._crit_edge7
   %indvars.iv.next29 = add nuw nsw i64 %indvars.iv28, 1, !dbg !370
   %indvars.iv.next21 = add nuw nsw i32 %indvars.iv20, 1, !dbg !370
-  tail call void @llvm.dbg.value(metadata !{i32 %indvars.iv.next21}, i64 0, metadata !87), !dbg !370
+  tail call void @llvm.dbg.value(metadata !{i32 %indvars.iv.next21}, i64 0, metadata !90), !dbg !370
   %lftr.wideiv30 = trunc i64 %indvars.iv.next29 to i32, !dbg !370
   %exitcond31 = icmp eq i32 %lftr.wideiv30, %n, !dbg !370
   br i1 %exitcond31, label %.loopexit11, label %2, !dbg !370
@@ -939,26 +928,26 @@ define void @trbak1(i32 %n, double* nocapture readonly %a, double* nocapture rea
 }
 
 ; Function Attrs: nounwind readnone
-declare void @llvm.dbg.value(metadata, i64, metadata) #5
+declare void @llvm.dbg.value(metadata, i64, metadata) #1
 
 attributes #0 = { nounwind readnone uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="false" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #1 = { nounwind readnone "less-precise-fpmad"="false" "no-frame-pointer-elim"="false" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #2 = { nounwind uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="false" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #3 = { nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="false" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #1 = { nounwind readnone }
+attributes #2 = { nounwind readnone "less-precise-fpmad"="false" "no-frame-pointer-elim"="false" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
+attributes #3 = { nounwind uwtable "less-precise-fpmad"="false" "no-frame-pointer-elim"="false" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #4 = { "less-precise-fpmad"="false" "no-frame-pointer-elim"="false" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #5 = { nounwind readnone }
+attributes #5 = { nounwind "less-precise-fpmad"="false" "no-frame-pointer-elim"="false" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "stack-protector-buffer-size"="8" "unsafe-fp-math"="false" "use-soft-float"="false" }
 attributes #6 = { nobuiltin nounwind readnone }
 attributes #7 = { nobuiltin }
 attributes #8 = { nobuiltin nounwind }
 
 !llvm.dbg.cu = !{!0}
-!llvm.module.flags = !{!112, !113}
-!llvm.ident = !{!114}
+!llvm.module.flags = !{!115, !116}
+!llvm.ident = !{!117}
 
-!0 = metadata !{i32 786449, metadata !1, i32 12, metadata !"clang version 3.4.2 (tags/RELEASE_34/dot2-final)", i1 true, metadata !"", i32 0, metadata !2, metadata !2, metadata !3, metadata !110, metadata !2, metadata !""} ; [ DW_TAG_compile_unit ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c] [DW_LANG_C99]
+!0 = metadata !{i32 786449, metadata !1, i32 12, metadata !"clang version 3.4.2 (tags/RELEASE_34/dot2-final)", i1 true, metadata !"", i32 0, metadata !2, metadata !2, metadata !3, metadata !113, metadata !2, metadata !""} ; [ DW_TAG_compile_unit ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c] [DW_LANG_C99]
 !1 = metadata !{metadata !"eispack.c", metadata !"/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen"}
 !2 = metadata !{i32 0}
-!3 = metadata !{metadata !4, metadata !17, metadata !23, metadata !28, metadata !33, metadata !39, metadata !54, metadata !78, metadata !92}
+!3 = metadata !{metadata !4, metadata !17, metadata !23, metadata !28, metadata !33, metadata !39, metadata !57, metadata !81, metadata !95}
 !4 = metadata !{i32 786478, metadata !1, metadata !5, metadata !"pythag", metadata !"pythag", metadata !"", i32 11, metadata !6, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 true, double (double, double)* @pythag, null, null, metadata !9, i32 70} ; [ DW_TAG_subprogram ] [line 11] [def] [scope 70] [pythag]
 !5 = metadata !{i32 786473, metadata !1}          ; [ DW_TAG_file_type ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
 !6 = metadata !{i32 786453, i32 0, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !7, i32 0, null, null, null} ; [ DW_TAG_subroutine_type ] [line 0, size 0, align 0, offset 0] [from ]
@@ -1000,348 +989,348 @@ attributes #8 = { nobuiltin nounwind }
 !42 = metadata !{i32 786468, null, null, metadata !"int", i32 0, i64 32, i64 32, i64 0, i32 0, i32 5} ; [ DW_TAG_base_type ] [int] [line 0, size 32, align 32, offset 0, enc DW_ATE_signed]
 !43 = metadata !{i32 786447, null, null, metadata !"", i32 0, i64 64, i64 64, i64 0, i32 0, metadata !8} ; [ DW_TAG_pointer_type ] [line 0, size 64, align 64, offset 0] [from double]
 !44 = metadata !{i32 786468, null, null, metadata !"_Bool", i32 0, i64 8, i64 8, i64 0, i32 0, i32 2} ; [ DW_TAG_base_type ] [_Bool] [line 0, size 8, align 8, offset 0, enc DW_ATE_boolean]
-!45 = metadata !{metadata !46, metadata !47, metadata !48, metadata !49, metadata !50, metadata !51, metadata !52, metadata !53}
+!45 = metadata !{metadata !46, metadata !47, metadata !48, metadata !49, metadata !50, metadata !51, metadata !55, metadata !56}
 !46 = metadata !{i32 786689, metadata !39, metadata !"n", metadata !5, i32 16777483, metadata !42, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [n] [line 267]
 !47 = metadata !{i32 786689, metadata !39, metadata !"a", metadata !5, i32 33554699, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [a] [line 267]
 !48 = metadata !{i32 786689, metadata !39, metadata !"w", metadata !5, i32 50331915, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [w] [line 267]
 !49 = metadata !{i32 786689, metadata !39, metadata !"matz", metadata !5, i32 67109131, metadata !44, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [matz] [line 267]
 !50 = metadata !{i32 786689, metadata !39, metadata !"z", metadata !5, i32 83886347, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [z] [line 267]
-!51 = metadata !{i32 786688, metadata !39, metadata !"fv1", metadata !5, i32 332, metadata !43, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [fv1] [line 332]
-!52 = metadata !{i32 786688, metadata !39, metadata !"fv2", metadata !5, i32 333, metadata !43, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [fv2] [line 333]
-!53 = metadata !{i32 786688, metadata !39, metadata !"ierr", metadata !5, i32 334, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [ierr] [line 334]
-!54 = metadata !{i32 786478, metadata !1, metadata !5, metadata !"tqlrat", metadata !"tqlrat", metadata !"", i32 364, metadata !55, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 true, i32 (i32, double*, double*)* @tqlrat, null, null, metadata !57, i32 431} ; [ DW_TAG_subprogram ] [line 364] [def] [scope 431] [tqlrat]
-!55 = metadata !{i32 786453, i32 0, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !56, i32 0, null, null, null} ; [ DW_TAG_subroutine_type ] [line 0, size 0, align 0, offset 0] [from ]
-!56 = metadata !{metadata !42, metadata !42, metadata !43, metadata !43}
-!57 = metadata !{metadata !58, metadata !59, metadata !60, metadata !61, metadata !62, metadata !63, metadata !64, metadata !65, metadata !66, metadata !67, metadata !68, metadata !69, metadata !70, metadata !71, metadata !72, metadata !73, metadata !74, metadata !75, metadata !76, metadata !77}
-!58 = metadata !{i32 786689, metadata !54, metadata !"n", metadata !5, i32 16777580, metadata !42, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [n] [line 364]
-!59 = metadata !{i32 786689, metadata !54, metadata !"d", metadata !5, i32 33554796, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [d] [line 364]
-!60 = metadata !{i32 786689, metadata !54, metadata !"e2", metadata !5, i32 50332012, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [e2] [line 364]
-!61 = metadata !{i32 786688, metadata !54, metadata !"b", metadata !5, i32 432, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [b] [line 432]
-!62 = metadata !{i32 786688, metadata !54, metadata !"c", metadata !5, i32 433, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [c] [line 433]
-!63 = metadata !{i32 786688, metadata !54, metadata !"f", metadata !5, i32 434, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [f] [line 434]
-!64 = metadata !{i32 786688, metadata !54, metadata !"g", metadata !5, i32 435, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [g] [line 435]
-!65 = metadata !{i32 786688, metadata !54, metadata !"h", metadata !5, i32 436, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [h] [line 436]
-!66 = metadata !{i32 786688, metadata !54, metadata !"i", metadata !5, i32 437, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 437]
-!67 = metadata !{i32 786688, metadata !54, metadata !"ierr", metadata !5, i32 438, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [ierr] [line 438]
-!68 = metadata !{i32 786688, metadata !54, metadata !"ii", metadata !5, i32 439, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [ii] [line 439]
-!69 = metadata !{i32 786688, metadata !54, metadata !"j", metadata !5, i32 440, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [j] [line 440]
-!70 = metadata !{i32 786688, metadata !54, metadata !"l", metadata !5, i32 441, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [l] [line 441]
-!71 = metadata !{i32 786688, metadata !54, metadata !"l1", metadata !5, i32 442, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [l1] [line 442]
-!72 = metadata !{i32 786688, metadata !54, metadata !"m", metadata !5, i32 443, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [m] [line 443]
-!73 = metadata !{i32 786688, metadata !54, metadata !"mml", metadata !5, i32 444, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [mml] [line 444]
-!74 = metadata !{i32 786688, metadata !54, metadata !"p", metadata !5, i32 445, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [p] [line 445]
-!75 = metadata !{i32 786688, metadata !54, metadata !"r", metadata !5, i32 446, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [r] [line 446]
-!76 = metadata !{i32 786688, metadata !54, metadata !"s", metadata !5, i32 447, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [s] [line 447]
-!77 = metadata !{i32 786688, metadata !54, metadata !"t", metadata !5, i32 448, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [t] [line 448]
-!78 = metadata !{i32 786478, metadata !1, metadata !5, metadata !"trbak1", metadata !"trbak1", metadata !"", i32 590, metadata !79, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 true, void (i32, double*, double*, i32, double*)* @trbak1, null, null, metadata !81, i32 652} ; [ DW_TAG_subprogram ] [line 590] [def] [scope 652] [trbak1]
-!79 = metadata !{i32 786453, i32 0, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !80, i32 0, null, null, null} ; [ DW_TAG_subroutine_type ] [line 0, size 0, align 0, offset 0] [from ]
-!80 = metadata !{null, metadata !42, metadata !43, metadata !43, metadata !42, metadata !43}
-!81 = metadata !{metadata !82, metadata !83, metadata !84, metadata !85, metadata !86, metadata !87, metadata !88, metadata !89, metadata !90, metadata !91}
-!82 = metadata !{i32 786689, metadata !78, metadata !"n", metadata !5, i32 16777806, metadata !42, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [n] [line 590]
-!83 = metadata !{i32 786689, metadata !78, metadata !"a", metadata !5, i32 33555022, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [a] [line 590]
-!84 = metadata !{i32 786689, metadata !78, metadata !"e", metadata !5, i32 50332238, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [e] [line 590]
-!85 = metadata !{i32 786689, metadata !78, metadata !"m", metadata !5, i32 67109454, metadata !42, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [m] [line 590]
-!86 = metadata !{i32 786689, metadata !78, metadata !"z", metadata !5, i32 83886670, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [z] [line 590]
-!87 = metadata !{i32 786688, metadata !78, metadata !"i", metadata !5, i32 653, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 653]
-!88 = metadata !{i32 786688, metadata !78, metadata !"j", metadata !5, i32 654, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [j] [line 654]
-!89 = metadata !{i32 786688, metadata !78, metadata !"k", metadata !5, i32 655, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [k] [line 655]
-!90 = metadata !{i32 786688, metadata !78, metadata !"l", metadata !5, i32 656, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [l] [line 656]
-!91 = metadata !{i32 786688, metadata !78, metadata !"s", metadata !5, i32 657, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [s] [line 657]
-!92 = metadata !{i32 786478, metadata !1, metadata !5, metadata !"tred1", metadata !"tred1", metadata !"", i32 697, metadata !93, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 true, void (i32, double*, double*, double*, double*)* @tred1, null, null, metadata !95, i32 765} ; [ DW_TAG_subprogram ] [line 697] [def] [scope 765] [tred1]
-!93 = metadata !{i32 786453, i32 0, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !94, i32 0, null, null, null} ; [ DW_TAG_subroutine_type ] [line 0, size 0, align 0, offset 0] [from ]
-!94 = metadata !{null, metadata !42, metadata !43, metadata !43, metadata !43, metadata !43}
-!95 = metadata !{metadata !96, metadata !97, metadata !98, metadata !99, metadata !100, metadata !101, metadata !102, metadata !103, metadata !104, metadata !105, metadata !106, metadata !107, metadata !108, metadata !109}
-!96 = metadata !{i32 786689, metadata !92, metadata !"n", metadata !5, i32 16777913, metadata !42, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [n] [line 697]
-!97 = metadata !{i32 786689, metadata !92, metadata !"a", metadata !5, i32 33555129, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [a] [line 697]
-!98 = metadata !{i32 786689, metadata !92, metadata !"d", metadata !5, i32 50332345, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [d] [line 697]
-!99 = metadata !{i32 786689, metadata !92, metadata !"e", metadata !5, i32 67109561, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [e] [line 697]
-!100 = metadata !{i32 786689, metadata !92, metadata !"e2", metadata !5, i32 83886777, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [e2] [line 697]
-!101 = metadata !{i32 786688, metadata !92, metadata !"f", metadata !5, i32 766, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [f] [line 766]
-!102 = metadata !{i32 786688, metadata !92, metadata !"g", metadata !5, i32 767, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [g] [line 767]
-!103 = metadata !{i32 786688, metadata !92, metadata !"h", metadata !5, i32 768, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [h] [line 768]
-!104 = metadata !{i32 786688, metadata !92, metadata !"i", metadata !5, i32 769, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 769]
-!105 = metadata !{i32 786688, metadata !92, metadata !"ii", metadata !5, i32 770, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [ii] [line 770]
-!106 = metadata !{i32 786688, metadata !92, metadata !"j", metadata !5, i32 771, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [j] [line 771]
-!107 = metadata !{i32 786688, metadata !92, metadata !"k", metadata !5, i32 772, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [k] [line 772]
-!108 = metadata !{i32 786688, metadata !92, metadata !"l", metadata !5, i32 773, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [l] [line 773]
-!109 = metadata !{i32 786688, metadata !92, metadata !"scale", metadata !5, i32 774, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [scale] [line 774]
-!110 = metadata !{metadata !111}
-!111 = metadata !{i32 786484, i32 0, metadata !5, metadata !"value", metadata !"value", metadata !"value", metadata !5, i32 136, metadata !22, i32 1, i32 1, double 0x3CB0000000000000, null} ; [ DW_TAG_variable ] [value] [line 136] [local] [def]
-!112 = metadata !{i32 2, metadata !"Dwarf Version", i32 4}
-!113 = metadata !{i32 1, metadata !"Debug Info Version", i32 1}
-!114 = metadata !{metadata !"clang version 3.4.2 (tags/RELEASE_34/dot2-final)"}
-!115 = metadata !{i32 11, i32 0, metadata !4, null}
-!116 = metadata !{i32 77, i32 0, metadata !4, null}
-!117 = metadata !{i32 79, i32 0, metadata !118, null}
-!118 = metadata !{i32 786443, metadata !1, metadata !4, i32 79, i32 0, i32 0} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!119 = metadata !{i32 81, i32 0, metadata !120, null}
-!120 = metadata !{i32 786443, metadata !1, metadata !118, i32 80, i32 0, i32 1} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!121 = metadata !{i32 82, i32 0, metadata !120, null}
-!122 = metadata !{i32 86, i32 0, metadata !123, null}
-!123 = metadata !{i32 786443, metadata !1, metadata !120, i32 85, i32 0, i32 2} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!124 = metadata !{i32 88, i32 0, metadata !125, null}
-!125 = metadata !{i32 786443, metadata !1, metadata !123, i32 88, i32 0, i32 3} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!126 = metadata !{i32 93, i32 0, metadata !123, null}
-!127 = metadata !{i32 94, i32 0, metadata !123, null}
-!128 = metadata !{i32 95, i32 0, metadata !123, null}
-!129 = metadata !{i32 96, i32 0, metadata !123, null}
-!130 = metadata !{i32 99, i32 0, metadata !4, null}
-!131 = metadata !{i32 143, i32 0, metadata !23, null}
-!132 = metadata !{i32 172, i32 0, metadata !133, null}
-!133 = metadata !{i32 786443, metadata !1, metadata !23, i32 172, i32 0, i32 5} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!134 = metadata !{i32 175, i32 0, metadata !135, null}
-!135 = metadata !{i32 786443, metadata !1, metadata !133, i32 173, i32 0, i32 6} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!136 = metadata !{i32 180, i32 0, metadata !23, null}
-!137 = metadata !{i32 184, i32 0, metadata !28, null}
-!138 = metadata !{i32 213, i32 0, metadata !139, null}
-!139 = metadata !{i32 786443, metadata !1, metadata !28, i32 213, i32 0, i32 8} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!140 = metadata !{i32 216, i32 0, metadata !141, null}
-!141 = metadata !{i32 786443, metadata !1, metadata !139, i32 214, i32 0, i32 9} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!142 = metadata !{i32 221, i32 0, metadata !28, null}
-!143 = metadata !{double 0x3CB0000000000000}
-!144 = metadata !{i32 136, i32 0, metadata !17, null}
-!145 = metadata !{i32 138, i32 0, metadata !17, null}
-!146 = metadata !{i32 225, i32 0, metadata !33, null}
-!147 = metadata !{i32 254, i32 0, metadata !148, null}
-!148 = metadata !{i32 786443, metadata !1, metadata !33, i32 254, i32 0, i32 11} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!149 = metadata !{i32 257, i32 0, metadata !150, null}
-!150 = metadata !{i32 786443, metadata !1, metadata !148, i32 255, i32 0, i32 12} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!151 = metadata !{i32 262, i32 0, metadata !33, null}
-!152 = metadata !{i32 267, i32 0, metadata !39, null}
-!153 = metadata !{i32 336, i32 0, metadata !39, null}
-!154 = metadata !{i32 338, i32 0, metadata !155, null}
-!155 = metadata !{i32 786443, metadata !1, metadata !39, i32 338, i32 0, i32 14} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!156 = metadata !{i32 340, i32 0, metadata !157, null}
-!157 = metadata !{i32 786443, metadata !1, metadata !155, i32 339, i32 0, i32 15} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!158 = metadata !{i32 342, i32 0, metadata !157, null}
-!159 = metadata !{i32 344, i32 0, metadata !157, null}
-!160 = metadata !{i32 346, i32 0, metadata !161, null}
-!161 = metadata !{i32 786443, metadata !1, metadata !157, i32 346, i32 0, i32 16} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!162 = metadata !{i32 348, i32 0, metadata !163, null}
-!163 = metadata !{i32 786443, metadata !1, metadata !161, i32 347, i32 0, i32 17} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!164 = metadata !{i32 350, i32 0, metadata !163, null}
-!165 = metadata !{i32 351, i32 0, metadata !163, null}
-!166 = metadata !{i32 352, i32 0, metadata !163, null}
-!167 = metadata !{i32 353, i32 0, metadata !163, null}
-!168 = metadata !{i32 358, i32 0, metadata !39, null}
-!169 = metadata !{i32 360, i32 0, metadata !39, null}
-!170 = metadata !{i32 361, i32 0, metadata !39, null}
-!171 = metadata !{i32 697, i32 0, metadata !92, null}
-!172 = metadata !{i32 776, i32 0, metadata !173, null}
-!173 = metadata !{i32 786443, metadata !1, metadata !92, i32 776, i32 0, i32 70} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!174 = metadata !{i32 778, i32 0, metadata !175, null}
-!175 = metadata !{i32 786443, metadata !1, metadata !173, i32 777, i32 0, i32 71} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!176 = metadata !{i32 781, i32 0, metadata !177, null}
-!177 = metadata !{i32 786443, metadata !1, metadata !92, i32 781, i32 0, i32 72} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!178 = metadata !{i32 783, i32 0, metadata !179, null}
-!179 = metadata !{i32 786443, metadata !1, metadata !177, i32 782, i32 0, i32 73} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!51 = metadata !{i32 786688, metadata !39, metadata !"fv1", metadata !5, i32 334, metadata !52, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [fv1] [line 334]
+!52 = metadata !{i32 786433, null, null, metadata !"", i32 0, i64 0, i64 64, i32 0, i32 0, metadata !8, metadata !53, i32 0, null, null, null} ; [ DW_TAG_array_type ] [line 0, size 0, align 64, offset 0] [from double]
+!53 = metadata !{metadata !54}
+!54 = metadata !{i32 786465, i64 0, i64 -1}       ; [ DW_TAG_subrange_type ] [unbounded]
+!55 = metadata !{i32 786688, metadata !39, metadata !"fv2", metadata !5, i32 335, metadata !52, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [fv2] [line 335]
+!56 = metadata !{i32 786688, metadata !39, metadata !"ierr", metadata !5, i32 336, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [ierr] [line 336]
+!57 = metadata !{i32 786478, metadata !1, metadata !5, metadata !"tqlrat", metadata !"tqlrat", metadata !"", i32 366, metadata !58, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 true, i32 (i32, double*, double*)* @tqlrat, null, null, metadata !60, i32 433} ; [ DW_TAG_subprogram ] [line 366] [def] [scope 433] [tqlrat]
+!58 = metadata !{i32 786453, i32 0, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !59, i32 0, null, null, null} ; [ DW_TAG_subroutine_type ] [line 0, size 0, align 0, offset 0] [from ]
+!59 = metadata !{metadata !42, metadata !42, metadata !43, metadata !43}
+!60 = metadata !{metadata !61, metadata !62, metadata !63, metadata !64, metadata !65, metadata !66, metadata !67, metadata !68, metadata !69, metadata !70, metadata !71, metadata !72, metadata !73, metadata !74, metadata !75, metadata !76, metadata !77, metadata !78, metadata !79, metadata !80}
+!61 = metadata !{i32 786689, metadata !57, metadata !"n", metadata !5, i32 16777582, metadata !42, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [n] [line 366]
+!62 = metadata !{i32 786689, metadata !57, metadata !"d", metadata !5, i32 33554798, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [d] [line 366]
+!63 = metadata !{i32 786689, metadata !57, metadata !"e2", metadata !5, i32 50332014, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [e2] [line 366]
+!64 = metadata !{i32 786688, metadata !57, metadata !"b", metadata !5, i32 434, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [b] [line 434]
+!65 = metadata !{i32 786688, metadata !57, metadata !"c", metadata !5, i32 435, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [c] [line 435]
+!66 = metadata !{i32 786688, metadata !57, metadata !"f", metadata !5, i32 436, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [f] [line 436]
+!67 = metadata !{i32 786688, metadata !57, metadata !"g", metadata !5, i32 437, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [g] [line 437]
+!68 = metadata !{i32 786688, metadata !57, metadata !"h", metadata !5, i32 438, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [h] [line 438]
+!69 = metadata !{i32 786688, metadata !57, metadata !"i", metadata !5, i32 439, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 439]
+!70 = metadata !{i32 786688, metadata !57, metadata !"ierr", metadata !5, i32 440, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [ierr] [line 440]
+!71 = metadata !{i32 786688, metadata !57, metadata !"ii", metadata !5, i32 441, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [ii] [line 441]
+!72 = metadata !{i32 786688, metadata !57, metadata !"j", metadata !5, i32 442, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [j] [line 442]
+!73 = metadata !{i32 786688, metadata !57, metadata !"l", metadata !5, i32 443, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [l] [line 443]
+!74 = metadata !{i32 786688, metadata !57, metadata !"l1", metadata !5, i32 444, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [l1] [line 444]
+!75 = metadata !{i32 786688, metadata !57, metadata !"m", metadata !5, i32 445, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [m] [line 445]
+!76 = metadata !{i32 786688, metadata !57, metadata !"mml", metadata !5, i32 446, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [mml] [line 446]
+!77 = metadata !{i32 786688, metadata !57, metadata !"p", metadata !5, i32 447, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [p] [line 447]
+!78 = metadata !{i32 786688, metadata !57, metadata !"r", metadata !5, i32 448, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [r] [line 448]
+!79 = metadata !{i32 786688, metadata !57, metadata !"s", metadata !5, i32 449, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [s] [line 449]
+!80 = metadata !{i32 786688, metadata !57, metadata !"t", metadata !5, i32 450, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [t] [line 450]
+!81 = metadata !{i32 786478, metadata !1, metadata !5, metadata !"trbak1", metadata !"trbak1", metadata !"", i32 592, metadata !82, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 true, void (i32, double*, double*, i32, double*)* @trbak1, null, null, metadata !84, i32 654} ; [ DW_TAG_subprogram ] [line 592] [def] [scope 654] [trbak1]
+!82 = metadata !{i32 786453, i32 0, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !83, i32 0, null, null, null} ; [ DW_TAG_subroutine_type ] [line 0, size 0, align 0, offset 0] [from ]
+!83 = metadata !{null, metadata !42, metadata !43, metadata !43, metadata !42, metadata !43}
+!84 = metadata !{metadata !85, metadata !86, metadata !87, metadata !88, metadata !89, metadata !90, metadata !91, metadata !92, metadata !93, metadata !94}
+!85 = metadata !{i32 786689, metadata !81, metadata !"n", metadata !5, i32 16777808, metadata !42, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [n] [line 592]
+!86 = metadata !{i32 786689, metadata !81, metadata !"a", metadata !5, i32 33555024, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [a] [line 592]
+!87 = metadata !{i32 786689, metadata !81, metadata !"e", metadata !5, i32 50332240, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [e] [line 592]
+!88 = metadata !{i32 786689, metadata !81, metadata !"m", metadata !5, i32 67109456, metadata !42, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [m] [line 592]
+!89 = metadata !{i32 786689, metadata !81, metadata !"z", metadata !5, i32 83886672, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [z] [line 592]
+!90 = metadata !{i32 786688, metadata !81, metadata !"i", metadata !5, i32 655, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 655]
+!91 = metadata !{i32 786688, metadata !81, metadata !"j", metadata !5, i32 656, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [j] [line 656]
+!92 = metadata !{i32 786688, metadata !81, metadata !"k", metadata !5, i32 657, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [k] [line 657]
+!93 = metadata !{i32 786688, metadata !81, metadata !"l", metadata !5, i32 658, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [l] [line 658]
+!94 = metadata !{i32 786688, metadata !81, metadata !"s", metadata !5, i32 659, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [s] [line 659]
+!95 = metadata !{i32 786478, metadata !1, metadata !5, metadata !"tred1", metadata !"tred1", metadata !"", i32 699, metadata !96, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 true, void (i32, double*, double*, double*, double*)* @tred1, null, null, metadata !98, i32 767} ; [ DW_TAG_subprogram ] [line 699] [def] [scope 767] [tred1]
+!96 = metadata !{i32 786453, i32 0, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !97, i32 0, null, null, null} ; [ DW_TAG_subroutine_type ] [line 0, size 0, align 0, offset 0] [from ]
+!97 = metadata !{null, metadata !42, metadata !43, metadata !43, metadata !43, metadata !43}
+!98 = metadata !{metadata !99, metadata !100, metadata !101, metadata !102, metadata !103, metadata !104, metadata !105, metadata !106, metadata !107, metadata !108, metadata !109, metadata !110, metadata !111, metadata !112}
+!99 = metadata !{i32 786689, metadata !95, metadata !"n", metadata !5, i32 16777915, metadata !42, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [n] [line 699]
+!100 = metadata !{i32 786689, metadata !95, metadata !"a", metadata !5, i32 33555131, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [a] [line 699]
+!101 = metadata !{i32 786689, metadata !95, metadata !"d", metadata !5, i32 50332347, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [d] [line 699]
+!102 = metadata !{i32 786689, metadata !95, metadata !"e", metadata !5, i32 67109563, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [e] [line 699]
+!103 = metadata !{i32 786689, metadata !95, metadata !"e2", metadata !5, i32 83886779, metadata !43, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [e2] [line 699]
+!104 = metadata !{i32 786688, metadata !95, metadata !"f", metadata !5, i32 768, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [f] [line 768]
+!105 = metadata !{i32 786688, metadata !95, metadata !"g", metadata !5, i32 769, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [g] [line 769]
+!106 = metadata !{i32 786688, metadata !95, metadata !"h", metadata !5, i32 770, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [h] [line 770]
+!107 = metadata !{i32 786688, metadata !95, metadata !"i", metadata !5, i32 771, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 771]
+!108 = metadata !{i32 786688, metadata !95, metadata !"ii", metadata !5, i32 772, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [ii] [line 772]
+!109 = metadata !{i32 786688, metadata !95, metadata !"j", metadata !5, i32 773, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [j] [line 773]
+!110 = metadata !{i32 786688, metadata !95, metadata !"k", metadata !5, i32 774, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [k] [line 774]
+!111 = metadata !{i32 786688, metadata !95, metadata !"l", metadata !5, i32 775, metadata !42, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [l] [line 775]
+!112 = metadata !{i32 786688, metadata !95, metadata !"scale", metadata !5, i32 776, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [scale] [line 776]
+!113 = metadata !{metadata !114}
+!114 = metadata !{i32 786484, i32 0, metadata !5, metadata !"value", metadata !"value", metadata !"value", metadata !5, i32 136, metadata !22, i32 1, i32 1, double 0x3CB0000000000000, null} ; [ DW_TAG_variable ] [value] [line 136] [local] [def]
+!115 = metadata !{i32 2, metadata !"Dwarf Version", i32 4}
+!116 = metadata !{i32 1, metadata !"Debug Info Version", i32 1}
+!117 = metadata !{metadata !"clang version 3.4.2 (tags/RELEASE_34/dot2-final)"}
+!118 = metadata !{i32 11, i32 0, metadata !4, null}
+!119 = metadata !{i32 77, i32 0, metadata !4, null}
+!120 = metadata !{i32 79, i32 0, metadata !121, null}
+!121 = metadata !{i32 786443, metadata !1, metadata !4, i32 79, i32 0, i32 0} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!122 = metadata !{i32 81, i32 0, metadata !123, null}
+!123 = metadata !{i32 786443, metadata !1, metadata !121, i32 80, i32 0, i32 1} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!124 = metadata !{i32 82, i32 0, metadata !123, null}
+!125 = metadata !{i32 86, i32 0, metadata !126, null}
+!126 = metadata !{i32 786443, metadata !1, metadata !123, i32 85, i32 0, i32 2} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!127 = metadata !{i32 88, i32 0, metadata !128, null}
+!128 = metadata !{i32 786443, metadata !1, metadata !126, i32 88, i32 0, i32 3} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!129 = metadata !{i32 93, i32 0, metadata !126, null}
+!130 = metadata !{i32 94, i32 0, metadata !126, null}
+!131 = metadata !{i32 95, i32 0, metadata !126, null}
+!132 = metadata !{i32 96, i32 0, metadata !126, null}
+!133 = metadata !{i32 99, i32 0, metadata !4, null}
+!134 = metadata !{i32 143, i32 0, metadata !23, null}
+!135 = metadata !{i32 172, i32 0, metadata !136, null}
+!136 = metadata !{i32 786443, metadata !1, metadata !23, i32 172, i32 0, i32 5} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!137 = metadata !{i32 175, i32 0, metadata !138, null}
+!138 = metadata !{i32 786443, metadata !1, metadata !136, i32 173, i32 0, i32 6} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!139 = metadata !{i32 180, i32 0, metadata !23, null}
+!140 = metadata !{i32 184, i32 0, metadata !28, null}
+!141 = metadata !{i32 213, i32 0, metadata !142, null}
+!142 = metadata !{i32 786443, metadata !1, metadata !28, i32 213, i32 0, i32 8} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!143 = metadata !{i32 216, i32 0, metadata !144, null}
+!144 = metadata !{i32 786443, metadata !1, metadata !142, i32 214, i32 0, i32 9} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!145 = metadata !{i32 221, i32 0, metadata !28, null}
+!146 = metadata !{double 0x3CB0000000000000}
+!147 = metadata !{i32 136, i32 0, metadata !17, null}
+!148 = metadata !{i32 138, i32 0, metadata !17, null}
+!149 = metadata !{i32 225, i32 0, metadata !33, null}
+!150 = metadata !{i32 254, i32 0, metadata !151, null}
+!151 = metadata !{i32 786443, metadata !1, metadata !33, i32 254, i32 0, i32 11} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!152 = metadata !{i32 257, i32 0, metadata !153, null}
+!153 = metadata !{i32 786443, metadata !1, metadata !151, i32 255, i32 0, i32 12} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!154 = metadata !{i32 262, i32 0, metadata !33, null}
+!155 = metadata !{i32 267, i32 0, metadata !39, null}
+!156 = metadata !{i32 334, i32 0, metadata !39, null}
+!157 = metadata !{i32 335, i32 0, metadata !39, null}
+!158 = metadata !{i32 340, i32 0, metadata !159, null}
+!159 = metadata !{i32 786443, metadata !1, metadata !39, i32 340, i32 0, i32 14} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!160 = metadata !{i32 344, i32 0, metadata !161, null}
+!161 = metadata !{i32 786443, metadata !1, metadata !159, i32 341, i32 0, i32 15} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!162 = metadata !{i32 346, i32 0, metadata !161, null}
+!163 = metadata !{i32 348, i32 0, metadata !164, null}
+!164 = metadata !{i32 786443, metadata !1, metadata !161, i32 348, i32 0, i32 16} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!165 = metadata !{i32 352, i32 0, metadata !166, null}
+!166 = metadata !{i32 786443, metadata !1, metadata !164, i32 349, i32 0, i32 17} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!167 = metadata !{i32 353, i32 0, metadata !166, null}
+!168 = metadata !{i32 354, i32 0, metadata !166, null}
+!169 = metadata !{i32 355, i32 0, metadata !166, null}
+!170 = metadata !{i32 363, i32 0, metadata !39, null}
+!171 = metadata !{i32 699, i32 0, metadata !95, null}
+!172 = metadata !{i32 778, i32 0, metadata !173, null}
+!173 = metadata !{i32 786443, metadata !1, metadata !95, i32 778, i32 0, i32 70} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!174 = metadata !{i32 780, i32 0, metadata !175, null}
+!175 = metadata !{i32 786443, metadata !1, metadata !173, i32 779, i32 0, i32 71} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!176 = metadata !{i32 783, i32 0, metadata !177, null}
+!177 = metadata !{i32 786443, metadata !1, metadata !95, i32 783, i32 0, i32 72} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!178 = metadata !{i32 785, i32 0, metadata !179, null}
+!179 = metadata !{i32 786443, metadata !1, metadata !177, i32 784, i32 0, i32 73} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
 !180 = metadata !{metadata !181, metadata !181, i64 0}
 !181 = metadata !{metadata !"double", metadata !182, i64 0}
 !182 = metadata !{metadata !"omnipotent char", metadata !183, i64 0}
 !183 = metadata !{metadata !"Simple C/C++ TBAA"}
-!184 = metadata !{i32 786, i32 0, metadata !185, null}
-!185 = metadata !{i32 786443, metadata !1, metadata !92, i32 786, i32 0, i32 74} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!186 = metadata !{i32 788, i32 0, metadata !187, null}
-!187 = metadata !{i32 786443, metadata !1, metadata !185, i32 787, i32 0, i32 75} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!184 = metadata !{i32 788, i32 0, metadata !185, null}
+!185 = metadata !{i32 786443, metadata !1, metadata !95, i32 788, i32 0, i32 74} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!186 = metadata !{i32 790, i32 0, metadata !187, null}
+!187 = metadata !{i32 786443, metadata !1, metadata !185, i32 789, i32 0, i32 75} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
 !188 = metadata !{double 0.000000e+00}
-!189 = metadata !{i32 789, i32 0, metadata !187, null}
-!190 = metadata !{i32 793, i32 0, metadata !187, null}
-!191 = metadata !{i32 794, i32 0, metadata !192, null}
-!192 = metadata !{i32 786443, metadata !1, metadata !187, i32 794, i32 0, i32 76} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!193 = metadata !{i32 796, i32 0, metadata !194, null}
-!194 = metadata !{i32 786443, metadata !1, metadata !192, i32 795, i32 0, i32 77} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!195 = metadata !{i32 799, i32 0, metadata !196, null}
-!196 = metadata !{i32 786443, metadata !1, metadata !187, i32 799, i32 0, i32 78} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!197 = metadata !{i32 801, i32 0, metadata !198, null}
-!198 = metadata !{i32 786443, metadata !1, metadata !199, i32 801, i32 0, i32 80} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!199 = metadata !{i32 786443, metadata !1, metadata !196, i32 800, i32 0, i32 79} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!200 = metadata !{i32 813, i32 0, metadata !201, null}
-!201 = metadata !{i32 786443, metadata !1, metadata !187, i32 813, i32 0, i32 82} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!202 = metadata !{i32 803, i32 0, metadata !203, null}
-!203 = metadata !{i32 786443, metadata !1, metadata !198, i32 802, i32 0, i32 81} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!204 = metadata !{i32 804, i32 0, metadata !203, null}
-!205 = metadata !{i32 805, i32 0, metadata !203, null}
-!206 = metadata !{i32 808, i32 0, metadata !199, null}
-!207 = metadata !{i32 809, i32 0, metadata !199, null}
-!208 = metadata !{i32 810, i32 0, metadata !199, null}
-!209 = metadata !{i32 815, i32 0, metadata !210, null}
-!210 = metadata !{i32 786443, metadata !1, metadata !201, i32 814, i32 0, i32 83} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!211 = metadata !{i32 818, i32 0, metadata !212, null}
-!212 = metadata !{i32 786443, metadata !1, metadata !187, i32 818, i32 0, i32 84} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!213 = metadata !{i32 820, i32 0, metadata !214, null}
-!214 = metadata !{i32 786443, metadata !1, metadata !212, i32 819, i32 0, i32 85} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!215 = metadata !{i32 823, i32 0, metadata !187, null}
-!216 = metadata !{i32 824, i32 0, metadata !187, null}
-!217 = metadata !{i32 825, i32 0, metadata !187, null}
-!218 = metadata !{i32 826, i32 0, metadata !187, null}
-!219 = metadata !{i32 827, i32 0, metadata !187, null}
-!220 = metadata !{i32 828, i32 0, metadata !187, null}
-!221 = metadata !{i32 830, i32 0, metadata !222, null}
-!222 = metadata !{i32 786443, metadata !1, metadata !187, i32 830, i32 0, i32 86} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!223 = metadata !{i32 837, i32 0, metadata !224, null}
-!224 = metadata !{i32 786443, metadata !1, metadata !225, i32 836, i32 0, i32 89} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!225 = metadata !{i32 786443, metadata !1, metadata !226, i32 835, i32 0, i32 88} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!226 = metadata !{i32 786443, metadata !1, metadata !222, i32 831, i32 0, i32 87} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!227 = metadata !{i32 835, i32 0, metadata !225, null}
-!228 = metadata !{i32 840, i32 0, metadata !229, null}
-!229 = metadata !{i32 786443, metadata !1, metadata !226, i32 840, i32 0, i32 90} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!230 = metadata !{i32 842, i32 0, metadata !231, null}
-!231 = metadata !{i32 786443, metadata !1, metadata !229, i32 841, i32 0, i32 91} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!232 = metadata !{i32 843, i32 0, metadata !231, null}
-!233 = metadata !{i32 845, i32 0, metadata !234, null}
-!234 = metadata !{i32 786443, metadata !1, metadata !231, i32 845, i32 0, i32 92} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!235 = metadata !{i32 847, i32 0, metadata !236, null}
-!236 = metadata !{i32 786443, metadata !1, metadata !234, i32 846, i32 0, i32 93} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!237 = metadata !{i32 848, i32 0, metadata !236, null}
-!238 = metadata !{i32 850, i32 0, metadata !231, null}
-!239 = metadata !{i32 856, i32 0, metadata !240, null}
-!240 = metadata !{i32 786443, metadata !1, metadata !226, i32 856, i32 0, i32 94} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!241 = metadata !{i32 858, i32 0, metadata !242, null}
-!242 = metadata !{i32 786443, metadata !1, metadata !240, i32 857, i32 0, i32 95} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!243 = metadata !{i32 859, i32 0, metadata !242, null}
-!244 = metadata !{i32 862, i32 0, metadata !226, null}
-!245 = metadata !{i32 866, i32 0, metadata !246, null}
-!246 = metadata !{i32 786443, metadata !1, metadata !226, i32 866, i32 0, i32 96} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!247 = metadata !{i32 868, i32 0, metadata !248, null}
-!248 = metadata !{i32 786443, metadata !1, metadata !246, i32 867, i32 0, i32 97} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!249 = metadata !{i32 873, i32 0, metadata !250, null}
-!250 = metadata !{i32 786443, metadata !1, metadata !226, i32 873, i32 0, i32 98} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!251 = metadata !{i32 875, i32 0, metadata !252, null}
-!252 = metadata !{i32 786443, metadata !1, metadata !250, i32 874, i32 0, i32 99} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!253 = metadata !{i32 876, i32 0, metadata !252, null}
+!189 = metadata !{i32 791, i32 0, metadata !187, null}
+!190 = metadata !{i32 795, i32 0, metadata !187, null}
+!191 = metadata !{i32 796, i32 0, metadata !192, null}
+!192 = metadata !{i32 786443, metadata !1, metadata !187, i32 796, i32 0, i32 76} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!193 = metadata !{i32 798, i32 0, metadata !194, null}
+!194 = metadata !{i32 786443, metadata !1, metadata !192, i32 797, i32 0, i32 77} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!195 = metadata !{i32 801, i32 0, metadata !196, null}
+!196 = metadata !{i32 786443, metadata !1, metadata !187, i32 801, i32 0, i32 78} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!197 = metadata !{i32 803, i32 0, metadata !198, null}
+!198 = metadata !{i32 786443, metadata !1, metadata !199, i32 803, i32 0, i32 80} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!199 = metadata !{i32 786443, metadata !1, metadata !196, i32 802, i32 0, i32 79} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!200 = metadata !{i32 815, i32 0, metadata !201, null}
+!201 = metadata !{i32 786443, metadata !1, metadata !187, i32 815, i32 0, i32 82} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!202 = metadata !{i32 805, i32 0, metadata !203, null}
+!203 = metadata !{i32 786443, metadata !1, metadata !198, i32 804, i32 0, i32 81} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!204 = metadata !{i32 806, i32 0, metadata !203, null}
+!205 = metadata !{i32 807, i32 0, metadata !203, null}
+!206 = metadata !{i32 810, i32 0, metadata !199, null}
+!207 = metadata !{i32 811, i32 0, metadata !199, null}
+!208 = metadata !{i32 812, i32 0, metadata !199, null}
+!209 = metadata !{i32 817, i32 0, metadata !210, null}
+!210 = metadata !{i32 786443, metadata !1, metadata !201, i32 816, i32 0, i32 83} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!211 = metadata !{i32 820, i32 0, metadata !212, null}
+!212 = metadata !{i32 786443, metadata !1, metadata !187, i32 820, i32 0, i32 84} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!213 = metadata !{i32 822, i32 0, metadata !214, null}
+!214 = metadata !{i32 786443, metadata !1, metadata !212, i32 821, i32 0, i32 85} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!215 = metadata !{i32 825, i32 0, metadata !187, null}
+!216 = metadata !{i32 826, i32 0, metadata !187, null}
+!217 = metadata !{i32 827, i32 0, metadata !187, null}
+!218 = metadata !{i32 828, i32 0, metadata !187, null}
+!219 = metadata !{i32 829, i32 0, metadata !187, null}
+!220 = metadata !{i32 830, i32 0, metadata !187, null}
+!221 = metadata !{i32 832, i32 0, metadata !222, null}
+!222 = metadata !{i32 786443, metadata !1, metadata !187, i32 832, i32 0, i32 86} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!223 = metadata !{i32 839, i32 0, metadata !224, null}
+!224 = metadata !{i32 786443, metadata !1, metadata !225, i32 838, i32 0, i32 89} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!225 = metadata !{i32 786443, metadata !1, metadata !226, i32 837, i32 0, i32 88} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!226 = metadata !{i32 786443, metadata !1, metadata !222, i32 833, i32 0, i32 87} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!227 = metadata !{i32 837, i32 0, metadata !225, null}
+!228 = metadata !{i32 842, i32 0, metadata !229, null}
+!229 = metadata !{i32 786443, metadata !1, metadata !226, i32 842, i32 0, i32 90} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!230 = metadata !{i32 844, i32 0, metadata !231, null}
+!231 = metadata !{i32 786443, metadata !1, metadata !229, i32 843, i32 0, i32 91} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!232 = metadata !{i32 845, i32 0, metadata !231, null}
+!233 = metadata !{i32 847, i32 0, metadata !234, null}
+!234 = metadata !{i32 786443, metadata !1, metadata !231, i32 847, i32 0, i32 92} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!235 = metadata !{i32 849, i32 0, metadata !236, null}
+!236 = metadata !{i32 786443, metadata !1, metadata !234, i32 848, i32 0, i32 93} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!237 = metadata !{i32 850, i32 0, metadata !236, null}
+!238 = metadata !{i32 852, i32 0, metadata !231, null}
+!239 = metadata !{i32 858, i32 0, metadata !240, null}
+!240 = metadata !{i32 786443, metadata !1, metadata !226, i32 858, i32 0, i32 94} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!241 = metadata !{i32 860, i32 0, metadata !242, null}
+!242 = metadata !{i32 786443, metadata !1, metadata !240, i32 859, i32 0, i32 95} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!243 = metadata !{i32 861, i32 0, metadata !242, null}
+!244 = metadata !{i32 864, i32 0, metadata !226, null}
+!245 = metadata !{i32 868, i32 0, metadata !246, null}
+!246 = metadata !{i32 786443, metadata !1, metadata !226, i32 868, i32 0, i32 96} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!247 = metadata !{i32 870, i32 0, metadata !248, null}
+!248 = metadata !{i32 786443, metadata !1, metadata !246, i32 869, i32 0, i32 97} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!249 = metadata !{i32 875, i32 0, metadata !250, null}
+!250 = metadata !{i32 786443, metadata !1, metadata !226, i32 875, i32 0, i32 98} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!251 = metadata !{i32 877, i32 0, metadata !252, null}
+!252 = metadata !{i32 786443, metadata !1, metadata !250, i32 876, i32 0, i32 99} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!253 = metadata !{i32 878, i32 0, metadata !252, null}
 !254 = metadata !{i32 undef}
-!255 = metadata !{i32 877, i32 0, metadata !256, null}
-!256 = metadata !{i32 786443, metadata !1, metadata !252, i32 877, i32 0, i32 100} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!257 = metadata !{i32 879, i32 0, metadata !258, null}
-!258 = metadata !{i32 786443, metadata !1, metadata !256, i32 878, i32 0, i32 101} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!259 = metadata !{i32 884, i32 0, metadata !260, null}
-!260 = metadata !{i32 786443, metadata !1, metadata !187, i32 884, i32 0, i32 102} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!261 = metadata !{i32 886, i32 0, metadata !262, null}
-!262 = metadata !{i32 786443, metadata !1, metadata !260, i32 885, i32 0, i32 103} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!263 = metadata !{i32 887, i32 0, metadata !262, null}
-!264 = metadata !{i32 888, i32 0, metadata !262, null}
-!265 = metadata !{i32 889, i32 0, metadata !262, null}
-!266 = metadata !{i32 892, i32 0, metadata !92, null}
-!267 = metadata !{i32 364, i32 0, metadata !54, null}
-!268 = metadata !{i32 450, i32 0, metadata !54, null}
-!269 = metadata !{i32 452, i32 0, metadata !270, null}
-!270 = metadata !{i32 786443, metadata !1, metadata !54, i32 452, i32 0, i32 18} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!271 = metadata !{i32 457, i32 0, metadata !272, null}
-!272 = metadata !{i32 786443, metadata !1, metadata !54, i32 457, i32 0, i32 20} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!273 = metadata !{i32 462, i32 0, metadata !54, null}
-!274 = metadata !{i32 463, i32 0, metadata !54, null}
-!275 = metadata !{i32 464, i32 0, metadata !54, null}
-!276 = metadata !{i32 466, i32 0, metadata !277, null}
-!277 = metadata !{i32 786443, metadata !1, metadata !54, i32 466, i32 0, i32 22} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!278 = metadata !{i32 459, i32 0, metadata !279, null}
-!279 = metadata !{i32 786443, metadata !1, metadata !272, i32 458, i32 0, i32 21} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!280 = metadata !{i32 468, i32 0, metadata !281, null}
-!281 = metadata !{i32 786443, metadata !1, metadata !277, i32 467, i32 0, i32 23} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!282 = metadata !{i32 469, i32 0, metadata !281, null}
-!283 = metadata !{i32 471, i32 0, metadata !284, null}
-!284 = metadata !{i32 786443, metadata !1, metadata !281, i32 471, i32 0, i32 24} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!285 = metadata !{i32 473, i32 0, metadata !286, null}
-!286 = metadata !{i32 786443, metadata !1, metadata !284, i32 472, i32 0, i32 25} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!287 = metadata !{i32 474, i32 0, metadata !286, null}
-!288 = metadata !{i32 475, i32 0, metadata !286, null}
-!289 = metadata !{i32 476, i32 0, metadata !286, null}
-!290 = metadata !{i32 480, i32 0, metadata !291, null}
-!291 = metadata !{i32 786443, metadata !1, metadata !281, i32 480, i32 0, i32 26} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!292 = metadata !{i32 482, i32 0, metadata !293, null}
-!293 = metadata !{i32 786443, metadata !1, metadata !294, i32 482, i32 0, i32 28} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!294 = metadata !{i32 786443, metadata !1, metadata !291, i32 481, i32 0, i32 27} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!295 = metadata !{i32 488, i32 0, metadata !296, null}
-!296 = metadata !{i32 786443, metadata !1, metadata !281, i32 488, i32 0, i32 30} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!297 = metadata !{i32 502, i32 0, metadata !298, null}
-!298 = metadata !{i32 786443, metadata !1, metadata !299, i32 491, i32 0, i32 33} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!299 = metadata !{i32 786443, metadata !1, metadata !300, i32 490, i32 0, i32 32} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!300 = metadata !{i32 786443, metadata !1, metadata !296, i32 489, i32 0, i32 31} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!301 = metadata !{i32 505, i32 0, metadata !298, null}
-!302 = metadata !{i32 509, i32 0, metadata !303, null}
-!303 = metadata !{i32 786443, metadata !1, metadata !298, i32 509, i32 0, i32 36} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!304 = metadata !{i32 517, i32 0, metadata !298, null}
-!305 = metadata !{i32 525, i32 0, metadata !298, null}
-!306 = metadata !{i32 527, i32 0, metadata !307, null}
-!307 = metadata !{i32 786443, metadata !1, metadata !298, i32 527, i32 0, i32 40} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!308 = metadata !{i32 492, i32 0, metadata !309, null}
-!309 = metadata !{i32 786443, metadata !1, metadata !298, i32 492, i32 0, i32 34} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!310 = metadata !{i32 494, i32 0, metadata !311, null}
-!311 = metadata !{i32 786443, metadata !1, metadata !309, i32 493, i32 0, i32 35} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!312 = metadata !{i32 495, i32 0, metadata !311, null}
-!313 = metadata !{i32 498, i32 0, metadata !298, null}
-!314 = metadata !{i32 503, i32 0, metadata !298, null}
-!315 = metadata !{i32 504, i32 0, metadata !298, null}
-!316 = metadata !{i32 506, i32 0, metadata !298, null}
-!317 = metadata !{i32 507, i32 0, metadata !298, null}
-!318 = metadata !{i32 508, i32 0, metadata !298, null}
-!319 = metadata !{i32 511, i32 0, metadata !320, null}
-!320 = metadata !{i32 786443, metadata !1, metadata !303, i32 510, i32 0, i32 37} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!321 = metadata !{i32 513, i32 0, metadata !298, null}
-!322 = metadata !{i32 518, i32 0, metadata !323, null}
-!323 = metadata !{i32 786443, metadata !1, metadata !298, i32 518, i32 0, i32 38} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!324 = metadata !{i32 520, i32 0, metadata !325, null}
-!325 = metadata !{i32 786443, metadata !1, metadata !323, i32 519, i32 0, i32 39} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!326 = metadata !{i32 523, i32 0, metadata !298, null}
-!327 = metadata !{i32 524, i32 0, metadata !298, null}
+!255 = metadata !{i32 879, i32 0, metadata !256, null}
+!256 = metadata !{i32 786443, metadata !1, metadata !252, i32 879, i32 0, i32 100} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!257 = metadata !{i32 881, i32 0, metadata !258, null}
+!258 = metadata !{i32 786443, metadata !1, metadata !256, i32 880, i32 0, i32 101} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!259 = metadata !{i32 886, i32 0, metadata !260, null}
+!260 = metadata !{i32 786443, metadata !1, metadata !187, i32 886, i32 0, i32 102} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!261 = metadata !{i32 888, i32 0, metadata !262, null}
+!262 = metadata !{i32 786443, metadata !1, metadata !260, i32 887, i32 0, i32 103} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!263 = metadata !{i32 889, i32 0, metadata !262, null}
+!264 = metadata !{i32 890, i32 0, metadata !262, null}
+!265 = metadata !{i32 891, i32 0, metadata !262, null}
+!266 = metadata !{i32 894, i32 0, metadata !95, null}
+!267 = metadata !{i32 366, i32 0, metadata !57, null}
+!268 = metadata !{i32 452, i32 0, metadata !57, null}
+!269 = metadata !{i32 454, i32 0, metadata !270, null}
+!270 = metadata !{i32 786443, metadata !1, metadata !57, i32 454, i32 0, i32 18} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!271 = metadata !{i32 459, i32 0, metadata !272, null}
+!272 = metadata !{i32 786443, metadata !1, metadata !57, i32 459, i32 0, i32 20} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!273 = metadata !{i32 464, i32 0, metadata !57, null}
+!274 = metadata !{i32 465, i32 0, metadata !57, null}
+!275 = metadata !{i32 466, i32 0, metadata !57, null}
+!276 = metadata !{i32 468, i32 0, metadata !277, null}
+!277 = metadata !{i32 786443, metadata !1, metadata !57, i32 468, i32 0, i32 22} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!278 = metadata !{i32 461, i32 0, metadata !279, null}
+!279 = metadata !{i32 786443, metadata !1, metadata !272, i32 460, i32 0, i32 21} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!280 = metadata !{i32 470, i32 0, metadata !281, null}
+!281 = metadata !{i32 786443, metadata !1, metadata !277, i32 469, i32 0, i32 23} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!282 = metadata !{i32 471, i32 0, metadata !281, null}
+!283 = metadata !{i32 473, i32 0, metadata !284, null}
+!284 = metadata !{i32 786443, metadata !1, metadata !281, i32 473, i32 0, i32 24} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!285 = metadata !{i32 475, i32 0, metadata !286, null}
+!286 = metadata !{i32 786443, metadata !1, metadata !284, i32 474, i32 0, i32 25} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!287 = metadata !{i32 476, i32 0, metadata !286, null}
+!288 = metadata !{i32 477, i32 0, metadata !286, null}
+!289 = metadata !{i32 478, i32 0, metadata !286, null}
+!290 = metadata !{i32 482, i32 0, metadata !291, null}
+!291 = metadata !{i32 786443, metadata !1, metadata !281, i32 482, i32 0, i32 26} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!292 = metadata !{i32 484, i32 0, metadata !293, null}
+!293 = metadata !{i32 786443, metadata !1, metadata !294, i32 484, i32 0, i32 28} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!294 = metadata !{i32 786443, metadata !1, metadata !291, i32 483, i32 0, i32 27} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!295 = metadata !{i32 490, i32 0, metadata !296, null}
+!296 = metadata !{i32 786443, metadata !1, metadata !281, i32 490, i32 0, i32 30} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!297 = metadata !{i32 504, i32 0, metadata !298, null}
+!298 = metadata !{i32 786443, metadata !1, metadata !299, i32 493, i32 0, i32 33} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!299 = metadata !{i32 786443, metadata !1, metadata !300, i32 492, i32 0, i32 32} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!300 = metadata !{i32 786443, metadata !1, metadata !296, i32 491, i32 0, i32 31} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!301 = metadata !{i32 507, i32 0, metadata !298, null}
+!302 = metadata !{i32 511, i32 0, metadata !303, null}
+!303 = metadata !{i32 786443, metadata !1, metadata !298, i32 511, i32 0, i32 36} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!304 = metadata !{i32 519, i32 0, metadata !298, null}
+!305 = metadata !{i32 527, i32 0, metadata !298, null}
+!306 = metadata !{i32 529, i32 0, metadata !307, null}
+!307 = metadata !{i32 786443, metadata !1, metadata !298, i32 529, i32 0, i32 40} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!308 = metadata !{i32 494, i32 0, metadata !309, null}
+!309 = metadata !{i32 786443, metadata !1, metadata !298, i32 494, i32 0, i32 34} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!310 = metadata !{i32 496, i32 0, metadata !311, null}
+!311 = metadata !{i32 786443, metadata !1, metadata !309, i32 495, i32 0, i32 35} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!312 = metadata !{i32 497, i32 0, metadata !311, null}
+!313 = metadata !{i32 500, i32 0, metadata !298, null}
+!314 = metadata !{i32 505, i32 0, metadata !298, null}
+!315 = metadata !{i32 506, i32 0, metadata !298, null}
+!316 = metadata !{i32 508, i32 0, metadata !298, null}
+!317 = metadata !{i32 509, i32 0, metadata !298, null}
+!318 = metadata !{i32 510, i32 0, metadata !298, null}
+!319 = metadata !{i32 513, i32 0, metadata !320, null}
+!320 = metadata !{i32 786443, metadata !1, metadata !303, i32 512, i32 0, i32 37} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!321 = metadata !{i32 515, i32 0, metadata !298, null}
+!322 = metadata !{i32 520, i32 0, metadata !323, null}
+!323 = metadata !{i32 786443, metadata !1, metadata !298, i32 520, i32 0, i32 38} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!324 = metadata !{i32 522, i32 0, metadata !325, null}
+!325 = metadata !{i32 786443, metadata !1, metadata !323, i32 521, i32 0, i32 39} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!326 = metadata !{i32 525, i32 0, metadata !298, null}
+!327 = metadata !{i32 526, i32 0, metadata !298, null}
 !328 = metadata !{i32 1}
-!329 = metadata !{i32 529, i32 0, metadata !330, null}
-!330 = metadata !{i32 786443, metadata !1, metadata !307, i32 528, i32 0, i32 41} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!331 = metadata !{i32 530, i32 0, metadata !330, null}
-!332 = metadata !{i32 531, i32 0, metadata !330, null}
-!333 = metadata !{i32 532, i32 0, metadata !330, null}
-!334 = metadata !{i32 533, i32 0, metadata !330, null}
-!335 = metadata !{i32 534, i32 0, metadata !330, null}
-!336 = metadata !{i32 535, i32 0, metadata !330, null}
-!337 = metadata !{i32 536, i32 0, metadata !338, null}
-!338 = metadata !{i32 786443, metadata !1, metadata !330, i32 536, i32 0, i32 42} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!339 = metadata !{i32 538, i32 0, metadata !340, null}
-!340 = metadata !{i32 786443, metadata !1, metadata !338, i32 537, i32 0, i32 43} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!341 = metadata !{i32 540, i32 0, metadata !330, null}
-!342 = metadata !{i32 542, i32 0, metadata !298, null}
-!343 = metadata !{i32 543, i32 0, metadata !298, null}
-!344 = metadata !{i32 547, i32 0, metadata !345, null}
-!345 = metadata !{i32 786443, metadata !1, metadata !298, i32 547, i32 0, i32 44} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!346 = metadata !{i32 552, i32 0, metadata !347, null}
-!347 = metadata !{i32 786443, metadata !1, metadata !298, i32 552, i32 0, i32 46} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!348 = metadata !{i32 557, i32 0, metadata !298, null}
-!349 = metadata !{i32 559, i32 0, metadata !350, null}
-!350 = metadata !{i32 786443, metadata !1, metadata !298, i32 559, i32 0, i32 48} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!351 = metadata !{i32 566, i32 0, metadata !281, null}
-!352 = metadata !{i32 570, i32 0, metadata !353, null}
-!353 = metadata !{i32 786443, metadata !1, metadata !281, i32 570, i32 0, i32 50} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!354 = metadata !{i32 572, i32 0, metadata !355, null}
-!355 = metadata !{i32 786443, metadata !1, metadata !356, i32 572, i32 0, i32 52} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!356 = metadata !{i32 786443, metadata !1, metadata !353, i32 571, i32 0, i32 51} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!357 = metadata !{i32 574, i32 0, metadata !358, null}
-!358 = metadata !{i32 786443, metadata !1, metadata !355, i32 573, i32 0, i32 53} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!359 = metadata !{i32 575, i32 0, metadata !358, null}
-!360 = metadata !{i32 577, i32 0, metadata !361, null}
-!361 = metadata !{i32 786443, metadata !1, metadata !355, i32 577, i32 0, i32 54} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!362 = metadata !{i32 582, i32 0, metadata !356, null}
-!363 = metadata !{i32 579, i32 0, metadata !364, null}
-!364 = metadata !{i32 786443, metadata !1, metadata !361, i32 578, i32 0, i32 55} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!365 = metadata !{i32 580, i32 0, metadata !364, null}
-!366 = metadata !{i32 587, i32 0, metadata !54, null}
-!367 = metadata !{i32 590, i32 0, metadata !78, null}
-!368 = metadata !{i32 659, i32 0, metadata !369, null}
-!369 = metadata !{i32 786443, metadata !1, metadata !78, i32 659, i32 0, i32 56} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!370 = metadata !{i32 669, i32 0, metadata !371, null}
-!371 = metadata !{i32 786443, metadata !1, metadata !78, i32 669, i32 0, i32 60} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!372 = metadata !{i32 673, i32 0, metadata !373, null}
-!373 = metadata !{i32 786443, metadata !1, metadata !374, i32 673, i32 0, i32 62} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!374 = metadata !{i32 786443, metadata !1, metadata !371, i32 670, i32 0, i32 61} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!375 = metadata !{i32 671, i32 0, metadata !374, null}
-!376 = metadata !{i32 682, i32 0, metadata !377, null}
-!377 = metadata !{i32 786443, metadata !1, metadata !378, i32 676, i32 0, i32 65} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!378 = metadata !{i32 786443, metadata !1, metadata !379, i32 675, i32 0, i32 64} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!379 = metadata !{i32 786443, metadata !1, metadata !373, i32 674, i32 0, i32 63} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!380 = metadata !{i32 675, i32 0, metadata !378, null}
-!381 = metadata !{i32 680, i32 0, metadata !382, null}
-!382 = metadata !{i32 786443, metadata !1, metadata !383, i32 679, i32 0, i32 67} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!383 = metadata !{i32 786443, metadata !1, metadata !377, i32 678, i32 0, i32 66} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!384 = metadata !{i32 678, i32 0, metadata !383, null}
-!385 = metadata !{i32 683, i32 0, metadata !386, null}
-!386 = metadata !{i32 786443, metadata !1, metadata !377, i32 683, i32 0, i32 68} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!387 = metadata !{i32 685, i32 0, metadata !388, null}
-!388 = metadata !{i32 786443, metadata !1, metadata !386, i32 684, i32 0, i32 69} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
-!389 = metadata !{i32 692, i32 0, metadata !78, null}
+!329 = metadata !{i32 531, i32 0, metadata !330, null}
+!330 = metadata !{i32 786443, metadata !1, metadata !307, i32 530, i32 0, i32 41} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!331 = metadata !{i32 532, i32 0, metadata !330, null}
+!332 = metadata !{i32 533, i32 0, metadata !330, null}
+!333 = metadata !{i32 534, i32 0, metadata !330, null}
+!334 = metadata !{i32 535, i32 0, metadata !330, null}
+!335 = metadata !{i32 536, i32 0, metadata !330, null}
+!336 = metadata !{i32 537, i32 0, metadata !330, null}
+!337 = metadata !{i32 538, i32 0, metadata !338, null}
+!338 = metadata !{i32 786443, metadata !1, metadata !330, i32 538, i32 0, i32 42} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!339 = metadata !{i32 540, i32 0, metadata !340, null}
+!340 = metadata !{i32 786443, metadata !1, metadata !338, i32 539, i32 0, i32 43} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!341 = metadata !{i32 542, i32 0, metadata !330, null}
+!342 = metadata !{i32 544, i32 0, metadata !298, null}
+!343 = metadata !{i32 545, i32 0, metadata !298, null}
+!344 = metadata !{i32 549, i32 0, metadata !345, null}
+!345 = metadata !{i32 786443, metadata !1, metadata !298, i32 549, i32 0, i32 44} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!346 = metadata !{i32 554, i32 0, metadata !347, null}
+!347 = metadata !{i32 786443, metadata !1, metadata !298, i32 554, i32 0, i32 46} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!348 = metadata !{i32 559, i32 0, metadata !298, null}
+!349 = metadata !{i32 561, i32 0, metadata !350, null}
+!350 = metadata !{i32 786443, metadata !1, metadata !298, i32 561, i32 0, i32 48} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!351 = metadata !{i32 568, i32 0, metadata !281, null}
+!352 = metadata !{i32 572, i32 0, metadata !353, null}
+!353 = metadata !{i32 786443, metadata !1, metadata !281, i32 572, i32 0, i32 50} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!354 = metadata !{i32 574, i32 0, metadata !355, null}
+!355 = metadata !{i32 786443, metadata !1, metadata !356, i32 574, i32 0, i32 52} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!356 = metadata !{i32 786443, metadata !1, metadata !353, i32 573, i32 0, i32 51} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!357 = metadata !{i32 576, i32 0, metadata !358, null}
+!358 = metadata !{i32 786443, metadata !1, metadata !355, i32 575, i32 0, i32 53} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!359 = metadata !{i32 577, i32 0, metadata !358, null}
+!360 = metadata !{i32 579, i32 0, metadata !361, null}
+!361 = metadata !{i32 786443, metadata !1, metadata !355, i32 579, i32 0, i32 54} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!362 = metadata !{i32 584, i32 0, metadata !356, null}
+!363 = metadata !{i32 581, i32 0, metadata !364, null}
+!364 = metadata !{i32 786443, metadata !1, metadata !361, i32 580, i32 0, i32 55} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!365 = metadata !{i32 582, i32 0, metadata !364, null}
+!366 = metadata !{i32 589, i32 0, metadata !57, null}
+!367 = metadata !{i32 592, i32 0, metadata !81, null}
+!368 = metadata !{i32 661, i32 0, metadata !369, null}
+!369 = metadata !{i32 786443, metadata !1, metadata !81, i32 661, i32 0, i32 56} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!370 = metadata !{i32 671, i32 0, metadata !371, null}
+!371 = metadata !{i32 786443, metadata !1, metadata !81, i32 671, i32 0, i32 60} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!372 = metadata !{i32 675, i32 0, metadata !373, null}
+!373 = metadata !{i32 786443, metadata !1, metadata !374, i32 675, i32 0, i32 62} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!374 = metadata !{i32 786443, metadata !1, metadata !371, i32 672, i32 0, i32 61} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!375 = metadata !{i32 673, i32 0, metadata !374, null}
+!376 = metadata !{i32 684, i32 0, metadata !377, null}
+!377 = metadata !{i32 786443, metadata !1, metadata !378, i32 678, i32 0, i32 65} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!378 = metadata !{i32 786443, metadata !1, metadata !379, i32 677, i32 0, i32 64} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!379 = metadata !{i32 786443, metadata !1, metadata !373, i32 676, i32 0, i32 63} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!380 = metadata !{i32 677, i32 0, metadata !378, null}
+!381 = metadata !{i32 682, i32 0, metadata !382, null}
+!382 = metadata !{i32 786443, metadata !1, metadata !383, i32 681, i32 0, i32 67} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!383 = metadata !{i32 786443, metadata !1, metadata !377, i32 680, i32 0, i32 66} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!384 = metadata !{i32 680, i32 0, metadata !383, null}
+!385 = metadata !{i32 685, i32 0, metadata !386, null}
+!386 = metadata !{i32 786443, metadata !1, metadata !377, i32 685, i32 0, i32 68} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!387 = metadata !{i32 687, i32 0, metadata !388, null}
+!388 = metadata !{i32 786443, metadata !1, metadata !386, i32 686, i32 0, i32 69} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/mma_test_eigen/eispack.c]
+!389 = metadata !{i32 694, i32 0, metadata !81, null}

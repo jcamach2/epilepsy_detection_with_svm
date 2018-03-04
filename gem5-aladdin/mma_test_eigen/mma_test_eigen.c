@@ -31,12 +31,12 @@ int test_stores(TYPE* store_vals, TYPE* store_loc, int num_vals) {
 
 // Read values from store_vals and copy them into store_loc.
 void store_kernel(TYPE* store_vals, TYPE* store_loc, int num_vals){//, kiss_fft_cfg cfg) {
-  double *a;
-  double *w;
-  double *z;
-  a = (double *) malloc(num_vals * num_vals * sizeof(double));
-  w = (double *) malloc(num_vals * sizeof(double));;
-  z = (double *) malloc(num_vals * num_vals * sizeof(double)); // dummy placeholder
+  double a[num_vals*num_vals];
+  double w[num_vals*num_vals];
+  double z[num_vals*num_vals];
+  //a = (double *) malloc(num_vals * num_vals * sizeof(double));
+  //w = (double *) malloc(num_vals * sizeof(double));;
+  //z = (double *) malloc(num_vals * num_vals * sizeof(double)); // dummy placeholder
   a[0] = 1;
   a[1] = 2;
   a[2] = 3;
