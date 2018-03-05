@@ -1,6 +1,14 @@
-process_data/fft_loop 53
-process_data/fft_loop_1 55
-process_data/fft_loop_2 63
+process_data/fft_loop 44
+process_data/fft_loop_1 46
+process_data/fft_loop_2 54
+process_data/fft_mean_loop_1 77
+process_data/fft_mean_loop_2 80
+process_data/fft_scale_loop_1 99
+process_data/fft_scale_loop_2 101
+process_data/fft_stddev_loop_1 87
+process_data/fft_stddev_loop_2 90
+process_data/mag_log_loop_1 65
+process_data/mag_log_loop_2 67
 kf_bfly2/kf_bfly2_loop 32
 kf_bfly3/kf_bfly3_loop 108
 kf_bfly4/kf_bfly4_loop 60

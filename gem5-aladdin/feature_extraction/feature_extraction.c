@@ -8,13 +8,14 @@
  */
 
 #include <stdio.h>
+#include <math.h>
 #include "../../gem5/aladdin_sys_connection.h"
 #include "../../gem5/aladdin_sys_constants.h"
 #include "kiss_fft.h"
 #include "_kiss_fft_guts.h"
 #define TYPE int
 
-#define N_SAMPLES 10
+#define N_SAMPLES 50
 #define N_CHANNELS 15
 
 //TODO kiss_fft_cpx TYPE
@@ -33,16 +34,6 @@ int test_stores(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channels)
 
 
 void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channels, kiss_fft_cfg cfg) {
-/*******************************************************************************/
-/* begin time domain feature extraction*/
-/*******************************************************************************/
-// center to zero mean and scale each item to unit variance
-// find cross correlation matrix
-// find x-corr matrix upper-right triangle
-// find x-corr matrix eigenvalues
-/*******************************************************************************/
-/* end time domain feature extraction*/
-/*******************************************************************************/
 
 /*******************************************************************************/
 /* begin frequency domain feature extraction */
@@ -65,15 +56,74 @@ void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channel
             freq_data[channel*n_samples + i] = out[channel*n_samples + i].r;
         }
     }
-// slice fft data
+// slice fft data (only work with out[1] - out[47] from now on)
+    const int low_index   = 1;
+    const int high_index  = 47;
+    const int n_fft_items = high_index - low_index + 1;
 // fft magnitude and log
+    TYPE fft_data[n_fft_items*n_channels];
+    mag_log_loop_1:for (int channel = 0; channel < n_channels; channel++)
+    {
+        mag_log_loop_2:for (int i = 0; i < n_fft_items; i++)
+        {
+            int index = (channel*n_samples) + low_index + i;
+            kiss_fft_cpx temp = out[index];
+            fft_data[channel*n_fft_items + i] = log10(sqrt((temp.r*temp.r)+(temp.i*temp.i)));
+        }
+    }
 // center to mean and scale each item to unit variance
-// find sliced, magnitude, & log fft data cross correlation matrix
+    TYPE fft_mean[n_channels];
+    TYPE fft_stddev[n_channels];
+    fft_mean_loop_1:for (int channel = 0; channel < n_channels; channel++)
+    {
+        fft_mean[channel] = 0;
+        fft_mean_loop_2:for (int i = 0; i < n_fft_items; i++)
+        {
+            fft_mean[channel] += fft_data[channel*n_fft_items + i];
+        }
+        fft_mean[channel] /= n_fft_items;
+    }
+    const int n_sd = n_fft_items - 1;
+    fft_stddev_loop_1:for (int channel = 0; channel < n_channels; channel++)
+    {
+        fft_stddev[channel] = 0;
+        fft_stddev_loop_2:for (int i = 0; i < n_fft_items; i++)
+        {
+            fft_stddev[channel] +=
+                (fft_data[channel*n_fft_items + i] - fft_mean[channel]) *
+                (fft_data[channel*n_fft_items + i] - fft_mean[channel]);
+        }
+        fft_stddev[channel] = fft_stddev[channel] / n_sd;
+        fft_stddev[channel] = sqrt(fft_stddev[channel]);
+    }
+    fft_scale_loop_1:for (int channel = 0; channel < n_channels; channel++)
+    {
+        fft_scale_loop_2:for (int i = 0; i < n_fft_items; i++)
+        {
+            if(fft_stddev[channel] != 0)
+            {
+                fft_data[channel*n_fft_items + i] = 
+                    (fft_data[channel*n_fft_items + i] - fft_mean[channel]) / fft_stddev[channel];
+            }
+        }
+    }
+// find sliced, magnitude, log, & scaled fft data cross correlation matrix
 // find cross correlation matrix upper-right triangle
 // find cross correlation matrix eigenvalues
-// find sliced, magnitude, & log fft data "ravel" (matrix flattening)
+// find sliced, magnitude, log, & scaled fft data "ravel" (matrix flattening)
 /*******************************************************************************/
 /* end frequency domain feature extraction*/
+/*******************************************************************************/
+
+/*******************************************************************************/
+/* begin time domain feature extraction*/
+/*******************************************************************************/
+// center to zero mean and scale each item to unit variance
+// find cross correlation matrix
+// find x-corr matrix upper-right triangle
+// find x-corr matrix eigenvalues
+/*******************************************************************************/
+/* end time domain feature extraction*/
 /*******************************************************************************/
 
 // concatenate all necessary feature extraction data
