@@ -1,22 +1,16 @@
-/* Test stores performed in the kernel.
- *
- * The values stored should be able to be loaded by the CPU after the kernel is
- * finished.
- *
- * Performance is dependent on the relationship between the unrolling factor of
- * the inner loop and cache queue size/bandwidth.
- */
-
 #include <stdio.h>
 #include <math.h>
 #include "../../gem5/aladdin_sys_connection.h"
 #include "../../gem5/aladdin_sys_constants.h"
 #include "kiss_fft.h"
 #include "_kiss_fft_guts.h"
+
 #define TYPE int
 
 #define N_SAMPLES 50
 #define N_CHANNELS 15
+
+typedef double XCORR_TYPE;
 
 //TODO kiss_fft_cpx TYPE
 
@@ -107,7 +101,25 @@ void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channel
             }
         }
     }
-// find sliced, magnitude, log, & scaled fft data cross correlation matrix
+// find sliced, magnitude, log, & scaled fft data cross correlation matrix 
+    XCORR_TYPE xcorr_matrix[n_channels * n_channels];
+    freq_xcorr_loop_1:for (int i = 0; i < n_channels; i++)
+    {
+        // the matrix is symmetric, only do work for upper-right triangle
+        freq_xcorr_loop_2:for (int j = i; j < n_channels; j++)
+        {
+            xcorr_matrix[i*n_channels + j] = 0;
+            // NOTE: taking shortcuts since data is zero-mean, unit-variance
+            freq_xcorr_loop_3:for (int k = 0; k < n_fft_items; k++)
+            {
+                // no need to subtract means, means = 0
+                xcorr_matrix[i*n_channels + j] += (XCORR_TYPE)(fft_data[i*n_channels+k]*fft_data[j*n_channels+k]);
+            }
+            xcorr_matrix[i*n_channels + j] /= (n_fft_items - 1);
+            // no need to divide by sqrt(variance * variance) because variances = 1
+            xcorr_matrix[j*n_channels + i] = xcorr_matrix[i*n_channels + j];
+        }
+    }
 // find cross correlation matrix upper-right triangle
 // find cross correlation matrix eigenvalues
 // find sliced, magnitude, log, & scaled fft data "ravel" (matrix flattening)
