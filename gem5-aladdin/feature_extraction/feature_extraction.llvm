@@ -15,53 +15,53 @@ target triple = "x86_64-unknown-linux-gnu"
 
 ; Function Attrs: nounwind uwtable
 define i32 @test_stores(i32* nocapture readnone %time_data, i32* nocapture readonly %freq_data, i32 %n_samples, i32 %n_channels) #0 {
-  tail call void @llvm.dbg.value(metadata !{i32* %time_data}, i64 0, metadata !11), !dbg !128
-  tail call void @llvm.dbg.value(metadata !{i32* %freq_data}, i64 0, metadata !12), !dbg !128
-  tail call void @llvm.dbg.value(metadata !{i32 %n_samples}, i64 0, metadata !13), !dbg !128
-  tail call void @llvm.dbg.value(metadata !{i32 %n_channels}, i64 0, metadata !14), !dbg !128
-  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !15), !dbg !129
-  %1 = icmp sgt i32 %n_channels, 0, !dbg !129
-  br i1 %1, label %.preheader.lr.ph, label %._crit_edge3, !dbg !129
+  tail call void @llvm.dbg.value(metadata !{i32* %time_data}, i64 0, metadata !12), !dbg !161
+  tail call void @llvm.dbg.value(metadata !{i32* %freq_data}, i64 0, metadata !13), !dbg !161
+  tail call void @llvm.dbg.value(metadata !{i32 %n_samples}, i64 0, metadata !14), !dbg !161
+  tail call void @llvm.dbg.value(metadata !{i32 %n_channels}, i64 0, metadata !15), !dbg !161
+  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !16), !dbg !162
+  %1 = icmp sgt i32 %n_channels, 0, !dbg !162
+  br i1 %1, label %.preheader.lr.ph, label %._crit_edge3, !dbg !162
 
 .preheader.lr.ph:                                 ; preds = %0
-  %2 = icmp sgt i32 %n_samples, 0, !dbg !130
-  br label %.preheader, !dbg !129
+  %2 = icmp sgt i32 %n_samples, 0, !dbg !163
+  br label %.preheader, !dbg !162
 
 .preheader:                                       ; preds = %._crit_edge, %.preheader.lr.ph
   %indvars.iv5 = phi i64 [ 0, %.preheader.lr.ph ], [ %indvars.iv.next6, %._crit_edge ]
-  %3 = load %struct._IO_FILE** @stdout, align 8, !dbg !131, !tbaa !133
-  br i1 %2, label %.lr.ph, label %._crit_edge, !dbg !130
+  %3 = load %struct._IO_FILE** @stdout, align 8, !dbg !164, !tbaa !166
+  br i1 %2, label %.lr.ph, label %._crit_edge, !dbg !163
 
 .lr.ph:                                           ; preds = %.preheader
-  %4 = trunc i64 %indvars.iv5 to i32, !dbg !131
-  %5 = mul nsw i32 %4, %n_samples, !dbg !131
-  %6 = sext i32 %5 to i64, !dbg !130
-  br label %7, !dbg !130
+  %4 = trunc i64 %indvars.iv5 to i32, !dbg !164
+  %5 = mul nsw i32 %4, %n_samples, !dbg !164
+  %6 = sext i32 %5 to i64, !dbg !163
+  br label %7, !dbg !163
 
 ; <label>:7                                       ; preds = %7, %.lr.ph
   %indvars.iv = phi i64 [ 0, %.lr.ph ], [ %indvars.iv.next, %7 ]
   %8 = phi %struct._IO_FILE* [ %3, %.lr.ph ], [ %14, %7 ]
-  %9 = add nsw i64 %indvars.iv, %6, !dbg !131
-  %10 = getelementptr inbounds i32* %freq_data, i64 %9, !dbg !131
-  %11 = load i32* %10, align 4, !dbg !131, !tbaa !137
-  %12 = trunc i64 %9 to i32, !dbg !131
-  %13 = tail call i32 (%struct._IO_FILE*, i8*, ...)* @fprintf(%struct._IO_FILE* %8, i8* getelementptr inbounds ([20 x i8]* @.str, i64 0, i64 0), i32 %12, i32 %11) #4, !dbg !131
-  %indvars.iv.next = add nuw nsw i64 %indvars.iv, 1, !dbg !130
-  %14 = load %struct._IO_FILE** @stdout, align 8, !dbg !131, !tbaa !133
-  %lftr.wideiv = trunc i64 %indvars.iv.next to i32, !dbg !130
-  %exitcond = icmp eq i32 %lftr.wideiv, %n_samples, !dbg !130
-  br i1 %exitcond, label %._crit_edge, label %7, !dbg !130
+  %9 = add nsw i64 %indvars.iv, %6, !dbg !164
+  %10 = getelementptr inbounds i32* %freq_data, i64 %9, !dbg !164
+  %11 = load i32* %10, align 4, !dbg !164, !tbaa !170
+  %12 = trunc i64 %9 to i32, !dbg !164
+  %13 = tail call i32 (%struct._IO_FILE*, i8*, ...)* @fprintf(%struct._IO_FILE* %8, i8* getelementptr inbounds ([20 x i8]* @.str, i64 0, i64 0), i32 %12, i32 %11) #4, !dbg !164
+  %indvars.iv.next = add nuw nsw i64 %indvars.iv, 1, !dbg !163
+  %14 = load %struct._IO_FILE** @stdout, align 8, !dbg !164, !tbaa !166
+  %lftr.wideiv = trunc i64 %indvars.iv.next to i32, !dbg !163
+  %exitcond = icmp eq i32 %lftr.wideiv, %n_samples, !dbg !163
+  br i1 %exitcond, label %._crit_edge, label %7, !dbg !163
 
 ._crit_edge:                                      ; preds = %7, %.preheader
   %.lcssa = phi %struct._IO_FILE* [ %3, %.preheader ], [ %14, %7 ]
-  %15 = tail call i32 (%struct._IO_FILE*, i8*, ...)* @fprintf(%struct._IO_FILE* %.lcssa, i8* getelementptr inbounds ([2 x i8]* @.str1, i64 0, i64 0)) #4, !dbg !139
-  %indvars.iv.next6 = add nuw nsw i64 %indvars.iv5, 1, !dbg !129
-  %lftr.wideiv7 = trunc i64 %indvars.iv.next6 to i32, !dbg !129
-  %exitcond8 = icmp eq i32 %lftr.wideiv7, %n_channels, !dbg !129
-  br i1 %exitcond8, label %._crit_edge3, label %.preheader, !dbg !129
+  %15 = tail call i32 (%struct._IO_FILE*, i8*, ...)* @fprintf(%struct._IO_FILE* %.lcssa, i8* getelementptr inbounds ([2 x i8]* @.str1, i64 0, i64 0)) #4, !dbg !172
+  %indvars.iv.next6 = add nuw nsw i64 %indvars.iv5, 1, !dbg !162
+  %lftr.wideiv7 = trunc i64 %indvars.iv.next6 to i32, !dbg !162
+  %exitcond8 = icmp eq i32 %lftr.wideiv7, %n_channels, !dbg !162
+  br i1 %exitcond8, label %._crit_edge3, label %.preheader, !dbg !162
 
 ._crit_edge3:                                     ; preds = %._crit_edge, %0
-  ret i32 0, !dbg !140
+  ret i32 0, !dbg !173
 }
 
 ; Function Attrs: nounwind readnone
@@ -71,279 +71,633 @@ declare i32 @fprintf(%struct._IO_FILE*, i8*, ...) #2
 
 ; Function Attrs: nounwind uwtable
 define void @process_data(i32* nocapture readonly %time_data, i32* nocapture %freq_data, i32 %n_samples, i32 %n_channels, %struct.kiss_fft_state* %cfg) #0 {
-  call void @llvm.dbg.value(metadata !{i32* %time_data}, i64 0, metadata !46), !dbg !141
-  call void @llvm.dbg.value(metadata !{i32* %freq_data}, i64 0, metadata !47), !dbg !141
-  call void @llvm.dbg.value(metadata !{i32 %n_samples}, i64 0, metadata !48), !dbg !141
-  call void @llvm.dbg.value(metadata !{i32 %n_channels}, i64 0, metadata !49), !dbg !141
-  call void @llvm.dbg.value(metadata !{%struct.kiss_fft_state* %cfg}, i64 0, metadata !50), !dbg !141
-  %1 = mul nsw i32 %n_channels, %n_samples, !dbg !142
-  %2 = zext i32 %1 to i64, !dbg !142
-  %3 = alloca %struct.kiss_fft_cpx, i64 %2, align 16, !dbg !142
-  call void @llvm.dbg.declare(metadata !{%struct.kiss_fft_cpx* %3}, metadata !51), !dbg !142
-  %4 = alloca %struct.kiss_fft_cpx, i64 %2, align 16, !dbg !143
-  call void @llvm.dbg.declare(metadata !{%struct.kiss_fft_cpx* %4}, metadata !55), !dbg !143
-  call void @llvm.dbg.value(metadata !2, i64 0, metadata !56), !dbg !144
-  %5 = icmp sgt i32 %n_channels, 0, !dbg !144
-  br i1 %5, label %.preheader37.lr.ph, label %._crit_edge47.thread, !dbg !144
+  call void @llvm.dbg.value(metadata !{i32* %time_data}, i64 0, metadata !47), !dbg !174
+  call void @llvm.dbg.value(metadata !{i32* %freq_data}, i64 0, metadata !48), !dbg !174
+  call void @llvm.dbg.value(metadata !{i32 %n_samples}, i64 0, metadata !49), !dbg !174
+  call void @llvm.dbg.value(metadata !{i32 %n_channels}, i64 0, metadata !50), !dbg !174
+  call void @llvm.dbg.value(metadata !{%struct.kiss_fft_state* %cfg}, i64 0, metadata !51), !dbg !174
+  %1 = mul nsw i32 %n_channels, %n_samples, !dbg !175
+  %2 = zext i32 %1 to i64, !dbg !175
+  %3 = alloca %struct.kiss_fft_cpx, i64 %2, align 16, !dbg !175
+  call void @llvm.dbg.declare(metadata !{%struct.kiss_fft_cpx* %3}, metadata !52), !dbg !175
+  %4 = alloca %struct.kiss_fft_cpx, i64 %2, align 16, !dbg !176
+  call void @llvm.dbg.declare(metadata !{%struct.kiss_fft_cpx* %4}, metadata !56), !dbg !176
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !57), !dbg !177
+  %5 = icmp sgt i32 %n_channels, 0, !dbg !177
+  br i1 %5, label %.preheader83.lr.ph, label %._crit_edge93.thread, !dbg !177
 
-._crit_edge47.thread:                             ; preds = %0
-  call void @llvm.dbg.value(metadata !145, i64 0, metadata !63), !dbg !146
-  call void @llvm.dbg.value(metadata !147, i64 0, metadata !65), !dbg !148
-  call void @llvm.dbg.value(metadata !147, i64 0, metadata !66), !dbg !149
-  %6 = mul nsw i32 %n_channels, 47, !dbg !150
-  %7 = zext i32 %6 to i64, !dbg !150
-  %8 = alloca i32, i64 %7, align 16, !dbg !150
-  call void @llvm.dbg.declare(metadata !{i32* %35}, metadata !67), !dbg !150
-  call void @llvm.dbg.value(metadata !2, i64 0, metadata !69), !dbg !151
-  br label %._crit_edge36.thread, !dbg !151
+._crit_edge93.thread:                             ; preds = %0
+  call void @llvm.dbg.value(metadata !178, i64 0, metadata !64), !dbg !179
+  call void @llvm.dbg.value(metadata !180, i64 0, metadata !66), !dbg !181
+  call void @llvm.dbg.value(metadata !180, i64 0, metadata !67), !dbg !182
+  %6 = mul nsw i32 %n_channels, 47, !dbg !183
+  %7 = zext i32 %6 to i64, !dbg !183
+  %8 = alloca i32, i64 %7, align 16, !dbg !183
+  call void @llvm.dbg.declare(metadata !{i32* %35}, metadata !68), !dbg !183
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !70), !dbg !184
+  br label %._crit_edge82.thread, !dbg !184
 
-.preheader37.lr.ph:                               ; preds = %0
-  %9 = icmp sgt i32 %n_samples, 0, !dbg !152
-  %10 = icmp sgt i32 %n_samples, 0, !dbg !153
-  br label %.preheader37, !dbg !144
+.preheader83.lr.ph:                               ; preds = %0
+  %9 = icmp sgt i32 %n_samples, 0, !dbg !185
+  %10 = icmp sgt i32 %n_samples, 0, !dbg !186
+  br label %.preheader83, !dbg !177
 
-.preheader37:                                     ; preds = %._crit_edge45, %.preheader37.lr.ph
-  %indvars.iv81 = phi i64 [ 0, %.preheader37.lr.ph ], [ %indvars.iv.next82, %._crit_edge45 ]
-  %11 = trunc i64 %indvars.iv81 to i32, !dbg !154
-  %12 = mul nsw i32 %11, %n_samples, !dbg !154
-  br i1 %9, label %.lr.ph40, label %._crit_edge41, !dbg !152
+.preheader83:                                     ; preds = %._crit_edge91, %.preheader83.lr.ph
+  %indvars.iv182 = phi i64 [ 0, %.preheader83.lr.ph ], [ %indvars.iv.next183, %._crit_edge91 ]
+  %11 = trunc i64 %indvars.iv182 to i32, !dbg !187
+  %12 = mul nsw i32 %11, %n_samples, !dbg !187
+  br i1 %9, label %.lr.ph86, label %._crit_edge87, !dbg !185
 
-.lr.ph40:                                         ; preds = %.preheader37
-  %13 = sext i32 %12 to i64, !dbg !152
-  br label %14, !dbg !152
+.lr.ph86:                                         ; preds = %.preheader83
+  %13 = sext i32 %12 to i64, !dbg !185
+  br label %14, !dbg !185
 
-; <label>:14                                      ; preds = %14, %.lr.ph40
-  %indvars.iv73 = phi i64 [ 0, %.lr.ph40 ], [ %indvars.iv.next74, %14 ]
-  %15 = add nsw i64 %indvars.iv73, %13, !dbg !154
-  %16 = getelementptr inbounds i32* %time_data, i64 %15, !dbg !154
-  %17 = load i32* %16, align 4, !dbg !154, !tbaa !137
-  %18 = sitofp i32 %17 to float, !dbg !154
-  %19 = getelementptr inbounds %struct.kiss_fft_cpx* %3, i64 %15, i32 0, !dbg !154
-  store float %18, float* %19, align 8, !dbg !154, !tbaa !156
-  %20 = getelementptr inbounds %struct.kiss_fft_cpx* %3, i64 %15, i32 1, !dbg !159
-  store float 0.000000e+00, float* %20, align 4, !dbg !159, !tbaa !160
-  %21 = getelementptr inbounds %struct.kiss_fft_cpx* %4, i64 %15, i32 0, !dbg !161
-  store float 0.000000e+00, float* %21, align 8, !dbg !161, !tbaa !156
-  %22 = getelementptr inbounds %struct.kiss_fft_cpx* %4, i64 %15, i32 1, !dbg !162
-  store float 0.000000e+00, float* %22, align 4, !dbg !162, !tbaa !160
-  %indvars.iv.next74 = add nuw nsw i64 %indvars.iv73, 1, !dbg !152
-  %lftr.wideiv75 = trunc i64 %indvars.iv.next74 to i32, !dbg !152
-  %exitcond76 = icmp eq i32 %lftr.wideiv75, %n_samples, !dbg !152
-  br i1 %exitcond76, label %._crit_edge41, label %14, !dbg !152
+; <label>:14                                      ; preds = %14, %.lr.ph86
+  %indvars.iv174 = phi i64 [ 0, %.lr.ph86 ], [ %indvars.iv.next175, %14 ]
+  %15 = add nsw i64 %indvars.iv174, %13, !dbg !187
+  %16 = getelementptr inbounds i32* %time_data, i64 %15, !dbg !187
+  %17 = load i32* %16, align 4, !dbg !187, !tbaa !170
+  %18 = sitofp i32 %17 to float, !dbg !187
+  %19 = getelementptr inbounds %struct.kiss_fft_cpx* %3, i64 %15, i32 0, !dbg !187
+  store float %18, float* %19, align 8, !dbg !187, !tbaa !189
+  %20 = getelementptr inbounds %struct.kiss_fft_cpx* %3, i64 %15, i32 1, !dbg !192
+  store float 0.000000e+00, float* %20, align 4, !dbg !192, !tbaa !193
+  %21 = getelementptr inbounds %struct.kiss_fft_cpx* %4, i64 %15, i32 0, !dbg !194
+  store float 0.000000e+00, float* %21, align 8, !dbg !194, !tbaa !189
+  %22 = getelementptr inbounds %struct.kiss_fft_cpx* %4, i64 %15, i32 1, !dbg !195
+  store float 0.000000e+00, float* %22, align 4, !dbg !195, !tbaa !193
+  %indvars.iv.next175 = add nuw nsw i64 %indvars.iv174, 1, !dbg !185
+  %lftr.wideiv176 = trunc i64 %indvars.iv.next175 to i32, !dbg !185
+  %exitcond177 = icmp eq i32 %lftr.wideiv176, %n_samples, !dbg !185
+  br i1 %exitcond177, label %._crit_edge87, label %14, !dbg !185
 
-._crit_edge41:                                    ; preds = %14, %.preheader37
-  %23 = sext i32 %12 to i64, !dbg !163
-  %24 = getelementptr inbounds %struct.kiss_fft_cpx* %3, i64 %23, !dbg !163
-  %25 = getelementptr inbounds %struct.kiss_fft_cpx* %4, i64 %23, !dbg !163
-  call void @kiss_fft(%struct.kiss_fft_state* %cfg, %struct.kiss_fft_cpx* %24, %struct.kiss_fft_cpx* %25) #4, !dbg !163
-  call void @llvm.dbg.value(metadata !2, i64 0, metadata !61), !dbg !153
-  br i1 %10, label %.lr.ph44, label %._crit_edge45, !dbg !153
+._crit_edge87:                                    ; preds = %14, %.preheader83
+  %23 = sext i32 %12 to i64, !dbg !196
+  %24 = getelementptr inbounds %struct.kiss_fft_cpx* %3, i64 %23, !dbg !196
+  %25 = getelementptr inbounds %struct.kiss_fft_cpx* %4, i64 %23, !dbg !196
+  call void @kiss_fft(%struct.kiss_fft_state* %cfg, %struct.kiss_fft_cpx* %24, %struct.kiss_fft_cpx* %25) #4, !dbg !196
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !62), !dbg !186
+  br i1 %10, label %.lr.ph90, label %._crit_edge91, !dbg !186
 
-.lr.ph44:                                         ; preds = %._crit_edge41
-  %26 = sext i32 %12 to i64, !dbg !153
-  br label %27, !dbg !153
+.lr.ph90:                                         ; preds = %._crit_edge87
+  %26 = sext i32 %12 to i64, !dbg !186
+  br label %27, !dbg !186
 
-; <label>:27                                      ; preds = %27, %.lr.ph44
-  %indvars.iv77 = phi i64 [ 0, %.lr.ph44 ], [ %indvars.iv.next78, %27 ]
-  %28 = add nsw i64 %indvars.iv77, %26, !dbg !164
-  %29 = getelementptr inbounds %struct.kiss_fft_cpx* %4, i64 %28, i32 0, !dbg !164
-  %30 = load float* %29, align 8, !dbg !164, !tbaa !156
-  %31 = fptosi float %30 to i32, !dbg !164
-  %32 = getelementptr inbounds i32* %freq_data, i64 %28, !dbg !164
-  store i32 %31, i32* %32, align 4, !dbg !164, !tbaa !137
-  %indvars.iv.next78 = add nuw nsw i64 %indvars.iv77, 1, !dbg !153
-  %lftr.wideiv79 = trunc i64 %indvars.iv.next78 to i32, !dbg !153
-  %exitcond80 = icmp eq i32 %lftr.wideiv79, %n_samples, !dbg !153
-  br i1 %exitcond80, label %._crit_edge45, label %27, !dbg !153
+; <label>:27                                      ; preds = %27, %.lr.ph90
+  %indvars.iv178 = phi i64 [ 0, %.lr.ph90 ], [ %indvars.iv.next179, %27 ]
+  %28 = add nsw i64 %indvars.iv178, %26, !dbg !197
+  %29 = getelementptr inbounds %struct.kiss_fft_cpx* %4, i64 %28, i32 0, !dbg !197
+  %30 = load float* %29, align 8, !dbg !197, !tbaa !189
+  %31 = fptosi float %30 to i32, !dbg !197
+  %32 = getelementptr inbounds i32* %freq_data, i64 %28, !dbg !197
+  store i32 %31, i32* %32, align 4, !dbg !197, !tbaa !170
+  %indvars.iv.next179 = add nuw nsw i64 %indvars.iv178, 1, !dbg !186
+  %lftr.wideiv180 = trunc i64 %indvars.iv.next179 to i32, !dbg !186
+  %exitcond181 = icmp eq i32 %lftr.wideiv180, %n_samples, !dbg !186
+  br i1 %exitcond181, label %._crit_edge91, label %27, !dbg !186
 
-._crit_edge45:                                    ; preds = %27, %._crit_edge41
-  %indvars.iv.next82 = add nuw nsw i64 %indvars.iv81, 1, !dbg !144
-  %lftr.wideiv83 = trunc i64 %indvars.iv.next82 to i32, !dbg !144
-  %exitcond84 = icmp eq i32 %lftr.wideiv83, %n_channels, !dbg !144
-  br i1 %exitcond84, label %._crit_edge47, label %.preheader37, !dbg !144
+._crit_edge91:                                    ; preds = %27, %._crit_edge87
+  %indvars.iv.next183 = add nuw nsw i64 %indvars.iv182, 1, !dbg !177
+  %lftr.wideiv184 = trunc i64 %indvars.iv.next183 to i32, !dbg !177
+  %exitcond185 = icmp eq i32 %lftr.wideiv184, %n_channels, !dbg !177
+  br i1 %exitcond185, label %._crit_edge93, label %.preheader83, !dbg !177
 
-._crit_edge47:                                    ; preds = %._crit_edge45
-  call void @llvm.dbg.value(metadata !145, i64 0, metadata !63), !dbg !146
-  call void @llvm.dbg.value(metadata !147, i64 0, metadata !65), !dbg !148
-  call void @llvm.dbg.value(metadata !147, i64 0, metadata !66), !dbg !149
-  %33 = mul nsw i32 %n_channels, 47, !dbg !150
-  %34 = zext i32 %33 to i64, !dbg !150
-  %35 = alloca i32, i64 %34, align 16, !dbg !150
-  call void @llvm.dbg.declare(metadata !{i32* %35}, metadata !67), !dbg !150
-  call void @llvm.dbg.value(metadata !2, i64 0, metadata !69), !dbg !151
-  %36 = icmp sgt i32 %n_channels, 0, !dbg !151
-  br i1 %36, label %.preheader33, label %._crit_edge36.thread, !dbg !151
+._crit_edge93:                                    ; preds = %._crit_edge91
+  call void @llvm.dbg.value(metadata !178, i64 0, metadata !64), !dbg !179
+  call void @llvm.dbg.value(metadata !180, i64 0, metadata !66), !dbg !181
+  call void @llvm.dbg.value(metadata !180, i64 0, metadata !67), !dbg !182
+  %33 = mul nsw i32 %n_channels, 47, !dbg !183
+  %34 = zext i32 %33 to i64, !dbg !183
+  %35 = alloca i32, i64 %34, align 16, !dbg !183
+  call void @llvm.dbg.declare(metadata !{i32* %35}, metadata !68), !dbg !183
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !70), !dbg !184
+  %36 = icmp sgt i32 %n_channels, 0, !dbg !184
+  br i1 %36, label %.preheader79, label %._crit_edge82.thread, !dbg !184
 
-.preheader33:                                     ; preds = %._crit_edge47, %57
-  %indvars.iv69 = phi i64 [ %indvars.iv.next70, %57 ], [ 0, %._crit_edge47 ]
-  %37 = trunc i64 %indvars.iv69 to i32, !dbg !166
-  %38 = mul nsw i32 %37, %n_samples, !dbg !166
-  %39 = add nsw i32 %38, 1, !dbg !166
-  %sext87 = mul i64 %indvars.iv69, 201863462912, !dbg !167
-  %40 = ashr exact i64 %sext87, 32, !dbg !167
-  %41 = sext i32 %39 to i64, !dbg !167
-  br label %42, !dbg !167
+.preheader79:                                     ; preds = %._crit_edge93, %57
+  %indvars.iv170 = phi i64 [ %indvars.iv.next171, %57 ], [ 0, %._crit_edge93 ]
+  %37 = trunc i64 %indvars.iv170 to i32, !dbg !199
+  %38 = mul nsw i32 %37, %n_samples, !dbg !199
+  %39 = add nsw i32 %38, 1, !dbg !199
+  %sext188 = mul i64 %indvars.iv170, 201863462912, !dbg !200
+  %40 = ashr exact i64 %sext188, 32, !dbg !200
+  %41 = sext i32 %39 to i64, !dbg !200
+  br label %42, !dbg !200
 
-; <label>:42                                      ; preds = %42, %.preheader33
-  %indvars.iv66 = phi i64 [ 0, %.preheader33 ], [ %indvars.iv.next67, %42 ]
-  %43 = add nsw i64 %41, %indvars.iv66, !dbg !166
-  call void @llvm.dbg.declare(metadata !168, metadata !76), !dbg !169
-  %44 = getelementptr inbounds %struct.kiss_fft_cpx* %4, i64 %43, i32 0, !dbg !169
-  %45 = load float* %44, align 8, !dbg !169
-  %46 = getelementptr inbounds %struct.kiss_fft_cpx* %4, i64 %43, i32 1, !dbg !169
-  %47 = load float* %46, align 4, !dbg !169
-  %48 = fmul float %45, %45, !dbg !170
-  %49 = fmul float %47, %47, !dbg !170
-  %50 = fadd float %48, %49, !dbg !170
-  %51 = fpext float %50 to double, !dbg !170
-  %52 = call double @sqrt(double %51) #4, !dbg !170
-  %53 = call double @log10(double %52) #4, !dbg !170
-  %54 = fptosi double %53 to i32, !dbg !170
-  %55 = add nsw i64 %indvars.iv66, %40, !dbg !170
-  %56 = getelementptr inbounds i32* %35, i64 %55, !dbg !170
-  store i32 %54, i32* %56, align 4, !dbg !170, !tbaa !137
-  %indvars.iv.next67 = add nuw nsw i64 %indvars.iv66, 1, !dbg !167
-  %exitcond68 = icmp eq i64 %indvars.iv.next67, 47, !dbg !167
-  br i1 %exitcond68, label %57, label %42, !dbg !167
+; <label>:42                                      ; preds = %42, %.preheader79
+  %indvars.iv167 = phi i64 [ 0, %.preheader79 ], [ %indvars.iv.next168, %42 ]
+  %43 = add nsw i64 %41, %indvars.iv167, !dbg !199
+  call void @llvm.dbg.declare(metadata !201, metadata !77), !dbg !202
+  %44 = getelementptr inbounds %struct.kiss_fft_cpx* %4, i64 %43, i32 0, !dbg !202
+  %45 = load float* %44, align 8, !dbg !202
+  %46 = getelementptr inbounds %struct.kiss_fft_cpx* %4, i64 %43, i32 1, !dbg !202
+  %47 = load float* %46, align 4, !dbg !202
+  %48 = fmul float %45, %45, !dbg !203
+  %49 = fmul float %47, %47, !dbg !203
+  %50 = fadd float %48, %49, !dbg !203
+  %51 = fpext float %50 to double, !dbg !203
+  %52 = call double @sqrt(double %51) #4, !dbg !203
+  %53 = call double @log10(double %52) #4, !dbg !203
+  %54 = fptosi double %53 to i32, !dbg !203
+  %55 = add nsw i64 %indvars.iv167, %40, !dbg !203
+  %56 = getelementptr inbounds i32* %35, i64 %55, !dbg !203
+  store i32 %54, i32* %56, align 4, !dbg !203, !tbaa !170
+  %indvars.iv.next168 = add nuw nsw i64 %indvars.iv167, 1, !dbg !200
+  %exitcond169 = icmp eq i64 %indvars.iv.next168, 47, !dbg !200
+  br i1 %exitcond169, label %57, label %42, !dbg !200
 
 ; <label>:57                                      ; preds = %42
-  %indvars.iv.next70 = add nuw nsw i64 %indvars.iv69, 1, !dbg !151
-  %lftr.wideiv71 = trunc i64 %indvars.iv.next70 to i32, !dbg !151
-  %exitcond72 = icmp eq i32 %lftr.wideiv71, %n_channels, !dbg !151
-  br i1 %exitcond72, label %._crit_edge36, label %.preheader33, !dbg !151
+  %indvars.iv.next171 = add nuw nsw i64 %indvars.iv170, 1, !dbg !184
+  %lftr.wideiv172 = trunc i64 %indvars.iv.next171 to i32, !dbg !184
+  %exitcond173 = icmp eq i32 %lftr.wideiv172, %n_channels, !dbg !184
+  br i1 %exitcond173, label %._crit_edge82, label %.preheader79, !dbg !184
 
-._crit_edge36.thread:                             ; preds = %._crit_edge47.thread, %._crit_edge47
-  %.ph = phi i32* [ %8, %._crit_edge47.thread ], [ %35, %._crit_edge47 ]
-  %58 = zext i32 %n_channels to i64, !dbg !171
-  %59 = alloca i32, i64 %58, align 16, !dbg !171
-  call void @llvm.dbg.declare(metadata !{i32* %66}, metadata !77), !dbg !171
-  %60 = alloca i32, i64 %58, align 16, !dbg !172
-  call void @llvm.dbg.declare(metadata !{i32* %65}, metadata !78), !dbg !172
-  call void @llvm.dbg.value(metadata !2, i64 0, metadata !79), !dbg !173
-  br label %.preheader24, !dbg !173
+._crit_edge82.thread:                             ; preds = %._crit_edge93.thread, %._crit_edge93
+  %.ph = phi i32* [ %8, %._crit_edge93.thread ], [ %35, %._crit_edge93 ]
+  %.ph189 = phi i64 [ %7, %._crit_edge93.thread ], [ %34, %._crit_edge93 ]
+  %58 = zext i32 %n_channels to i64, !dbg !204
+  %59 = alloca i32, i64 %58, align 16, !dbg !204
+  call void @llvm.dbg.declare(metadata !{i32* %66}, metadata !78), !dbg !204
+  %60 = alloca i32, i64 %58, align 16, !dbg !205
+  call void @llvm.dbg.declare(metadata !{i32* %65}, metadata !79), !dbg !205
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !80), !dbg !206
+  br label %.preheader70, !dbg !206
 
-._crit_edge36:                                    ; preds = %57
-  %61 = zext i32 %n_channels to i64, !dbg !171
-  %62 = alloca i32, i64 %61, align 16, !dbg !171
-  call void @llvm.dbg.declare(metadata !{i32* %66}, metadata !77), !dbg !171
-  %63 = alloca i32, i64 %61, align 16, !dbg !172
-  call void @llvm.dbg.declare(metadata !{i32* %65}, metadata !78), !dbg !172
-  call void @llvm.dbg.value(metadata !2, i64 0, metadata !79), !dbg !173
-  %64 = icmp sgt i32 %n_channels, 0, !dbg !173
-  br i1 %64, label %.lr.ph32, label %._crit_edge15, !dbg !173
+._crit_edge82:                                    ; preds = %57
+  %61 = zext i32 %n_channels to i64, !dbg !204
+  %62 = alloca i32, i64 %61, align 16, !dbg !204
+  call void @llvm.dbg.declare(metadata !{i32* %66}, metadata !78), !dbg !204
+  %63 = alloca i32, i64 %61, align 16, !dbg !205
+  call void @llvm.dbg.declare(metadata !{i32* %65}, metadata !79), !dbg !205
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !80), !dbg !206
+  %64 = icmp sgt i32 %n_channels, 0, !dbg !206
+  br i1 %64, label %.lr.ph78, label %._crit_edge72.thread, !dbg !206
 
-.preheader24:                                     ; preds = %77, %._crit_edge36.thread
-  %65 = phi i32* [ %60, %._crit_edge36.thread ], [ %63, %77 ]
-  %66 = phi i32* [ %59, %._crit_edge36.thread ], [ %62, %77 ]
-  %67 = phi i32* [ %.ph, %._crit_edge36.thread ], [ %35, %77 ]
-  %68 = icmp sgt i32 %n_channels, 0, !dbg !174
-  br i1 %68, label %.lr.ph26, label %._crit_edge15, !dbg !174
+.preheader70:                                     ; preds = %79, %._crit_edge82.thread
+  %65 = phi i32* [ %60, %._crit_edge82.thread ], [ %63, %79 ]
+  %66 = phi i32* [ %59, %._crit_edge82.thread ], [ %62, %79 ]
+  %67 = phi i64 [ %58, %._crit_edge82.thread ], [ %61, %79 ]
+  %68 = phi i64 [ %.ph189, %._crit_edge82.thread ], [ %34, %79 ]
+  %69 = phi i32* [ %.ph, %._crit_edge82.thread ], [ %35, %79 ]
+  %70 = icmp sgt i32 %n_channels, 0, !dbg !207
+  br i1 %70, label %.preheader67, label %._crit_edge72.thread, !dbg !207
 
-.lr.ph32:                                         ; preds = %._crit_edge36, %77
-  %indvars.iv62 = phi i64 [ %indvars.iv.next63, %77 ], [ 0, %._crit_edge36 ]
-  %69 = getelementptr inbounds i32* %62, i64 %indvars.iv62, !dbg !175
-  store i32 0, i32* %69, align 4, !dbg !175, !tbaa !137
-  call void @llvm.dbg.value(metadata !2, i64 0, metadata !81), !dbg !176
-  %sext86 = mul i64 %indvars.iv62, 201863462912, !dbg !176
-  %70 = ashr exact i64 %sext86, 32, !dbg !176
-  br label %71, !dbg !176
+.lr.ph78:                                         ; preds = %._crit_edge82, %79
+  %indvars.iv163 = phi i64 [ %indvars.iv.next164, %79 ], [ 0, %._crit_edge82 ]
+  %71 = getelementptr inbounds i32* %62, i64 %indvars.iv163, !dbg !208
+  store i32 0, i32* %71, align 4, !dbg !208, !tbaa !170
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !82), !dbg !209
+  %sext187 = mul i64 %indvars.iv163, 201863462912, !dbg !209
+  %72 = ashr exact i64 %sext187, 32, !dbg !209
+  br label %73, !dbg !209
 
-; <label>:71                                      ; preds = %71, %.lr.ph32
-  %indvars.iv59 = phi i64 [ 0, %.lr.ph32 ], [ %indvars.iv.next60, %71 ]
-  %72 = phi i32 [ 0, %.lr.ph32 ], [ %76, %71 ], !dbg !177
-  %73 = add nsw i64 %indvars.iv59, %70, !dbg !177
-  %74 = getelementptr inbounds i32* %35, i64 %73, !dbg !177
-  %75 = load i32* %74, align 4, !dbg !177, !tbaa !137
-  %76 = add nsw i32 %72, %75, !dbg !177
-  %indvars.iv.next60 = add nuw nsw i64 %indvars.iv59, 1, !dbg !176
-  %exitcond61 = icmp eq i64 %indvars.iv.next60, 47, !dbg !176
-  br i1 %exitcond61, label %77, label %71, !dbg !176
+; <label>:73                                      ; preds = %73, %.lr.ph78
+  %indvars.iv160 = phi i64 [ 0, %.lr.ph78 ], [ %indvars.iv.next161, %73 ]
+  %74 = phi i32 [ 0, %.lr.ph78 ], [ %78, %73 ], !dbg !210
+  %75 = add nsw i64 %indvars.iv160, %72, !dbg !210
+  %76 = getelementptr inbounds i32* %35, i64 %75, !dbg !210
+  %77 = load i32* %76, align 4, !dbg !210, !tbaa !170
+  %78 = add nsw i32 %74, %77, !dbg !210
+  %indvars.iv.next161 = add nuw nsw i64 %indvars.iv160, 1, !dbg !209
+  %exitcond162 = icmp eq i64 %indvars.iv.next161, 47, !dbg !209
+  br i1 %exitcond162, label %79, label %73, !dbg !209
 
-; <label>:77                                      ; preds = %71
-  %78 = sdiv i32 %76, 47, !dbg !179
-  store i32 %78, i32* %69, align 4, !dbg !179, !tbaa !137
-  %indvars.iv.next63 = add nuw nsw i64 %indvars.iv62, 1, !dbg !173
-  %lftr.wideiv64 = trunc i64 %indvars.iv.next63 to i32, !dbg !173
-  %exitcond65 = icmp eq i32 %lftr.wideiv64, %n_channels, !dbg !173
-  br i1 %exitcond65, label %.preheader24, label %.lr.ph32, !dbg !173
+; <label>:79                                      ; preds = %73
+  %80 = sdiv i32 %78, 47, !dbg !212
+  store i32 %80, i32* %71, align 4, !dbg !212, !tbaa !170
+  %indvars.iv.next164 = add nuw nsw i64 %indvars.iv163, 1, !dbg !206
+  %lftr.wideiv165 = trunc i64 %indvars.iv.next164 to i32, !dbg !206
+  %exitcond166 = icmp eq i32 %lftr.wideiv165, %n_channels, !dbg !206
+  br i1 %exitcond166, label %.preheader70, label %.lr.ph78, !dbg !206
 
-.preheader18:                                     ; preds = %92
-  %79 = icmp sgt i32 %n_channels, 0, !dbg !180
-  br i1 %79, label %.preheader16, label %._crit_edge15, !dbg !180
+.preheader67:                                     ; preds = %.preheader70, %91
+  %indvars.iv155 = phi i64 [ %indvars.iv.next156, %91 ], [ 0, %.preheader70 ]
+  %81 = getelementptr inbounds i32* %66, i64 %indvars.iv155, !dbg !213
+  %82 = load i32* %81, align 4, !dbg !213, !tbaa !170
+  %sext186 = mul i64 %indvars.iv155, 201863462912, !dbg !215
+  %83 = ashr exact i64 %sext186, 32, !dbg !215
+  br label %84, !dbg !215
 
-.lr.ph26:                                         ; preds = %.preheader24, %92
-  %indvars.iv54 = phi i64 [ %indvars.iv.next55, %92 ], [ 0, %.preheader24 ]
-  %80 = getelementptr inbounds i32* %65, i64 %indvars.iv54, !dbg !181
-  store i32 0, i32* %80, align 4, !dbg !181, !tbaa !137
-  call void @llvm.dbg.value(metadata !2, i64 0, metadata !87), !dbg !182
-  %81 = getelementptr inbounds i32* %66, i64 %indvars.iv54, !dbg !183
-  %82 = load i32* %81, align 4, !dbg !183, !tbaa !137
-  %sext85 = mul i64 %indvars.iv54, 201863462912, !dbg !182
-  %83 = ashr exact i64 %sext85, 32, !dbg !182
-  br label %84, !dbg !182
+; <label>:84                                      ; preds = %84, %.preheader67
+  %indvars.iv152 = phi i64 [ 0, %.preheader67 ], [ %indvars.iv.next153, %84 ]
+  %stddev_temp.068 = phi i32 [ 0, %.preheader67 ], [ %90, %84 ]
+  %85 = add nsw i64 %indvars.iv152, %83, !dbg !213
+  %86 = getelementptr inbounds i32* %69, i64 %85, !dbg !213
+  %87 = load i32* %86, align 4, !dbg !213, !tbaa !170
+  %88 = sub nsw i32 %87, %82, !dbg !213
+  %89 = mul nsw i32 %88, %88, !dbg !213
+  %90 = add nsw i32 %89, %stddev_temp.068, !dbg !213
+  call void @llvm.dbg.value(metadata !{i32 %90}, i64 0, metadata !88), !dbg !213
+  %indvars.iv.next153 = add nuw nsw i64 %indvars.iv152, 1, !dbg !215
+  %exitcond154 = icmp eq i64 %indvars.iv.next153, 47, !dbg !215
+  br i1 %exitcond154, label %91, label %84, !dbg !215
 
-; <label>:84                                      ; preds = %84, %.lr.ph26
-  %indvars.iv51 = phi i64 [ 0, %.lr.ph26 ], [ %indvars.iv.next52, %84 ]
-  %85 = phi i32 [ 0, %.lr.ph26 ], [ %91, %84 ], !dbg !183
-  %86 = add nsw i64 %indvars.iv51, %83, !dbg !183
-  %87 = getelementptr inbounds i32* %67, i64 %86, !dbg !183
-  %88 = load i32* %87, align 4, !dbg !183, !tbaa !137
-  %89 = sub nsw i32 %88, %82, !dbg !183
-  %90 = mul nsw i32 %89, %89, !dbg !183
-  %91 = add nsw i32 %90, %85, !dbg !183
-  %indvars.iv.next52 = add nuw nsw i64 %indvars.iv51, 1, !dbg !182
-  %exitcond53 = icmp eq i64 %indvars.iv.next52, 47, !dbg !182
-  br i1 %exitcond53, label %92, label %84, !dbg !182
+; <label>:91                                      ; preds = %84
+  %92 = sitofp i32 %90 to double, !dbg !216
+  %93 = fdiv double %92, 4.600000e+01, !dbg !216
+  %94 = call double @sqrt(double %93) #4, !dbg !216
+  %95 = fptosi double %94 to i32, !dbg !216
+  %96 = getelementptr inbounds i32* %65, i64 %indvars.iv155, !dbg !216
+  store i32 %95, i32* %96, align 4, !dbg !216, !tbaa !170
+  %indvars.iv.next156 = add nuw nsw i64 %indvars.iv155, 1, !dbg !207
+  %lftr.wideiv157 = trunc i64 %indvars.iv.next156 to i32, !dbg !207
+  %exitcond158 = icmp eq i32 %lftr.wideiv157, %n_channels, !dbg !207
+  br i1 %exitcond158, label %._crit_edge72, label %.preheader67, !dbg !207
 
-; <label>:92                                      ; preds = %84
-  %93 = sdiv i32 %91, 46, !dbg !185
-  store i32 %93, i32* %80, align 4, !dbg !185, !tbaa !137
-  %94 = sitofp i32 %93 to double, !dbg !186
-  %95 = call double @sqrt(double %94) #4, !dbg !186
-  %96 = fptosi double %95 to i32, !dbg !186
-  store i32 %96, i32* %80, align 4, !dbg !186, !tbaa !137
-  %indvars.iv.next55 = add nuw nsw i64 %indvars.iv54, 1, !dbg !174
-  %lftr.wideiv56 = trunc i64 %indvars.iv.next55 to i32, !dbg !174
-  %exitcond57 = icmp eq i32 %lftr.wideiv56, %n_channels, !dbg !174
-  br i1 %exitcond57, label %.preheader18, label %.lr.ph26, !dbg !174
+._crit_edge72.thread:                             ; preds = %.preheader70, %._crit_edge82
+  %.ph190 = phi i64 [ %68, %.preheader70 ], [ %34, %._crit_edge82 ]
+  %.ph191 = phi i64 [ %67, %.preheader70 ], [ %61, %._crit_edge82 ]
+  %97 = alloca i32, i64 %.ph190, align 16, !dbg !217
+  call void @llvm.dbg.declare(metadata !{i32* %119}, metadata !92), !dbg !217
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !93), !dbg !218
+  br label %._crit_edge66, !dbg !218
 
-.preheader16:                                     ; preds = %.preheader18, %111
-  %indvars.iv48 = phi i64 [ %indvars.iv.next49, %111 ], [ 0, %.preheader18 ]
-  %97 = getelementptr inbounds i32* %65, i64 %indvars.iv48, !dbg !187
-  %98 = load i32* %97, align 4, !dbg !187, !tbaa !137
-  %99 = icmp eq i32 %98, 0, !dbg !187
-  %100 = getelementptr inbounds i32* %66, i64 %indvars.iv48, !dbg !190
-  %sext = mul i64 %indvars.iv48, 201863462912, !dbg !192
-  %101 = ashr exact i64 %sext, 32, !dbg !192
-  br label %102, !dbg !192
+._crit_edge72:                                    ; preds = %91
+  %98 = alloca i32, i64 %68, align 16, !dbg !217
+  call void @llvm.dbg.declare(metadata !{i32* %119}, metadata !92), !dbg !217
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !93), !dbg !218
+  %99 = icmp sgt i32 %n_channels, 0, !dbg !218
+  br i1 %99, label %.preheader63, label %._crit_edge66.thread, !dbg !218
 
-; <label>:102                                     ; preds = %110, %.preheader16
-  %indvars.iv = phi i64 [ 0, %.preheader16 ], [ %indvars.iv.next, %110 ]
-  br i1 %99, label %110, label %103, !dbg !187
+._crit_edge66.thread:                             ; preds = %._crit_edge72
+  %100 = mul nsw i32 %n_channels, %n_channels, !dbg !219
+  %101 = zext i32 %100 to i64, !dbg !219
+  %102 = alloca double, i64 %101, align 16, !dbg !219
+  call void @llvm.dbg.declare(metadata !{double* %154}, metadata !98), !dbg !219
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !102), !dbg !220
+  br label %._crit_edge62, !dbg !220
 
-; <label>:103                                     ; preds = %102
-  %104 = add nsw i64 %indvars.iv, %101, !dbg !190
-  %105 = getelementptr inbounds i32* %67, i64 %104, !dbg !190
-  %106 = load i32* %105, align 4, !dbg !190, !tbaa !137
-  %107 = load i32* %100, align 4, !dbg !190, !tbaa !137
-  %108 = sub nsw i32 %106, %107, !dbg !190
-  %109 = sdiv i32 %108, %98, !dbg !190
-  store i32 %109, i32* %105, align 4, !dbg !190, !tbaa !137
-  br label %110, !dbg !193
+.preheader63:                                     ; preds = %._crit_edge72, %118
+  %indvars.iv147 = phi i64 [ %indvars.iv.next148, %118 ], [ 0, %._crit_edge72 ]
+  %103 = getelementptr inbounds i32* %65, i64 %indvars.iv147, !dbg !221
+  %104 = load i32* %103, align 4, !dbg !221, !tbaa !170
+  %105 = icmp eq i32 %104, 0, !dbg !221
+  %106 = getelementptr inbounds i32* %66, i64 %indvars.iv147, !dbg !224
+  %sext = mul i64 %indvars.iv147, 201863462912, !dbg !226
+  %107 = ashr exact i64 %sext, 32, !dbg !226
+  br label %108, !dbg !226
 
-; <label>:110                                     ; preds = %102, %103
-  %indvars.iv.next = add nuw nsw i64 %indvars.iv, 1, !dbg !192
-  %exitcond = icmp eq i64 %indvars.iv.next, 47, !dbg !192
-  br i1 %exitcond, label %111, label %102, !dbg !192
+; <label>:108                                     ; preds = %117, %.preheader63
+  %indvars.iv144 = phi i64 [ 0, %.preheader63 ], [ %indvars.iv.next145, %117 ]
+  br i1 %105, label %117, label %109, !dbg !221
 
-; <label>:111                                     ; preds = %110
-  %indvars.iv.next49 = add nuw nsw i64 %indvars.iv48, 1, !dbg !180
-  %lftr.wideiv = trunc i64 %indvars.iv.next49 to i32, !dbg !180
-  %exitcond50 = icmp eq i32 %lftr.wideiv, %n_channels, !dbg !180
-  br i1 %exitcond50, label %._crit_edge15, label %.preheader16, !dbg !180
+; <label>:109                                     ; preds = %108
+  %110 = add nsw i64 %indvars.iv144, %107, !dbg !224
+  %111 = getelementptr inbounds i32* %69, i64 %110, !dbg !224
+  %112 = load i32* %111, align 4, !dbg !224, !tbaa !170
+  %113 = load i32* %106, align 4, !dbg !224, !tbaa !170
+  %114 = sub nsw i32 %112, %113, !dbg !224
+  %115 = sdiv i32 %114, %104, !dbg !224
+  %116 = getelementptr inbounds i32* %98, i64 %110, !dbg !224
+  store i32 %115, i32* %116, align 4, !dbg !224, !tbaa !170
+  br label %117, !dbg !227
 
-._crit_edge15:                                    ; preds = %111, %.preheader24, %._crit_edge36, %.preheader18
-  ret void, !dbg !194
+; <label>:117                                     ; preds = %108, %109
+  %indvars.iv.next145 = add nuw nsw i64 %indvars.iv144, 1, !dbg !226
+  %exitcond146 = icmp eq i64 %indvars.iv.next145, 47, !dbg !226
+  br i1 %exitcond146, label %118, label %108, !dbg !226
+
+; <label>:118                                     ; preds = %117
+  %indvars.iv.next148 = add nuw nsw i64 %indvars.iv147, 1, !dbg !218
+  %lftr.wideiv149 = trunc i64 %indvars.iv.next148 to i32, !dbg !218
+  %exitcond150 = icmp eq i32 %lftr.wideiv149, %n_channels, !dbg !218
+  br i1 %exitcond150, label %._crit_edge66, label %.preheader63, !dbg !218
+
+._crit_edge66:                                    ; preds = %118, %._crit_edge72.thread
+  %119 = phi i32* [ %97, %._crit_edge72.thread ], [ %98, %118 ]
+  %120 = phi i64 [ %.ph191, %._crit_edge72.thread ], [ %67, %118 ]
+  %121 = mul nsw i32 %n_channels, %n_channels, !dbg !219
+  %122 = zext i32 %121 to i64, !dbg !219
+  %123 = alloca double, i64 %122, align 16, !dbg !219
+  call void @llvm.dbg.declare(metadata !{double* %154}, metadata !98), !dbg !219
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !102), !dbg !220
+  %124 = icmp sgt i32 %n_channels, 0, !dbg !220
+  br i1 %124, label %.lr.ph58, label %._crit_edge62, !dbg !220
+
+.lr.ph58:                                         ; preds = %._crit_edge59, %._crit_edge66
+  %indvars.iv140 = phi i64 [ %indvars.iv.next141, %._crit_edge59 ], [ 0, %._crit_edge66 ]
+  %125 = trunc i64 %indvars.iv140 to i32, !dbg !228
+  %126 = mul nsw i32 %125, %n_channels, !dbg !228
+  %127 = sext i32 %126 to i64, !dbg !229
+  %128 = sext i32 %126 to i64, !dbg !229
+  br label %129, !dbg !229
+
+; <label>:129                                     ; preds = %146, %.lr.ph58
+  %indvars.iv136 = phi i64 [ %indvars.iv140, %.lr.ph58 ], [ %indvars.iv.next137, %146 ]
+  %130 = add nsw i64 %indvars.iv136, %128, !dbg !228
+  %131 = getelementptr inbounds double* %123, i64 %130, !dbg !228
+  store double 0.000000e+00, double* %131, align 8, !dbg !228, !tbaa !230
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !107), !dbg !232
+  %132 = trunc i64 %indvars.iv136 to i32, !dbg !233
+  %133 = mul nsw i32 %132, %n_channels, !dbg !233
+  %134 = sext i32 %133 to i64, !dbg !232
+  br label %135, !dbg !232
+
+; <label>:135                                     ; preds = %135, %129
+  %indvars.iv131 = phi i64 [ 0, %129 ], [ %indvars.iv.next132, %135 ]
+  %136 = phi double [ 0.000000e+00, %129 ], [ %145, %135 ], !dbg !233
+  %137 = add nsw i64 %indvars.iv131, %127, !dbg !233
+  %138 = getelementptr inbounds i32* %119, i64 %137, !dbg !233
+  %139 = load i32* %138, align 4, !dbg !233, !tbaa !170
+  %140 = add nsw i64 %indvars.iv131, %134, !dbg !233
+  %141 = getelementptr inbounds i32* %119, i64 %140, !dbg !233
+  %142 = load i32* %141, align 4, !dbg !233, !tbaa !170
+  %143 = mul nsw i32 %142, %139, !dbg !233
+  %144 = sitofp i32 %143 to double, !dbg !233
+  %145 = fadd double %136, %144, !dbg !233
+  %indvars.iv.next132 = add nuw nsw i64 %indvars.iv131, 1, !dbg !232
+  %exitcond133 = icmp eq i64 %indvars.iv.next132, 47, !dbg !232
+  br i1 %exitcond133, label %146, label %135, !dbg !232
+
+; <label>:146                                     ; preds = %135
+  %147 = fdiv double %145, 4.600000e+01, !dbg !235
+  store double %147, double* %131, align 8, !dbg !235, !tbaa !230
+  %148 = trunc i64 %indvars.iv136 to i32, !dbg !236
+  %149 = mul nsw i32 %148, %n_channels, !dbg !236
+  %150 = trunc i64 %indvars.iv140 to i32, !dbg !236
+  %151 = add nsw i32 %149, %150, !dbg !236
+  %152 = sext i32 %151 to i64, !dbg !236
+  %153 = getelementptr inbounds double* %123, i64 %152, !dbg !236
+  store double %147, double* %153, align 8, !dbg !236, !tbaa !230
+  %indvars.iv.next137 = add nuw nsw i64 %indvars.iv136, 1, !dbg !229
+  %lftr.wideiv138 = trunc i64 %indvars.iv.next137 to i32, !dbg !229
+  %exitcond139 = icmp eq i32 %lftr.wideiv138, %n_channels, !dbg !229
+  br i1 %exitcond139, label %._crit_edge59, label %129, !dbg !229
+
+._crit_edge59:                                    ; preds = %146
+  %indvars.iv.next141 = add nuw nsw i64 %indvars.iv140, 1, !dbg !220
+  %lftr.wideiv142 = trunc i64 %indvars.iv.next141 to i32, !dbg !220
+  %exitcond143 = icmp eq i32 %lftr.wideiv142, %n_channels, !dbg !220
+  br i1 %exitcond143, label %._crit_edge62, label %.lr.ph58, !dbg !220
+
+._crit_edge62:                                    ; preds = %._crit_edge59, %._crit_edge66.thread, %._crit_edge66
+  %154 = phi double* [ %102, %._crit_edge66.thread ], [ %123, %._crit_edge66 ], [ %123, %._crit_edge59 ]
+  %155 = phi i64 [ %101, %._crit_edge66.thread ], [ %122, %._crit_edge66 ], [ %122, %._crit_edge59 ]
+  %156 = phi i64 [ %67, %._crit_edge66.thread ], [ %120, %._crit_edge66 ], [ %120, %._crit_edge59 ]
+  %157 = alloca double, i64 %156, align 16, !dbg !237
+  call void @llvm.dbg.declare(metadata !{double* %157}, metadata !110), !dbg !237
+  %158 = call i32 @rs(i32 %n_channels, double* %154, double* %157, i1 zeroext false, double* null) #4, !dbg !238
+  %159 = alloca i32, i64 %156, align 16, !dbg !239
+  call void @llvm.dbg.declare(metadata !{i32* %159}, metadata !111), !dbg !239
+  %160 = alloca i32, i64 %156, align 16, !dbg !240
+  call void @llvm.dbg.declare(metadata !{i32* %160}, metadata !112), !dbg !240
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !113), !dbg !241
+  %161 = icmp sgt i32 %n_channels, 0, !dbg !241
+  br i1 %161, label %.lr.ph51, label %._crit_edge52.thread, !dbg !241
+
+._crit_edge52.thread:                             ; preds = %._crit_edge62
+  %162 = add nsw i32 %n_samples, -1, !dbg !242
+  call void @llvm.dbg.value(metadata !{i32 %225}, i64 0, metadata !118), !dbg !242
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !119), !dbg !243
+  br label %._crit_edge42.thread, !dbg !243
+
+.lr.ph51:                                         ; preds = %._crit_edge62
+  %163 = icmp sgt i32 %n_samples, 0, !dbg !244
+  br label %164, !dbg !241
+
+; <label>:164                                     ; preds = %175, %.lr.ph51
+  %indvars.iv126 = phi i64 [ 0, %.lr.ph51 ], [ %indvars.iv.next127, %175 ]
+  %165 = getelementptr inbounds i32* %159, i64 %indvars.iv126, !dbg !245
+  store i32 0, i32* %165, align 4, !dbg !245, !tbaa !170
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !115), !dbg !244
+  br i1 %163, label %.lr.ph45, label %175, !dbg !244
+
+.lr.ph45:                                         ; preds = %164
+  %166 = trunc i64 %indvars.iv126 to i32, !dbg !246
+  %167 = mul nsw i32 %166, %n_samples, !dbg !246
+  %.promoted47 = load i32* %165, align 4, !dbg !246, !tbaa !170
+  %168 = sext i32 %167 to i64, !dbg !244
+  br label %169, !dbg !244
+
+; <label>:169                                     ; preds = %169, %.lr.ph45
+  %indvars.iv122 = phi i64 [ 0, %.lr.ph45 ], [ %indvars.iv.next123, %169 ]
+  %170 = phi i32 [ %.promoted47, %.lr.ph45 ], [ %174, %169 ], !dbg !246
+  %171 = add nsw i64 %indvars.iv122, %168, !dbg !246
+  %172 = getelementptr inbounds i32* %time_data, i64 %171, !dbg !246
+  %173 = load i32* %172, align 4, !dbg !246, !tbaa !170
+  %174 = add nsw i32 %170, %173, !dbg !246
+  %indvars.iv.next123 = add nuw nsw i64 %indvars.iv122, 1, !dbg !244
+  %lftr.wideiv124 = trunc i64 %indvars.iv.next123 to i32, !dbg !244
+  %exitcond125 = icmp eq i32 %lftr.wideiv124, %n_samples, !dbg !244
+  br i1 %exitcond125, label %._crit_edge46, label %169, !dbg !244
+
+._crit_edge46:                                    ; preds = %169
+  store i32 %174, i32* %165, align 4, !dbg !246, !tbaa !170
+  br label %175, !dbg !244
+
+; <label>:175                                     ; preds = %._crit_edge46, %164
+  %176 = load i32* %165, align 4, !dbg !248, !tbaa !170
+  %177 = sdiv i32 %176, %n_samples, !dbg !248
+  store i32 %177, i32* %165, align 4, !dbg !248, !tbaa !170
+  %indvars.iv.next127 = add nuw nsw i64 %indvars.iv126, 1, !dbg !241
+  %lftr.wideiv128 = trunc i64 %indvars.iv.next127 to i32, !dbg !241
+  %exitcond129 = icmp eq i32 %lftr.wideiv128, %n_channels, !dbg !241
+  br i1 %exitcond129, label %._crit_edge52, label %164, !dbg !241
+
+._crit_edge52:                                    ; preds = %175
+  %178 = add nsw i32 %n_samples, -1, !dbg !242
+  call void @llvm.dbg.value(metadata !{i32 %225}, i64 0, metadata !118), !dbg !242
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !119), !dbg !243
+  %179 = icmp sgt i32 %n_channels, 0, !dbg !243
+  br i1 %179, label %.lr.ph41, label %._crit_edge42.thread, !dbg !243
+
+.lr.ph41:                                         ; preds = %._crit_edge52
+  %180 = icmp sgt i32 %n_samples, 0, !dbg !249
+  %181 = sitofp i32 %178 to double, !dbg !250
+  br label %182, !dbg !243
+
+; <label>:182                                     ; preds = %197, %.lr.ph41
+  %indvars.iv117 = phi i64 [ 0, %.lr.ph41 ], [ %indvars.iv.next118, %197 ]
+  %183 = getelementptr inbounds i32* %160, i64 %indvars.iv117, !dbg !251
+  store i32 0, i32* %183, align 4, !dbg !251, !tbaa !170
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !121), !dbg !249
+  br i1 %180, label %.lr.ph35, label %197, !dbg !249
+
+.lr.ph35:                                         ; preds = %182
+  %184 = trunc i64 %indvars.iv117 to i32, !dbg !252
+  %185 = mul nsw i32 %184, %n_samples, !dbg !252
+  %186 = getelementptr inbounds i32* %159, i64 %indvars.iv117, !dbg !252
+  %187 = load i32* %186, align 4, !dbg !252, !tbaa !170
+  %.promoted37 = load i32* %183, align 4, !dbg !252, !tbaa !170
+  %188 = sext i32 %185 to i64, !dbg !249
+  br label %189, !dbg !249
+
+; <label>:189                                     ; preds = %189, %.lr.ph35
+  %indvars.iv113 = phi i64 [ 0, %.lr.ph35 ], [ %indvars.iv.next114, %189 ]
+  %190 = phi i32 [ %.promoted37, %.lr.ph35 ], [ %196, %189 ], !dbg !252
+  %191 = add nsw i64 %indvars.iv113, %188, !dbg !252
+  %192 = getelementptr inbounds i32* %time_data, i64 %191, !dbg !252
+  %193 = load i32* %192, align 4, !dbg !252, !tbaa !170
+  %194 = sub nsw i32 %193, %187, !dbg !252
+  %195 = mul nsw i32 %194, %194, !dbg !252
+  %196 = add nsw i32 %195, %190, !dbg !252
+  %indvars.iv.next114 = add nuw nsw i64 %indvars.iv113, 1, !dbg !249
+  %lftr.wideiv115 = trunc i64 %indvars.iv.next114 to i32, !dbg !249
+  %exitcond116 = icmp eq i32 %lftr.wideiv115, %n_samples, !dbg !249
+  br i1 %exitcond116, label %._crit_edge36, label %189, !dbg !249
+
+._crit_edge36:                                    ; preds = %189
+  store i32 %196, i32* %183, align 4, !dbg !252, !tbaa !170
+  br label %197, !dbg !249
+
+; <label>:197                                     ; preds = %._crit_edge36, %182
+  %198 = load i32* %183, align 4, !dbg !250, !tbaa !170
+  %199 = sitofp i32 %198 to double, !dbg !250
+  %200 = fdiv double %199, %181, !dbg !250
+  %201 = call double @sqrt(double %200) #4, !dbg !250
+  %202 = fptosi double %201 to i32, !dbg !250
+  %203 = load i32* %183, align 4, !dbg !250, !tbaa !170
+  %204 = sdiv i32 %203, %202, !dbg !250
+  store i32 %204, i32* %183, align 4, !dbg !250, !tbaa !170
+  %indvars.iv.next118 = add nuw nsw i64 %indvars.iv117, 1, !dbg !243
+  %lftr.wideiv119 = trunc i64 %indvars.iv.next118 to i32, !dbg !243
+  %exitcond120 = icmp eq i32 %lftr.wideiv119, %n_channels, !dbg !243
+  br i1 %exitcond120, label %._crit_edge42, label %182, !dbg !243
+
+._crit_edge42.thread:                             ; preds = %._crit_edge52.thread, %._crit_edge52
+  %.ph195 = phi i32 [ %162, %._crit_edge52.thread ], [ %178, %._crit_edge52 ]
+  %205 = alloca i32, i64 %2, align 16, !dbg !254
+  call void @llvm.dbg.declare(metadata !{i32* %224}, metadata !124), !dbg !254
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !125), !dbg !255
+  br label %._crit_edge32, !dbg !255
+
+._crit_edge42:                                    ; preds = %197
+  %206 = alloca i32, i64 %2, align 16, !dbg !254
+  call void @llvm.dbg.declare(metadata !{i32* %224}, metadata !124), !dbg !254
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !125), !dbg !255
+  %207 = icmp sgt i32 %n_channels, 0, !dbg !255
+  br i1 %207, label %.preheader27.lr.ph, label %._crit_edge32.thread, !dbg !255
+
+._crit_edge32.thread:                             ; preds = %._crit_edge42
+  %208 = alloca double, i64 %155, align 16, !dbg !256
+  call void @llvm.dbg.declare(metadata !{double* %260}, metadata !130), !dbg !256
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !131), !dbg !257
+  br label %._crit_edge26, !dbg !257
+
+.preheader27.lr.ph:                               ; preds = %._crit_edge42
+  %209 = icmp sgt i32 %n_samples, 0, !dbg !258
+  br label %.preheader27, !dbg !255
+
+.preheader27:                                     ; preds = %._crit_edge30, %.preheader27.lr.ph
+  %indvars.iv108 = phi i64 [ 0, %.preheader27.lr.ph ], [ %indvars.iv.next109, %._crit_edge30 ]
+  br i1 %209, label %.lr.ph29, label %._crit_edge30, !dbg !258
+
+.lr.ph29:                                         ; preds = %.preheader27
+  %210 = trunc i64 %indvars.iv108 to i32, !dbg !259
+  %211 = mul nsw i32 %210, %n_samples, !dbg !259
+  %212 = getelementptr inbounds i32* %159, i64 %indvars.iv108, !dbg !259
+  %213 = load i32* %212, align 4, !dbg !259, !tbaa !170
+  %214 = getelementptr inbounds i32* %160, i64 %indvars.iv108, !dbg !259
+  %215 = load i32* %214, align 4, !dbg !259, !tbaa !170
+  %216 = sext i32 %211 to i64, !dbg !258
+  br label %217, !dbg !258
+
+; <label>:217                                     ; preds = %217, %.lr.ph29
+  %indvars.iv104 = phi i64 [ 0, %.lr.ph29 ], [ %indvars.iv.next105, %217 ]
+  %218 = add nsw i64 %indvars.iv104, %216, !dbg !259
+  %219 = getelementptr inbounds i32* %time_data, i64 %218, !dbg !259
+  %220 = load i32* %219, align 4, !dbg !259, !tbaa !170
+  %221 = sub nsw i32 %220, %213, !dbg !259
+  %222 = sdiv i32 %221, %215, !dbg !259
+  %223 = getelementptr inbounds i32* %206, i64 %218, !dbg !259
+  store i32 %222, i32* %223, align 4, !dbg !259, !tbaa !170
+  %indvars.iv.next105 = add nuw nsw i64 %indvars.iv104, 1, !dbg !258
+  %lftr.wideiv106 = trunc i64 %indvars.iv.next105 to i32, !dbg !258
+  %exitcond107 = icmp eq i32 %lftr.wideiv106, %n_samples, !dbg !258
+  br i1 %exitcond107, label %._crit_edge30, label %217, !dbg !258
+
+._crit_edge30:                                    ; preds = %217, %.preheader27
+  %indvars.iv.next109 = add nuw nsw i64 %indvars.iv108, 1, !dbg !255
+  %lftr.wideiv110 = trunc i64 %indvars.iv.next109 to i32, !dbg !255
+  %exitcond111 = icmp eq i32 %lftr.wideiv110, %n_channels, !dbg !255
+  br i1 %exitcond111, label %._crit_edge32, label %.preheader27, !dbg !255
+
+._crit_edge32:                                    ; preds = %._crit_edge30, %._crit_edge42.thread
+  %224 = phi i32* [ %205, %._crit_edge42.thread ], [ %206, %._crit_edge30 ]
+  %225 = phi i32 [ %.ph195, %._crit_edge42.thread ], [ %178, %._crit_edge30 ]
+  %226 = alloca double, i64 %155, align 16, !dbg !256
+  call void @llvm.dbg.declare(metadata !{double* %260}, metadata !130), !dbg !256
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !131), !dbg !257
+  %227 = icmp sgt i32 %n_channels, 0, !dbg !257
+  br i1 %227, label %.preheader.lr.ph, label %._crit_edge26, !dbg !257
+
+.preheader.lr.ph:                                 ; preds = %._crit_edge32
+  %228 = icmp sgt i32 %n_samples, 0, !dbg !261
+  %229 = sitofp i32 %225 to double, !dbg !262
+  br label %.lr.ph22, !dbg !257
+
+.lr.ph22:                                         ; preds = %.preheader.lr.ph, %._crit_edge23
+  %indvars.iv100 = phi i64 [ 0, %.preheader.lr.ph ], [ %indvars.iv.next101, %._crit_edge23 ]
+  %230 = trunc i64 %indvars.iv100 to i32, !dbg !263
+  %231 = mul nsw i32 %230, %n_channels, !dbg !263
+  %232 = sext i32 %231 to i64, !dbg !264
+  %233 = sext i32 %231 to i64, !dbg !264
+  br label %234, !dbg !264
+
+; <label>:234                                     ; preds = %251, %.lr.ph22
+  %indvars.iv96 = phi i64 [ %indvars.iv100, %.lr.ph22 ], [ %indvars.iv.next97, %251 ]
+  %235 = add nsw i64 %indvars.iv96, %233, !dbg !263
+  %236 = getelementptr inbounds double* %226, i64 %235, !dbg !263
+  store double 0.000000e+00, double* %236, align 8, !dbg !263, !tbaa !230
+  call void @llvm.dbg.value(metadata !2, i64 0, metadata !136), !dbg !261
+  br i1 %228, label %.lr.ph, label %251, !dbg !261
+
+.lr.ph:                                           ; preds = %234
+  %237 = trunc i64 %indvars.iv96 to i32, !dbg !265
+  %238 = mul nsw i32 %237, %n_channels, !dbg !265
+  %.promoted = load double* %236, align 8, !dbg !265, !tbaa !230
+  %239 = sext i32 %238 to i64, !dbg !261
+  br label %240, !dbg !261
+
+; <label>:240                                     ; preds = %240, %.lr.ph
+  %indvars.iv = phi i64 [ 0, %.lr.ph ], [ %indvars.iv.next, %240 ]
+  %241 = phi double [ %.promoted, %.lr.ph ], [ %250, %240 ], !dbg !265
+  %242 = add nsw i64 %indvars.iv, %232, !dbg !265
+  %243 = getelementptr inbounds i32* %224, i64 %242, !dbg !265
+  %244 = load i32* %243, align 4, !dbg !265, !tbaa !170
+  %245 = add nsw i64 %indvars.iv, %239, !dbg !265
+  %246 = getelementptr inbounds i32* %224, i64 %245, !dbg !265
+  %247 = load i32* %246, align 4, !dbg !265, !tbaa !170
+  %248 = mul nsw i32 %247, %244, !dbg !265
+  %249 = sitofp i32 %248 to double, !dbg !265
+  %250 = fadd double %241, %249, !dbg !265
+  %indvars.iv.next = add nuw nsw i64 %indvars.iv, 1, !dbg !261
+  %lftr.wideiv = trunc i64 %indvars.iv.next to i32, !dbg !261
+  %exitcond = icmp eq i32 %lftr.wideiv, %n_samples, !dbg !261
+  br i1 %exitcond, label %._crit_edge, label %240, !dbg !261
+
+._crit_edge:                                      ; preds = %240
+  store double %250, double* %236, align 8, !dbg !265, !tbaa !230
+  br label %251, !dbg !261
+
+; <label>:251                                     ; preds = %._crit_edge, %234
+  %252 = load double* %236, align 8, !dbg !262, !tbaa !230
+  %253 = fdiv double %252, %229, !dbg !262
+  store double %253, double* %236, align 8, !dbg !262, !tbaa !230
+  %254 = trunc i64 %indvars.iv96 to i32, !dbg !267
+  %255 = mul nsw i32 %254, %n_channels, !dbg !267
+  %256 = trunc i64 %indvars.iv100 to i32, !dbg !267
+  %257 = add nsw i32 %255, %256, !dbg !267
+  %258 = sext i32 %257 to i64, !dbg !267
+  %259 = getelementptr inbounds double* %226, i64 %258, !dbg !267
+  store double %253, double* %259, align 8, !dbg !267, !tbaa !230
+  %indvars.iv.next97 = add nuw nsw i64 %indvars.iv96, 1, !dbg !264
+  %lftr.wideiv98 = trunc i64 %indvars.iv.next97 to i32, !dbg !264
+  %exitcond99 = icmp eq i32 %lftr.wideiv98, %n_channels, !dbg !264
+  br i1 %exitcond99, label %._crit_edge23, label %234, !dbg !264
+
+._crit_edge23:                                    ; preds = %251
+  %indvars.iv.next101 = add nuw nsw i64 %indvars.iv100, 1, !dbg !257
+  %lftr.wideiv102 = trunc i64 %indvars.iv.next101 to i32, !dbg !257
+  %exitcond103 = icmp eq i32 %lftr.wideiv102, %n_channels, !dbg !257
+  br i1 %exitcond103, label %._crit_edge26, label %.lr.ph22, !dbg !257
+
+._crit_edge26:                                    ; preds = %._crit_edge23, %._crit_edge32.thread, %._crit_edge32
+  %260 = phi double* [ %208, %._crit_edge32.thread ], [ %226, %._crit_edge32 ], [ %226, %._crit_edge23 ]
+  %261 = alloca double, i64 %156, align 16, !dbg !268
+  call void @llvm.dbg.declare(metadata !{double* %261}, metadata !139), !dbg !268
+  %262 = call i32 @rs(i32 %n_channels, double* %260, double* %261, i1 zeroext false, double* null) #4, !dbg !269
+  ret void, !dbg !270
 }
 
 declare void @kiss_fft(%struct.kiss_fft_state*, %struct.kiss_fft_cpx*, %struct.kiss_fft_cpx*) #2
@@ -354,48 +708,50 @@ declare double @log10(double) #3
 ; Function Attrs: nounwind
 declare double @sqrt(double) #3
 
+declare i32 @rs(i32, double*, double*, i1 zeroext, double*) #2
+
 ; Function Attrs: nounwind uwtable
 define i32 @main() #0 {
-  %1 = tail call noalias i8* @malloc(i64 3000) #4, !dbg !195
-  %2 = bitcast i8* %1 to i32*, !dbg !195
-  tail call void @llvm.dbg.value(metadata !{i32* %2}, i64 0, metadata !111), !dbg !195
-  %3 = tail call noalias i8* @malloc(i64 3000) #4, !dbg !196
-  %4 = bitcast i8* %3 to i32*, !dbg !196
-  tail call void @llvm.dbg.value(metadata !{i32* %4}, i64 0, metadata !112), !dbg !196
-  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !113), !dbg !197
-  br label %.preheader, !dbg !197
+  %1 = tail call noalias i8* @malloc(i64 3000) #4, !dbg !271
+  %2 = bitcast i8* %1 to i32*, !dbg !271
+  tail call void @llvm.dbg.value(metadata !{i32* %2}, i64 0, metadata !144), !dbg !271
+  %3 = tail call noalias i8* @malloc(i64 3000) #4, !dbg !272
+  %4 = bitcast i8* %3 to i32*, !dbg !272
+  tail call void @llvm.dbg.value(metadata !{i32* %4}, i64 0, metadata !145), !dbg !272
+  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !146), !dbg !273
+  br label %.preheader, !dbg !273
 
 .preheader:                                       ; preds = %11, %0
   %indvars.iv3 = phi i64 [ 0, %0 ], [ %indvars.iv.next4, %11 ]
-  %5 = mul nsw i64 %indvars.iv3, 50, !dbg !198
-  br label %6, !dbg !200
+  %5 = mul nsw i64 %indvars.iv3, 50, !dbg !274
+  br label %6, !dbg !276
 
 ; <label>:6                                       ; preds = %6, %.preheader
   %indvars.iv = phi i64 [ 0, %.preheader ], [ %indvars.iv.next, %6 ]
-  %7 = add nsw i64 %indvars.iv, %5, !dbg !198
-  %8 = getelementptr inbounds i32* %2, i64 %7, !dbg !198
-  %9 = trunc i64 %indvars.iv to i32, !dbg !198
-  store i32 %9, i32* %8, align 4, !dbg !198, !tbaa !137
-  %10 = getelementptr inbounds i32* %4, i64 %7, !dbg !201
-  store i32 -1, i32* %10, align 4, !dbg !201, !tbaa !137
-  %indvars.iv.next = add nuw nsw i64 %indvars.iv, 1, !dbg !200
-  %exitcond = icmp eq i64 %indvars.iv.next, 50, !dbg !200
-  br i1 %exitcond, label %11, label %6, !dbg !200
+  %7 = add nsw i64 %indvars.iv, %5, !dbg !274
+  %8 = getelementptr inbounds i32* %2, i64 %7, !dbg !274
+  %9 = trunc i64 %indvars.iv to i32, !dbg !274
+  store i32 %9, i32* %8, align 4, !dbg !274, !tbaa !170
+  %10 = getelementptr inbounds i32* %4, i64 %7, !dbg !277
+  store i32 -1, i32* %10, align 4, !dbg !277, !tbaa !170
+  %indvars.iv.next = add nuw nsw i64 %indvars.iv, 1, !dbg !276
+  %exitcond = icmp eq i64 %indvars.iv.next, 50, !dbg !276
+  br i1 %exitcond, label %11, label %6, !dbg !276
 
 ; <label>:11                                      ; preds = %6
-  %indvars.iv.next4 = add nuw nsw i64 %indvars.iv3, 1, !dbg !197
-  %exitcond5 = icmp eq i64 %indvars.iv.next4, 15, !dbg !197
-  br i1 %exitcond5, label %12, label %.preheader, !dbg !197
+  %indvars.iv.next4 = add nuw nsw i64 %indvars.iv3, 1, !dbg !273
+  %exitcond5 = icmp eq i64 %indvars.iv.next4, 15, !dbg !273
+  br i1 %exitcond5, label %12, label %.preheader, !dbg !273
 
 ; <label>:12                                      ; preds = %11
-  %13 = tail call %struct.kiss_fft_state* @kiss_fft_alloc(i32 50, i32 0, i8* null, i64* null) #4, !dbg !202
-  tail call void @llvm.dbg.value(metadata !{%struct.kiss_fft_state* %13}, i64 0, metadata !118), !dbg !202
-  tail call void @process_data(i32* %2, i32* %4, i32 50, i32 15, %struct.kiss_fft_state* %13) #5, !dbg !203
-  %14 = tail call i32 @test_stores(i32* undef, i32* %4, i32 50, i32 15) #5, !dbg !204
-  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !119), !dbg !204
-  %15 = load %struct._IO_FILE** @stdout, align 8, !dbg !205, !tbaa !133
-  %16 = tail call i32 (%struct._IO_FILE*, i8*, ...)* @fprintf(%struct._IO_FILE* %15, i8* getelementptr inbounds ([14 x i8]* @.str3, i64 0, i64 0)) #4, !dbg !208
-  ret i32 0, !dbg !209
+  %13 = tail call %struct.kiss_fft_state* @kiss_fft_alloc(i32 50, i32 0, i8* null, i64* null) #4, !dbg !278
+  tail call void @llvm.dbg.value(metadata !{%struct.kiss_fft_state* %13}, i64 0, metadata !151), !dbg !278
+  tail call void @process_data(i32* %2, i32* %4, i32 50, i32 15, %struct.kiss_fft_state* %13) #5, !dbg !279
+  %14 = tail call i32 @test_stores(i32* undef, i32* %4, i32 50, i32 15) #5, !dbg !280
+  tail call void @llvm.dbg.value(metadata !2, i64 0, metadata !152), !dbg !280
+  %15 = load %struct._IO_FILE** @stdout, align 8, !dbg !281, !tbaa !166
+  %16 = tail call i32 (%struct._IO_FILE*, i8*, ...)* @fprintf(%struct._IO_FILE* %15, i8* getelementptr inbounds ([14 x i8]* @.str3, i64 0, i64 0)) #4, !dbg !284
+  ret i32 0, !dbg !285
 }
 
 ; Function Attrs: nounwind
@@ -414,216 +770,292 @@ attributes #4 = { nobuiltin nounwind }
 attributes #5 = { nobuiltin }
 
 !llvm.dbg.cu = !{!0}
-!llvm.module.flags = !{!125, !126}
-!llvm.ident = !{!127}
+!llvm.module.flags = !{!158, !159}
+!llvm.ident = !{!160}
 
-!0 = metadata !{i32 786449, metadata !1, i32 12, metadata !"clang version 3.4.2 (tags/RELEASE_34/dot2-final)", i1 true, metadata !"", i32 0, metadata !2, metadata !2, metadata !3, metadata !120, metadata !2, metadata !""} ; [ DW_TAG_compile_unit ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c] [DW_LANG_C99]
+!0 = metadata !{i32 786449, metadata !1, i32 12, metadata !"clang version 3.4.2 (tags/RELEASE_34/dot2-final)", i1 true, metadata !"", i32 0, metadata !2, metadata !2, metadata !3, metadata !153, metadata !2, metadata !""} ; [ DW_TAG_compile_unit ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c] [DW_LANG_C99]
 !1 = metadata !{metadata !"feature_extraction.c", metadata !"/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction"}
 !2 = metadata !{i32 0}
-!3 = metadata !{metadata !4, metadata !20, metadata !107}
-!4 = metadata !{i32 786478, metadata !1, metadata !5, metadata !"test_stores", metadata !"test_stores", metadata !"", i32 17, metadata !6, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 true, i32 (i32*, i32*, i32, i32)* @test_stores, null, null, metadata !10, i32 17} ; [ DW_TAG_subprogram ] [line 17] [def] [test_stores]
+!3 = metadata !{metadata !4, metadata !21, metadata !140}
+!4 = metadata !{i32 786478, metadata !1, metadata !5, metadata !"test_stores", metadata !"test_stores", metadata !"", i32 17, metadata !6, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 true, i32 (i32*, i32*, i32, i32)* @test_stores, null, null, metadata !11, i32 17} ; [ DW_TAG_subprogram ] [line 17] [def] [test_stores]
 !5 = metadata !{i32 786473, metadata !1}          ; [ DW_TAG_file_type ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
 !6 = metadata !{i32 786453, i32 0, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !7, i32 0, null, null, null} ; [ DW_TAG_subroutine_type ] [line 0, size 0, align 0, offset 0] [from ]
 !7 = metadata !{metadata !8, metadata !9, metadata !9, metadata !8, metadata !8}
 !8 = metadata !{i32 786468, null, null, metadata !"int", i32 0, i64 32, i64 32, i64 0, i32 0, i32 5} ; [ DW_TAG_base_type ] [int] [line 0, size 32, align 32, offset 0, enc DW_ATE_signed]
-!9 = metadata !{i32 786447, null, null, metadata !"", i32 0, i64 64, i64 64, i64 0, i32 0, metadata !8} ; [ DW_TAG_pointer_type ] [line 0, size 64, align 64, offset 0] [from int]
-!10 = metadata !{metadata !11, metadata !12, metadata !13, metadata !14, metadata !15, metadata !17}
-!11 = metadata !{i32 786689, metadata !4, metadata !"time_data", metadata !5, i32 16777233, metadata !9, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [time_data] [line 17]
-!12 = metadata !{i32 786689, metadata !4, metadata !"freq_data", metadata !5, i32 33554449, metadata !9, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [freq_data] [line 17]
-!13 = metadata !{i32 786689, metadata !4, metadata !"n_samples", metadata !5, i32 50331665, metadata !8, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [n_samples] [line 17]
-!14 = metadata !{i32 786689, metadata !4, metadata !"n_channels", metadata !5, i32 67108881, metadata !8, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [n_channels] [line 17]
-!15 = metadata !{i32 786688, metadata !16, metadata !"j", metadata !5, i32 18, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [j] [line 18]
-!16 = metadata !{i32 786443, metadata !1, metadata !4, i32 18, i32 0, i32 0} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!17 = metadata !{i32 786688, metadata !18, metadata !"i", metadata !5, i32 20, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 20]
-!18 = metadata !{i32 786443, metadata !1, metadata !19, i32 20, i32 0, i32 2} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!19 = metadata !{i32 786443, metadata !1, metadata !16, i32 19, i32 0, i32 1} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!20 = metadata !{i32 786478, metadata !1, metadata !5, metadata !"process_data", metadata !"process_data", metadata !"", i32 30, metadata !21, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 true, void (i32*, i32*, i32, i32, %struct.kiss_fft_state*)* @process_data, null, null, metadata !45, i32 30} ; [ DW_TAG_subprogram ] [line 30] [def] [process_data]
-!21 = metadata !{i32 786453, i32 0, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !22, i32 0, null, null, null} ; [ DW_TAG_subroutine_type ] [line 0, size 0, align 0, offset 0] [from ]
-!22 = metadata !{null, metadata !9, metadata !9, metadata !8, metadata !8, metadata !23}
-!23 = metadata !{i32 786454, metadata !1, null, metadata !"kiss_fft_cfg", i32 56, i64 0, i64 0, i64 0, i32 0, metadata !24} ; [ DW_TAG_typedef ] [kiss_fft_cfg] [line 56, size 0, align 0, offset 0] [from ]
-!24 = metadata !{i32 786447, null, null, metadata !"", i32 0, i64 64, i64 64, i64 0, i32 0, metadata !25} ; [ DW_TAG_pointer_type ] [line 0, size 64, align 64, offset 0] [from kiss_fft_state]
-!25 = metadata !{i32 786451, metadata !26, null, metadata !"kiss_fft_state", i32 28, i64 2176, i64 32, i32 0, i32 0, null, metadata !27, i32 0, null, null, null} ; [ DW_TAG_structure_type ] [kiss_fft_state] [line 28, size 2176, align 32, offset 0] [def] [from ]
-!26 = metadata !{metadata !"./_kiss_fft_guts.h", metadata !"/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction"}
-!27 = metadata !{metadata !28, metadata !29, metadata !30, metadata !34}
-!28 = metadata !{i32 786445, metadata !26, metadata !25, metadata !"nfft", i32 29, i64 32, i64 32, i64 0, i32 0, metadata !8} ; [ DW_TAG_member ] [nfft] [line 29, size 32, align 32, offset 0] [from int]
-!29 = metadata !{i32 786445, metadata !26, metadata !25, metadata !"inverse", i32 30, i64 32, i64 32, i64 32, i32 0, metadata !8} ; [ DW_TAG_member ] [inverse] [line 30, size 32, align 32, offset 32] [from int]
-!30 = metadata !{i32 786445, metadata !26, metadata !25, metadata !"factors", i32 31, i64 2048, i64 32, i64 64, i32 0, metadata !31} ; [ DW_TAG_member ] [factors] [line 31, size 2048, align 32, offset 64] [from ]
-!31 = metadata !{i32 786433, null, null, metadata !"", i32 0, i64 2048, i64 32, i32 0, i32 0, metadata !8, metadata !32, i32 0, null, null, null} ; [ DW_TAG_array_type ] [line 0, size 2048, align 32, offset 0] [from int]
-!32 = metadata !{metadata !33}
-!33 = metadata !{i32 786465, i64 0, i64 64}       ; [ DW_TAG_subrange_type ] [0, 63]
-!34 = metadata !{i32 786445, metadata !26, metadata !25, metadata !"twiddles", i32 32, i64 64, i64 32, i64 2112, i32 0, metadata !35} ; [ DW_TAG_member ] [twiddles] [line 32, size 64, align 32, offset 2112] [from ]
-!35 = metadata !{i32 786433, null, null, metadata !"", i32 0, i64 64, i64 32, i32 0, i32 0, metadata !36, metadata !43, i32 0, null, null, null} ; [ DW_TAG_array_type ] [line 0, size 64, align 32, offset 0] [from kiss_fft_cpx]
-!36 = metadata !{i32 786454, metadata !26, null, metadata !"kiss_fft_cpx", i32 54, i64 0, i64 0, i64 0, i32 0, metadata !37} ; [ DW_TAG_typedef ] [kiss_fft_cpx] [line 54, size 0, align 0, offset 0] [from ]
-!37 = metadata !{i32 786451, metadata !38, null, metadata !"", i32 51, i64 64, i64 32, i32 0, i32 0, null, metadata !39, i32 0, null, null, null} ; [ DW_TAG_structure_type ] [line 51, size 64, align 32, offset 0] [def] [from ]
-!38 = metadata !{metadata !"./kiss_fft.h", metadata !"/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction"}
-!39 = metadata !{metadata !40, metadata !42}
-!40 = metadata !{i32 786445, metadata !38, metadata !37, metadata !"r", i32 52, i64 32, i64 32, i64 0, i32 0, metadata !41} ; [ DW_TAG_member ] [r] [line 52, size 32, align 32, offset 0] [from float]
-!41 = metadata !{i32 786468, null, null, metadata !"float", i32 0, i64 32, i64 32, i64 0, i32 0, i32 4} ; [ DW_TAG_base_type ] [float] [line 0, size 32, align 32, offset 0, enc DW_ATE_float]
-!42 = metadata !{i32 786445, metadata !38, metadata !37, metadata !"i", i32 53, i64 32, i64 32, i64 32, i32 0, metadata !41} ; [ DW_TAG_member ] [i] [line 53, size 32, align 32, offset 32] [from float]
-!43 = metadata !{metadata !44}
-!44 = metadata !{i32 786465, i64 0, i64 1}        ; [ DW_TAG_subrange_type ] [0, 0]
-!45 = metadata !{metadata !46, metadata !47, metadata !48, metadata !49, metadata !50, metadata !51, metadata !55, metadata !56, metadata !58, metadata !61, metadata !63, metadata !65, metadata !66, metadata !67, metadata !69, metadata !71, metadata !74, metadata !76, metadata !77, metadata !78, metadata !79, metadata !81, metadata !84, metadata !85, metadata !87, metadata !90, metadata !92, metadata !95, metadata !99, metadata !101, metadata !104}
-!46 = metadata !{i32 786689, metadata !20, metadata !"time_data", metadata !5, i32 16777246, metadata !9, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [time_data] [line 30]
-!47 = metadata !{i32 786689, metadata !20, metadata !"freq_data", metadata !5, i32 33554462, metadata !9, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [freq_data] [line 30]
-!48 = metadata !{i32 786689, metadata !20, metadata !"n_samples", metadata !5, i32 50331678, metadata !8, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [n_samples] [line 30]
-!49 = metadata !{i32 786689, metadata !20, metadata !"n_channels", metadata !5, i32 67108894, metadata !8, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [n_channels] [line 30]
-!50 = metadata !{i32 786689, metadata !20, metadata !"cfg", metadata !5, i32 83886110, metadata !23, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [cfg] [line 30]
-!51 = metadata !{i32 786688, metadata !20, metadata !"in", metadata !5, i32 36, metadata !52, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [in] [line 36]
-!52 = metadata !{i32 786433, null, null, metadata !"", i32 0, i64 0, i64 32, i32 0, i32 0, metadata !36, metadata !53, i32 0, null, null, null} ; [ DW_TAG_array_type ] [line 0, size 0, align 32, offset 0] [from kiss_fft_cpx]
-!53 = metadata !{metadata !54}
-!54 = metadata !{i32 786465, i64 0, i64 -1}       ; [ DW_TAG_subrange_type ] [unbounded]
-!55 = metadata !{i32 786688, metadata !20, metadata !"out", metadata !5, i32 37, metadata !52, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [out] [line 37]
-!56 = metadata !{i32 786688, metadata !57, metadata !"channel", metadata !5, i32 38, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [channel] [line 38]
-!57 = metadata !{i32 786443, metadata !1, metadata !20, i32 38, i32 0, i32 4} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!58 = metadata !{i32 786688, metadata !59, metadata !"i", metadata !5, i32 40, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 40]
-!59 = metadata !{i32 786443, metadata !1, metadata !60, i32 40, i32 0, i32 6} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!60 = metadata !{i32 786443, metadata !1, metadata !57, i32 39, i32 0, i32 5} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!61 = metadata !{i32 786688, metadata !62, metadata !"i", metadata !5, i32 48, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 48]
-!62 = metadata !{i32 786443, metadata !1, metadata !60, i32 48, i32 0, i32 8} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!63 = metadata !{i32 786688, metadata !20, metadata !"low_index", metadata !5, i32 54, metadata !64, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [low_index] [line 54]
-!64 = metadata !{i32 786470, null, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, metadata !8} ; [ DW_TAG_const_type ] [line 0, size 0, align 0, offset 0] [from int]
-!65 = metadata !{i32 786688, metadata !20, metadata !"high_index", metadata !5, i32 55, metadata !64, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [high_index] [line 55]
-!66 = metadata !{i32 786688, metadata !20, metadata !"n_fft_items", metadata !5, i32 56, metadata !64, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [n_fft_items] [line 56]
-!67 = metadata !{i32 786688, metadata !20, metadata !"fft_data", metadata !5, i32 58, metadata !68, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [fft_data] [line 58]
-!68 = metadata !{i32 786433, null, null, metadata !"", i32 0, i64 0, i64 32, i32 0, i32 0, metadata !8, metadata !53, i32 0, null, null, null} ; [ DW_TAG_array_type ] [line 0, size 0, align 32, offset 0] [from int]
-!69 = metadata !{i32 786688, metadata !70, metadata !"channel", metadata !5, i32 59, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [channel] [line 59]
-!70 = metadata !{i32 786443, metadata !1, metadata !20, i32 59, i32 0, i32 10} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!71 = metadata !{i32 786688, metadata !72, metadata !"i", metadata !5, i32 61, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 61]
-!72 = metadata !{i32 786443, metadata !1, metadata !73, i32 61, i32 0, i32 12} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!73 = metadata !{i32 786443, metadata !1, metadata !70, i32 60, i32 0, i32 11} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!74 = metadata !{i32 786688, metadata !75, metadata !"index", metadata !5, i32 63, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [index] [line 63]
-!75 = metadata !{i32 786443, metadata !1, metadata !72, i32 62, i32 0, i32 13} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!76 = metadata !{i32 786688, metadata !75, metadata !"temp", metadata !5, i32 64, metadata !36, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [temp] [line 64]
-!77 = metadata !{i32 786688, metadata !20, metadata !"fft_mean", metadata !5, i32 69, metadata !68, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [fft_mean] [line 69]
-!78 = metadata !{i32 786688, metadata !20, metadata !"fft_stddev", metadata !5, i32 70, metadata !68, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [fft_stddev] [line 70]
-!79 = metadata !{i32 786688, metadata !80, metadata !"channel", metadata !5, i32 71, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [channel] [line 71]
-!80 = metadata !{i32 786443, metadata !1, metadata !20, i32 71, i32 0, i32 14} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!81 = metadata !{i32 786688, metadata !82, metadata !"i", metadata !5, i32 74, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 74]
-!82 = metadata !{i32 786443, metadata !1, metadata !83, i32 74, i32 0, i32 16} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!83 = metadata !{i32 786443, metadata !1, metadata !80, i32 72, i32 0, i32 15} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!84 = metadata !{i32 786688, metadata !20, metadata !"n_sd", metadata !5, i32 80, metadata !64, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [n_sd] [line 80]
-!85 = metadata !{i32 786688, metadata !86, metadata !"channel", metadata !5, i32 81, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [channel] [line 81]
-!86 = metadata !{i32 786443, metadata !1, metadata !20, i32 81, i32 0, i32 18} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!87 = metadata !{i32 786688, metadata !88, metadata !"i", metadata !5, i32 84, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 84]
-!88 = metadata !{i32 786443, metadata !1, metadata !89, i32 84, i32 0, i32 20} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!89 = metadata !{i32 786443, metadata !1, metadata !86, i32 82, i32 0, i32 19} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!90 = metadata !{i32 786688, metadata !91, metadata !"channel", metadata !5, i32 93, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [channel] [line 93]
-!91 = metadata !{i32 786443, metadata !1, metadata !20, i32 93, i32 0, i32 22} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!92 = metadata !{i32 786688, metadata !93, metadata !"i", metadata !5, i32 95, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 95]
-!93 = metadata !{i32 786443, metadata !1, metadata !94, i32 95, i32 0, i32 24} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!94 = metadata !{i32 786443, metadata !1, metadata !91, i32 94, i32 0, i32 23} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!95 = metadata !{i32 786688, metadata !20, metadata !"xcorr_matrix", metadata !5, i32 105, metadata !96, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [xcorr_matrix] [line 105]
-!96 = metadata !{i32 786433, null, null, metadata !"", i32 0, i64 0, i64 64, i32 0, i32 0, metadata !97, metadata !53, i32 0, null, null, null} ; [ DW_TAG_array_type ] [line 0, size 0, align 64, offset 0] [from XCORR_TYPE]
-!97 = metadata !{i32 786454, metadata !1, null, metadata !"XCORR_TYPE", i32 13, i64 0, i64 0, i64 0, i32 0, metadata !98} ; [ DW_TAG_typedef ] [XCORR_TYPE] [line 13, size 0, align 0, offset 0] [from double]
-!98 = metadata !{i32 786468, null, null, metadata !"double", i32 0, i64 64, i64 64, i64 0, i32 0, i32 4} ; [ DW_TAG_base_type ] [double] [line 0, size 64, align 64, offset 0, enc DW_ATE_float]
-!99 = metadata !{i32 786688, metadata !100, metadata !"i", metadata !5, i32 106, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 106]
-!100 = metadata !{i32 786443, metadata !1, metadata !20, i32 106, i32 0, i32 28} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!101 = metadata !{i32 786688, metadata !102, metadata !"j", metadata !5, i32 109, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [j] [line 109]
-!102 = metadata !{i32 786443, metadata !1, metadata !103, i32 109, i32 0, i32 30} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!103 = metadata !{i32 786443, metadata !1, metadata !100, i32 107, i32 0, i32 29} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!104 = metadata !{i32 786688, metadata !105, metadata !"k", metadata !5, i32 113, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [k] [line 113]
-!105 = metadata !{i32 786443, metadata !1, metadata !106, i32 113, i32 0, i32 32} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!106 = metadata !{i32 786443, metadata !1, metadata !102, i32 110, i32 0, i32 31} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!107 = metadata !{i32 786478, metadata !1, metadata !5, metadata !"main", metadata !"main", metadata !"", i32 144, metadata !108, i1 false, i1 true, i32 0, i32 0, null, i32 0, i1 true, i32 ()* @main, null, null, metadata !110, i32 144} ; [ DW_TAG_subprogram ] [line 144] [def] [main]
-!108 = metadata !{i32 786453, i32 0, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !109, i32 0, null, null, null} ; [ DW_TAG_subroutine_type ] [line 0, size 0, align 0, offset 0] [from ]
-!109 = metadata !{metadata !8}
-!110 = metadata !{metadata !111, metadata !112, metadata !113, metadata !115, metadata !118, metadata !119}
-!111 = metadata !{i32 786688, metadata !107, metadata !"time_data", metadata !5, i32 146, metadata !9, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [time_data] [line 146]
-!112 = metadata !{i32 786688, metadata !107, metadata !"freq_data", metadata !5, i32 147, metadata !9, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [freq_data] [line 147]
-!113 = metadata !{i32 786688, metadata !114, metadata !"j", metadata !5, i32 150, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [j] [line 150]
-!114 = metadata !{i32 786443, metadata !1, metadata !107, i32 150, i32 0, i32 34} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!115 = metadata !{i32 786688, metadata !116, metadata !"i", metadata !5, i32 152, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 152]
-!116 = metadata !{i32 786443, metadata !1, metadata !117, i32 152, i32 0, i32 36} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!117 = metadata !{i32 786443, metadata !1, metadata !114, i32 151, i32 0, i32 35} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!118 = metadata !{i32 786688, metadata !107, metadata !"cfg", metadata !5, i32 161, metadata !23, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [cfg] [line 161]
-!119 = metadata !{i32 786688, metadata !107, metadata !"num_failures", metadata !5, i32 179, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [num_failures] [line 179]
-!120 = metadata !{metadata !121, metadata !122, metadata !123, metadata !123, metadata !122, metadata !123, metadata !123, metadata !123, metadata !123, metadata !123, metadata !123, metadata !123, metadata !123, metadata !124, metadata !123, metadata !123, metadata !123, metadata !123, metadata !123}
-!121 = metadata !{i32 786484, i32 0, metadata !5, metadata !"high_index", metadata !"high_index", metadata !"high_index", metadata !5, i32 55, metadata !64, i32 1, i32 1, i32 47, null} ; [ DW_TAG_variable ] [high_index] [line 55] [local] [def]
-!122 = metadata !{i32 786484, i32 0, metadata !5, metadata !"low_index", metadata !"low_index", metadata !"low_index", metadata !5, i32 54, metadata !64, i32 1, i32 1, i32 1, null} ; [ DW_TAG_variable ] [low_index] [line 54] [local] [def]
-!123 = metadata !{i32 786484, i32 0, metadata !5, metadata !"n_fft_items", metadata !"n_fft_items", metadata !"n_fft_items", metadata !5, i32 56, metadata !64, i32 1, i32 1, i32 47, null} ; [ DW_TAG_variable ] [n_fft_items] [line 56] [local] [def]
-!124 = metadata !{i32 786484, i32 0, metadata !5, metadata !"n_sd", metadata !"n_sd", metadata !"n_sd", metadata !5, i32 80, metadata !64, i32 1, i32 1, i32 46, null} ; [ DW_TAG_variable ] [n_sd] [line 80] [local] [def]
-!125 = metadata !{i32 2, metadata !"Dwarf Version", i32 4}
-!126 = metadata !{i32 1, metadata !"Debug Info Version", i32 1}
-!127 = metadata !{metadata !"clang version 3.4.2 (tags/RELEASE_34/dot2-final)"}
-!128 = metadata !{i32 17, i32 0, metadata !4, null}
-!129 = metadata !{i32 18, i32 0, metadata !16, null}
-!130 = metadata !{i32 20, i32 0, metadata !18, null}
-!131 = metadata !{i32 22, i32 0, metadata !132, null}
-!132 = metadata !{i32 786443, metadata !1, metadata !18, i32 21, i32 0, i32 3} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!133 = metadata !{metadata !134, metadata !134, i64 0}
-!134 = metadata !{metadata !"any pointer", metadata !135, i64 0}
-!135 = metadata !{metadata !"omnipotent char", metadata !136, i64 0}
-!136 = metadata !{metadata !"Simple C/C++ TBAA"}
-!137 = metadata !{metadata !138, metadata !138, i64 0}
-!138 = metadata !{metadata !"int", metadata !135, i64 0}
-!139 = metadata !{i32 24, i32 0, metadata !19, null}
-!140 = metadata !{i32 26, i32 0, metadata !4, null}
-!141 = metadata !{i32 30, i32 0, metadata !20, null}
-!142 = metadata !{i32 36, i32 0, metadata !20, null}
-!143 = metadata !{i32 37, i32 0, metadata !20, null}
-!144 = metadata !{i32 38, i32 0, metadata !57, null}
-!145 = metadata !{i32 1}
-!146 = metadata !{i32 54, i32 0, metadata !20, null}
-!147 = metadata !{i32 47}
-!148 = metadata !{i32 55, i32 0, metadata !20, null}
-!149 = metadata !{i32 56, i32 0, metadata !20, null}
-!150 = metadata !{i32 58, i32 0, metadata !20, null} ; [ DW_TAG_imported_module ]
-!151 = metadata !{i32 59, i32 0, metadata !70, null}
-!152 = metadata !{i32 40, i32 0, metadata !59, null}
-!153 = metadata !{i32 48, i32 0, metadata !62, null}
-!154 = metadata !{i32 42, i32 0, metadata !155, null}
-!155 = metadata !{i32 786443, metadata !1, metadata !59, i32 41, i32 0, i32 7} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!156 = metadata !{metadata !157, metadata !158, i64 0}
-!157 = metadata !{metadata !"", metadata !158, i64 0, metadata !158, i64 4}
-!158 = metadata !{metadata !"float", metadata !135, i64 0}
-!159 = metadata !{i32 43, i32 0, metadata !155, null}
-!160 = metadata !{metadata !157, metadata !158, i64 4}
-!161 = metadata !{i32 44, i32 0, metadata !155, null}
-!162 = metadata !{i32 45, i32 0, metadata !155, null}
-!163 = metadata !{i32 47, i32 0, metadata !60, null}
-!164 = metadata !{i32 50, i32 0, metadata !165, null}
-!165 = metadata !{i32 786443, metadata !1, metadata !62, i32 49, i32 0, i32 9} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!166 = metadata !{i32 63, i32 0, metadata !75, null}
-!167 = metadata !{i32 61, i32 0, metadata !72, null}
-!168 = metadata !{%struct.kiss_fft_cpx* undef}
-!169 = metadata !{i32 64, i32 0, metadata !75, null}
-!170 = metadata !{i32 65, i32 0, metadata !75, null}
-!171 = metadata !{i32 69, i32 0, metadata !20, null}
-!172 = metadata !{i32 70, i32 0, metadata !20, null}
-!173 = metadata !{i32 71, i32 0, metadata !80, null}
-!174 = metadata !{i32 81, i32 0, metadata !86, null}
-!175 = metadata !{i32 73, i32 0, metadata !83, null}
-!176 = metadata !{i32 74, i32 0, metadata !82, null}
-!177 = metadata !{i32 76, i32 0, metadata !178, null}
-!178 = metadata !{i32 786443, metadata !1, metadata !82, i32 75, i32 0, i32 17} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!179 = metadata !{i32 78, i32 0, metadata !83, null}
-!180 = metadata !{i32 93, i32 0, metadata !91, null}
-!181 = metadata !{i32 83, i32 0, metadata !89, null}
-!182 = metadata !{i32 84, i32 0, metadata !88, null}
-!183 = metadata !{i32 86, i32 0, metadata !184, null}
-!184 = metadata !{i32 786443, metadata !1, metadata !88, i32 85, i32 0, i32 21} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!185 = metadata !{i32 90, i32 0, metadata !89, null}
-!186 = metadata !{i32 91, i32 0, metadata !89, null}
-!187 = metadata !{i32 97, i32 0, metadata !188, null}
-!188 = metadata !{i32 786443, metadata !1, metadata !189, i32 97, i32 0, i32 26} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!189 = metadata !{i32 786443, metadata !1, metadata !93, i32 96, i32 0, i32 25} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!190 = metadata !{i32 99, i32 0, metadata !191, null}
-!191 = metadata !{i32 786443, metadata !1, metadata !188, i32 98, i32 0, i32 27} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!192 = metadata !{i32 95, i32 0, metadata !93, null}
-!193 = metadata !{i32 101, i32 0, metadata !191, null}
-!194 = metadata !{i32 142, i32 0, metadata !20, null}
-!195 = metadata !{i32 146, i32 0, metadata !107, null}
-!196 = metadata !{i32 147, i32 0, metadata !107, null}
-!197 = metadata !{i32 150, i32 0, metadata !114, null}
-!198 = metadata !{i32 154, i32 0, metadata !199, null}
-!199 = metadata !{i32 786443, metadata !1, metadata !116, i32 153, i32 0, i32 37} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!200 = metadata !{i32 152, i32 0, metadata !116, null}
-!201 = metadata !{i32 155, i32 0, metadata !199, null}
-!202 = metadata !{i32 162, i32 0, metadata !107, null}
-!203 = metadata !{i32 165, i32 0, metadata !107, null}
-!204 = metadata !{i32 179, i32 0, metadata !107, null}
-!205 = metadata !{i32 181, i32 0, metadata !206, null}
-!206 = metadata !{i32 786443, metadata !1, metadata !207, i32 180, i32 0, i32 39} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!207 = metadata !{i32 786443, metadata !1, metadata !107, i32 180, i32 0, i32 38} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
-!208 = metadata !{i32 184, i32 0, metadata !107, null}
-!209 = metadata !{i32 186, i32 0, metadata !107, null}
+!9 = metadata !{i32 786447, null, null, metadata !"", i32 0, i64 64, i64 64, i64 0, i32 0, metadata !10} ; [ DW_TAG_pointer_type ] [line 0, size 64, align 64, offset 0] [from TYPE]
+!10 = metadata !{i32 786454, metadata !1, null, metadata !"TYPE", i32 13, i64 0, i64 0, i64 0, i32 0, metadata !8} ; [ DW_TAG_typedef ] [TYPE] [line 13, size 0, align 0, offset 0] [from int]
+!11 = metadata !{metadata !12, metadata !13, metadata !14, metadata !15, metadata !16, metadata !18}
+!12 = metadata !{i32 786689, metadata !4, metadata !"time_data", metadata !5, i32 16777233, metadata !9, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [time_data] [line 17]
+!13 = metadata !{i32 786689, metadata !4, metadata !"freq_data", metadata !5, i32 33554449, metadata !9, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [freq_data] [line 17]
+!14 = metadata !{i32 786689, metadata !4, metadata !"n_samples", metadata !5, i32 50331665, metadata !8, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [n_samples] [line 17]
+!15 = metadata !{i32 786689, metadata !4, metadata !"n_channels", metadata !5, i32 67108881, metadata !8, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [n_channels] [line 17]
+!16 = metadata !{i32 786688, metadata !17, metadata !"j", metadata !5, i32 18, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [j] [line 18]
+!17 = metadata !{i32 786443, metadata !1, metadata !4, i32 18, i32 0, i32 0} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!18 = metadata !{i32 786688, metadata !19, metadata !"i", metadata !5, i32 20, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 20]
+!19 = metadata !{i32 786443, metadata !1, metadata !20, i32 20, i32 0, i32 2} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!20 = metadata !{i32 786443, metadata !1, metadata !17, i32 19, i32 0, i32 1} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!21 = metadata !{i32 786478, metadata !1, metadata !5, metadata !"process_data", metadata !"process_data", metadata !"", i32 30, metadata !22, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 true, void (i32*, i32*, i32, i32, %struct.kiss_fft_state*)* @process_data, null, null, metadata !46, i32 30} ; [ DW_TAG_subprogram ] [line 30] [def] [process_data]
+!22 = metadata !{i32 786453, i32 0, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !23, i32 0, null, null, null} ; [ DW_TAG_subroutine_type ] [line 0, size 0, align 0, offset 0] [from ]
+!23 = metadata !{null, metadata !9, metadata !9, metadata !8, metadata !8, metadata !24}
+!24 = metadata !{i32 786454, metadata !1, null, metadata !"kiss_fft_cfg", i32 56, i64 0, i64 0, i64 0, i32 0, metadata !25} ; [ DW_TAG_typedef ] [kiss_fft_cfg] [line 56, size 0, align 0, offset 0] [from ]
+!25 = metadata !{i32 786447, null, null, metadata !"", i32 0, i64 64, i64 64, i64 0, i32 0, metadata !26} ; [ DW_TAG_pointer_type ] [line 0, size 64, align 64, offset 0] [from kiss_fft_state]
+!26 = metadata !{i32 786451, metadata !27, null, metadata !"kiss_fft_state", i32 28, i64 2176, i64 32, i32 0, i32 0, null, metadata !28, i32 0, null, null, null} ; [ DW_TAG_structure_type ] [kiss_fft_state] [line 28, size 2176, align 32, offset 0] [def] [from ]
+!27 = metadata !{metadata !"./_kiss_fft_guts.h", metadata !"/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction"}
+!28 = metadata !{metadata !29, metadata !30, metadata !31, metadata !35}
+!29 = metadata !{i32 786445, metadata !27, metadata !26, metadata !"nfft", i32 29, i64 32, i64 32, i64 0, i32 0, metadata !8} ; [ DW_TAG_member ] [nfft] [line 29, size 32, align 32, offset 0] [from int]
+!30 = metadata !{i32 786445, metadata !27, metadata !26, metadata !"inverse", i32 30, i64 32, i64 32, i64 32, i32 0, metadata !8} ; [ DW_TAG_member ] [inverse] [line 30, size 32, align 32, offset 32] [from int]
+!31 = metadata !{i32 786445, metadata !27, metadata !26, metadata !"factors", i32 31, i64 2048, i64 32, i64 64, i32 0, metadata !32} ; [ DW_TAG_member ] [factors] [line 31, size 2048, align 32, offset 64] [from ]
+!32 = metadata !{i32 786433, null, null, metadata !"", i32 0, i64 2048, i64 32, i32 0, i32 0, metadata !8, metadata !33, i32 0, null, null, null} ; [ DW_TAG_array_type ] [line 0, size 2048, align 32, offset 0] [from int]
+!33 = metadata !{metadata !34}
+!34 = metadata !{i32 786465, i64 0, i64 64}       ; [ DW_TAG_subrange_type ] [0, 63]
+!35 = metadata !{i32 786445, metadata !27, metadata !26, metadata !"twiddles", i32 32, i64 64, i64 32, i64 2112, i32 0, metadata !36} ; [ DW_TAG_member ] [twiddles] [line 32, size 64, align 32, offset 2112] [from ]
+!36 = metadata !{i32 786433, null, null, metadata !"", i32 0, i64 64, i64 32, i32 0, i32 0, metadata !37, metadata !44, i32 0, null, null, null} ; [ DW_TAG_array_type ] [line 0, size 64, align 32, offset 0] [from kiss_fft_cpx]
+!37 = metadata !{i32 786454, metadata !27, null, metadata !"kiss_fft_cpx", i32 54, i64 0, i64 0, i64 0, i32 0, metadata !38} ; [ DW_TAG_typedef ] [kiss_fft_cpx] [line 54, size 0, align 0, offset 0] [from ]
+!38 = metadata !{i32 786451, metadata !39, null, metadata !"", i32 51, i64 64, i64 32, i32 0, i32 0, null, metadata !40, i32 0, null, null, null} ; [ DW_TAG_structure_type ] [line 51, size 64, align 32, offset 0] [def] [from ]
+!39 = metadata !{metadata !"./kiss_fft.h", metadata !"/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction"}
+!40 = metadata !{metadata !41, metadata !43}
+!41 = metadata !{i32 786445, metadata !39, metadata !38, metadata !"r", i32 52, i64 32, i64 32, i64 0, i32 0, metadata !42} ; [ DW_TAG_member ] [r] [line 52, size 32, align 32, offset 0] [from float]
+!42 = metadata !{i32 786468, null, null, metadata !"float", i32 0, i64 32, i64 32, i64 0, i32 0, i32 4} ; [ DW_TAG_base_type ] [float] [line 0, size 32, align 32, offset 0, enc DW_ATE_float]
+!43 = metadata !{i32 786445, metadata !39, metadata !38, metadata !"i", i32 53, i64 32, i64 32, i64 32, i32 0, metadata !42} ; [ DW_TAG_member ] [i] [line 53, size 32, align 32, offset 32] [from float]
+!44 = metadata !{metadata !45}
+!45 = metadata !{i32 786465, i64 0, i64 1}        ; [ DW_TAG_subrange_type ] [0, 0]
+!46 = metadata !{metadata !47, metadata !48, metadata !49, metadata !50, metadata !51, metadata !52, metadata !56, metadata !57, metadata !59, metadata !62, metadata !64, metadata !66, metadata !67, metadata !68, metadata !70, metadata !72, metadata !75, metadata !77, metadata !78, metadata !79, metadata !80, metadata !82, metadata !85, metadata !86, metadata !88, metadata !90, metadata !92, metadata !93, metadata !95, metadata !98, metadata !102, metadata !104, metadata !107, metadata !110, metadata !111, metadata !112, metadata !113, metadata !115, metadata !118, metadata !119, metadata !121, metadata !124, metadata !125, metadata !127, metadata !130, metadata !131, metadata !133, metadata !136, metadata !139}
+!47 = metadata !{i32 786689, metadata !21, metadata !"time_data", metadata !5, i32 16777246, metadata !9, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [time_data] [line 30]
+!48 = metadata !{i32 786689, metadata !21, metadata !"freq_data", metadata !5, i32 33554462, metadata !9, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [freq_data] [line 30]
+!49 = metadata !{i32 786689, metadata !21, metadata !"n_samples", metadata !5, i32 50331678, metadata !8, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [n_samples] [line 30]
+!50 = metadata !{i32 786689, metadata !21, metadata !"n_channels", metadata !5, i32 67108894, metadata !8, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [n_channels] [line 30]
+!51 = metadata !{i32 786689, metadata !21, metadata !"cfg", metadata !5, i32 83886110, metadata !24, i32 0, i32 0} ; [ DW_TAG_arg_variable ] [cfg] [line 30]
+!52 = metadata !{i32 786688, metadata !21, metadata !"in", metadata !5, i32 36, metadata !53, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [in] [line 36]
+!53 = metadata !{i32 786433, null, null, metadata !"", i32 0, i64 0, i64 32, i32 0, i32 0, metadata !37, metadata !54, i32 0, null, null, null} ; [ DW_TAG_array_type ] [line 0, size 0, align 32, offset 0] [from kiss_fft_cpx]
+!54 = metadata !{metadata !55}
+!55 = metadata !{i32 786465, i64 0, i64 -1}       ; [ DW_TAG_subrange_type ] [unbounded]
+!56 = metadata !{i32 786688, metadata !21, metadata !"out", metadata !5, i32 37, metadata !53, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [out] [line 37]
+!57 = metadata !{i32 786688, metadata !58, metadata !"channel", metadata !5, i32 38, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [channel] [line 38]
+!58 = metadata !{i32 786443, metadata !1, metadata !21, i32 38, i32 0, i32 4} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!59 = metadata !{i32 786688, metadata !60, metadata !"i", metadata !5, i32 40, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 40]
+!60 = metadata !{i32 786443, metadata !1, metadata !61, i32 40, i32 0, i32 6} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!61 = metadata !{i32 786443, metadata !1, metadata !58, i32 39, i32 0, i32 5} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!62 = metadata !{i32 786688, metadata !63, metadata !"i", metadata !5, i32 48, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 48]
+!63 = metadata !{i32 786443, metadata !1, metadata !61, i32 48, i32 0, i32 8} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!64 = metadata !{i32 786688, metadata !21, metadata !"low_index", metadata !5, i32 54, metadata !65, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [low_index] [line 54]
+!65 = metadata !{i32 786470, null, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, metadata !8} ; [ DW_TAG_const_type ] [line 0, size 0, align 0, offset 0] [from int]
+!66 = metadata !{i32 786688, metadata !21, metadata !"high_index", metadata !5, i32 55, metadata !65, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [high_index] [line 55]
+!67 = metadata !{i32 786688, metadata !21, metadata !"n_fft_items", metadata !5, i32 56, metadata !65, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [n_fft_items] [line 56]
+!68 = metadata !{i32 786688, metadata !21, metadata !"fft_data", metadata !5, i32 58, metadata !69, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [fft_data] [line 58]
+!69 = metadata !{i32 786433, null, null, metadata !"", i32 0, i64 0, i64 32, i32 0, i32 0, metadata !10, metadata !54, i32 0, null, null, null} ; [ DW_TAG_array_type ] [line 0, size 0, align 32, offset 0] [from TYPE]
+!70 = metadata !{i32 786688, metadata !71, metadata !"channel", metadata !5, i32 59, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [channel] [line 59]
+!71 = metadata !{i32 786443, metadata !1, metadata !21, i32 59, i32 0, i32 10} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!72 = metadata !{i32 786688, metadata !73, metadata !"i", metadata !5, i32 61, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 61]
+!73 = metadata !{i32 786443, metadata !1, metadata !74, i32 61, i32 0, i32 12} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!74 = metadata !{i32 786443, metadata !1, metadata !71, i32 60, i32 0, i32 11} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!75 = metadata !{i32 786688, metadata !76, metadata !"index", metadata !5, i32 63, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [index] [line 63]
+!76 = metadata !{i32 786443, metadata !1, metadata !73, i32 62, i32 0, i32 13} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!77 = metadata !{i32 786688, metadata !76, metadata !"temp", metadata !5, i32 64, metadata !37, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [temp] [line 64]
+!78 = metadata !{i32 786688, metadata !21, metadata !"fft_mean", metadata !5, i32 69, metadata !69, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [fft_mean] [line 69]
+!79 = metadata !{i32 786688, metadata !21, metadata !"fft_stddev", metadata !5, i32 70, metadata !69, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [fft_stddev] [line 70]
+!80 = metadata !{i32 786688, metadata !81, metadata !"channel", metadata !5, i32 71, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [channel] [line 71]
+!81 = metadata !{i32 786443, metadata !1, metadata !21, i32 71, i32 0, i32 14} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!82 = metadata !{i32 786688, metadata !83, metadata !"i", metadata !5, i32 74, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 74]
+!83 = metadata !{i32 786443, metadata !1, metadata !84, i32 74, i32 0, i32 16} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!84 = metadata !{i32 786443, metadata !1, metadata !81, i32 72, i32 0, i32 15} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!85 = metadata !{i32 786688, metadata !21, metadata !"n_sd", metadata !5, i32 80, metadata !65, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [n_sd] [line 80]
+!86 = metadata !{i32 786688, metadata !87, metadata !"channel", metadata !5, i32 81, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [channel] [line 81]
+!87 = metadata !{i32 786443, metadata !1, metadata !21, i32 81, i32 0, i32 18} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!88 = metadata !{i32 786688, metadata !89, metadata !"stddev_temp", metadata !5, i32 83, metadata !10, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [stddev_temp] [line 83]
+!89 = metadata !{i32 786443, metadata !1, metadata !87, i32 82, i32 0, i32 19} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!90 = metadata !{i32 786688, metadata !91, metadata !"i", metadata !5, i32 85, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 85]
+!91 = metadata !{i32 786443, metadata !1, metadata !89, i32 85, i32 0, i32 20} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!92 = metadata !{i32 786688, metadata !21, metadata !"scaled_fft_data", metadata !5, i32 93, metadata !69, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [scaled_fft_data] [line 93]
+!93 = metadata !{i32 786688, metadata !94, metadata !"channel", metadata !5, i32 94, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [channel] [line 94]
+!94 = metadata !{i32 786443, metadata !1, metadata !21, i32 94, i32 0, i32 22} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!95 = metadata !{i32 786688, metadata !96, metadata !"i", metadata !5, i32 96, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 96]
+!96 = metadata !{i32 786443, metadata !1, metadata !97, i32 96, i32 0, i32 24} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!97 = metadata !{i32 786443, metadata !1, metadata !94, i32 95, i32 0, i32 23} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!98 = metadata !{i32 786688, metadata !21, metadata !"freq_xcorr_matrix", metadata !5, i32 106, metadata !99, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [freq_xcorr_matrix] [line 106]
+!99 = metadata !{i32 786433, null, null, metadata !"", i32 0, i64 0, i64 64, i32 0, i32 0, metadata !100, metadata !54, i32 0, null, null, null} ; [ DW_TAG_array_type ] [line 0, size 0, align 64, offset 0] [from XCORR_TYPE]
+!100 = metadata !{i32 786454, metadata !1, null, metadata !"XCORR_TYPE", i32 12, i64 0, i64 0, i64 0, i32 0, metadata !101} ; [ DW_TAG_typedef ] [XCORR_TYPE] [line 12, size 0, align 0, offset 0] [from double]
+!101 = metadata !{i32 786468, null, null, metadata !"double", i32 0, i64 64, i64 64, i64 0, i32 0, i32 4} ; [ DW_TAG_base_type ] [double] [line 0, size 64, align 64, offset 0, enc DW_ATE_float]
+!102 = metadata !{i32 786688, metadata !103, metadata !"i", metadata !5, i32 107, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 107]
+!103 = metadata !{i32 786443, metadata !1, metadata !21, i32 107, i32 0, i32 28} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!104 = metadata !{i32 786688, metadata !105, metadata !"j", metadata !5, i32 110, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [j] [line 110]
+!105 = metadata !{i32 786443, metadata !1, metadata !106, i32 110, i32 0, i32 30} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!106 = metadata !{i32 786443, metadata !1, metadata !103, i32 108, i32 0, i32 29} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!107 = metadata !{i32 786688, metadata !108, metadata !"k", metadata !5, i32 114, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [k] [line 114]
+!108 = metadata !{i32 786443, metadata !1, metadata !109, i32 114, i32 0, i32 32} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!109 = metadata !{i32 786443, metadata !1, metadata !105, i32 111, i32 0, i32 31} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!110 = metadata !{i32 786688, metadata !21, metadata !"freq_eigenvalues", metadata !5, i32 127, metadata !99, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [freq_eigenvalues] [line 127]
+!111 = metadata !{i32 786688, metadata !21, metadata !"time_mean", metadata !5, i32 140, metadata !69, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [time_mean] [line 140]
+!112 = metadata !{i32 786688, metadata !21, metadata !"time_stddev", metadata !5, i32 141, metadata !69, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [time_stddev] [line 141]
+!113 = metadata !{i32 786688, metadata !114, metadata !"channel", metadata !5, i32 142, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [channel] [line 142]
+!114 = metadata !{i32 786443, metadata !1, metadata !21, i32 142, i32 0, i32 34} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!115 = metadata !{i32 786688, metadata !116, metadata !"i", metadata !5, i32 145, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 145]
+!116 = metadata !{i32 786443, metadata !1, metadata !117, i32 145, i32 0, i32 36} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!117 = metadata !{i32 786443, metadata !1, metadata !114, i32 143, i32 0, i32 35} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!118 = metadata !{i32 786688, metadata !21, metadata !"n_time_sd", metadata !5, i32 151, metadata !65, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [n_time_sd] [line 151]
+!119 = metadata !{i32 786688, metadata !120, metadata !"channel", metadata !5, i32 152, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [channel] [line 152]
+!120 = metadata !{i32 786443, metadata !1, metadata !21, i32 152, i32 0, i32 38} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!121 = metadata !{i32 786688, metadata !122, metadata !"i", metadata !5, i32 155, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 155]
+!122 = metadata !{i32 786443, metadata !1, metadata !123, i32 155, i32 0, i32 40} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!123 = metadata !{i32 786443, metadata !1, metadata !120, i32 153, i32 0, i32 39} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!124 = metadata !{i32 786688, metadata !21, metadata !"scaled_time_data", metadata !5, i32 163, metadata !69, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [scaled_time_data] [line 163]
+!125 = metadata !{i32 786688, metadata !126, metadata !"channel", metadata !5, i32 164, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [channel] [line 164]
+!126 = metadata !{i32 786443, metadata !1, metadata !21, i32 164, i32 0, i32 42} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!127 = metadata !{i32 786688, metadata !128, metadata !"i", metadata !5, i32 166, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 166]
+!128 = metadata !{i32 786443, metadata !1, metadata !129, i32 166, i32 0, i32 44} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!129 = metadata !{i32 786443, metadata !1, metadata !126, i32 165, i32 0, i32 43} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!130 = metadata !{i32 786688, metadata !21, metadata !"time_xcorr_matrix", metadata !5, i32 173, metadata !99, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [time_xcorr_matrix] [line 173]
+!131 = metadata !{i32 786688, metadata !132, metadata !"i", metadata !5, i32 174, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 174]
+!132 = metadata !{i32 786443, metadata !1, metadata !21, i32 174, i32 0, i32 46} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!133 = metadata !{i32 786688, metadata !134, metadata !"j", metadata !5, i32 176, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [j] [line 176]
+!134 = metadata !{i32 786443, metadata !1, metadata !135, i32 176, i32 0, i32 48} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!135 = metadata !{i32 786443, metadata !1, metadata !132, i32 175, i32 0, i32 47} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!136 = metadata !{i32 786688, metadata !137, metadata !"k", metadata !5, i32 179, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [k] [line 179]
+!137 = metadata !{i32 786443, metadata !1, metadata !138, i32 179, i32 0, i32 50} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!138 = metadata !{i32 786443, metadata !1, metadata !134, i32 177, i32 0, i32 49} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!139 = metadata !{i32 786688, metadata !21, metadata !"time_eigenvalues", metadata !5, i32 190, metadata !99, i32 8192, i32 0} ; [ DW_TAG_auto_variable ] [time_eigenvalues] [line 190]
+!140 = metadata !{i32 786478, metadata !1, metadata !5, metadata !"main", metadata !"main", metadata !"", i32 200, metadata !141, i1 false, i1 true, i32 0, i32 0, null, i32 0, i1 true, i32 ()* @main, null, null, metadata !143, i32 200} ; [ DW_TAG_subprogram ] [line 200] [def] [main]
+!141 = metadata !{i32 786453, i32 0, null, metadata !"", i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !142, i32 0, null, null, null} ; [ DW_TAG_subroutine_type ] [line 0, size 0, align 0, offset 0] [from ]
+!142 = metadata !{metadata !8}
+!143 = metadata !{metadata !144, metadata !145, metadata !146, metadata !148, metadata !151, metadata !152}
+!144 = metadata !{i32 786688, metadata !140, metadata !"time_data", metadata !5, i32 202, metadata !9, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [time_data] [line 202]
+!145 = metadata !{i32 786688, metadata !140, metadata !"freq_data", metadata !5, i32 203, metadata !9, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [freq_data] [line 203]
+!146 = metadata !{i32 786688, metadata !147, metadata !"j", metadata !5, i32 206, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [j] [line 206]
+!147 = metadata !{i32 786443, metadata !1, metadata !140, i32 206, i32 0, i32 52} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!148 = metadata !{i32 786688, metadata !149, metadata !"i", metadata !5, i32 208, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [i] [line 208]
+!149 = metadata !{i32 786443, metadata !1, metadata !150, i32 208, i32 0, i32 54} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!150 = metadata !{i32 786443, metadata !1, metadata !147, i32 207, i32 0, i32 53} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!151 = metadata !{i32 786688, metadata !140, metadata !"cfg", metadata !5, i32 217, metadata !24, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [cfg] [line 217]
+!152 = metadata !{i32 786688, metadata !140, metadata !"num_failures", metadata !5, i32 235, metadata !8, i32 0, i32 0} ; [ DW_TAG_auto_variable ] [num_failures] [line 235]
+!153 = metadata !{metadata !154, metadata !155, metadata !156, metadata !156, metadata !155, metadata !156, metadata !156, metadata !156, metadata !156, metadata !156, metadata !156, metadata !156, metadata !156, metadata !157, metadata !156, metadata !156, metadata !156, metadata !156, metadata !156, metadata !156}
+!154 = metadata !{i32 786484, i32 0, metadata !5, metadata !"high_index", metadata !"high_index", metadata !"high_index", metadata !5, i32 55, metadata !65, i32 1, i32 1, i32 47, null} ; [ DW_TAG_variable ] [high_index] [line 55] [local] [def]
+!155 = metadata !{i32 786484, i32 0, metadata !5, metadata !"low_index", metadata !"low_index", metadata !"low_index", metadata !5, i32 54, metadata !65, i32 1, i32 1, i32 1, null} ; [ DW_TAG_variable ] [low_index] [line 54] [local] [def]
+!156 = metadata !{i32 786484, i32 0, metadata !5, metadata !"n_fft_items", metadata !"n_fft_items", metadata !"n_fft_items", metadata !5, i32 56, metadata !65, i32 1, i32 1, i32 47, null} ; [ DW_TAG_variable ] [n_fft_items] [line 56] [local] [def]
+!157 = metadata !{i32 786484, i32 0, metadata !5, metadata !"n_sd", metadata !"n_sd", metadata !"n_sd", metadata !5, i32 80, metadata !65, i32 1, i32 1, i32 46, null} ; [ DW_TAG_variable ] [n_sd] [line 80] [local] [def]
+!158 = metadata !{i32 2, metadata !"Dwarf Version", i32 4}
+!159 = metadata !{i32 1, metadata !"Debug Info Version", i32 1}
+!160 = metadata !{metadata !"clang version 3.4.2 (tags/RELEASE_34/dot2-final)"}
+!161 = metadata !{i32 17, i32 0, metadata !4, null}
+!162 = metadata !{i32 18, i32 0, metadata !17, null}
+!163 = metadata !{i32 20, i32 0, metadata !19, null}
+!164 = metadata !{i32 22, i32 0, metadata !165, null}
+!165 = metadata !{i32 786443, metadata !1, metadata !19, i32 21, i32 0, i32 3} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!166 = metadata !{metadata !167, metadata !167, i64 0}
+!167 = metadata !{metadata !"any pointer", metadata !168, i64 0}
+!168 = metadata !{metadata !"omnipotent char", metadata !169, i64 0}
+!169 = metadata !{metadata !"Simple C/C++ TBAA"}
+!170 = metadata !{metadata !171, metadata !171, i64 0}
+!171 = metadata !{metadata !"int", metadata !168, i64 0}
+!172 = metadata !{i32 24, i32 0, metadata !20, null}
+!173 = metadata !{i32 26, i32 0, metadata !4, null}
+!174 = metadata !{i32 30, i32 0, metadata !21, null}
+!175 = metadata !{i32 36, i32 0, metadata !21, null}
+!176 = metadata !{i32 37, i32 0, metadata !21, null}
+!177 = metadata !{i32 38, i32 0, metadata !58, null}
+!178 = metadata !{i32 1}
+!179 = metadata !{i32 54, i32 0, metadata !21, null}
+!180 = metadata !{i32 47}
+!181 = metadata !{i32 55, i32 0, metadata !21, null}
+!182 = metadata !{i32 56, i32 0, metadata !21, null}
+!183 = metadata !{i32 58, i32 0, metadata !21, null} ; [ DW_TAG_imported_module ]
+!184 = metadata !{i32 59, i32 0, metadata !71, null}
+!185 = metadata !{i32 40, i32 0, metadata !60, null}
+!186 = metadata !{i32 48, i32 0, metadata !63, null}
+!187 = metadata !{i32 42, i32 0, metadata !188, null}
+!188 = metadata !{i32 786443, metadata !1, metadata !60, i32 41, i32 0, i32 7} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!189 = metadata !{metadata !190, metadata !191, i64 0}
+!190 = metadata !{metadata !"", metadata !191, i64 0, metadata !191, i64 4}
+!191 = metadata !{metadata !"float", metadata !168, i64 0}
+!192 = metadata !{i32 43, i32 0, metadata !188, null}
+!193 = metadata !{metadata !190, metadata !191, i64 4}
+!194 = metadata !{i32 44, i32 0, metadata !188, null}
+!195 = metadata !{i32 45, i32 0, metadata !188, null}
+!196 = metadata !{i32 47, i32 0, metadata !61, null}
+!197 = metadata !{i32 50, i32 0, metadata !198, null}
+!198 = metadata !{i32 786443, metadata !1, metadata !63, i32 49, i32 0, i32 9} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!199 = metadata !{i32 63, i32 0, metadata !76, null}
+!200 = metadata !{i32 61, i32 0, metadata !73, null}
+!201 = metadata !{%struct.kiss_fft_cpx* undef}
+!202 = metadata !{i32 64, i32 0, metadata !76, null}
+!203 = metadata !{i32 65, i32 0, metadata !76, null}
+!204 = metadata !{i32 69, i32 0, metadata !21, null}
+!205 = metadata !{i32 70, i32 0, metadata !21, null}
+!206 = metadata !{i32 71, i32 0, metadata !81, null}
+!207 = metadata !{i32 81, i32 0, metadata !87, null}
+!208 = metadata !{i32 73, i32 0, metadata !84, null}
+!209 = metadata !{i32 74, i32 0, metadata !83, null}
+!210 = metadata !{i32 76, i32 0, metadata !211, null}
+!211 = metadata !{i32 786443, metadata !1, metadata !83, i32 75, i32 0, i32 17} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!212 = metadata !{i32 78, i32 0, metadata !84, null}
+!213 = metadata !{i32 87, i32 0, metadata !214, null}
+!214 = metadata !{i32 786443, metadata !1, metadata !91, i32 86, i32 0, i32 21} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!215 = metadata !{i32 85, i32 0, metadata !91, null}
+!216 = metadata !{i32 91, i32 0, metadata !89, null}
+!217 = metadata !{i32 93, i32 0, metadata !21, null}
+!218 = metadata !{i32 94, i32 0, metadata !94, null}
+!219 = metadata !{i32 106, i32 0, metadata !21, null}
+!220 = metadata !{i32 107, i32 0, metadata !103, null}
+!221 = metadata !{i32 98, i32 0, metadata !222, null}
+!222 = metadata !{i32 786443, metadata !1, metadata !223, i32 98, i32 0, i32 26} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!223 = metadata !{i32 786443, metadata !1, metadata !96, i32 97, i32 0, i32 25} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!224 = metadata !{i32 100, i32 0, metadata !225, null}
+!225 = metadata !{i32 786443, metadata !1, metadata !222, i32 99, i32 0, i32 27} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!226 = metadata !{i32 96, i32 0, metadata !96, null}
+!227 = metadata !{i32 102, i32 0, metadata !225, null}
+!228 = metadata !{i32 112, i32 0, metadata !109, null}
+!229 = metadata !{i32 110, i32 0, metadata !105, null}
+!230 = metadata !{metadata !231, metadata !231, i64 0}
+!231 = metadata !{metadata !"double", metadata !168, i64 0}
+!232 = metadata !{i32 114, i32 0, metadata !108, null}
+!233 = metadata !{i32 117, i32 0, metadata !234, null}
+!234 = metadata !{i32 786443, metadata !1, metadata !108, i32 115, i32 0, i32 33} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!235 = metadata !{i32 119, i32 0, metadata !109, null}
+!236 = metadata !{i32 121, i32 0, metadata !109, null}
+!237 = metadata !{i32 127, i32 0, metadata !21, null}
+!238 = metadata !{i32 128, i32 0, metadata !21, null}
+!239 = metadata !{i32 140, i32 0, metadata !21, null}
+!240 = metadata !{i32 141, i32 0, metadata !21, null}
+!241 = metadata !{i32 142, i32 0, metadata !114, null}
+!242 = metadata !{i32 151, i32 0, metadata !21, null}
+!243 = metadata !{i32 152, i32 0, metadata !120, null}
+!244 = metadata !{i32 145, i32 0, metadata !116, null}
+!245 = metadata !{i32 144, i32 0, metadata !117, null}
+!246 = metadata !{i32 147, i32 0, metadata !247, null}
+!247 = metadata !{i32 786443, metadata !1, metadata !116, i32 146, i32 0, i32 37} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!248 = metadata !{i32 149, i32 0, metadata !117, null}
+!249 = metadata !{i32 155, i32 0, metadata !122, null}
+!250 = metadata !{i32 161, i32 0, metadata !123, null}
+!251 = metadata !{i32 154, i32 0, metadata !123, null}
+!252 = metadata !{i32 157, i32 0, metadata !253, null}
+!253 = metadata !{i32 786443, metadata !1, metadata !122, i32 156, i32 0, i32 41} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!254 = metadata !{i32 163, i32 0, metadata !21, null}
+!255 = metadata !{i32 164, i32 0, metadata !126, null}
+!256 = metadata !{i32 173, i32 0, metadata !21, null}
+!257 = metadata !{i32 174, i32 0, metadata !132, null}
+!258 = metadata !{i32 166, i32 0, metadata !128, null}
+!259 = metadata !{i32 168, i32 0, metadata !260, null}
+!260 = metadata !{i32 786443, metadata !1, metadata !128, i32 167, i32 0, i32 45} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!261 = metadata !{i32 179, i32 0, metadata !137, null}
+!262 = metadata !{i32 183, i32 0, metadata !138, null}
+!263 = metadata !{i32 178, i32 0, metadata !138, null}
+!264 = metadata !{i32 176, i32 0, metadata !134, null}
+!265 = metadata !{i32 181, i32 0, metadata !266, null}
+!266 = metadata !{i32 786443, metadata !1, metadata !137, i32 180, i32 0, i32 51} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!267 = metadata !{i32 185, i32 0, metadata !138, null}
+!268 = metadata !{i32 190, i32 0, metadata !21, null}
+!269 = metadata !{i32 191, i32 0, metadata !21, null}
+!270 = metadata !{i32 198, i32 0, metadata !21, null}
+!271 = metadata !{i32 202, i32 0, metadata !140, null}
+!272 = metadata !{i32 203, i32 0, metadata !140, null}
+!273 = metadata !{i32 206, i32 0, metadata !147, null}
+!274 = metadata !{i32 210, i32 0, metadata !275, null}
+!275 = metadata !{i32 786443, metadata !1, metadata !149, i32 209, i32 0, i32 55} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!276 = metadata !{i32 208, i32 0, metadata !149, null}
+!277 = metadata !{i32 211, i32 0, metadata !275, null}
+!278 = metadata !{i32 218, i32 0, metadata !140, null}
+!279 = metadata !{i32 221, i32 0, metadata !140, null}
+!280 = metadata !{i32 235, i32 0, metadata !140, null}
+!281 = metadata !{i32 237, i32 0, metadata !282, null}
+!282 = metadata !{i32 786443, metadata !1, metadata !283, i32 236, i32 0, i32 57} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!283 = metadata !{i32 786443, metadata !1, metadata !140, i32 236, i32 0, i32 56} ; [ DW_TAG_lexical_block ] [/workspace/gem5-aladdin/src/aladdin/integration-test/with-cpu/feature_extraction/feature_extraction.c]
+!284 = metadata !{i32 240, i32 0, metadata !140, null}
+!285 = metadata !{i32 242, i32 0, metadata !140, null}

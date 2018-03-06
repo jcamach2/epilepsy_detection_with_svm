@@ -251,7 +251,7 @@ void kf_work(
         )
 {
     kiss_fft_cpx * Fout_beg=*Fout;
-    kiss_fft_cpx * f_beg = *f;
+    const kiss_fft_cpx * f_beg = *f;
     const int p=*factors++; // the radix  
     const int m=*factors++; // stage's fft length/p 
     const kiss_fft_cpx * Fout_end = *Fout + p*m;
