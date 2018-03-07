@@ -10,7 +10,7 @@
 #define N_CHANNELS 15
 
 typedef double XCORR_TYPE;
-typedef int TYPE;
+typedef double TYPE;
 
 //TODO kiss_fft_cpx TYPE
 
@@ -19,7 +19,7 @@ int test_stores(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channels)
   {
       for (int i = 0; i < n_samples; i++) 
       {
-        fprintf(stdout, "store_loc[%d] = %d\n", n_samples*j + i, freq_data[n_samples*j + i]);
+        fprintf(stdout, "store_loc[%d] = %f\n", n_samples*j + i, freq_data[n_samples*j + i]);
       }
       fprintf(stdout, "\n");
   }
@@ -207,7 +207,7 @@ int main() {
   {
         for (int i = 0; i < N_SAMPLES; i++) 
         {
-            time_data[j*N_SAMPLES + i] = i;
+            time_data[j*N_SAMPLES + i] = ((TYPE)i) + KISS_FFT_COS(((TYPE)i)/10);
             freq_data[j*N_SAMPLES + i]  = -1;
         }
   }
