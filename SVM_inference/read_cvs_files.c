@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdio.h>
 
+
 static void get_cvs_token(char *line, double *row) {
 
   if (row == NULL) {
@@ -42,6 +43,7 @@ double *get_matrix_vals(FILE *cvs_file, size_t rows, size_t cols) {
   return matrix_vals;
 }
 
+     
 
 int main(int argc, char *argv[]) {
 
@@ -56,7 +58,7 @@ int main(int argc, char *argv[]) {
   double *cur_csv_matrix = get_matrix_vals(cvs_file, 1, 600);
   free(cur_csv_matrix);
 
-  
+
   fclose(cvs_file);
   return 0;
 } 
