@@ -33,8 +33,10 @@ void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channel
 /* begin frequency domain feature extraction */
 /*******************************************************************************/
 // find fft of time data
-    kiss_fft_cpx in[n_samples * n_channels];
-    kiss_fft_cpx out[n_samples * n_channels];
+    //kiss_fft_cpx in[n_samples * n_channels];
+    kiss_fft_cpx* in = malloc(sizeof(kiss_fft_cpx) * n_samples * n_channels);
+    //kiss_fft_cpx out[n_samples * n_channels];
+    kiss_fft_cpx* out = malloc(sizeof(kiss_fft_cpx) * n_samples * n_channels);
     fft_loop: for (int channel = 0; channel < n_channels; channel++)
     {
         fft_loop_1: for (int i = 0; i < n_samples; i++)
@@ -50,6 +52,8 @@ void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channel
             freq_data[channel*n_samples + i] = out[channel*n_samples + i].r;
         }
     }
+    free(in);
+    free(out);
 // slice fft data (only work with out[1] - out[47] from now on)
     const int low_index   = 1;
     const int high_index  = 47;
@@ -160,7 +164,8 @@ void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channel
         }
         time_stddev[channel] /= (TYPE)sqrt(((double)time_stddev[channel])/n_time_sd);
     }
-    TYPE scaled_time_data[n_channels*n_samples];
+    //TYPE scaled_time_data[n_channels*n_samples];
+    TYPE* scaled_time_data = malloc(sizeof(TYPE) *n_channels * n_samples);
     time_scale_loop_1: for(int channel = 0; channel < n_channels; channel++)
     {
         time_scale_loop_2: for(int i = 0; i < n_samples; i++)
@@ -185,6 +190,7 @@ void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channel
             time_xcorr_matrix[j*n_channels + i] = time_xcorr_matrix[i*n_channels + j];
         }
     }
+    free(scaled_time_data);
 // find x-corr matrix upper-right triangle
 // find x-corr matrix eigenvalues
     XCORR_TYPE time_eigenvalues[n_channels];
