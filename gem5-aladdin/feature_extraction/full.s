@@ -104121,28 +104121,13 @@ inst_count:
 	.asciz	"kf_bfly3"              # External Name
 	.long	0                       # End Mark
 .Lpubnames_end1:
-.Lset240 = .Lpubnames_end0-.Lpubnames_begin0 # Length of Public Names Info
+.Lset240 = .Lpubnames_end2-.Lpubnames_begin2 # Length of Public Names Info
 	.long	.Lset240
-.Lpubnames_begin0:
-	.short	2                       # DWARF Version
-	.long	.L.debug_info_begin0    # Offset of Compilation Unit Info
-.Lset241 = .L.debug_info_end0-.L.debug_info_begin0 # Compilation Unit Length
-	.long	.Lset241
-	.long	1268                    # DIE offset
-	.asciz	"main"                  # External Name
-	.long	241                     # DIE offset
-	.asciz	"process_data"          # External Name
-	.long	98                      # DIE offset
-	.asciz	"test_stores"           # External Name
-	.long	0                       # End Mark
-.Lpubnames_end0:
-.Lset242 = .Lpubnames_end2-.Lpubnames_begin2 # Length of Public Names Info
-	.long	.Lset242
 .Lpubnames_begin2:
 	.short	2                       # DWARF Version
 	.long	.L.debug_info_begin2    # Offset of Compilation Unit Info
-.Lset243 = .L.debug_info_end2-.L.debug_info_begin2 # Compilation Unit Length
-	.long	.Lset243
+.Lset241 = .L.debug_info_end2-.L.debug_info_begin2 # Compilation Unit Length
+	.long	.Lset241
 	.long	1107                    # DIE offset
 	.asciz	"tred1"                 # External Name
 	.long	184                     # DIE offset
@@ -104163,6 +104148,21 @@ inst_count:
 	.asciz	"r8_max"                # External Name
 	.long	0                       # End Mark
 .Lpubnames_end2:
+.Lset242 = .Lpubnames_end0-.Lpubnames_begin0 # Length of Public Names Info
+	.long	.Lset242
+.Lpubnames_begin0:
+	.short	2                       # DWARF Version
+	.long	.L.debug_info_begin0    # Offset of Compilation Unit Info
+.Lset243 = .L.debug_info_end0-.L.debug_info_begin0 # Compilation Unit Length
+	.long	.Lset243
+	.long	1268                    # DIE offset
+	.asciz	"main"                  # External Name
+	.long	241                     # DIE offset
+	.asciz	"process_data"          # External Name
+	.long	98                      # DIE offset
+	.asciz	"test_stores"           # External Name
+	.long	0                       # End Mark
+.Lpubnames_end0:
 	.section	.debug_pubtypes,"",@progbits
 .Lset244 = .Lpubtypes_end1-.Lpubtypes_begin1 # Length of Public Types Info
 	.long	.Lset244
@@ -104187,13 +104187,28 @@ inst_count:
 	.asciz	"size_t"                # External Name
 	.long	0                       # End Mark
 .Lpubtypes_end1:
-.Lset246 = .Lpubtypes_end0-.Lpubtypes_begin0 # Length of Public Types Info
+.Lset246 = .Lpubtypes_end2-.Lpubtypes_begin2 # Length of Public Types Info
 	.long	.Lset246
+.Lpubtypes_begin2:
+	.short	2                       # DWARF Version
+	.long	.L.debug_info_begin2    # Offset of Compilation Unit Info
+.Lset247 = .L.debug_info_end2-.L.debug_info_begin2 # Compilation Unit Length
+	.long	.Lset247
+	.long	55                      # DIE offset
+	.asciz	"double"                # External Name
+	.long	55                      # DIE offset
+	.asciz	"int"                   # External Name
+	.long	1340                    # DIE offset
+	.asciz	"_Bool"                 # External Name
+	.long	0                       # End Mark
+.Lpubtypes_end2:
+.Lset248 = .Lpubtypes_end0-.Lpubtypes_begin0 # Length of Public Types Info
+	.long	.Lset248
 .Lpubtypes_begin0:
 	.short	2                       # DWARF Version
 	.long	.L.debug_info_begin0    # Offset of Compilation Unit Info
-.Lset247 = .L.debug_info_end0-.L.debug_info_begin0 # Compilation Unit Length
-	.long	.Lset247
+.Lset249 = .L.debug_info_end0-.L.debug_info_begin0 # Compilation Unit Length
+	.long	.Lset249
 	.long	1437                    # DIE offset
 	.asciz	"TYPE"                  # External Name
 	.long	1539                    # DIE offset
@@ -104210,21 +104225,6 @@ inst_count:
 	.asciz	"XCORR_TYPE"            # External Name
 	.long	0                       # End Mark
 .Lpubtypes_end0:
-.Lset248 = .Lpubtypes_end2-.Lpubtypes_begin2 # Length of Public Types Info
-	.long	.Lset248
-.Lpubtypes_begin2:
-	.short	2                       # DWARF Version
-	.long	.L.debug_info_begin2    # Offset of Compilation Unit Info
-.Lset249 = .L.debug_info_end2-.L.debug_info_begin2 # Compilation Unit Length
-	.long	.Lset249
-	.long	55                      # DIE offset
-	.asciz	"double"                # External Name
-	.long	55                      # DIE offset
-	.asciz	"int"                   # External Name
-	.long	1340                    # DIE offset
-	.asciz	"_Bool"                 # External Name
-	.long	0                       # End Mark
-.Lpubtypes_end2:
 
 	.ident	"clang version 3.4.2 (tags/RELEASE_34/dot2-final)"
 	.ident	"clang version 3.4.2 (tags/RELEASE_34/dot2-final)"
