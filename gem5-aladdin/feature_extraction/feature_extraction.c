@@ -6,13 +6,11 @@
 #include "_kiss_fft_guts.h"
 #include "eispack.h"
 
-#define N_SAMPLES 50
+#define N_SAMPLES 1999
 #define N_CHANNELS 15
 
 typedef double XCORR_TYPE;
 typedef double TYPE;
-
-//TODO kiss_fft_cpx TYPE
 
 int test_stores(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channels) {
   for (int j = 0; j < n_channels; j++)
@@ -33,10 +31,10 @@ void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channel
 /* begin frequency domain feature extraction */
 /*******************************************************************************/
 // find fft of time data
-    //kiss_fft_cpx in[n_samples * n_channels];
-    kiss_fft_cpx* in = malloc(sizeof(kiss_fft_cpx) * n_samples * n_channels);
-    //kiss_fft_cpx out[n_samples * n_channels];
-    kiss_fft_cpx* out = malloc(sizeof(kiss_fft_cpx) * n_samples * n_channels);
+    kiss_fft_cpx in[n_samples * n_channels];
+//    kiss_fft_cpx* in = malloc(sizeof(kiss_fft_cpx) * n_samples * n_channels);
+    kiss_fft_cpx out[n_samples * n_channels];
+//    kiss_fft_cpx* out = malloc(sizeof(kiss_fft_cpx) * n_samples * n_channels);
     fft_loop: for (int channel = 0; channel < n_channels; channel++)
     {
         fft_loop_1: for (int i = 0; i < n_samples; i++)
@@ -52,8 +50,8 @@ void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channel
             freq_data[channel*n_samples + i] = out[channel*n_samples + i].r;
         }
     }
-    free(in);
-    free(out);
+//    free(in);
+//    free(out);
 // slice fft data (only work with out[1] - out[47] from now on)
     const int low_index   = 1;
     const int high_index  = 47;
@@ -111,6 +109,7 @@ void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channel
     freq_xcorr_loop_1:for (int i = 0; i < n_channels; i++)
     {
         // the matrix is symmetric, only do work for upper-right triangle
+        //freq_xcorr_loop_2:for (int j = i; j < n_channels; j++) TODO add in as optimization
         freq_xcorr_loop_2:for (int j = i; j < n_channels; j++)
         {
             freq_xcorr_matrix[i*n_channels + j] = 0;
@@ -118,21 +117,31 @@ void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channel
             freq_xcorr_loop_3:for (int k = 0; k < n_fft_items; k++)
             {
                 // no need to subtract means, means = 0
-                freq_xcorr_matrix[i*n_channels + j] += (XCORR_TYPE)(scaled_fft_data[i*n_channels+k]*scaled_fft_data[j*n_channels+k]);
+                freq_xcorr_matrix[i*n_channels + j] += (XCORR_TYPE)
+			//((scaled_fft_data[i*n_channels+k])*(scaled_fft_data[j*n_channels+k])); TODO add in as optimization
+			((scaled_fft_data[i*n_channels+k] - fft_mean[i])*(scaled_fft_data[j*n_channels+k] - fft_mean[j]));
             }
             freq_xcorr_matrix[i*n_channels + j] /= (n_fft_items - 1);
-            // no need to divide by sqrt(variance * variance) because variances = 1
-            freq_xcorr_matrix[j*n_channels + i] = freq_xcorr_matrix[i*n_channels + j];
+            //freq_xcorr_matrix[j*n_channels + i] = freq_xcorr_matrix[i*n_channels + j]; TODO add in as optimization
+        }
+    }
+    XCORR_TYPE freq_corr_coeff[n_channels];
+    freq_xcorr_loop_4:for (int channel = 0; channel < n_channels; channel++)
+    {
+        freq_corr_coeff[channel] = freq_xcorr_matrix[channel*n_channels + channel];
+    }
+    freq_xcorr_loop_5:for (int i = 0; i < n_channels; i++)
+    {
+        freq_xcorr_loop_6:for (int j = 0; j < n_channels; j++)
+        {
+            freq_xcorr_matrix[i*n_channels + j] /= sqrt(freq_corr_coeff[i]*freq_corr_coeff[j]);
         }
     }
 // find cross correlation matrix upper-right triangle
-  //TODO this is easy, just need to store them somewhere
 // find cross correlation matrix eigenvalues
     XCORR_TYPE freq_eigenvalues[n_channels];
     rs(n_channels, freq_xcorr_matrix, freq_eigenvalues, 0, NULL);
-  //TODO just need to store these somewhere
 // find sliced, magnitude, log, & scaled fft data "ravel" (matrix flattening)
-  //TODO just need to store this somewhere
 /*******************************************************************************/
 /* end frequency domain feature extraction*/
 /*******************************************************************************/
@@ -165,12 +174,13 @@ void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channel
         time_stddev[channel] /= (TYPE)sqrt(((double)time_stddev[channel])/n_time_sd);
     }
     //TYPE scaled_time_data[n_channels*n_samples];
-    TYPE* scaled_time_data = malloc(sizeof(TYPE) *n_channels * n_samples);
+//    TYPE* scaled_time_data = malloc(sizeof(TYPE) *n_channels * n_samples);
     time_scale_loop_1: for(int channel = 0; channel < n_channels; channel++)
     {
         time_scale_loop_2: for(int i = 0; i < n_samples; i++)
         {
-            scaled_time_data[channel*n_samples + i] = 
+//            scaled_time_data[channel*n_samples + i] = 
+            time_data[channel*n_samples + i] =
                 (time_data[channel*n_samples + i] - time_mean[channel])/time_stddev[channel];
         }
     }
@@ -178,19 +188,34 @@ void process_data(TYPE* time_data, TYPE* freq_data, int n_samples, int n_channel
     XCORR_TYPE time_xcorr_matrix[n_channels * n_channels];
     time_xcorr_loop_1:for (int i = 0; i < n_channels; i++)
     {
+        //time_xcorr_loop_2:for (int j = i; j < n_channels; j++) TODO add in as optimization
         time_xcorr_loop_2:for (int j = i; j < n_channels; j++)
         {
             time_xcorr_matrix[i*n_channels + j] = 0;
             time_xcorr_loop_3:for (int k = 0; k < n_samples; k++)
             {
-                time_xcorr_matrix[i*n_channels + j] += (XCORR_TYPE)(scaled_time_data[i*n_channels+k]*scaled_time_data[j*n_channels+k]);
+                time_xcorr_matrix[i*n_channels + j] += 
+			//(XCORR_TYPE)((scaled_time_data[i*n_channels+k] - time_mean[i])*(scaled_time_data[j*n_channels+k] - time_mean[j]));
+			(XCORR_TYPE)((time_data[i*n_channels+k] - time_mean[i])*(time_data[j*n_channels+k] - time_mean[j]));
+                //time_xcorr_matrix[i*n_channels + j] += (XCORR_TYPE)(scaled_time_data[i*n_channels+k]*scaled_time_data[j*n_channels+k]); TODO add in as optimization
             }
             time_xcorr_matrix[i*n_channels + j] /= (n_samples - 1);
-            // no need to divide by sqrt(variance * variance) because variances = 1
-            time_xcorr_matrix[j*n_channels + i] = time_xcorr_matrix[i*n_channels + j];
+            //time_xcorr_matrix[j*n_channels + i] = time_xcorr_matrix[i*n_channels + j]; TODO add in as optimization
         }
     }
-    free(scaled_time_data);
+    XCORR_TYPE time_corr_coeff[n_channels];
+    time_xcorr_loop_4:for (int channel = 0; channel < n_channels; channel++)
+    {
+        time_corr_coeff[channel] = time_xcorr_matrix[channel*n_channels + channel];
+    }
+    time_xcorr_loop_5:for (int i = 0; i < n_channels; i++)
+    {
+        time_xcorr_loop_6: for (int j = 0; j < n_channels; j++)
+        {
+            time_xcorr_matrix[i*n_channels + j] /= sqrt(time_corr_coeff[i]*time_corr_coeff[j]);
+        }
+    }
+//    free(scaled_time_data);
 // find x-corr matrix upper-right triangle
 // find x-corr matrix eigenvalues
     XCORR_TYPE time_eigenvalues[n_channels];
