@@ -5,4 +5,6 @@ feature_extraction_2
 feature_extraction_3
     this is an improvement on _2. the change is algorithmic improvements (symmetric xcorr, removing zero-mean from xcorr).
 feature_extraction_4
-    this is an change on _3. the change is added utilization of pipelining.
+    this is a change on _3. the change is added utilization of pipelining.
+feature_extraction_5
+    this is a change on _4. fft is all done as a float instead of double

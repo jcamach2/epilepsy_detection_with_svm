@@ -1,0 +1,28 @@
+===============================
+        Aladdin Results        
+===============================
+Running : ./outputs/feature_extraction
+Top level function: process_data
+Cycle : 208199 cycles
+Avg Power: 87.0636 mW
+Idle FU Cycles: 91698 cycles
+Avg FU Power: 48.1452 mW
+Avg FU Dynamic Power: 8.61669 mW
+Avg FU leakage Power: 39.5285 mW
+Avg MEM Power: 38.9184 mW
+Avg MEM Dynamic Power: 0.301993 mW
+Avg MEM Leakage Power: 38.6164 mW
+Total Area: 7.17871e+06 uM^2
+FU Area: 3.85937e+06 uM^2
+MEM Area: 3.31934e+06 uM^2
+Num of Single Precision FP Multipliers: 110
+Num of Single Precision FP Adders: 181
+Num of Double Precision FP Multipliers: 65
+Num of Double Precision FP Adders: 28
+Num of Multipliers (32-bit): 4
+Num of Adders (32-bit): 130
+Num of Shifters (32-bit): 17
+Num of Registers (32-bit): 5501
+===============================
+        Aladdin Results        
+===============================
