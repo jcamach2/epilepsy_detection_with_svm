@@ -8,3 +8,5 @@ feature_extraction_4
     this is a change on _3. the change is added utilization of pipelining.
 feature_extraction_5
     this is a change on _4. fft is all done as a float instead of double
+feature_extraction_6
+    this is a change on _4. fft is all done as a 64-bit fixed-point (32 int, 32 dec) number instead of double
