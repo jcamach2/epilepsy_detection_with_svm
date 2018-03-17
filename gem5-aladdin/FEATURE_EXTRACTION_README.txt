@@ -9,4 +9,8 @@ feature_extraction_4
 feature_extraction_5
     this is a change on _4. fft is all done as a float instead of double
 feature_extraction_6
-    this is a change on _4. fft is all done as a 64-bit fixed-point (32 int, 32 dec) number instead of double
+    this is a change on _4. fft is all done as a 32-bit fixed-point number instead of double
+feature_extraction_7
+    again, a change on _4. fft is all done as 16-bit fixed-point number instead of double
+feature_extraction_8
+    this is a change on _4. accelerator clock cycle changed from 10ns to 6ns.
